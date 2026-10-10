@@ -2297,6 +2297,85 @@ body.locked {
   .ib{width:38px;height:38px;}
 }
 
+
+
+/* ==========================================================================
+   ALWAYS-VISIBLE NAVIGATION PANE & SMOOTH CINEMATIC SCROLL ANIMATION PACING
+   ========================================================================== */
+
+/* 1. Permanent Navigation Pane */
+.nav, #nav, header.nav {
+  position: fixed !important;
+  top: 14px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 1000 !important;
+  transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+.nav.hide, #nav.hide, header.nav.hide {
+  transform: translateX(-50%) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+.nav.scrolled, #nav.scrolled {
+  box-shadow: 0 12px 36px rgba(42, 18, 29, 0.22), 0 2px 0 var(--line) !important;
+  background: rgba(255, 235, 240, 0.94) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+}
+
+@media (max-width: 860px) {
+  .nav, #nav, header.nav {
+    top: 10px !important;
+    width: calc(100% - 24px) !important;
+    max-width: 480px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+/* 2. Smooth, Leisurely Scroll Pacing for Hero 3D Box Experience */
+#scene {
+  height: 380vh !important;
+  position: relative !important;
+  z-index: 1 !important;
+  background: linear-gradient(180deg, #ecb7b3 0%, #f1bebb 18%, #f7ceca 42%, #fddbd9 68%, #f8d4cf 85%, #f0c5bf 100%) !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 860px) {
+  #scene {
+    height: 340vh !important;
+  }
+}
+
+/* 3. Smooth Pacing for Flavours & Highlights Sections */
+.orb3 {
+  height: 360vh !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.ps {
+  height: 440vh !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+@media (max-width: 860px) {
+  .orb3 {
+    height: 320vh !important;
+  }
+  .ps {
+    height: 380vh !important;
+  }
+}
+
 </style></head><body class="locked"><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
 <div class="g-projector-beam" aria-hidden="true"></div>
 <div class="g-ambient-glow" aria-hidden="true"></div>
@@ -2907,7 +2986,7 @@ function getSceneTarget() {
 }
 
 function sceneLoop() {
-  cur += (target - cur) * 0.14;
+  cur += (target - cur) * 0.09;
   if (Math.abs(target - cur) < 0.0005) {
     cur = target;
     run = false;
@@ -3247,16 +3326,15 @@ window.addEventListener('keydown', e => {
   }
 });
 
+// Navigation bar stays permanently visible while scrolling
 window.addEventListener('scroll', () => {
   const y = scrollY;
   if (nav) {
-    const isMenuOpen = menu && menu.classList.contains('open');
-    if (!isMenuOpen) {
-      if (y > 140 && y > lastScrollY + 8) {
-        nav.classList.add('hide');
-      } else if (y < lastScrollY - 8 || y < 140) {
-        nav.classList.remove('hide');
-      }
+    nav.classList.remove('hide');
+    if (y > 20) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
     }
   }
   lastScrollY = y;
