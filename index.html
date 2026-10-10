@@ -938,10 +938,10 @@ body.locked{overflow:hidden;height:100svh}
 }
 
 /* ==========================================================================
-   EXACT STUDIO BACKGROUND MATCH & VIBRANT COLORFUL HERO GRAPHICS
+   AWARD-WINNING COLORFUL & EYE-CATCHY HERO DESIGN
    ========================================================================== */
 
-/* Hero Section & Sticky Viewport - 100% Exact Sampled Gradient from 3D Render */
+/* Hero Section Container */
 #scene {
   height: 360vh !important;
   position: relative;
@@ -967,12 +967,11 @@ body.locked{overflow:hidden;height:100svh}
   transition: transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 
-/* Remove uneven lighting overlays to ensure 100% pure gradient match */
 .stick::before {
   display: none !important;
 }
 
-/* 100% Disable Old Overlay Glitches */
+/* Disable Old Overlay Glitches */
 #zc, #zt {
   display: none !important;
   opacity: 0 !important;
@@ -1035,32 +1034,32 @@ body.locked{overflow:hidden;height:100svh}
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #ffffff;
-  border: 2.5px solid var(--line);
-  box-shadow: 0 3.5px 0 var(--line), 0 8px 18px rgba(230, 25, 90, 0.12);
+  background: linear-gradient(135deg, #ffffff 0%, #fff0f5 100%);
+  border: 2.5px solid #e6195a;
+  box-shadow: 0 3.5px 0 #e6195a, 0 8px 20px rgba(230, 25, 90, 0.15);
   border-radius: 999px;
   padding: 6px 16px;
   font: 800 13px/1.2 var(--disp);
-  color: #2a121d;
+  color: #970d41;
   letter-spacing: 0.05em;
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .hero-badge-pill:hover {
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px) scale(1.03);
 }
 .hero-badge-pill .live-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background: #10b981;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.35);
   animation: radarPulse 2s infinite;
 }
 
 /* Hero Hand Slogan */
 .hero-hand {
   font-family: var(--hand);
-  font-size: clamp(20px, 2.2vw, 28px);
+  font-size: clamp(21px, 2.3vw, 29px);
   color: #c94668;
   letter-spacing: 0.02em;
   margin: 0;
@@ -1069,20 +1068,20 @@ body.locked{overflow:hidden;height:100svh}
 
 /* Hero Headline */
 .hero-title {
-  font: 800 clamp(42px, 5.8vw, 76px)/1.02 var(--disp);
+  font: 800 clamp(44px, 6vw, 78px)/1.02 var(--disp);
   color: #2a121d;
   letter-spacing: -0.03em;
   margin: 0;
-  text-shadow: none;
+  text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.6);
 }
 .hero-title .hero-accent {
   font-style: normal;
-  background: linear-gradient(135deg, #e6195a 0%, #ff4f86 50%, #ff7b00 100%);
+  background: linear-gradient(135deg, #ff175e 0%, #ff4f86 45%, #ff8a00 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  filter: drop-shadow(0 4px 14px rgba(230, 25, 90, 0.25));
+  filter: drop-shadow(0 4px 14px rgba(230, 25, 90, 0.28));
 }
 
 /* Hero Lead Description */
@@ -1094,7 +1093,7 @@ body.locked{overflow:hidden;height:100svh}
 }
 
 /* ==========================================================================
-   VIBRANT & COLORFUL QUICK TAGS (PREMIUM CANDY PILLS)
+   VIBRANT & COLORFUL QUICK TAGS
    ========================================================================== */
 .hero-quick-tags {
   display: flex;
@@ -1111,30 +1110,41 @@ body.locked{overflow:hidden;height:100svh}
   border-radius: 999px;
   font: 800 12.5px/1.2 var(--disp);
   letter-spacing: 0.02em;
-  border: 2px solid var(--line);
-  box-shadow: 0 3px 0 var(--line);
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
   cursor: default;
 }
 .hero-quick-tag:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 5px 0 var(--line);
+  transform: translateY(-2px) scale(1.04);
 }
 
 .tag-fresh {
-  background: linear-gradient(135deg, #ffffff 0%, #ffe4e8 100%);
-  color: #e6195a;
+  background: linear-gradient(135deg, #fff0f3 0%, #ffd1db 100%);
+  color: #970d41;
+  border: 2.5px solid #e6195a;
+  box-shadow: 0 3.5px 0 #e6195a, 0 6px 14px rgba(230, 25, 90, 0.15);
 }
 .tag-speed {
-  background: linear-gradient(135deg, #ffffff 0%, #fef08a 100%);
-  color: #854d0e;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef08a 100%);
+  color: #78350f;
+  border: 2.5px solid #d97706;
+  box-shadow: 0 3.5px 0 #d97706, 0 6px 14px rgba(217, 119, 6, 0.15);
 }
 .tag-theatres {
-  background: linear-gradient(135deg, #ffffff 0%, #e9d5ff 100%);
-  color: #6b21a8;
+  background: linear-gradient(135deg, #faf5ff 0%, #ddd6fe 100%);
+  color: #4c1d95;
+  border: 2.5px solid #7c3aed;
+  box-shadow: 0 3.5px 0 #7c3aed, 0 6px 14px rgba(124, 58, 237, 0.15);
+}
+.tag-rated {
+  background: linear-gradient(135deg, #ecfdf5 0%, #a7f3d0 100%);
+  color: #065f46;
+  border: 2.5px solid #059669;
+  box-shadow: 0 3.5px 0 #059669, 0 6px 14px rgba(5, 150, 105, 0.15);
 }
 
-/* App Store Download Buttons */
+/* ==========================================================================
+   COLORFUL & EYE-CATCHY APP STORE BUTTONS
+   ========================================================================== */
 .hero-stores {
   display: flex;
   gap: 12px;
@@ -1145,26 +1155,41 @@ body.locked{overflow:hidden;height:100svh}
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #2a121d;
-  color: #fff !important;
-  border: 2.5px solid var(--line);
-  box-shadow: 0 4px 0 var(--line);
-  border-radius: 14px;
-  padding: 8px 16px 8px 12px;
+  border-radius: 16px;
+  padding: 8px 18px 8px 14px;
   text-decoration: none;
-  font: 700 15px/1.1 var(--disp);
+  font: 800 15px/1.1 var(--disp);
   transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.18s ease;
 }
-.hero-stores .store:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 0 var(--line);
+
+.store-play {
+  background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+  color: #ffffff !important;
+  border: 2.5px solid #00d1ff;
+  box-shadow: 0 4.5px 0 #0284c7, 0 10px 24px rgba(0, 209, 255, 0.25);
 }
+.store-play:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 7.5px 0 #0284c7, 0 14px 30px rgba(0, 209, 255, 0.35);
+}
+
+.store-ios {
+  background: linear-gradient(135deg, #2a081a 0%, #17040e 100%);
+  color: #ffffff !important;
+  border: 2.5px solid #ff3b75;
+  box-shadow: 0 4.5px 0 #e6195a, 0 10px 24px rgba(255, 59, 117, 0.25);
+}
+.store-ios:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 7.5px 0 #e6195a, 0 14px 30px rgba(255, 59, 117, 0.35);
+}
+
 .hero-stores .store small {
   display: block;
   font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  opacity: 0.8;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
   text-transform: uppercase;
 }
 
@@ -1269,39 +1294,7 @@ body.locked{overflow:hidden;height:100svh}
   filter: drop-shadow(0 14px 28px rgba(160, 48, 76, 0.1));
 }
 
-/* Rotating Golden Cinema Seal */
-.hero-golden-badge {
-  position: absolute;
-  top: -4%;
-  right: -2%;
-  width: 86px;
-  height: 86px;
-  z-index: 12;
-  cursor: pointer;
-  filter: drop-shadow(0 6px 14px rgba(160, 48, 76, 0.18));
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.hero-golden-badge:hover {
-  transform: scale(1.1) rotate(15deg);
-}
-.badge-spin-svg {
-  width: 100%;
-  height: 100%;
-  animation: spinSeal 18s linear infinite;
-}
-@keyframes spinSeal {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-.badge-inner-emoji {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-size: 26px;
-}
-
-/* Floating Colorful Ambient Cinema Sparkles */
+/* Floating Colorful Ambient Cinema Sparks */
 .hero-sparks {
   position: absolute;
   inset: 0;
@@ -1311,14 +1304,9 @@ body.locked{overflow:hidden;height:100svh}
 }
 .h-spark {
   position: absolute;
-  opacity: 0.7;
-  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.45));
+  opacity: 0.8;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.55));
   animation: sparkFloat 5s ease-in-out infinite alternate;
-}
-@keyframes sparkFloat {
-  0% { transform: translateY(0) scale(0.9); opacity: 0.5; }
-  50% { transform: translateY(-12px) scale(1.15); opacity: 0.9; }
-  100% { transform: translateY(-6px) scale(0.95); opacity: 0.6; }
 }
 
 /* Bottom Combo Pill HUD */
@@ -1347,18 +1335,14 @@ body.locked{overflow:hidden;height:100svh}
   font-size: 16px;
   animation: bounceDown 1.5s infinite;
 }
-@keyframes bounceDown {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(4px); }
-}
 
 .combo-pill-card {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   background: #ffffff;
-  border: 3px solid var(--line);
-  box-shadow: 0 5px 0 var(--line), 0 10px 24px rgba(120, 30, 55, 0.12);
+  border: 3.5px solid var(--line);
+  box-shadow: 0 6px 0 var(--line), 0 12px 28px rgba(120, 30, 55, 0.15);
   border-radius: 999px;
   padding: 6px 20px 6px 8px;
   transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -1367,13 +1351,14 @@ body.locked{overflow:hidden;height:100svh}
   transform: scale(1.03);
 }
 .combo-pill-badge {
-  background: #e6195a;
+  background: linear-gradient(135deg, #e6195a 0%, #ff3b75 100%);
   color: #fff;
   font: 800 11px/1.2 var(--disp);
   letter-spacing: 0.06em;
-  padding: 5px 10px;
+  padding: 5px 12px;
   border-radius: 999px;
   border: 2px solid var(--line);
+  box-shadow: 0 2px 0 var(--line);
 }
 .combo-pill-card b {
   font: 800 16px var(--disp);
@@ -1395,12 +1380,12 @@ body.locked{overflow:hidden;height:100svh}
 }
 .stick .dots i.on {
   background: #ffd23f;
-  transform: scale(1.3);
-  box-shadow: 0 0 0 2px rgba(255, 210, 63, 0.4);
+  transform: scale(1.35);
+  box-shadow: 0 0 0 2.5px rgba(255, 210, 63, 0.45);
 }
 
 /* ==========================================================================
-   MOBILE HERO - 100% SEAMLESS STUDIO BACKGROUND & COLORFUL VIBRANT TAGS
+   MOBILE HERO - COLORFUL, SEXY & CLEAN
    ========================================================================== */
 @media (max-width: 860px) {
   #scene {
@@ -1428,7 +1413,7 @@ body.locked{overflow:hidden;height:100svh}
   .hero-badge-pill {
     padding: 4px 14px !important;
     font-size: 11.5px !important;
-    box-shadow: 0 2.5px 0 var(--line) !important;
+    box-shadow: 0 2.5px 0 #e6195a !important;
   }
 
   .hero-hand {
@@ -1457,7 +1442,7 @@ body.locked{overflow:hidden;height:100svh}
   .hero-quick-tag {
     padding: 3.5px 10px !important;
     font-size: 11px !important;
-    box-shadow: 0 2px 0 var(--line) !important;
+    box-shadow: 0 2px 0 currentColor !important;
   }
 
   /* Compact Store Buttons on Mobile */
@@ -1473,7 +1458,6 @@ body.locked{overflow:hidden;height:100svh}
     font-size: 12.5px !important;
     border-radius: 12px !important;
     gap: 6px !important;
-    box-shadow: 0 3px 0 var(--line) !important;
     justify-content: center !important;
   }
   .hero-stores .store svg {
@@ -1965,14 +1949,14 @@ body.locked{overflow:hidden;height:100svh}
 <main id="top">
 <div id="scene"><div class="stick">
 <div class="hero-sparks" aria-hidden="true">
-  <span class="h-spark" style="left:5%;top:16%;animation-delay:-1.2s;font-size:26px">🍿</span>
-  <span class="h-spark" style="left:36%;top:10%;animation-delay:-2.5s;font-size:20px">✨</span>
-  <span class="h-spark" style="left:42%;top:82%;animation-delay:-0.5s;font-size:24px">💖</span>
-  <span class="h-spark" style="left:90%;top:14%;animation-delay:-3.1s;font-size:26px">🥤</span>
-  <span class="h-spark" style="left:95%;top:68%;animation-delay:-1.8s;font-size:22px">🍕</span>
-  <span class="h-spark" style="left:4%;top:86%;animation-delay:-2.1s;font-size:24px">⭐</span>
-  <span class="h-spark" style="left:48%;top:5%;animation-delay:-4.0s;font-size:18px">✦</span>
-  <span class="h-spark" style="left:82%;top:42%;animation-delay:-2.8s;font-size:20px">🍔</span>
+  <span class="h-spark" style="left:5%;top:16%;animation-delay:-1.2s;font-size:28px">🍿</span>
+  <span class="h-spark" style="left:36%;top:10%;animation-delay:-2.5s;font-size:22px">✨</span>
+  <span class="h-spark" style="left:42%;top:82%;animation-delay:-0.5s;font-size:26px">💖</span>
+  <span class="h-spark" style="left:90%;top:14%;animation-delay:-3.1s;font-size:28px">🥤</span>
+  <span class="h-spark" style="left:95%;top:68%;animation-delay:-1.8s;font-size:24px">🍕</span>
+  <span class="h-spark" style="left:4%;top:86%;animation-delay:-2.1s;font-size:26px">⭐</span>
+  <span class="h-spark" style="left:48%;top:5%;animation-delay:-4.0s;font-size:20px">✦</span>
+  <span class="h-spark" style="left:82%;top:42%;animation-delay:-2.8s;font-size:22px">🍔</span>
 </div>
 
 <div class="copy">
@@ -1991,14 +1975,15 @@ body.locked{overflow:hidden;height:100svh}
     <span class="hero-quick-tag tag-fresh">🍿 100% Cinema Fresh</span>
     <span class="hero-quick-tag tag-speed">⚡ ~10m In-Seat Speed</span>
     <span class="hero-quick-tag tag-theatres">🎟️ 50+ Top Theatres</span>
+    <span class="hero-quick-tag tag-rated">★ 4.9 Top Rated</span>
   </div>
 
   <div class="stores hero-stores">
-    <a class="store" data-play href="#" aria-label="Get LOVE CAFE on Google Play">
+    <a class="store store-play" data-play href="#" aria-label="Get LOVE CAFE on Google Play">
       <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
       <span><small>GET IT ON</small>Google Play</span>
     </a>
-    <a class="store" data-ios href="#" aria-label="Download LOVE CAFE on the App Store">
+    <a class="store store-ios" data-ios href="#" aria-label="Download LOVE CAFE on the App Store">
       <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.2-2.800.8-3.500.8-.7 0-1.800-.8-3-.8-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7c1.300 0 2.100-1.100 2.800-2.200.9-1.300 1.300-2.500 1.300-2.600 0 0-2.500-1-2.500-3.800zM14.100 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.600 1.400-.6.700-1.100 1.700-.9 2.700 1 .1 2-.5 2.600-1.300z"/></svg>
       <span><small>Download on the</small>App Store</span>
     </a>
