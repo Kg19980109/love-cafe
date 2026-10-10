@@ -1857,6 +1857,446 @@ body.locked{overflow:hidden;height:100svh}
     font-size: clamp(26px, 7.5vw, 38px) !important;
   }
 }
+
+/* -------------------------------------------------------------------------- */
+/* MOBILE NAVIGATION MENU STYLES                                              */
+/* -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+.nav {
+  z-index: 100;
+}
+.mb {
+  display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--line);
+  box-shadow: 0 4px 0 var(--line);
+  cursor: pointer;
+  z-index: 101;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mb:active {
+  transform: translateY(2px) scale(0.96);
+  box-shadow: 0 2px 0 var(--line);
+}
+.mb span {
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--line);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, top 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mb span:nth-child(1) { top: 12px; }
+.mb span:nth-child(2) { top: 19px; }
+.mb span:nth-child(3) { top: 26px; }
+
+.mb.x {
+  background: #ffe27a;
+  border-color: #2a1820;
+}
+.mb.x span:nth-child(1) {
+  top: 19px;
+  transform: rotate(45deg);
+}
+.mb.x span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.mb.x span:nth-child(3) {
+  top: 19px;
+  transform: rotate(-45deg);
+}
+
+#menu {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: calc(76px + env(safe-area-inset-top, 0px)) clamp(16px, 4vw, 32px) calc(24px + env(safe-area-inset-bottom, 0px));
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: translateY(-12px) scale(0.98);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: linear-gradient(165deg, rgba(230, 25, 90, 0.98) 0%, rgba(154, 18, 64, 0.98) 50%, rgba(42, 24, 32, 0.99) 100%);
+  -webkit-backdrop-filter: blur(28px) saturate(1.8);
+  backdrop-filter: blur(28px) saturate(1.8);
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.4);
+}
+#menu.open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+.menu-inner {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100%;
+  justify-content: space-between;
+}
+.menu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+}
+.menu-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mb-spark {
+  font-size: 24px;
+}
+.mb-title {
+  font-family: var(--disp);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: #ffd23f;
+  text-shadow: 2px 2px 0 var(--line);
+}
+.menu-close-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s, background 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.menu-close-btn:active {
+  transform: scale(0.92);
+  background: rgba(255, 255, 255, 0.35);
+}
+.menu-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.menu-nav .m-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.menu-nav .m-link:hover, .menu-nav .m-link:active {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: #ffd23f;
+  transform: translateX(6px);
+}
+.menu-nav .m-icon {
+  font-size: 22px;
+  width: 28px;
+  display: grid;
+  place-items: center;
+}
+.menu-nav .m-text {
+  font-family: var(--disp);
+  font-weight: 800;
+  font-size: 19px;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 1.5px 1.5px 0 rgba(0,0,0,0.35);
+}
+.menu-nav .m-badge {
+  margin-left: auto;
+  font-family: var(--disp);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(255, 210, 63, 0.25);
+  border: 1px solid #ffd23f;
+  color: #ffd23f;
+  text-transform: uppercase;
+}
+.menu-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 2px solid rgba(255, 255, 255, 0.18);
+}
+.menu-promo {
+  font-family: var(--disp);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffd23f;
+  text-align: center;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+}
+.menu-stores {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+body.locked {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/* MOBILE NAVIGATION MENU & HAMBURGER STYLES                                 */
+/* -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+.nav {
+  z-index: 100;
+}
+.mb {
+  display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--line);
+  box-shadow: 0 4px 0 var(--line);
+  cursor: pointer;
+  z-index: 101;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+}
+.mb:hover {
+  background: #fff0f3;
+  transform: translateY(-1px);
+}
+.mb:active {
+  transform: translateY(2px) scale(0.96);
+  box-shadow: 0 2px 0 var(--line);
+}
+.mb span {
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--line);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, top 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mb span:nth-child(1) { top: 12px; }
+.mb span:nth-child(2) { top: 19px; }
+.mb span:nth-child(3) { top: 26px; }
+
+.mb.x {
+  background: #ffe27a;
+  border-color: #2a1820;
+}
+.mb.x span:nth-child(1) {
+  top: 19px;
+  transform: rotate(45deg);
+}
+.mb.x span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.mb.x span:nth-child(3) {
+  top: 19px;
+  transform: rotate(-45deg);
+}
+
+#menu {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: calc(76px + env(safe-area-inset-top, 0px)) clamp(16px, 4vw, 32px) calc(24px + env(safe-area-inset-bottom, 0px));
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: translateY(-12px) scale(0.98);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: linear-gradient(165deg, rgba(230, 25, 90, 0.98) 0%, rgba(154, 18, 64, 0.98) 50%, rgba(42, 24, 32, 0.99) 100%);
+  -webkit-backdrop-filter: blur(28px) saturate(1.8);
+  backdrop-filter: blur(28px) saturate(1.8);
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.4);
+}
+#menu.open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+.menu-inner {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100%;
+  justify-content: space-between;
+}
+.menu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+}
+.menu-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mb-spark {
+  font-size: 24px;
+}
+.mb-title {
+  font-family: var(--disp);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: #ffd23f;
+  text-shadow: 2px 2px 0 var(--line);
+}
+.menu-close-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s, background 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.menu-close-btn:active {
+  transform: scale(0.92);
+  background: rgba(255, 255, 255, 0.35);
+}
+.menu-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.menu-nav .m-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.menu-nav .m-link:hover, .menu-nav .m-link:active {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: #ffd23f;
+  transform: translateX(6px);
+}
+.menu-nav .m-icon {
+  font-size: 22px;
+  width: 28px;
+  display: grid;
+  place-items: center;
+}
+.menu-nav .m-text {
+  font-family: var(--disp);
+  font-weight: 800;
+  font-size: 19px;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 1.5px 1.5px 0 rgba(0,0,0,0.35);
+}
+.menu-nav .m-badge {
+  margin-left: auto;
+  font-family: var(--disp);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(255, 210, 63, 0.25);
+  border: 1px solid #ffd23f;
+  color: #ffd23f;
+  text-transform: uppercase;
+}
+.menu-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 2px solid rgba(255, 255, 255, 0.18);
+}
+.menu-promo {
+  font-family: var(--disp);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffd23f;
+  text-align: center;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+}
+.menu-stores {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+body.locked {
+  overflow: hidden !important;
+  touch-action: none;
+}
+@media(max-width:860px){
+  .nl{display:none !important;}
+  .mb{display:block !important;}
+  .dlb{display:none !important;}
+  .nr{margin-left:auto;}
+  .nav{padding:7px 8px 7px 14px;}
+  .ib{width:38px;height:38px;}
+}
+
 </style></head><body class="locked"><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
 <div class="g-projector-beam" aria-hidden="true"></div>
 <div class="g-ambient-glow" aria-hidden="true"></div>
@@ -1946,6 +2386,46 @@ body.locked{overflow:hidden;height:100svh}
 <header class="nav" id="nav"><a class="brand" href="#top" aria-label="LOVE CAFE home"><i></i><span>LOVE<br>CAFE</span></a>
 <nav class="nl" aria-label="Main"><a href="#flavours">Flavours</a><a href="#app">App</a><a href="#cinemas">Cinemas</a><a href="#rewards">CinePoints</a></nav>
 <div class="nr"><a class="ib" data-play href="#" aria-label="Get LOVE CAFE on Google Play"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg></a><a class="ib" data-ios href="#" aria-label="Download LOVE CAFE on the App Store"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.2-2.800.8-3.500.8-.7 0-1.800-.8-3-.8-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7c1.300 0 2.100-1.100 2.800-2.200.9-1.300 1.300-2.500 1.300-2.600 0 0-2.500-1-2.500-3.800zM14.100 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.600 1.400-.6.700-1.100 1.700-.9 2.700 1 .1 2-.5 2.600-1.300z"/></svg></a><a class="btn sm dlb" data-dl href="#">Get the app</a><button class="mb" id="mb" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span><span></span></button></div><i class="np" id="np"></i></header>
+
+<!-- Mobile Fullscreen Navigation Overlay -->
+<div id="menu" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu" aria-hidden="true">
+  <div class="menu-inner">
+    <div class="menu-top">
+      <div class="menu-brand">
+        <span class="mb-spark">🍿</span>
+        <span class="mb-title">LOVE CAFE</span>
+      </div>
+      <button class="menu-close-btn" id="mclose" aria-label="Close Menu">✕</button>
+    </div>
+    <nav class="menu-nav" aria-label="Mobile Navigation Links">
+      <a href="#top" class="m-link"><span class="m-icon">🏠</span><span class="m-text">Home</span><span class="m-badge">Top</span></a>
+      <a href="#flavours" class="m-link"><span class="m-icon">🍿</span><span class="m-text">Flavours &amp; Combos</span><span class="m-badge">Menu</span></a>
+      <a href="#story" class="m-link"><span class="m-icon">✨</span><span class="m-text">Movie Night Story</span><span class="m-badge">4 Moments</span></a>
+      <a href="#app" class="m-link"><span class="m-icon">📱</span><span class="m-text">App Experience</span><span class="m-badge">Fast</span></a>
+      <a href="#cinemas" class="m-link"><span class="m-icon">🎟️</span><span class="m-text">Partner Cinemas</span><span class="m-badge">50+</span></a>
+      <a href="#how" class="m-link"><span class="m-icon">⚡</span><span class="m-text">How It Works</span><span class="m-badge">3 Steps</span></a>
+      <a href="#rewards" class="m-link"><span class="m-icon">⭐</span><span class="m-text">CinePoints</span><span class="m-badge">Rewards</span></a>
+      <a href="#get" class="m-link"><span class="m-icon">📲</span><span class="m-text">Download App</span><span class="m-badge">Free</span></a>
+    </nav>
+    <div class="menu-foot">
+      <p class="menu-promo">⚡ Gourmet Cinema Delivery in ~10 Minutes</p>
+      <div class="menu-stores">
+        <a class="hero-store-btn hero-store-gplay" data-play href="#" aria-label="Get on Google Play">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
+          <span><small>GET IT ON</small>Google Play</span>
+        </a>
+        <a class="hero-store-btn hero-store-appstore" data-ios href="#" aria-label="Download on App Store">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.2-2.800.8-3.500.8-.7 0-1.800-.8-3-.8-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7c1.300 0 2.100-1.100 2.800-2.200.9-1.300 1.300-2.500 1.300-2.600 0 0-2.500-1-2.500-3.800zM14.100 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.600 1.400-.6.700-1.100 1.700-.9 2.700 1 .1 2-.5 2.600-1.300z"/></svg>
+          <span><small>Download on</small>App Store</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
 <main id="top">
 <div id="scene"><div class="stick">
 <div class="hero-sparks" aria-hidden="true">
@@ -2699,6 +3179,7 @@ const nav = $('nav');
 const nlk = [...document.querySelectorAll('.nl a')];
 const mb = $('mb');
 const menu = $('menu');
+const mclose = $('mclose');
 let lastScrollY = 0;
 
 function toggleMobileMenu(open) {
@@ -2711,24 +3192,71 @@ function toggleMobileMenu(open) {
 }
 
 if (mb) {
-  mb.addEventListener('click', () => toggleMobileMenu(!menu.classList.contains('open')));
+  mb.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const isOpen = menu && menu.classList.contains('open');
+    toggleMobileMenu(!isOpen);
+  });
+}
+
+if (mclose) {
+  mclose.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleMobileMenu(false);
+  });
+}
+
+function scrollToAnchor(targetId) {
+  const target = document.querySelector(targetId);
+  if (!target) return;
+  const navHeight = (nav ? nav.offsetHeight : 60) + 16;
+  const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+  window.scrollTo({
+    top: Math.max(0, targetPos),
+    behavior: 'smooth'
+  });
 }
 
 if (menu) {
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMobileMenu(false)));
+  menu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        toggleMobileMenu(false);
+        setTimeout(() => scrollToAnchor(href), 150);
+      }
+    });
+  });
 }
 
+document.querySelectorAll('.nl a, .brand, .sd a').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const href = a.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      scrollToAnchor(href);
+    }
+  });
+});
+
 window.addEventListener('keydown', e => {
-  if (e.key === 'Escape') toggleMobileMenu(false);
+  if (e.key === 'Escape' && menu && menu.classList.contains('open')) {
+    toggleMobileMenu(false);
+  }
 });
 
 window.addEventListener('scroll', () => {
   const y = scrollY;
-  if (nav && !menu.classList.contains('open')) {
-    if (y > 140 && y > lastScrollY + 8) {
-      nav.classList.add('hide');
-    } else if (y < lastScrollY - 8 || y < 140) {
-      nav.classList.remove('hide');
+  if (nav) {
+    const isMenuOpen = menu && menu.classList.contains('open');
+    if (!isMenuOpen) {
+      if (y > 140 && y > lastScrollY + 8) {
+        nav.classList.add('hide');
+      } else if (y < lastScrollY - 8 || y < 140) {
+        nav.classList.remove('hide');
+      }
     }
   }
   lastScrollY = y;
