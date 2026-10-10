@@ -2376,6 +2376,95 @@ body.locked {
   }
 }
 
+
+
+/* Cinema Card Styling Enhancements */
+.card {
+  background: #ffffff !important;
+  border: 2.5px solid var(--line) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 0 var(--line) !important;
+  padding: 18px 20px !important;
+  margin-bottom: 14px !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+.card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 7px 0 var(--line) !important;
+}
+.card .region-badge {
+  display: inline-block;
+  background: #ffe3ea;
+  color: #e6195a;
+  font: 800 11px var(--disp);
+  padding: 2px 10px;
+  border-radius: 999px;
+  border: 1.5px solid #e6195a;
+  margin-bottom: 4px;
+}
+.card h3 {
+  font: 800 18px/1.2 var(--disp) !important;
+  color: #2a121d !important;
+  margin: 2px 0 4px !important;
+}
+.card .c-city {
+  font-weight: 700 !important;
+  color: #c94668 !important;
+  font-size: 13.5px !important;
+  margin: 0 0 4px !important;
+}
+.card .c-addr {
+  font-size: 12.5px !important;
+  color: #6a4050 !important;
+  line-height: 1.35 !important;
+  margin: 0 !important;
+}
+.card .st {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #059669 !important;
+  font: 700 12px var(--disp) !important;
+  background: #d1fae5;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid #10b981;
+}
+.card .st-dot {
+  width: 7px;
+  height: 7px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulseGreen 1.8s infinite;
+}
+@keyframes pulseGreen {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+.card-action-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.card-action-row .map-link {
+  font: 700 12px var(--disp);
+  color: #4a5568;
+  text-decoration: underline;
+}
+.card-action-row .vl {
+  background: #2a121d;
+  color: #ffffff !important;
+  font: 800 12.5px var(--disp);
+  padding: 6px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+.card-action-row .vl:hover {
+  transform: scale(1.05);
+}
+
 </style></head><body class="locked"><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
 <div class="g-projector-beam" aria-hidden="true"></div>
 <div class="g-ambient-glow" aria-hidden="true"></div>
@@ -2731,13 +2820,87 @@ const IOS_URL = "https://apps.apple.com/us/app/love-cafe/id6795100801";
 const SUGGEST_URL = "#cinemas";
 
 const CINEMAS = [
-  { chain: 'PVR', name: 'PVR Gold Class Grand', city: 'Mumbai • Palladium Mall', status: 'Delivering to seat', url: '#cinemas' },
-  { chain: 'PVR', name: 'PVR Director\'s Cut', city: 'New Delhi • Ambience Mall', status: 'Delivering to seat', url: '#cinemas' },
-  { chain: 'INOX', name: 'INOX Megaplex Luxury', city: 'Bengaluru • Inorbit Mall', status: 'Delivering to seat', url: '#cinemas' },
-  { chain: 'Cinépolis', name: 'Cinépolis VIP Lounge', city: 'Hyderabad • Forum Sujana', status: 'Delivering to seat', url: '#cinemas' },
-  { chain: 'AMC', name: 'AMC Empire Premier', city: 'New York • 42nd Street', status: 'Delivering to seat', url: '#cinemas' },
-  { chain: 'Regal', name: 'Regal LA Live Cinema', city: 'Los Angeles • Olympic Blvd', status: 'Delivering to seat', url: '#cinemas' },
-  { chain: 'Cinemark', name: 'Cinemark Century Theatres', city: 'San Francisco • Center Mall', status: 'Delivering to seat', url: '#cinemas' }
+  {
+    chain: 'West Bengal',
+    name: 'Atindra Multiplex',
+    city: 'Barrackpore, Kolkata',
+    address: '91, Ghoshpara Rd, Das Bari, Barrackpore, West Bengal 700120',
+    status: 'Delivering to seat',
+    maps: 'https://maps.google.com/?q=Atindra+Multiplex+Barrackpore',
+    url: '#get'
+  },
+  {
+    chain: 'West Bengal',
+    name: 'Cinema Hut',
+    city: 'Chandannagar, Hooghly',
+    address: 'V969+6PP, Barabazar, Chandannagar, West Bengal 712136',
+    status: 'Delivering to seat',
+    maps: 'https://maps.google.com/?q=Cinema+Hut+Chandannagar',
+    url: '#get'
+  },
+  {
+    chain: 'West Bengal',
+    name: 'Sushama Cinema',
+    city: 'Sheoraphuli, Kolkata',
+    address: 'Q8GG+P58, Grand Trunk Rd, Sheoraphuli, Kolkata, West Bengal 712223',
+    status: 'Delivering to seat',
+    maps: 'https://maps.google.com/?q=Sushama+Cinema+Sheoraphuli',
+    url: '#get'
+  },
+  {
+    chain: 'West Bengal',
+    name: 'Rupmandir Cinema',
+    city: 'Belghoria, Kolkata',
+    address: '40, Indrapuri, Beehive Garden, Belghoria, Kolkata, West Bengal 700056',
+    status: 'Delivering to seat',
+    maps: 'https://maps.google.com/?q=Rupmandir+Cinema+Belghoria',
+    url: '#get'
+  },
+  {
+    chain: 'West Bengal',
+    name: 'Rathindra Multiplex',
+    city: 'Sodepur, Kolkata',
+    address: '38, Rathindra Cinema Hall, 41, RN Ave, Block-D/32, No. 2 Deshabondhu Nagar, Sodepur, Khardaha, West Bengal 700110',
+    status: 'Delivering to seat',
+    maps: 'https://maps.google.com/?q=Rathindra+Multiplex+Sodepur',
+    url: '#get'
+  },
+  {
+    chain: 'Bihar',
+    name: 'Ambica Palace (Multiplex)',
+    city: 'Ghorasahan, East Champaran',
+    address: 'R4CM+QFH, Ghorasahan, Bihar 845303',
+    status: 'Delivering to seat',
+    maps: 'https://maps.google.com/?q=Ambica+Palace+Multiplex+Ghorasahan',
+    url: '#get'
+  },
+  {
+    chain: 'Bihar',
+    name: 'Sarswati Talkies',
+    city: 'Gopalganj',
+    address: 'Yadavpur Rd, Ward 7, Gopalganj, Bihar 841428',
+    status: 'Delivering to seat',
+    maps: 'https://maps.google.com/?q=Sarswati+Talkies+Gopalganj',
+    url: '#get'
+  },
+  {
+    chain: 'Bihar',
+    name: 'Lal Talkies',
+    city: 'Chanpatia, West Champaran',
+    address: 'Chanpatia, Bihar 845449',
+    status: 'Delivering to seat',
+    maps: 'https://maps.google.com/?q=Lal+Talkies+Chanpatia',
+    url: '#get'
+  },
+  {
+    chain: 'Bihar',
+    name: 'Mukta A2 Cinemas',
+    city: 'Dalsinghsarai, Samastipur',
+    address: 'Near Daini Chowk, Dalsinghsarai, Pagra, Bihar 848114',
+    status: 'Delivering to seat',
+    maps: 'https://maps.google.com/?q=Mukta+A2+Cinemas+Dalsinghsarai',
+    url: '#get'
+  }
 ];
 
 const sm = { o: 0, s: 0 };
