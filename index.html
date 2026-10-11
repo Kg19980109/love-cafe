@@ -963,8 +963,7 @@ body.locked{overflow:hidden;height:100svh}
   padding: calc(68px + env(safe-area-inset-top, 0px)) clamp(24px, 4vw, 64px) 20px !important;
   box-sizing: border-box;
   gap: clamp(16px, 2.5vw, 40px);
-  will-change: transform, opacity;
-  transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+  transform: translateZ(0);
 }
 
 .stick::before {
@@ -2215,7 +2214,7 @@ body.locked{overflow:hidden;height:100svh}
 /* MOBILE NAVIGATION MENU STYLES                                              */
 /* -------------------------------------------------------------------------- */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 .nav {
   z-index: 100;
@@ -2713,10 +2712,10 @@ body {
 }
 
 /* ==========================================================================
-   ALWAYS-VISIBLE NAVIGATION PANE & SMOOTH CINEMATIC SCROLL ANIMATION PACING
+   NAVIGATION VISIBILITY & RELAXED CINEMATIC SCROLL ANIMATION PACING
    ========================================================================== */
 
-/* 1. Navigation Pane: Hidden on starting screen, enters when cinema experience is clicked */
+/* 1. Navigation Pane: Hidden on starting gate, revealed on enter */
 body.locked .nav,
 body.locked #nav,
 body.locked header.nav,
@@ -2728,87 +2727,9 @@ body.locked .sd {
   transform: translateX(-50%) translateY(-120%) !important;
 }
 
-.nav, #nav, header.nav {
-  position: fixed !important;
-  top: 14px !important;
-  left: 50% !important;
-  transform: translateX(-50%) translateY(0) !important;
-  opacity: 1;
-  visibility: visible;
-  z-index: 1000 !important;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
-}
-
-.nav.hide, #nav.hide, header.nav.hide {
-  transform: translateX(-50%) translateY(0) !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  display: flex !important;
-}
-
-.nav.scrolled, #nav.scrolled {
-  box-shadow: 0 20px 48px -6px rgba(100, 6, 42, 0.5), 0 0 28px rgba(255, 42, 109, 0.35), inset 0 1px 1.5px rgba(255, 255, 255, 0.45) !important;
-  background: linear-gradient(135deg, rgba(152, 11, 64, 0.96) 0%, rgba(120, 8, 50, 0.98) 100%) !important;
-  border-color: rgba(255, 210, 230, 0.55) !important;
-  -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
-  backdrop-filter: blur(32px) saturate(200%) !important;
-}
-
-@media (max-width: 860px) {
-  .nav, #nav, header.nav {
-    top: 10px !important;
-    left: 10px !important;
-    right: 10px !important;
-    width: calc(100% - 20px) !important;
-    max-width: calc(100% - 20px) !important;
-    transform: none !important;
-    padding: 7px 12px !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    background: linear-gradient(135deg, rgba(168, 14, 72, 0.94) 0%, rgba(138, 10, 58, 0.97) 100%) !important;
-    border: 1.5px solid rgba(255, 195, 220, 0.45) !important;
-    box-shadow: 0 16px 38px -6px rgba(120, 8, 50, 0.45), 0 0 24px rgba(255, 42, 109, 0.28), inset 0 1px 1.5px rgba(255, 255, 255, 0.35) !important;
-  }
-  body.locked .nav,
-  body.locked #nav,
-  body.locked header.nav {
-    display: none !important;
-    transform: translateY(-120%) !important;
-  }
-  .brand {
-    font-size: 18px !important;
-    flex-shrink: 0 !important;
-  }
-  .nr {
-    gap: 8px !important;
-    margin-left: auto !important;
-    display: flex !important;
-    align-items: center !important;
-    flex-shrink: 0 !important;
-  }
-  .ib {
-    width: 36px !important;
-    height: 36px !important;
-    flex-shrink: 0 !important;
-    background: rgba(255, 255, 255, 0.22) !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
-    box-shadow: 0 4px 12px rgba(90, 6, 36, 0.3) !important;
-  }
-  .mb {
-    width: 36px !important;
-    height: 36px !important;
-    flex-shrink: 0 !important;
-    background: rgba(255, 255, 255, 0.22) !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
-    box-shadow: 0 4px 12px rgba(90, 6, 36, 0.3) !important;
-  }
-}
-
-/* 2. Smooth, Leisurely Scroll Pacing for Hero 3D Box Experience */
+/* 2. Relaxed, Unhurried Scroll Pacing for Hero 3D Box Experience */
 #scene {
-  height: 620vh !important;
+  height: 720vh !important;
   position: relative !important;
   z-index: 1 !important;
   background: linear-gradient(180deg, #ecb7b3 0%, #f1bebb 18%, #f7ceca 42%, #fddbd9 68%, #f8d4cf 85%, #f0c5bf 100%) !important;
@@ -2817,43 +2738,37 @@ body.locked .sd {
 
 @media (max-width: 860px) {
   #scene {
-    height: 540vh !important;
+    height: 600vh !important;
   }
 }
 
-/* 3. Smooth Pacing for Flavours & Highlights Sections */
+/* 3. Generous Pacing for Flavours Orbit & Highlights Slides (Every Dish Admired) */
 .orb3 {
-  height: 260vh !important;
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-.ps {
-  height: 260vh !important;
+  height: 420vh !important;
   position: relative !important;
   z-index: 1 !important;
 }
 
 @media (max-width: 860px) {
   .orb3 {
-    height: 440vh !important;
-  }
-  .ps {
-    height: 480vh !important;
+    height: 360vh !important;
   }
 }
 
-
-
-/* Premium Smooth Product Showcase Slides */
 .ps {
-  height: 560vh !important;
+  height: 620vh !important;
   position: relative !important;
   z-index: 1 !important;
   margin-top: -36px !important;
   border-top: 3px solid var(--line) !important;
   border-radius: 44px 44px 0 0 !important;
   background: #180910 !important;
+}
+
+@media (max-width: 860px) {
+  .ps {
+    height: 520vh !important;
+  }
 }
 
 .ps-stick {
@@ -4863,54 +4778,76 @@ body.locked .sd {
   transition: width 0.1s ease-out !important;
 }
 
+/* ========================================================================== */
+/* ULTRA-LUXURY FLOATING OBSIDIAN CRYSTAL NAVIGATION PANE                     */
+/* ========================================================================== */
+
 .nav, #nav, header.nav {
   position: fixed !important;
-  top: 14px !important;
+  top: 16px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  width: min(94vw, 1260px) !important;
-  max-width: 1260px !important;
-  height: auto !important;
-  padding: 8px 20px !important;
+  width: min(92vw, 1040px) !important;
+  max-width: 1040px !important;
+  height: 56px !important;
+  padding: 0 12px 0 20px !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  background: linear-gradient(135deg, rgba(168, 14, 72, 0.92) 0%, rgba(138, 10, 58, 0.95) 100%) !important;
+  box-sizing: border-box !important;
+  
+  /* Precision Obsidian Frosted Glass */
+  background: rgba(18, 7, 15, 0.78) !important;
   -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
   backdrop-filter: blur(28px) saturate(190%) !important;
-  border: 1.5px solid rgba(255, 195, 220, 0.45) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
   border-radius: 999px !important;
-  box-shadow: 0 18px 44px -8px rgba(120, 8, 50, 0.42), 0 0 24px rgba(255, 42, 109, 0.3), inset 0 1px 1.5px rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.55), 
+              0 0 20px -2px rgba(255, 42, 109, 0.15), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
   z-index: 1000 !important;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.4s ease, 
+              box-shadow 0.4s ease !important;
 }
 
 .nav:hover {
-  box-shadow: 0 22px 52px -6px rgba(120, 8, 50, 0.52), 0 0 32px rgba(255, 42, 109, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.5) !important;
-  border-color: rgba(255, 220, 235, 0.65) !important;
+  border-color: rgba(255, 255, 255, 0.24) !important;
+  box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.65), 
+              0 0 28px rgba(255, 42, 109, 0.25), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.38) !important;
 }
 
+.nav.scrolled, #nav.scrolled {
+  background: rgba(13, 5, 11, 0.92) !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 22px 52px -10px rgba(0, 0, 0, 0.75), 
+              0 0 26px rgba(255, 42, 109, 0.22), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.32) !important;
+}
+
+/* Brand Logo */
 .brand {
   display: flex !important;
   align-items: center !important;
-  gap: 12px !important;
   text-decoration: none !important;
-  position: relative !important;
+  flex-shrink: 0 !important;
+  padding: 2px 0 !important;
 }
 
 .brand-logo-img {
-  height: 40px !important;
+  height: 32px !important;
   width: auto !important;
-  max-width: 180px !important;
+  max-width: 145px !important;
   object-fit: contain !important;
   display: block !important;
-  filter: drop-shadow(0 2px 6px rgba(230, 25, 90, 0.15)) !important;
+  filter: drop-shadow(0 2px 8px rgba(255, 42, 109, 0.25)) !important;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease !important;
 }
 
 .brand:hover .brand-logo-img {
-  transform: scale(1.05) translateY(-1px) !important;
-  filter: drop-shadow(0 4px 14px rgba(230, 25, 90, 0.35)) !important;
+  transform: scale(1.04) !important;
+  filter: drop-shadow(0 2px 14px rgba(255, 42, 109, 0.6)) !important;
 }
 
 .footer-logo-img {
@@ -4927,157 +4864,244 @@ body.locked .sd {
   transform: scale(1.04) !important;
 }
 
-.brand-icon {
-  width: 36px !important;
-  height: 36px !important;
-  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
-  border-radius: 10px !important;
-  display: grid !important;
-  place-items: center !important;
-  box-shadow: 0 4px 12px rgba(230, 25, 90, 0.3) !important;
-  flex-shrink: 0 !important;
-}
-
-.brand-text {
-  display: flex !important;
-  flex-direction: column !important;
-  line-height: 0.95 !important;
-  font-family: var(--disp) !important;
-  font-weight: 800 !important;
-}
-
-.brand-text .b-love {
-  color: #4a1224 !important;
-  font-size: 17px !important;
-  letter-spacing: 0.02em !important;
-}
-
-.brand-text .b-cafe {
-  color: var(--rasp) !important;
-  font-size: 17px !important;
-  letter-spacing: 0.02em !important;
-}
-
+/* Center Links Island */
 .nl {
   display: flex !important;
   align-items: center !important;
-  gap: 6px !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  padding: 4px 6px !important;
+  gap: 3px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  padding: 4px 5px !important;
   border-radius: 999px !important;
-  border: 1px solid rgba(255, 255, 255, 0.14) !important;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35) !important;
 }
 
 .nl a {
-  color: rgba(255, 235, 242, 0.9) !important;
+  color: rgba(255, 235, 245, 0.78) !important;
   text-decoration: none !important;
   font-family: var(--sans) !important;
-  font-size: 13.5px !important;
-  font-weight: 600 !important;
-  padding: 7px 16px !important;
+  font-size: 13px !important;
+  font-weight: 550 !important;
+  letter-spacing: 0.01em !important;
+  padding: 6px 14px !important;
   border-radius: 999px !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
   display: inline-flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+}
+
+.nl a:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  transform: translateY(-1px) !important;
+}
+
+.nl a.active, .nl a.on {
+  background: linear-gradient(135deg, #ff2a6d 0%, #d81159 100%) !important;
+  color: #ffffff !important;
+  font-weight: 650 !important;
+  box-shadow: 0 4px 14px rgba(255, 42, 109, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+.nl a.active::after, .nl a.on::after {
+  display: none !important;
+}
+
+/* Nav Actions Cluster */
+.nav-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+/* VIP In-Seat Order Button */
+.nav-vip-cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  height: 38px !important;
+  padding: 0 15px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  font-family: var(--sans) !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, rgba(255, 42, 109, 0.95) 0%, rgba(216, 17, 89, 0.98) 100%) !important;
+  border: 1px solid rgba(255, 200, 220, 0.45) !important;
+  box-shadow: 0 6px 18px rgba(255, 42, 109, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.45) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+}
+
+.nav-vip-cta:hover {
+  transform: translateY(-1.5px) scale(1.02) !important;
+  box-shadow: 0 10px 24px rgba(255, 42, 109, 0.6), inset 0 1px 1px #fff !important;
+  border-color: #ffffff !important;
+}
+
+.vip-pulse-dot {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: #39ff14 !important;
+  box-shadow: 0 0 8px #39ff14 !important;
+  animation: pulseBeacon 1.8s ease-in-out infinite alternate !important;
+}
+
+@keyframes pulseBeacon {
+  0% { opacity: 0.6; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1.25); box-shadow: 0 0 12px #39ff14; }
+}
+
+.vip-cta-arrow {
+  font-size: 13px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.nav-vip-cta:hover .vip-cta-arrow {
+  transform: translateX(2.5px) !important;
+}
+
+/* Micro Glass Store Badges */
+.nav-store-icons {
+  display: flex !important;
   align-items: center !important;
   gap: 6px !important;
 }
 
-.nl a:hover {
-  color: #fff !important;
-  background: rgba(255, 255, 255, 0.16) !important;
-  box-shadow: 0 4px 14px rgba(255, 42, 109, 0.3) !important;
-  transform: translateY(-1px) !important;
-}
-
-.nl a.active {
-  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
-  color: #fff !important;
-  font-weight: 700 !important;
-  box-shadow: 0 4px 16px rgba(255, 42, 109, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.35) !important;
-}
-
-.nl a.active::after {
-  display: none !important;
-}
-
-.nav-actions {
-  display: flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-}
-
-.nav-store-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 9px !important;
-  background: rgba(255, 255, 255, 0.18) !important;
-  color: #fff !important;
-  padding: 6px 14px !important;
-  border-radius: 999px !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.38) !important;
-  text-decoration: none !important;
-  font-family: var(--sans) !important;
-  font-size: 12px !important;
-  font-weight: 700 !important;
-  line-height: 1.15 !important;
-  box-shadow: 0 4px 14px rgba(90, 6, 36, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.35) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s, border-color 0.25s, background 0.25s !important;
-}
-
-.nav-store-btn:hover {
-  transform: translateY(-2px) scale(1.02) !important;
-  background: rgba(255, 255, 255, 0.28) !important;
-  border-color: #ffffff !important;
-  box-shadow: 0 8px 22px rgba(255, 42, 109, 0.4), inset 0 1px 1.5px rgba(255, 255, 255, 0.45) !important;
-}
-
-.nav-store-btn small {
-  display: block !important;
-  font-size: 8px !important;
-  font-weight: 600 !important;
-  opacity: 0.85 !important;
-  letter-spacing: 0.04em !important;
-  text-transform: uppercase !important;
-}
-
-.nav-circle-btn {
+.nav-icon-link {
   width: 36px !important;
   height: 36px !important;
   border-radius: 50% !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+  display: grid !important;
+  place-items: center !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.22s ease !important;
+  text-decoration: none !important;
+}
+
+.nav-icon-link:hover {
   background: rgba(255, 255, 255, 0.22) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  transform: translateY(-1.5px) scale(1.06) !important;
+  box-shadow: 0 6px 16px rgba(255, 42, 109, 0.35) !important;
+}
+
+.nav-circle-btn.menu-circle {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
   backdrop-filter: blur(14px) !important;
   -webkit-backdrop-filter: blur(14px) !important;
   color: #fff !important;
   display: none !important;
   place-items: center !important;
   cursor: pointer !important;
-  box-shadow: 0 4px 12px rgba(90, 6, 36, 0.28), inset 0 1px 1.5px rgba(255, 255, 255, 0.4) !important;
-  transition: transform 0.2s, background 0.2s, box-shadow 0.2s, border-color 0.2s !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+  transition: all 0.22s ease !important;
 }
 
-.nav-circle-btn:hover,
-.nav-circle-btn:active {
-  transform: translateY(-1px) scale(1.06) !important;
-  background: rgba(255, 255, 255, 0.35) !important;
-  border-color: #ffffff !important;
-  box-shadow: 0 6px 18px rgba(255, 42, 109, 0.45) !important;
-}
-
-.nav-circle-btn.play-circle,
-.nav-circle-btn.apple-circle,
-.nav-circle-btn.menu-circle {
-  color: #fff !important;
+.nav-circle-btn.menu-circle:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: #fff !important;
+  transform: scale(1.05) !important;
 }
 
 .nav-circle-btn.menu-circle svg {
   stroke: #ffffff !important;
 }
 
-.nav-circle-btn.apple-circle svg path {
+/* Side Section Rail (.sd) */
+.sd {
+  position: fixed !important;
+  right: 18px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 90 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  pointer-events: auto !important;
+}
+
+.sd-track {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: rgba(18, 7, 14, 0.65) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 999px !important;
+  padding: 14px 7px !important;
+  box-shadow: 0 14px 32px -6px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.sd a, .sd-dot {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.sd-pip {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.35) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.sd a:hover .sd-pip {
+  background: #ffffff !important;
+  transform: scale(1.4) !important;
+}
+
+.sd a.on .sd-pip, .sd a.active .sd-pip {
+  width: 6px !important;
+  height: 18px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(180deg, #ffd23f 0%, #ff2a6d 100%) !important;
+  box-shadow: 0 0 12px rgba(255, 42, 109, 0.85), 0 0 4px #ffd23f !important;
+}
+
+.sd-label {
+  position: absolute !important;
+  right: 24px !important;
+  padding: 4px 10px !important;
+  border-radius: 8px !important;
+  background: rgba(18, 7, 14, 0.92) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #fff !important;
+  font-family: var(--sans) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  transform: translateX(6px) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4) !important;
+}
+
+.sd a:hover .sd-label {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
   fill: #ffffff !important;
 }
 
@@ -5756,34 +5780,37 @@ body.locked .sd {
     transform: none !important;
     width: calc(100% - 20px) !important;
     max-width: calc(100% - 20px) !important;
-    padding: 7px 12px !important;
-    background: linear-gradient(135deg, rgba(168, 14, 72, 0.94) 0%, rgba(138, 10, 58, 0.97) 100%) !important;
-    border: 1.5px solid rgba(255, 195, 220, 0.45) !important;
-    box-shadow: 0 16px 38px -6px rgba(120, 8, 50, 0.45), 0 0 24px rgba(255, 42, 109, 0.28), inset 0 1px 1.5px rgba(255, 255, 255, 0.35) !important;
+    height: 52px !important;
+    padding: 0 10px !important;
+    background: rgba(18, 7, 15, 0.88) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    box-shadow: 0 14px 36px -6px rgba(0, 0, 0, 0.6), 0 0 18px rgba(255, 42, 109, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
   }
 
   .brand-logo-img {
-    height: 36px !important;
+    height: 28px !important;
   }
 
   .nl {
     display: none !important;
   }
 
-  .nav-store-btn {
+  .nav-store-icons {
     display: none !important;
   }
 
-  .nav-circle-btn.play-circle {
-    display: grid !important;
-  }
-
-  .nav-circle-btn.apple-circle {
-    display: grid !important;
+  .nav-vip-cta {
+    height: 34px !important;
+    padding: 0 12px !important;
+    font-size: 11.5px !important;
   }
 
   .nav-circle-btn.menu-circle {
     display: grid !important;
+  }
+
+  .sd {
+    display: none !important;
   }
 
   .stick {
@@ -6877,7 +6904,18 @@ body.locked .sd {
 </div>
 </div>
 <div id="dock"><div class="stores"><a class="store" data-play href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get LOVE CAFE on Google Play"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg><span><small>GET IT ON</small>Google Play</span></a><a class="store" data-ios href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download LOVE CAFE on the App Store"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.2-2.800.8-3.500.8-.7 0-1.800-.8-3-.8-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7c1.300 0 2.100-1.100 2.800-2.200.9-1.300 1.300-2.500 1.300-2.600 0 0-2.500-1-2.500-3.800zM14.100 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.600 1.400-.6.700-1.100 1.700-.9 2.700 1 .1 2-.5 2.600-1.300z"/></svg><span><small>Download on the</small>App Store</span></a></div></div>
-<nav class="sd" aria-label="Page sections"><a href="#top" title="Start"></a><a href="#flavours" title="Flavours"></a><a href="#story" title="Movie night"></a><a href="#app" title="App"></a><a href="#cinemas" title="Cinemas"></a><a href="#reviews" title="Reviews"></a><a href="#rewards" title="CinePoints"></a><a href="#get" title="Download"></a></nav>
+<nav class="sd" aria-label="Page sections">
+  <div class="sd-track">
+    <a href="#top" class="sd-dot on" data-title="Home"><span class="sd-label">Home</span><span class="sd-pip"></span></a>
+    <a href="#flavours" class="sd-dot" data-title="Flavours"><span class="sd-label">Our Menu</span><span class="sd-pip"></span></a>
+    <a href="#story" class="sd-dot" data-title="Movie night"><span class="sd-label">The Experience</span><span class="sd-pip"></span></a>
+    <a href="#app" class="sd-dot" data-title="App"><span class="sd-label">Love App</span><span class="sd-pip"></span></a>
+    <a href="#cinemas" class="sd-dot" data-title="Cinemas"><span class="sd-label">Find Cinema</span><span class="sd-pip"></span></a>
+    <a href="#reviews" class="sd-dot" data-title="Reviews"><span class="sd-label">Guest Reviews</span><span class="sd-pip"></span></a>
+    <a href="#rewards" class="sd-dot" data-title="CinePoints"><span class="sd-label">CinePoints</span><span class="sd-pip"></span></a>
+    <a href="#get" class="sd-dot" data-title="Download"><span class="sd-label">Get App</span><span class="sd-pip"></span></a>
+  </div>
+</nav>
 <div id="bar" aria-hidden="true"></div>
 <header class="nav" id="nav">
   <a class="brand" href="#top" aria-label="LOVE CAFE - please taste me one time!">
@@ -6893,27 +6931,25 @@ body.locked .sd {
   </nav>
 
   <div class="nav-actions">
-    <!-- Desktop Store Pills -->
-    <a class="nav-store-btn" data-play href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get on Google Play">
-      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
-      <div><small>GET IT ON</small>Google Play</div>
+    <!-- VIP In-Seat Order CTA -->
+    <a class="nav-vip-cta" href="#get" aria-label="Order to Seat">
+      <span class="vip-pulse-dot"></span>
+      <span class="vip-cta-text">Order to Seat</span>
+      <span class="vip-cta-arrow">→</span>
     </a>
-    <a class="nav-store-btn" data-ios href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download on App Store">
-      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.2-2.800.8-3.500.8-.7 0-1.800-.8-3-.8-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7c1.300 0 2.100-1.100 2.800-2.200.9-1.300 1.300-2.500 1.300-2.600 0 0-2.500-1-2.500-3.800zM14.100 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.600 1.400-.6.700-1.100 1.700-.9 2.700 1 .1 2-.5 2.600-1.300z"/></svg>
-      <div><small>Download on the</small>App Store</div>
-    </a>
+    <!-- Compact Glass Store Icons -->
+    <div class="nav-store-icons">
+      <a class="nav-icon-link" data-play href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" title="Get on Google Play" aria-label="Google Play">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
+      </a>
+      <a class="nav-icon-link" data-ios href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" title="Download on App Store" aria-label="App Store">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.2-2.800.8-3.500.8-.7 0-1.800-.8-3-.8-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7c1.300 0 2.100-1.100 2.800-2.200.9-1.300 1.300-2.500 1.300-2.600 0 0-2.500-1-2.500-3.800zM14.100 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.600 1.400-.6.700-1.100 1.700-.9 2.700 1 .1 2-.5 2.600-1.300z"/></svg>
+      </a>
+    </div>
 
-    <!-- Mobile Circular Buttons (from reference design) -->
-    <a class="nav-circle-btn play-circle" data-play href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Google Play">
-      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
-    </a>
-    <a class="nav-circle-btn apple-circle" data-ios href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="App Store">
-      <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#fff" d="M16.4 12.6c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.2-2.800.8-3.500.8-.7 0-1.800-.8-3-.8-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7c1.300 0 2.100-1.100 2.800-2.200.9-1.300 1.300-2.500 1.300-2.600 0 0-2.500-1-2.500-3.800zM14.100 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.600 1.400-.6.700-1.100 1.700-.9 2.700 1 .1 2-.5 2.600-1.300z"/></svg>
-    </a>
-
-    <!-- Hamburger Menu Button -->
+    <!-- Mobile Hamburger Menu Button -->
     <button class="nav-circle-btn menu-circle" id="mb" aria-expanded="false" aria-controls="menu" aria-label="Toggle Navigation Menu">
-      <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
     </button>
   </div>
 </header>
@@ -8286,6 +8322,7 @@ body.locked .sd {
 <nav class="fl" aria-label="Footer"><a href="#top">About</a><a href="#cinemas">Locations</a><a href="#rewards">CinePoints</a><a href="#">Contact</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Instagram</a></nav></footer>
 
 
+<script src="assets/lenis.min.js"></script>
 <script>
 // ==========================================================================
 // LOVE CAFE — PROFESSIONAL INTERACTIVE APPLICATION LOGIC
@@ -8399,6 +8436,40 @@ const prog = el => {
   return clamp(-r.top / Math.max(1, r.height - innerHeight));
 };
 
+// Premium Silky Smooth Scrolling (Lenis v1.1.18)
+let lenis = null;
+try {
+  if (typeof Lenis !== 'undefined' && !reduce) {
+    lenis = new Lenis({
+      duration: 1.35,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 0.82, // Relaxed wheel pacing so visitors comfortably view all products
+      touchMultiplier: 1.15,
+      infinite: false,
+    });
+
+    if (document.body.classList.contains('locked')) {
+      lenis.stop();
+    }
+
+    function lenisRaf(time) {
+      if (lenis) lenis.raf(time);
+      requestAnimationFrame(lenisRaf);
+    }
+    requestAnimationFrame(lenisRaf);
+
+    lenis.on('scroll', () => {
+      onScroll();
+      if (typeof updateScrollFX === 'function') updateScrollFX();
+    });
+  }
+} catch (err) {
+  console.warn('Lenis smooth scroll initialization:', err);
+}
+
 // --------------------------------------------------------------------------
 // 1. POPUP PARTICLE BURSTS (CONFETTI / POPCORN / STARS)
 // --------------------------------------------------------------------------
@@ -8449,6 +8520,10 @@ window.startExperience = function(e) {
   }
   
   document.body.classList.remove('locked');
+  if (lenis) {
+    lenis.start();
+    lenis.scrollTo(0, { immediate: true });
+  }
   const navEl = document.querySelector('.nav') || document.getElementById('nav');
   if (navEl) {
     navEl.style.display = 'flex';
@@ -8742,30 +8817,31 @@ function renderScene(p) {
     d.classList.toggle('active-now', i === k);
   });
 
-  const expEl = document.getElementById('scrollExplore');
   if (expEl) {
     expEl.style.opacity = p > 0.04 ? '0' : '1';
     expEl.style.pointerEvents = p > 0.04 ? 'none' : 'auto';
   }
 
-  const stickEl = document.querySelector('.stick');
   if (stickEl) {
     if (p > 0.90) {
       const exitP = (p - 0.90) / 0.10;
-      stickEl.style.transform = `scale(${1 - 0.03 * exitP}) translateY(${-25 * exitP}px)`;
+      stickEl.style.transform = `translateZ(0) scale(${1 - 0.03 * exitP}) translateY(${-25 * exitP}px)`;
       stickEl.style.opacity = `${1 - 0.28 * exitP}`;
     } else {
-      stickEl.style.transform = 'none';
+      stickEl.style.transform = 'translateZ(0)';
       stickEl.style.opacity = '1';
     }
   }
 }
 
+const expEl = document.getElementById('scrollExplore');
+const stickEl = document.querySelector('.stick');
+
 function getSceneTarget() {
   if (!scene) return 0;
-  const r = scene.getBoundingClientRect();
+  const sy = window.pageYOffset || document.documentElement.scrollTop;
   const maxScroll = Math.max(1, scene.offsetHeight - innerHeight);
-  return clamp(-r.top / maxScroll);
+  return clamp(sy / maxScroll);
 }
 
 function sceneLoop() {
@@ -8950,35 +9026,63 @@ const od = $('od');
 const ods = od ? [...od.children] : [];
 let lastOrbitIdx = -1;
 
-function updateOrbit() {
-  if (reduce || !rg) return;
-  const ease = t => t * t * (3 - 2 * t);
-  const flavoursEl = $('flavours');
-  if (!flavoursEl) return;
+const flavoursEl = $('flavours');
+const oStick = flavoursEl ? flavoursEl.querySelector('.o-stick') : null;
+const oHead = oStick ? oStick.querySelector('.o-head-wrap') : null;
+const oCap = oStick ? oStick.querySelector('.o-cap') : null;
 
-  const r = flavoursEl.getBoundingClientRect();
-  const enter = clamp(1 - r.top / innerHeight);
+// Cached geometry to prevent layout thrashing & jitter on scrolling
+let geoCache = { 
+  flavoursTop: 0, 
+  flavoursHeight: 1, 
+  psTop: 0, 
+  psHeight: 1,
+  rgWidth: 1000,
+  secsPositions: []
+};
+
+function updateGeoCache() {
+  const f = $('flavours');
+  const p = $('ps');
+  if (f) { geoCache.flavoursTop = f.offsetTop; geoCache.flavoursHeight = f.offsetHeight; }
+  if (p) { geoCache.psTop = p.offsetTop; geoCache.psHeight = p.offsetHeight; }
+  if (rg) { geoCache.rgWidth = rg.clientWidth; }
+  const allSecs = [...document.querySelectorAll('.sd a')].map(a => document.querySelector(a.getAttribute('href')));
+  geoCache.secsPositions = allSecs.map(s => s ? s.offsetTop : 0);
+}
+window.addEventListener('resize', updateGeoCache, { passive: true });
+updateGeoCache();
+
+function fastProg(top, height) {
+  const sy = window.pageYOffset || document.documentElement.scrollTop;
+  const maxSpan = Math.max(1, height - window.innerHeight);
+  return clamp((sy - top) / maxSpan);
+}
+
+function updateOrbit() {
+  if (reduce || !rg || !flavoursEl) return;
+  const ease = t => t * t * (3 - 2 * t);
+
+  const sy = window.pageYOffset || document.documentElement.scrollTop;
+  const enter = clamp(1 - (geoCache.flavoursTop - sy) / innerHeight);
   // 7 snack items -> 6 intervals (smooth continuous progression with organic easing):
   const P = sm.o * 6;
   const fl = Math.floor(Math.min(P, 5.999));
   const f = P - fl;
   const e = ease(f);
   const rot = fl + e;
-  const Wd = Math.min(rg.clientWidth * 0.35, 390);
+  const Wd = Math.min(geoCache.rgWidth * 0.35, 390);
 
   // Smoothly fade in header and controls as flavours enters viewport
-  const oStick = flavoursEl.querySelector('.o-stick');
-  if (oStick) {
-    const oHead = oStick.querySelector('.o-head-wrap');
-    const oCap = oStick.querySelector('.o-cap');
-    if (oHead) {
-      oHead.style.opacity = `${clamp(enter * 1.5)}`;
-      oHead.style.transform = `translateY(${(1 - clamp(enter * 1.5)) * 20}px)`;
-    }
-    if (oCap) {
-      oCap.style.opacity = `${clamp(enter * 1.5)}`;
-      oCap.style.transform = `translateY(${(1 - clamp(enter * 1.5)) * 20}px)`;
-    }
+  if (oHead) {
+    const op = clamp(enter * 1.5);
+    oHead.style.opacity = `${op}`;
+    oHead.style.transform = `translateY(${(1 - op) * 20}px)`;
+  }
+  if (oCap) {
+    const op = clamp(enter * 1.5);
+    oCap.style.opacity = `${op}`;
+    oCap.style.transform = `translateY(${(1 - op) * 20}px)`;
   }
 
   let bestIdx = 0, bestDist = 999;
@@ -9032,7 +9136,11 @@ function scrollOrbitToIndex(targetIdx) {
   const start = flavoursEl.offsetTop;
   const span = flavoursEl.offsetHeight - window.innerHeight;
   const targetTop = start + (targetIdx / 6) * span;
-  window.scrollTo({ top: targetTop, behavior: 'smooth' });
+  if (lenis) {
+    lenis.scrollTo(targetTop, { duration: 1.1 });
+  } else {
+    window.scrollTo({ top: targetTop, behavior: 'smooth' });
+  }
 }
 
 flavourPills.forEach((pill, idx) => {
@@ -9069,7 +9177,11 @@ function scrollSlideToIndex(targetIdx) {
   const start = psEl.offsetTop;
   const span = psEl.offsetHeight - window.innerHeight;
   const targetTop = start + (targetIdx / Math.max(1, slides.length - 1)) * span;
-  window.scrollTo({ top: targetTop, behavior: 'smooth' });
+  if (lenis) {
+    lenis.scrollTo(targetTop, { duration: 1.1 });
+  } else {
+    window.scrollTo({ top: targetTop, behavior: 'smooth' });
+  }
 }
 
 psPills.forEach((pill, idx) => {
@@ -9120,6 +9232,10 @@ function toggleMobileMenu(open) {
   mb.setAttribute('aria-expanded', open);
   mb.classList.toggle('x', open);
   document.body.classList.toggle('locked', open);
+  if (lenis) {
+    if (open) lenis.stop();
+    else lenis.start();
+  }
 }
 
 if (mb) {
@@ -9141,12 +9257,16 @@ if (mclose) {
 function scrollToAnchor(targetId) {
   const target = document.querySelector(targetId);
   if (!target) return;
-  const navHeight = (nav ? nav.offsetHeight : 60) + 16;
-  const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-  window.scrollTo({
-    top: Math.max(0, targetPos),
-    behavior: 'smooth'
-  });
+  const navHeight = (nav ? nav.offsetHeight : 56) + 16;
+  if (lenis) {
+    lenis.scrollTo(target, { offset: -navHeight, duration: 1.25 });
+  } else {
+    const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+    window.scrollTo({
+      top: Math.max(0, targetPos),
+      behavior: 'smooth'
+    });
+  }
 }
 
 if (menu) {
@@ -9193,51 +9313,37 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 function updateNavActive() {
-  let activeId = '';
+  const sy = window.pageYOffset || document.documentElement.scrollTop;
+  let activeId = 'top';
   let act = 0;
   secs.forEach((s, i) => {
-    if (s && s.getBoundingClientRect().top < innerHeight * 0.5) {
-      activeId = s.id;
-      act = i;
+    if (s) {
+      const top = (geoCache.secsPositions && geoCache.secsPositions[i] !== undefined) ? geoCache.secsPositions[i] : s.offsetTop;
+      if (top <= sy + innerHeight * 0.45) {
+        activeId = s.id;
+        act = i;
+      }
     }
   });
-  nlk.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + activeId));
+  nlk.forEach(a => {
+    const isAct = a.getAttribute('href') === '#' + activeId;
+    a.classList.toggle('on', isAct);
+    a.classList.toggle('active', isAct);
+  });
   sd.forEach((a, i) => a.classList.toggle('on', i === act));
 
-  const pr = $('ps') ? $('ps').getBoundingClientRect() : null;
-  const po = $('flavours') ? $('flavours').getBoundingClientRect() : null;
-  const getEl = $('get') ? $('get').getBoundingClientRect() : null;
-  const scEl = $('scene') ? $('scene').getBoundingClientRect() : null;
-
-  if (dock && scEl && getEl) {
-    dock.classList.toggle('on', 
-      scEl.bottom < innerHeight * 0.5 && 
-      getEl.top > innerHeight * 0.6 && 
-      !(pr && pr.top < innerHeight && pr.bottom > 0) && 
-      !(po && po.top < innerHeight && po.bottom > 0)
-    );
+  if (dock) {
+    const scHeight = $('scene') ? $('scene').offsetHeight : 0;
+    const getTop = $('get') ? $('get').offsetTop : 999999;
+    const inBetween = (sy > scHeight * 0.7) && (sy < getTop - innerHeight * 0.5);
+    const inPs = (sy >= geoCache.psTop - 50) && (sy <= geoCache.psTop + geoCache.psHeight - 50);
+    const inFlavours = (sy >= geoCache.flavoursTop - 50) && (sy <= geoCache.flavoursTop + geoCache.flavoursHeight - 50);
+    dock.classList.toggle('on', inBetween && !inPs && !inFlavours);
   }
 }
 
 window.addEventListener('scroll', () => requestAnimationFrame(updateNavActive), { passive: true });
 updateNavActive();
-
-// Cached geometry to prevent layout thrashing & lag on scrolling
-let geoCache = { flavoursTop: 0, flavoursHeight: 1, psTop: 0, psHeight: 1 };
-function updateGeoCache() {
-  const f = $('flavours');
-  const p = $('ps');
-  if (f) { geoCache.flavoursTop = f.offsetTop; geoCache.flavoursHeight = f.offsetHeight; }
-  if (p) { geoCache.psTop = p.offsetTop; geoCache.psHeight = p.offsetHeight; }
-}
-window.addEventListener('resize', updateGeoCache, { passive: true });
-updateGeoCache();
-
-function fastProg(top, height) {
-  const sy = window.pageYOffset || document.documentElement.scrollTop;
-  const maxSpan = Math.max(1, height - window.innerHeight);
-  return clamp((sy - top) / maxSpan);
-}
 
 // Ultra-smooth 60-120fps animation loop for orbit and slides
 (function mainLoop() {
