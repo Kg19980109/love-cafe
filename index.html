@@ -2468,367 +2468,563 @@ body.locked {
 
 
 /* ==========================================================================
-   ULTRA-PREMIUM APP SHOWCASE SECTION (REAL SCREENS & 3D FLOATING PHONES)
+   SHOWSTOPPING OFFICIAL LOVE CAFE APP THEATRE STAGE
+   Interactive 3D Titanium Device Showcase with Real App Screens
    ========================================================================== */
-.app-showcase-section {
+.app-theatre-stage {
   position: relative !important;
-  background: radial-gradient(85% 70% at 50% 50%, #fde8ec 0%, #fbd0db 55%, #f9b8c6 100%) !important;
+  background: radial-gradient(circle at 60% 25%, #152654 0%, #0d1738 40%, #050816 85%) !important;
   border-top: 3.5px solid var(--line) !important;
   border-bottom: 3.5px solid var(--line) !important;
-  padding: clamp(60px, 8vw, 120px) clamp(16px, 4vw, 60px) !important;
+  padding: clamp(65px, 8vw, 120px) clamp(16px, 4vw, 60px) !important;
   overflow: hidden !important;
+  color: #ffffff !important;
 }
 
-.app-showcase-wrap {
+/* Atmospheric Theatre Stage Lighting */
+.stage-spotlight-beam {
+  position: absolute;
+  top: -15%;
+  right: 12%;
+  width: 580px;
+  height: 680px;
+  background: radial-gradient(circle at 50% 30%, rgba(56, 189, 248, 0.22) 0%, rgba(230, 25, 90, 0.15) 45%, transparent 70%);
+  filter: blur(65px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.stage-cinema-seats-bg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px),
+    linear-gradient(to bottom, rgba(5, 8, 22, 0.2) 0%, rgba(5, 8, 22, 0.8) 100%);
+  background-size: 28px 28px, 100% 100%;
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stage-content-wrap {
+  position: relative;
+  z-index: 2;
   align-items: center !important;
-  gap: clamp(30px, 5vw, 70px) !important;
-  max-width: 1300px !important;
+  gap: clamp(35px, 5vw, 80px) !important;
+  max-width: 1320px !important;
   margin: 0 auto !important;
 }
 
-.app-info-col {
+/* Left Column: Storytelling & Conversion */
+.stage-info-col {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+  gap: 18px;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
-.app-badge-pill {
+.stage-pill-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: #ffffff;
-  border: 2px solid var(--line);
-  box-shadow: 0 3.5px 0 var(--line);
+  gap: 10px;
+  background: rgba(14, 28, 68, 0.85);
+  border: 1.5px solid rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.25), 0 3px 0 rgba(0, 0, 0, 0.5);
   border-radius: 999px;
-  padding: 5px 16px;
+  padding: 6px 18px;
   font: 800 12px/1.2 var(--disp);
-  color: #e6195a;
-  letter-spacing: 0.06em;
+  color: #38bdf8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-.app-info-col h2 {
-  font: 800 clamp(34px, 4.8vw, 58px)/1.05 var(--disp) !important;
-  color: #2a121d !important;
+.stage-pill-badge .live-dot {
+  width: 8px;
+  height: 8px;
+  background: #00e676;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00e676;
+  animation: stagePulseDot 1.8s infinite;
+}
+
+@keyframes stagePulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.35); opacity: 0.65; }
+}
+
+.stage-info-col h2 {
+  font: 800 clamp(34px, 4.6vw, 56px)/1.08 var(--disp) !important;
+  color: #ffffff !important;
   margin: 0 !important;
+  letter-spacing: -0.02em;
 }
 
-.app-info-col h2 .accent-text {
+.glow-cyan-pink {
   font-style: normal;
-  background: linear-gradient(135deg, #e6195a 0%, #ff3b75 100%);
+  background: linear-gradient(135deg, #38bdf8 0%, #ff3b75 55%, #fbbf24 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
+  text-shadow: 0 0 30px rgba(56, 189, 248, 0.25);
 }
 
-.app-info-col p.lead {
-  font: 500 clamp(15px, 1.4vw, 18px)/1.45 var(--sans);
-  color: #6a2c42;
+.stage-lead {
+  font: 500 clamp(15px, 1.35vw, 17.5px)/1.55 var(--sans);
+  color: #cbd5e1;
   margin: 0;
-  max-width: 520px;
+  max-width: 530px;
 }
 
-.app-perks-list {
+/* Interactive Screen Selector Pills */
+.stage-screen-tabs {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin: 8px 0;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 2px;
   width: 100%;
 }
 
-.app-perk-item {
+.screen-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  color: #e2e8f0;
+  font: 700 13px/1.2 var(--sans);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.screen-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.screen-tab-btn.active {
+  background: linear-gradient(135deg, #1d4ed8 0%, #e6195a 100%);
+  border-color: #60a5fa;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4), 0 3px 0 rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.screen-tab-btn .tab-icon {
+  font-size: 15px;
+}
+
+/* 3 High-Impact Feature Cards */
+.stage-perks-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 530px;
+  margin: 4px 0;
+}
+
+.stage-perk-card {
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  background: rgba(255, 255, 255, 0.75);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border: 2px solid rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 16px rgba(160, 40, 70, 0.08), 0 2px 0 var(--line);
+  background: rgba(18, 28, 58, 0.65);
+  border: 1px solid rgba(56, 189, 248, 0.18);
   border-radius: 16px;
   padding: 12px 16px;
-  transition: transform 0.2s ease, background 0.2s ease;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
-.app-perk-item:hover {
-  transform: translateX(4px);
-  background: #ffffff;
+.stage-perk-card:hover {
+  transform: translateX(6px);
+  border-color: rgba(56, 189, 248, 0.45);
+  background: rgba(24, 38, 78, 0.85);
 }
 
-.perk-icon-wrap {
-  font-size: 24px;
-  background: #ffe3ea;
+.perk-badge-icon {
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
-  width: 44px;
-  height: 44px;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(230, 25, 90, 0.25) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 20px;
   flex-shrink: 0;
-  border: 1.5px solid #e6195a;
 }
 
-.app-perk-item h4 {
+.stage-perk-card h4 {
   font: 800 15px/1.2 var(--disp);
-  color: #2a121d;
-  margin: 0 0 2px;
+  color: #f8fafc;
+  margin: 0 0 3px;
 }
 
-.app-perk-item p {
-  font: 500 13px/1.35 var(--sans);
-  color: #6a3547;
+.stage-perk-card p {
+  font: 500 13px/1.4 var(--sans);
+  color: #94a3b8;
   margin: 0;
 }
 
-.app-rating-strip {
+/* Luxury Obsidian Store Buttons */
+.stage-stores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.stage-stores .store {
+  background: #090e1f !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(56, 189, 248, 0.25) inset !important;
+  color: #ffffff !important;
+  border-radius: 16px !important;
+  padding: 10px 20px !important;
+  transition: all 0.25s ease !important;
+}
+
+.stage-stores .store:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 12px 28px rgba(56, 189, 248, 0.35) !important;
+}
+
+.stage-trust-strip {
   display: flex;
   align-items: center;
   gap: 10px;
   font: 600 13px var(--sans);
-  color: #4a1d2e;
-  margin-top: 4px;
+  color: #94a3b8;
+  margin-top: 2px;
 }
 
-.stars-gold {
-  color: #f59e0b;
+.stage-trust-strip .stars-gold {
+  color: #fbbf24;
   font-size: 16px;
   letter-spacing: 2px;
 }
 
-/* --- Phones 3D Showcase Container --- */
-.phones-showcase-wrap {
+/* Right Column: 3D Multi-Perspective Phone Stage */
+.stage-phones-col {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 580px;
   width: 100%;
-  max-width: 620px;
-  margin: 0 auto;
+  max-width: 650px;
+  height: 620px;
   perspective: 1200px;
 }
 
-.phones-ambient-glow {
+.stage-ambient-halo {
   position: absolute;
-  width: 90%;
+  width: 80%;
   height: 80%;
-  background: radial-gradient(circle at 50% 50%, rgba(230, 25, 90, 0.28) 0%, rgba(255, 60, 120, 0.1) 50%, transparent 75%);
-  filter: blur(40px);
+  background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.25) 0%, rgba(230, 25, 90, 0.18) 45%, transparent 75%);
+  filter: blur(55px);
   z-index: 0;
   pointer-events: none;
 }
 
-/* Individual Phone Frames */
-.phone-frame {
+/* Titanium iPhone Chassis Styling */
+.titanium-phone {
   position: absolute;
-  width: 260px;
-  height: 520px;
-  background: #0f0a14;
-  border: 4px solid #24141e;
-  box-shadow: 0 25px 50px -12px rgba(40, 10, 25, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
-  border-radius: 40px;
+  width: 275px;
+  height: 560px;
+  background: #000000;
+  border-radius: 44px;
+  border: 4px solid #334155;
+  box-shadow: 
+    0 25px 60px -10px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 0 25px rgba(56, 189, 248, 0.15);
   overflow: visible;
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
-  will-change: transform;
+  transition: all 0.45s cubic-bezier(0.2, 0.85, 0.3, 1);
+  will-change: transform, z-index, opacity;
+  cursor: pointer;
 }
 
-.phone-screen {
+.titanium-phone:focus-visible {
+  outline: 3px solid #38bdf8;
+  outline-offset: 4px;
+}
+
+.phone-screen-inner {
   width: 100%;
   height: 100%;
-  border-radius: 36px;
+  border-radius: 40px;
   overflow: hidden;
-  background: #110d18;
+  background: #030712;
   position: relative;
 }
 
-.phone-screen img {
+.phone-screen-inner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top;
   display: block;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-.phone-notch {
+/* Dynamic Island & Glare Reflection */
+.phone-island {
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 18px;
-  background: #000;
-  border-radius: 12px;
-  z-index: 10;
+  width: 88px;
+  height: 22px;
+  background: #000000;
+  border-radius: 14px;
+  z-index: 20;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: 12px;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
 }
 
-.notch-island {
-  width: 8px;
-  height: 8px;
-  background: #1a1a2e;
+.island-camera-lens {
+  width: 9px;
+  height: 9px;
+  background: #111827;
   border-radius: 50%;
+  border: 1.5px solid #1f2937;
 }
 
-/* 3D Stacking & Angles */
-.ph-center {
+.phone-glare-sweep {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 30%, transparent 55%);
+  pointer-events: none;
+  z-index: 10;
+  border-radius: 40px;
+}
+
+/* 3D Staging Coordinates */
+/* Center Flagship Phone (Shows Given Screenshot by default) */
+.phone-slot-center {
+  z-index: 10;
+  transform: translateX(0) translateY(0) rotateY(0deg) scale(1.05);
+  box-shadow: 
+    0 35px 75px -10px rgba(0, 0, 0, 0.85),
+    0 0 35px rgba(56, 189, 248, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+}
+
+.phone-slot-center:hover {
+  transform: translateX(0) translateY(-10px) rotateY(0deg) scale(1.08);
+}
+
+/* Left Companion Phone */
+.phone-slot-left {
   z-index: 5;
-  transform: translateY(0) scale(1.05);
-  box-shadow: 0 30px 60px -10px rgba(230, 25, 90, 0.35), 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+  transform: translateX(-155px) translateY(24px) rotateY(16deg) scale(0.9);
+  opacity: 0.88;
+  filter: brightness(0.85);
 }
 
-.ph-center:hover {
-  transform: translateY(-8px) scale(1.08);
-}
-
-.ph-left {
-  z-index: 3;
-  transform: translateX(-140px) translateY(20px) rotate(-6deg) scale(0.92);
-  opacity: 0.92;
-}
-
-.ph-left:hover {
-  transform: translateX(-150px) translateY(10px) rotate(-3deg) scale(0.96);
-  z-index: 6;
+.phone-slot-left:hover {
+  transform: translateX(-165px) translateY(12px) rotateY(8deg) scale(0.94);
   opacity: 1;
+  filter: brightness(1);
+  z-index: 11;
 }
 
-.ph-right {
-  z-index: 3;
-  transform: translateX(140px) translateY(20px) rotate(6deg) scale(0.92);
-  opacity: 0.92;
+/* Right Companion Phone */
+.phone-slot-right {
+  z-index: 5;
+  transform: translateX(155px) translateY(24px) rotateY(-16deg) scale(0.9);
+  opacity: 0.88;
+  filter: brightness(0.85);
 }
 
-.ph-right:hover {
-  transform: translateX(150px) translateY(10px) rotate(3deg) scale(0.96);
-  z-index: 6;
+.phone-slot-right:hover {
+  transform: translateX(165px) translateY(12px) rotateY(-8deg) scale(0.94);
   opacity: 1;
+  filter: brightness(1);
+  z-index: 11;
 }
 
-/* Floating Glass Badges */
-.phone-glass-badge {
+/* Hidden phone in carousel */
+.phone-slot-hidden {
+  z-index: 1;
+  transform: translateX(0) translateY(40px) scale(0.75);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Holographic Floating Badges from Screenshot */
+.hologram-chip {
   position: absolute;
   display: flex;
   align-items: center;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.92);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  backdrop-filter: blur(16px) saturate(180%);
-  border: 1.5px solid rgba(255, 255, 255, 0.95);
-  box-shadow: 0 12px 32px rgba(160, 30, 65, 0.22), 0 2px 0 var(--line);
+  background: rgba(10, 20, 50, 0.88);
+  border: 1.5px solid rgba(56, 189, 248, 0.55);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 18px rgba(56, 189, 248, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 999px;
-  padding: 6px 14px 6px 8px;
-  z-index: 15;
+  padding: 7px 16px 7px 10px;
+  z-index: 25;
   white-space: nowrap;
-  animation: floatBadge 3.5s ease-in-out infinite;
+  animation: floatHoloChip 3.6s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.phone-glass-badge .badge-icon {
+.hologram-chip .chip-avatar {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #ffe3ea;
-  border: 1px solid #e6195a;
+  background: linear-gradient(135deg, #0284c7 0%, #e11d48 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
 }
 
-.phone-glass-badge span {
+.hologram-chip .chip-texts {
   display: flex;
   flex-direction: column;
 }
 
-.phone-glass-badge b {
+.hologram-chip b {
   font: 800 12px/1.1 var(--disp);
-  color: #2a121d;
+  color: #ffffff;
 }
 
-.phone-glass-badge small {
+.hologram-chip small {
   font: 600 10.5px/1 var(--sans);
-  color: #c94668;
+  color: #38bdf8;
 }
 
-.badge-hero {
-  bottom: 24px;
+/* Specific Badge Positions */
+.chip-highlight-top {
+  top: -22px;
   left: 50%;
   transform: translateX(-50%);
-  animation-delay: 0s;
+  animation-name: floatHoloChipCenter;
+  background: rgba(20, 35, 80, 0.95);
+  border-color: #38bdf8;
 }
 
-.badge-menu {
-  top: 40px;
-  left: -20px;
+.chip-chilled-left {
+  top: 36%;
+  left: -48px;
   animation-delay: -1.2s;
 }
 
-.badge-pay {
-  bottom: 60px;
-  right: -20px;
+.chip-drop-right {
+  bottom: 28px;
+  right: -32px;
   animation-delay: -2.4s;
 }
 
-@keyframes floatBadge {
+@keyframes floatHoloChip {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-7px); }
 }
 
-@keyframes floatBadgeCenter {
+@keyframes floatHoloChipCenter {
   0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-6px); }
-}
-.badge-hero {
-  animation-name: floatBadgeCenter;
+  50% { transform: translateX(-50%) translateY(-7px); }
 }
 
-/* Mobile Responsive Adjustments */
-@media (max-width: 860px) {
-  .app-showcase-section {
-    padding: 50px 16px !important;
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 900px) {
+  .app-theatre-stage {
+    padding: 55px 16px !important;
   }
 
-  .app-info-col {
+  .stage-info-col {
     align-items: center;
     text-align: center;
   }
 
-  .app-perks-list {
+  .stage-screen-tabs {
+    justify-content: center;
+  }
+
+  .stage-perks-grid {
     text-align: left;
   }
 
-  .phones-showcase-wrap {
-    height: 480px;
-    margin-top: 20px;
+  .stage-phones-col {
+    height: 520px;
+    margin-top: 25px;
   }
 
-  .phone-frame {
-    width: 210px;
-    height: 420px;
+  .titanium-phone {
+    width: 235px;
+    height: 480px;
+    border-radius: 36px;
+  }
+
+  .phone-screen-inner {
     border-radius: 32px;
   }
 
-  .phone-screen {
-    border-radius: 28px;
+  .phone-slot-left {
+    transform: translateX(-95px) translateY(20px) rotateY(12deg) scale(0.85);
   }
 
-  .ph-left {
-    transform: translateX(-70px) translateY(25px) rotate(-6deg) scale(0.85);
+  .phone-slot-right {
+    transform: translateX(95px) translateY(20px) rotateY(-12deg) scale(0.85);
   }
 
-  .ph-right {
-    transform: translateX(70px) translateY(25px) rotate(6deg) scale(0.85);
+  .chip-chilled-left {
+    left: -15px;
   }
 
-  .phone-glass-badge {
-    padding: 4px 10px 4px 6px;
+  .chip-drop-right {
+    right: -15px;
+  }
+}
+
+@media (max-width: 540px) {
+  .stage-phones-col {
+    height: 470px;
+  }
+
+  .titanium-phone {
+    width: 215px;
+    height: 440px;
+    border-radius: 32px;
+  }
+
+  .phone-slot-left {
+    transform: translateX(-55px) translateY(15px) scale(0.8);
+    opacity: 0.6;
+  }
+
+  .phone-slot-right {
+    transform: translateX(55px) translateY(15px) scale(0.8);
+    opacity: 0.6;
+  }
+
+  .hologram-chip {
+    padding: 5px 12px 5px 8px;
     font-size: 11px;
   }
 }
+
 
 </style></head><body class="locked"><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
 <div class="g-projector-beam" aria-hidden="true"></div>
@@ -3125,47 +3321,73 @@ body.locked {
 </div>
 <div class="seats" aria-hidden="true"></div></div></section>
 
-<section class="sec band app-showcase-section" id="app">
-  <div class="wrap two app-showcase-wrap">
+<section class="sec app-theatre-stage" id="app" aria-label="Official Love Cafe Cinema App">
+  <!-- Theatre Lighting & Cinema Hall Silhouettes -->
+  <div class="stage-spotlight-beam" aria-hidden="true"></div>
+  <div class="stage-cinema-seats-bg" aria-hidden="true"></div>
+
+  <div class="wrap two stage-content-wrap">
     
-    <!-- Left Column: Copy & App Features -->
-    <div class="app-info-col">
-      <div class="app-badge-pill rv">
-        <span class="pulse-icon">📱</span>
-        <span>OFFICIAL LOVE CAFE APP</span>
+    <!-- Left Column: Story, Features & Download -->
+    <div class="stage-info-col">
+      <div class="stage-pill-badge rv">
+        <span class="live-dot"></span>
+        <span>★ OFFICIAL LOVE CAFE APP · CINEMA TO SEAT ★</span>
       </div>
 
-      <h2 class="rv">Your cinema treats.<br><em class="accent-text">Ordered in 3 taps.</em></h2>
+      <h2 class="rv">Cinema Gourmet in your hands.<br><em class="glow-cyan-pink">Cool sips. Hot scenes. Instant drops.</em></h2>
       
-      <p class="lead rv">Never miss a critical movie scene waiting in long concession queues. Order artisan snacks and chilled drinks right from your seat.</p>
+      <p class="stage-lead rv">Never miss a critical plot twist waiting in concession lines. Browse sub-zero chilled craft colas, artisanal pizzas, and crispy popcorn tubs — delivered frosty cold right to your cup holder before the opening credits roll.</p>
       
-      <div class="app-perks-list rv">
-        <div class="app-perk-item">
-          <div class="perk-icon-wrap">🍿</div>
+      <!-- Interactive Screen Selector Pills -->
+      <div class="stage-screen-tabs rv" role="tablist" aria-label="Explore App Screens">
+        <button class="screen-tab-btn active" data-screen="gourmet" role="tab" aria-selected="true">
+          <span class="tab-icon">🥤</span>
+          <span>1. Gourmet Highlights</span>
+        </button>
+        <button class="screen-tab-btn" data-screen="home" role="tab" aria-selected="false">
+          <span class="tab-icon">🎬</span>
+          <span>2. In-Cinema Home</span>
+        </button>
+        <button class="screen-tab-btn" data-screen="menu" role="tab" aria-selected="false">
+          <span class="tab-icon">🍕</span>
+          <span>3. Live Menu</span>
+        </button>
+        <button class="screen-tab-btn" data-screen="checkout" role="tab" aria-selected="false">
+          <span class="tab-icon">⚡</span>
+          <span>4. 1-Tap Checkout</span>
+        </button>
+      </div>
+
+      <!-- High-Impact Cinema Perks Matching the Real App Experience -->
+      <div class="stage-perks-grid rv">
+        <div class="stage-perk-card">
+          <div class="perk-badge-icon">🥤</div>
           <div>
-            <h4>Cinema-to-Seat Delivery</h4>
-            <p>Select your Hall, Screen & Seat number for instant ~10 min drop-off.</p>
+            <h4>Sub-Zero Chilled Refreshment</h4>
+            <p>Craft cola poured over crystal ice blocks with striped eco-straws, maximum carbonation &amp; fresh citrus fizz.</p>
           </div>
         </div>
 
-        <div class="app-perk-item">
-          <div class="perk-icon-wrap">🍕</div>
+        <div class="stage-perk-card">
+          <div class="perk-badge-icon">🎟️</div>
           <div>
-            <h4>Live Visual Gourmet Menu</h4>
-            <p>Pizzas, burgers, popcorn tubs, Belgian gelato, craft colas & combos.</p>
+            <h4>Direct Cinema-to-Seat Drop</h4>
+            <p>Select your Hall, Screen &amp; Seat (e.g. Cinema Hut · Screen 2 · Seat F2). Fast ~10 min delivery to your cup holder.</p>
           </div>
         </div>
 
-        <div class="app-perk-item">
-          <div class="perk-icon-wrap">⚡</div>
+        <div class="stage-perk-card">
+          <div class="perk-badge-icon">⚡</div>
           <div>
-            <h4>One-Tap UPI & Card Checkout</h4>
-            <p>Seamless payments with zero friction and live kitchen order tracking.</p>
+            <h4>One-Tap UPI &amp; Cards Checkout</h4>
+            <p>Pay instantly with UPI QR, cards, or Google Pay with live kitchen order tracking right on your screen.</p>
           </div>
         </div>
       </div>
 
-      <div class="stores rv">
+      <!-- Luxury Obsidian App Store Buttons -->
+      <div class="stores stage-stores rv">
         <a class="store store-play" data-play href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get LOVE CAFE on Google Play">
           <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
           <span><small>GET IT ON</small>Google Play</span>
@@ -3176,51 +3398,92 @@ body.locked {
         </a>
       </div>
 
-      <div class="app-rating-strip rv">
-        <div class="stars-gold">★★★★★</div>
-        <span><b>4.9 / 5.0 Rating</b> · Loved by 120,000+ movie lovers</span>
+      <div class="stage-trust-strip rv">
+        <span class="stars-gold">★★★★★</span>
+        <span><b>4.9 / 5.0 Rating</b> · Over 120,000+ moviegoers served in 27+ cinema screens</span>
       </div>
     </div>
 
-    <!-- Right Column: 3 Real Phone Mockups with 3D Depth & Floating Chips -->
-    <div class="phones-showcase-wrap rv" id="phones">
-      
-      <!-- Ambient Glow Behind Phones -->
-      <div class="phones-ambient-glow" aria-hidden="true"></div>
+    <!-- Right Column: Interactive 3D Titanium Phone Stage with Given Screenshot Front and Center -->
+    <div class="stage-phones-col rv" id="appPhoneStage">
+      <div class="stage-ambient-halo" aria-hidden="true"></div>
 
-      <!-- Left Phone: Premium Menu -->
-      <div class="phone-frame ph-left" data-par="-20">
-        <div class="phone-notch"><span class="notch-island"></span></div>
-        <div class="phone-screen">
-          <img src="assets/app-menu.png" alt="Love Cafe App Menu with Gourmet Food" loading="lazy">
+      <!-- Phone 1: Gourmet Highlights (USER GIVEN SCREENSHOT - Default Center Flagship) -->
+      <div class="titanium-phone phone-slot-center" id="phoneGourmet" data-phone="gourmet" tabindex="0" role="button" aria-label="View Cinema Gourmet Highlights Screen">
+        <div class="phone-island"><span class="island-camera-lens"></span></div>
+        <div class="phone-screen-inner">
+          <img src="assets/app-gourmet-highlight.png" alt="Love Cafe Cinema Gourmet Highlights: Cool sips, hot scenes" loading="lazy">
+          <div class="phone-glare-sweep"></div>
         </div>
-        <div class="phone-glass-badge badge-menu">
-          <span class="badge-icon">🍕</span>
-          <span><b>Gourmet Menu</b><small>Live Prices & Customization</small></span>
+        <!-- Floating Hologram Badges Direct from User's Screenshot -->
+        <div class="hologram-chip chip-highlight-top">
+          <span class="chip-avatar">★</span>
+          <div class="chip-texts">
+            <b>CINEMA GOURMET HIGHLIGHTS</b>
+            <small>Cool sips, hot scenes ✨</small>
+          </div>
+        </div>
+        <div class="hologram-chip chip-chilled-left">
+          <span class="chip-avatar">🧊</span>
+          <div class="chip-texts">
+            <b>Sub-Zero Chilled</b>
+            <small>Fresh Citrus Fizz · Max Carbonation</small>
+          </div>
+        </div>
+        <div class="hologram-chip chip-drop-right">
+          <span class="chip-avatar">🎬</span>
+          <div class="chip-texts">
+            <b>Delivered to Cup Holder</b>
+            <small>Cinema Hut · Screen 2 · Seat F2</small>
+          </div>
         </div>
       </div>
 
-      <!-- Center Hero Phone: Home Screen & Live Cinema Ordering -->
-      <div class="phone-frame ph-center" data-par="0">
-        <div class="phone-notch"><span class="notch-island"></span></div>
-        <div class="phone-screen">
+      <!-- Phone 2: In-Cinema Home Screen -->
+      <div class="titanium-phone phone-slot-left" id="phoneHome" data-phone="home" tabindex="0" role="button" aria-label="View In-Cinema Home Screen">
+        <div class="phone-island"><span class="island-camera-lens"></span></div>
+        <div class="phone-screen-inner">
           <img src="assets/app-home.png" alt="Love Cafe In-Cinema Mobile App Home Screen" loading="lazy">
+          <div class="phone-glare-sweep"></div>
         </div>
-        <div class="phone-glass-badge badge-hero">
-          <span class="badge-icon">⚡</span>
-          <span><b>In-Seat Drop</b><small>Cinema Hut · Screen 2 · F2</small></span>
+        <div class="hologram-chip chip-chilled-left" style="top: 25%;">
+          <span class="chip-avatar">🍿</span>
+          <div class="chip-texts">
+            <b>Movies + Food</b>
+            <small>Cinema Hut In-Seat Ordering</small>
+          </div>
         </div>
       </div>
 
-      <!-- Right Phone: Seamless Checkout & Payments -->
-      <div class="phone-frame ph-right" data-par="20">
-        <div class="phone-notch"><span class="notch-island"></span></div>
-        <div class="phone-screen">
-          <img src="assets/app-checkout.png" alt="Love Cafe Instant UPI and Card Checkout" loading="lazy">
+      <!-- Phone 3: Live Gourmet Menu -->
+      <div class="titanium-phone phone-slot-right" id="phoneMenu" data-phone="menu" tabindex="0" role="button" aria-label="View Live Menu Screen">
+        <div class="phone-island"><span class="island-camera-lens"></span></div>
+        <div class="phone-screen-inner">
+          <img src="assets/app-menu.png" alt="Love Cafe Live In-Cinema Food Menu Screen" loading="lazy">
+          <div class="phone-glare-sweep"></div>
         </div>
-        <div class="phone-glass-badge badge-pay">
-          <span class="badge-icon">💳</span>
-          <span><b>UPI & Cards</b><small>Instant 1-Tap Pay</small></span>
+        <div class="hologram-chip chip-drop-right" style="bottom: 35%;">
+          <span class="chip-avatar">🍕</span>
+          <div class="chip-texts">
+            <b>Farmhouse Pizza</b>
+            <small>Customise &amp; Add · ₹320</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phone 4: 1-Tap Checkout (Stored in Carousel) -->
+      <div class="titanium-phone phone-slot-hidden" id="phoneCheckout" data-phone="checkout" tabindex="0" role="button" aria-label="View 1-Tap Checkout Screen">
+        <div class="phone-island"><span class="island-camera-lens"></span></div>
+        <div class="phone-screen-inner">
+          <img src="assets/app-checkout.png" alt="Love Cafe Instant 1-Tap Checkout Screen" loading="lazy">
+          <div class="phone-glare-sweep"></div>
+        </div>
+        <div class="hologram-chip chip-drop-right">
+          <span class="chip-avatar">⚡</span>
+          <div class="chip-texts">
+            <b>Instant 1-Tap Pay</b>
+            <small>UPI QR &amp; Cards · ₹336</small>
+          </div>
         </div>
       </div>
 
@@ -4027,6 +4290,101 @@ if (finEl && typeof IntersectionObserver !== 'undefined') {
     });
   }, { threshold: 0.35 }).observe(finEl);
 }
+</script>
+
+
+<script>
+/* ==========================================================================
+   OFFICIAL LOVE CAFE APP: 3D THEATRE STAGE INTERACTIVE CONTROLLER
+   ========================================================================== */
+(function() {
+  function initAppStage() {
+    const stage = document.getElementById('appPhoneStage');
+    const tabs = document.querySelectorAll('.screen-tab-btn');
+    if (!stage || !tabs.length) return;
+
+    const phones = {
+      gourmet: document.getElementById('phoneGourmet'),
+      home: document.getElementById('phoneHome'),
+      menu: document.getElementById('phoneMenu'),
+      checkout: document.getElementById('phoneCheckout')
+    };
+
+    const slots = ['phone-slot-center', 'phone-slot-left', 'phone-slot-right', 'phone-slot-hidden'];
+    let currentActive = 'gourmet';
+
+    function setFocusScreen(targetKey) {
+      if (!phones[targetKey] || currentActive === targetKey) return;
+      currentActive = targetKey;
+
+      // Update tabs
+      tabs.forEach(btn => {
+        const isMatch = btn.dataset.screen === targetKey;
+        btn.classList.toggle('active', isMatch);
+        btn.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+      });
+
+      // Clear all slot classes
+      Object.values(phones).forEach(p => {
+        if (p) {
+          slots.forEach(s => p.classList.remove(s));
+        }
+      });
+
+      // Assign slots based on active screen
+      if (targetKey === 'gourmet') {
+        phones.gourmet.classList.add('phone-slot-center');
+        phones.home.classList.add('phone-slot-left');
+        phones.menu.classList.add('phone-slot-right');
+        phones.checkout.classList.add('phone-slot-hidden');
+      } else if (targetKey === 'home') {
+        phones.home.classList.add('phone-slot-center');
+        phones.gourmet.classList.add('phone-slot-left');
+        phones.menu.classList.add('phone-slot-right');
+        phones.checkout.classList.add('phone-slot-hidden');
+      } else if (targetKey === 'menu') {
+        phones.menu.classList.add('phone-slot-center');
+        phones.gourmet.classList.add('phone-slot-left');
+        phones.checkout.classList.add('phone-slot-right');
+        phones.home.classList.add('phone-slot-hidden');
+      } else if (targetKey === 'checkout') {
+        phones.checkout.classList.add('phone-slot-center');
+        phones.menu.classList.add('phone-slot-left');
+        phones.gourmet.classList.add('phone-slot-right');
+        phones.home.classList.add('phone-slot-hidden');
+      }
+    }
+
+    // Attach click events to tabs
+    tabs.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        setFocusScreen(this.dataset.screen);
+      });
+    });
+
+    // Attach click events to phones themselves
+    Object.entries(phones).forEach(([key, phoneEl]) => {
+      if (phoneEl) {
+        phoneEl.addEventListener('click', function() {
+          setFocusScreen(key);
+        });
+        phoneEl.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setFocusScreen(key);
+          }
+        });
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAppStage);
+  } else {
+    initAppStage();
+  }
+})();
 </script>
 
 </body></html>
