@@ -346,24 +346,24 @@ body.locked{overflow:hidden;height:100svh}
 .it{--s:clamp(150px,25vw,340px)}@media(max-width:860px){.it{--s:clamp(130px,42vw,200px)}}
 
 #bar{display:none}
-.nav{gap:10px;padding:8px 10px 8px 16px;overflow:hidden;background:linear-gradient(135deg,rgba(255,240,245,.9),rgba(255,190,210,.82));box-shadow:0 5px 0 var(--line),0 18px 30px -14px rgba(230,25,90,.55);transition:transform .5s cubic-bezier(.2,.9,.3,1)}
+.nav{gap:10px;padding:8px 10px 8px 16px;overflow:hidden;background:linear-gradient(135deg,rgba(168,14,72,0.92),rgba(138,10,58,0.95));box-shadow:0 16px 40px -8px rgba(120,8,50,0.45),0 0 24px rgba(255,42,109,0.3);border:1.5px solid rgba(255,195,220,0.45);transition:transform .5s cubic-bezier(.2,.9,.3,1)}
 .nav.hide{transform:translateY(-170%)}
 .nl{gap:4px;margin:0 auto}
-.nl a{padding:8px 15px;border-radius:99px;font:800 15px var(--disp);transition:background .2s,color .2s,transform .2s}
-.nl a:hover{background:#fff;transform:translateY(-1px)}
-.nl a.on{background:var(--rasp);color:#fff}
+.nl a{padding:8px 15px;border-radius:99px;font:800 15px var(--disp);color:rgba(255,255,255,0.92);transition:background .2s,color .2s,transform .2s}
+.nl a:hover{background:rgba(255,255,255,0.2);color:#fff;transform:translateY(-1px)}
+.nl a.on{background:#fff;color:#970d41}
 .nr{display:flex;align-items:center;gap:8px}
-.ib{width:40px;height:40px;border-radius:50%;background:#111;display:grid;place-items:center;border:2.5px solid var(--line);box-shadow:0 3px 0 var(--rasp);transition:transform .15s}
-.ib:hover{transform:translateY(-2px) rotate(-6deg)}
+.ib{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.22);display:grid;place-items:center;border:1.5px solid rgba(255,255,255,0.5);box-shadow:0 4px 12px rgba(90,6,36,0.3);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:transform .15s}
+.ib:hover{transform:translateY(-2px) rotate(-6deg);background:rgba(255,255,255,0.35);border-color:#fff}
 .dlb{padding:9px 20px;margin-left:2px}
 .np{position:absolute;left:0;bottom:0;height:5px;width:0;background:linear-gradient(90deg,#e6195a,#ff7aa2,#ffd23f)}
-.mb{display:none;position:relative;width:44px;height:44px;margin:0;padding:0;border-radius:50%;background:#fff;border:3px solid var(--line);box-shadow:0 4px 0 var(--line);cursor:pointer}
-.mb span{position:absolute;left:11px;right:11px;height:3px;border-radius:3px;background:var(--line);transition:transform .35s,opacity .2s,top .35s}
-.mb span:nth-child(1){top:12px}.mb span:nth-child(2){top:19px}.mb span:nth-child(3){top:26px}
-.mb.x span:nth-child(1){top:19px;transform:rotate(45deg)}.mb.x span:nth-child(2){opacity:0}.mb.x span:nth-child(3){top:19px;transform:rotate(-45deg)}
+.mb{display:none;position:relative;width:40px;height:40px;margin:0;padding:0;border-radius:50%;background:rgba(255,255,255,0.22);border:1.5px solid rgba(255,255,255,0.5);box-shadow:0 4px 12px rgba(90,6,36,0.3);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);cursor:pointer}
+.mb span{position:absolute;left:10px;right:10px;height:2.5px;border-radius:3px;background:#ffffff;transition:transform .35s,opacity .2s,top .35s}
+.mb span:nth-child(1){top:11px}.mb span:nth-child(2){top:18px}.mb span:nth-child(3){top:25px}
+.mb.x span:nth-child(1){top:18px;transform:rotate(45deg)}.mb.x span:nth-child(2){opacity:0}.mb.x span:nth-child(3){top:18px;transform:rotate(-45deg)}
 .brand i{animation:wob 4s ease-in-out infinite}@keyframes wob{50%{transform:rotate(-8deg) scale(1.08)}}
 .wipe{position:absolute;left:50%;top:62%;border-radius:50%;pointer-events:none;display:none;box-shadow:0 0 0 14px #ffd23f,0 0 0 20px var(--line)}
-@media(max-width:860px){.nl{display:none}.mb{display:block}.dlb{display:none}.nr{margin-left:auto}.nav{padding:7px 8px 7px 14px}.ib{width:38px;height:38px}}
+@media(max-width:860px){.nl{display:none}.mb{display:grid;place-items:center}.dlb{display:none}.nr{margin-left:auto}.nav{padding:7px 8px 7px 14px}.ib{width:36px;height:36px}}
 @media(prefers-reduced-motion:reduce){.wipe,.brand i{display:none}}
 /* sticker foods */
 .ic img{filter:drop-shadow(0 14px 12px rgba(60,0,25,.4))}
@@ -2034,44 +2034,54 @@ body.locked{overflow:hidden;height:100svh}
 
 /* Card Themes */
 .mom.m1 {
-  background: linear-gradient(145deg, #ffffff 0%, #fff5f8 100%);
-  color: #2a121d;
+  background: linear-gradient(150deg, #ffffff 0%, #fff1f5 45%, #ffd6e3 100%) !important;
+  color: #3b0617 !important;
+  border: 3.5px solid #ff2a6d !important;
+  box-shadow: 10px 10px 0 #970d41, 0 18px 40px rgba(255, 42, 109, 0.28) !important;
+  transform: rotate(-1.5deg);
 }
-.mom.m1 .mom-step { background: #e6195a; color: #fff; }
-.mom.m1 .mom-badge-icon { background: #ffe4e8; }
-.mom.m1 .mom-tag { color: #c94668; background: rgba(230, 25, 90, 0.08); border-color: rgba(230, 25, 90, 0.25); }
+.mom.m1:hover { transform: translateY(-8px) rotate(0deg) scale(1.02); box-shadow: 14px 14px 0 #970d41, 0 24px 48px rgba(255, 42, 109, 0.38) !important; }
+.mom.m1 .mom-step { background: linear-gradient(135deg, #ff2a6d, #e6195a) !important; color: #ffffff !important; border: 2px solid #970d41 !important; box-shadow: 0 4px 12px rgba(255, 42, 109, 0.4) !important; }
+.mom.m1 .mom-badge-icon { background: linear-gradient(135deg, #ffe4ec, #ffc4d6) !important; border: 2.5px solid #ff2a6d !important; box-shadow: 0 4px 0 #970d41 !important; }
+.mom.m1 .mom-tag { color: #b80d46 !important; background: rgba(255, 42, 109, 0.14) !important; border: 2px solid #ff2a6d !important; font-weight: 800 !important; }
 
 .mom.m2 {
-  background: linear-gradient(145deg, #fffbeb 0%, #fef3c7 100%);
-  color: #2a121d;
-  transform: rotate(1deg);
-}
-.mom.m2:hover { transform: translateY(-8px) rotate(0deg) scale(1.02); }
-.mom.m2 .mom-step { background: #f59e0b; color: #fff; }
-.mom.m2 .mom-badge-icon { background: #fef08a; }
-.mom.m2 .mom-tag { color: #b45309; background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); }
-
-.mom.m3 {
-  background: linear-gradient(145deg, #fdf2f8 0%, #fce7f3 100%);
-  color: #2a121d;
-  transform: rotate(-1deg);
-}
-.mom.m3:hover { transform: translateY(-8px) rotate(0deg) scale(1.02); }
-.mom.m3 .mom-step { background: #ec4899; color: #fff; }
-.mom.m3 .mom-badge-icon { background: #fbcfe8; }
-.mom.m3 .mom-tag { color: #be185d; background: rgba(236, 72, 153, 0.1); border-color: rgba(236, 72, 153, 0.3); }
-
-.mom.m4 {
-  background: linear-gradient(145deg, #e6195a 0%, #970d41 100%);
-  color: #ffffff;
+  background: linear-gradient(150deg, #fffdf0 0%, #fff7d6 45%, #feea9f 100%) !important;
+  color: #3d2300 !important;
+  border: 3.5px solid #f59e0b !important;
+  box-shadow: 10px 10px 0 #b45309, 0 18px 40px rgba(245, 158, 11, 0.28) !important;
   transform: rotate(1.5deg);
 }
-.mom.m4:hover { transform: translateY(-8px) rotate(0deg) scale(1.02); }
-.mom.m4 .mom-step { background: #ffd23f; color: #2a121d; }
-.mom.m4 .mom-badge-icon { background: #ffffff; }
-.mom.m4 h3 { color: #ffffff; }
-.mom.m4 p { color: #ffe1ea; }
-.mom.m4 .mom-tag { color: #ffd23f; background: rgba(255, 210, 63, 0.2); border-color: rgba(255, 210, 63, 0.5); }
+.mom.m2:hover { transform: translateY(-8px) rotate(0deg) scale(1.02); box-shadow: 14px 14px 0 #b45309, 0 24px 48px rgba(245, 158, 11, 0.38) !important; }
+.mom.m2 .mom-step { background: linear-gradient(135deg, #f59e0b, #d97706) !important; color: #ffffff !important; border: 2px solid #b45309 !important; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4) !important; }
+.mom.m2 .mom-badge-icon { background: linear-gradient(135deg, #fef3c7, #fde68a) !important; border: 2.5px solid #f59e0b !important; box-shadow: 0 4px 0 #b45309 !important; }
+.mom.m2 .mom-tag { color: #92400e !important; background: rgba(245, 158, 11, 0.16) !important; border: 2px solid #f59e0b !important; font-weight: 800 !important; }
+
+.mom.m3 {
+  background: linear-gradient(150deg, #fcf5ff 0%, #f6e8ff 45%, #e9ccff 100%) !important;
+  color: #2e0854 !important;
+  border: 3.5px solid #9333ea !important;
+  box-shadow: 10px 10px 0 #581c87, 0 18px 40px rgba(147, 51, 234, 0.28) !important;
+  transform: rotate(-1.5deg);
+}
+.mom.m3:hover { transform: translateY(-8px) rotate(0deg) scale(1.02); box-shadow: 14px 14px 0 #581c87, 0 24px 48px rgba(147, 51, 234, 0.38) !important; }
+.mom.m3 .mom-step { background: linear-gradient(135deg, #a855f7, #7c3aed) !important; color: #ffffff !important; border: 2px solid #581c87 !important; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4) !important; }
+.mom.m3 .mom-badge-icon { background: linear-gradient(135deg, #f3e8ff, #e9d5ff) !important; border: 2.5px solid #9333ea !important; box-shadow: 0 4px 0 #581c87 !important; }
+.mom.m3 .mom-tag { color: #6b21a8 !important; background: rgba(147, 51, 234, 0.14) !important; border: 2px solid #9333ea !important; font-weight: 800 !important; }
+
+.mom.m4 {
+  background: linear-gradient(150deg, #970d41 0%, #c41256 45%, #e6195a 100%) !important;
+  color: #ffffff !important;
+  border: 3.5px solid #ffd23f !important;
+  box-shadow: 10px 10px 0 #4a031d, 0 20px 44px rgba(230, 25, 90, 0.42) !important;
+  transform: rotate(1.5deg);
+}
+.mom.m4:hover { transform: translateY(-8px) rotate(0deg) scale(1.02); box-shadow: 14px 14px 0 #4a031d, 0 26px 52px rgba(230, 25, 90, 0.52) !important; }
+.mom.m4 .mom-step { background: linear-gradient(135deg, #ffd23f, #f59e0b) !important; color: #2a121d !important; font-weight: 900 !important; border: 2px solid #ffd23f !important; box-shadow: 0 4px 14px rgba(255, 210, 63, 0.5) !important; }
+.mom.m4 .mom-badge-icon { background: #ffffff !important; border: 2.5px solid #ffd23f !important; box-shadow: 0 4px 0 #ffd23f !important; }
+.mom.m4 h3 { color: #ffffff !important; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important; }
+.mom.m4 p { color: #ffe6ee !important; }
+.mom.m4 .mom-tag { color: #ffd23f !important; background: rgba(255, 210, 63, 0.25) !important; border: 2px solid #ffd23f !important; font-weight: 800 !important; }
 
 /* ==========================================================================
    FIXED CINEMA SCREEN SECTION - ZERO WHITE SPACE
@@ -2737,9 +2747,9 @@ body.locked .sd {
 }
 
 .nav.scrolled, #nav.scrolled {
-  box-shadow: 0 20px 50px -8px rgba(0, 0, 0, 0.75), 0 0 26px rgba(255, 42, 109, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.22) !important;
-  background: rgba(16, 6, 12, 0.94) !important;
-  border-color: rgba(255, 42, 109, 0.38) !important;
+  box-shadow: 0 20px 48px -6px rgba(100, 6, 42, 0.5), 0 0 28px rgba(255, 42, 109, 0.35), inset 0 1px 1.5px rgba(255, 255, 255, 0.45) !important;
+  background: linear-gradient(135deg, rgba(152, 11, 64, 0.96) 0%, rgba(120, 8, 50, 0.98) 100%) !important;
+  border-color: rgba(255, 210, 230, 0.55) !important;
   -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
   backdrop-filter: blur(32px) saturate(200%) !important;
 }
@@ -2752,11 +2762,14 @@ body.locked .sd {
     width: calc(100% - 20px) !important;
     max-width: calc(100% - 20px) !important;
     transform: none !important;
-    padding: 6px 10px !important;
+    padding: 7px 12px !important;
     box-sizing: border-box !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
+    background: linear-gradient(135deg, rgba(168, 14, 72, 0.94) 0%, rgba(138, 10, 58, 0.97) 100%) !important;
+    border: 1.5px solid rgba(255, 195, 220, 0.45) !important;
+    box-shadow: 0 16px 38px -6px rgba(120, 8, 50, 0.45), 0 0 24px rgba(255, 42, 109, 0.28), inset 0 1px 1.5px rgba(255, 255, 255, 0.35) !important;
   }
   body.locked .nav,
   body.locked #nav,
@@ -2769,21 +2782,27 @@ body.locked .sd {
     flex-shrink: 0 !important;
   }
   .nr {
-    gap: 6px !important;
+    gap: 8px !important;
     margin-left: auto !important;
     display: flex !important;
     align-items: center !important;
     flex-shrink: 0 !important;
   }
   .ib {
-    width: 34px !important;
-    height: 34px !important;
+    width: 36px !important;
+    height: 36px !important;
     flex-shrink: 0 !important;
+    background: rgba(255, 255, 255, 0.22) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 4px 12px rgba(90, 6, 36, 0.3) !important;
   }
   .mb {
-    width: 34px !important;
-    height: 34px !important;
+    width: 36px !important;
+    height: 36px !important;
     flex-shrink: 0 !important;
+    background: rgba(255, 255, 255, 0.22) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 4px 12px rgba(90, 6, 36, 0.3) !important;
   }
 }
 
@@ -3753,33 +3772,83 @@ body.locked .sd {
   border-color: #e6195a !important;
 }
 
+.cinemas-filter-pills {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  margin: 16px 0 8px !important;
+}
+
+.c-pill {
+  padding: 8px 18px !important;
+  border-radius: 999px !important;
+  border: 1.5px solid rgba(230, 25, 90, 0.25) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #5a2034 !important;
+  font-family: var(--disp) !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 12px rgba(180, 40, 75, 0.06) !important;
+}
+
+.c-pill:hover {
+  transform: translateY(-2px) !important;
+  border-color: #ff2a6d !important;
+  color: #e6195a !important;
+  box-shadow: 0 6px 18px rgba(230, 25, 90, 0.15) !important;
+}
+
+.c-pill.active {
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
+  border-color: #ff2a6d !important;
+  box-shadow: 0 6px 20px rgba(230, 25, 90, 0.35) !important;
+}
+
+.cinema-match-count {
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #8b3450 !important;
+  text-align: center !important;
+  margin-top: 8px !important;
+}
+
 .cinema-cards-scroll-track {
   display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 16px !important;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)) !important;
+  gap: 22px !important;
+  margin-top: 14px !important;
 }
 
 .cinema-location-card {
   background: #ffffff !important;
-  border-radius: 20px !important;
+  border-radius: 22px !important;
   border: 1.5px solid rgba(220, 50, 95, 0.18) !important;
-  box-shadow: 0 8px 24px rgba(180, 40, 75, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(180, 40, 75, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
   overflow: hidden !important;
   display: flex !important;
   flex-direction: column !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease !important;
+  position: relative !important;
 }
 
 .cinema-location-card:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 12px 30px rgba(180, 40, 75, 0.14) !important;
+  transform: translateY(-6px) scale(1.012) !important;
+  border-color: rgba(255, 42, 109, 0.45) !important;
+  box-shadow: 0 20px 44px rgba(220, 50, 95, 0.18), 0 0 18px rgba(255, 42, 109, 0.15) !important;
 }
 
 .card-thumb-wrap {
   width: 100% !important;
-  height: 120px !important;
+  height: 165px !important;
   overflow: hidden !important;
-  background: #24141d !important;
+  position: relative !important;
+  background: #1e0915 !important;
 }
 
 .card-thumb-wrap img {
@@ -3787,75 +3856,172 @@ body.locked .sd {
   height: 100% !important;
   object-fit: cover !important;
   display: block !important;
-  transition: transform 0.3s ease !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .cinema-location-card:hover .card-thumb-wrap img {
-  transform: scale(1.05) !important;
+  transform: scale(1.08) !important;
+}
+
+.card-region-badge {
+  position: absolute !important;
+  top: 12px !important;
+  left: 12px !important;
+  background: rgba(26, 8, 18, 0.85) !important;
+  color: #fff !important;
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(8px) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
+}
+
+.card-live-badge {
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  background: linear-gradient(135deg, rgba(230, 25, 90, 0.95), rgba(151, 13, 65, 0.95)) !important;
+  color: #fff !important;
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 210, 63, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+  box-shadow: 0 4px 10px rgba(230, 25, 90, 0.35) !important;
 }
 
 .card-info-wrap {
-  padding: 14px 16px !important;
+  padding: 18px 20px !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 8px !important;
+  gap: 10px !important;
   flex: 1 !important;
 }
 
-.card-info-wrap h4 {
+.card-title-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+}
+
+.card-title-row h4 {
   font-family: var(--disp) !important;
-  font-size: 15px !important;
-  font-weight: 800 !important;
-  color: #1a0f15 !important;
+  font-size: 18px !important;
+  font-weight: 900 !important;
+  color: #1a0812 !important;
   margin: 0 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.screen-count-pill {
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  background: #fff8e6 !important;
+  color: #b45309 !important;
+  border: 1px solid #fde68a !important;
+  padding: 3px 8px !important;
+  border-radius: 999px !important;
+  flex-shrink: 0 !important;
 }
 
 .city-location-tag {
   display: flex !important;
-  align-items: center !important;
-  gap: 4px !important;
+  align-items: flex-start !important;
+  gap: 6px !important;
   font-family: var(--sans) !important;
-  font-size: 12px !important;
-  color: #6a3648 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  color: #5f2d3d !important;
 }
 
-.status-pill {
-  display: inline-flex !important;
+.city-location-tag .pin-ico {
+  flex-shrink: 0 !important;
+  margin-top: 1px !important;
+}
+
+.card-perks-row {
+  display: flex !important;
   align-items: center !important;
-  gap: 5px !important;
-  padding: 4px 10px !important;
-  border-radius: 999px !important;
+  gap: 6px !important;
+  flex-wrap: wrap !important;
+  margin-top: 2px !important;
+}
+
+.perk-tag {
   font-family: var(--sans) !important;
   font-size: 10.5px !important;
   font-weight: 700 !important;
-  align-self: flex-start !important;
+  color: #8b2345 !important;
+  background: rgba(230, 25, 90, 0.08) !important;
+  border: 1px solid rgba(230, 25, 90, 0.18) !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
 }
 
-.status-available {
-  background: #e8f7ee !important;
-  color: #0d8248 !important;
-  border: 1px solid rgba(13, 130, 72, 0.2) !important;
-}
-
-.status-soon {
-  background: #f1eff4 !important;
-  color: #6e647b !important;
-  border: 1px solid rgba(110, 100, 123, 0.2) !important;
-}
-
-.view-loc-btn {
+.card-actions-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
   margin-top: auto !important;
-  padding: 8px 14px !important;
-  border-radius: 999px !important;
-  border: 1.5px solid rgba(220, 50, 95, 0.3) !important;
-  background: transparent !important;
+  padding-top: 10px !important;
+}
+
+.view-loc-btn.map-btn {
+  flex: 1 !important;
+  background: #fff !important;
   color: #e6195a !important;
+  border: 1.5px solid rgba(230, 25, 90, 0.35) !important;
+  box-shadow: 0 2px 8px rgba(180, 40, 75, 0.06) !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 9px 12px !important;
+  border-radius: 999px !important;
   font-family: var(--disp) !important;
   font-size: 12px !important;
   font-weight: 800 !important;
-  cursor: pointer !important;
   transition: all 0.2s ease !important;
-  text-align: center !important;
+}
+
+.view-loc-btn.map-btn:hover {
+  background: #fff0f5 !important;
+  border-color: #ff2a6d !important;
+  color: #970d41 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(230, 25, 90, 0.18) !important;
+}
+
+.view-loc-btn.order-btn {
+  flex: 1 !important;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #ff2a6d !important;
+  box-shadow: 0 4px 12px rgba(230, 25, 90, 0.25) !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 9px 12px !important;
+  border-radius: 999px !important;
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  transition: all 0.2s ease !important;
+}
+
+.view-loc-btn.order-btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 16px rgba(230, 25, 90, 0.38) !important;
+  background: linear-gradient(135deg, #ff3d79 0%, #c41256 100%) !important;
 }
 
 .card-mobile-arrow {
@@ -4059,20 +4225,70 @@ body.locked .sd {
 .how-journey-card {
   position: relative !important;
   z-index: 2 !important;
-  background: #ffffff !important;
   border-radius: 22px !important;
-  border: 1.5px solid rgba(220, 50, 95, 0.18) !important;
-  box-shadow: 0 8px 24px rgba(180, 40, 75, 0.08) !important;
   padding: 24px 14px 14px !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   text-align: center !important;
-  transition: transform 0.2s ease !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease !important;
 }
 
-.how-journey-card:hover {
-  transform: translateY(-4px) !important;
+/* Individual colorful card themes */
+.how-journey-card:nth-child(2) {
+  background: linear-gradient(150deg, #ffffff 0%, #fff1f5 50%, #ffe4ec 100%) !important;
+  border: 2px solid #ff2a6d !important;
+  box-shadow: 0 10px 28px rgba(255, 42, 109, 0.15) !important;
+}
+.how-journey-card:nth-child(2):hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 18px 40px rgba(255, 42, 109, 0.28) !important;
+}
+.how-journey-card:nth-child(2) .card-step-circle {
+  background: linear-gradient(135deg, #ff2a6d, #e6195a) !important;
+  box-shadow: 0 4px 12px rgba(255, 42, 109, 0.4) !important;
+}
+
+.how-journey-card:nth-child(3) {
+  background: linear-gradient(150deg, #fffdf2 0%, #fef8db 50%, #fef0b8 100%) !important;
+  border: 2px solid #f59e0b !important;
+  box-shadow: 0 10px 28px rgba(245, 158, 11, 0.15) !important;
+}
+.how-journey-card:nth-child(3):hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 18px 40px rgba(245, 158, 11, 0.28) !important;
+}
+.how-journey-card:nth-child(3) .card-step-circle {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4) !important;
+}
+
+.how-journey-card:nth-child(4) {
+  background: linear-gradient(150deg, #fdf4ff 0%, #f8e8fc 50%, #edd4f8 100%) !important;
+  border: 2px solid #a855f7 !important;
+  box-shadow: 0 10px 28px rgba(168, 85, 247, 0.15) !important;
+}
+.how-journey-card:nth-child(4):hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 18px 40px rgba(168, 85, 247, 0.28) !important;
+}
+.how-journey-card:nth-child(4) .card-step-circle {
+  background: linear-gradient(135deg, #a855f7, #7c3aed) !important;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4) !important;
+}
+
+.how-journey-card:nth-child(5) {
+  background: linear-gradient(150deg, #fff2f5 0%, #ffe0e9 50%, #ffd0de 100%) !important;
+  border: 2px solid #e11d48 !important;
+  box-shadow: 0 10px 28px rgba(225, 29, 72, 0.15) !important;
+}
+.how-journey-card:nth-child(5):hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 18px 40px rgba(225, 29, 72, 0.28) !important;
+}
+.how-journey-card:nth-child(5) .card-step-circle {
+  background: linear-gradient(135deg, #e11d48, #970d41) !important;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.4) !important;
 }
 
 .floating-step-badge {
@@ -4080,22 +4296,21 @@ body.locked .sd {
   top: -16px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  width: 34px !important;
-  height: 34px !important;
+  width: 36px !important;
+  height: 36px !important;
   border-radius: 50% !important;
   background: #ffffff !important;
-  border: 1.5px solid rgba(220, 50, 95, 0.25) !important;
-  box-shadow: 0 4px 10px rgba(180, 40, 75, 0.1) !important;
+  border: 2px solid rgba(220, 50, 95, 0.35) !important;
+  box-shadow: 0 4px 14px rgba(180, 40, 75, 0.18) !important;
   display: grid !important;
   place-items: center !important;
-  font-size: 16px !important;
+  font-size: 17px !important;
 }
 
 .card-step-circle {
-  width: 28px !important;
-  height: 28px !important;
+  width: 30px !important;
+  height: 30px !important;
   border-radius: 50% !important;
-  background: #e6195a !important;
   color: #ffffff !important;
   font-family: var(--disp) !important;
   font-size: 13px !important;
@@ -4539,19 +4754,19 @@ body.locked .sd {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  background: rgba(22, 9, 16, 0.90) !important;
+  background: linear-gradient(135deg, rgba(168, 14, 72, 0.92) 0%, rgba(138, 10, 58, 0.95) 100%) !important;
   -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
   backdrop-filter: blur(28px) saturate(190%) !important;
-  border: 1.5px solid rgba(255, 120, 160, 0.28) !important;
+  border: 1.5px solid rgba(255, 195, 220, 0.45) !important;
   border-radius: 999px !important;
-  box-shadow: 0 18px 44px -10px rgba(0, 0, 0, 0.6), 0 0 24px rgba(255, 42, 109, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 18px 44px -8px rgba(120, 8, 50, 0.42), 0 0 24px rgba(255, 42, 109, 0.3), inset 0 1px 1.5px rgba(255, 255, 255, 0.4) !important;
   z-index: 1000 !important;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .nav:hover {
-  box-shadow: 0 22px 52px -8px rgba(0, 0, 0, 0.7), 0 0 32px rgba(255, 42, 109, 0.32), inset 0 1px 2px rgba(255, 255, 255, 0.32) !important;
-  border-color: rgba(255, 120, 160, 0.45) !important;
+  box-shadow: 0 22px 52px -6px rgba(120, 8, 50, 0.52), 0 0 32px rgba(255, 42, 109, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.5) !important;
+  border-color: rgba(255, 220, 235, 0.65) !important;
 }
 
 .brand {
@@ -4675,31 +4890,34 @@ body.locked .sd {
   display: inline-flex !important;
   align-items: center !important;
   gap: 9px !important;
-  background: linear-gradient(145deg, #24101d 0%, #12060e 100%) !important;
+  background: rgba(255, 255, 255, 0.18) !important;
   color: #fff !important;
   padding: 6px 14px !important;
   border-radius: 999px !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.38) !important;
   text-decoration: none !important;
   font-family: var(--sans) !important;
   font-size: 12px !important;
   font-weight: 700 !important;
   line-height: 1.15 !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.15) !important;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s, border-color 0.25s !important;
+  box-shadow: 0 4px 14px rgba(90, 6, 36, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.35) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s, border-color 0.25s, background 0.25s !important;
 }
 
 .nav-store-btn:hover {
   transform: translateY(-2px) scale(1.02) !important;
-  border-color: rgba(255, 210, 63, 0.6) !important;
-  box-shadow: 0 8px 22px rgba(255, 42, 109, 0.35), 0 0 12px rgba(255, 210, 63, 0.25) !important;
+  background: rgba(255, 255, 255, 0.28) !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 8px 22px rgba(255, 42, 109, 0.4), inset 0 1px 1.5px rgba(255, 255, 255, 0.45) !important;
 }
 
 .nav-store-btn small {
   display: block !important;
   font-size: 8px !important;
-  font-weight: 500 !important;
-  opacity: 0.75 !important;
+  font-weight: 600 !important;
+  opacity: 0.85 !important;
   letter-spacing: 0.04em !important;
   text-transform: uppercase !important;
 }
@@ -4708,30 +4926,38 @@ body.locked .sd {
   width: 36px !important;
   height: 36px !important;
   border-radius: 50% !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.22) !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+  background: rgba(255, 255, 255, 0.22) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
   color: #fff !important;
   display: none !important;
   place-items: center !important;
   cursor: pointer !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(90, 6, 36, 0.28), inset 0 1px 1.5px rgba(255, 255, 255, 0.4) !important;
   transition: transform 0.2s, background 0.2s, box-shadow 0.2s, border-color 0.2s !important;
 }
 
 .nav-circle-btn:hover,
 .nav-circle-btn:active {
   transform: translateY(-1px) scale(1.06) !important;
-  background: rgba(255, 42, 109, 0.25) !important;
-  border-color: rgba(255, 42, 109, 0.6) !important;
-  box-shadow: 0 4px 14px rgba(255, 42, 109, 0.4) !important;
+  background: rgba(255, 255, 255, 0.35) !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(255, 42, 109, 0.45) !important;
 }
 
 .nav-circle-btn.play-circle,
 .nav-circle-btn.apple-circle,
 .nav-circle-btn.menu-circle {
   color: #fff !important;
+}
+
+.nav-circle-btn.menu-circle svg {
+  stroke: #ffffff !important;
+}
+
+.nav-circle-btn.apple-circle svg path {
+  fill: #ffffff !important;
 }
 
 /* 2. Hero Section Atmosphere */
@@ -5410,9 +5636,9 @@ body.locked .sd {
     width: calc(100% - 20px) !important;
     max-width: calc(100% - 20px) !important;
     padding: 7px 12px !important;
-    background: rgba(22, 9, 16, 0.92) !important;
-    border: 1.5px solid rgba(255, 120, 160, 0.3) !important;
-    box-shadow: 0 16px 38px -8px rgba(0, 0, 0, 0.6), 0 0 22px rgba(255, 42, 109, 0.22), inset 0 1px 1px rgba(255, 255, 255, 0.22) !important;
+    background: linear-gradient(135deg, rgba(168, 14, 72, 0.94) 0%, rgba(138, 10, 58, 0.97) 100%) !important;
+    border: 1.5px solid rgba(255, 195, 220, 0.45) !important;
+    box-shadow: 0 16px 38px -6px rgba(120, 8, 50, 0.45), 0 0 24px rgba(255, 42, 109, 0.28), inset 0 1px 1.5px rgba(255, 255, 255, 0.35) !important;
   }
 
   .brand-logo-img {
@@ -6941,8 +7167,8 @@ body.locked .sd {
     </div>
     <div class="mom-badge-icon">🎟️</div>
     <h3>Pick your cinema</h3>
-    <p>Find your nearest luxury PVR, INOX or Cinepolis theatre with instant GPS seat tracking.</p>
-    <div class="mom-tag">📍 50+ Connected Theatres</div>
+    <p>Find your partner multiplex across West Bengal or Bihar with instant seat-side food tracking.</p>
+    <div class="mom-tag">📍 Partner Theatres in WB &amp; Bihar</div>
   </article>
 
   <article class="mom m2">
@@ -7116,29 +7342,34 @@ body.locked .sd {
       <div class="cinemas-controls-bar">
         <div class="cinemas-search-box">
           <span class="search-glass-icon">🔍</span>
-          <input type="text" id="cinemaSearchInput" placeholder="Search theatre, city or location..." aria-label="Search theatre, city or location">
+          <input type="text" id="cinemaSearchInput" placeholder="Search theatre name, town, road or pin code (e.g. Barrackpore, Bihar, 700120)..." aria-label="Search theatre name, town, road or pin code">
         </div>
         <div class="cinemas-city-dropdown">
           <span class="city-pin-icon">📍</span>
-          <select id="cinemaCitySelect" aria-label="Select City">
-            <option value="all">All Cities</option>
-            <option value="bengaluru">Bengaluru</option>
-            <option value="chennai">Chennai</option>
-            <option value="hyderabad">Hyderabad</option>
-            <option value="kolkata">Kolkata</option>
-            <option value="mumbai">Mumbai</option>
-            <option value="delhi">Delhi NCR</option>
+          <select id="cinemaCitySelect" aria-label="Select Region">
+            <option value="all">All Locations (9 Theatres)</option>
+            <option value="west-bengal">West Bengal / Kolkata (5)</option>
+            <option value="bihar">Bihar (4)</option>
           </select>
           <span class="dropdown-chevron">▼</span>
         </div>
       </div>
+
+      <!-- Quick Region Filter Pills -->
+      <div class="cinemas-filter-pills" id="cinemaFilterPills">
+        <button class="c-pill active" data-region="all">🍿 All Theatres (9)</button>
+        <button class="c-pill" data-region="west-bengal">📍 West Bengal / Kolkata (5)</button>
+        <button class="c-pill" data-region="bihar">📍 Bihar (4)</button>
+      </div>
+
+      <div id="cinemaMatchCount" class="cinema-match-count">Showing 9 of 9 partner theatres with live LOVE CAFE in-seat service</div>
     </div>
 
     <!-- Atmosphere Stage: India Map + Theatre Glow Building -->
     <div class="cinemas-atmosphere-stage">
       <div class="map-badge-container">
-        <img class="desktop-map-img" src="assets/showcase/india_map_outlets.png" alt="Map of India showing 27+ Outlets Across India" loading="lazy">
-        <img class="mobile-map-img" src="assets/showcase/cinemas_mobile_map.png" alt="Map of India showing 27+ Outlets" loading="lazy">
+        <img class="desktop-map-img" src="assets/showcase/india_map_outlets.png" alt="Map of India showing Partner Theatres Across West Bengal and Bihar" loading="lazy">
+        <img class="mobile-map-img" src="assets/showcase/cinemas_mobile_map.png" alt="Map of India showing Partner Outlets" loading="lazy">
       </div>
       <div class="theatre-glow-container">
         <div class="theatre-hand-note">
@@ -7154,10 +7385,10 @@ body.locked .sd {
       <div class="featured-header-row">
         <div class="featured-title-wrap">
           <span class="star-icon">⭐</span>
-          <h3>Featured Cinemas</h3>
+          <h3>Partner Cinema Locations</h3>
         </div>
         <div class="featured-actions-wrap">
-          <a href="#cinemas" class="view-all-link">View All Cinemas →</a>
+          <a href="#cinemas" class="view-all-link">Showing 9 Theatres →</a>
           <div class="carousel-arrows">
             <button class="c-arrow-btn" id="cinemasPrev" aria-label="Previous Cinemas">‹</button>
             <button class="c-arrow-btn" id="cinemasNext" aria-label="Next Cinemas">›</button>
@@ -7166,68 +7397,292 @@ body.locked .sd {
       </div>
 
       <div class="cinema-cards-scroll-track" id="cinemasTrack">
-        <!-- Card 1 -->
-        <div class="cinema-location-card" data-city="bengaluru">
+        <!-- 1. Atindra Multiplex (Barrackpore, WB) -->
+        <div class="cinema-location-card" data-city="west-bengal" data-name="atindra multiplex 91 ghoshpara rd das bari barrackpore west bengal 700120">
           <div class="card-thumb-wrap">
-            <img src="assets/showcase/thumb_pvr_orion.png" alt="PVR Orion Mall, Bengaluru" loading="lazy">
+            <img src="assets/showcase/thumb_pvr_orion.png" alt="Atindra Multiplex, Barrackpore" loading="lazy">
+            <span class="card-region-badge">📍 West Bengal</span>
+            <span class="card-live-badge">🍿 Counter Active</span>
           </div>
           <div class="card-info-wrap">
-            <h4>PVR - Orion Mall</h4>
-            <div class="city-location-tag">
-              <span>📍</span> <span>Bengaluru, Karnataka</span>
+            <div class="card-title-row">
+              <h4>Atindra Multiplex</h4>
+              <span class="screen-count-pill">★ 4.9 Multiplex</span>
             </div>
-            <span class="status-pill status-available">🥤 LOVE CAFE Available</span>
-            <button class="view-loc-btn">View Location →</button>
+            <div class="city-location-tag">
+              <span class="pin-ico">📍</span>
+              <span>91, Ghoshpara Rd, Das Bari, Barrackpore, West Bengal 700120</span>
+            </div>
+            <div class="card-perks-row">
+              <span class="perk-tag">⚡ In-Seat ~10m</span>
+              <span class="perk-tag">🍿 Hot Gourmet</span>
+              <span class="perk-tag">📱 Seat QR Order</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://www.google.com/maps/search/?api=1&query=Atindra+Multiplex+91+Ghoshpara+Rd+Das+Bari+Barrackpore+West+Bengal+700120" target="_blank" rel="noopener noreferrer" class="view-loc-btn map-btn">
+                <span>🗺️ Get Directions</span>
+              </a>
+              <a href="#app" class="view-loc-btn order-btn">
+                <span>🍿 Order Snacks</span>
+              </a>
+            </div>
           </div>
-          <a href="#app" class="card-mobile-arrow" aria-label="View PVR Orion Mall">›</a>
         </div>
 
-        <!-- Card 2 -->
-        <div class="cinema-location-card" data-city="chennai">
+        <!-- 2. Cinema Hut (Chandannagar, WB) -->
+        <div class="cinema-location-card" data-city="west-bengal" data-name="cinema hut v969+6pp barabazar chandannagar hooghly west bengal 712136">
           <div class="card-thumb-wrap">
-            <img src="assets/showcase/thumb_inox_phoenix.png" alt="INOX Phoenix Mall, Chennai" loading="lazy">
+            <img src="assets/showcase/thumb_inox_phoenix.png" alt="Cinema Hut, Chandannagar" loading="lazy">
+            <span class="card-region-badge">📍 West Bengal</span>
+            <span class="card-live-badge">🍿 Counter Active</span>
           </div>
           <div class="card-info-wrap">
-            <h4>INOX - Phoenix Mall</h4>
-            <div class="city-location-tag">
-              <span>📍</span> <span>Chennai, Tamil Nadu</span>
+            <div class="card-title-row">
+              <h4>Cinema Hut</h4>
+              <span class="screen-count-pill">★ 4.8 Cinema</span>
             </div>
-            <span class="status-pill status-available">🥤 LOVE CAFE Available</span>
-            <button class="view-loc-btn">View Location →</button>
+            <div class="city-location-tag">
+              <span class="pin-ico">📍</span>
+              <span>V969+6PP, Barabazar, Chandannagar, West Bengal 712136</span>
+            </div>
+            <div class="card-perks-row">
+              <span class="perk-tag">⚡ In-Seat ~10m</span>
+              <span class="perk-tag">🍿 Fresh Popcorn</span>
+              <span class="perk-tag">🥤 Chilled Drinks</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://www.google.com/maps/search/?api=1&query=Cinema+Hut+V969%2B6PP+Barabazar+Chandannagar+West+Bengal+712136" target="_blank" rel="noopener noreferrer" class="view-loc-btn map-btn">
+                <span>🗺️ Get Directions</span>
+              </a>
+              <a href="#app" class="view-loc-btn order-btn">
+                <span>🍿 Order Snacks</span>
+              </a>
+            </div>
           </div>
-          <a href="#app" class="card-mobile-arrow" aria-label="View INOX Phoenix Mall">›</a>
         </div>
 
-        <!-- Card 3 -->
-        <div class="cinema-location-card" data-city="hyderabad">
+        <!-- 3. Sushama Cinema (Sheoraphuli, Kolkata, WB) -->
+        <div class="cinema-location-card" data-city="west-bengal" data-name="sushama cinema q8gg+p58 grand trunk rd sheoraphuli kolkata hooghly west bengal 712223">
           <div class="card-thumb-wrap">
-            <img src="assets/showcase/thumb_cinepolis_nexus.png" alt="Cinépolis Nexus, Hyderabad" loading="lazy">
+            <img src="assets/showcase/thumb_pvr_forum.png" alt="Sushama Cinema, Sheoraphuli" loading="lazy">
+            <span class="card-region-badge">📍 West Bengal</span>
+            <span class="card-live-badge">🍿 Counter Active</span>
           </div>
           <div class="card-info-wrap">
-            <h4>Cinépolis - Nexus</h4>
-            <div class="city-location-tag">
-              <span>📍</span> <span>Hyderabad, Telangana</span>
+            <div class="card-title-row">
+              <h4>Sushama Cinema</h4>
+              <span class="screen-count-pill">★ 4.8 Heritage</span>
             </div>
-            <span class="status-pill status-available">🥤 LOVE CAFE Available</span>
-            <button class="view-loc-btn">View Location →</button>
+            <div class="city-location-tag">
+              <span class="pin-ico">📍</span>
+              <span>Q8GG+P58, Grand Trunk Rd, Sheoraphuli, Kolkata, West Bengal 712223</span>
+            </div>
+            <div class="card-perks-row">
+              <span class="perk-tag">⚡ In-Seat ~10m</span>
+              <span class="perk-tag">🍔 Crispy Burgers</span>
+              <span class="perk-tag">🍕 Fresh Pizza</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://www.google.com/maps/search/?api=1&query=Sushama+Cinema+Grand+Trunk+Rd+Sheoraphuli+Kolkata+West+Bengal+712223" target="_blank" rel="noopener noreferrer" class="view-loc-btn map-btn">
+                <span>🗺️ Get Directions</span>
+              </a>
+              <a href="#app" class="view-loc-btn order-btn">
+                <span>🍿 Order Snacks</span>
+              </a>
+            </div>
           </div>
-          <a href="#app" class="card-mobile-arrow" aria-label="View Cinépolis Nexus">›</a>
         </div>
 
-        <!-- Card 4 -->
-        <div class="cinema-location-card" data-city="kolkata">
+        <!-- 4. Rupmandir Cinema (Belghoria, Kolkata, WB) -->
+        <div class="cinema-location-card" data-city="west-bengal" data-name="rupmandir cinema 40 indrapuri beehive garden belghoria kolkata west bengal 700056">
           <div class="card-thumb-wrap">
-            <img src="assets/showcase/thumb_pvr_forum.png" alt="PVR Forum Mall, Kolkata" loading="lazy">
+            <img src="assets/showcase/thumb_cinepolis_nexus.png" alt="Rupmandir Cinema, Belghoria" loading="lazy">
+            <span class="card-region-badge">📍 West Bengal</span>
+            <span class="card-live-badge">🍿 Counter Active</span>
           </div>
           <div class="card-info-wrap">
-            <h4>PVR - Forum Mall</h4>
-            <div class="city-location-tag">
-              <span>📍</span> <span>Kolkata, West Bengal</span>
+            <div class="card-title-row">
+              <h4>Rupmandir Cinema</h4>
+              <span class="screen-count-pill">★ 4.9 Kolkata</span>
             </div>
-            <span class="status-pill status-soon">⏳ Coming Soon</span>
-            <button class="view-loc-btn">View Location →</button>
+            <div class="city-location-tag">
+              <span class="pin-ico">📍</span>
+              <span>40, Indrapuri, Beehive Garden, Belghoria, Kolkata, West Bengal 700056</span>
+            </div>
+            <div class="card-perks-row">
+              <span class="perk-tag">⚡ In-Seat ~10m</span>
+              <span class="perk-tag">🍿 Caramel &amp; Cheese</span>
+              <span class="perk-tag">🧋 Boba Tea</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://www.google.com/maps/search/?api=1&query=Rupmandir+Cinema+40+Indrapuri+Beehive+Garden+Belghoria+Kolkata+West+Bengal+700056" target="_blank" rel="noopener noreferrer" class="view-loc-btn map-btn">
+                <span>🗺️ Get Directions</span>
+              </a>
+              <a href="#app" class="view-loc-btn order-btn">
+                <span>🍿 Order Snacks</span>
+              </a>
+            </div>
           </div>
-          <a href="#app" class="card-mobile-arrow" aria-label="View PVR Forum Mall">›</a>
+        </div>
+
+        <!-- 5. Rathindra Multiplex (Sodepur, Kolkata, WB) -->
+        <div class="cinema-location-card" data-city="west-bengal" data-name="rathindra multiplex rathindra cinema hall 38 41 rn ave block-d/32 no 2 deshabondhu nagar sodepur kolkata khardaha west bengal 700110">
+          <div class="card-thumb-wrap">
+            <img src="assets/showcase/cinema_building.png" alt="Rathindra Multiplex, Sodepur" loading="lazy">
+            <span class="card-region-badge">📍 West Bengal</span>
+            <span class="card-live-badge">🍿 Counter Active</span>
+          </div>
+          <div class="card-info-wrap">
+            <div class="card-title-row">
+              <h4>Rathindra Multiplex</h4>
+              <span class="screen-count-pill">★ 4.9 Multiplex</span>
+            </div>
+            <div class="city-location-tag">
+              <span class="pin-ico">📍</span>
+              <span>38, Rathindra Cinema Hall, 41, RN Ave, Block-D/32, Sodepur, Kolkata, Khardaha, West Bengal 700110</span>
+            </div>
+            <div class="card-perks-row">
+              <span class="perk-tag">⚡ In-Seat ~10m</span>
+              <span class="perk-tag">🍿 Cinema Fresh</span>
+              <span class="perk-tag">🥪 Sandwiches</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://www.google.com/maps/search/?api=1&query=Rathindra+Cinema+Hall+38+RN+Ave+Sodepur+Kolkata+West+Bengal+700110" target="_blank" rel="noopener noreferrer" class="view-loc-btn map-btn">
+                <span>🗺️ Get Directions</span>
+              </a>
+              <a href="#app" class="view-loc-btn order-btn">
+                <span>🍿 Order Snacks</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Ambica Palace Multiplex (Ghorasahan, Bihar) -->
+        <div class="cinema-location-card" data-city="bihar" data-name="ambica palace multiplex r4cm+qfh ghorasahan east champaran bihar 845303">
+          <div class="card-thumb-wrap">
+            <img src="assets/showcase/theatre_building_glow.png" alt="Ambica Palace Multiplex, Ghorasahan" loading="lazy">
+            <span class="card-region-badge">📍 Bihar</span>
+            <span class="card-live-badge">🍿 Counter Active</span>
+          </div>
+          <div class="card-info-wrap">
+            <div class="card-title-row">
+              <h4>Ambica Palace (Multiplex)</h4>
+              <span class="screen-count-pill">★ 4.8 Multiplex</span>
+            </div>
+            <div class="city-location-tag">
+              <span class="pin-ico">📍</span>
+              <span>R4CM+QFH, Ghorasahan, Bihar 845303</span>
+            </div>
+            <div class="card-perks-row">
+              <span class="perk-tag">⚡ In-Seat ~10m</span>
+              <span class="perk-tag">🍿 Jumbo Tub</span>
+              <span class="perk-tag">📱 App Seat Delivery</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://www.google.com/maps/search/?api=1&query=Ambica+Palace+Multiplex+Ghorasahan+Bihar+845303" target="_blank" rel="noopener noreferrer" class="view-loc-btn map-btn">
+                <span>🗺️ Get Directions</span>
+              </a>
+              <a href="#app" class="view-loc-btn order-btn">
+                <span>🍿 Order Snacks</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Sarswati Talkies (Gopalganj, Bihar) -->
+        <div class="cinema-location-card" data-city="bihar" data-name="sarswati talkies yadavpur rd ward 7 gopalganj bihar 841428">
+          <div class="card-thumb-wrap">
+            <img src="assets/showcase/cinema_inox_phoenix.png" alt="Sarswati Talkies, Gopalganj" loading="lazy">
+            <span class="card-region-badge">📍 Bihar</span>
+            <span class="card-live-badge">🍿 Counter Active</span>
+          </div>
+          <div class="card-info-wrap">
+            <div class="card-title-row">
+              <h4>Sarswati Talkies</h4>
+              <span class="screen-count-pill">★ 4.7 Premier</span>
+            </div>
+            <div class="city-location-tag">
+              <span class="pin-ico">📍</span>
+              <span>Yadavpur Rd, Ward 7, Gopalganj, Bihar 841428</span>
+            </div>
+            <div class="card-perks-row">
+              <span class="perk-tag">⚡ In-Seat ~10m</span>
+              <span class="perk-tag">🍿 Gourmet Combos</span>
+              <span class="perk-tag">🥤 Chilled Cola</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://www.google.com/maps/search/?api=1&query=Sarswati+Talkies+Yadavpur+Rd+Ward+7+Gopalganj+Bihar+841428" target="_blank" rel="noopener noreferrer" class="view-loc-btn map-btn">
+                <span>🗺️ Get Directions</span>
+              </a>
+              <a href="#app" class="view-loc-btn order-btn">
+                <span>🍿 Order Snacks</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Lal Talkies (Chanpatia, Bihar) -->
+        <div class="cinema-location-card" data-city="bihar" data-name="lal talkies chanpatia west champaran bihar 845449">
+          <div class="card-thumb-wrap">
+            <img src="assets/showcase/cinema_cinepolis_nexus.png" alt="Lal Talkies, Chanpatia" loading="lazy">
+            <span class="card-region-badge">📍 Bihar</span>
+            <span class="card-live-badge">🍿 Counter Active</span>
+          </div>
+          <div class="card-info-wrap">
+            <div class="card-title-row">
+              <h4>Lal Talkies</h4>
+              <span class="screen-count-pill">★ 4.7 Cinema</span>
+            </div>
+            <div class="city-location-tag">
+              <span class="pin-ico">📍</span>
+              <span>Chanpatia, Bihar 845449</span>
+            </div>
+            <div class="card-perks-row">
+              <span class="perk-tag">⚡ In-Seat ~10m</span>
+              <span class="perk-tag">🍿 Hot Popcorn</span>
+              <span class="perk-tag">🍔 Crispy Burgers</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://www.google.com/maps/search/?api=1&query=Lal+Talkies+Chanpatia+Bihar+845449" target="_blank" rel="noopener noreferrer" class="view-loc-btn map-btn">
+                <span>🗺️ Get Directions</span>
+              </a>
+              <a href="#app" class="view-loc-btn order-btn">
+                <span>🍿 Order Snacks</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Mukta A2 Cinemas (Dalsinghsarai, Bihar) -->
+        <div class="cinema-location-card" data-city="bihar" data-name="mukta a2 cinemas near daini chowk dalsinghsarai pagra samastipur bihar 848114">
+          <div class="card-thumb-wrap">
+            <img src="assets/showcase/cinema_pvr_forum.png" alt="Mukta A2 Cinemas, Dalsinghsarai" loading="lazy">
+            <span class="card-region-badge">📍 Bihar</span>
+            <span class="card-live-badge">🍿 Counter Active</span>
+          </div>
+          <div class="card-info-wrap">
+            <div class="card-title-row">
+              <h4>Mukta A2 Cinemas</h4>
+              <span class="screen-count-pill">★ 4.9 Multiplex</span>
+            </div>
+            <div class="city-location-tag">
+              <span class="pin-ico">📍</span>
+              <span>Near, Daini Chowk, Dalsinghsarai, Pagra, Bihar 848114</span>
+            </div>
+            <div class="card-perks-row">
+              <span class="perk-tag">⚡ In-Seat ~10m</span>
+              <span class="perk-tag">🍿 Premium Snacks</span>
+              <span class="perk-tag">⚡ Ultra Fast Delivery</span>
+            </div>
+            <div class="card-actions-row">
+              <a href="https://www.google.com/maps/search/?api=1&query=Mukta+A2+Cinemas+Near+Daini+Chowk+Dalsinghsarai+Pagra+Bihar+848114" target="_blank" rel="noopener noreferrer" class="view-loc-btn map-btn">
+                <span>🗺️ Get Directions</span>
+              </a>
+              <a href="#app" class="view-loc-btn order-btn">
+                <span>🍿 Order Snacks</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -8951,6 +9406,116 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
     document.addEventListener('DOMContentLoaded', initAppShowcase);
   } else {
     initAppShowcase();
+  }
+})();
+
+/* ==========================================================================
+   PARTNER CINEMA LOCATIONS: LIVE SEARCH, REGION PILLS & CAROUSEL CONTROLLER
+   ========================================================================== */
+(function() {
+  function initCinemaLocations() {
+    const track = document.getElementById('cinemasTrack');
+    const searchInput = document.getElementById('cinemaSearchInput');
+    const citySelect = document.getElementById('cinemaCitySelect');
+    const filterPills = document.querySelectorAll('#cinemaFilterPills .c-pill');
+    const matchCount = document.getElementById('cinemaMatchCount');
+    const prevBtn = document.getElementById('cinemasPrev');
+    const nextBtn = document.getElementById('cinemasNext');
+    const cards = document.querySelectorAll('.cinema-location-card');
+
+    if (!cards.length) return;
+
+    let activeRegion = 'all';
+    let currentQuery = '';
+
+    function filterTheatres() {
+      let visibleCount = 0;
+      const query = currentQuery.toLowerCase().trim();
+
+      cards.forEach(card => {
+        const cardRegion = card.getAttribute('data-city') || '';
+        const cardData = (card.getAttribute('data-name') || '').toLowerCase();
+
+        const matchesRegion = activeRegion === 'all' || cardRegion === activeRegion;
+        const matchesQuery = !query || cardData.includes(query);
+
+        if (matchesRegion && matchesQuery) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (matchCount) {
+        if (visibleCount === cards.length) {
+          matchCount.textContent = `Showing all ${cards.length} partner theatres with live LOVE CAFE in-seat service`;
+        } else if (visibleCount > 0) {
+          const regionLabel = activeRegion === 'west-bengal' ? 'in West Bengal / Kolkata' : (activeRegion === 'bihar' ? 'in Bihar' : '');
+          matchCount.textContent = `Showing ${visibleCount} of ${cards.length} partner theatres ${regionLabel}`;
+        } else {
+          matchCount.textContent = `No theatres matching "${currentQuery}". Try searching "Barrackpore", "Kolkata", "Bihar", or "700120".`;
+        }
+      }
+    }
+
+    // Filter pills
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', function(e) {
+        e.preventDefault();
+        filterPills.forEach(p => p.classList.remove('active'));
+        this.classList.add('active');
+        activeRegion = this.getAttribute('data-region') || 'all';
+
+        if (citySelect) {
+          citySelect.value = activeRegion;
+        }
+
+        filterTheatres();
+      });
+    });
+
+    // Dropdown change
+    if (citySelect) {
+      citySelect.addEventListener('change', function() {
+        activeRegion = this.value;
+        filterPills.forEach(p => {
+          p.classList.toggle('active', p.getAttribute('data-region') === activeRegion);
+        });
+        filterTheatres();
+      });
+    }
+
+    // Live search input
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        currentQuery = this.value;
+        filterTheatres();
+      });
+    }
+
+    // Carousel arrows
+    if (prevBtn && track) {
+      prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        track.scrollBy({ left: -360, behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn && track) {
+      nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        track.scrollBy({ left: 360, behavior: 'smooth' });
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCinemaLocations);
+  } else {
+    initCinemaLocations();
   }
 })();
 </script>
