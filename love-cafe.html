@@ -27,7 +27,7 @@ h2{font-size:clamp(36px,5vw,64px)}
 p.lead{color:var(--mut);font-size:clamp(16px,1.5vw,19px);margin:14px 0 24px;max-width:36ch}
 .cta{display:flex;gap:12px;flex-wrap:wrap}
 /* hero */
-#scene{height:480vh;position:relative}
+#scene{height:620vh;position:relative}
 .stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.35fr);align-items:center;padding:60px clamp(16px,4vw,60px) 0;background:radial-gradient(110% 90% at 65% 45%,#fde1e3,#f8c3c7 72%)}
 .stage{width:100%;display:flex;flex-direction:column;align-items:center}
 canvas{display:block;width:100%;height:auto;-webkit-mask-image:linear-gradient(90deg,transparent 5%,#000 14%,#000 86%,transparent 95%),linear-gradient(180deg,transparent 13%,#000 27%,#000 73%,transparent 87%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 5%,#000 14%,#000 86%,transparent 95%),linear-gradient(180deg,transparent 13%,#000 27%,#000 73%,transparent 87%);mask-composite:intersect}
@@ -36,6 +36,15 @@ canvas{display:block;width:100%;height:auto;-webkit-mask-image:linear-gradient(9
 .dots{display:flex;gap:10px;justify-content:center;margin-top:8px}
 .dots i{width:11px;height:11px;border-radius:50%;background:#fff}.dots i.on{background:var(--rasp)}
 .sc{position:absolute;bottom:3vh;left:50%;transform:translateX(-50%);font-size:13px;color:var(--mut)}
+
+.hero-scroll-buffer {
+  height: clamp(80px, 12vh, 160px);
+  background: linear-gradient(180deg, #f0c5bf 0%, #fbd5dc 100%);
+  position: relative;
+  z-index: 2;
+  margin-top: -1px;
+}
+
 /* sections */
 .sec{padding:clamp(64px,10vw,130px) clamp(18px,5vw,80px)}
 .wrap{max-width:1200px;margin:0 auto}
@@ -82,7 +91,7 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap;font-size:15px}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
 @media(max-width:860px){
  .nl a:not(.btn){display:none}
- #scene{height:380vh}
+ #scene{height:540vh}
  .stick{grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;padding:64px 0 0;overflow:hidden}
  canvas{width:118%;max-width:none;margin:-7% 0 -7% -9%}
  .stick .copy{padding:0 22px}
@@ -944,7 +953,7 @@ body.locked{overflow:hidden;height:100svh}
 
 /* Hero Section Container */
 #scene {
-  height: 360vh !important;
+  height: 620vh !important;
   position: relative;
   z-index: 0;
   background: linear-gradient(180deg, #ecb7b3 0%, #f1bebb 18%, #f7ceca 42%, #fddbd9 68%, #f8d4cf 85%, #f0c5bf 100%) !important;
@@ -1390,7 +1399,7 @@ body.locked{overflow:hidden;height:100svh}
    ========================================================================== */
 @media (max-width: 860px) {
   #scene {
-    height: 320vh !important;
+    height: 540vh !important;
     background: linear-gradient(180deg, #ecb7b3 0%, #f1bebb 18%, #f7ceca 42%, #fddbd9 68%, #f8d4cf 85%, #f0c5bf 100%) !important;
   }
   
@@ -2437,7 +2446,7 @@ body.locked .sd {
 
 /* 2. Smooth, Leisurely Scroll Pacing for Hero 3D Box Experience */
 #scene {
-  height: 380vh !important;
+  height: 620vh !important;
   position: relative !important;
   z-index: 1 !important;
   background: linear-gradient(180deg, #ecb7b3 0%, #f1bebb 18%, #f7ceca 42%, #fddbd9 68%, #f8d4cf 85%, #f0c5bf 100%) !important;
@@ -2446,7 +2455,7 @@ body.locked .sd {
 
 @media (max-width: 860px) {
   #scene {
-    height: 340vh !important;
+    height: 540vh !important;
   }
 }
 
@@ -3305,6 +3314,7 @@ body.locked .sd {
 <div id="zc" aria-hidden="true"></div>
 <div id="zt" aria-hidden="true"></div>
 </div></div>
+<div class="hero-scroll-buffer" aria-hidden="true"></div>
 <div class="tick" aria-hidden="true"><div><span>🍿 Gourmet Popcorn</span><span>★</span><span>🍔 Artisan Burgers</span><span>★</span><span>🍕 Sourdough Pizza</span><span>★</span><span>🥤 Craft Cola</span><span>★</span><span>🍦 Belgian Gelato</span><span>★</span><span>🍿 Gourmet Popcorn</span><span>★</span><span>🍔 Artisan Burgers</span><span>★</span><span>🍕 Sourdough Pizza</span><span>★</span><span>🥤 Craft Cola</span><span>★</span><span>🍦 Belgian Gelato</span><span>★</span></div></div>
 <section class="orb3" id="flavours" aria-label="Menu flavours"><div class="o-stick"><div class="sp" aria-hidden="true"><i style="left:43%;top:23%;animation-delay:-1.6s;font-size:10px">✦</i><i style="left:11%;top:72%;animation-delay:-0.4s;font-size:19px">✦</i><i style="left:9%;top:68%;animation-delay:-0.9s;font-size:11px">✦</i><i style="left:57%;top:57%;animation-delay:-0.3s;font-size:11px">✦</i><i style="left:72%;top:58%;animation-delay:-0.2s;font-size:19px">✦</i><i style="left:17%;top:32%;animation-delay:-2.5s;font-size:19px">✦</i><i style="left:9%;top:77%;animation-delay:-2.3s;font-size:10px">✦</i><i style="left:30%;top:9%;animation-delay:-2.2s;font-size:12px">✦</i><i style="left:39%;top:57%;animation-delay:-0.6s;font-size:11px">✦</i><i style="left:75%;top:43%;animation-delay:-2.2s;font-size:20px">✦</i><i style="left:25%;top:17%;animation-delay:-2.3s;font-size:20px">✦</i><i style="left:26%;top:51%;animation-delay:-0.4s;font-size:21px">✦</i><i style="left:10%;top:76%;animation-delay:-0.2s;font-size:13px">✦</i><i style="left:65%;top:91%;animation-delay:-2.1s;font-size:22px">✦</i><i style="left:42%;top:63%;animation-delay:-2.3s;font-size:17px">✦</i><i style="left:48%;top:42%;animation-delay:-1.0s;font-size:12px">✦</i><i style="left:91%;top:35%;animation-delay:-0.3s;font-size:14px">✦</i><i style="left:69%;top:67%;animation-delay:-3.5s;font-size:21px">✦</i><i style="left:59%;top:40%;animation-delay:-2.4s;font-size:11px">✦</i><i style="left:17%;top:69%;animation-delay:-1.7s;font-size:22px">✦</i><i style="left:45%;top:23%;animation-delay:-3.7s;font-size:16px">✦</i><i style="left:7%;top:89%;animation-delay:-0.3s;font-size:18px">✦</i><i style="left:75%;top:44%;animation-delay:-1.4s;font-size:15px">✦</i><i style="left:78%;top:67%;animation-delay:-2.3s;font-size:17px">✦</i></div><div class="o-bg" id="obg" aria-hidden="true">FLAVOURS ★ FLAVOURS ★ FLAVOURS</div>
 <h2 class="o-t">Movie night <em>has flavours.</em></h2>
@@ -3854,9 +3864,9 @@ const frameImages = new Array(TOTAL_FRAMES);
 const frameLoaded = new Array(TOTAL_FRAMES).fill(false);
 let lastDrawnFrame = -1;
 
-function getFrameSrc(index) {
+function getFrameSrc(index, ext = 'webp') {
   const num = String(index + 1).padStart(3, '0');
-  return 'ezgif/ezgif-frame-' + num + '.png';
+  return 'ezgif/ezgif-frame-' + num + '.' + ext;
 }
 
 // Find closest loaded frame to guarantee a seamless, zero-flicker playback
@@ -3898,19 +3908,37 @@ function loadFrame(idx, onComplete) {
     if (onComplete) onComplete(idx);
   };
   img.onerror = () => {
-    console.warn('Frame failed to load:', idx);
+    // If WebP fails for any reason, seamlessly fallback to PNG
+    if (!img.src.endsWith('.png')) {
+      img.src = getFrameSrc(idx, 'png');
+    }
   };
-  img.src = getFrameSrc(idx);
+  // Load ultra-compact WebP first (12.7MB total sequence, 12x faster)
+  img.src = getFrameSrc(idx, 'webp');
+}
+
+// Dynamic scroll-direction preloading: immediately fetch frames in the direction of scrolling
+function prioritizeFramesAround(targetFrame) {
+  const windowRadius = 24;
+  const start = Math.max(0, targetFrame - 8);
+  const end = Math.min(TOTAL_FRAMES - 1, targetFrame + windowRadius);
+  for (let i = start; i <= end; i++) {
+    if (!frameImages[i]) {
+      loadFrame(i);
+    }
+  }
 }
 
 function initFramePreloader() {
-  // 1. Instantly load the first frame for immediate hero display
+  // 1. Instantly load first 3 frames for instant hero presentation
   loadFrame(0, () => {
     drawFrame(0);
   });
+  loadFrame(1);
+  loadFrame(2);
 
   // 2. Load milestone anchor frames spread across timeline for instant responsive scrubbing
-  const anchorInterval = 12;
+  const anchorInterval = 10;
   const anchors = [];
   for (let i = 0; i < TOTAL_FRAMES; i += anchorInterval) {
     if (i !== 0) anchors.push(i);
@@ -3927,14 +3955,14 @@ function initFramePreloader() {
     });
   });
 
-  // 3. Progressive background queue for all remaining frames
+  // 3. Fast progressive stream for all remaining frames
   const remaining = [];
   for (let i = 0; i < TOTAL_FRAMES; i++) {
-    if (i !== 0 && !anchors.includes(i)) remaining.push(i);
+    if (i > 2 && !anchors.includes(i)) remaining.push(i);
   }
 
   let queueIdx = 0;
-  const BATCH_SIZE = 8;
+  const BATCH_SIZE = 14;
 
   function loadNextBatch() {
     if (queueIdx >= remaining.length) return;
@@ -3951,15 +3979,11 @@ function initFramePreloader() {
     }
     queueIdx = end;
     if (queueIdx < remaining.length) {
-      if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(loadNextBatch, { timeout: 100 });
-      } else {
-        setTimeout(loadNextBatch, 25);
-      }
+      setTimeout(loadNextBatch, 16);
     }
   }
 
-  setTimeout(loadNextBatch, 60);
+  setTimeout(loadNextBatch, 40);
 }
 
 initFramePreloader();
@@ -3967,14 +3991,14 @@ initFramePreloader();
 // Set gate thumbnail image if element exists
 const gimg = $('gimg');
 if (gimg) {
-  gimg.src = getFrameSrc(TOTAL_FRAMES - 1);
+  gimg.src = getFrameSrc(TOTAL_FRAMES - 1, 'webp');
 }
 
 const caps = [
-  ['Popcorn', 'first, the hot buttery popcorn'],
-  ['Cola', 'then, ice-cold refreshing cola'],
-  ['Burger', 'a juicy gourmet burger'],
-  ['Pizza', 'and a hot pepperoni pizza slice']
+  ['Hot Gourmet Popcorn', 'first, hot buttery cinema popcorn pouring in... 🍿'],
+  ['Artisan Burger', 'then, a juicy gourmet burger landing in the box... 🍔'],
+  ['Craft Cola', 'next, ice-cold refreshing cola bottle sliding in... 🥤'],
+  ['Crispy Pizza Slice', 'and a hot crispy pepperoni pizza slice arriving... 🍕']
 ];
 const dots = [...document.querySelectorAll('.dots i')];
 const item = $('item');
@@ -3984,29 +4008,47 @@ const scene = $('scene');
 let target = 0, cur = 0, run = false;
 
 function renderScene(p) {
-  const f = Math.round(clamp(p / 0.88) * (TOTAL_FRAMES - 1));
+  // Map 0.0 to 0.88 across all 300 frames so the food pouring animation is given generous scroll track
+  const animProgress = clamp(p / 0.88, 0, 1);
+  const f = Math.round(animProgress * (TOTAL_FRAMES - 1));
   drawFrame(f);
+  prioritizeFramesAround(f);
 
-  const k = p < 0.1 ? -1 : Math.min(3, Math.floor((p - 0.1) / 0.2));
-  dots.forEach((d, i) => d.classList.toggle('on', i <= k));
-
-  if (p > 0.88) {
-    if (hand) hand.textContent = 'all packed & ready! ✨';
+  let k = -1;
+  if (p < 0.04) {
+    k = -1;
+    if (hand) hand.textContent = 'scroll down to build your combo box ↓';
     if (item) item.textContent = 'Your movie combo box';
-  } else if (k >= 0) {
-    if (hand) hand.textContent = caps[k][1];
-    if (item) item.textContent = caps[k][0];
+  } else if (animProgress < 0.25) {
+    k = 0;
+    if (hand) hand.textContent = caps[0][1];
+    if (item) item.textContent = caps[0][0];
+  } else if (animProgress < 0.50) {
+    k = 1;
+    if (hand) hand.textContent = caps[1][1];
+    if (item) item.textContent = caps[1][0];
+  } else if (animProgress < 0.75) {
+    k = 2;
+    if (hand) hand.textContent = caps[2][1];
+    if (item) item.textContent = caps[2][0];
+  } else if (animProgress < 0.94) {
+    k = 3;
+    if (hand) hand.textContent = caps[3][1];
+    if (item) item.textContent = caps[3][0];
   } else {
-    if (hand) hand.textContent = 'scroll to build your combo';
-    if (item) item.textContent = 'Your movie combo box';
+    k = 3;
+    if (hand) hand.textContent = 'all packed & ready for seat delivery! ✨';
+    if (item) item.textContent = 'LOVE CAFE VIP Combo Box';
   }
+
+  dots.forEach((d, i) => d.classList.toggle('on', i <= k));
 
   const stickEl = document.querySelector('.stick');
   if (stickEl) {
-    if (p > 0.88) {
-      const exitP = (p - 0.88) / 0.12;
-      stickEl.style.transform = `scale(${1 - 0.03 * exitP}) translateY(${-20 * exitP}px)`;
-      stickEl.style.opacity = `${1 - 0.25 * exitP}`;
+    if (p > 0.90) {
+      const exitP = (p - 0.90) / 0.10;
+      stickEl.style.transform = `scale(${1 - 0.03 * exitP}) translateY(${-25 * exitP}px)`;
+      stickEl.style.opacity = `${1 - 0.28 * exitP}`;
     } else {
       stickEl.style.transform = 'none';
       stickEl.style.opacity = '1';
@@ -4017,14 +4059,17 @@ function renderScene(p) {
 function getSceneTarget() {
   if (!scene) return 0;
   const r = scene.getBoundingClientRect();
-  return clamp(-r.top / Math.max(1, scene.offsetHeight - innerHeight));
+  const maxScroll = Math.max(1, scene.offsetHeight - innerHeight);
+  return clamp(-r.top / maxScroll);
 }
 
 function sceneLoop() {
-  cur += (target - cur) * 0.1;
-  if (Math.abs(target - cur) < 0.0005) {
+  const diff = target - cur;
+  if (Math.abs(diff) < 0.0006) {
     cur = target;
     run = false;
+  } else {
+    cur += diff * 0.22;
   }
   renderScene(cur);
   if (run) requestAnimationFrame(sceneLoop);
