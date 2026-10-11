@@ -2301,6 +2301,57 @@ body.locked {
 
 
 /* ==========================================================================
+   VIEWPORT FIT & ELIMINATE HORIZONTAL OVERFLOW / RIGHT WHITE SPACES
+   ========================================================================== */
+
+html {
+  overflow-x: clip !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: clip !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+@supports not (overflow-x: clip) {
+  html, body {
+    overflow-x: hidden !important;
+  }
+}
+
+/* MARQUEE TICKER: Contain completely within screen width, no horizontal bleed */
+.tick {
+  width: 100% !important;
+  max-width: 100vw !important;
+  margin: -26px 0 0 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* HERO BOX WINDOW: Contain canvas within stage */
+.win {
+  overflow: hidden !important;
+  max-width: 100% !important;
+}
+
+/* CONTAIN FLOATING DECORATIONS & BACKGROUNDS */
+.hero-sparks, .g-cinema-sparks, .app-sparkle-bg {
+  overflow: hidden !important;
+  max-width: 100vw !important;
+  pointer-events: none !important;
+}
+
+#scene, .stick, .sec, .scr, .ps, #cinemas, #how, #rewards, #get, footer {
+  max-width: 100vw !important;
+  box-sizing: border-box !important;
+}
+
+/* ==========================================================================
    ALWAYS-VISIBLE NAVIGATION PANE & SMOOTH CINEMATIC SCROLL ANIMATION PACING
    ========================================================================== */
 
@@ -2344,10 +2395,43 @@ body.locked .sd {
 @media (max-width: 860px) {
   .nav, #nav, header.nav {
     top: 10px !important;
-    width: calc(100% - 24px) !important;
-    max-width: 480px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    left: 10px !important;
+    right: 10px !important;
+    width: calc(100% - 20px) !important;
+    max-width: calc(100% - 20px) !important;
+    transform: none !important;
+    padding: 6px 10px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+  body.locked .nav,
+  body.locked #nav,
+  body.locked header.nav {
+    display: none !important;
+    transform: translateY(-120%) !important;
+  }
+  .brand {
+    font-size: 18px !important;
+    flex-shrink: 0 !important;
+  }
+  .nr {
+    gap: 6px !important;
+    margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+  }
+  .ib {
+    width: 34px !important;
+    height: 34px !important;
+    flex-shrink: 0 !important;
+  }
+  .mb {
+    width: 34px !important;
+    height: 34px !important;
+    flex-shrink: 0 !important;
   }
 }
 
@@ -3134,8 +3218,8 @@ body.locked .sd {
   <span class="h-spark" style="left:5%;top:16%;animation-delay:-1.2s;font-size:28px">🍿</span>
   <span class="h-spark" style="left:36%;top:10%;animation-delay:-2.5s;font-size:22px">✨</span>
   <span class="h-spark" style="left:42%;top:82%;animation-delay:-0.5s;font-size:26px">💖</span>
-  <span class="h-spark" style="left:90%;top:14%;animation-delay:-3.1s;font-size:28px">🥤</span>
-  <span class="h-spark" style="left:95%;top:68%;animation-delay:-1.8s;font-size:24px">🍕</span>
+  <span class="h-spark" style="left:84%;top:14%;animation-delay:-3.1s;font-size:28px">🥤</span>
+  <span class="h-spark" style="left:86%;top:68%;animation-delay:-1.8s;font-size:24px">🍕</span>
   <span class="h-spark" style="left:4%;top:86%;animation-delay:-2.1s;font-size:26px">⭐</span>
   <span class="h-spark" style="left:48%;top:5%;animation-delay:-4.0s;font-size:20px">✦</span>
   <span class="h-spark" style="left:82%;top:42%;animation-delay:-2.8s;font-size:22px">🍔</span>
