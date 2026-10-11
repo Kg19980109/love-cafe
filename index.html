@@ -2994,7 +2994,7 @@ body.locked .sd {
 
 .sl .pl {
   position: relative !important;
-  width: min(100%, 56vh) !important;
+  width: min(100%, 66vh) !important;
   aspect-ratio: 1 !important;
   margin: 0 auto !important;
   display: flex !important;
@@ -3003,14 +3003,36 @@ body.locked .sd {
 }
 
 .sl .pl img {
-  width: 90% !important;
-  height: 90% !important;
+  width: 95% !important;
+  height: 95% !important;
   border-radius: 50% !important;
   object-fit: cover !important;
-  border: 5px solid #fff !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 0 4px rgba(255, 255, 255, 0.2) !important;
+  border: 6px solid #fff !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.65), 0 0 55px rgba(255, 82, 135, 0.5) !important;
   position: relative !important;
   z-index: 2 !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  animation: floatPlate 4.5s ease-in-out infinite alternate !important;
+}
+
+@keyframes floatPlate {
+  0% { transform: translateY(0px) rotate(0deg) scale(1); }
+  100% { transform: translateY(-10px) rotate(1.2deg) scale(1.03); }
+}
+
+.it.on .ic {
+  transform: scale(1.42) !important;
+  box-shadow: 0 25px 65px rgba(230, 25, 90, 0.65), 0 0 45px rgba(255, 210, 63, 0.5) !important;
+  border: 3.5px solid #ffd23f !important;
+}
+.it .ic {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
+}
+.o-fresh-pill {
+  background: linear-gradient(135deg, rgba(255, 42, 109, 0.25), rgba(255, 210, 63, 0.2)) !important;
+  border: 1px solid rgba(255, 210, 63, 0.6) !important;
+  color: #ffd23f !important;
+  font-weight: 800 !important;
 }
 
 .sl-food-tag {
@@ -3046,7 +3068,7 @@ body.locked .sd {
     font-size: 14.5px !important;
   }
   .sl .pl {
-    width: min(80vw, 36vh) !important;
+    width: min(88vw, 44vh) !important;
   }
 }
 
@@ -3249,17 +3271,53 @@ body.locked .sd {
   transform: scale(1.06) !important;
 }
 
-/* --- Common Design System Tokens for the 3 Sections --- */
-.app-showcase-section,
-.cinemas-showcase-section,
-.how-showcase-section {
+/* --- Premium Luxury Theme for #app and #cinemas --- */
+.app-showcase-section {
   position: relative !important;
-  background: #ffeef2 linear-gradient(180deg, #ffeef2 0%, #fff5f7 50%, #ffeef2 100%) !important;
-  padding: clamp(70px, 8vw, 110px) clamp(16px, 4vw, 48px) !important;
-  color: #24141d !important;
+  background: radial-gradient(ellipse 90% 60% at 50% -15%, rgba(255, 42, 109, 0.28) 0%, transparent 65%),
+              radial-gradient(circle at 12% 80%, rgba(147, 51, 234, 0.22) 0%, transparent 50%),
+              radial-gradient(circle at 88% 70%, rgba(255, 210, 63, 0.16) 0%, transparent 45%),
+              linear-gradient(180deg, #14030d 0%, #250719 50%, #15030e 100%) !important;
+  padding: clamp(80px, 9vw, 130px) clamp(18px, 4vw, 52px) !important;
+  color: #ffffff !important;
   overflow: hidden !important;
   z-index: 5 !important;
   scroll-margin-top: 75px !important;
+}
+
+.app-showcase-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #ff2a6d 30%, #ffd23f 50%, #ff2a6d 70%, transparent 100%);
+  opacity: 0.85;
+}
+
+.cinemas-showcase-section {
+  position: relative !important;
+  background: radial-gradient(ellipse 85% 55% at 50% -20%, rgba(230, 25, 90, 0.3) 0%, transparent 65%),
+              radial-gradient(circle at 15% 40%, rgba(147, 51, 234, 0.2) 0%, transparent 50%),
+              radial-gradient(circle at 85% 65%, rgba(255, 210, 63, 0.16) 0%, transparent 45%),
+              linear-gradient(180deg, #15030e 0%, #26081a 50%, #14020b 100%) !important;
+  padding: clamp(80px, 9vw, 130px) clamp(18px, 4vw, 52px) !important;
+  color: #ffffff !important;
+  overflow: hidden !important;
+  z-index: 5 !important;
+  scroll-margin-top: 75px !important;
+}
+
+.cinemas-showcase-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #ff5287 30%, #ffd23f 50%, #ff5287 70%, transparent 100%);
+  opacity: 0.85;
 }
 
 .section-tag-pill,
@@ -3338,7 +3396,7 @@ body.locked .sd {
   color: #ffffff !important;
 }
 
-/* --- 1. SECTION #app STYLING --- */
+/* --- 1. SECTION #app STYLING (VIBRANT & EXPENSIVE) --- */
 .app-section-inner {
   max-width: 1220px !important;
   margin: 0 auto !important;
@@ -3358,40 +3416,58 @@ body.locked .sd {
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  gap: 16px !important;
+  gap: 18px !important;
 }
 
 .app-title-head {
   font-family: var(--disp) !important;
-  font-size: clamp(38px, 4.4vw, 56px) !important;
+  font-size: clamp(40px, 5vw, 62px) !important;
   font-weight: 900 !important;
-  line-height: 1.08 !important;
-  color: #1a0f15 !important;
+  line-height: 1.06 !important;
+  color: #ffffff !important;
   margin: 0 !important;
   letter-spacing: -0.02em !important;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.7) !important;
+}
+
+.app-title-head .coral-gradient-text {
+  background: linear-gradient(135deg, #ffd23f 0%, #ff5287 50%, #ff7844 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 .app-subtitle-desc {
   font-family: var(--sans) !important;
-  font-size: clamp(15px, 1.25vw, 17px) !important;
+  font-size: clamp(16px, 1.3vw, 18.5px) !important;
   font-weight: 500 !important;
-  line-height: 1.5 !important;
-  color: #552837 !important;
+  line-height: 1.6 !important;
+  color: #ffd8e5 !important;
   margin: 0 !important;
-  max-width: 480px !important;
+  max-width: 520px !important;
 }
 
-/* QR Code Card */
+/* Luxury Frosted QR Code Card */
 .app-qr-download-card {
   display: inline-flex !important;
   align-items: center !important;
   gap: 16px !important;
-  background: #ffffff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
   border-radius: 20px !important;
-  border: 1.5px solid rgba(220, 50, 95, 0.18) !important;
-  box-shadow: 0 10px 28px rgba(180, 40, 75, 0.08) !important;
-  padding: 12px 18px !important;
-  margin-top: 4px !important;
+  border: 1.5px solid rgba(255, 180, 215, 0.35) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  padding: 14px 20px !important;
+  margin-top: 6px !important;
+}
+.app-qr-download-card .qr-instruction {
+  color: #ffffff !important;
+  font-family: var(--disp) !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+}
+.app-qr-download-card .qr-hand-arrow svg path {
+  stroke: #ffd23f !important;
 }
 
 .qr-code-frame {
@@ -3473,40 +3549,52 @@ body.locked .sd {
   display: none !important;
 }
 
-/* Bottom Perks Capsule Bar */
+/* Bottom 4 Perks as Luxury Floating Jewel Tiles */
 .app-perks-capsule-bar {
-  background: rgba(255, 255, 255, 0.94) !important;
-  backdrop-filter: blur(14px) !important;
-  border-radius: 999px !important;
-  border: 1.5px solid rgba(220, 50, 95, 0.2) !important;
-  box-shadow: 0 12px 36px rgba(180, 40, 75, 0.08) !important;
-  padding: 16px 32px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 16px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 18px !important;
 }
 
 .perk-card {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  border-radius: 22px !important;
+  border: 1.5px solid rgba(255, 190, 220, 0.22) !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  padding: 20px 20px !important;
   display: flex !important;
   align-items: center !important;
-  gap: 12px !important;
-  flex: 1 !important;
+  gap: 14px !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s ease, box-shadow 0.28s ease !important;
+}
+
+.perk-card:hover {
+  transform: translateY(-6px) scale(1.025) !important;
+  border-color: rgba(255, 82, 135, 0.65) !important;
+  box-shadow: 0 22px 48px rgba(230, 25, 90, 0.35), 0 0 20px rgba(255, 42, 109, 0.2) !important;
 }
 
 .perk-icon {
-  font-size: 24px !important;
+  font-size: 28px !important;
   flex-shrink: 0 !important;
+  filter: drop-shadow(0 4px 12px rgba(255, 82, 135, 0.4)) !important;
 }
 
 .perk-icon.heart-circle {
-  width: 32px !important;
-  height: 32px !important;
-  background: #ffe3ea !important;
+  width: 36px !important;
+  height: 36px !important;
+  background: linear-gradient(135deg, #ff2a6d, #e6195a) !important;
   border-radius: 50% !important;
   display: grid !important;
   place-items: center !important;
-  font-size: 16px !important;
+  font-size: 18px !important;
+  box-shadow: 0 4px 14px rgba(255, 42, 109, 0.5) !important;
 }
 
 .perk-details {
@@ -3517,26 +3605,35 @@ body.locked .sd {
 
 .perk-details b {
   font-family: var(--disp) !important;
-  font-size: 14px !important;
+  font-size: 14.5px !important;
   font-weight: 800 !important;
-  color: #1e1117 !important;
+  color: #ffffff !important;
 }
 
 .perk-details span {
   font-family: var(--sans) !important;
   font-size: 12px !important;
-  color: #6a3648 !important;
+  color: #ffd0df !important;
 }
 
 .perk-divider {
-  width: 1px !important;
-  height: 36px !important;
-  background: rgba(220, 50, 95, 0.15) !important;
-  flex-shrink: 0 !important;
+  display: none !important;
+}
+
+@media (max-width: 980px) {
+  .app-perks-capsule-bar {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-perks-capsule-bar {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 
-/* --- 2. SECTION #cinemas STYLING --- */
+/* --- 2. SECTION #cinemas STYLING (LUXURY CINEMA MARQUEE) --- */
 .cinemas-section-inner {
   max-width: 1220px !important;
   margin: 0 auto !important;
@@ -3549,37 +3646,44 @@ body.locked .sd {
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  gap: 14px !important;
-  max-width: 780px !important;
+  gap: 16px !important;
+  max-width: 820px !important;
 }
 
 .cinemas-title-head {
   font-family: var(--disp) !important;
-  font-size: clamp(38px, 4.4vw, 56px) !important;
+  font-size: clamp(40px, 5vw, 62px) !important;
   font-weight: 900 !important;
-  line-height: 1.08 !important;
-  color: #1a0f15 !important;
+  line-height: 1.06 !important;
+  color: #ffffff !important;
   margin: 0 !important;
   letter-spacing: -0.02em !important;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.7) !important;
+}
+
+.cinemas-title-head .coral-gradient-text {
+  background: linear-gradient(135deg, #ffd23f 0%, #ff5287 50%, #ff7844 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 .cinemas-subtitle-desc {
   font-family: var(--sans) !important;
-  font-size: clamp(15px, 1.25vw, 17px) !important;
+  font-size: clamp(16px, 1.3vw, 18.5px) !important;
   font-weight: 500 !important;
-  line-height: 1.5 !important;
-  color: #552837 !important;
+  line-height: 1.6 !important;
+  color: #ffd8e5 !important;
   margin: 0 !important;
 }
 
-/* Search Controls Bar */
+/* Luxury Frosted Search & Filter Controls */
 .cinemas-controls-bar {
   display: flex !important;
   flex-wrap: wrap !important;
   gap: 12px !important;
   width: 100% !important;
-  max-width: 650px !important;
-  margin-top: 4px !important;
+  max-width: 680px !important;
+  margin-top: 6px !important;
 }
 
 .cinemas-search-box {
@@ -3587,16 +3691,19 @@ body.locked .sd {
   position: relative !important;
   display: flex !important;
   align-items: center !important;
-  background: #ffffff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
   border-radius: 999px !important;
-  border: 1.5px solid rgba(220, 50, 95, 0.22) !important;
-  box-shadow: 0 6px 18px rgba(180, 40, 75, 0.06) !important;
-  padding: 0 16px !important;
+  border: 1.5px solid rgba(255, 180, 215, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  padding: 0 18px !important;
 }
 
 .search-glass-icon {
-  color: #8c5264 !important;
+  color: #ffd23f !important;
   margin-right: 8px !important;
+  font-size: 15px !important;
 }
 
 .cinemas-search-box input {
@@ -3606,18 +3713,24 @@ body.locked .sd {
   background: transparent !important;
   font-family: var(--sans) !important;
   font-size: 14px !important;
-  color: #24141d !important;
+  color: #ffffff !important;
   padding: 12px 0 !important;
+}
+
+.cinemas-search-box input::placeholder {
+  color: rgba(255, 215, 230, 0.65) !important;
 }
 
 .cinemas-city-dropdown {
   position: relative !important;
   display: inline-flex !important;
   align-items: center !important;
-  background: #ffffff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
   border-radius: 999px !important;
-  border: 1.5px solid rgba(220, 50, 95, 0.22) !important;
-  box-shadow: 0 6px 18px rgba(180, 40, 75, 0.06) !important;
+  border: 1.5px solid rgba(255, 180, 215, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
   padding: 0 18px !important;
 }
 
@@ -3632,11 +3745,16 @@ body.locked .sd {
   font-family: var(--disp) !important;
   font-size: 14px !important;
   font-weight: 700 !important;
-  color: #24141d !important;
+  color: #ffffff !important;
   padding: 12px 20px 12px 0 !important;
   cursor: pointer !important;
   -webkit-appearance: none !important;
   appearance: none !important;
+}
+
+.cinemas-city-dropdown select option {
+  background: #200615 !important;
+  color: #ffffff !important;
 }
 
 .dropdown-chevron {
@@ -3644,7 +3762,7 @@ body.locked .sd {
   right: 14px !important;
   pointer-events: none !important;
   font-size: 12px !important;
-  color: #7b2c45 !important;
+  color: #ffd23f !important;
 }
 
 /* Atmosphere Stage (India Map + Cinema Building) */
@@ -3826,10 +3944,12 @@ body.locked .sd {
 }
 
 .cinema-location-card {
-  background: #ffffff !important;
-  border-radius: 22px !important;
-  border: 1.5px solid rgba(220, 50, 95, 0.18) !important;
-  box-shadow: 0 10px 30px rgba(180, 40, 75, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  background: rgba(36, 10, 24, 0.88) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-radius: 24px !important;
+  border: 1.5px solid rgba(255, 180, 215, 0.28) !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
   overflow: hidden !important;
   display: flex !important;
   flex-direction: column !important;
@@ -3914,9 +4034,10 @@ body.locked .sd {
   font-family: var(--disp) !important;
   font-size: 18px !important;
   font-weight: 900 !important;
-  color: #1a0812 !important;
+  color: #ffffff !important;
   margin: 0 !important;
   letter-spacing: -0.01em !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5) !important;
 }
 
 .screen-count-pill {
@@ -3939,7 +4060,7 @@ body.locked .sd {
   font-size: 13px !important;
   font-weight: 500 !important;
   line-height: 1.4 !important;
-  color: #5f2d3d !important;
+  color: #ffd2e0 !important;
 }
 
 .city-location-tag .pin-ico {
@@ -6026,11 +6147,107 @@ body.locked .sd {
   box-shadow: 0 8px 22px rgba(230, 25, 90, 0.32) !important;
 }
 
-/* Reviews Cards Grid */
-.reviews-cards-grid {
+/* Reviews Reel Carousel Controls Bar */
+.rev-carousel-controls-bar {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 4px 6px !important;
+  margin-bottom: -10px !important;
+}
+
+.rev-reel-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #a82048 !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  padding: 6px 14px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(230, 25, 90, 0.22) !important;
+  box-shadow: 0 4px 12px rgba(230, 25, 90, 0.08) !important;
+}
+
+.pulsing-live-dot {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: #e6195a !important;
+  box-shadow: 0 0 10px #e6195a !important;
+  animation: pulseDot 1.6s infinite ease-in-out !important;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.rev-carousel-arrows {
+  display: flex !important;
+  gap: 8px !important;
+}
+
+.rev-arrow-btn {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, rgba(168, 14, 72, 0.95), rgba(138, 10, 58, 0.98)) !important;
+  border: 1.5px solid rgba(255, 195, 220, 0.5) !important;
+  color: #ffffff !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 24px !important;
+  place-items: center !important;
+  box-shadow: 0 8px 20px rgba(138, 10, 58, 0.3) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.rev-arrow-btn:hover {
+  transform: translateY(-2px) scale(1.08) !important;
+  background: linear-gradient(135deg, #ff2a6d, #e6195a) !important;
+  border-color: #ffd23f !important;
+  box-shadow: 0 10px 24px rgba(255, 42, 109, 0.45) !important;
+}
+
+/* Reviews Cards Horizontal Scroller (Eliminates Excessive Page Scrolling) */
+.reviews-cards-grid {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 22px !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  padding: 16px 6px 26px !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(230, 25, 90, 0.5) rgba(255, 255, 255, 0.15) !important;
+  -webkit-overflow-scrolling: touch !important;
+  scroll-behavior: smooth !important;
+}
+
+.reviews-cards-grid::-webkit-scrollbar {
+  height: 8px !important;
+}
+
+.reviews-cards-grid::-webkit-scrollbar-track {
+  background: rgba(255, 230, 240, 0.7) !important;
+  border-radius: 999px !important;
+}
+
+.reviews-cards-grid::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #ff2a6d, #ffd23f) !important;
+  border-radius: 999px !important;
+}
+
+.rev-card {
+  flex: 0 0 380px !important;
+  width: 380px !important;
+  min-width: 340px !important;
+  scroll-snap-align: start !important;
 }
 
 /* Individual Luxury Cinema Review Ticket Card */
@@ -6546,8 +6763,14 @@ body.locked .sd {
     box-sizing: border-box !important;
   }
   .reviews-cards-grid {
-    grid-template-columns: 1fr !important;
-    gap: 18px !important;
+    gap: 16px !important;
+    padding: 12px 4px 22px !important;
+  }
+  .rev-card {
+    flex: 0 0 85vw !important;
+    width: 85vw !important;
+    min-width: 285px !important;
+    scroll-snap-align: start !important;
   }
   .reviews-bottom-cta-banner {
     border-radius: 28px !important;
@@ -6654,7 +6877,7 @@ body.locked .sd {
 </div>
 </div>
 <div id="dock"><div class="stores"><a class="store" data-play href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get LOVE CAFE on Google Play"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg><span><small>GET IT ON</small>Google Play</span></a><a class="store" data-ios href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download LOVE CAFE on the App Store"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.2-2.800.8-3.500.8-.7 0-1.800-.8-3-.8-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7c1.300 0 2.100-1.100 2.800-2.200.9-1.300 1.300-2.500 1.300-2.600 0 0-2.500-1-2.500-3.800zM14.100 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.600 1.400-.6.700-1.100 1.700-.9 2.700 1 .1 2-.5 2.600-1.300z"/></svg><span><small>Download on the</small>App Store</span></a></div></div>
-<nav class="sd" aria-label="Page sections"><a href="#top" title="Start"></a><a href="#flavours" title="Flavours"></a><a href="#story" title="Movie night"></a><a href="#app" title="App"></a><a href="#cinemas" title="Cinemas"></a><a href="#how" title="How it works"></a><a href="#reviews" title="Reviews"></a><a href="#rewards" title="CinePoints"></a><a href="#get" title="Download"></a></nav>
+<nav class="sd" aria-label="Page sections"><a href="#top" title="Start"></a><a href="#flavours" title="Flavours"></a><a href="#story" title="Movie night"></a><a href="#app" title="App"></a><a href="#cinemas" title="Cinemas"></a><a href="#reviews" title="Reviews"></a><a href="#rewards" title="CinePoints"></a><a href="#get" title="Download"></a></nav>
 <div id="bar" aria-hidden="true"></div>
 <header class="nav" id="nav">
   <a class="brand" href="#top" aria-label="LOVE CAFE - please taste me one time!">
@@ -6666,7 +6889,7 @@ body.locked .sd {
     <a href="#flavours">Our Menu</a>
     <a href="#story">The Experience</a>
     <a href="#cinemas">Find Your Cinema</a>
-    <a href="#how">About</a>
+    <a href="#reviews">Guest Reviews</a>
   </nav>
 
   <div class="nav-actions">
@@ -6709,8 +6932,8 @@ body.locked .sd {
       <a href="#flavours" class="m-link"><span class="m-icon">🍿</span><span class="m-text">Flavours &amp; Combos</span><span class="m-badge">Menu</span></a>
       <a href="#story" class="m-link"><span class="m-icon">✨</span><span class="m-text">Movie Night Story</span><span class="m-badge">4 Moments</span></a>
       <a href="#app" class="m-link"><span class="m-icon">📱</span><span class="m-text">App Experience</span><span class="m-badge">Fast</span></a>
-      <a href="#cinemas" class="m-link"><span class="m-icon">🎟️</span><span class="m-text">Partner Cinemas</span><span class="m-badge">50+</span></a>
-      <a href="#how" class="m-link"><span class="m-icon">⚡</span><span class="m-text">How It Works</span><span class="m-badge">3 Steps</span></a>
+      <a href="#cinemas" class="m-link"><span class="m-icon">🎟️</span><span class="m-text">Partner Cinemas</span><span class="m-badge">9 Theatres</span></a>
+      <a href="#reviews" class="m-link"><span class="m-icon">⭐</span><span class="m-text">Guest Reviews</span><span class="m-badge">4.9★</span></a>
       <a href="#rewards" class="m-link"><span class="m-icon">⭐</span><span class="m-text">CinePoints</span><span class="m-badge">Rewards</span></a>
       <a href="#get" class="m-link"><span class="m-icon">📲</span><span class="m-text">Download App</span><span class="m-badge">Free</span></a>
     </nav>
@@ -6951,7 +7174,6 @@ body.locked .sd {
         <div class="ic">
           <img src="assets/flavours/snack_popcorn.jpg" alt="Gourmet Cinema Popcorn" width="420" height="420" loading="eager">
           <span class="it-badge">🍿 Bestseller</span>
-          <span class="it-price">₹180</span>
         </div>
       </div>
       
@@ -6960,7 +7182,6 @@ body.locked .sd {
         <div class="ic">
           <img src="assets/flavours/snack_burger.jpg" alt="Artisan Brioche Smash Burger" width="420" height="420" loading="eager">
           <span class="it-badge">🍔 Chef's Choice</span>
-          <span class="it-price">₹240</span>
         </div>
       </div>
       
@@ -6969,7 +7190,6 @@ body.locked .sd {
         <div class="ic">
           <img src="assets/flavours/snack_pizza.jpg" alt="Woodfired Sourdough Pizza" width="420" height="420" loading="eager">
           <span class="it-badge">🍕 Woodfired</span>
-          <span class="it-price">₹290</span>
         </div>
       </div>
       
@@ -6978,7 +7198,6 @@ body.locked .sd {
         <div class="ic">
           <img src="assets/flavours/snack_sandwich.jpg" alt="Toasted Gourmet Club Sandwich" width="420" height="420" loading="eager">
           <span class="it-badge">🥪 Deli Panini</span>
-          <span class="it-price">₹190</span>
         </div>
       </div>
       
@@ -6987,7 +7206,6 @@ body.locked .sd {
         <div class="ic">
           <img src="assets/flavours/snack_momo.jpg" alt="Himalayan Steamed Momos" width="420" height="420" loading="eager">
           <span class="it-badge">🥟 Steamed Hot</span>
-          <span class="it-price">₹160</span>
         </div>
       </div>
       
@@ -6996,7 +7214,6 @@ body.locked .sd {
         <div class="ic">
           <img src="assets/flavours/snack_boba.jpg" alt="Tiger Brown Sugar Boba Tea" width="420" height="420" loading="eager">
           <span class="it-badge">🧋 Fresh Milk</span>
-          <span class="it-price">₹210</span>
         </div>
       </div>
       
@@ -7005,7 +7222,6 @@ body.locked .sd {
         <div class="ic">
           <img src="assets/flavours/snack_cold_drink.jpg" alt="Ice-Cold Craft Cinema Cola" width="420" height="420" loading="eager">
           <span class="it-badge">🥤 2°C Chilled</span>
-          <span class="it-price">₹120</span>
         </div>
       </div>
     </div>
@@ -7014,7 +7230,7 @@ body.locked .sd {
     <div class="o-cap" aria-live="polite">
       <div class="o-meta-tags">
         <span class="o-pill o-badge-pill" id="obadge">🍿 Cinema Bestseller</span>
-        <span class="o-pill o-price-pill" id="oprice">₹180</span>
+        <span class="o-pill o-fresh-pill" id="ochef">🔥 Hot Seat Drop</span>
         <span class="o-pill o-time-pill">⚡ Delivered in ~10 mins</span>
       </div>
       <b id="oname">Gourmet Popcorn</b>
@@ -7052,7 +7268,7 @@ body.locked .sd {
         <div class="orb"><span>✨</span></div>
         <div class="orb o2"><span>🍿</span></div>
         <img src="assets/flavours/snack_popcorn.jpg" alt="Golden Cinema Butter Popcorn" loading="eager">
-        <span class="sl-food-tag">🍿 Freshly Popped · ₹180</span>
+        <span class="sl-food-tag">🍿 Freshly Popped · Golden Butter</span>
       </div>
     </div>
 
@@ -7068,7 +7284,7 @@ body.locked .sd {
         <div class="orb"><span>🍔</span></div>
         <div class="orb o2"><span>🔥</span></div>
         <img src="assets/flavours/snack_burger.jpg" alt="Artisan Brioche Smash Burger" loading="eager">
-        <span class="sl-food-tag">🍔 Brioche Smash · ₹240</span>
+        <span class="sl-food-tag">🍔 Brioche Smash · Double Melt</span>
       </div>
     </div>
 
@@ -7084,7 +7300,7 @@ body.locked .sd {
         <div class="orb"><span>🍕</span></div>
         <div class="orb o2"><span>🧀</span></div>
         <img src="assets/flavours/snack_pizza.jpg" alt="Woodfired Sourdough Pizza" loading="eager">
-        <span class="sl-food-tag">🍕 Woodfired · ₹290</span>
+        <span class="sl-food-tag">🍕 Woodfired · Buffalo Mozzarella</span>
       </div>
     </div>
 
@@ -7100,7 +7316,7 @@ body.locked .sd {
         <div class="orb"><span>🥪</span></div>
         <div class="orb o2"><span>🌿</span></div>
         <img src="assets/flavours/snack_sandwich.jpg" alt="Toasted Gourmet Sandwiches" loading="eager">
-        <span class="sl-food-tag">🥪 Toasted Panini · ₹190</span>
+        <span class="sl-food-tag">🥪 Toasted Panini · Herb Pesto</span>
       </div>
     </div>
 
@@ -7116,7 +7332,7 @@ body.locked .sd {
         <div class="orb"><span>🧋</span></div>
         <div class="orb o2"><span>✨</span></div>
         <img src="assets/flavours/snack_boba.jpg" alt="Tiger Brown Sugar Boba Tea" loading="eager">
-        <span class="sl-food-tag">🧋 Brown Sugar Boba · ₹210</span>
+        <span class="sl-food-tag">🧋 Brown Sugar Boba · Fresh Milk</span>
       </div>
     </div>
 
@@ -7132,7 +7348,7 @@ body.locked .sd {
         <div class="orb"><span>🥤</span></div>
         <div class="orb o2"><span>❄️</span></div>
         <img src="assets/flavours/snack_cold_drink.jpg" alt="Ice-Cold Craft Cinema Drinks" loading="eager">
-        <span class="sl-food-tag">🥤 Chilled to 2°C · ₹120</span>
+        <span class="sl-food-tag">🥤 Chilled to 2°C · Frost Fizz</span>
       </div>
     </div>
 
@@ -7705,131 +7921,6 @@ body.locked .sd {
   </div>
 </section>
 
-<!-- 3. SECTION: HOW IT WORKS (MOVIE-NIGHT RITUAL) -->
-<section class="sec how-showcase-section" id="how" aria-label="How Love Cafe Works">
-  <div class="how-section-inner">
-    <!-- Header Row -->
-    <div class="how-header-row">
-      <div class="how-header-left">
-        <div class="section-tag-pill">
-          <img src="assets/love_logo_dark_cinema.png" alt="LOVE" style="height:15px; width:auto; vertical-align:middle; margin-right:4px;"> YOUR MOVIE-NIGHT RITUAL
-        </div>
-        <h2 class="how-title-head">
-          From your screen<br>
-          <span class="coral-gradient-text">to your seat.</span>
-        </h2>
-        <p class="how-subtitle-desc">
-          Your favourite cinema snacks, ordered with ease and delivered as part of the movie experience.
-        </p>
-      </div>
-
-      <div class="how-header-right">
-        <div class="how-hand-note-box">
-          <p class="hand-line">Good Food</p>
-          <p class="hand-line">No interruptions</p>
-          <p class="hand-line">Just better movies</p>
-        </div>
-        <div class="golden-ritual-ticket">
-          <span>SIT BACK</span>
-          <span>SNACK UP</span>
-          <span>ENJOY THE SHOW</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Atmosphere Cinema Recliner Scene -->
-    <div class="how-recliner-atmosphere">
-      <img src="assets/showcase/cinema_recliner_scene.png" alt="Cinema seats and snacks" loading="lazy">
-    </div>
-
-    <!-- 4-Step Process Journey -->
-    <div class="how-steps-journey-wrap">
-      <div class="steps-connector-line"></div>
-
-      <!-- Step 01 -->
-      <div class="how-journey-card">
-        <div class="floating-step-badge">🍿</div>
-        <div class="card-step-circle">01</div>
-        <div class="card-content-block">
-          <h4>Find your cinema</h4>
-          <p>Choose a participating cinema and discover the LOVE CAFE experience.</p>
-        </div>
-        <div class="card-visual-thumb">
-          <img src="assets/showcase/thumb_step1_cinema.png" alt="Cinema exterior location" loading="lazy">
-          <span class="thumb-pin-badge">📍</span>
-        </div>
-      </div>
-
-      <!-- Step 02 -->
-      <div class="how-journey-card">
-        <div class="floating-step-badge">🎟️</div>
-        <div class="card-step-circle">02</div>
-        <div class="card-content-block">
-          <h4>Pick your favourites</h4>
-          <p>Explore the menu and choose your movie snacks.</p>
-        </div>
-        <div class="card-visual-thumb">
-          <img src="assets/showcase/thumb_step2_menu.png" alt="App menu snacks selection" loading="lazy">
-        </div>
-      </div>
-
-      <!-- Step 03 -->
-      <div class="how-journey-card">
-        <div class="floating-step-badge">🛵</div>
-        <div class="card-step-circle">03</div>
-        <div class="card-content-block">
-          <h4>Place your order</h4>
-          <p>Use the LOVE CAFE app to order for your cinema visit.</p>
-        </div>
-        <div class="card-visual-thumb">
-          <img src="assets/showcase/thumb_step3_order.png" alt="Order confirmed delivery to seat" loading="lazy">
-        </div>
-      </div>
-
-      <!-- Step 04 -->
-      <div class="how-journey-card">
-        <div class="floating-step-badge">💺</div>
-        <div class="card-step-circle">04</div>
-        <div class="card-content-block">
-          <h4>Enjoy the show</h4>
-          <p>Sit back, settle in, and enjoy your movie with your favourite snacks.</p>
-        </div>
-        <div class="card-visual-thumb">
-          <img src="assets/showcase/thumb_step4_enjoy.png" alt="Moviegoer enjoying popcorn at cinema" loading="lazy">
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom CTA Banner -->
-    <div class="how-bottom-cta-banner">
-      <div class="cta-banner-left">
-        <img class="cta-phone-icon" src="assets/showcase/how_cta_phone_popcorn.png" alt="Love Cafe App Phone and Popcorn" loading="lazy">
-      </div>
-      <div class="cta-banner-center">
-        <span class="cta-subtag">READY FOR YOUR NEXT MOVIE?</span>
-        <h3>Get the LOVE CAFE app</h3>
-        <p>Order your favourites and enjoy them at your seat.</p>
-      </div>
-      <div class="cta-banner-right">
-        <a class="store-badge-btn" href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
-          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
-          <div class="btn-text-wrap">
-            <small>GET IT ON</small>
-            <b>Google Play</b>
-          </div>
-        </a>
-        <a class="store-badge-btn" href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 0.6-2.65 1.35-.58.67-1.09 1.74-0.95 2.77 1 .08 2.06-.52 2.68-1.27z"/></svg>
-          <div class="btn-text-wrap">
-            <small>Download on the</small>
-            <b>App Store</b>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ==========================================================================
      SECTION: CUSTOMER REVIEWS & IN-CINEMA DINING EXPERIENCES
      ========================================================================== -->
@@ -7892,7 +7983,19 @@ body.locked .sd {
       <button class="rev-filter-pill" data-filter="drinks"><span>🥤</span> Chilled Craft Drinks</button>
     </div>
 
-    <!-- 6 Luxury Cinema Review Cards Grid -->
+    <!-- Reviews Horizontal Reel Controls -->
+    <div class="rev-carousel-controls-bar">
+      <div class="rev-reel-badge">
+        <span class="pulsing-live-dot"></span>
+        <span>HORIZONTAL REEL · SWIPE OR CLICK ARROWS</span>
+      </div>
+      <div class="rev-carousel-arrows">
+        <button class="rev-arrow-btn" id="revPrev" aria-label="Previous Review">‹</button>
+        <button class="rev-arrow-btn" id="revNext" aria-label="Next Review">›</button>
+      </div>
+    </div>
+
+    <!-- Luxury Cinema Review Cards Horizontal Scroller -->
     <div class="reviews-cards-grid" id="revCardsGrid">
       
       <!-- Review 1: Smash Burger & Fast Delivery -->
@@ -7920,7 +8023,7 @@ body.locked .sd {
           <img src="assets/flavours/snack_burger.jpg" alt="Artisan Brioche Smash Burger" class="rev-food-thumb">
           <div class="rev-food-details">
             <span class="rev-food-label">In-Seat Order</span>
-            <span class="rev-food-name">Double Brioche Smash + Fries · ₹240</span>
+            <span class="rev-food-name">Double Brioche Smash + Truffle Fries</span>
           </div>
         </div>
         <div class="rev-card-bottom">
@@ -7954,7 +8057,7 @@ body.locked .sd {
           <img src="assets/flavours/snack_popcorn.jpg" alt="Golden Butter Popcorn" class="rev-food-thumb">
           <div class="rev-food-details">
             <span class="rev-food-label">In-Seat Order</span>
-            <span class="rev-food-name">Truffle Caramel Tub + Boba · ₹390</span>
+            <span class="rev-food-name">Truffle Caramel Tub + Brown Sugar Boba</span>
           </div>
         </div>
         <div class="rev-card-bottom">
@@ -7988,7 +8091,7 @@ body.locked .sd {
           <img src="assets/flavours/snack_pizza.jpg" alt="Woodfired Sourdough Pizza" class="rev-food-thumb">
           <div class="rev-food-details">
             <span class="rev-food-label">In-Seat Order</span>
-            <span class="rev-food-name">Woodfired Margherita + Momos · ₹450</span>
+            <span class="rev-food-name">Woodfired Margherita + Steamed Momos</span>
           </div>
         </div>
         <div class="rev-card-bottom">
@@ -8022,7 +8125,7 @@ body.locked .sd {
           <img src="assets/flavours/snack_cold_drink.jpg" alt="Ice-Cold Craft Cinema Cola" class="rev-food-thumb">
           <div class="rev-food-details">
             <span class="rev-food-label">In-Seat Order</span>
-            <span class="rev-food-name">Ice Frost Craft Cola Chilled · ₹120</span>
+            <span class="rev-food-name">Ice Frost Craft Cola Chilled</span>
           </div>
         </div>
         <div class="rev-card-bottom">
@@ -8056,7 +8159,7 @@ body.locked .sd {
           <img src="assets/flavours/snack_sandwich.jpg" alt="Toasted Gourmet Club Sandwich" class="rev-food-thumb">
           <div class="rev-food-details">
             <span class="rev-food-label">In-Seat Order</span>
-            <span class="rev-food-name">Toasted Artisan Panini · ₹190</span>
+            <span class="rev-food-name">Toasted Artisan Panini with Herb Butter</span>
           </div>
         </div>
         <div class="rev-card-bottom">
@@ -8090,7 +8193,7 @@ body.locked .sd {
           <img src="assets/flavours/snack_momo.jpg" alt="Himalayan Steamed Momos" class="rev-food-thumb">
           <div class="rev-food-details">
             <span class="rev-food-label">In-Seat Order</span>
-            <span class="rev-food-name">Himalayan Steamed Momos + Dip · ₹160</span>
+            <span class="rev-food-name">Himalayan Steamed Momos + Fiery Dip</span>
           </div>
         </div>
         <div class="rev-card-bottom">
@@ -8841,7 +8944,7 @@ const SB = [
   'Brown Sugar Tiger Pearls with Fresh Milk & Cream Top',
   'Ice-Cold Fizzy Craft Cinema Cola Chilled to 2°C'
 ];
-const PR = ['₹180', '₹240', '₹290', '₹190', '₹160', '₹210', '₹120'];
+const CF = ['🔥 Hot Seat Drop', '🍔 Brioche Smash', '🍕 48h Fermented', '🥪 Pressed Panini', '🥟 Hand Steamed', '🧋 100% Fresh Milk', '❄️ 2°C Sub-Zero'];
 const BD = ['🍿 Cinema Bestseller', '🍔 Chef\'s Choice', '🍕 Woodfired Crust', '🥪 Deli Classic', '🥟 Steamed Hot', '🧋 100% Fresh Milk', '🥤 2°C Ice Frost'];
 const od = $('od');
 const ods = od ? [...od.children] : [];
@@ -8907,11 +9010,11 @@ function updateOrbit() {
     const oname = $('oname');
     const osub = $('osub');
     const obadge = $('obadge');
-    const oprice = $('oprice');
+    const ochef = $('ochef');
     if (oname) oname.textContent = NM[bestIdx];
     if (osub) osub.textContent = SB[bestIdx];
     if (obadge) obadge.textContent = BD[bestIdx];
-    if (oprice) oprice.textContent = PR[bestIdx];
+    if (ochef) ochef.textContent = CF[bestIdx];
     ods.forEach((d, i) => d.classList.toggle('on', i === bestIdx));
     flavourPills.forEach((p, i) => p.classList.toggle('active', i === bestIdx));
   }
@@ -8977,26 +9080,6 @@ psPills.forEach((pill, idx) => {
 });
 
 function updateSlides() {
-  const pr = $('ps') ? $('ps').getBoundingClientRect() : null;
-  const po = $('flavours') ? $('flavours').getBoundingClientRect() : null;
-  const getEl = $('get') ? $('get').getBoundingClientRect() : null;
-  const scEl = $('scene') ? $('scene').getBoundingClientRect() : null;
-
-  if (dock && scEl && getEl) {
-    dock.classList.toggle('on', 
-      scEl.bottom < innerHeight * 0.5 && 
-      getEl.top > innerHeight * 0.6 && 
-      !(pr && pr.top < innerHeight && pr.bottom > 0) && 
-      !(po && po.top < innerHeight && po.bottom > 0)
-    );
-  }
-
-  let act = 0;
-  secs.forEach((s, i) => {
-    if (s && s.getBoundingClientRect().top < innerHeight * 0.5) act = i;
-  });
-  sd.forEach((a, i) => a.classList.toggle('on', i === act));
-
   if (reduce || !slides.length) return;
   const P = sm.s * (slides.length - 1);
   const activeIdx = Math.round(clamp(P, 0, slides.length - 1));
@@ -9111,30 +9194,70 @@ window.addEventListener('scroll', () => {
 
 function updateNavActive() {
   let activeId = '';
-  secs.forEach(s => {
-    if (s && s.getBoundingClientRect().top < innerHeight * 0.5) activeId = s.id;
+  let act = 0;
+  secs.forEach((s, i) => {
+    if (s && s.getBoundingClientRect().top < innerHeight * 0.5) {
+      activeId = s.id;
+      act = i;
+    }
   });
   nlk.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + activeId));
+  sd.forEach((a, i) => a.classList.toggle('on', i === act));
+
+  const pr = $('ps') ? $('ps').getBoundingClientRect() : null;
+  const po = $('flavours') ? $('flavours').getBoundingClientRect() : null;
+  const getEl = $('get') ? $('get').getBoundingClientRect() : null;
+  const scEl = $('scene') ? $('scene').getBoundingClientRect() : null;
+
+  if (dock && scEl && getEl) {
+    dock.classList.toggle('on', 
+      scEl.bottom < innerHeight * 0.5 && 
+      getEl.top > innerHeight * 0.6 && 
+      !(pr && pr.top < innerHeight && pr.bottom > 0) && 
+      !(po && po.top < innerHeight && po.bottom > 0)
+    );
+  }
 }
 
 window.addEventListener('scroll', () => requestAnimationFrame(updateNavActive), { passive: true });
 updateNavActive();
 
-// Smooth animation loop for orbit and slides
+// Cached geometry to prevent layout thrashing & lag on scrolling
+let geoCache = { flavoursTop: 0, flavoursHeight: 1, psTop: 0, psHeight: 1 };
+function updateGeoCache() {
+  const f = $('flavours');
+  const p = $('ps');
+  if (f) { geoCache.flavoursTop = f.offsetTop; geoCache.flavoursHeight = f.offsetHeight; }
+  if (p) { geoCache.psTop = p.offsetTop; geoCache.psHeight = p.offsetHeight; }
+}
+window.addEventListener('resize', updateGeoCache, { passive: true });
+updateGeoCache();
+
+function fastProg(top, height) {
+  const sy = window.pageYOffset || document.documentElement.scrollTop;
+  const maxSpan = Math.max(1, height - window.innerHeight);
+  return clamp((sy - top) / maxSpan);
+}
+
+// Ultra-smooth 60-120fps animation loop for orbit and slides
 (function mainLoop() {
-  const to = $('flavours') ? prog($('flavours')) : 0;
-  const ts = $('ps') ? prog($('ps')) : 0;
+  const sy = window.pageYOffset || document.documentElement.scrollTop;
+  const to = fastProg(geoCache.flavoursTop, geoCache.flavoursHeight);
+  const ts = fastProg(geoCache.psTop, geoCache.psHeight);
   
   if (reduce) {
     sm.o = to;
     sm.s = ts;
   } else {
-    sm.o += (to - sm.o) * 0.085;
-    sm.s += (ts - sm.s) * 0.085;
+    sm.o += (to - sm.o) * 0.1;
+    sm.s += (ts - sm.s) * 0.1;
   }
   
-  updateOrbit();
-  updateSlides();
+  const nearFlavours = sy >= (geoCache.flavoursTop - innerHeight * 1.2) && sy <= (geoCache.flavoursTop + geoCache.flavoursHeight + innerHeight * 0.3);
+  const nearPS = sy >= (geoCache.psTop - innerHeight * 1.2) && sy <= (geoCache.psTop + geoCache.psHeight + innerHeight * 0.3);
+
+  if (nearFlavours || Math.abs(to - sm.o) > 0.001) updateOrbit();
+  if (nearPS || Math.abs(ts - sm.s) > 0.001) updateSlides();
   requestAnimationFrame(mainLoop);
 })();
 
@@ -9172,6 +9295,17 @@ if (finEl && typeof IntersectionObserver !== 'undefined') {
       }
     });
   }, { threshold: 0.35 }).observe(finEl);
+}
+
+// --------------------------------------------------------------------------
+// REVIEWS HORIZONTAL CAROUSEL CONTROLS
+// --------------------------------------------------------------------------
+const revGrid = $('revCardsGrid');
+const revPrev = $('revPrev');
+const revNext = $('revNext');
+if (revGrid) {
+  if (revPrev) revPrev.addEventListener('click', () => revGrid.scrollBy({ left: -400, behavior: 'smooth' }));
+  if (revNext) revNext.addEventListener('click', () => revGrid.scrollBy({ left: 400, behavior: 'smooth' }));
 }
 
 // --------------------------------------------------------------------------
