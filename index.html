@@ -1367,10 +1367,11 @@ body.locked{overflow:hidden;height:100svh}
 
 .stick .dots {
   display: flex;
-  gap: 7px;
+  gap: 8px;
+  align-items: center;
   margin-top: 2px;
 }
-.stick .dots i {
+.stick .dots i:not(.step-chip) {
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -1378,7 +1379,7 @@ body.locked{overflow:hidden;height:100svh}
   background: #fff;
   transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.stick .dots i.on {
+.stick .dots i:not(.step-chip).on {
   background: #ffd23f;
   transform: scale(1.35);
   box-shadow: 0 0 0 2.5px rgba(255, 210, 63, 0.45);
@@ -3353,11 +3354,13 @@ body {
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
-  background: rgba(255, 255, 255, 0.92) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.98) !important;
   border-radius: 999px !important;
   padding: 6px 18px !important;
-  box-shadow: 0 6px 18px rgba(230, 25, 90, 0.08) !important;
+  box-shadow: 0 8px 24px -4px rgba(230, 25, 90, 0.12) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
 }
 
 .hero-badge-pill .pill-cam-badge {
@@ -3367,8 +3370,9 @@ body {
   background: #10b981;
   color: #fff;
   border-radius: 6px;
-  padding: 2px 5px;
+  padding: 2px 6px;
   font-size: 11px;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.35);
 }
 
 .hero-badge-pill .pill-text {
@@ -3380,6 +3384,15 @@ body {
   text-transform: uppercase !important;
 }
 
+.hero-badge-pill .pill-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulseLiveGreen 1.8s infinite;
+}
+
 .hero-title {
   font-family: var(--disp) !important;
   font-weight: 800 !important;
@@ -3388,23 +3401,34 @@ body {
   letter-spacing: -0.025em !important;
   color: #24141d !important;
   margin: 0 !important;
+  text-shadow: 0 2px 20px rgba(255, 255, 255, 0.4) !important;
 }
 
 .hero-title .c-hunger {
-  color: #e6195a !important;
+  background: linear-gradient(135deg, #e6195a 0%, #ff2b6d 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 4px 14px rgba(230, 25, 90, 0.22)) !important;
+  display: inline-block !important;
 }
 
 .hero-title .c-off {
-  color: #ff5c28 !important;
+  background: linear-gradient(135deg, #ff5c28 0%, #ff8533 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 4px 14px rgba(255, 92, 40, 0.22)) !important;
+  display: inline-block !important;
 }
 
 .hero-script-tag {
   font-family: var(--hand) !important;
-  font-size: clamp(24px, 2.6vw, 32px) !important;
-  font-weight: 600 !important;
+  font-size: clamp(25px, 2.8vw, 34px) !important;
+  font-weight: 700 !important;
   color: #ba2857 !important;
   margin: -2px 0 2px !important;
   line-height: 1.1 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+  letter-spacing: 0.01em !important;
 }
 
 .hero-stat-grid {
@@ -3419,17 +3443,19 @@ body {
   display: flex !important;
   align-items: center !important;
   gap: 12px !important;
-  background: rgba(255, 255, 255, 0.88) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   border: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-  border-radius: 14px !important;
-  padding: 9px 14px !important;
-  box-shadow: 0 8px 20px -8px rgba(180, 50, 80, 0.08) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  border-radius: 16px !important;
+  padding: 10px 15px !important;
+  box-shadow: 0 10px 24px -6px rgba(180, 50, 80, 0.1) !important;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease !important;
 }
 
 .hero-stat-card:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 12px 24px -8px rgba(180, 50, 80, 0.14) !important;
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 14px 28px -6px rgba(180, 50, 80, 0.18) !important;
 }
 
 .hero-stat-card .stat-icon {
@@ -3438,12 +3464,25 @@ body {
 }
 
 .hero-stat-card .stat-meta b {
-  display: block !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
   font-family: var(--disp) !important;
   font-weight: 800 !important;
   font-size: 15px !important;
   color: #24141d !important;
   line-height: 1.1 !important;
+}
+
+.hero-stat-card .stat-meta b .stat-live-badge {
+  display: inline-block;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  background: #ffd23f;
+  color: #573500;
+  padding: 1px 5px;
+  border-radius: 4px;
 }
 
 .hero-stat-card .stat-meta small {
@@ -3476,6 +3515,32 @@ body {
   line-height: 1.15 !important;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2) !important;
   transition: transform 0.2s ease, background 0.2s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.hero-store-btn::after {
+  content: '' !important;
+  position: absolute !important;
+  top: -50% !important;
+  left: -60% !important;
+  width: 40% !important;
+  height: 200% !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 100%
+  ) !important;
+  transform: rotate(25deg) !important;
+  animation: storeBtnSheen 4.5s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+
+@keyframes storeBtnSheen {
+  0%, 75% { transform: translateX(0) rotate(25deg); opacity: 0; }
+  85% { opacity: 1; }
+  100% { transform: translateX(400%) rotate(25deg); opacity: 0; }
 }
 
 .hero-store-btn:hover {
@@ -3529,6 +3594,24 @@ body {
   align-items: center !important;
 }
 
+.win::before {
+  content: '';
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  background: radial-gradient(circle, rgba(255, 140, 175, 0.45) 0%, rgba(255, 185, 205, 0.22) 40%, transparent 72%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(28px);
+  animation: spotlightPulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes spotlightPulse {
+  0% { transform: scale(0.96); opacity: 0.8; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
 .win canvas {
   display: block !important;
   width: 100% !important;
@@ -3536,6 +3619,8 @@ body {
   max-width: 820px !important;
   border-radius: 0 !important;
   filter: drop-shadow(0 20px 40px rgba(180, 50, 80, 0.18)) !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 .stage-ticket-stub {
@@ -3568,10 +3653,159 @@ body {
   font-size: 11px;
 }
 
-/* 5. Center Bottom Scroll to Explore */
+/* Step Caption & Interactive Snack Timeline */
+.stick .cap {
+  position: relative !important;
+  z-index: 5 !important;
+  margin-top: -12px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.combo-pill-card {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 2px solid rgba(230, 25, 90, 0.22) !important;
+  box-shadow: 0 10px 28px -4px rgba(180, 40, 75, 0.16) !important;
+  border-radius: 999px !important;
+  padding: 6px 20px 6px 8px !important;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.combo-pill-card:hover {
+  transform: scale(1.03) !important;
+}
+
+.combo-pill-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  background: linear-gradient(135deg, #e6195a 0%, #ff3b75 100%) !important;
+  color: #fff !important;
+  font: 800 11.5px/1.2 var(--disp) !important;
+  letter-spacing: 0.06em !important;
+  padding: 5px 12px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 3px 10px rgba(230, 25, 90, 0.35) !important;
+}
+
+.combo-pill-card b {
+  font: 800 16.5px var(--disp) !important;
+  color: #24141d !important;
+  letter-spacing: -0.01em !important;
+}
+
+.hero-builder-cue {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+}
+
+.hero-builder-cue .hand {
+  font-family: var(--hand) !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #ba2857 !important;
+  line-height: 1.1 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Rich Interactive 4-Step Snack Chips */
+.combo-steps-track {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.stick .dots {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  margin-top: 2px !important;
+  position: relative !important;
+}
+
+.step-connector {
+  width: 14px;
+  height: 2px;
+  background: rgba(186, 38, 85, 0.25);
+  border-radius: 1px;
+}
+
+.stick .dots i.step-chip {
+  display: inline-flex !important;
+  width: auto !important;
+  height: auto !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 6px 14px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.28) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 14px rgba(180, 40, 75, 0.1) !important;
+  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  font-style: normal !important;
+  cursor: pointer !important;
+}
+
+.stick .dots i.step-chip .step-icon {
+  font-size: 15px !important;
+  line-height: 1 !important;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+}
+
+.stick .dots i.step-chip .step-label {
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #572535 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Step filled / reached */
+.stick .dots i.step-chip.on {
+  background: linear-gradient(135deg, #fff 0%, #fff0f4 100%) !important;
+  border-color: #e6195a !important;
+  box-shadow: 0 4px 14px rgba(230, 25, 90, 0.25), 0 0 0 1px #e6195a !important;
+  transform: translateY(-1px) scale(1.05) !important;
+}
+
+.stick .dots i.step-chip.on .step-label {
+  color: #e6195a !important;
+}
+
+/* Currently pouring step */
+.stick .dots i.step-chip.active-now {
+  background: linear-gradient(135deg, #ffd23f 0%, #ffc000 100%) !important;
+  border-color: #24141d !important;
+  box-shadow: 0 6px 18px rgba(255, 192, 0, 0.45), 0 0 0 2px #fff !important;
+  transform: translateY(-3px) scale(1.12) !important;
+  animation: stepBounce 1.2s ease-in-out infinite alternate !important;
+}
+
+.stick .dots i.step-chip.active-now .step-label {
+  color: #24141d !important;
+  font-weight: 800 !important;
+}
+
+@keyframes stepBounce {
+  0% { transform: translateY(-2px) scale(1.08); }
+  100% { transform: translateY(-4px) scale(1.12); }
+}
+
+/* 5. Center Bottom Scroll to Explore & Live Perks Ribbon */
 .hero-scroll-explore {
   position: absolute !important;
-  bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important;
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
   display: flex !important;
@@ -3585,46 +3819,122 @@ body {
 }
 
 .hero-scroll-explore .mouse-icon {
-  width: 20px;
-  height: 30px;
+  width: 22px;
+  height: 32px;
   border: 2px solid #5a3845;
   border-radius: 12px;
   display: flex;
   justify-content: center;
   padding-top: 5px;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 .hero-scroll-explore .mouse-dot {
-  width: 4px;
-  height: 6px;
-  background: var(--rasp);
+  width: 4.5px;
+  height: 7px;
+  background: #e6195a;
   border-radius: 3px;
   animation: mouseWheel 1.6s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(230, 25, 90, 0.6);
 }
 
 @keyframes mouseWheel {
   0% { transform: translateY(0); opacity: 1; }
-  60% { transform: translateY(8px); opacity: 0; }
+  60% { transform: translateY(10px); opacity: 0; }
   100% { transform: translateY(0); opacity: 0; }
 }
 
 .hero-scroll-explore .explore-text {
   font-family: var(--disp);
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.14em;
   color: #4f313e;
 }
 
+.explore-chevrons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -6px;
+}
+
 .hero-scroll-explore .explore-chevron {
   font-size: 14px;
-  margin-top: -4px;
   animation: bounceArrow 1.5s ease-in-out infinite;
+  color: #b82655;
+  line-height: 0.8;
+}
+
+.hero-scroll-explore .explore-chevron.c2 {
+  animation-delay: 0.2s;
+  opacity: 0.6;
 }
 
 @keyframes bounceArrow {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(3px); }
+  50% { transform: translateY(4px); }
+}
+
+/* Live In-Seat Perks Ribbon */
+.hero-perks-ribbon {
+  margin-top: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  padding: 5px 14px;
+  box-shadow: 0 6px 18px -4px rgba(180, 40, 75, 0.12);
+  font-size: 11px;
+  color: #593543;
+  white-space: nowrap;
+}
+
+.perk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--disp);
+  font-weight: 800;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: #10b981;
+}
+
+.perk-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulseLiveGreen 1.8s infinite;
+}
+
+@keyframes pulseLiveGreen {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.perk-divider {
+  color: #d495a6;
+  font-size: 9px;
+}
+
+.perk-item {
+  font-weight: 600;
+  color: #4a2835;
+}
+
+.perk-rating {
+  font-family: var(--disp);
+  font-weight: 800;
+  color: #b82655;
 }
 
 /* 6. MOBILE BREAKPOINTS (Matching Mobile Mockup) */
@@ -3746,6 +4056,55 @@ body {
   .floating-popcorn-piece {
     opacity: 0.35 !important;
     pointer-events: none !important;
+  }
+
+  .stick .dots i.step-chip {
+    padding: 3px 8px !important;
+    gap: 4px !important;
+  }
+
+  .stick .dots i.step-chip .step-icon {
+    font-size: 13px !important;
+  }
+
+  .stick .dots i.step-chip .step-label {
+    font-size: 10.5px !important;
+  }
+
+  .step-connector {
+    width: 6px !important;
+  }
+
+  .hero-scroll-explore {
+    bottom: 6px !important;
+    gap: 2px !important;
+  }
+
+  .hero-scroll-explore .mouse-icon {
+    width: 17px !important;
+    height: 25px !important;
+    border-width: 1.5px !important;
+    padding-top: 3px !important;
+  }
+
+  .hero-scroll-explore .mouse-dot {
+    width: 3.5px !important;
+    height: 5.5px !important;
+  }
+
+  .hero-scroll-explore .explore-text {
+    font-size: 9.5px !important;
+  }
+
+  .hero-perks-ribbon {
+    padding: 3px 10px !important;
+    font-size: 9.5px !important;
+    gap: 5px !important;
+    max-width: calc(100vw - 32px) !important;
+  }
+
+  .hero-perks-ribbon .perk-item {
+    font-size: 9px !important;
   }
 }
 
@@ -3929,11 +4288,12 @@ body {
         <path d="M50 180 C 180 60, 320 280, 520 80 S 680 120, 750 20" stroke="#d44b74" stroke-width="32" stroke-linecap="round" opacity="0.22"/>
       </svg>
 
-      <!-- Floating Popcorn Kernels -->
+      <!-- Floating Popcorn Kernels (Repositioned away from UI controls) -->
+      <div class="floating-popcorn-piece" style="top:14%; left:12%; font-size:22px; animation-delay:-3s;">🍿</div>
       <div class="floating-popcorn-piece" style="top:18%; left:48%; font-size:32px; animation-delay:0s;">🍿</div>
       <div class="floating-popcorn-piece" style="top:26%; left:88%; font-size:26px; animation-delay:-2.2s;">🍿</div>
       <div class="floating-popcorn-piece" style="top:74%; left:34%; font-size:24px; animation-delay:-4.1s;">🍿</div>
-      <div class="floating-popcorn-piece" style="top:88%; left:54%; font-size:30px; animation-delay:-1.5s;">🍿</div>
+      <div class="floating-popcorn-piece" style="top:80%; left:84%; font-size:28px; animation-delay:-1.5s;">🍿</div>
 
       <!-- Velvet Red Cinema Recliner Seats at Bottom-Left Foreground -->
       <div class="theatre-seats-foreground">
@@ -3955,13 +4315,14 @@ body {
       <div class="hero-badge-pill">
         <span class="pill-cam-badge">🎬</span>
         <span class="pill-text">IN-CINEMA SEAT DELIVERY</span>
+        <span class="pill-live-dot" aria-hidden="true"></span>
       </div>
 
       <!-- 2. Main Title (Movie on. Hunger off.) -->
       <h1 class="hero-title">Movie on.<br><span class="c-hunger">Hunger</span> <span class="c-off">off.</span></h1>
 
       <!-- 3. Handwritten Script Accent -->
-      <p class="hero-script-tag">Good Food · Great Movies · Better Together</p>
+      <p class="hero-script-tag">✦ Good Food · Great Movies · Better Together ✦</p>
 
       <!-- 4. 4 Feature Stat Cards (2x2 Grid) -->
       <div class="hero-stat-grid">
@@ -3975,7 +4336,7 @@ body {
         <div class="hero-stat-card">
           <span class="stat-icon" style="color:#eab308">⚡</span>
           <div class="stat-meta">
-            <b>~10m</b>
+            <b>~10m <span class="stat-live-badge">EXPRESS</span></b>
             <small>In-Seat Speed</small>
           </div>
         </div>
@@ -4033,24 +4394,63 @@ body {
         <span style="font-size:9px; color:#a15000;">★ LOVE CAFE VIP ★</span>
       </div>
 
-      <!-- Step Caption Bar & Interactive Dots -->
+      <!-- Step Caption Bar & Interactive Snack Timeline -->
       <div class="cap" aria-live="polite">
         <div class="combo-pill-card">
-          <span class="combo-pill-badge">COMBO BOX</span>
+          <span class="combo-pill-badge">
+            <span class="badge-sparkle">✨</span>
+            <span class="badge-txt">COMBO BOX</span>
+          </span>
           <b id="item">Your movie combo box</b>
         </div>
-        <span class="hand" id="hand" style="font-size:20px; color:#b82655;">scroll down to fill your combo box ↓</span>
-        <div class="dots" aria-hidden="true">
-          <i></i><i></i><i></i><i></i>
+        <div class="hero-builder-cue">
+          <span class="hand" id="hand">scroll down to build your combo box ↓</span>
+        </div>
+        <div class="combo-steps-track" aria-label="Combo building progress">
+          <div class="dots" aria-hidden="true">
+            <i class="step-chip" data-step="0" title="Hot Gourmet Popcorn">
+              <span class="step-icon">🍿</span>
+              <span class="step-label">Popcorn</span>
+            </i>
+            <span class="step-connector"></span>
+            <i class="step-chip" data-step="1" title="Craft Cola">
+              <span class="step-icon">🥤</span>
+              <span class="step-label">Cola</span>
+            </i>
+            <span class="step-connector"></span>
+            <i class="step-chip" data-step="2" title="Artisan Burger">
+              <span class="step-icon">🍔</span>
+              <span class="step-label">Burger</span>
+            </i>
+            <span class="step-connector"></span>
+            <i class="step-chip" data-step="3" title="Crispy Pizza Slice">
+              <span class="step-icon">🍕</span>
+              <span class="step-label">Pizza</span>
+            </i>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Center Bottom: Scroll to Explore Indicator (from reference design) -->
+    <!-- Center Bottom: Scroll to Explore Indicator & Live In-Seat Perks -->
     <div class="hero-scroll-explore" id="scrollExplore">
-      <div class="mouse-icon"><span class="mouse-dot"></span></div>
+      <div class="mouse-icon" aria-hidden="true"><span class="mouse-dot"></span></div>
       <span class="explore-text">SCROLL TO EXPLORE</span>
-      <span class="explore-chevron">⌄</span>
+      <div class="explore-chevrons" aria-hidden="true">
+        <span class="explore-chevron">⌄</span>
+        <span class="explore-chevron c2">⌄</span>
+      </div>
+
+      <!-- Live Cinema In-Seat Delivery Perks Ribbon Below -->
+      <div class="hero-perks-ribbon" aria-hidden="true">
+        <span class="perk-badge"><span class="perk-pulse-dot"></span> LIVE AT CINEMAS</span>
+        <span class="perk-divider">•</span>
+        <span class="perk-item">⚡ ~10m In-Seat Delivery</span>
+        <span class="perk-divider">•</span>
+        <span class="perk-item">🍿 Cinema Fresh</span>
+        <span class="perk-divider">•</span>
+        <span class="perk-rating">⭐ 4.9 CineScore</span>
+      </div>
     </div>
   </div>
 </div>
@@ -4727,6 +5127,19 @@ const item = $('item');
 const hand = $('hand');
 const scene = $('scene');
 
+// Allow tapping any snack chip to smoothly scroll to that food pouring moment
+dots.forEach((chip, i) => {
+  chip.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const stepProgress = [0.12, 0.35, 0.60, 0.85];
+    if (scene) {
+      const maxScroll = scene.offsetHeight - window.innerHeight;
+      const targetScroll = scene.offsetTop + stepProgress[i] * maxScroll;
+      window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+    }
+  });
+});
+
 let target = 0, cur = 0, isTicking = false;
 
 function renderScene(p) {
@@ -4763,7 +5176,10 @@ function renderScene(p) {
     if (item) item.textContent = 'LOVE CAFE VIP Combo Box';
   }
 
-  dots.forEach((d, i) => d.classList.toggle('on', i <= k));
+  dots.forEach((d, i) => {
+    d.classList.toggle('on', i <= k);
+    d.classList.toggle('active-now', i === k);
+  });
 
   const expEl = document.getElementById('scrollExplore');
   if (expEl) {
