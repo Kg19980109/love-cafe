@@ -8,7 +8,7 @@
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--cream:#fff6f3}}
 *{box-sizing:border-box;margin:0}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.5;overflow-x:hidden}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.5}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:3px solid var(--rasp);outline-offset:3px}
 .nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:12px clamp(16px,4vw,56px);background:linear-gradient(var(--blush) 40%,transparent)}
@@ -2305,21 +2305,30 @@ body.locked {
 
 html {
   overflow-x: clip !important;
+  overflow-y: visible !important;
   max-width: 100vw !important;
   width: 100% !important;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
+  overflow: visible !important;
   overflow-x: clip !important;
+  overflow-y: visible !important;
   max-width: 100vw !important;
   width: 100% !important;
   position: relative !important;
 }
 
 @supports not (overflow-x: clip) {
-  html, body {
+  html {
     overflow-x: hidden !important;
+    overflow-y: visible !important;
+  }
+  body {
+    overflow: visible !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
   }
 }
 
@@ -3092,7 +3101,7 @@ body.locked .sd {
 }
 
 body {
-  overflow-y: auto !important;
+  overflow: visible !important;
 }
 
 /* 1. Header & Navigation */
@@ -3729,6 +3738,15 @@ body {
   .win canvas {
     max-width: 420px !important;
   }
+
+  .stage-ticket-stub {
+    display: none !important;
+  }
+
+  .floating-popcorn-piece {
+    opacity: 0.35 !important;
+    pointer-events: none !important;
+  }
 }
 
 </style></head><body><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
@@ -3896,9 +3914,7 @@ body {
       </div>
     </div>
   </div>
-</div>
-
-
+  </div>
 </div>
 
 <main id="top">
@@ -4587,6 +4603,7 @@ const TOTAL_FRAMES = 300;
 const frameImages = new Array(TOTAL_FRAMES);
 const frameLoaded = new Array(TOTAL_FRAMES).fill(false);
 let lastDrawnFrame = -1;
+let currentRequestedFrame = 0;
 
 function getFrameSrc(index, ext = 'webp') {
   const num = String(index + 1).padStart(3, '0');
@@ -4607,7 +4624,9 @@ function getClosestLoadedFrame(targetIdx) {
 
 function drawFrame(idx) {
   if (!ctx || !cv) return;
-  const safeIdx = Math.min(TOTAL_FRAMES - 1, Math.max(0, idx));
+  const safeIdx = Math.min(TOTAL_FRAMES - 1, Math.max(0, Math.round(idx)));
+  currentRequestedFrame = safeIdx;
+  
   const bestIdx = getClosestLoadedFrame(safeIdx);
   if (bestIdx === -1) return;
 
@@ -4630,6 +4649,11 @@ function loadFrame(idx, onComplete) {
   img.onload = () => {
     frameLoaded[idx] = true;
     if (onComplete) onComplete(idx);
+    // If the newly loaded frame is the current frame or closer to current than lastDrawnFrame, redraw immediately!
+    const targetF = currentRequestedFrame;
+    if (idx === targetF || Math.abs(idx - targetF) < Math.abs(lastDrawnFrame - targetF)) {
+      drawFrame(targetF);
+    }
   };
   img.onerror = () => {
     // If WebP fails for any reason, seamlessly fallback to PNG
@@ -4637,14 +4661,13 @@ function loadFrame(idx, onComplete) {
       img.src = getFrameSrc(idx, 'png');
     }
   };
-  // Load ultra-compact WebP first (12.7MB total sequence, 12x faster)
   img.src = getFrameSrc(idx, 'webp');
 }
 
-// Dynamic scroll-direction preloading: immediately fetch frames in the direction of scrolling
+// Preload high-priority frames around active scrub position
 function prioritizeFramesAround(targetFrame) {
-  const windowRadius = 24;
-  const start = Math.max(0, targetFrame - 8);
+  const windowRadius = 32;
+  const start = Math.max(0, targetFrame - 10);
   const end = Math.min(TOTAL_FRAMES - 1, targetFrame + windowRadius);
   for (let i = start; i <= end; i++) {
     if (!frameImages[i]) {
@@ -4654,60 +4677,35 @@ function prioritizeFramesAround(targetFrame) {
 }
 
 function initFramePreloader() {
-  // 1. Instantly load first 3 frames for instant hero presentation
+  // 1. Instantly load first frame for immediate initial view
   loadFrame(0, () => {
     drawFrame(0);
   });
   loadFrame(1);
   loadFrame(2);
 
-  // 2. Load milestone anchor frames spread across timeline for instant responsive scrubbing
-  const anchorInterval = 10;
-  const anchors = [];
-  for (let i = 0; i < TOTAL_FRAMES; i += anchorInterval) {
-    if (i !== 0) anchors.push(i);
+  // 2. Load milestone anchor frames evenly spaced across timeline for fast scrubbing
+  for (let i = 0; i < TOTAL_FRAMES; i += 6) {
+    loadFrame(i);
   }
-  if (!anchors.includes(TOTAL_FRAMES - 1)) anchors.push(TOTAL_FRAMES - 1);
+  loadFrame(TOTAL_FRAMES - 1);
 
-  anchors.forEach(idx => {
-    loadFrame(idx, () => {
-      const targetFrame = Math.round(clamp(cur / 0.88) * (TOTAL_FRAMES - 1));
-      if (Math.abs(targetFrame - idx) <= anchorInterval) {
-        lastDrawnFrame = -1;
-        drawFrame(targetFrame);
+  // 3. Concurrently stream all remaining frames
+  let nextIdx = 0;
+  function streamFrames() {
+    let count = 0;
+    while (nextIdx < TOTAL_FRAMES && count < 8) {
+      if (!frameImages[nextIdx]) {
+        loadFrame(nextIdx);
+        count++;
       }
-    });
-  });
-
-  // 3. Fast progressive stream for all remaining frames
-  const remaining = [];
-  for (let i = 0; i < TOTAL_FRAMES; i++) {
-    if (i > 2 && !anchors.includes(i)) remaining.push(i);
-  }
-
-  let queueIdx = 0;
-  const BATCH_SIZE = 14;
-
-  function loadNextBatch() {
-    if (queueIdx >= remaining.length) return;
-    const end = Math.min(queueIdx + BATCH_SIZE, remaining.length);
-    for (let j = queueIdx; j < end; j++) {
-      const fIdx = remaining[j];
-      loadFrame(fIdx, () => {
-        const targetFrame = Math.round(clamp(cur / 0.88) * (TOTAL_FRAMES - 1));
-        if (Math.abs(targetFrame - fIdx) <= 2) {
-          lastDrawnFrame = -1;
-          drawFrame(targetFrame);
-        }
-      });
+      nextIdx++;
     }
-    queueIdx = end;
-    if (queueIdx < remaining.length) {
-      setTimeout(loadNextBatch, 16);
+    if (nextIdx < TOTAL_FRAMES) {
+      requestAnimationFrame(streamFrames);
     }
   }
-
-  setTimeout(loadNextBatch, 40);
+  requestAnimationFrame(streamFrames);
 }
 
 initFramePreloader();
@@ -4720,8 +4718,8 @@ if (gimg) {
 
 const caps = [
   ['Hot Gourmet Popcorn', 'first, hot buttery cinema popcorn pouring in... 🍿'],
-  ['Artisan Burger', 'then, a juicy gourmet burger landing in the box... 🍔'],
   ['Craft Cola', 'next, ice-cold refreshing cola bottle sliding in... 🥤'],
+  ['Artisan Burger', 'then, a juicy gourmet burger landing in the box... 🍔'],
   ['Crispy Pizza Slice', 'and a hot crispy pepperoni pizza slice arriving... 🍕']
 ];
 const dots = [...document.querySelectorAll('.dots i')];
@@ -4729,7 +4727,7 @@ const item = $('item');
 const hand = $('hand');
 const scene = $('scene');
 
-let target = 0, cur = 0, run = false;
+let target = 0, cur = 0, isTicking = false;
 
 function renderScene(p) {
   // Map 0.0 to 0.88 across all 300 frames so the food pouring animation is given generous scroll track
@@ -4739,7 +4737,7 @@ function renderScene(p) {
   prioritizeFramesAround(f);
 
   let k = -1;
-  if (p < 0.04) {
+  if (p < 0.03) {
     k = -1;
     if (hand) hand.textContent = 'scroll down to build your combo box ↓';
     if (item) item.textContent = 'Your movie combo box';
@@ -4769,8 +4767,8 @@ function renderScene(p) {
 
   const expEl = document.getElementById('scrollExplore');
   if (expEl) {
-    expEl.style.opacity = p > 0.05 ? '0' : '1';
-    expEl.style.pointerEvents = p > 0.05 ? 'none' : 'auto';
+    expEl.style.opacity = p > 0.04 ? '0' : '1';
+    expEl.style.pointerEvents = p > 0.04 ? 'none' : 'auto';
   }
 
   const stickEl = document.querySelector('.stick');
@@ -4795,14 +4793,15 @@ function getSceneTarget() {
 
 function sceneLoop() {
   const diff = target - cur;
-  if (Math.abs(diff) < 0.0006) {
+  if (Math.abs(diff) < 0.0004) {
     cur = target;
-    run = false;
+    isTicking = false;
   } else {
-    cur += diff * 0.22;
+    cur += diff * 0.32;
+    isTicking = true;
+    requestAnimationFrame(sceneLoop);
   }
   renderScene(cur);
-  if (run) requestAnimationFrame(sceneLoop);
 }
 
 const ph = [...document.querySelectorAll('[data-par]')];
@@ -4811,7 +4810,7 @@ let pt = false;
 
 function parallaxPhones() {
   pt = false;
-  if (reduce || !pw) return;
+  if (!pw) return;
   const r = pw.getBoundingClientRect();
   const m = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;
   ph.forEach((e, i) => {
@@ -4826,13 +4825,8 @@ function onScroll() {
     requestAnimationFrame(parallaxPhones);
   }
   target = getSceneTarget();
-  if (reduce) {
-    cur = target;
-    renderScene(cur);
-    return;
-  }
-  if (!run) {
-    run = true;
+  if (!isTicking) {
+    isTicking = true;
     requestAnimationFrame(sceneLoop);
   }
 }
@@ -4840,7 +4834,7 @@ function onScroll() {
 window.addEventListener('scroll', onScroll, { passive: true });
 window.addEventListener('resize', onScroll);
 
-cur = target = reduce ? 1 : getSceneTarget();
+cur = target = getSceneTarget();
 renderScene(cur);
 parallaxPhones();
 
