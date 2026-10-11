@@ -241,7 +241,7 @@ body.locked{overflow:hidden;height:100svh}
 .ps{height:480vh;position:relative;z-index:1;margin-top:-36px;border-top:3px solid var(--line);border-radius:44px 44px 0 0}
 .ps-stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;border-radius:44px 44px 0 0}
 .sl{position:absolute;inset:0;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:2vw;padding:84px clamp(18px,7vw,110px) 30px;will-change:clip-path}
-.sl:not(:first-child){clip-path:none!important;-webkit-clip-path:none!important}
+
 .sl h2{font-size:clamp(46px,7.4vw,118px);max-width:9ch}.sl p{font-size:clamp(17px,1.8vw,24px);max-width:26ch;margin-top:16px}
 .sl .hand{color:inherit;opacity:.8}
 .s1{background:var(--rasp);color:#fff}.s1 em{color:#ffd23f}.s1 .pl img{box-shadow:10px 10px 0 #111}
@@ -994,7 +994,7 @@ body.locked{overflow:hidden;height:100svh}
 
 /* Flavours Section (7 Cinema Snacks & 3D Interactive Carousel) */
 .orb3 {
-  height: 260vh !important;
+  height: 520vh !important;
   position: relative !important;
   z-index: 1 !important;
 }
@@ -1343,10 +1343,10 @@ body.locked{overflow:hidden;height:100svh}
 
 @media (max-width: 860px) {
   .orb3 {
-    height: 220vh !important;
+    height: 440vh !important;
   }
   .ps {
-    height: 220vh !important;
+    height: 480vh !important;
   }
   .it {
     --s: clamp(160px, 46vw, 240px);
@@ -1865,7 +1865,7 @@ body.locked{overflow:hidden;height:100svh}
 
 /* Story Section */
 .hs {
-  height: 280vh !important;
+  height: 380vh !important;
   padding: 0 !important;
   margin-top: 0 !important;
   background: linear-gradient(180deg, #fce8ec 0%, #fbd0db 45%, #f9b8c6 100%) !important;
@@ -2181,7 +2181,7 @@ body.locked{overflow:hidden;height:100svh}
 
 @media (max-width: 860px) {
   .hs {
-    height: 240vh !important;
+    height: 320vh !important;
   }
   .mom {
     flex: 0 0 min(88vw, 340px) !important;
@@ -2817,10 +2817,10 @@ body.locked .sd {
 
 @media (max-width: 860px) {
   .orb3 {
-    height: 220vh !important;
+    height: 440vh !important;
   }
   .ps {
-    height: 220vh !important;
+    height: 480vh !important;
   }
 }
 
@@ -2828,7 +2828,7 @@ body.locked .sd {
 
 /* Premium Smooth Product Showcase Slides */
 .ps {
-  height: 260vh !important;
+  height: 560vh !important;
   position: relative !important;
   z-index: 1 !important;
   margin-top: -36px !important;
@@ -2856,23 +2856,89 @@ body.locked .sd {
   align-items: center !important;
   gap: 3vw !important;
   padding: 80px clamp(20px, 7vw, 110px) 30px !important;
-  opacity: 0;
-  clip-path: none !important;
-  -webkit-clip-path: none !important;
-  transform: translate3d(0, 30px, 0) scale(0.96);
+  opacity: 1 !important;
+  transform: none !important;
   pointer-events: none;
-  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  will-change: opacity, transform, z-index !important;
+  will-change: clip-path, -webkit-clip-path !important;
 }
 
-.sl.active {
-  pointer-events: auto !important;
+.sl:first-child {
+  z-index: 1 !important;
+  clip-path: circle(150% at 50% 55%) !important;
+  -webkit-clip-path: circle(150% at 50% 55%) !important;
 }
+
+.sl.s2 { z-index: 2 !important; clip-path: circle(0% at 50% 55%); -webkit-clip-path: circle(0% at 50% 55%); }
+.sl.s3 { z-index: 3 !important; clip-path: circle(0% at 50% 55%); -webkit-clip-path: circle(0% at 50% 55%); }
+.sl.s4 { z-index: 4 !important; clip-path: circle(0% at 50% 55%); -webkit-clip-path: circle(0% at 50% 55%); }
+.sl.s5 { z-index: 5 !important; clip-path: circle(0% at 50% 55%); -webkit-clip-path: circle(0% at 50% 55%); }
+.sl.s6 { z-index: 6 !important; clip-path: circle(0% at 50% 55%); -webkit-clip-path: circle(0% at 50% 55%); }
 
 .sl.s1 { background: radial-gradient(circle at 65% 50%, #ff5287 0%, #e6195a 45%, #8c0936 100%) !important; color: #fff !important; }
 .sl.s2 { background: radial-gradient(circle at 65% 50%, #ff7844 0%, #e64c19 45%, #8c2409 100%) !important; color: #fff !important; }
 .sl.s3 { background: radial-gradient(circle at 65% 50%, #ff4b4b 0%, #c41c1c 45%, #700a0a 100%) !important; color: #fff !important; }
-.sl.s4 { background: radial-gradient(circle at 65% 50%, #18a9e6 0%, #0c72ad 45%, #053b5c 100%) !important; color: #fff !important; }
+.sl.s4 { background: radial-gradient(circle at 65% 50%, #e89520 0%, #c26909 45%, #6a3602 100%) !important; color: #fff !important; }
+.sl.s5 { background: radial-gradient(circle at 65% 50%, #b86237 0%, #873d19 45%, #461c09 100%) !important; color: #fff !important; }
+.sl.s6 { background: radial-gradient(circle at 65% 50%, #18a9e6 0%, #0c72ad 45%, #053b5c 100%) !important; color: #fff !important; }
+
+/* Floating Showcase Category Navigation Rail */
+.ps-rail {
+  position: absolute !important;
+  bottom: 26px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 25 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 6px 12px !important;
+  background: rgba(18, 5, 12, 0.82) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 999px !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  max-width: calc(100vw - 32px) !important;
+  overflow-x: auto !important;
+  scrollbar-width: none !important;
+}
+.ps-rail::-webkit-scrollbar { display: none; }
+
+.ps-pill {
+  border: none !important;
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  font: 700 13px/1 var(--disp) !important;
+  padding: 8px 14px !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.ps-pill:hover {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+.ps-pill.on {
+  background: #ffd23f !important;
+  color: #1a0812 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 15px rgba(255, 210, 63, 0.45) !important;
+  transform: scale(1.04) !important;
+}
+
+@media (max-width: 860px) {
+  .ps-rail {
+    bottom: 12px !important;
+    gap: 4px !important;
+    padding: 4px 6px !important;
+    max-width: calc(100vw - 20px) !important;
+  }
+  .ps-pill {
+    padding: 6px 9px !important;
+    font-size: 11px !important;
+  }
+}
 
 .sl .tx {
   position: relative !important;
@@ -6780,37 +6846,79 @@ body.locked .sd {
       </div>
     </div>
 
-    <!-- Slide 3: Pizza & Momos -->
+    <!-- Slide 3: Pizza -->
     <div class="sl s3">
       <div class="sw" aria-hidden="true">PIZZA</div>
       <div class="tx">
         <span class="hand">03 · Woodfired Oven</span>
         <h2>Slice of the <em>action.</em></h2>
-        <p>48-hour fermented woodfired sourdough pizza &amp; juicy steamed Himalayan momos with fiery chutney dip.</p>
+        <p>48-hour fermented woodfired sourdough pizza bubbling with rich mozzarella, basil &amp; spicy marinara.</p>
       </div>
       <div class="pl">
         <div class="orb"><span>🍕</span></div>
-        <div class="orb o2"><span>🥟</span></div>
+        <div class="orb o2"><span>🧀</span></div>
         <img src="assets/flavours/snack_pizza.jpg" alt="Woodfired Sourdough Pizza" loading="eager">
         <span class="sl-food-tag">🍕 Woodfired · ₹290</span>
       </div>
     </div>
 
-    <!-- Slide 4: Craft Drinks & Boba -->
+    <!-- Slide 4: Sandwiches -->
     <div class="sl s4">
+      <div class="sw" aria-hidden="true">SANDWICH</div>
+      <div class="tx">
+        <span class="hand">04 · Artisan Deli Panini</span>
+        <h2>Crisp, layered &amp; <em>toasted.</em></h2>
+        <p>Triple-decker artisan sourdough panini pressed with herb-roasted fillings, aged provolone &amp; sun-dried tomato pesto.</p>
+      </div>
+      <div class="pl">
+        <div class="orb"><span>🥪</span></div>
+        <div class="orb o2"><span>🌿</span></div>
+        <img src="assets/flavours/snack_sandwich.jpg" alt="Toasted Gourmet Sandwiches" loading="eager">
+        <span class="sl-food-tag">🥪 Toasted Panini · ₹190</span>
+      </div>
+    </div>
+
+    <!-- Slide 5: Boba -->
+    <div class="sl s5">
+      <div class="sw" aria-hidden="true">BOBA</div>
+      <div class="tx">
+        <span class="hand">05 · Sweet Tooth Refresh</span>
+        <h2>Chewy pearls, <em>velvet sips.</em></h2>
+        <p>Tiger brown sugar boba milk tea crafted with slow-simmered tapioca pearls, fresh whole milk &amp; creamy froth.</p>
+      </div>
+      <div class="pl">
+        <div class="orb"><span>🧋</span></div>
+        <div class="orb o2"><span>✨</span></div>
+        <img src="assets/flavours/snack_boba.jpg" alt="Tiger Brown Sugar Boba Tea" loading="eager">
+        <span class="sl-food-tag">🧋 Brown Sugar Boba · ₹210</span>
+      </div>
+    </div>
+
+    <!-- Slide 6: Cold Drinks -->
+    <div class="sl s6">
       <div class="sw" aria-hidden="true">CHILLED</div>
       <div class="tx">
-        <span class="hand">04 · Ice Frost</span>
-        <h2>Cool sips, <em>hot scenes.</em></h2>
-        <p>Ice-cold craft botanical cola chilled to 2°C &amp; Tiger Brown Sugar popping boba milk tea.</p>
+        <span class="hand">06 · Ice Frost Tap</span>
+        <h2>Sub-zero, <em>sparkling punch.</em></h2>
+        <p>Ice-cold craft botanical colas, fizzy fruit sodas &amp; cinema coolers poured fresh over crystalline crushed ice at 2°C.</p>
       </div>
       <div class="pl">
         <div class="orb"><span>🥤</span></div>
-        <div class="orb o2"><span>🧋</span></div>
+        <div class="orb o2"><span>❄️</span></div>
         <img src="assets/flavours/snack_cold_drink.jpg" alt="Ice-Cold Craft Cinema Drinks" loading="eager">
         <span class="sl-food-tag">🥤 Chilled to 2°C · ₹120</span>
       </div>
     </div>
+
+    <!-- Interactive Rail Indicator for all 6 items -->
+    <nav class="ps-rail" aria-label="Showcase items navigation">
+      <button type="button" class="ps-pill on" data-slide="0">🍿 Popcorn</button>
+      <button type="button" class="ps-pill" data-slide="1">🍔 Burgers</button>
+      <button type="button" class="ps-pill" data-slide="2">🍕 Pizza</button>
+      <button type="button" class="ps-pill" data-slide="3">🥪 Sandwiches</button>
+      <button type="button" class="ps-pill" data-slide="4">🧋 Boba</button>
+      <button type="button" class="ps-pill" data-slide="5">🥤 Cold Drinks</button>
+    </nav>
   </div>
 </section>
 
@@ -8292,11 +8400,11 @@ function updateOrbit() {
 
   const r = flavoursEl.getBoundingClientRect();
   const enter = clamp(1 - r.top / innerHeight);
-  // 7 snack items -> 6 intervals:
+  // 7 snack items -> 6 intervals (smooth continuous progression with organic easing):
   const P = sm.o * 6;
   const fl = Math.floor(Math.min(P, 5.999));
   const f = P - fl;
-  const e = f < 0.25 ? 0 : f > 0.75 ? 1 : ease((f - 0.25) / 0.5);
+  const e = ease(f);
   const rot = fl + e;
   const Wd = Math.min(rg.clientWidth * 0.35, 390);
 
@@ -8389,12 +8497,29 @@ ods.forEach((dot, idx) => {
 });
 
 const rail = [...document.querySelectorAll('.rail i')];
+const psPills = [...document.querySelectorAll('.ps-pill')];
 const sws = [...document.querySelectorAll('.sw')];
 const slides = [...document.querySelectorAll('.sl')];
 const pls = [...document.querySelectorAll('.pl')];
 const dock = $('dock');
 const sd = [...document.querySelectorAll('.sd a')];
 const secs = sd.map(a => document.querySelector(a.getAttribute('href')));
+
+function scrollSlideToIndex(targetIdx) {
+  const psEl = $('ps');
+  if (!psEl) return;
+  const start = psEl.offsetTop;
+  const span = psEl.offsetHeight - window.innerHeight;
+  const targetTop = start + (targetIdx / Math.max(1, slides.length - 1)) * span;
+  window.scrollTo({ top: targetTop, behavior: 'smooth' });
+}
+
+psPills.forEach((pill, idx) => {
+  pill.addEventListener('click', (e) => {
+    e.preventDefault();
+    scrollSlideToIndex(idx);
+  });
+});
 
 function updateSlides() {
   const pr = $('ps') ? $('ps').getBoundingClientRect() : null;
@@ -8419,18 +8544,24 @@ function updateSlides() {
 
   if (reduce || !slides.length) return;
   const P = sm.s * (slides.length - 1);
-  rail.forEach((r, i) => r.classList.toggle('on', i === Math.round(clamp(P, 0, 3))));
+  const activeIdx = Math.round(clamp(P, 0, slides.length - 1));
+  rail.forEach((r, i) => r.classList.toggle('on', i === activeIdx));
+  psPills.forEach((p, i) => p.classList.toggle('on', i === activeIdx));
 
   slides.forEach((s, k) => {
+    if (k > 0) {
+      const r = clamp(P - (k - 1), 0, 1);
+      const er = r * r * (3 - 2 * r);
+      const cp = `circle(${er * 150}% at 50% 55%)`;
+      s.style.setProperty('clip-path', cp, 'important');
+      s.style.setProperty('-webkit-clip-path', cp, 'important');
+      s.style.pointerEvents = r > 0.5 ? 'auto' : 'none';
+    } else {
+      s.style.pointerEvents = P < 0.5 ? 'auto' : 'none';
+    }
     const d = P - k;
-    const ad = Math.abs(d);
-    const isActive = ad < 0.65;
-    s.classList.toggle('active', isActive);
-    s.style.zIndex = Math.round(20 - ad * 5);
-    s.style.opacity = `${clamp(1.15 - ad * 1.3, 0, 1)}`;
-    s.style.transform = `translate3d(0, ${clamp(-d * 32, -60, 60)}px, 0) scale(${1 - clamp(ad * 0.05, 0, 0.12)})`;
-    if (sws[k]) sws[k].style.transform = `translate(${-d * 12}vw, -52%)`;
-    if (pls[k]) pls[k].style.transform = `translateY(${clamp(d, -1, 1) * -30}px) rotate(${d * 6}deg) scale(${1 + clamp(-d, 0, 1) * 0.1})`;
+    if (sws[k]) sws[k].style.transform = `translate(${-d * 14}vw, -52%)`;
+    if (pls[k]) pls[k].style.transform = `translateY(${clamp(d, -1, 1) * -35}px) rotate(${d * 8}deg) scale(${1 + clamp(-d, 0, 1) * 0.12})`;
   });
 }
 
@@ -8543,8 +8674,8 @@ updateNavActive();
     sm.o = to;
     sm.s = ts;
   } else {
-    sm.o += (to - sm.o) * 0.22;
-    sm.s += (ts - sm.s) * 0.22;
+    sm.o += (to - sm.o) * 0.085;
+    sm.s += (ts - sm.s) * 0.085;
   }
   
   updateOrbit();
