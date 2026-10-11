@@ -5507,6 +5507,771 @@ body.locked .sd {
   }
 }
 
+
+/* ==========================================================================
+   CUSTOMER REVIEWS & TESTIMONIALS SECTION (PREMIER CINEMA EXPERIENCE)
+   ========================================================================== */
+.reviews-showcase-section {
+  background: linear-gradient(180deg, #fdf1f4 0%, #fae2e8 25%, #fcebf0 60%, #fff1f4 100%) !important;
+  position: relative !important;
+  z-index: 1 !important;
+  border-top: 3px solid var(--line) !important;
+  border-radius: 44px 44px 0 0 !important;
+  margin-top: -36px !important;
+  padding: 100px clamp(18px, 5vw, 64px) 80px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+.reviews-bg-beam {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 1200px);
+  height: 480px;
+  background: radial-gradient(ellipse 65% 50% at 50% 0%, rgba(255, 42, 109, 0.16) 0%, rgba(255, 210, 63, 0.08) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.reviews-wrap {
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 36px !important;
+}
+
+/* Header Row */
+.reviews-header-row {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.reviews-mini-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: #fff !important;
+  border: 1.5px solid rgba(230, 25, 90, 0.28) !important;
+  border-radius: 999px !important;
+  padding: 6px 18px !important;
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #e6195a !important;
+  letter-spacing: 0.06em !important;
+  box-shadow: 0 4px 16px rgba(230, 25, 90, 0.08) !important;
+}
+
+.reviews-header-row h2 {
+  font-size: clamp(38px, 5.5vw, 68px) !important;
+  line-height: 1.05 !important;
+  color: #1a0f15 !important;
+  margin: 0 !important;
+}
+
+.reviews-header-row h2 em {
+  color: #e6195a !important;
+  font-style: italic !important;
+}
+
+.reviews-subtitle {
+  font-family: var(--sans) !important;
+  font-size: clamp(15px, 1.6vw, 19px) !important;
+  color: #6a3648 !important;
+  max-width: 65ch !important;
+  margin: 0 auto !important;
+  line-height: 1.5 !important;
+}
+
+/* Overall Trust & Rating Bar */
+.reviews-scorecard-bar {
+  background: rgba(255, 255, 255, 0.92) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 2px solid rgba(255, 255, 255, 0.95) !important;
+  border-radius: 28px !important;
+  box-shadow: 0 16px 44px -8px rgba(210, 40, 85, 0.12), 0 0 0 1px rgba(255, 180, 200, 0.28) !important;
+  padding: 24px 36px !important;
+  display: grid !important;
+  grid-template-columns: 1.1fr 1.6fr !important;
+  align-items: center !important;
+  gap: 32px !important;
+}
+
+.scorecard-main {
+  display: flex !important;
+  align-items: center !important;
+  gap: 22px !important;
+  border-right: 2px dashed rgba(220, 60, 100, 0.2) !important;
+  padding-right: 28px !important;
+}
+
+.scorecard-num {
+  font-family: var(--disp) !important;
+  font-size: 58px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  background: linear-gradient(135deg, #e6195a 0%, #ff5287 50%, #d41450 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.scorecard-stars-block {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.scorecard-stars {
+  color: #ffb703 !important;
+  font-size: 20px !important;
+  letter-spacing: 2px !important;
+}
+
+.scorecard-caption {
+  font-family: var(--sans) !important;
+  font-size: 13.5px !important;
+  color: #552435 !important;
+  font-weight: 600 !important;
+}
+
+.scorecard-metrics {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+}
+
+.metric-chip {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: rgba(255, 240, 245, 0.75) !important;
+  border: 1px solid rgba(230, 25, 90, 0.16) !important;
+  border-radius: 18px !important;
+  padding: 10px 18px !important;
+  flex: 1 !important;
+}
+
+.metric-icon {
+  font-size: 24px !important;
+  line-height: 1 !important;
+}
+
+.metric-text {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1px !important;
+}
+
+.metric-val {
+  font-family: var(--disp) !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  color: #1a0f15 !important;
+}
+
+.metric-lbl {
+  font-family: var(--sans) !important;
+  font-size: 11.5px !important;
+  color: #7a3a50 !important;
+}
+
+/* Category Filter Bar */
+.reviews-filter-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin: 4px 0 !important;
+}
+
+.rev-filter-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 9px 20px !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 2px solid rgba(220, 50, 95, 0.2) !important;
+  border-radius: 999px !important;
+  font-family: var(--disp) !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #3b1625 !important;
+  cursor: pointer !important;
+  transition: all 0.22s ease !important;
+  box-shadow: 0 4px 12px rgba(180, 40, 75, 0.05) !important;
+}
+
+.rev-filter-pill:hover {
+  background: #fff !important;
+  border-color: #e6195a !important;
+  color: #e6195a !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(230, 25, 90, 0.15) !important;
+}
+
+.rev-filter-pill.active {
+  background: #e6195a !important;
+  border-color: #c41047 !important;
+  color: #fff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(230, 25, 90, 0.32) !important;
+}
+
+/* Reviews Cards Grid */
+.reviews-cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+
+/* Individual Luxury Cinema Review Ticket Card */
+.rev-card {
+  background: rgba(255, 255, 255, 0.94) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 2px solid rgba(255, 255, 255, 0.98) !important;
+  border-radius: 26px !important;
+  box-shadow: 0 16px 38px -6px rgba(180, 40, 75, 0.1), 0 0 0 1px rgba(255, 190, 210, 0.35) !important;
+  padding: 26px 26px 22px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  position: relative !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease !important;
+  overflow: hidden !important;
+}
+
+.rev-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 24px 50px -10px rgba(210, 30, 80, 0.2), 0 0 0 1.5px rgba(230, 25, 90, 0.35) !important;
+}
+
+.rev-foil-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff5287 0%, #ffd23f 50%, #ff5287 100%);
+  opacity: 0.85;
+}
+
+/* Card Header */
+.rev-card-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+}
+
+.rev-user-profile {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.rev-avatar {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #ff2a6d 0%, #ff758c 100%) !important;
+  color: #fff !important;
+  font-family: var(--disp) !important;
+  font-weight: 800 !important;
+  font-size: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 12px rgba(255, 42, 109, 0.28) !important;
+  border: 2px solid #fff !important;
+  flex-shrink: 0 !important;
+}
+
+.rev-user-info {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+.rev-author-name {
+  font-family: var(--disp) !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  color: #1a0f15 !important;
+  line-height: 1.2 !important;
+}
+
+.rev-cinema-tag {
+  font-family: var(--sans) !important;
+  font-size: 11.5px !important;
+  color: #8b3c54 !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.rev-time-badge {
+  font-family: var(--sans) !important;
+  font-size: 11px !important;
+  color: #9d5d71 !important;
+  background: rgba(255, 230, 238, 0.6) !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  white-space: nowrap !important;
+}
+
+/* Rating Row */
+.rev-rating-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+}
+
+.rev-stars {
+  color: #ffb703 !important;
+  font-size: 14.5px !important;
+  letter-spacing: 1.5px !important;
+}
+
+.rev-speed-tag {
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  background: #e6f9ed !important;
+  color: #12803b !important;
+  border: 1px solid rgba(18, 128, 59, 0.2) !important;
+  border-radius: 999px !important;
+  padding: 3px 10px !important;
+}
+
+/* Review Content */
+.rev-body {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.rev-quote-title {
+  font-family: var(--disp) !important;
+  font-size: 16.5px !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  color: #1a0f15 !important;
+  margin: 0 !important;
+}
+
+.rev-quote-title::before {
+  content: '"';
+  color: #e6195a;
+  font-size: 20px;
+}
+.rev-quote-title::after {
+  content: '"';
+  color: #e6195a;
+  font-size: 20px;
+}
+
+.rev-text {
+  font-family: var(--sans) !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  color: #542232 !important;
+  margin: 0 !important;
+}
+
+/* Ordered Food Chip */
+.rev-food-ordered {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: rgba(255, 240, 245, 0.8) !important;
+  border: 1.5px dashed rgba(220, 50, 95, 0.28) !important;
+  border-radius: 14px !important;
+  padding: 8px 12px !important;
+}
+
+.rev-food-thumb {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 2px solid #fff !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+  flex-shrink: 0 !important;
+}
+
+.rev-food-details {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1px !important;
+  flex: 1 !important;
+}
+
+.rev-food-label {
+  font-family: var(--sans) !important;
+  font-size: 10.5px !important;
+  color: #8b3c54 !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+.rev-food-name {
+  font-family: var(--disp) !important;
+  font-size: 12.5px !important;
+  font-weight: 800 !important;
+  color: #1a0f15 !important;
+}
+
+/* Card Bottom Action */
+.rev-card-bottom {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-top: 1px solid rgba(220, 60, 100, 0.12) !important;
+  padding-top: 12px !important;
+}
+
+.rev-verified-tag {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-family: var(--sans) !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #12803b !important;
+}
+
+.rev-helpful-btn {
+  background: transparent !important;
+  border: 1px solid rgba(220, 60, 100, 0.2) !important;
+  border-radius: 999px !important;
+  padding: 4px 12px !important;
+  font-family: var(--sans) !important;
+  font-size: 11.5px !important;
+  color: #6a2a3e !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  transition: all 0.2s ease !important;
+}
+
+.rev-helpful-btn:hover,
+.rev-helpful-btn.liked {
+  background: #ffe6ee !important;
+  border-color: #e6195a !important;
+  color: #e6195a !important;
+}
+
+/* Bottom CTA Banner in Reviews */
+.reviews-bottom-cta-banner {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-radius: 999px !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.22) !important;
+  box-shadow: 0 16px 42px rgba(180, 40, 75, 0.1) !important;
+  padding: 16px 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.rev-banner-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 18px !important;
+}
+
+.rev-banner-icon {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #ffd23f 0%, #ffaa00 100%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 26px !important;
+  box-shadow: 0 6px 18px rgba(255, 170, 0, 0.35) !important;
+  border: 2px solid #fff !important;
+  flex-shrink: 0 !important;
+}
+
+.rev-banner-text {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+.rev-banner-text h3 {
+  font-family: var(--disp) !important;
+  font-size: 19px !important;
+  font-weight: 900 !important;
+  color: #1a0f15 !important;
+  margin: 0 !important;
+}
+
+.rev-banner-text p {
+  font-family: var(--sans) !important;
+  font-size: 13.5px !important;
+  color: #6a3648 !important;
+  margin: 0 !important;
+}
+
+.rev-banner-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-shrink: 0 !important;
+}
+
+.rev-write-btn {
+  background: #fff !important;
+  color: #e6195a !important;
+  border: 2px solid #e6195a !important;
+  border-radius: 999px !important;
+  padding: 10px 22px !important;
+  font-family: var(--disp) !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  box-shadow: 0 4px 14px rgba(230, 25, 90, 0.12) !important;
+}
+
+.rev-write-btn:hover {
+  background: #e6195a !important;
+  color: #fff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(230, 25, 90, 0.28) !important;
+}
+
+.rev-order-btn {
+  background: #e6195a !important;
+  color: #fff !important;
+  border: 2px solid #c41047 !important;
+  border-radius: 999px !important;
+  padding: 10px 24px !important;
+  font-family: var(--disp) !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  box-shadow: 0 6px 18px rgba(230, 25, 90, 0.32) !important;
+}
+
+.rev-order-btn:hover {
+  background: #ff2a6d !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 24px rgba(255, 42, 109, 0.42) !important;
+}
+
+/* Interactive Review Write Modal */
+.rev-modal-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(20, 8, 14, 0.72) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: blur(8px) !important;
+  z-index: 10005 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 20px !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+.rev-modal-backdrop.open {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.rev-modal-card {
+  background: #fff !important;
+  border-radius: 28px !important;
+  max-width: 520px !important;
+  width: 100% !important;
+  padding: 32px !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35) !important;
+  border: 2px solid rgba(255, 210, 225, 0.8) !important;
+  transform: scale(0.92) translateY(20px) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+}
+
+.rev-modal-backdrop.open .rev-modal-card {
+  transform: scale(1) translateY(0) !important;
+}
+
+.rev-modal-close {
+  position: absolute !important;
+  top: 20px !important;
+  right: 20px !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: #f5e4ea !important;
+  border: none !important;
+  font-size: 18px !important;
+  color: #333 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background 0.2s !important;
+}
+
+.rev-modal-close:hover {
+  background: #e6195a !important;
+  color: #fff !important;
+}
+
+.rev-modal-card h3 {
+  font-family: var(--disp) !important;
+  font-size: 24px !important;
+  font-weight: 900 !important;
+  color: #1a0f15 !important;
+  margin: 0 0 6px 0 !important;
+}
+
+.rev-modal-card p {
+  font-family: var(--sans) !important;
+  font-size: 13.5px !important;
+  color: #6a3648 !important;
+  margin: 0 0 20px 0 !important;
+}
+
+.rev-modal-form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+.rev-star-picker {
+  display: flex !important;
+  gap: 8px !important;
+  font-size: 28px !important;
+  cursor: pointer !important;
+  color: #ffd23f !important;
+  margin-bottom: 6px !important;
+}
+
+.rev-form-input, .rev-form-textarea, .rev-form-select {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 12px 16px !important;
+  border-radius: 12px !important;
+  border: 1.5px solid #ecd3dc !important;
+  font-family: var(--sans) !important;
+  font-size: 14px !important;
+  color: #200a12 !important;
+  background: #fff8fa !important;
+  transition: border-color 0.2s !important;
+}
+
+.rev-form-input:focus, .rev-form-textarea:focus, .rev-form-select:focus {
+  outline: none !important;
+  border-color: #e6195a !important;
+  background: #fff !important;
+}
+
+.rev-form-submit {
+  background: #e6195a !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 14px !important;
+  font-family: var(--disp) !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+  margin-top: 6px !important;
+  box-shadow: 0 8px 22px rgba(230, 25, 90, 0.35) !important;
+}
+
+.rev-form-submit:hover {
+  background: #ff2a6d !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 860px) {
+  .reviews-showcase-section {
+    padding: 70px 18px 50px !important;
+    border-radius: 32px 32px 0 0 !important;
+  }
+  .reviews-scorecard-bar {
+    grid-template-columns: 1fr !important;
+    padding: 20px 20px !important;
+    gap: 18px !important;
+    text-align: center !important;
+  }
+  .scorecard-main {
+    border-right: none !important;
+    border-bottom: 2px dashed rgba(220, 60, 100, 0.2) !important;
+    padding-right: 0 !important;
+    padding-bottom: 16px !important;
+    justify-content: center !important;
+  }
+  .scorecard-metrics {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  .metric-chip {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .reviews-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  .reviews-bottom-cta-banner {
+    border-radius: 28px !important;
+    flex-direction: column !important;
+    padding: 24px 20px !important;
+    text-align: center !important;
+  }
+  .rev-banner-left {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  .rev-banner-actions {
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+  .rev-write-btn, .rev-order-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+}
+
 </style></head><body class="locked"><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
 <div class="g-projector-beam" aria-hidden="true"></div>
 <div class="g-ambient-glow" aria-hidden="true"></div>
@@ -5591,7 +6356,7 @@ body.locked .sd {
 </div>
 </div>
 <div id="dock"><div class="stores"><a class="store" data-play href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get LOVE CAFE on Google Play"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg><span><small>GET IT ON</small>Google Play</span></a><a class="store" data-ios href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download LOVE CAFE on the App Store"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.2-2.800.8-3.500.8-.7 0-1.800-.8-3-.8-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7c1.300 0 2.100-1.100 2.800-2.200.9-1.300 1.300-2.500 1.300-2.600 0 0-2.500-1-2.500-3.800zM14.100 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.600 1.400-.6.700-1.100 1.700-.9 2.700 1 .1 2-.5 2.600-1.300z"/></svg><span><small>Download on the</small>App Store</span></a></div></div>
-<nav class="sd" aria-label="Page sections"><a href="#top" title="Start"></a><a href="#flavours" title="Flavours"></a><a href="#story" title="Movie night"></a><a href="#app" title="App"></a><a href="#cinemas" title="Cinemas"></a><a href="#how" title="How it works"></a><a href="#rewards" title="CinePoints"></a><a href="#get" title="Download"></a></nav>
+<nav class="sd" aria-label="Page sections"><a href="#top" title="Start"></a><a href="#flavours" title="Flavours"></a><a href="#story" title="Movie night"></a><a href="#app" title="App"></a><a href="#cinemas" title="Cinemas"></a><a href="#how" title="How it works"></a><a href="#reviews" title="Reviews"></a><a href="#rewards" title="CinePoints"></a><a href="#get" title="Download"></a></nav>
 <div id="bar" aria-hidden="true"></div>
 <header class="nav" id="nav">
   <a class="brand" href="#top" aria-label="LOVE CAFE - please taste me one time!">
@@ -6495,6 +7260,336 @@ body.locked .sd {
     </div>
   </div>
 </section>
+
+<!-- ==========================================================================
+     SECTION: CUSTOMER REVIEWS & IN-CINEMA DINING EXPERIENCES
+     ========================================================================== -->
+<section class="sec reviews-showcase-section" id="reviews" aria-label="Customer Reviews & Testimonials">
+  <div class="reviews-bg-beam" aria-hidden="true"></div>
+  <div class="reviews-wrap">
+    
+    <!-- Section Header -->
+    <div class="reviews-header-row rv">
+      <div class="reviews-mini-badge">
+        <span>★</span>
+        <span>VERIFIED CINEMA SEAT ORDERS · 4.9/5 RATING</span>
+        <span>★</span>
+      </div>
+      <h2>Loved by moviegoers, <em>scene after scene.</em></h2>
+      <p class="reviews-subtitle">Over 45,000+ film lovers order piping-hot gourmet cinema snacks and chilled craft beverages straight to their recliner seats every month.</p>
+    </div>
+
+    <!-- Rating & Trust Scorecard Bar -->
+    <div class="reviews-scorecard-bar rv">
+      <div class="scorecard-main">
+        <div class="scorecard-num">4.9</div>
+        <div class="scorecard-stars-block">
+          <div class="scorecard-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <div class="scorecard-caption">Based on 14,800+ verified cinema reviews</div>
+        </div>
+      </div>
+      <div class="scorecard-metrics">
+        <div class="metric-chip">
+          <div class="metric-icon">⚡</div>
+          <div class="metric-text">
+            <span class="metric-val">~9.8 Mins</span>
+            <span class="metric-lbl">Avg. Seat Drop Time</span>
+          </div>
+        </div>
+        <div class="metric-chip">
+          <div class="metric-icon">🍿</div>
+          <div class="metric-text">
+            <span class="metric-val">99.4%</span>
+            <span class="metric-lbl">Hot &amp; Fresh Guarantee</span>
+          </div>
+        </div>
+        <div class="metric-chip">
+          <div class="metric-icon">🎟️</div>
+          <div class="metric-text">
+            <span class="metric-val">100%</span>
+            <span class="metric-lbl">Zero Film Interruption</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Filter Pills -->
+    <div class="reviews-filter-bar rv" id="revFilterBar" role="tablist" aria-label="Filter customer reviews">
+      <button class="rev-filter-pill active" data-filter="all"><span>✨</span> All Reviews (4.9★)</button>
+      <button class="rev-filter-pill" data-filter="burger"><span>🍔</span> Brioche Burgers</button>
+      <button class="rev-filter-pill" data-filter="popcorn"><span>🍿</span> Popcorn &amp; Snacks</button>
+      <button class="rev-filter-pill" data-filter="pizza"><span>🍕</span> Woodfired Pizza</button>
+      <button class="rev-filter-pill" data-filter="speed"><span>⚡</span> Rapid Delivery</button>
+      <button class="rev-filter-pill" data-filter="drinks"><span>🥤</span> Chilled Craft Drinks</button>
+    </div>
+
+    <!-- 6 Luxury Cinema Review Cards Grid -->
+    <div class="reviews-cards-grid" id="revCardsGrid">
+      
+      <!-- Review 1: Smash Burger & Fast Delivery -->
+      <article class="rev-card rv" data-tags="all burger speed">
+        <div class="rev-foil-edge"></div>
+        <div class="rev-card-header">
+          <div class="rev-user-profile">
+            <div class="rev-avatar">AM</div>
+            <div class="rev-user-info">
+              <span class="rev-author-name">Aarav Mehta</span>
+              <span class="rev-cinema-tag">📍 PVR Director's Cut · Row D, Seat 8</span>
+            </div>
+          </div>
+          <span class="rev-time-badge">2 days ago</span>
+        </div>
+        <div class="rev-rating-row">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-speed-tag">⚡ Dropped in 8 mins</span>
+        </div>
+        <div class="rev-body">
+          <h4 class="rev-quote-title">The brioche smash was piping hot during the climax!</h4>
+          <p class="rev-text">Total game changer. We ordered the double brioche smash burger with truffle aioli right from the app during the trailers. It arrived hot at my recliner without missing a second of the movie.</p>
+        </div>
+        <div class="rev-food-ordered">
+          <img src="assets/flavours/snack_burger.jpg" alt="Artisan Brioche Smash Burger" class="rev-food-thumb">
+          <div class="rev-food-details">
+            <span class="rev-food-label">In-Seat Order</span>
+            <span class="rev-food-name">Double Brioche Smash + Fries · ₹240</span>
+          </div>
+        </div>
+        <div class="rev-card-bottom">
+          <span class="rev-verified-tag">✓ Verified Seat Delivery</span>
+          <button class="rev-helpful-btn" onclick="toggleHelpful(this)"><span>👍</span> Helpful <b>(42)</b></button>
+        </div>
+      </article>
+
+      <!-- Review 2: Popcorn & Boba -->
+      <article class="rev-card rv" data-tags="all popcorn drinks">
+        <div class="rev-foil-edge"></div>
+        <div class="rev-card-header">
+          <div class="rev-user-profile">
+            <div class="rev-avatar" style="background: linear-gradient(135deg, #ff7844 0%, #e64c19 100%)">PS</div>
+            <div class="rev-user-info">
+              <span class="rev-author-name">Priya Sharma</span>
+              <span class="rev-cinema-tag">📍 INOX Megaplex · Screen 4, Recliner 14</span>
+            </div>
+          </div>
+          <span class="rev-time-badge">3 days ago</span>
+        </div>
+        <div class="rev-rating-row">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-speed-tag">🧋 Zero Disturbance</span>
+        </div>
+        <div class="rev-body">
+          <h4 class="rev-quote-title">Warm caramel crunch &amp; popping boba milk tea!</h4>
+          <p class="rev-text">No standing in endless concession lines or balancing huge tubs through the dark aisle. Ordered from my phone, waiter placed it quietly on our armrest table. Popcorn was ultra-crisp and fresh!</p>
+        </div>
+        <div class="rev-food-ordered">
+          <img src="assets/flavours/snack_popcorn.jpg" alt="Golden Butter Popcorn" class="rev-food-thumb">
+          <div class="rev-food-details">
+            <span class="rev-food-label">In-Seat Order</span>
+            <span class="rev-food-name">Truffle Caramel Tub + Boba · ₹390</span>
+          </div>
+        </div>
+        <div class="rev-card-bottom">
+          <span class="rev-verified-tag">✓ Verified Seat Delivery</span>
+          <button class="rev-helpful-btn" onclick="toggleHelpful(this)"><span>👍</span> Helpful <b>(38)</b></button>
+        </div>
+      </article>
+
+      <!-- Review 3: Woodfired Pizza & Date Night -->
+      <article class="rev-card rv" data-tags="all pizza">
+        <div class="rev-foil-edge"></div>
+        <div class="rev-card-header">
+          <div class="rev-user-profile">
+            <div class="rev-avatar" style="background: linear-gradient(135deg, #e6195a 0%, #ffd23f 100%)">RA</div>
+            <div class="rev-user-info">
+              <span class="rev-author-name">Rohan &amp; Ananya</span>
+              <span class="rev-cinema-tag">📍 Cinépolis VIP · Audi 2, VIP Sofa 4</span>
+            </div>
+          </div>
+          <span class="rev-time-badge">5 days ago</span>
+        </div>
+        <div class="rev-rating-row">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-speed-tag">🍕 Date Night Favorite</span>
+        </div>
+        <div class="rev-body">
+          <h4 class="rev-quote-title">Woodfired pizza crust with an insane cheese pull!</h4>
+          <p class="rev-text">Date night made so effortless! The 48-hr fermented sourdough pizza had real blistered crust and the steamed momos with fiery chutney were restaurant-grade. Felt like 5-star room service in the theater.</p>
+        </div>
+        <div class="rev-food-ordered">
+          <img src="assets/flavours/snack_pizza.jpg" alt="Woodfired Sourdough Pizza" class="rev-food-thumb">
+          <div class="rev-food-details">
+            <span class="rev-food-label">In-Seat Order</span>
+            <span class="rev-food-name">Woodfired Margherita + Momos · ₹450</span>
+          </div>
+        </div>
+        <div class="rev-card-bottom">
+          <span class="rev-verified-tag">✓ Verified Seat Delivery</span>
+          <button class="rev-helpful-btn" onclick="toggleHelpful(this)"><span>👍</span> Helpful <b>(51)</b></button>
+        </div>
+      </article>
+
+      <!-- Review 4: Craft Drinks & Speed -->
+      <article class="rev-card rv" data-tags="all drinks speed">
+        <div class="rev-foil-edge"></div>
+        <div class="rev-card-header">
+          <div class="rev-user-profile">
+            <div class="rev-avatar" style="background: linear-gradient(135deg, #18a9e6 0%, #0c72ad 100%)">KK</div>
+            <div class="rev-user-info">
+              <span class="rev-author-name">Kabir Kapoor</span>
+              <span class="rev-cinema-tag">📍 PVR Luxe · Row F, Seat 12</span>
+            </div>
+          </div>
+          <span class="rev-time-badge">1 week ago</span>
+        </div>
+        <div class="rev-rating-row">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-speed-tag">⚡ 7-Min Seat Drop</span>
+        </div>
+        <div class="rev-body">
+          <h4 class="rev-quote-title">Delivered before the previews even finished!</h4>
+          <p class="rev-text">Timed it from when I hit place order in the app — exactly 7 minutes 20 seconds. The craft cola was actually 2°C ice cold with botanical fizz, not flat syrup. Earned 120 CinePoints too!</p>
+        </div>
+        <div class="rev-food-ordered">
+          <img src="assets/flavours/snack_cold_drink.jpg" alt="Ice-Cold Craft Cinema Cola" class="rev-food-thumb">
+          <div class="rev-food-details">
+            <span class="rev-food-label">In-Seat Order</span>
+            <span class="rev-food-name">Ice Frost Craft Cola Chilled · ₹120</span>
+          </div>
+        </div>
+        <div class="rev-card-bottom">
+          <span class="rev-verified-tag">✓ Verified Seat Delivery</span>
+          <button class="rev-helpful-btn" onclick="toggleHelpful(this)"><span>👍</span> Helpful <b>(29)</b></button>
+        </div>
+      </article>
+
+      <!-- Review 5: Gourmet Sandwich & Quality -->
+      <article class="rev-card rv" data-tags="all popcorn">
+        <div class="rev-foil-edge"></div>
+        <div class="rev-card-header">
+          <div class="rev-user-profile">
+            <div class="rev-avatar" style="background: linear-gradient(135deg, #9b51e0 0%, #bb6bd9 100%)">SW</div>
+            <div class="rev-user-info">
+              <span class="rev-author-name">Simran Walia</span>
+              <span class="rev-cinema-tag">📍 Miraj Cinemas · Audi 1, Recliner 6</span>
+            </div>
+          </div>
+          <span class="rev-time-badge">1 week ago</span>
+        </div>
+        <div class="rev-rating-row">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-speed-tag">🥪 Gourmet Panini</span>
+        </div>
+        <div class="rev-body">
+          <h4 class="rev-quote-title">Crispy toasted club sandwich with herb butter!</h4>
+          <p class="rev-text">I'm super picky about cinema food, but LOVE CAFE blew me away. The panini was pressed fresh, hot herb butter aroma, and the packaging kept everything neat with zero mess in the dark.</p>
+        </div>
+        <div class="rev-food-ordered">
+          <img src="assets/flavours/snack_sandwich.jpg" alt="Toasted Gourmet Club Sandwich" class="rev-food-thumb">
+          <div class="rev-food-details">
+            <span class="rev-food-label">In-Seat Order</span>
+            <span class="rev-food-name">Toasted Artisan Panini · ₹190</span>
+          </div>
+        </div>
+        <div class="rev-card-bottom">
+          <span class="rev-verified-tag">✓ Verified Seat Delivery</span>
+          <button class="rev-helpful-btn" onclick="toggleHelpful(this)"><span>👍</span> Helpful <b>(34)</b></button>
+        </div>
+      </article>
+
+      <!-- Review 6: IMAX Experience & Momos -->
+      <article class="rev-card rv" data-tags="all burger pizza">
+        <div class="rev-foil-edge"></div>
+        <div class="rev-card-header">
+          <div class="rev-user-profile">
+            <div class="rev-avatar" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)">VR</div>
+            <div class="rev-user-info">
+              <span class="rev-author-name">Vikramaditya Rao</span>
+              <span class="rev-cinema-tag">📍 PVR Superplex · IMAX Screen, Row H</span>
+            </div>
+          </div>
+          <span class="rev-time-badge">2 weeks ago</span>
+        </div>
+        <div class="rev-rating-row">
+          <div class="rev-stars">★★★★★</div>
+          <span class="rev-speed-tag">🎬 IMAX Perfection</span>
+        </div>
+        <div class="rev-body">
+          <h4 class="rev-quote-title">Watching IMAX with seat dining feels next level.</h4>
+          <p class="rev-text">Watching Dune 2 with gourmet popcorn and savory momos delivered straight to my seat was unforgettable. Friendly delivery staff, discreet service, and highest quality food. Essential for movies now.</p>
+        </div>
+        <div class="rev-food-ordered">
+          <img src="assets/flavours/snack_momo.jpg" alt="Himalayan Steamed Momos" class="rev-food-thumb">
+          <div class="rev-food-details">
+            <span class="rev-food-label">In-Seat Order</span>
+            <span class="rev-food-name">Himalayan Steamed Momos + Dip · ₹160</span>
+          </div>
+        </div>
+        <div class="rev-card-bottom">
+          <span class="rev-verified-tag">✓ Verified Seat Delivery</span>
+          <button class="rev-helpful-btn" onclick="toggleHelpful(this)"><span>👍</span> Helpful <b>(63)</b></button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Review Bottom CTA Banner -->
+    <div class="reviews-bottom-cta-banner rv">
+      <div class="rev-banner-left">
+        <div class="rev-banner-icon">★</div>
+        <div class="rev-banner-text">
+          <h3>Watched a movie recently with LOVE CAFE?</h3>
+          <p>Share your cinema dining review and claim <b>100 bonus CinePoints</b> on your next film!</p>
+        </div>
+      </div>
+      <div class="rev-banner-actions">
+        <button class="rev-write-btn" onclick="openReviewModal()"><span>✍️</span> Write a Cinema Review</button>
+        <a class="rev-order-btn" href="#get"><span>Order in App</span> <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Interactive Write Review Modal -->
+<div class="rev-modal-backdrop" id="revModalBackdrop" role="dialog" aria-modal="true" aria-label="Write a cinema dining review">
+  <div class="rev-modal-card">
+    <button class="rev-modal-close" onclick="closeReviewModal()" aria-label="Close review dialog">✕</button>
+    <div style="font-size:32px; margin-bottom:8px;">🍿</div>
+    <h3>Rate Your Cinema Dining</h3>
+    <p>Tell other film lovers about your food quality, seat delivery speed, and overall movie experience.</p>
+    
+    <form class="rev-modal-form" id="revModalForm" onsubmit="handleReviewSubmit(event)">
+      <div>
+        <label style="font-family:var(--disp); font-size:12px; font-weight:800; color:#542232; display:block; margin-bottom:4px;">OVERALL RATING</label>
+        <div class="rev-star-picker" id="starPicker">
+          <span onclick="setStars(1)">★</span>
+          <span onclick="setStars(2)">★</span>
+          <span onclick="setStars(3)">★</span>
+          <span onclick="setStars(4)">★</span>
+          <span onclick="setStars(5)">★</span>
+        </div>
+      </div>
+      
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <input class="rev-form-input" id="revName" type="text" placeholder="Your Name" required>
+        <select class="rev-form-select" id="revCinema" required>
+          <option value="">Select Cinema...</option>
+          <option value="PVR Forum Mall">PVR Forum Mall, Bengaluru</option>
+          <option value="INOX Megaplex">INOX Megaplex, Mumbai</option>
+          <option value="Cinépolis Nexus">Cinépolis Nexus, Pune</option>
+          <option value="PVR Orion Luxe">PVR Orion Luxe, Bengaluru</option>
+          <option value="Miraj Cinemas">Miraj Cinemas, Delhi NCR</option>
+        </select>
+      </div>
+      
+      <input class="rev-form-input" id="revSeat" type="text" placeholder="Row &amp; Seat (e.g. Row F · Seat 12)">
+      <textarea class="rev-form-textarea" id="revText" rows="3" placeholder="How was your popcorn, burger, or delivery speed?" required></textarea>
+      
+      <button class="rev-form-submit" type="submit">Submit Review &amp; Unlock 100 Points ★</button>
+    </form>
+  </div>
+</div>
+
 
 <section class="sec rew" id="rewards"><div class="wrap two">
 <div><h2 class="rv">Watch.<br><em>Earn. Repeat.</em></h2><p class="lead rv">Every movie night can bring you closer to your next treat.</p>
@@ -7486,6 +8581,125 @@ if (finEl && typeof IntersectionObserver !== 'undefined') {
     });
   }, { threshold: 0.35 }).observe(finEl);
 }
+
+// --------------------------------------------------------------------------
+// CUSTOMER REVIEWS INTERACTION (FILTERING, HELPFUL LIKES, MODAL SUBMIT)
+// --------------------------------------------------------------------------
+let selectedStars = 5;
+
+function setStars(n) {
+  selectedStars = n;
+  const stars = document.querySelectorAll('#starPicker span');
+  stars.forEach((s, idx) => {
+    s.style.opacity = idx < n ? '1' : '0.3';
+  });
+}
+
+function openReviewModal() {
+  const modal = document.getElementById('revModalBackdrop');
+  if (modal) modal.classList.add('open');
+  setStars(5);
+}
+
+function closeReviewModal() {
+  const modal = document.getElementById('revModalBackdrop');
+  if (modal) modal.classList.remove('open');
+}
+
+function handleReviewSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('revName').value.trim();
+  const cinema = document.getElementById('revCinema').value;
+  const seat = document.getElementById('revSeat').value.trim() || 'VIP Recliner';
+  const text = document.getElementById('revText').value.trim();
+
+  if (!name || !text) return;
+
+  // Confetti burst on review submission
+  burst(innerWidth / 2, innerHeight / 2);
+
+  // Prepend new review card to grid
+  const grid = document.getElementById('revCardsGrid');
+  if (grid) {
+    const card = document.createElement('article');
+    card.className = 'rev-card rv in';
+    card.setAttribute('data-tags', 'all popcorn burger pizza speed drinks');
+    card.innerHTML = `
+      <div class="rev-foil-edge"></div>
+      <div class="rev-card-header">
+        <div class="rev-user-profile">
+          <div class="rev-avatar" style="background:linear-gradient(135deg, #ffd23f 0%, #e6195a 100%)">${name.slice(0, 2).toUpperCase()}</div>
+          <div class="rev-user-info">
+            <span class="rev-author-name">${name}</span>
+            <span class="rev-cinema-tag">📍 ${cinema} · ${seat}</span>
+          </div>
+        </div>
+        <span class="rev-time-badge">Just now</span>
+      </div>
+      <div class="rev-rating-row">
+        <div class="rev-stars">${'★'.repeat(selectedStars)}</div>
+        <span class="rev-speed-tag">⚡ Newly Verified</span>
+      </div>
+      <div class="rev-body">
+        <h4 class="rev-quote-title">Incredible in-seat dining experience!</h4>
+        <p class="rev-text">${text}</p>
+      </div>
+      <div class="rev-food-ordered">
+        <img src="assets/flavours/snack_popcorn.jpg" alt="Fresh Popcorn" class="rev-food-thumb">
+        <div class="rev-food-details">
+          <span class="rev-food-label">In-Seat Order</span>
+          <span class="rev-food-name">Gourmet Cinema Combo · +100 CinePoints</span>
+        </div>
+      </div>
+      <div class="rev-card-bottom">
+        <span class="rev-verified-tag">✓ Verified Seat Delivery</span>
+        <button class="rev-helpful-btn liked" onclick="toggleHelpful(this)"><span>👍</span> Helpful <b>(1)</b></button>
+      </div>
+    `;
+    grid.prepend(card);
+  }
+
+  closeReviewModal();
+  document.getElementById('revModalForm').reset();
+  alert('🎉 Thank you, ' + name + '! Your cinema review has been verified and 100 bonus CinePoints have been credited to your account!');
+}
+
+function toggleHelpful(btn) {
+  const b = btn.querySelector('b');
+  if (!b) return;
+  const match = b.textContent.match(/\d+/);
+  if (!match) return;
+  let count = parseInt(match[0], 10);
+  if (btn.classList.contains('liked')) {
+    btn.classList.remove('liked');
+    b.textContent = `(${count - 1})`;
+  } else {
+    btn.classList.add('liked');
+    b.textContent = `(${count + 1})`;
+    burst(btn.getBoundingClientRect().left + 30, btn.getBoundingClientRect().top);
+  }
+}
+
+// Filter pills interaction
+document.querySelectorAll('.rev-filter-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.rev-filter-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    const filter = pill.getAttribute('data-filter');
+    const cards = document.querySelectorAll('.rev-card');
+    cards.forEach(card => {
+      const tags = (card.getAttribute('data-tags') || '').split(' ');
+      if (filter === 'all' || tags.includes(filter)) {
+        card.style.display = 'flex';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
 </script>
 
 
