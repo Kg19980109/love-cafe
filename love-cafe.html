@@ -2573,526 +2573,1246 @@ body.locked .sd {
 
 
 /* ==========================================================================
-   OFFICIAL LOVE CAFE APP SHOWCASE (COMPACT, SPACE-EFFICIENT & RETRO-PERFECT)
-   Tightly Proportioned Mobile Cards (2-at-a-time), Zero Wasted Space, 100% Brand Fit
+   OFFICIAL REFERENCE DESIGN: 3 CORE SECTIONS
+   1. #app: "Make room for one more bite."
+   2. #cinemas: "Find your cinema. Find your favourites."
+   3. #how: "From your screen to your seat."
    ========================================================================== */
-.app-cinema-showcase {
+
+/* --- Common Design System Tokens for the 3 Sections --- */
+.app-showcase-section,
+.cinemas-showcase-section,
+.how-showcase-section {
   position: relative !important;
-  background: var(--cream) radial-gradient(#f9d3da 2px, transparent 2.5px) 0 0/30px 30px !important;
-  border-top: 3.5px solid var(--line) !important;
-  border-bottom: 3.5px solid var(--line) !important;
-  border-radius: 40px 40px 0 0 !important;
-  margin-top: -36px !important;
-  padding: clamp(65px, 7vw, 95px) clamp(14px, 3.5vw, 40px) clamp(50px, 6vw, 75px) !important;
-  scroll-margin-top: 80px !important;
+  background: #ffeef2 linear-gradient(180deg, #ffeef2 0%, #fff5f7 50%, #ffeef2 100%) !important;
+  padding: clamp(70px, 8vw, 110px) clamp(16px, 4vw, 48px) !important;
+  color: #24141d !important;
   overflow: hidden !important;
-  color: var(--line) !important;
-  z-index: 10 !important;
+  z-index: 5 !important;
+  scroll-margin-top: 75px !important;
 }
 
-/* Subtle Confectionery Sparkles */
-.app-sparkle-bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
+.section-tag-pill,
+.cinema-tag-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.22) !important;
+  border-radius: 999px !important;
+  padding: 6px 16px !important;
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #7b2c45 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 4px 12px rgba(180, 40, 75, 0.06) !important;
+  margin-bottom: 14px !important;
 }
 
-.app-sparkle {
-  position: absolute;
-  font-size: clamp(18px, 2.5vw, 26px);
-  animation: bob 3.6s ease-in-out infinite;
-  opacity: 0.8;
+.coral-gradient-text {
+  background: linear-gradient(135deg, #e6195a 0%, #ff5c28 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block !important;
 }
 
-.app-sparkle:nth-child(1) { top: 6%; left: 3%; animation-delay: -0.5s; }
-.app-sparkle:nth-child(2) { top: 8%; right: 4%; animation-delay: -1.8s; }
-.app-sparkle:nth-child(3) { bottom: 8%; left: 4%; animation-delay: -2.3s; }
-.app-sparkle:nth-child(4) { bottom: 6%; right: 3%; animation-delay: -1.2s; }
-
-/* Compact Section Header Block */
-.app-header-block {
-  text-align: center;
-  max-width: 780px;
-  margin: 0 auto clamp(24px, 3.5vw, 36px);
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+/* Store Badge Buttons (Black Pills) */
+.app-stores-row,
+.cta-banner-right {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  align-items: center !important;
 }
 
-.app-brand-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #ffffff;
-  border: 2.5px solid var(--line);
-  box-shadow: 0 3px 0 var(--line);
-  border-radius: 999px;
-  padding: 5px 16px;
-  font: 800 12px/1.2 var(--disp);
-  color: var(--rasp);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.store-badge-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+  padding: 8px 18px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
 }
 
-.app-brand-pill .live-pulse-ring {
-  width: 8px;
-  height: 8px;
-  background: #10b981;
-  border-radius: 50%;
-  box-shadow: 0 0 0 2.5px rgba(16, 185, 129, 0.25);
-  animation: pulseDot 1.8s infinite;
+.store-badge-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2) !important;
 }
 
-.app-header-block h2 {
-  font: 800 clamp(28px, 4.2vw, 48px)/1.1 var(--disp) !important;
-  color: var(--line) !important;
+.store-badge-btn .btn-text-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: left !important;
+  line-height: 1.15 !important;
+}
+
+.store-badge-btn small {
+  font-family: var(--sans) !important;
+  font-size: 8.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  opacity: 0.8 !important;
+}
+
+.store-badge-btn b {
+  font-family: var(--disp) !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+}
+
+/* --- 1. SECTION #app STYLING --- */
+.app-section-inner {
+  max-width: 1220px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: clamp(40px, 5vw, 60px) !important;
+}
+
+.app-main-grid {
+  display: grid !important;
+  grid-template-columns: 1.05fr 1.15fr !important;
+  align-items: center !important;
+  gap: clamp(30px, 4vw, 60px) !important;
+}
+
+.app-text-col {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 16px !important;
+}
+
+.app-title-head {
+  font-family: var(--disp) !important;
+  font-size: clamp(38px, 4.4vw, 56px) !important;
+  font-weight: 900 !important;
+  line-height: 1.08 !important;
+  color: #1a0f15 !important;
   margin: 0 !important;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em !important;
 }
 
-.app-header-block h2 em {
-  font-style: normal;
-  color: var(--rasp);
-  text-shadow: 2.5px 2.5px 0 #ffffff, 5px 5px 0 var(--line) !important;
-  display: inline-block;
+.app-subtitle-desc {
+  font-family: var(--sans) !important;
+  font-size: clamp(15px, 1.25vw, 17px) !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: #552837 !important;
+  margin: 0 !important;
+  max-width: 480px !important;
 }
 
-.app-header-block .lead-desc {
-  font: 500 clamp(14px, 1.2vw, 16.5px)/1.45 var(--sans);
-  color: #5c2938;
-  margin: 0;
-  max-width: 580px;
+/* QR Code Card */
+.app-qr-download-card {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.18) !important;
+  box-shadow: 0 10px 28px rgba(180, 40, 75, 0.08) !important;
+  padding: 12px 18px !important;
+  margin-top: 4px !important;
 }
 
-/* Compact Retro Store Buttons */
-.app-store-btns-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 2px;
+.qr-code-frame {
+  width: 68px !important;
+  height: 68px !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
 }
 
-.app-store-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 18px;
-  border-radius: 999px;
-  border: 2.5px solid var(--line);
-  box-shadow: 0 4px 0 var(--line);
-  text-decoration: none;
-  font-family: var(--disp);
-  font-weight: 800;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+.qr-label-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
 }
 
-.app-store-btn:hover {
-  transform: translateY(-2px) rotate(-1deg);
-  box-shadow: 0 6px 0 var(--line);
+.qr-instruction {
+  font-family: var(--disp) !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  color: #201319 !important;
 }
 
-.app-btn-play {
-  background: #ffffff;
-  color: var(--line);
+.qr-hand-arrow svg {
+  animation: bounceCurve 2s ease-in-out infinite !important;
 }
 
-.app-btn-apple {
-  background: var(--line);
-  color: #ffffff;
-  box-shadow: 0 4px 0 var(--rasp);
+@keyframes bounceCurve {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-3px, 3px); }
 }
 
-.app-store-btn small {
-  display: block;
-  font: 700 9px/1 var(--sans);
-  letter-spacing: 0.05em;
-  opacity: 0.85;
+/* Right Column Graphic (3D Phones) */
+.app-graphic-col {
+  position: relative !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
-.app-store-btn span {
-  display: flex;
-  flex-direction: column;
-  font-size: 13.5px;
-  line-height: 1.1;
-  text-align: left;
+.floating-script-note {
+  position: absolute !important;
+  top: 10px !important;
+  right: 15px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  font-family: var(--hand, 'Caveat', cursive) !important;
+  font-size: clamp(22px, 2.4vw, 30px) !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  color: #e6195a !important;
+  transform: rotate(3deg) !important;
+  z-index: 4 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
 }
 
-.app-rating-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 2px solid var(--line);
-  box-shadow: 0 2.5px 0 var(--line);
-  border-radius: 999px;
-  padding: 3px 14px;
-  font: 700 12px var(--sans);
-  color: var(--line);
+.script-heart {
+  font-size: 20px !important;
+  margin-top: 2px !important;
 }
 
-.app-rating-pill .gold-stars {
-  color: #f59e0b;
-  letter-spacing: 1px;
+.phones-art-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 580px !important;
 }
 
-/* Compact Screen Selector Tabs */
-.app-tabs-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin: 0 auto clamp(20px, 3vw, 30px);
-  max-width: 820px;
-  position: relative;
-  z-index: 2;
+.desktop-phones-img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 24px !important;
+  filter: drop-shadow(0 16px 36px rgba(180, 40, 75, 0.16)) !important;
 }
 
-.app-tab-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 14px;
-  border-radius: 999px;
-  background: #ffffff;
-  border: 2.5px solid var(--line);
-  box-shadow: 0 3px 0 var(--line);
-  font: 800 12.5px/1 var(--disp);
-  color: var(--line);
-  cursor: pointer;
-  transition: all 0.15s ease;
+.mobile-phones-img {
+  display: none !important;
 }
 
-.app-tab-pill:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 0 var(--line);
-  background: #fff8e6;
+/* Bottom Perks Capsule Bar */
+.app-perks-capsule-bar {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(14px) !important;
+  border-radius: 999px !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.2) !important;
+  box-shadow: 0 12px 36px rgba(180, 40, 75, 0.08) !important;
+  padding: 16px 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
 }
 
-.app-tab-pill.active {
-  background: #ffd23f;
-  color: var(--line);
-  box-shadow: 0 4px 0 var(--line);
-  transform: translateY(-2px);
+.perk-card {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex: 1 !important;
 }
 
-.tab-badge-num {
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  background: #ffe3ea;
-  color: var(--rasp);
-  border: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  font-weight: 800;
+.perk-icon {
+  font-size: 24px !important;
+  flex-shrink: 0 !important;
 }
 
-.app-tab-pill.active .tab-badge-num {
-  background: var(--rasp);
-  color: #ffffff;
+.perk-icon.heart-circle {
+  width: 32px !important;
+  height: 32px !important;
+  background: #ffe3ea !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  font-size: 16px !important;
 }
+
+.perk-details {
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1.25 !important;
+}
+
+.perk-details b {
+  font-family: var(--disp) !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  color: #1e1117 !important;
+}
+
+.perk-details span {
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  color: #6a3648 !important;
+}
+
+.perk-divider {
+  width: 1px !important;
+  height: 36px !important;
+  background: rgba(220, 50, 95, 0.15) !important;
+  flex-shrink: 0 !important;
+}
+
+
+/* --- 2. SECTION #cinemas STYLING --- */
+.cinemas-section-inner {
+  max-width: 1220px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: clamp(32px, 4vw, 50px) !important;
+}
+
+.cinemas-header-block {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+  max-width: 780px !important;
+}
+
+.cinemas-title-head {
+  font-family: var(--disp) !important;
+  font-size: clamp(38px, 4.4vw, 56px) !important;
+  font-weight: 900 !important;
+  line-height: 1.08 !important;
+  color: #1a0f15 !important;
+  margin: 0 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.cinemas-subtitle-desc {
+  font-family: var(--sans) !important;
+  font-size: clamp(15px, 1.25vw, 17px) !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: #552837 !important;
+  margin: 0 !important;
+}
+
+/* Search Controls Bar */
+.cinemas-controls-bar {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 650px !important;
+  margin-top: 4px !important;
+}
+
+.cinemas-search-box {
+  flex: 1 1 320px !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  background: #ffffff !important;
+  border-radius: 999px !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.22) !important;
+  box-shadow: 0 6px 18px rgba(180, 40, 75, 0.06) !important;
+  padding: 0 16px !important;
+}
+
+.search-glass-icon {
+  color: #8c5264 !important;
+  margin-right: 8px !important;
+}
+
+.cinemas-search-box input {
+  width: 100% !important;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  font-family: var(--sans) !important;
+  font-size: 14px !important;
+  color: #24141d !important;
+  padding: 12px 0 !important;
+}
+
+.cinemas-city-dropdown {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  background: #ffffff !important;
+  border-radius: 999px !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.22) !important;
+  box-shadow: 0 6px 18px rgba(180, 40, 75, 0.06) !important;
+  padding: 0 18px !important;
+}
+
+.city-pin-icon {
+  margin-right: 6px !important;
+}
+
+.cinemas-city-dropdown select {
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  font-family: var(--disp) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #24141d !important;
+  padding: 12px 20px 12px 0 !important;
+  cursor: pointer !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+
+.dropdown-chevron {
+  position: absolute !important;
+  right: 14px !important;
+  pointer-events: none !important;
+  font-size: 12px !important;
+  color: #7b2c45 !important;
+}
+
+/* Atmosphere Stage (India Map + Cinema Building) */
+.cinemas-atmosphere-stage {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  align-items: center !important;
+  gap: 30px !important;
+  position: relative !important;
+}
+
+.map-badge-container {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+.desktop-map-img {
+  max-width: 280px !important;
+  width: 100% !important;
+  height: auto !important;
+  filter: drop-shadow(0 12px 28px rgba(180, 40, 75, 0.12)) !important;
+}
+
+.mobile-map-img {
+  display: none !important;
+}
+
+.theatre-glow-container {
+  position: relative !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: flex-end !important;
+}
+
+.theatre-hand-note {
+  position: absolute !important;
+  top: 15px !important;
+  left: 20px !important;
+  font-family: var(--hand, 'Caveat', cursive) !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  color: #e6195a !important;
+  transform: rotate(-4deg) !important;
+  z-index: 3 !important;
+}
+
+.theatre-building-img {
+  max-width: 320px !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 20px !important;
+  filter: drop-shadow(0 14px 32px rgba(180, 40, 75, 0.14)) !important;
+}
+
+/* Featured Cinemas Carousel */
+.featured-cinemas-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+.featured-header-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.featured-title-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.featured-title-wrap .star-icon {
+  color: #f59e0b !important;
+  font-size: 18px !important;
+}
+
+.featured-title-wrap h3 {
+  font-family: var(--disp) !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: #1a0f15 !important;
+  margin: 0 !important;
+}
+
+.featured-actions-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+.view-all-link {
+  font-family: var(--disp) !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  color: #e6195a !important;
+  text-decoration: none !important;
+}
+
+.carousel-arrows {
+  display: flex !important;
+  gap: 6px !important;
+}
+
+.c-arrow-btn {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.25) !important;
+  color: #24141d !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  display: grid !important;
+  place-items: center !important;
+  transition: all 0.15s ease !important;
+}
+
+.c-arrow-btn:hover {
+  background: #e6195a !important;
+  color: #ffffff !important;
+  border-color: #e6195a !important;
+}
+
+.cinema-cards-scroll-track {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+}
+
+.cinema-location-card {
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.18) !important;
+  box-shadow: 0 8px 24px rgba(180, 40, 75, 0.08) !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.cinema-location-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 30px rgba(180, 40, 75, 0.14) !important;
+}
+
+.card-thumb-wrap {
+  width: 100% !important;
+  height: 120px !important;
+  overflow: hidden !important;
+  background: #24141d !important;
+}
+
+.card-thumb-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.3s ease !important;
+}
+
+.cinema-location-card:hover .card-thumb-wrap img {
+  transform: scale(1.05) !important;
+}
+
+.card-info-wrap {
+  padding: 14px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  flex: 1 !important;
+}
+
+.card-info-wrap h4 {
+  font-family: var(--disp) !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  color: #1a0f15 !important;
+  margin: 0 !important;
+}
+
+.city-location-tag {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  color: #6a3648 !important;
+}
+
+.status-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  font-family: var(--sans) !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  align-self: flex-start !important;
+}
+
+.status-available {
+  background: #e8f7ee !important;
+  color: #0d8248 !important;
+  border: 1px solid rgba(13, 130, 72, 0.2) !important;
+}
+
+.status-soon {
+  background: #f1eff4 !important;
+  color: #6e647b !important;
+  border: 1px solid rgba(110, 100, 123, 0.2) !important;
+}
+
+.view-loc-btn {
+  margin-top: auto !important;
+  padding: 8px 14px !important;
+  border-radius: 999px !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.3) !important;
+  background: transparent !important;
+  color: #e6195a !important;
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-align: center !important;
+}
+
+.card-mobile-arrow {
+  display: none !important;
+}
+
+.view-loc-btn:hover {
+  background: #e6195a !important;
+  color: #ffffff !important;
+}
+
+/* Bottom Expansion Banner */
+.cinemas-bottom-callout-banner {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-radius: 999px !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.2) !important;
+  box-shadow: 0 10px 30px rgba(180, 40, 75, 0.08) !important;
+  padding: 12px 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+}
+
+.banner-left-info {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+
+.banner-popcorn-icon {
+  font-size: 28px !important;
+}
+
+.banner-left-info b {
+  font-family: var(--disp) !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  color: #1a0f15 !important;
+  display: block !important;
+}
+
+.banner-left-info p {
+  font-family: var(--sans) !important;
+  font-size: 12.5px !important;
+  color: #6a3648 !important;
+  margin: 0 !important;
+}
+
+.banner-cta-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  padding: 10px 22px !important;
+  font-family: var(--disp) !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  box-shadow: 0 6px 18px rgba(230, 25, 90, 0.3) !important;
+  transition: transform 0.2s ease !important;
+}
+
+.banner-cta-btn:hover {
+  transform: translateY(-2px) !important;
+}
+
+.chevron-circle {
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+  display: grid !important;
+  place-items: center !important;
+  font-size: 12px !important;
+}
+
+.banner-clapper-deco {
+  font-size: 26px !important;
+}
+
+
+/* --- 3. SECTION #how STYLING --- */
+.how-section-inner {
+  max-width: 1220px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: clamp(34px, 4vw, 54px) !important;
+}
+
+.how-header-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  gap: 30px !important;
+}
+
+.how-header-left {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+  max-width: 620px !important;
+}
+
+.how-title-head {
+  font-family: var(--disp) !important;
+  font-size: clamp(38px, 4.4vw, 56px) !important;
+  font-weight: 900 !important;
+  line-height: 1.08 !important;
+  color: #1a0f15 !important;
+  margin: 0 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.how-subtitle-desc {
+  font-family: var(--sans) !important;
+  font-size: clamp(15px, 1.25vw, 17px) !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: #552837 !important;
+  margin: 0 !important;
+}
+
+.how-header-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+}
+
+.how-hand-note-box {
+  font-family: var(--hand, 'Caveat', cursive) !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  color: #e6195a !important;
+  transform: rotate(-3deg) !important;
+}
+
+.hand-line {
+  margin: 0 !important;
+}
+
+.golden-ritual-ticket {
+  background: #fbc02d !important;
+  border: 1.5px dashed #24141d !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  font-family: var(--disp) !important;
+  font-weight: 900 !important;
+  font-size: 10px !important;
+  color: #24141d !important;
+  line-height: 1.2 !important;
+  transform: rotate(5deg) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Atmosphere Cinema Recliner Background */
+.how-recliner-atmosphere {
+  position: absolute !important;
+  top: 50px !important;
+  right: 5% !important;
+  width: 320px !important;
+  opacity: 0.85 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.how-recliner-atmosphere img {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 20px !important;
+}
+
+/* 4-Step Process Journey */
+.how-steps-journey-wrap {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 18px !important;
+  margin-top: 10px !important;
+  z-index: 2 !important;
+}
+
+.steps-connector-line {
+  position: absolute !important;
+  top: 48px !important;
+  left: 8% !important;
+  right: 8% !important;
+  height: 2px !important;
+  border-top: 2.5px dashed rgba(230, 25, 90, 0.35) !important;
+  z-index: 1 !important;
+}
+
+.how-journey-card {
+  position: relative !important;
+  z-index: 2 !important;
+  background: #ffffff !important;
+  border-radius: 22px !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.18) !important;
+  box-shadow: 0 8px 24px rgba(180, 40, 75, 0.08) !important;
+  padding: 24px 14px 14px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  transition: transform 0.2s ease !important;
+}
+
+.how-journey-card:hover {
+  transform: translateY(-4px) !important;
+}
+
+.floating-step-badge {
+  position: absolute !important;
+  top: -16px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.25) !important;
+  box-shadow: 0 4px 10px rgba(180, 40, 75, 0.1) !important;
+  display: grid !important;
+  place-items: center !important;
+  font-size: 16px !important;
+}
+
+.card-step-circle {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  background: #e6195a !important;
+  color: #ffffff !important;
+  font-family: var(--disp) !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  display: grid !important;
+  place-items: center !important;
+  margin-bottom: 10px !important;
+}
+
+.card-content-block {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.card-content-block h4 {
+  font-family: var(--disp) !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  color: #1a0f15 !important;
+  margin: 0 !important;
+}
+
+.card-content-block p {
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+  color: #6a3648 !important;
+  margin: 0 !important;
+}
+
+.card-visual-thumb {
+  position: relative !important;
+  width: 100% !important;
+  height: 105px !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  margin-top: 14px !important;
+  background: #24141d !important;
+}
+
+.card-visual-thumb img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.thumb-pin-badge {
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  font-size: 16px !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
+}
+
+/* Bottom CTA Banner in #how */
+.how-bottom-cta-banner {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-radius: 999px !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.2) !important;
+  box-shadow: 0 12px 36px rgba(180, 40, 75, 0.08) !important;
+  padding: 14px 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.cta-banner-left {
+  flex-shrink: 0 !important;
+}
+
+.cta-phone-icon {
+  width: 60px !important;
+  height: auto !important;
+  display: block !important;
+}
+
+.cta-banner-center {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  flex: 1 !important;
+}
+
+.cta-subtag {
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #e6195a !important;
+  letter-spacing: 0.05em !important;
+}
+
+.cta-banner-center h3 {
+  font-family: var(--disp) !important;
+  font-size: 20px !important;
+  font-weight: 900 !important;
+  color: #1a0f15 !important;
+  margin: 0 !important;
+}
+
+.cta-banner-center p {
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+  color: #6a3648 !important;
+  margin: 0 !important;
+}
+
 
 /* ==========================================================================
-   SPACE-EFFICIENT 4-PHONE GRID & MOBILE 2-UP SLIDER
-   Desktop: 4 Sleek Compact Phones Side-by-Side (Fit in 1 View!)
-   Mobile: 2 Compact Phones Side-by-Side (Cut height in half!)
+   MOBILE & TABLET RESPONSIVENESS (MATCHING THE MOBILE SCREENSHOTS PRECISELY)
    ========================================================================== */
-.app-showcase-slider-wrap {
-  position: relative;
-  max-width: 1140px;
-  margin: 0 auto;
-  z-index: 2;
+@media (max-width: 860px) {
+  /* Common */
+  .app-showcase-section,
+  .cinemas-showcase-section,
+  .how-showcase-section {
+    padding: 55px 16px !important;
+  }
+
+  .app-title-head,
+  .cinemas-title-head,
+  .how-title-head {
+    font-size: 32px !important;
+    text-align: center !important;
+  }
+
+  .app-subtitle-desc,
+  .cinemas-subtitle-desc,
+  .how-subtitle-desc {
+    text-align: center !important;
+  }
+
+  .section-tag-pill,
+  .cinema-tag-badge {
+    align-self: center !important;
+  }
+
+  /* #app mobile */
+  .app-main-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    gap: 28px !important;
+  }
+
+  .app-text-col {
+    align-items: center !important;
+  }
+
+  .app-stores-row {
+    justify-content: center !important;
+  }
+
+  .desktop-phones-img {
+    display: none !important;
+  }
+
+  .mobile-phones-img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 290px !important;
+    margin: 0 auto !important;
+    border-radius: 20px !important;
+  }
+
+  .floating-script-note {
+    top: -20px !important;
+    right: 5% !important;
+    font-size: 20px !important;
+  }
+
+  .app-perks-capsule-bar {
+    border-radius: 24px !important;
+    padding: 20px 16px !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+
+  .perk-divider {
+    display: none !important;
+  }
+
+  /* #cinemas mobile */
+  .cinemas-header-block {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .cinemas-controls-bar {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .cinemas-search-box {
+    flex: none !important;
+    width: 100% !important;
+    height: 48px !important;
+  }
+
+  .cinemas-city-dropdown {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  .cinemas-atmosphere-stage {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+
+  .desktop-map-img {
+    display: none !important;
+  }
+
+  .mobile-map-img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 240px !important;
+  }
+
+  .theatre-glow-container {
+    display: none !important;
+  }
+
+  .cinema-cards-scroll-track {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .cinema-location-card {
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 10px !important;
+  }
+
+  .card-thumb-wrap {
+    width: 85px !important;
+    height: 75px !important;
+    border-radius: 12px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .card-info-wrap {
+    padding: 0 0 0 12px !important;
+  }
+
+  .card-mobile-arrow {
+    display: grid !important;
+    place-items: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    border: 1.5px solid #ff2a6d !important;
+    color: #ff2a6d !important;
+    font-family: var(--disp) !important;
+    font-weight: 800 !important;
+    font-size: 16px !important;
+    margin-left: auto !important;
+    text-decoration: none !important;
+    flex-shrink: 0 !important;
+    background: transparent !important;
+    transition: all 0.2s ease !important;
+  }
+  .card-mobile-arrow:hover {
+    background: #ff2a6d !important;
+    color: #ffffff !important;
+    gap: 4px !important;
+  }
+
+  .view-loc-btn {
+    display: none !important;
+  }
+
+  .cinemas-bottom-callout-banner {
+    border-radius: 24px !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 18px 16px !important;
+  }
+
+  .banner-left-info {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  .banner-clapper-deco {
+    display: none !important;
+  }
+
+  /* #how mobile */
+  .how-header-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .how-header-left {
+    align-items: center !important;
+  }
+
+  .how-header-right {
+    display: none !important;
+  }
+
+  .how-recliner-atmosphere {
+    display: none !important;
+  }
+
+  .steps-connector-line {
+    display: none !important;
+  }
+
+  .how-steps-journey-wrap {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .how-journey-card {
+    flex-direction: row !important;
+    text-align: left !important;
+    padding: 14px 12px !important;
+    gap: 12px !important;
+    align-items: center !important;
+  }
+
+  .floating-step-badge {
+    display: none !important;
+  }
+
+  .card-step-circle {
+    margin-bottom: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .card-content-block {
+    flex: 1 !important;
+  }
+
+  .card-visual-thumb {
+    width: 80px !important;
+    height: 70px !important;
+    margin-top: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .how-bottom-cta-banner {
+    border-radius: 24px !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 20px 16px !important;
+  }
+
+  .cta-banner-left {
+    display: none !important;
+  }
+
+  .cta-banner-right {
+    justify-content: center !important;
+  }
 }
 
-/* Horizontal Track: Desktop Grid, Mobile Dual-Card Snap */
-.app-cards-track {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  padding: 10px 4px 20px;
-}
-
-/* Individual Phone Showcase Card */
-.app-screen-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #ffffff;
-  border: 3px solid var(--line);
-  border-radius: 26px;
-  box-shadow: 5px 6px 0 var(--line);
-  padding: 12px 10px 14px;
-  position: relative;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.app-screen-card:nth-child(1) { background: #fffaf2; transform: rotate(-1deg); }
-.app-screen-card:nth-child(2) { background: #fdf4f6; transform: rotate(1deg); }
-.app-screen-card:nth-child(3) { background: #f2fbf5; transform: rotate(-1deg); }
-.app-screen-card:nth-child(4) { background: #f7f4ff; transform: rotate(1deg); }
-
-.app-screen-card:hover, .app-screen-card.highlighted {
-  transform: translateY(-6px) rotate(0deg) !important;
-  box-shadow: 8px 10px 0 var(--line) !important;
-}
-
-/* Step Header Pill */
-.card-step-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: #ffffff;
-  border: 2px solid var(--line);
-  box-shadow: 0 2px 0 var(--line);
-  border-radius: 999px;
-  padding: 4px 10px;
-  font: 800 11px/1 var(--disp);
-  color: var(--line);
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-/* Proportional Sleek iPhone Frame (Compact!) */
-.retro-iphone-frame {
-  width: 100%;
-  max-width: 210px;
-  aspect-ratio: 9 / 18.5;
-  background: #000000;
-  border-radius: 26px;
-  border: 3.5px solid var(--line);
-  box-shadow: 0 8px 18px rgba(42, 24, 32, 0.16);
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Dynamic Island */
-.retro-dynamic-island {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 58px;
-  height: 14px;
-  background: #000000;
-  border-radius: 10px;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 7px;
-}
-
-.retro-island-lens {
-  width: 6px;
-  height: 6px;
-  background: #1e293b;
-  border-radius: 50%;
-}
-
-/* The Screen Image */
-.retro-phone-screen {
-  width: 100%;
-  height: 100%;
-  border-radius: 22px;
-  overflow: hidden;
-  background: #080f24;
-  position: relative;
-}
-
-.retro-phone-screen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-}
-
-.retro-screen-glare {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(130deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.03) 35%, transparent 60%);
-  pointer-events: none;
-  z-index: 5;
-  border-radius: 22px;
-}
-
-/* Bottom Card Details */
-.card-bottom-info {
-  margin-top: 10px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  width: 100%;
-}
-
-.card-bottom-info h4 {
-  font: 800 13.5px/1.2 var(--disp);
-  color: var(--line);
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-
-.card-bottom-info p {
-  font: 500 11.5px/1.3 var(--sans);
-  color: #6a3547;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.card-perk-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-top: 6px;
-  padding: 3px 9px;
-  border-radius: 999px;
-  background: #ffffff;
-  border: 1.5px solid var(--line);
-  box-shadow: 0 1.5px 0 var(--line);
-  font: 700 10.5px/1 var(--sans);
-  color: var(--rasp);
-  white-space: nowrap;
-}
-
-/* Arrow buttons (desktop hide if grid fits) */
-.slider-arrow-btn {
-  display: none;
-}
-
-.slider-dots-indicator {
-  display: none;
-}
 
 /* ==========================================================================
-   MOBILE & TABLET: DUAL CARDS SIDE-BY-SIDE (CUTS HEIGHT, USES SPACE EFFICIENTLY)
-   ========================================================================== */
-@media (max-width: 960px) {
-  .app-cards-track {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 12px;
-    padding: 8px 10px 18px;
-    scrollbar-width: none;
-  }
-
-  .app-cards-track::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Two Phones Side-by-Side in View! */
-  .app-screen-card {
-    flex: 0 0 calc(50vw - 22px);
-    min-width: 152px;
-    max-width: 185px;
-    scroll-snap-align: start;
-    padding: 8px 7px 11px;
-    border-radius: 20px;
-    border-width: 2.5px;
-    box-shadow: 4px 5px 0 var(--line);
-    transform: none !important;
-  }
-
-  .card-step-badge {
-    padding: 3px 8px;
-    font-size: 10px;
-    margin-bottom: 7px;
-  }
-
-  .retro-iphone-frame {
-    max-width: 165px;
-    border-radius: 20px;
-    border-width: 2.5px;
-  }
-
-  .retro-phone-screen {
-    border-radius: 17px;
-  }
-
-  .retro-dynamic-island {
-    top: 6px;
-    width: 44px;
-    height: 11px;
-    border-radius: 7px;
-    padding-right: 5px;
-  }
-
-  .card-bottom-info {
-    margin-top: 8px;
-  }
-
-  .card-bottom-info h4 {
-    font-size: 12px;
-  }
-
-  .card-bottom-info p {
-    font-size: 10.5px;
-  }
-
-  .card-perk-tag {
-    font-size: 9.5px;
-    padding: 2.5px 7px;
-    margin-top: 5px;
-  }
-
-  /* Show navigation dots on mobile */
-  .slider-dots-indicator {
-    display: flex;
-    justify-content: center;
-    gap: 6px;
-    margin-top: 6px;
-  }
-
-  .dot-btn {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: #ffffff;
-    border: 1.5px solid var(--line);
-    box-shadow: 0 1.5px 0 var(--line);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    padding: 0;
-  }
-
-  .dot-btn.active {
-    background: var(--rasp);
-    width: 22px;
-    border-radius: 999px;
-  }
-}
-
-@media (max-width: 420px) {
-  .app-screen-card {
-    min-width: 140px;
-    max-width: 165px;
-  }
-
-  .retro-iphone-frame {
-    max-width: 150px;
-  }
-}
-
-
 /* ==========================================================================
    OFFICIAL REFERENCE DESIGN: HERO & NAVIGATION STYLING
    ========================================================================== */
@@ -4528,179 +5248,394 @@ body {
 </div>
 <div class="seats" aria-hidden="true"></div></div></section>
 
-<section class="sec app-cinema-showcase" id="app" aria-label="Official Love Cafe Cinema App">
-  <!-- Playful Decorative Cinema Sparkles -->
-  <div class="app-sparkle-bg" aria-hidden="true">
-    <span class="app-sparkle">🍿</span>
-    <span class="app-sparkle">✨</span>
-    <span class="app-sparkle">🥤</span>
-    <span class="app-sparkle">🍕</span>
-  </div>
+<!-- ==========================================================================
+     OFFICIAL REFERENCE DESIGN: 3 CORE SECTIONS
+     1. #app: "Make room for one more bite."
+     2. #cinemas: "Find your cinema. Find your favourites."
+     3. #how: "From your screen to your seat."
+     ========================================================================== -->
 
-  <!-- Section Header Matching Website Style -->
-  <div class="app-header-block">
-    <div class="app-brand-pill rv">
-      <span class="live-pulse-ring"></span>
-      <span>📱 OFFICIAL LOVE CAFE MOBILE APP</span>
-    </div>
-
-    <h2 class="rv">Your cinema treats.<br><em>Ordered in 3 taps.</em></h2>
-    
-    <p class="lead-desc rv">Never miss a critical plot twist waiting in long concession queues. Open the app, pick your favourite snacks, and our team delivers frosty cold drinks and hot eats straight to your cup holder in ~10 minutes.</p>
-
-    <!-- Retro App Store Buttons -->
-    <div class="app-store-btns-wrap rv">
-      <a class="app-store-btn app-btn-play" data-play href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get LOVE CAFE on Google Play">
-        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
-        <span><small>GET IT ON</small>Google Play</span>
-      </a>
-      <a class="app-store-btn app-btn-apple" data-ios href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download LOVE CAFE on the App Store">
-        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.2-2.800.8-3.500.8-.7 0-1.800-.8-3-.8-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7c1.300 0 2.100-1.100 2.800-2.200.9-1.300 1.300-2.500 1.300-2.600 0 0-2.500-1-2.500-3.800zM14.100 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.600 1.400-.6.700-1.100 1.700-.9 2.700 1 .1 2-.5 2.600-1.300z"/></svg>
-        <span><small>Download on the</small>App Store</span>
-      </a>
-    </div>
-
-    <div class="app-rating-pill rv">
-      <span class="gold-stars">★★★★★</span>
-      <span><b>4.9 / 5.0 Rating</b> · Loved by 120,000+ moviegoers across 27+ cinemas</span>
-    </div>
-  </div>
-
-  <!-- Interactive Screen Selector Pills -->
-  <div class="app-tabs-nav rv" role="tablist" aria-label="Explore App Screens">
-    <button class="app-tab-pill active" data-index="0" role="tab" aria-selected="true">
-      <span class="tab-badge-num">1</span>
-      <span>🥤 Gourmet Highlights</span>
-    </button>
-    <button class="app-tab-pill" data-index="1" role="tab" aria-selected="false">
-      <span class="tab-badge-num">2</span>
-      <span>🎬 In-Cinema Home</span>
-    </button>
-    <button class="app-tab-pill" data-index="2" role="tab" aria-selected="false">
-      <span class="tab-badge-num">3</span>
-      <span>🍕 Live Menu &amp; Deals</span>
-    </button>
-    <button class="app-tab-pill" data-index="3" role="tab" aria-selected="false">
-      <span class="tab-badge-num">4</span>
-      <span>⚡ 1-Tap Checkout</span>
-    </button>
-  </div>
-
-  <!-- 4 Real Phone Screens Carousel Showcase -->
-  <div class="app-showcase-slider-wrap rv">
-    <button class="slider-arrow-btn slider-prev" id="appPrevBtn" aria-label="Previous App Screen">‹</button>
-    <button class="slider-arrow-btn slider-next" id="appNextBtn" aria-label="Next App Screen">›</button>
-
-    <div class="app-cards-track" id="appTrack">
-      
-      <!-- SCREEN 1: User's Uploaded Screenshot (Cinema Gourmet Highlights) -->
-      <div class="app-screen-card highlighted" id="appCard0">
-        <div class="card-step-badge">
-          <span class="badge-icon">★</span>
-          <span>01. GOURMET HIGHLIGHTS</span>
+<!-- 1. SECTION: APP SHOWCASE -->
+<section class="sec app-showcase-section" id="app" aria-label="Love Cafe Mobile App">
+  <div class="app-section-inner">
+    <!-- Top Grid: Left Text/Buttons/QR + Right 3D Visual -->
+    <div class="app-main-grid">
+      <!-- Left Column -->
+      <div class="app-text-col">
+        <div class="section-tag-pill">
+          <span>🎬</span> YOUR NEXT MOVIE NIGHT DESERVES THIS
         </div>
-        <div class="retro-iphone-frame">
-          <div class="retro-dynamic-island"><span class="retro-island-lens"></span></div>
-          <div class="retro-phone-screen">
-            <img src="assets/app-gourmet-highlight.png" alt="Love Cafe Cinema Gourmet Highlights: Cool sips, hot scenes" loading="lazy">
-            <div class="retro-screen-glare"></div>
+        <h2 class="app-title-head">
+          Make room for<br>
+          <span class="coral-gradient-text">one more bite.</span>
+        </h2>
+        <p class="app-subtitle-desc">
+          Download the LOVE CAFE app and explore a delicious cinema experience at participating cinemas.
+        </p>
+
+        <!-- Store Buttons -->
+        <div class="app-stores-row">
+          <a class="store-badge-btn" href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
+            <div class="btn-text-wrap">
+              <small>GET IT ON</small>
+              <b>Google Play</b>
+            </div>
+          </a>
+          <a class="store-badge-btn" href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 0.6-2.65 1.35-.58.67-1.09 1.74-0.95 2.77 1 .08 2.06-.52 2.68-1.27z"/></svg>
+            <div class="btn-text-wrap">
+              <small>Download on the</small>
+              <b>App Store</b>
+            </div>
+          </a>
+        </div>
+
+        <!-- QR Code download card with playful arrow and text -->
+        <div class="app-qr-download-card">
+          <div class="qr-code-frame">
+            <img src="assets/showcase/app_qr_code.png" alt="Scan QR code to download Love Cafe App" width="68" height="68" style="width:100%;height:100%;display:block;border-radius:6px;">
           </div>
-        </div>
-        <div class="card-bottom-info">
-          <h4>Cool Sips, Hot Scenes</h4>
-          <p>Ice-cold craft cola poured over crystal ice blocks with striped eco-straws.</p>
-          <span class="card-perk-tag">🥤 Sub-Zero Chilled · Fresh Citrus Fizz</span>
+          <div class="qr-label-group">
+            <span class="qr-instruction">Scan to download<br>the app</span>
+            <div class="qr-hand-arrow">
+              <svg width="34" height="20" viewBox="0 0 34 20" fill="none">
+                <path d="M2 4C8 2 18 2 24 10M24 10L19 12M24 10L25 5" stroke="#e6195a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- SCREEN 2: Real App Home Screen -->
-      <div class="app-screen-card" id="appCard1">
-        <div class="card-step-badge">
-          <span class="badge-icon">🎬</span>
-          <span>02. IN-CINEMA HOME</span>
+      <!-- Right Column: 3D Phones, Popcorn, Concessions, & Floating Note -->
+      <div class="app-graphic-col">
+        <div class="floating-script-note">
+          <span>Your snacks.</span>
+          <span>Your seat.</span>
+          <span>Your movie. <span class="script-heart">💖</span></span>
         </div>
-        <div class="retro-iphone-frame">
-          <div class="retro-dynamic-island"><span class="retro-island-lens"></span></div>
-          <div class="retro-phone-screen">
-            <img src="assets/app-home.png" alt="Love Cafe In-Cinema Mobile App Home Screen with Categories" loading="lazy">
-            <div class="retro-screen-glare"></div>
-          </div>
-        </div>
-        <div class="card-bottom-info">
-          <h4>Movies + Food = Perfect Night</h4>
-          <p>Select your cinema hall (Cinema Hut) and browse curated hot categories.</p>
-          <span class="card-perk-tag">🍿 Popcorn, Burgers, Tacos &amp; Desserts</span>
+        <div class="phones-art-wrapper">
+          <img class="desktop-phones-img" src="assets/showcase/app_showcase_graphic.png" alt="Love Cafe App on smartphone with cinema popcorn, burger and cold drink" loading="lazy">
+          <img class="mobile-phones-img" src="assets/showcase/app_mobile_phone_mockup.png" alt="Love Cafe Mobile App in cinema seat" loading="lazy">
         </div>
       </div>
-
-      <!-- SCREEN 3: Real App Live Menu Screen -->
-      <div class="app-screen-card" id="appCard2">
-        <div class="card-step-badge">
-          <span class="badge-icon">🍕</span>
-          <span>03. LIVE GOURMET MENU</span>
-        </div>
-        <div class="retro-iphone-frame">
-          <div class="retro-dynamic-island"><span class="retro-island-lens"></span></div>
-          <div class="retro-phone-screen">
-            <img src="assets/app-menu.png" alt="Love Cafe Live In-Cinema Menu Screen with Farmhouse Pizza" loading="lazy">
-            <div class="retro-screen-glare"></div>
-          </div>
-        </div>
-        <div class="card-bottom-info">
-          <h4>Visual Menu &amp; Real Prices</h4>
-          <p>Customise sourdough pizzas, add cheese crusts, and pick combos in seconds.</p>
-          <span class="card-perk-tag">🍕 Farmhouse Pizza ₹320 · Live Add-Ons</span>
-        </div>
-      </div>
-
-      <!-- SCREEN 4: Real App Checkout Screen -->
-      <div class="app-screen-card" id="appCard3">
-        <div class="card-step-badge">
-          <span class="badge-icon">⚡</span>
-          <span>04. 1-TAP CHECKOUT</span>
-        </div>
-        <div class="retro-iphone-frame">
-          <div class="retro-dynamic-island"><span class="retro-island-lens"></span></div>
-          <div class="retro-phone-screen">
-            <img src="assets/app-checkout.png" alt="Love Cafe 1-Tap UPI and Card Checkout Screen" loading="lazy">
-            <div class="retro-screen-glare"></div>
-          </div>
-        </div>
-        <div class="card-bottom-info">
-          <h4>Direct In-Seat Drop-Off</h4>
-          <p>Instant UPI QR scan and card payments with live kitchen tracking.</p>
-          <span class="card-perk-tag">🎟️ Cinema Hut · Screen 2 · Seat F2 Drop</span>
-        </div>
-      </div>
-
     </div>
 
-    <!-- Active Dot Indicators -->
-    <div class="slider-dots-indicator" id="appDots">
-      <button class="dot-btn active" data-index="0" aria-label="Slide 1"></button>
-      <button class="dot-btn" data-index="1" aria-label="Slide 2"></button>
-      <button class="dot-btn" data-index="2" aria-label="Slide 3"></button>
-      <button class="dot-btn" data-index="3" aria-label="Slide 4"></button>
+    <!-- Bottom Capsule Bar: 4 Perks -->
+    <div class="app-perks-capsule-bar">
+      <div class="perk-card">
+        <span class="perk-icon">🍿</span>
+        <div class="perk-details">
+          <b>Easy Ordering</b>
+          <span>Explore a wide range of cinema favourites</span>
+        </div>
+      </div>
+      <div class="perk-divider"></div>
+      <div class="perk-card">
+        <span class="perk-icon">⚡</span>
+        <div class="perk-details">
+          <b>In-Seat Delivery</b>
+          <span>Enjoy your snacks without interruptions</span>
+        </div>
+      </div>
+      <div class="perk-divider"></div>
+      <div class="perk-card">
+        <span class="perk-icon">💺</span>
+        <div class="perk-details">
+          <b>Participating Cinemas</b>
+          <span>Available at multiple cinema locations</span>
+        </div>
+      </div>
+      <div class="perk-divider"></div>
+      <div class="perk-card">
+        <div class="perk-icon heart-circle">💖</div>
+        <div class="perk-details">
+          <b>Made For Movie Lovers</b>
+          <span>Good food. Great movies. Better together.</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="sec" id="cinemas"><div class="wrap"><div class="fc">
-<div class="fc-l"><h2 class="rv">Find <em>LOVE CAFE</em> near you.</h2><p class="lead rv">Search your city or cinema. Available at selected locations, with more joining soon.</p>
-<label class="srch rv"><span class="sr-only">Search city or cinema</span><input id="q" type="search" placeholder="Search city or cinema" autocomplete="off"></label>
-<div class="chips" id="chips" role="group" aria-label="Filter by cinema chain"></div>
-<div id="cards" class="cards one" aria-live="polite"></div></div>
-<div class="fc-r rv"><div class="map" role="img" aria-label="Illustrative map: LOVE CAFE cinemas will appear here"><svg viewBox="0 0 600 460" preserveAspectRatio="xMidYMid slice"><rect width="600" height="460" fill="#ffe6ec"/><path d="M-10 320C120 270 200 380 320 330S520 250 620 300V470H-10z" fill="#d6ecff"/><rect x="60" y="60" width="120" height="90" rx="22" fill="#d9f2df"/><rect x="400" y="90" width="130" height="70" rx="20" fill="#d9f2df"/><g fill="#fcc9d6"><rect x="210" y="40" width="70" height="60" rx="12"/><rect x="300" y="110" width="80" height="70" rx="12"/><rect x="90" y="190" width="90" height="60" rx="12"/><rect x="450" y="190" width="90" height="60" rx="12"/><rect x="230" y="200" width="70" height="70" rx="12"/></g><g stroke="#fff" stroke-width="14" stroke-linecap="round" fill="none"><path d="M-10 170H610"/><path d="M200 -10V300"/><path d="M390 -10V340"/><path d="M60 40L560 300"/></g><g stroke="#e6195a" stroke-width="4" fill="none" stroke-dasharray="2 12" stroke-linecap="round"><path d="M110 130C200 190 300 120 400 200S520 150 540 250"/></g></svg>
-<span class="pin" style="left:20%;top:30%"><i></i>📍</span><span class="pin" style="left:48%;top:36%;animation-delay:-1s"><i></i>📍</span><span class="pin" style="left:70%;top:55%;animation-delay:-2s"><i></i>📍</span><span class="pin" style="left:34%;top:62%;animation-delay:-.5s"><i></i>📍</span>
-<div class="mcard"><b>Your cinema, on the map</b><span>Live locations are shown in the app.</span></div><em class="mtag">Illustrative map</em></div></div></div></div></section>
+<!-- 2. SECTION: CINEMA LOCATOR -->
+<section class="sec cinemas-showcase-section" id="cinemas" aria-label="Find Your Cinema">
+  <div class="cinemas-section-inner">
+    <!-- Section Header Block -->
+    <div class="cinemas-header-block">
+      <div class="cinema-tag-badge">
+        <span>📍</span> COMING TO A SCREEN NEAR YOU
+      </div>
+      <h2 class="cinemas-title-head">
+        Find your cinema.<br>
+        <span class="coral-gradient-text">Find your favourites.</span>
+      </h2>
+      <p class="cinemas-subtitle-desc">
+        Discover participating cinemas and enjoy the LOVE CAFE experience where it's available.
+      </p>
 
-<section class="sec band" id="how"><div class="wrap">
-<h2 class="rv">From your seat <em>to your snack.</em></h2>
-<div class="steps" id="steps"><div class="pline"><i id="fill"></i></div><span id="ride" aria-hidden="true">🛵</span>
-<div class="st1 rv"><div class="c">📱<span class="n">1</span></div><h3>Scan</h3><p>Scan the cinema QR code.</p></div>
-<div class="st1 rv"><div class="c">🍿<span class="n">2</span></div><h3>Pick</h3><p>Choose your favourite snacks.</p></div>
-<div class="st1 rv"><div class="c">🛒<span class="n">3</span></div><h3>Order</h3><p>Place your order in the app.</p></div>
-<div class="st1 rv"><div class="c">🎬<span class="n">4</span></div><h3>Enjoy</h3><p>Get your snacks delivered to your seat.</p></div></div></div></section>
+      <!-- Search & Location Filter Controls -->
+      <div class="cinemas-controls-bar">
+        <div class="cinemas-search-box">
+          <span class="search-glass-icon">🔍</span>
+          <input type="text" id="cinemaSearchInput" placeholder="Search theatre, city or location..." aria-label="Search theatre, city or location">
+        </div>
+        <div class="cinemas-city-dropdown">
+          <span class="city-pin-icon">📍</span>
+          <select id="cinemaCitySelect" aria-label="Select City">
+            <option value="all">All Cities</option>
+            <option value="bengaluru">Bengaluru</option>
+            <option value="chennai">Chennai</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="kolkata">Kolkata</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="delhi">Delhi NCR</option>
+          </select>
+          <span class="dropdown-chevron">▼</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Atmosphere Stage: India Map + Theatre Glow Building -->
+    <div class="cinemas-atmosphere-stage">
+      <div class="map-badge-container">
+        <img class="desktop-map-img" src="assets/showcase/india_map_outlets.png" alt="Map of India showing 27+ Outlets Across India" loading="lazy">
+        <img class="mobile-map-img" src="assets/showcase/cinemas_mobile_map.png" alt="Map of India showing 27+ Outlets" loading="lazy">
+      </div>
+      <div class="theatre-glow-container">
+        <div class="theatre-hand-note">
+          <span>Your next</span><br>
+          <span>movie stop! ⤴</span>
+        </div>
+        <img class="theatre-building-img" src="assets/showcase/theatre_building_glow.png" alt="Glowing Love Cafe Cinema building facade" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Featured Cinemas Carousel / Grid -->
+    <div class="featured-cinemas-wrapper">
+      <div class="featured-header-row">
+        <div class="featured-title-wrap">
+          <span class="star-icon">⭐</span>
+          <h3>Featured Cinemas</h3>
+        </div>
+        <div class="featured-actions-wrap">
+          <a href="#cinemas" class="view-all-link">View All Cinemas →</a>
+          <div class="carousel-arrows">
+            <button class="c-arrow-btn" id="cinemasPrev" aria-label="Previous Cinemas">‹</button>
+            <button class="c-arrow-btn" id="cinemasNext" aria-label="Next Cinemas">›</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cinema-cards-scroll-track" id="cinemasTrack">
+        <!-- Card 1 -->
+        <div class="cinema-location-card" data-city="bengaluru">
+          <div class="card-thumb-wrap">
+            <img src="assets/showcase/thumb_pvr_orion.png" alt="PVR Orion Mall, Bengaluru" loading="lazy">
+          </div>
+          <div class="card-info-wrap">
+            <h4>PVR - Orion Mall</h4>
+            <div class="city-location-tag">
+              <span>📍</span> <span>Bengaluru, Karnataka</span>
+            </div>
+            <span class="status-pill status-available">🥤 LOVE CAFE Available</span>
+            <button class="view-loc-btn">View Location →</button>
+          </div>
+          <a href="#app" class="card-mobile-arrow" aria-label="View PVR Orion Mall">›</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="cinema-location-card" data-city="chennai">
+          <div class="card-thumb-wrap">
+            <img src="assets/showcase/thumb_inox_phoenix.png" alt="INOX Phoenix Mall, Chennai" loading="lazy">
+          </div>
+          <div class="card-info-wrap">
+            <h4>INOX - Phoenix Mall</h4>
+            <div class="city-location-tag">
+              <span>📍</span> <span>Chennai, Tamil Nadu</span>
+            </div>
+            <span class="status-pill status-available">🥤 LOVE CAFE Available</span>
+            <button class="view-loc-btn">View Location →</button>
+          </div>
+          <a href="#app" class="card-mobile-arrow" aria-label="View INOX Phoenix Mall">›</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="cinema-location-card" data-city="hyderabad">
+          <div class="card-thumb-wrap">
+            <img src="assets/showcase/thumb_cinepolis_nexus.png" alt="Cinépolis Nexus, Hyderabad" loading="lazy">
+          </div>
+          <div class="card-info-wrap">
+            <h4>Cinépolis - Nexus</h4>
+            <div class="city-location-tag">
+              <span>📍</span> <span>Hyderabad, Telangana</span>
+            </div>
+            <span class="status-pill status-available">🥤 LOVE CAFE Available</span>
+            <button class="view-loc-btn">View Location →</button>
+          </div>
+          <a href="#app" class="card-mobile-arrow" aria-label="View Cinépolis Nexus">›</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="cinema-location-card" data-city="kolkata">
+          <div class="card-thumb-wrap">
+            <img src="assets/showcase/thumb_pvr_forum.png" alt="PVR Forum Mall, Kolkata" loading="lazy">
+          </div>
+          <div class="card-info-wrap">
+            <h4>PVR - Forum Mall</h4>
+            <div class="city-location-tag">
+              <span>📍</span> <span>Kolkata, West Bengal</span>
+            </div>
+            <span class="status-pill status-soon">⏳ Coming Soon</span>
+            <button class="view-loc-btn">View Location →</button>
+          </div>
+          <a href="#app" class="card-mobile-arrow" aria-label="View PVR Forum Mall">›</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Expansion Callout Banner -->
+    <div class="cinemas-bottom-callout-banner">
+      <div class="banner-left-info">
+        <span class="banner-popcorn-icon">🍿</span>
+        <div>
+          <b>Don't see your cinema?</b>
+          <p>We're expanding to more locations. Stay tuned!</p>
+        </div>
+      </div>
+      <a class="banner-cta-btn" href="#app">
+        <span>Get the LOVE CAFE App</span>
+        <span class="chevron-circle">›</span>
+      </a>
+      <span class="banner-clapper-deco" aria-hidden="true">🎬</span>
+    </div>
+  </div>
+</section>
+
+<!-- 3. SECTION: HOW IT WORKS (MOVIE-NIGHT RITUAL) -->
+<section class="sec how-showcase-section" id="how" aria-label="How Love Cafe Works">
+  <div class="how-section-inner">
+    <!-- Header Row -->
+    <div class="how-header-row">
+      <div class="how-header-left">
+        <div class="section-tag-pill">
+          <span>🎬</span> YOUR MOVIE-NIGHT RITUAL
+        </div>
+        <h2 class="how-title-head">
+          From your screen<br>
+          <span class="coral-gradient-text">to your seat.</span>
+        </h2>
+        <p class="how-subtitle-desc">
+          Your favourite cinema snacks, ordered with ease and delivered as part of the movie experience.
+        </p>
+      </div>
+
+      <div class="how-header-right">
+        <div class="how-hand-note-box">
+          <p class="hand-line">Good Food</p>
+          <p class="hand-line">No interruptions</p>
+          <p class="hand-line">Just better movies</p>
+        </div>
+        <div class="golden-ritual-ticket">
+          <span>SIT BACK</span>
+          <span>SNACK UP</span>
+          <span>ENJOY THE SHOW</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Atmosphere Cinema Recliner Scene -->
+    <div class="how-recliner-atmosphere">
+      <img src="assets/showcase/cinema_recliner_scene.png" alt="Cinema seats and snacks" loading="lazy">
+    </div>
+
+    <!-- 4-Step Process Journey -->
+    <div class="how-steps-journey-wrap">
+      <div class="steps-connector-line"></div>
+
+      <!-- Step 01 -->
+      <div class="how-journey-card">
+        <div class="floating-step-badge">🍿</div>
+        <div class="card-step-circle">01</div>
+        <div class="card-content-block">
+          <h4>Find your cinema</h4>
+          <p>Choose a participating cinema and discover the LOVE CAFE experience.</p>
+        </div>
+        <div class="card-visual-thumb">
+          <img src="assets/showcase/thumb_step1_cinema.png" alt="Cinema exterior location" loading="lazy">
+          <span class="thumb-pin-badge">📍</span>
+        </div>
+      </div>
+
+      <!-- Step 02 -->
+      <div class="how-journey-card">
+        <div class="floating-step-badge">🎟️</div>
+        <div class="card-step-circle">02</div>
+        <div class="card-content-block">
+          <h4>Pick your favourites</h4>
+          <p>Explore the menu and choose your movie snacks.</p>
+        </div>
+        <div class="card-visual-thumb">
+          <img src="assets/showcase/thumb_step2_menu.png" alt="App menu snacks selection" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="how-journey-card">
+        <div class="floating-step-badge">🛵</div>
+        <div class="card-step-circle">03</div>
+        <div class="card-content-block">
+          <h4>Place your order</h4>
+          <p>Use the LOVE CAFE app to order for your cinema visit.</p>
+        </div>
+        <div class="card-visual-thumb">
+          <img src="assets/showcase/thumb_step3_order.png" alt="Order confirmed delivery to seat" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Step 04 -->
+      <div class="how-journey-card">
+        <div class="floating-step-badge">💺</div>
+        <div class="card-step-circle">04</div>
+        <div class="card-content-block">
+          <h4>Enjoy the show</h4>
+          <p>Sit back, settle in, and enjoy your movie with your favourite snacks.</p>
+        </div>
+        <div class="card-visual-thumb">
+          <img src="assets/showcase/thumb_step4_enjoy.png" alt="Moviegoer enjoying popcorn at cinema" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA Banner -->
+    <div class="how-bottom-cta-banner">
+      <div class="cta-banner-left">
+        <img class="cta-phone-icon" src="assets/showcase/how_cta_phone_popcorn.png" alt="Love Cafe App Phone and Popcorn" loading="lazy">
+      </div>
+      <div class="cta-banner-center">
+        <span class="cta-subtag">READY FOR YOUR NEXT MOVIE?</span>
+        <h3>Get the LOVE CAFE app</h3>
+        <p>Order your favourites and enjoy them at your seat.</p>
+      </div>
+      <div class="cta-banner-right">
+        <a class="store-badge-btn" href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
+          <div class="btn-text-wrap">
+            <small>GET IT ON</small>
+            <b>Google Play</b>
+          </div>
+        </a>
+        <a class="store-badge-btn" href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 0.6-2.65 1.35-.58.67-1.09 1.74-0.95 2.77 1 .08 2.06-.52 2.68-1.27z"/></svg>
+          <div class="btn-text-wrap">
+            <small>Download on the</small>
+            <b>App Store</b>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="sec rew" id="rewards"><div class="wrap two">
 <div><h2 class="rv">Watch.<br><em>Earn. Repeat.</em></h2><p class="lead rv">Every movie night can bring you closer to your next treat.</p>
