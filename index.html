@@ -8772,19 +8772,29 @@ body.locked .sd {
 }
 
 /* ==========================================================================
-   4-STEP CINEMA JOURNEY: LUXURY LIGHT-PINK CINEMA THEME WITH GRAPHICS
+   4-STEP CINEMA JOURNEY: VIBRANT DYNAMIC COLOR THEMES & AUTHENTIC CINEMA DESIGN
    ========================================================================== */
 .cinema-journey-section {
-  height: 600vh !important;
+  --step-bg: linear-gradient(180deg, #fff0f5 0%, #ffcbe0 45%, #ffa6cb 100%);
+  --step-aura: radial-gradient(ellipse at 50% 50%, rgba(255, 20, 147, 0.55) 0%, rgba(230, 25, 90, 0.38) 50%, transparent 80%);
+  --step-glow: rgba(255, 42, 109, 0.45);
+  --step-accent: #e6195a;
+  --step-border: rgba(230, 25, 90, 0.35);
+  --step-btn: linear-gradient(135deg, #e6195a 0%, #ff4f86 100%);
+  --step-chip-bg: #ffeef4;
+  --step-notch-bg: #ffa6cb;
+
+  height: 380vh !important;
   position: relative !important;
   z-index: 3 !important;
-  background: radial-gradient(circle at 50% 18%, #ffffff 0%, #fff2f5 35%, #fce1e8 70%, #fbd5e1 100%) !important;
+  background: var(--step-bg) !important;
+  transition: background 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
   overflow: visible !important;
 }
 
 @media (max-width: 900px) {
   .cinema-journey-section {
-    height: 480vh !important;
+    height: 290vh !important;
   }
 }
 
@@ -8800,19 +8810,19 @@ body.locked .sd {
   flex-direction: column !important;
   justify-content: space-between !important;
   align-items: center !important;
-  padding: calc(78px + env(safe-area-inset-top, 0px)) clamp(16px, 3.2vw, 42px) calc(20px + env(safe-area-inset-bottom, 0px)) !important;
+  padding: calc(76px + env(safe-area-inset-top, 0px)) clamp(14px, 3vw, 36px) calc(18px + env(safe-area-inset-bottom, 0px)) !important;
   box-sizing: border-box !important;
 }
 
-/* Atmospheric Cinema Graphics: Projector Spotlight & Filmstrip */
+/* Authentic Cinema Lighting & Filmstrip Perforations */
 .cj-projector-light {
   position: absolute !important;
-  top: -25% !important;
+  top: -20% !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
   width: 95vw !important;
-  height: 75vh !important;
-  background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 215, 225, 0.45) 45%, transparent 75%) !important;
+  height: 70vh !important;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.35) 45%, transparent 75%) !important;
   pointer-events: none !important;
   z-index: 1 !important;
 }
@@ -8821,11 +8831,11 @@ body.locked .sd {
   position: absolute !important;
   left: 0 !important;
   right: 0 !important;
-  height: 12px !important;
+  height: 10px !important;
   pointer-events: none !important;
   z-index: 2 !important;
-  background-image: repeating-linear-gradient(90deg, rgba(230, 25, 90, 0.12) 0px, rgba(230, 25, 90, 0.12) 16px, transparent 16px, transparent 24px) !important;
-  opacity: 0.7 !important;
+  background-image: repeating-linear-gradient(90deg, rgba(42, 10, 25, 0.15) 0px, rgba(42, 10, 25, 0.15) 14px, transparent 14px, transparent 22px) !important;
+  opacity: 0.6 !important;
 }
 .cj-filmstrip-border.top { top: 0 !important; }
 .cj-filmstrip-border.bottom { bottom: 0 !important; }
@@ -8835,8 +8845,8 @@ body.locked .sd {
   inset: -10% !important;
   z-index: 0 !important;
   pointer-events: none !important;
-  transition: background 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  background: radial-gradient(ellipse at 50% 45%, #fff5f7 0%, #fad5df 50%, #f6c0d0 100%) !important;
+  background: var(--step-aura) !important;
+  transition: background 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .cj-watermark {
@@ -8845,9 +8855,9 @@ body.locked .sd {
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
   font-family: var(--disp) !important;
-  font-size: clamp(80px, 16vw, 220px) !important;
+  font-size: clamp(75px, 15vw, 200px) !important;
   font-weight: 800 !important;
-  color: rgba(255, 255, 255, 0.65) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
   letter-spacing: 0.1em !important;
   pointer-events: none !important;
   z-index: 1 !important;
@@ -8857,7 +8867,7 @@ body.locked .sd {
   user-select: none !important;
 }
 
-/* Floating Cinema Graphics & Badges (Interactive Visual Richness) */
+/* Floating Ambient Cinema Badges */
 .cj-float-graphic {
   position: absolute !important;
   z-index: 4 !important;
@@ -8868,68 +8878,56 @@ body.locked .sd {
 
 @keyframes cjFloatBounce {
   0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-12px) rotate(2deg); }
+  50% { transform: translateY(-10px) rotate(1.5deg); }
   100% { transform: translateY(0px) rotate(-1deg); }
 }
 
-/* Graphic 1: VIP Cinema Golden Ticket */
 .cj-ticket-graphic {
   top: 22% !important;
-  left: max(16px, calc(50% - 620px)) !important;
-  background: linear-gradient(135deg, #ffffff 0%, #fff9f0 100%) !important;
-  border: 1.5px solid #f6cf7d !important;
-  border-radius: 16px !important;
-  padding: 10px 16px !important;
-  box-shadow: 0 16px 36px rgba(220, 140, 40, 0.15), 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+  left: max(16px, calc(50% - 610px)) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1.5px solid var(--step-border) !important;
+  border-radius: 14px !important;
+  padding: 8px 14px !important;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08) !important;
   display: flex !important;
   align-items: center !important;
-  gap: 12px !important;
-  transform: rotate(-5deg) !important;
+  gap: 10px !important;
+  transform: rotate(-4deg) !important;
 }
-.cj-ticket-notch {
-  width: 12px !important;
-  height: 12px !important;
-  background: #fce1e8 !important;
-  border-radius: 50% !important;
-  margin-left: -22px !important;
-  border: 1.5px solid #f6cf7d !important;
-}
-.cj-ticket-icon { font-size: 26px !important; }
 .cj-ticket-title {
   font-family: var(--disp) !important;
-  font-size: 11px !important;
+  font-size: 10.5px !important;
   font-weight: 800 !important;
-  color: #8c5600 !important;
+  color: var(--step-accent) !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
 }
 .cj-ticket-seat {
   font-family: var(--sans) !important;
-  font-size: 13px !important;
+  font-size: 12px !important;
   font-weight: 700 !important;
   color: #2a1820 !important;
 }
 
-/* Graphic 2: 10-Minute Cloche Service Guarantee Badge */
 .cj-cloche-graphic {
-  bottom: 18% !important;
-  right: max(16px, calc(50% - 630px)) !important;
+  bottom: 20% !important;
+  right: max(16px, calc(50% - 620px)) !important;
   background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(14px) !important;
   -webkit-backdrop-filter: blur(14px) !important;
-  border: 1.5px solid rgba(230, 25, 90, 0.25) !important;
+  border: 1.5px solid var(--step-border) !important;
   border-radius: 999px !important;
-  padding: 8px 16px !important;
-  box-shadow: 0 16px 38px rgba(230, 25, 90, 0.16) !important;
+  padding: 7px 14px !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08) !important;
   display: flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  gap: 7px !important;
   transform: rotate(3deg) !important;
-  animation-duration: 5.2s !important;
 }
 .cj-cloche-beacon {
-  width: 8px !important;
-  height: 8px !important;
+  width: 7px !important;
+  height: 7px !important;
   background: #28a745 !important;
   border-radius: 50% !important;
   box-shadow: 0 0 8px #28a745 !important;
@@ -8937,84 +8935,58 @@ body.locked .sd {
 }
 .cj-cloche-text {
   font-family: var(--disp) !important;
-  font-size: 11.5px !important;
+  font-size: 11px !important;
   font-weight: 800 !important;
-  color: var(--deep) !important;
+  color: #2a101b !important;
 }
 
-/* Floating Confectionery Particles */
-.cj-ambient-particles {
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 2 !important;
-  pointer-events: none !important;
-}
-.cj-p {
-  position: absolute !important;
-  font-size: clamp(16px, 2vw, 28px) !important;
-  opacity: 0.75 !important;
-  animation: cjFloatParticle 5.5s ease-in-out infinite alternate !important;
-}
-.cj-p.p1 { top: 14%; left: 8%; animation-duration: 6.2s; }
-.cj-p.p2 { top: 20%; right: 7%; animation-duration: 4.8s; font-size: 22px !important; }
-.cj-p.p3 { top: 56%; left: 4%; animation-duration: 7.2s; }
-.cj-p.p4 { top: 78%; left: 10%; animation-duration: 5.4s; }
-.cj-p.p5 { top: 32%; right: 6%; animation-duration: 6.5s; }
-.cj-p.p6 { top: 72%; right: 9%; animation-duration: 5.8s; }
-.cj-p.p7 { top: 88%; right: 18%; animation-duration: 6.0s; }
-
-@keyframes cjFloatParticle {
-  0% { transform: translateY(0px) rotate(0deg) scale(1); }
-  100% { transform: translateY(-16px) rotate(12deg) scale(1.1); }
-}
-
-/* Eye-Catching Header */
+/* Header */
 .cj-header {
   position: relative !important;
   z-index: 5 !important;
   text-align: center !important;
-  max-width: 860px !important;
-  margin: 0 auto 6px !important;
+  max-width: 820px !important;
+  margin: 0 auto 4px !important;
 }
 
 .cj-badge-wrap {
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
-  margin-bottom: 6px !important;
+  margin-bottom: 4px !important;
   flex-wrap: wrap !important;
   justify-content: center !important;
 }
 
 .cj-badge {
   font-family: var(--disp) !important;
-  font-size: 11px !important;
+  font-size: 10.5px !important;
   font-weight: 800 !important;
-  letter-spacing: 0.12em !important;
+  letter-spacing: 0.1em !important;
   text-transform: uppercase !important;
-  color: var(--rasp) !important;
+  color: var(--step-accent) !important;
   background: rgba(255, 255, 255, 0.95) !important;
-  border: 1.5px solid rgba(230, 25, 90, 0.28) !important;
-  padding: 4px 14px !important;
+  border: 1.5px solid var(--step-border) !important;
+  padding: 3.5px 12px !important;
   border-radius: 999px !important;
-  box-shadow: 0 4px 12px rgba(230, 25, 90, 0.1) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06) !important;
 }
 
 .cj-live-pill {
   font-family: var(--disp) !important;
-  font-size: 10.5px !important;
+  font-size: 10px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
   color: #1e7e34 !important;
   background: rgba(255, 255, 255, 0.95) !important;
   border: 1.5px solid rgba(40, 167, 69, 0.35) !important;
-  padding: 4px 12px !important;
+  padding: 3.5px 11px !important;
   border-radius: 999px !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
-  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.1) !important;
+  gap: 5px !important;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.08) !important;
 }
 
 .cj-pulse-dot {
@@ -9035,23 +9007,26 @@ body.locked .sd {
 
 .cj-title {
   font-family: var(--disp) !important;
-  font-size: clamp(22px, 3.2vw, 36px) !important;
+  font-size: clamp(20px, 2.8vw, 32px) !important;
   font-weight: 800 !important;
   color: #2a101b !important;
-  line-height: 1.15 !important;
-  margin: 0 0 3px !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+  display: block !important;
+  white-space: normal !important;
 }
 .cj-title em {
-  color: var(--rasp) !important;
+  color: var(--step-accent) !important;
   font-style: normal !important;
+  transition: color 0.4s ease !important;
 }
 
 .cj-subtitle {
   font-family: var(--sans) !important;
-  font-size: clamp(12px, 1vw, 14px) !important;
-  color: #6d4253 !important;
+  font-size: clamp(11.5px, 0.95vw, 13.5px) !important;
+  color: #553344 !important;
   margin: 0 !important;
-  max-width: 650px !important;
+  max-width: 620px !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -9063,38 +9038,38 @@ body.locked .sd {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: clamp(16px, 3vw, 42px) !important;
+  gap: clamp(16px, 2.5vw, 38px) !important;
   width: 100% !important;
-  max-width: 1180px !important;
+  max-width: 1140px !important;
   margin: 0 auto !important;
   flex: 1 !important;
   min-height: 0 !important;
 }
 
-/* Luxury Cinema Canvas Card (Clean & 100% Unobstructed) */
+/* Canvas Card (Clean Porcelain Bezel) */
 .cj-canvas-card {
   position: relative !important;
-  width: clamp(340px, 54vw, 720px) !important;
+  width: clamp(320px, 52vw, 700px) !important;
   aspect-ratio: 16/9 !important;
-  max-height: calc(100vh - 275px) !important;
-  border-radius: 28px !important;
+  max-height: calc(100vh - 265px) !important;
+  border-radius: 26px !important;
   background: #ffffff !important;
   border: 4px solid #ffffff !important;
-  box-shadow: 0 24px 65px rgba(230, 25, 90, 0.16), 0 2px 14px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 22px 60px var(--step-glow), 0 2px 14px rgba(0, 0, 0, 0.05) !important;
   overflow: hidden !important;
   display: flex !important;
   flex-direction: column !important;
   flex-shrink: 0 !important;
+  transition: box-shadow 0.4s ease !important;
 }
 
-/* Dynamic Screen Gloss Sheen */
 .cj-canvas-gloss {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   height: 45% !important;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, transparent 100%) !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%) !important;
   pointer-events: none !important;
   z-index: 3 !important;
 }
@@ -9117,44 +9092,62 @@ body.locked .sd {
 
 .cj-canvas-glow {
   position: absolute !important;
-  inset: -16px !important;
-  border-radius: 36px !important;
+  inset: -14px !important;
+  border-radius: 34px !important;
   pointer-events: none !important;
   z-index: -1 !important;
-  opacity: 0.45 !important;
-  transition: background 0.6s ease !important;
-  background: rgba(230, 25, 90, 0.35) !important;
-  filter: blur(24px) !important;
+  opacity: 0.5 !important;
+  transition: background 0.5s ease !important;
+  background: var(--step-glow) !important;
+  filter: blur(22px) !important;
 }
 
-/* Floating Luxury VIP Story Card (WITH BOUNCY POPUP ANIMATION) */
+/* Authentic Cinema VIP Ticket Story Card (WITH NOTCHES & TICKET BORDER) */
 .cj-card-wrap {
-  width: clamp(300px, 28vw, 370px) !important;
+  width: clamp(300px, 28vw, 360px) !important;
   position: relative !important;
   z-index: 5 !important;
   flex-shrink: 0 !important;
 }
 
 .cj-story-card {
-  background: rgba(255, 255, 255, 0.94) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
-  border-radius: 24px !important;
-  padding: clamp(14px, 2vw, 22px) !important;
-  border: 2px solid rgba(255, 255, 255, 0.98) !important;
-  box-shadow: 0 20px 50px rgba(230, 25, 90, 0.13), 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+  border-radius: 22px !important;
+  padding: clamp(14px, 1.8vw, 20px) !important;
+  border: 2px solid var(--step-border) !important;
+  box-shadow: 0 18px 45px var(--step-glow), 0 2px 10px rgba(0, 0, 0, 0.04) !important;
   box-sizing: border-box !important;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.4s ease, box-shadow 0.4s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
+
+/* Ticket Side Notches */
+.cj-ticket-notch-l,
+.cj-ticket-notch-r {
+  position: absolute !important;
+  top: 48px !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50% !important;
+  background: var(--step-notch-bg) !important;
+  border: 2px solid var(--step-border) !important;
+  z-index: 3 !important;
+  transition: background 0.5s ease, border-color 0.4s ease !important;
+}
+.cj-ticket-notch-l { left: -9px !important; }
+.cj-ticket-notch-r { right: -9px !important; }
 
 @keyframes cjPopup {
   0% {
-    opacity: 0.45;
-    transform: translateY(16px) scale(0.94);
+    opacity: 0.5;
+    transform: translateY(14px) scale(0.95);
   }
   60% {
     opacity: 1;
-    transform: translateY(-4px) scale(1.02);
+    transform: translateY(-3px) scale(1.02);
   }
   100% {
     opacity: 1;
@@ -9163,42 +9156,47 @@ body.locked .sd {
 }
 
 .cj-story-card.popup-bounce {
-  animation: cjPopup 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  animation: cjPopup 0.38s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .cj-card-top-ribbon {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 6px !important;
+  padding-bottom: 6px !important;
+  border-bottom: 1.5px dashed var(--step-border) !important;
+  transition: border-color 0.4s ease !important;
 }
 
 .cj-status-pill {
   font-family: var(--disp) !important;
-  font-size: 10.5px !important;
+  font-size: 10px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
-  color: var(--rasp) !important;
-  background: rgba(230, 25, 90, 0.09) !important;
-  border: 1px solid rgba(230, 25, 90, 0.22) !important;
-  padding: 3px 10px !important;
+  color: var(--step-accent) !important;
+  background: var(--step-chip-bg) !important;
+  border: 1px solid var(--step-border) !important;
+  padding: 2.5px 9px !important;
   border-radius: 999px !important;
   display: inline-flex !important;
   align-items: center !important;
   gap: 5px !important;
+  transition: all 0.4s ease !important;
 }
 
 .cj-status-dot {
   width: 5px !important;
   height: 5px !important;
-  background: var(--rasp) !important;
+  background: var(--step-accent) !important;
   border-radius: 50% !important;
   display: inline-block !important;
+  transition: background 0.4s ease !important;
 }
 
 .cj-chapter-num {
   font-family: var(--disp) !important;
-  font-size: 12px !important;
+  font-size: 11.5px !important;
   font-weight: 800 !important;
   color: var(--mut) !important;
   letter-spacing: 0.06em !important;
@@ -9209,69 +9207,73 @@ body.locked .sd {
   align-items: center !important;
   gap: 6px !important;
   flex-wrap: wrap !important;
-  margin-bottom: 6px !important;
+  margin-bottom: 5px !important;
 }
 
 .cj-card-tag {
   font-family: var(--disp) !important;
-  font-size: 11.5px !important;
+  font-size: 11px !important;
   font-weight: 800 !important;
   color: var(--deep) !important;
-  background: #fdf2f5 !important;
-  padding: 3px 10px !important;
+  background: var(--step-chip-bg) !important;
+  padding: 3px 9px !important;
   border-radius: 999px !important;
-  border: 1px solid rgba(230, 25, 90, 0.16) !important;
+  border: 1px solid var(--step-border) !important;
+  transition: all 0.4s ease !important;
 }
 
 .cj-card-chip {
   font-family: var(--disp) !important;
-  font-size: 11px !important;
+  font-size: 10.5px !important;
   font-weight: 800 !important;
-  color: #b75500 !important;
-  background: #fff8e6 !important;
-  padding: 3px 9px !important;
+  color: var(--step-accent) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  padding: 3px 8px !important;
   border-radius: 999px !important;
-  border: 1px solid rgba(255, 194, 51, 0.35) !important;
+  border: 1px solid var(--step-border) !important;
+  transition: all 0.4s ease !important;
 }
 
 .cj-card-title {
   font-family: var(--disp) !important;
-  font-size: clamp(19px, 2vw, 24px) !important;
+  font-size: clamp(18px, 1.8vw, 23px) !important;
   font-weight: 800 !important;
   color: var(--deep) !important;
   line-height: 1.2 !important;
-  margin: 0 0 5px !important;
+  margin: 0 0 4px !important;
 }
 .cj-card-title em {
-  color: var(--rasp) !important;
+  color: var(--step-accent) !important;
   font-style: normal !important;
+  transition: color 0.4s ease !important;
 }
 
 .cj-card-desc {
   font-family: var(--sans) !important;
-  font-size: 12.5px !important;
+  font-size: 12px !important;
   color: #555555 !important;
   line-height: 1.4 !important;
-  margin: 0 0 10px !important;
+  margin: 0 0 8px !important;
 }
 
-/* Feature Perks Box with Real Gourmet Graphics */
+/* Feature Perks Box */
 .cj-features-box {
-  background: rgba(250, 240, 244, 0.75) !important;
-  border: 1px solid rgba(230, 25, 90, 0.12) !important;
+  background: var(--step-chip-bg) !important;
+  border: 1px solid var(--step-border) !important;
   border-radius: 12px !important;
-  padding: 8px 10px !important;
-  margin-bottom: 12px !important;
+  padding: 7px 9px !important;
+  margin-bottom: 10px !important;
+  transition: all 0.4s ease !important;
 }
 
 .cj-feat-label {
   display: block !important;
   font-family: var(--disp) !important;
-  font-size: 9.5px !important;
+  font-size: 9px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
   color: var(--mut) !important;
-  margin-bottom: 4px !important;
+  margin-bottom: 3px !important;
 }
 
 .cj-feat-tags {
@@ -9282,81 +9284,81 @@ body.locked .sd {
 
 .cj-feat-tag {
   font-family: var(--disp) !important;
-  font-size: 10.5px !important;
+  font-size: 10px !important;
   font-weight: 800 !important;
   color: var(--deep) !important;
   background: #ffffff !important;
-  border: 1px solid rgba(230, 25, 90, 0.14) !important;
-  padding: 2.5px 8px !important;
+  border: 1px solid var(--step-border) !important;
+  padding: 2.5px 7px !important;
   border-radius: 999px !important;
+  transition: border-color 0.4s ease !important;
 }
 
 .cj-card-footer {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  gap: 10px !important;
-  padding-top: 8px !important;
+  gap: 8px !important;
+  padding-top: 6px !important;
   border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
 }
 
 .cj-card-delivery {
   display: flex !important;
   align-items: center !important;
-  gap: 5px !important;
+  gap: 4px !important;
   font-family: var(--disp) !important;
-  font-size: 10.5px !important;
+  font-size: 10px !important;
   font-weight: 800 !important;
   color: #1e7e34 !important;
 }
-.cj-del-icon { font-size: 13px !important; }
+.cj-del-icon { font-size: 12px !important; }
 
 .cj-card-cta-btn {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
-  background: linear-gradient(135deg, #e6195a 0%, #ff4f86 100%) !important;
+  gap: 5px !important;
+  background: var(--step-btn) !important;
   color: #ffffff !important;
   font-family: var(--disp) !important;
-  font-size: 12px !important;
+  font-size: 11.5px !important;
   font-weight: 800 !important;
   letter-spacing: 0.04em !important;
-  padding: 7px 14px !important;
+  padding: 6px 13px !important;
   border-radius: 999px !important;
   text-decoration: none !important;
-  box-shadow: 0 4px 14px rgba(230, 25, 90, 0.3) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  box-shadow: 0 4px 12px var(--step-glow) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.4s ease !important;
 }
 .cj-card-cta-btn:hover {
   transform: translateY(-1.5px) scale(1.03) !important;
-  box-shadow: 0 6px 18px rgba(230, 25, 90, 0.4) !important;
 }
 
-/* Bottom Chapter Scrub Rail (Effortless 1-Tap Jumping) */
+/* Bottom Chapter Rail */
 .cj-bottom-bar {
   position: relative !important;
   z-index: 5 !important;
   width: 100% !important;
-  max-width: 680px !important;
+  max-width: 650px !important;
   margin: 0 auto !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  gap: 6px !important;
+  gap: 5px !important;
 }
 
 .cj-scrub-rail {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 6px !important;
-  background: rgba(255, 255, 255, 0.9) !important;
+  gap: 5px !important;
+  background: rgba(255, 255, 255, 0.92) !important;
   backdrop-filter: blur(14px) !important;
   -webkit-backdrop-filter: blur(14px) !important;
-  padding: 5px 8px !important;
+  padding: 4px 7px !important;
   border-radius: 999px !important;
   border: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-  box-shadow: 0 8px 24px rgba(42, 12, 28, 0.08) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06) !important;
   max-width: 100% !important;
   overflow-x: auto !important;
   scrollbar-width: none !important;
@@ -9366,13 +9368,13 @@ body.locked .sd {
 .cj-rail-btn {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 5px !important;
+  gap: 4px !important;
   border: none !important;
   background: transparent !important;
-  padding: 5px 12px !important;
+  padding: 5px 11px !important;
   border-radius: 999px !important;
   font-family: var(--disp) !important;
-  font-size: 11.5px !important;
+  font-size: 11px !important;
   font-weight: 800 !important;
   color: var(--mut) !important;
   cursor: pointer !important;
@@ -9381,24 +9383,24 @@ body.locked .sd {
 }
 .cj-rail-btn:hover {
   color: var(--deep) !important;
-  background: rgba(230, 25, 90, 0.08) !important;
+  background: rgba(0, 0, 0, 0.05) !important;
 }
 .cj-rail-btn.active {
   color: #ffffff !important;
-  background: linear-gradient(135deg, #e6195a 0%, #ff4f86 100%) !important;
-  box-shadow: 0 4px 12px rgba(230, 25, 90, 0.3) !important;
+  background: var(--step-btn) !important;
+  box-shadow: 0 3px 10px var(--step-glow) !important;
 }
 
 .cj-timeline-row {
   width: 100% !important;
-  max-width: 440px !important;
+  max-width: 420px !important;
   cursor: pointer !important;
-  padding: 4px 0 !important;
+  padding: 3px 0 !important;
 }
 
 .cj-timeline-track {
   width: 100% !important;
-  height: 5px !important;
+  height: 4px !important;
   background: rgba(42, 12, 28, 0.12) !important;
   border-radius: 999px !important;
   overflow: hidden !important;
@@ -9407,14 +9409,14 @@ body.locked .sd {
 .cj-timeline-fill {
   height: 100% !important;
   width: 0% !important;
-  background: linear-gradient(90deg, #ff4f86 0%, #ffc233 100%) !important;
+  background: var(--step-btn) !important;
   border-radius: 999px !important;
-  transition: width 0.08s linear !important;
+  transition: width 0.06s linear, background 0.4s ease !important;
 }
 
 .cj-scroll-hint {
   font-family: var(--disp) !important;
-  font-size: 10px !important;
+  font-size: 9.5px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
@@ -9425,160 +9427,88 @@ body.locked .sd {
 /* Responsive Mobile Layout */
 @media (max-width: 980px) {
   .cj-stick {
-    padding: calc(75px + env(safe-area-inset-top, 0px)) 12px calc(86px + env(safe-area-inset-bottom, 0px)) !important;
+    padding: calc(72px + env(safe-area-inset-top, 0px)) 10px calc(84px + env(safe-area-inset-bottom, 0px)) !important;
   }
   .cj-header {
     margin-bottom: 2px !important;
   }
   .cj-title {
-    font-size: 20px !important;
+    font-size: 19px !important;
+    line-height: 1.15 !important;
   }
   .cj-subtitle {
     display: none !important;
   }
   .cj-badge-wrap {
-    margin-bottom: 2px !important;
+    margin-bottom: 1px !important;
   }
   .cj-badge, .cj-live-pill {
-    font-size: 9.5px !important;
-    padding: 3px 9px !important;
+    font-size: 9px !important;
+    padding: 2.5px 8px !important;
   }
   .cj-float-graphic {
-    display: none !important; /* Keep mobile clean & focused */
+    display: none !important;
   }
   .cj-stage {
     flex-direction: column !important;
-    gap: 8px !important;
+    gap: 6px !important;
     justify-content: flex-start !important;
   }
   .cj-canvas-card {
     width: 100% !important;
-    max-width: 420px !important;
-    max-height: 29vh !important;
+    max-width: 410px !important;
+    max-height: 27vh !important;
     aspect-ratio: 16/9 !important;
-    border-radius: 20px !important;
+    border-radius: 18px !important;
+    border-width: 3px !important;
   }
   .cj-card-wrap {
     width: 100% !important;
-    max-width: 420px !important;
+    max-width: 410px !important;
   }
   .cj-story-card {
-    padding: 10px 14px !important;
-    border-radius: 18px !important;
+    padding: 9px 12px !important;
+    border-radius: 16px !important;
+  }
+  .cj-ticket-notch-l, .cj-ticket-notch-r {
+    top: 36px !important;
+    width: 11px !important;
+    height: 11px !important;
   }
   .cj-card-title {
-    font-size: 17px !important;
+    font-size: 16px !important;
     margin-bottom: 2px !important;
   }
   .cj-card-desc {
-    font-size: 11.5px !important;
-    margin-bottom: 6px !important;
-    line-height: 1.35 !important;
+    font-size: 11px !important;
+    margin-bottom: 4px !important;
+    line-height: 1.3 !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
   }
   .cj-features-box {
-    margin-bottom: 6px !important;
-    padding: 5px 8px !important;
+    margin-bottom: 5px !important;
+    padding: 4px 7px !important;
   }
   .cj-feat-label { display: none !important; }
+  .cj-feat-tag {
+    font-size: 9.5px !important;
+    padding: 2px 6px !important;
+  }
   .cj-card-footer {
-    padding-top: 5px !important;
+    padding-top: 4px !important;
   }
   .cj-scrub-rail {
-    padding: 3px 6px !important;
+    padding: 2.5px 5px !important;
   }
   .cj-rail-btn {
-    font-size: 10px !important;
-    padding: 3.5px 8px !important;
+    font-size: 9.5px !important;
+    padding: 3px 7px !important;
   }
   .cj-scroll-hint {
     display: none !important;
-  }
-}
-
-
-/* ==========================================================================
-   COMPACT & STREAMLINED CINEMAS SECTION (ELIMINATING UNNECESSARY SCROLLING)
-   ========================================================================== */
-.cinemas-showcase-section {
-  padding: clamp(48px, 6vw, 80px) clamp(16px, 3.5vw, 42px) !important;
-}
-
-.cinemas-section-inner {
-  gap: clamp(20px, 2.5vw, 32px) !important;
-}
-
-.cinemas-header-block {
-  gap: 10px !important;
-  margin-bottom: 4px !important;
-}
-
-.cinema-tag-badge {
-  margin-bottom: 6px !important;
-  padding: 5px 14px !important;
-}
-
-.cinemas-title-head {
-  font-size: clamp(28px, 3.8vw, 46px) !important;
-  margin-bottom: 2px !important;
-}
-
-.cinemas-subtitle-desc {
-  font-size: clamp(13px, 1.1vw, 15.5px) !important;
-  margin-bottom: 6px !important;
-}
-
-.cinemas-controls-bar {
-  gap: 10px !important;
-  margin-top: 2px !important;
-}
-
-.cinemas-search-box input {
-  padding: 10px 0 !important;
-}
-
-.cinemas-city-dropdown select {
-  padding: 10px 18px 10px 0 !important;
-}
-
-.cinemas-filter-pills {
-  margin-top: 4px !important;
-  gap: 8px !important;
-}
-
-.c-pill {
-  padding: 7px 16px !important;
-  font-size: 12px !important;
-}
-
-.cinema-match-count {
-  margin-top: 2px !important;
-  padding: 4px 16px !important;
-  font-size: 12px !important;
-}
-
-.featured-cinemas-wrapper {
-  margin-top: 4px !important;
-}
-
-.cinema-cards-scroll-track {
-  gap: 18px !important;
-  margin-top: 6px !important;
-}
-
-.card-thumb-wrap {
-  height: 185px !important;
-}
-
-@media (max-width: 900px) {
-  .cinemas-showcase-section {
-    padding: 36px 14px 28px !important;
-  }
-  .card-thumb-wrap {
-    height: 160px !important;
   }
 }
 
@@ -10295,7 +10225,7 @@ body.locked .sd {
 
 <section class="cinema-journey-section" id="story" aria-label="The 4-Step Cinema Journey">
   <div class="cj-stick" id="cjStick">
-    <!-- Atmospheric Cinema Graphics & Ambient Lighting (Light Pink VIP) -->
+    <!-- Authentic Cinema Lighting & Filmstrip Perforations -->
     <div class="cj-projector-light" aria-hidden="true"></div>
     <div class="cj-filmstrip-border top" aria-hidden="true"></div>
     <div class="cj-filmstrip-border bottom" aria-hidden="true"></div>
@@ -10304,47 +10234,35 @@ body.locked .sd {
     <!-- Floating Background Watermark Typography -->
     <div class="cj-watermark" id="cjWatermark" aria-hidden="true">SCAN QR</div>
 
-    <!-- Floating Graphics 1: VIP Cinema Golden Ticket Graphic -->
+    <!-- Floating Cinema Graphic: VIP Ticket Pass -->
     <div class="cj-float-graphic cj-ticket-graphic" aria-hidden="true">
-      <div class="cj-ticket-notch"></div>
-      <div class="cj-ticket-icon">🎟️</div>
+      <div style="font-size:22px;">🎟️</div>
       <div>
-        <div class="cj-ticket-title">VIP RECLINER TICKET</div>
-        <div class="cj-ticket-seat">ROW E · SEAT 14 · DOLBY LUXE</div>
+        <div class="cj-ticket-title">CINEMA RECLINER VIP</div>
+        <div class="cj-ticket-seat">HALL 04 · ROW E-14 · DOLBY LUXE</div>
       </div>
     </div>
 
-    <!-- Floating Graphics 2: 10-Minute Cloche Service Guarantee Badge -->
+    <!-- Floating Cinema Graphic: 10-Min Guarantee Badge -->
     <div class="cj-float-graphic cj-cloche-graphic" aria-hidden="true">
       <span class="cj-cloche-beacon"></span>
-      <span style="font-size:16px;">🛎️</span>
+      <span style="font-size:15px;">🛎️</span>
       <span class="cj-cloche-text">10-MIN IN-SEAT GUARANTEE</span>
     </div>
 
-    <!-- Floating Ambient Confectionery Particles -->
-    <div class="cj-ambient-particles" aria-hidden="true">
-      <span class="cj-p p1">🎟️</span>
-      <span class="cj-p p2">🍿</span>
-      <span class="cj-p p3">🎬</span>
-      <span class="cj-p p4">🍔</span>
-      <span class="cj-p p5">📱</span>
-      <span class="cj-p p6">🧋</span>
-      <span class="cj-p p7">💖</span>
-    </div>
-
-    <!-- Eye-Catching Header -->
+    <!-- Clean Header (Zero Overlap Bug) -->
     <div class="cj-header">
       <div class="cj-badge-wrap">
-        <span class="cj-badge">🎬 THE 4-STEP CINEMA JOURNEY</span>
-        <span class="cj-live-pill"><span class="cj-pulse-dot"></span> LIVE IN-SEAT DINING</span>
+        <span class="cj-badge">🎬 4-STEP CINEMA JOURNEY</span>
+        <span class="cj-live-pill"><span class="cj-pulse-dot"></span> LIVE IN-SEAT SERVICE</span>
       </div>
-      <h2 class="cj-title">Movie night, <em>four magical moments.</em></h2>
+      <h2 class="cj-title">Cinema Night in <em>4 Magical Moments</em></h2>
       <p class="cj-subtitle">From scanning your recliner code to silent in-seat delivery under a silver cloche in ~10 minutes.</p>
     </div>
 
     <!-- Central Interactive Cinema Stage -->
     <div class="cj-stage" id="cjStage">
-      <!-- High-DPI Cinema Journey Frame Animation Canvas (Clean & 100% Unobstructed) -->
+      <!-- High-DPI Cinema Journey Frame Animation Canvas -->
       <div class="cj-canvas-card">
         <div class="cj-canvas-gloss" aria-hidden="true"></div>
         <div class="cj-canvas-viewport">
@@ -10353,11 +10271,14 @@ body.locked .sd {
         <div class="cj-canvas-glow" id="cjCanvasGlow" aria-hidden="true"></div>
       </div>
 
-      <!-- Luxury Floating VIP Journey Story Card (WITH BOUNCY POPUP ANIMATION) -->
+      <!-- Authentic Cinema VIP Ticket Story Card (WITH NOTCHES & DYNAMIC THEMES) -->
       <div class="cj-card-wrap">
         <div class="cj-story-card" id="cjStoryCard">
+          <div class="cj-ticket-notch-l" aria-hidden="true"></div>
+          <div class="cj-ticket-notch-r" aria-hidden="true"></div>
+
           <div class="cj-card-top-ribbon">
-            <div class="cj-status-pill"><span class="cj-status-dot"></span> <span id="cjStepStatus">MOMENT 01</span></div>
+            <div class="cj-status-pill"><span class="cj-status-dot"></span> <span id="cjStepStatus">TAKE 01</span></div>
             <span class="cj-chapter-num" id="cjStepNum">01 / 04</span>
           </div>
 
@@ -10369,7 +10290,7 @@ body.locked .sd {
           <h3 class="cj-card-title" id="cjCardTitle">Find your seat. <em>Scan the code.</em></h3>
           <p class="cj-card-desc" id="cjCardDesc">Sink into your plush cinema recliner. Point your phone camera at the QR code on your seat armrest for instant seat-side linkage.</p>
 
-          <!-- Step Feature Tags with Delicious Perks -->
+          <!-- Step Feature Tags with Cinema Perks -->
           <div class="cj-features-box">
             <span class="cj-feat-label">JOURNEY PERKS:</span>
             <div class="cj-feat-tags" id="cjFeatTags">
@@ -10384,9 +10305,9 @@ body.locked .sd {
               <span class="cj-del-icon">⚡</span>
               <span id="cjFooterHint">Instant seat pairing with kitchen</span>
             </div>
-            <a href="#get" class="cj-card-cta-btn" data-dl>
+            <a href="#get" class="cj-card-cta-btn" id="cjCardCta" data-dl>
               <span>Order To Seat</span>
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
         </div>
@@ -11464,13 +11385,13 @@ let lenis = null;
 try {
   if (typeof Lenis !== 'undefined' && !reduce) {
     lenis = new Lenis({
-      duration: 2.1,
+      duration: 1.0,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.26, // Leisurely, calm scroll pacing so visitors comfortably view every product
-      touchMultiplier: 0.65,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.15,
       infinite: false,
     });
 
@@ -13334,7 +13255,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
 })();
 
 /* ==========================================================================
-   CINEMA JOURNEY FRAME-BY-FRAME CANVAS SCROLL CONTROLLER (LIGHT PINK THEME)
+   CINEMA JOURNEY FRAME-BY-FRAME CANVAS SCROLL CONTROLLER (DYNAMIC COLOR THEMES)
    ========================================================================== */
 (function initCinemaJourneyShowcase() {
   const TOTAL_FRAMES = 300;
@@ -13362,10 +13283,11 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
   const railBtns = document.querySelectorAll('.cj-rail-btn');
   const storyCard = document.getElementById('cjStoryCard');
 
+  // 4 VIBRANT, DISTINCT COLOR THEMES (Pink, Gold Amber, Fresh Mint, Royal Amethyst)
   const STEPS = [
     {
       num: '01 / 04',
-      status: 'MOMENT 01',
+      status: 'TAKE 01',
       watermark: 'SCAN QR',
       startFrame: 0,
       endFrame: 65,
@@ -13375,12 +13297,19 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       desc: 'Sink into your plush cinema recliner. Point your phone camera at the QR code on your seat armrest for instant seat-side linkage.',
       features: ['🎟️ Seat-Side QR', '💺 VIP Recliner', '✨ Zero Waiting'],
       footerHint: 'Instant seat pairing with kitchen',
-      aura: 'radial-gradient(ellipse at 50% 50%, #fff0f3 0%, #fad4df 50%, #f7bed0 100%)',
-      glow: 'rgba(230, 25, 90, 0.35)'
+      // Dynamic Theme Properties (Neon Rose & Berry Romance)
+      bg: 'linear-gradient(180deg, #fff0f5 0%, #ffcbe0 45%, #ffa6cb 100%)',
+      aura: 'radial-gradient(ellipse at 50% 50%, rgba(255, 20, 147, 0.55) 0%, rgba(230, 25, 90, 0.38) 50%, transparent 80%)',
+      glow: 'rgba(255, 42, 109, 0.45)',
+      accent: '#e6195a',
+      border: 'rgba(230, 25, 90, 0.35)',
+      btn: 'linear-gradient(135deg, #e6195a 0%, #ff4f86 100%)',
+      chipBg: '#ffeef4',
+      notchBg: '#ffa6cb'
     },
     {
       num: '02 / 04',
-      status: 'MOMENT 02',
+      status: 'TAKE 02',
       watermark: 'GET APP',
       startFrame: 66,
       endFrame: 128,
@@ -13390,12 +13319,19 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       desc: 'The Love Cafe app opens in a flash with live theatre seat mapping and your multiplex’s complete gourmet kitchen menu.',
       features: ['⚡ 1-Tap Access', '🎬 Dolby Atmos Ready', '📱 Instant Seat Sync'],
       footerHint: 'No sign-up hassle during previews',
-      aura: 'radial-gradient(ellipse at 50% 50%, #fff5e8 0%, #fedebb 50%, #fbc2a8 100%)',
-      glow: 'rgba(255, 179, 0, 0.4)'
+      // Dynamic Theme Properties (Golden Cinema Marquee & Popcorn Amber)
+      bg: 'linear-gradient(180deg, #fffbf0 0%, #ffe8b5 45%, #ffd27a 100%)',
+      aura: 'radial-gradient(ellipse at 50% 50%, rgba(255, 179, 0, 0.6) 0%, rgba(255, 140, 0, 0.45) 50%, transparent 80%)',
+      glow: 'rgba(255, 179, 0, 0.55)',
+      accent: '#d97706',
+      border: 'rgba(245, 158, 11, 0.45)',
+      btn: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+      chipBg: '#fffbeb',
+      notchBg: '#ffd27a'
     },
     {
       num: '03 / 04',
-      status: 'MOMENT 03',
+      status: 'TAKE 03',
       watermark: 'ORDER',
       startFrame: 129,
       endFrame: 225,
@@ -13405,12 +13341,19 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       desc: 'Browse steaming smash burgers, 48-hour sourdough pizza, crispy momos, loaded popcorn & cold boba. 1-tap checkout.',
       features: ['🍔 Smash Burgers', '🍕 Woodfired Pizza', '🧋 Cold Boba'],
       footerHint: 'Order sent straight to master chef',
-      aura: 'radial-gradient(ellipse at 50% 50%, #edf8ee 0%, #d4eed2 50%, #bee1bc 100%)',
-      glow: 'rgba(76, 175, 80, 0.4)'
+      // Dynamic Theme Properties (Fresh Emerald Mint Gourmet Feast)
+      bg: 'linear-gradient(180deg, #f0fdf4 0%, #bbf7d0 45%, #86efac 100%)',
+      aura: 'radial-gradient(ellipse at 50% 50%, rgba(34, 197, 94, 0.55) 0%, rgba(16, 185, 129, 0.4) 50%, transparent 80%)',
+      glow: 'rgba(34, 197, 94, 0.5)',
+      accent: '#059669',
+      border: 'rgba(16, 185, 129, 0.45)',
+      btn: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+      chipBg: '#ecfdf5',
+      notchBg: '#86efac'
     },
     {
       num: '04 / 04',
-      status: 'MOMENT 04',
+      status: 'TAKE 04',
       watermark: 'DELIVERY',
       startFrame: 226,
       endFrame: 299,
@@ -13420,8 +13363,15 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       desc: 'Silently delivered under a gleaming silver cloche right to your seat tray in ~10 minutes. Movie on, hunger off!',
       features: ['⚡ ~10m In-Seat Drop', '🛎️ Silver Cloche VIP', '🍿 Fresh & Hot Guarantee'],
       footerHint: 'Delivered silently without disturbing movie',
-      aura: 'radial-gradient(ellipse at 50% 50%, #fde8ec 0%, #fad0dc 50%, #f6b5c7 100%)',
-      glow: 'rgba(230, 25, 90, 0.45)'
+      // Dynamic Theme Properties (Velvet Royal Cinema Violet & Midnight Glow)
+      bg: 'linear-gradient(180deg, #faf5ff 0%, #e9d5ff 45%, #c084fc 100%)',
+      aura: 'radial-gradient(ellipse at 50% 50%, rgba(168, 85, 247, 0.6) 0%, rgba(147, 51, 234, 0.45) 50%, transparent 80%)',
+      glow: 'rgba(168, 85, 247, 0.55)',
+      accent: '#7c3aed',
+      border: 'rgba(147, 51, 234, 0.45)',
+      btn: 'linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)',
+      chipBg: '#f5f3ff',
+      notchBg: '#c084fc'
     }
   ];
 
@@ -13506,6 +13456,21 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
     ctx.drawImage(img, dx, dy, dw, dh);
   }
 
+  function applyStepTheme(s) {
+    // Dynamic Section & Card Color Theme Update
+    section.style.setProperty('--step-bg', s.bg);
+    section.style.setProperty('--step-aura', s.aura);
+    section.style.setProperty('--step-glow', s.glow);
+    section.style.setProperty('--step-accent', s.accent);
+    section.style.setProperty('--step-border', s.border);
+    section.style.setProperty('--step-btn', s.btn);
+    section.style.setProperty('--step-chip-bg', s.chipBg);
+    section.style.setProperty('--step-notch-bg', s.notchBg);
+
+    if (bgAura) bgAura.style.background = s.aura;
+    if (canvasGlow) canvasGlow.style.background = s.glow;
+  }
+
   function renderFrameAt(frameFloat) {
     const frameIdx = Math.max(0, Math.min(TOTAL_FRAMES - 1, Math.round(frameFloat)));
     
@@ -13528,9 +13493,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
           lastDrawnFrame = frameIdx;
         }
       });
-      // Fallback to nearest loaded frame for zero-flicker smoothness
       let nearest = null;
-      let minDiff = Infinity;
       for (let dist = 1; dist < 20; dist++) {
         if (loadedFrames.has(frameIdx - dist)) { nearest = loadedFrames.get(frameIdx - dist); break; }
         if (loadedFrames.has(frameIdx + dist)) { nearest = loadedFrames.get(frameIdx + dist); break; }
@@ -13551,8 +13514,8 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       if (cardDesc) cardDesc.textContent = s.desc;
       if (footerHint) footerHint.textContent = s.footerHint;
       if (watermark) watermark.textContent = s.watermark;
-      if (bgAura) bgAura.style.background = s.aura;
-      if (canvasGlow) canvasGlow.style.background = s.glow;
+
+      applyStepTheme(s);
 
       if (featTags && s.features) {
         featTags.innerHTML = s.features.map(f => `<span class="cj-feat-tag">${f}</span>`).join('');
@@ -13577,30 +13540,31 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
     }
   }
 
-  // Preload first 20 frames immediately for instant rendering
-  for (let i = 0; i < 20; i++) {
+  // Preload first 24 frames immediately
+  for (let i = 0; i < 24; i++) {
     loadFrame(i);
   }
   loadFrame(0).then(img => {
     resizeCanvas();
     if (img) drawFrame(img);
+    applyStepTheme(STEPS[0]);
   });
 
-  // Fast background parallel loading in batches of 14
-  let preloadCursor = 20;
+  // Fast background parallel loading in batches of 16
+  let preloadCursor = 24;
   function preloadWorker() {
     if (preloadCursor >= TOTAL_FRAMES) return;
     const batch = [];
-    for (let b = 0; b < 14 && preloadCursor < TOTAL_FRAMES; b++, preloadCursor++) {
+    for (let b = 0; b < 16 && preloadCursor < TOTAL_FRAMES; b++, preloadCursor++) {
       batch.push(loadFrame(preloadCursor));
     }
     Promise.all(batch).then(() => {
-      setTimeout(preloadWorker, 20);
+      setTimeout(preloadWorker, 15);
     });
   }
-  setTimeout(preloadWorker, 100);
+  setTimeout(preloadWorker, 80);
 
-  // Direct Butter-Smooth Scroll Tracking
+  // Snappy, Butter-Smooth Scroll Tracking
   let targetFrame = 0;
   let currentFrame = 0;
 
@@ -13618,26 +13582,24 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
     targetFrame = calculateTargetFrame();
   }
 
-  // Hook into Lenis if available for 120Hz frame-perfect sync, else native scroll
   if (window.lenis) {
     window.lenis.on('scroll', onScroll);
   } else {
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  // Buttery Animation Loop with Snappy Responsive Damping (0.22)
+  // Snappy 0.35 Damping for Instant, Lag-Free 60fps Tracking
   function animLoop() {
     const diff = targetFrame - currentFrame;
-    if (Math.abs(diff) > 0.02) {
-      // Snappy 0.22 factor provides instant, buttery 60fps tracking without floaty lag
-      currentFrame += diff * 0.22;
+    if (Math.abs(diff) > 0.015) {
+      currentFrame += diff * 0.35;
       renderFrameAt(currentFrame);
     }
     requestAnimationFrame(animLoop);
   }
   requestAnimationFrame(animLoop);
 
-  // Click navigation for Chapter Rail buttons
+  // Chapter Rail Buttons Click Navigation
   railBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -13650,31 +13612,29 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       const span = Math.max(1, section.offsetHeight - window.innerHeight);
       const targetScroll = sectionTop + (targetFrameNum / (TOTAL_FRAMES - 1)) * span;
       if (window.lenis) {
-        window.lenis.scrollTo(targetScroll, { duration: 1.1 });
+        window.lenis.scrollTo(targetScroll, { duration: 0.8 });
       } else {
         window.scrollTo({ top: targetScroll, behavior: 'smooth' });
       }
     });
   });
 
-  // Clickable Scrub Timeline Track
+  // Clickable Timeline Scrubber
   if (timelineRow) {
     timelineRow.addEventListener('click', (e) => {
       const rect = timelineRow.getBoundingClientRect();
       const clickRatio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-      const targetFrameNum = Math.round(clickRatio * (TOTAL_FRAMES - 1));
       const sectionTop = section.getBoundingClientRect().top + window.scrollY;
       const span = Math.max(1, section.offsetHeight - window.innerHeight);
       const targetScroll = sectionTop + clickRatio * span;
       if (window.lenis) {
-        window.lenis.scrollTo(targetScroll, { duration: 0.9 });
+        window.lenis.scrollTo(targetScroll, { duration: 0.7 });
       } else {
         window.scrollTo({ top: targetScroll, behavior: 'smooth' });
       }
     });
   }
 
-  // Initial render setup
   setTimeout(resizeCanvas, 40);
 })();
 
