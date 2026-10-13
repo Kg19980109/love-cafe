@@ -9829,6 +9829,249 @@ body.locked .sd {
   box-shadow: 0 6px 16px rgba(255, 42, 109, 0.6) !important;
 }
 
+
+/* ==========================================================================
+   AUTHENTIC REALISTIC IPHONE MOCKUP & FULL-VISIBILITY SCREENSHOT SYSTEM
+   ========================================================================== */
+
+/* Realistic Smartphone Chassis */
+.app-phone-mockup.realistic-mock-phone {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 255px !important;
+  aspect-ratio: 512 / 1024 !important;
+  background: #000000 !important;
+  border-radius: 46px !important;
+  padding: 8px !important;
+  box-sizing: border-box !important;
+  border: 3.5px solid #281520 !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18),
+              0 0 0 4px #12050c,
+              0 24px 55px rgba(160, 20, 60, 0.24),
+              0 8px 18px rgba(0, 0, 0, 0.12) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
+}
+
+.app-screen-card.active .app-phone-mockup.realistic-mock-phone {
+  border-color: #ff2a6d !important;
+  box-shadow: 0 0 0 1px rgba(255, 42, 109, 0.5),
+              0 0 0 4.5px #14050d,
+              0 0 35px rgba(255, 42, 109, 0.4),
+              0 28px 65px rgba(180, 20, 60, 0.3) !important;
+  transform: scale(1.03) !important;
+}
+
+/* Hardware Buttons on Phone Edges */
+.phone-btn-vol-up,
+.phone-btn-vol-down,
+.phone-btn-power {
+  position: absolute !important;
+  background: #25131e !important;
+  border: 0.5px solid rgba(255, 255, 255, 0.12) !important;
+  z-index: -1 !important;
+}
+
+.phone-btn-vol-up {
+  left: -5.5px !important;
+  top: 80px !important;
+  width: 4px !important;
+  height: 36px !important;
+  border-radius: 3px 0 0 3px !important;
+}
+
+.phone-btn-vol-down {
+  left: -5.5px !important;
+  top: 126px !important;
+  width: 4px !important;
+  height: 36px !important;
+  border-radius: 3px 0 0 3px !important;
+}
+
+.phone-btn-power {
+  right: -5.5px !important;
+  top: 100px !important;
+  width: 4px !important;
+  height: 48px !important;
+  border-radius: 0 3px 3px 0 !important;
+}
+
+/* High-DPI Screen Frame inside Phone Chassis */
+.mock-phone-screen-frame {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 38px !important;
+  overflow: hidden !important;
+  position: relative !important;
+  background: #000000 !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Realistic Dynamic Island / Pill Camera */
+.phone-dynamic-island {
+  position: absolute !important;
+  top: 7px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 68px !important;
+  height: 18px !important;
+  background: #000000 !important;
+  border-radius: 999px !important;
+  z-index: 10 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  padding-right: 9px !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+  border: 0.5px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.island-camera-lens {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle at 35% 35%, #182848 0%, #060e1e 65%, #000000 100%) !important;
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Specular Glass Sheen Overlay */
+.phone-glass-glare {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(130deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.02) 32%, transparent 55%) !important;
+  z-index: 8 !important;
+  pointer-events: none !important;
+}
+
+/* Full Screenshot Visibility (ZERO CROPPING - 100% VISIBLE) */
+.phone-screen-img-box {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background: #000000 !important;
+}
+
+.phone-screen-img-box img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block !important;
+  border-radius: 0 !important;
+  transform: none !important;
+}
+
+/* iOS Home Indicator Bar */
+.phone-home-bar {
+  position: absolute !important;
+  bottom: 6px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 86px !important;
+  height: 4px !important;
+  background: rgba(255, 255, 255, 0.6) !important;
+  border-radius: 999px !important;
+  z-index: 9 !important;
+  pointer-events: none !important;
+}
+
+/* Centered Snapping Carousel */
+.app-screens-carousel {
+  display: flex !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory !important;
+  scroll-behavior: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-x pan-y !important;
+  gap: 18px !important;
+  padding: 12px calc((100% - 250px) / 2) 20px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  scrollbar-width: none !important;
+}
+
+.app-screen-card {
+  flex: 0 0 250px !important;
+  width: 250px !important;
+  max-width: 250px !important;
+  scroll-snap-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 10px !important;
+  transition: transform 0.35s ease, opacity 0.35s ease !important;
+}
+
+.app-screen-card:not(.active) {
+  opacity: 0.65 !important;
+  transform: scale(0.94) !important;
+}
+
+.app-screen-card.active {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* Switcher Tabs: Clean Single-Row Layout */
+.app-screens-tab-pills {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 8px !important;
+}
+
+.app-tab-btn {
+  padding: 6px 14px !important;
+  font-family: var(--disp) !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.22) !important;
+  color: #8c0d3a !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 12px rgba(180, 20, 60, 0.06) !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+/* Ample Section Top Padding to prevent Navbar Overlap */
+.app-showcase-section {
+  padding-top: clamp(80px, 11vw, 115px) !important;
+}
+
+@media (max-width: 900px) {
+  .app-showcase-section {
+    padding-top: 86px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .app-screens-carousel {
+    padding: 12px calc((100% - 240px) / 2) 18px !important;
+    gap: 14px !important;
+  }
+
+  .app-screen-card {
+    flex: 0 0 240px !important;
+    width: 240px !important;
+    max-width: 240px !important;
+  }
+
+  .app-phone-mockup.realistic-mock-phone {
+    max-width: 240px !important;
+  }
+
+  .app-tab-btn {
+    padding: 5px 11px !important;
+    font-size: 10.5px !important;
+  }
+}
+
 </style></head><body class="locked"><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
 <div class="g-projector-beam" aria-hidden="true"></div>
 <div class="g-ambient-glow" aria-hidden="true"></div>
@@ -10720,9 +10963,19 @@ body.locked .sd {
             <div class="app-screens-carousel" id="appScreensCarousel" data-lenis-prevent="true">
               <!-- Screen 1: Real App Home Screen -->
               <div class="app-screen-card card-home active" data-index="0">
-                <div class="app-phone-mockup">
-                  <div class="phone-screen-img-box">
-                    <img src="assets/app_screen_home.png" alt="Love Cafe App - Movies + Food = Perfect Night Home Screen" loading="lazy">
+                <div class="app-phone-mockup realistic-mock-phone">
+                  <span class="phone-btn-vol-up" aria-hidden="true"></span>
+                  <span class="phone-btn-vol-down" aria-hidden="true"></span>
+                  <span class="phone-btn-power" aria-hidden="true"></span>
+                  <div class="mock-phone-screen-frame">
+                    <div class="phone-dynamic-island" aria-hidden="true">
+                      <span class="island-camera-lens"></span>
+                    </div>
+                    <div class="phone-glass-glare" aria-hidden="true"></div>
+                    <div class="phone-screen-img-box">
+                      <img src="assets/app_screen_home.png" alt="Love Cafe App - Movies + Food = Perfect Night Home Screen" loading="lazy">
+                    </div>
+                    <div class="phone-home-bar" aria-hidden="true"></div>
                   </div>
                 </div>
                 <div class="app-screen-caption">
@@ -10733,9 +10986,19 @@ body.locked .sd {
 
               <!-- Screen 2: Real App Premium Menu Screen -->
               <div class="app-screen-card card-gourmet" data-index="1">
-                <div class="app-phone-mockup">
-                  <div class="phone-screen-img-box">
-                    <img src="assets/app_screen_menu.png" alt="Love Cafe App - Real Premium Menu with Woodfired Pizzas and Snacks" loading="lazy">
+                <div class="app-phone-mockup realistic-mock-phone">
+                  <span class="phone-btn-vol-up" aria-hidden="true"></span>
+                  <span class="phone-btn-vol-down" aria-hidden="true"></span>
+                  <span class="phone-btn-power" aria-hidden="true"></span>
+                  <div class="mock-phone-screen-frame">
+                    <div class="phone-dynamic-island" aria-hidden="true">
+                      <span class="island-camera-lens"></span>
+                    </div>
+                    <div class="phone-glass-glare" aria-hidden="true"></div>
+                    <div class="phone-screen-img-box">
+                      <img src="assets/app_screen_menu.png" alt="Love Cafe App - Real Premium Menu with Woodfired Pizzas and Snacks" loading="lazy">
+                    </div>
+                    <div class="phone-home-bar" aria-hidden="true"></div>
                   </div>
                 </div>
                 <div class="app-screen-caption caption-gold">
@@ -10746,9 +11009,19 @@ body.locked .sd {
 
               <!-- Screen 3: Real App Cart & Instant Checkout Screen -->
               <div class="app-screen-card card-experience" data-index="2">
-                <div class="app-phone-mockup">
-                  <div class="phone-screen-img-box">
-                    <img src="assets/app_screen_cart.png" alt="Love Cafe App - My Cart and Instant In-Seat Recliner Checkout" loading="lazy">
+                <div class="app-phone-mockup realistic-mock-phone">
+                  <span class="phone-btn-vol-up" aria-hidden="true"></span>
+                  <span class="phone-btn-vol-down" aria-hidden="true"></span>
+                  <span class="phone-btn-power" aria-hidden="true"></span>
+                  <div class="mock-phone-screen-frame">
+                    <div class="phone-dynamic-island" aria-hidden="true">
+                      <span class="island-camera-lens"></span>
+                    </div>
+                    <div class="phone-glass-glare" aria-hidden="true"></div>
+                    <div class="phone-screen-img-box">
+                      <img src="assets/app_screen_cart.png" alt="Love Cafe App - My Cart and Instant In-Seat Recliner Checkout" loading="lazy">
+                    </div>
+                    <div class="phone-home-bar" aria-hidden="true"></div>
                   </div>
                 </div>
                 <div class="app-screen-caption caption-pink">
@@ -13590,12 +13863,11 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
     else activeIdx = 0;
     updateActiveUI(activeIdx);
 
-    // Realistic in-app menu scrolling inside the phone screen
-    const internalParallaxPct = progress * 16;
+    // Keep entire app screenshot fully visible without cropping top or bottom
     cards.forEach(card => {
       const img = card.querySelector('.phone-screen-img-box img');
       if (img) {
-        img.style.transform = `translateY(-${internalParallaxPct.toFixed(1)}%)`;
+        img.style.transform = 'none';
       }
     });
   }
