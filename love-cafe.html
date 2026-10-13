@@ -1142,7 +1142,9 @@ body.locked{overflow:hidden;height:100svh}
   margin: calc(var(--s) / -2) 0 0 calc(var(--s) / -2) !important;
   will-change: transform, opacity !important;
   cursor: pointer !important;
-  transition: box-shadow 0.3s ease !important;
+  transition: none !important;
+  transform-style: preserve-3d !important;
+  backface-visibility: hidden !important;
 }
 
 .ic {
@@ -1154,7 +1156,8 @@ body.locked{overflow:hidden;height:100svh}
   overflow: hidden !important;
   position: relative !important;
   background: #ff2a6d !important;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: none !important;
+  transform: translateZ(0) !important;
 }
 
 .ic img {
@@ -1162,8 +1165,8 @@ body.locked{overflow:hidden;height:100svh}
   height: 100% !important;
   object-fit: cover !important;
   display: block !important;
-  transform: scale(1.02) !important;
-  transition: transform 0.4s ease !important;
+  transform: scale(1.02) translateZ(0) !important;
+  transition: none !important;
 }
 
 .it.on .ic {
@@ -2428,7 +2431,7 @@ body.locked {
 /* MOBILE NAVIGATION MENU & HAMBURGER STYLES                                 */
 /* -------------------------------------------------------------------------- */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto !important;
 }
 .nav {
   z-index: 100;
@@ -2791,9 +2794,10 @@ body.locked .sd {
   gap: 3vw !important;
   padding: 80px clamp(20px, 7vw, 110px) 30px !important;
   opacity: 1 !important;
-  transform: none !important;
+  transform: translateZ(0) !important;
   pointer-events: none;
   will-change: clip-path, -webkit-clip-path !important;
+  backface-visibility: hidden !important;
 }
 
 .sl:first-child {
@@ -4782,48 +4786,39 @@ body.locked .sd {
 /* ULTRA-LUXURY FLOATING OBSIDIAN CRYSTAL NAVIGATION PANE                     */
 /* ========================================================================== */
 
-.nav, #nav, header.nav {
+.nav, #nav, header.nav,
+.nav.scrolled, #nav.scrolled {
   position: fixed !important;
   top: 16px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
   width: min(92vw, 1040px) !important;
   max-width: 1040px !important;
-  height: 56px !important;
+  height: 54px !important;
   padding: 0 12px 0 20px !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
   box-sizing: border-box !important;
   
-  /* Precision Obsidian Frosted Glass */
-  background: rgba(18, 7, 15, 0.78) !important;
-  -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
-  backdrop-filter: blur(28px) saturate(190%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  /* Constant Luxury Obsidian Crystal Glass - NEVER changes color on scroll */
+  background: rgba(16, 7, 14, 0.88) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+  backdrop-filter: blur(28px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.13) !important;
   border-radius: 999px !important;
-  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.55), 
-              0 0 20px -2px rgba(255, 42, 109, 0.15), 
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.65), 
+              0 0 18px rgba(255, 42, 109, 0.10), 
               inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
   z-index: 1000 !important;
-  transition: background 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              border-color 0.4s ease, 
-              box-shadow 0.4s ease !important;
+  transition: none !important;
 }
 
 .nav:hover {
-  border-color: rgba(255, 255, 255, 0.24) !important;
-  box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.65), 
-              0 0 28px rgba(255, 42, 109, 0.25), 
-              inset 0 1px 0 rgba(255, 255, 255, 0.38) !important;
-}
-
-.nav.scrolled, #nav.scrolled {
-  background: rgba(13, 5, 11, 0.92) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  box-shadow: 0 22px 52px -10px rgba(0, 0, 0, 0.75), 
-              0 0 26px rgba(255, 42, 109, 0.22), 
-              inset 0 1px 0 rgba(255, 255, 255, 0.32) !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.75), 
+              0 0 24px rgba(255, 42, 109, 0.18), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
 }
 
 /* Brand Logo */
@@ -4898,10 +4893,10 @@ body.locked .sd {
 }
 
 .nl a.active, .nl a.on {
-  background: linear-gradient(135deg, #ff2a6d 0%, #d81159 100%) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
   color: #ffffff !important;
-  font-weight: 650 !important;
-  box-shadow: 0 4px 14px rgba(255, 42, 109, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+  font-weight: 600 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
 }
 
 .nl a.active::after, .nl a.on::after {
@@ -9104,7 +9099,6 @@ function updateOrbit() {
     const rotY = clamp(d * -20, -55, 55);
 
     it.style.transform = `translate3d(${x}px, ${y}px, ${z}px) scale(${sc}) rotateY(${rotY}deg) rotateZ(${d * 4}deg)`;
-    it.style.zIndex = Math.round(30 - ad * 5);
     it.style.opacity = clamp(1.9 - ad * 0.75, 0, 1) * clamp(en * 1.6);
     it.classList.toggle('on', ad < 0.45);
   });
@@ -9191,27 +9185,50 @@ psPills.forEach((pill, idx) => {
   });
 });
 
+let prevSlideR = [-1, -1, -1, -1, -1, -1];
+let prevActiveSlideIdx = -1;
+
 function updateSlides() {
   if (reduce || !slides.length) return;
   const P = sm.s * (slides.length - 1);
   const activeIdx = Math.round(clamp(P, 0, slides.length - 1));
-  rail.forEach((r, i) => r.classList.toggle('on', i === activeIdx));
-  psPills.forEach((p, i) => p.classList.toggle('on', i === activeIdx));
+  
+  if (activeIdx !== prevActiveSlideIdx) {
+    prevActiveSlideIdx = activeIdx;
+    rail.forEach((r, i) => r.classList.toggle('on', i === activeIdx));
+    psPills.forEach((p, i) => p.classList.toggle('on', i === activeIdx));
+  }
 
   slides.forEach((s, k) => {
     if (k > 0) {
       const r = clamp(P - (k - 1), 0, 1);
-      const er = r * r * (3 - 2 * r);
-      const cp = `circle(${er * 150}% at 50% 55%)`;
-      s.style.setProperty('clip-path', cp, 'important');
-      s.style.setProperty('-webkit-clip-path', cp, 'important');
-      s.style.pointerEvents = r > 0.5 ? 'auto' : 'none';
+      // Only recalculate clip-path when r has meaningfully changed (stops layout thrashing):
+      if (Math.abs(r - prevSlideR[k]) > 0.0008) {
+        prevSlideR[k] = r;
+        if (r <= 0.001) {
+          s.style.setProperty('clip-path', 'circle(0% at 50% 55%)', 'important');
+          s.style.setProperty('-webkit-clip-path', 'circle(0% at 50% 55%)', 'important');
+          s.style.pointerEvents = 'none';
+        } else if (r >= 0.999) {
+          s.style.setProperty('clip-path', 'circle(150% at 50% 55%)', 'important');
+          s.style.setProperty('-webkit-clip-path', 'circle(150% at 50% 55%)', 'important');
+          s.style.pointerEvents = 'auto';
+        } else {
+          const er = r * r * (3 - 2 * r);
+          const cp = `circle(${er * 150}% at 50% 55%)`;
+          s.style.setProperty('clip-path', cp, 'important');
+          s.style.setProperty('-webkit-clip-path', cp, 'important');
+          s.style.pointerEvents = r > 0.5 ? 'auto' : 'none';
+        }
+      }
     } else {
       s.style.pointerEvents = P < 0.5 ? 'auto' : 'none';
     }
     const d = P - k;
-    if (sws[k]) sws[k].style.transform = `translate(${-d * 14}vw, -52%)`;
-    if (pls[k]) pls[k].style.transform = `translateY(${clamp(d, -1, 1) * -35}px) rotate(${d * 8}deg) scale(${1 + clamp(-d, 0, 1) * 0.12})`;
+    if (Math.abs(d) < 1.6) {
+      if (sws[k]) sws[k].style.transform = `translate3d(${-d * 14}vw, -52%, 0)`;
+      if (pls[k]) pls[k].style.transform = `translate3d(0, ${clamp(d, -1, 1) * -35}px, 0) rotate(${d * 8}deg) scale(${1 + clamp(-d, 0, 1) * 0.12})`;
+    }
   });
 }
 
@@ -9345,25 +9362,30 @@ function updateNavActive() {
 window.addEventListener('scroll', () => requestAnimationFrame(updateNavActive), { passive: true });
 updateNavActive();
 
-// Ultra-smooth 60-120fps animation loop for orbit and slides
+// Jitter-free, 1:1 synchronized animation loop for orbit and slides
+let lastRenderedO = -999;
+let lastRenderedS = -999;
+
 (function mainLoop() {
   const sy = window.pageYOffset || document.documentElement.scrollTop;
   const to = fastProg(geoCache.flavoursTop, geoCache.flavoursHeight);
   const ts = fastProg(geoCache.psTop, geoCache.psHeight);
   
-  if (reduce) {
-    sm.o = to;
-    sm.s = ts;
-  } else {
-    sm.o += (to - sm.o) * 0.1;
-    sm.s += (ts - sm.s) * 0.1;
-  }
+  // Directly bind to smooth momentum scroll - eliminates 10-frame visual lag & drifting
+  sm.o = to;
+  sm.s = ts;
   
-  const nearFlavours = sy >= (geoCache.flavoursTop - innerHeight * 1.2) && sy <= (geoCache.flavoursTop + geoCache.flavoursHeight + innerHeight * 0.3);
-  const nearPS = sy >= (geoCache.psTop - innerHeight * 1.2) && sy <= (geoCache.psTop + geoCache.psHeight + innerHeight * 0.3);
+  const nearFlavours = sy >= (geoCache.flavoursTop - innerHeight * 1.1) && sy <= (geoCache.flavoursTop + geoCache.flavoursHeight + innerHeight * 0.2);
+  const nearPS = sy >= (geoCache.psTop - innerHeight * 1.1) && sy <= (geoCache.psTop + geoCache.psHeight + innerHeight * 0.2);
 
-  if (nearFlavours || Math.abs(to - sm.o) > 0.001) updateOrbit();
-  if (nearPS || Math.abs(ts - sm.s) > 0.001) updateSlides();
+  if (nearFlavours && Math.abs(sm.o - lastRenderedO) > 0.0003) {
+    lastRenderedO = sm.o;
+    updateOrbit();
+  }
+  if (nearPS && Math.abs(sm.s - lastRenderedS) > 0.0003) {
+    lastRenderedS = sm.s;
+    updateSlides();
+  }
   requestAnimationFrame(mainLoop);
 })();
 
