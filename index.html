@@ -1160,6 +1160,13 @@ body.locked{overflow:hidden;height:100svh}
   transform: translateZ(0) !important;
 }
 
+.it.on .ic {
+  box-shadow: 0 0 0 4.5px #fff, 
+              0 0 50px var(--active-glow, rgba(255, 196, 0, 0.7)), 
+              0 20px 50px rgba(0, 0, 0, 0.55), 
+              inset 0 0 0 2px rgba(255, 255, 255, 0.8) !important;
+}
+
 .ic img {
   width: 100% !important;
   height: 100% !important;
@@ -1171,12 +1178,12 @@ body.locked{overflow:hidden;height:100svh}
 
 .it.on .ic {
   border-color: #ffd23f !important;
-  box-shadow: 0 0 0 4px #ffd23f, 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 36px rgba(255, 210, 63, 0.6) !important;
-  transform: scale(1.04) !important;
+  box-shadow: 0 0 0 4.5px #ffd23f, 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 45px var(--active-glow, rgba(255, 210, 63, 0.75)) !important;
+  transform: translateZ(0) !important;
 }
 
 .it.on .ic img {
-  transform: scale(1.06) !important;
+  transform: scale(1.02) translateZ(0) !important;
 }
 
 .it-badge {
@@ -2793,24 +2800,19 @@ body.locked .sd {
   align-items: center !important;
   gap: 3vw !important;
   padding: 80px clamp(20px, 7vw, 110px) 30px !important;
-  opacity: 1 !important;
-  transform: translateZ(0) !important;
+  opacity: 0;
+  transform: translate3d(105%, 0, 0);
   pointer-events: none;
-  will-change: clip-path, -webkit-clip-path !important;
+  will-change: transform, opacity !important;
   backface-visibility: hidden !important;
+  transition: none !important;
 }
 
 .sl:first-child {
-  z-index: 1 !important;
-  clip-path: circle(150% at 50% 55%) !important;
-  -webkit-clip-path: circle(150% at 50% 55%) !important;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  pointer-events: auto;
 }
-
-.sl.s2 { z-index: 2 !important; clip-path: circle(0% at 50% 55%); -webkit-clip-path: circle(0% at 50% 55%); }
-.sl.s3 { z-index: 3 !important; clip-path: circle(0% at 50% 55%); -webkit-clip-path: circle(0% at 50% 55%); }
-.sl.s4 { z-index: 4 !important; clip-path: circle(0% at 50% 55%); -webkit-clip-path: circle(0% at 50% 55%); }
-.sl.s5 { z-index: 5 !important; clip-path: circle(0% at 50% 55%); -webkit-clip-path: circle(0% at 50% 55%); }
-.sl.s6 { z-index: 6 !important; clip-path: circle(0% at 50% 55%); -webkit-clip-path: circle(0% at 50% 55%); }
 
 .sl.s1 { background: radial-gradient(circle at 65% 50%, #ff5287 0%, #e6195a 45%, #8c0936 100%) !important; color: #fff !important; }
 .sl.s2 { background: radial-gradient(circle at 65% 50%, #ff7844 0%, #e64c19 45%, #8c2409 100%) !important; color: #fff !important; }
@@ -8436,13 +8438,13 @@ let lenis = null;
 try {
   if (typeof Lenis !== 'undefined' && !reduce) {
     lenis = new Lenis({
-      duration: 1.35,
+      duration: 1.65,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.82, // Relaxed wheel pacing so visitors comfortably view all products
-      touchMultiplier: 1.15,
+      wheelMultiplier: 0.45, // Relaxed, slow scroll pacing so visitors comfortably view every product
+      touchMultiplier: 0.85,
       infinite: false,
     });
 
@@ -9060,12 +9062,9 @@ function updateOrbit() {
 
   const sy = window.pageYOffset || document.documentElement.scrollTop;
   const enter = clamp(1 - (geoCache.flavoursTop - sy) / innerHeight);
-  // 7 snack items -> 6 intervals (smooth continuous progression with organic easing):
+  // 7 snack items -> 6 intervals (butter-smooth continuous progression perfectly synced to scroll):
   const P = sm.o * 6;
-  const fl = Math.floor(Math.min(P, 5.999));
-  const f = P - fl;
-  const e = ease(f);
-  const rot = fl + e;
+  const rot = P;
   const Wd = Math.min(geoCache.rgWidth * 0.35, 390);
 
   // Smoothly fade in header and controls as flavours enters viewport
@@ -9096,10 +9095,11 @@ function updateOrbit() {
     const x = sg * (m * Wd + Math.max(0, ad - 1) * Wd * 0.52);
     const y = m * 28 + (1 - en) * 190;
     const z = -ad * 140;
-    const rotY = clamp(d * -20, -55, 55);
-
-    it.style.transform = `translate3d(${x}px, ${y}px, ${z}px) scale(${sc}) rotateY(${rotY}deg) rotateZ(${d * 4}deg)`;
-    it.style.opacity = clamp(1.9 - ad * 0.75, 0, 1) * clamp(en * 1.6);
+    // Silky-smooth GPU transform without 3D perspective matrix raster jitter
+    const rz = clamp(d * 2.2, -10, 10);
+    it.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, ${z.toFixed(2)}px) scale(${sc.toFixed(3)}) rotateZ(${rz.toFixed(2)}deg)`;
+    it.style.opacity = (clamp(1.9 - ad * 0.75, 0, 1) * clamp(en * 1.6)).toFixed(3);
+    it.style.zIndex = Math.round(100 - ad * 12);
     it.classList.toggle('on', ad < 0.45);
   });
 
@@ -9115,6 +9115,18 @@ function updateOrbit() {
     if (ochef) ochef.textContent = CF[bestIdx];
     ods.forEach((d, i) => d.classList.toggle('on', i === bestIdx));
     flavourPills.forEach((p, i) => p.classList.toggle('active', i === bestIdx));
+    
+    // Vibrant ambient colorful glow for each snack
+    const GLOW_COLORS = [
+      'rgba(255, 196, 0, 0.65)',   // Popcorn - Honey Amber
+      'rgba(255, 87, 34, 0.7)',    // Burger - Flame Orange
+      'rgba(229, 57, 53, 0.7)',    // Pizza - Tuscan Crimson
+      'rgba(76, 175, 80, 0.65)',   // Sandwich - Herb Emerald
+      'rgba(255, 152, 0, 0.7)',    // Momo - Warm Gold
+      'rgba(186, 104, 200, 0.7)',  // Boba - Violet Velvet
+      'rgba(0, 229, 255, 0.7)'     // Cold Drink - Ice Cyan
+    ];
+    if (rg) rg.style.setProperty('--active-glow', GLOW_COLORS[bestIdx] || GLOW_COLORS[0]);
   }
 
   const ohint = $('ohint');
@@ -9185,7 +9197,6 @@ psPills.forEach((pill, idx) => {
   });
 });
 
-let prevSlideR = [-1, -1, -1, -1, -1, -1];
 let prevActiveSlideIdx = -1;
 
 function updateSlides() {
@@ -9199,35 +9210,31 @@ function updateSlides() {
     psPills.forEach((p, i) => p.classList.toggle('on', i === activeIdx));
   }
 
+  // Silky Horizontal GPU Glide - Zero text overlap, zero clip-path raster invalidation
   slides.forEach((s, k) => {
-    if (k > 0) {
-      const r = clamp(P - (k - 1), 0, 1);
-      // Only recalculate clip-path when r has meaningfully changed (stops layout thrashing):
-      if (Math.abs(r - prevSlideR[k]) > 0.0008) {
-        prevSlideR[k] = r;
-        if (r <= 0.001) {
-          s.style.setProperty('clip-path', 'circle(0% at 50% 55%)', 'important');
-          s.style.setProperty('-webkit-clip-path', 'circle(0% at 50% 55%)', 'important');
-          s.style.pointerEvents = 'none';
-        } else if (r >= 0.999) {
-          s.style.setProperty('clip-path', 'circle(150% at 50% 55%)', 'important');
-          s.style.setProperty('-webkit-clip-path', 'circle(150% at 50% 55%)', 'important');
-          s.style.pointerEvents = 'auto';
-        } else {
-          const er = r * r * (3 - 2 * r);
-          const cp = `circle(${er * 150}% at 50% 55%)`;
-          s.style.setProperty('clip-path', cp, 'important');
-          s.style.setProperty('-webkit-clip-path', cp, 'important');
-          s.style.pointerEvents = r > 0.5 ? 'auto' : 'none';
-        }
-      }
-    } else {
-      s.style.pointerEvents = P < 0.5 ? 'auto' : 'none';
-    }
     const d = P - k;
-    if (Math.abs(d) < 1.6) {
-      if (sws[k]) sws[k].style.transform = `translate3d(${-d * 14}vw, -52%, 0)`;
-      if (pls[k]) pls[k].style.transform = `translate3d(0, ${clamp(d, -1, 1) * -35}px, 0) rotate(${d * 8}deg) scale(${1 + clamp(-d, 0, 1) * 0.12})`;
+    const absD = Math.abs(d);
+
+    if (absD >= 1.05) {
+      s.style.transform = `translate3d(${d > 0 ? -105 : 105}%, 0, 0)`;
+      s.style.opacity = '0';
+      s.style.visibility = 'hidden';
+      s.style.pointerEvents = 'none';
+    } else {
+      s.style.visibility = 'visible';
+      s.style.zIndex = Math.round(20 - absD * 10);
+      
+      const offsetPercent = -d * 100;
+      const alpha = clamp(1.25 - absD * 0.75, 0, 1);
+      
+      s.style.transform = `translate3d(${offsetPercent.toFixed(2)}%, 0, 0)`;
+      s.style.opacity = alpha.toFixed(3);
+      s.style.pointerEvents = absD < 0.4 ? 'auto' : 'none';
+    }
+    
+    if (absD < 1.0) {
+      if (sws[k]) sws[k].style.transform = `translate3d(${(-d * 24).toFixed(1)}vw, -52%, 0)`;
+      if (pls[k]) pls[k].style.transform = `translate3d(${(-d * 14).toFixed(1)}%, ${(clamp(d, -1, 1) * -18).toFixed(1)}px, 0) scale(${(1 - absD * 0.05).toFixed(3)}) rotate(${(d * 3.5).toFixed(1)}deg)`;
     }
   });
 }
@@ -9362,7 +9369,7 @@ function updateNavActive() {
 window.addEventListener('scroll', () => requestAnimationFrame(updateNavActive), { passive: true });
 updateNavActive();
 
-// Jitter-free, 1:1 synchronized animation loop for orbit and slides
+// Silky smooth, jitter-filtered animation loop for orbit and slides
 let lastRenderedO = -999;
 let lastRenderedS = -999;
 
@@ -9371,18 +9378,18 @@ let lastRenderedS = -999;
   const to = fastProg(geoCache.flavoursTop, geoCache.flavoursHeight);
   const ts = fastProg(geoCache.psTop, geoCache.psHeight);
   
-  // Directly bind to smooth momentum scroll - eliminates 10-frame visual lag & drifting
+  // Direct frame-perfect sync with Lenis smooth scroll - ZERO trailing lag or unpinning jitter
   sm.o = to;
   sm.s = ts;
   
   const nearFlavours = sy >= (geoCache.flavoursTop - innerHeight * 1.1) && sy <= (geoCache.flavoursTop + geoCache.flavoursHeight + innerHeight * 0.2);
   const nearPS = sy >= (geoCache.psTop - innerHeight * 1.1) && sy <= (geoCache.psTop + geoCache.psHeight + innerHeight * 0.2);
 
-  if (nearFlavours && Math.abs(sm.o - lastRenderedO) > 0.0003) {
+  if (nearFlavours && Math.abs(sm.o - lastRenderedO) > 0.0001) {
     lastRenderedO = sm.o;
     updateOrbit();
   }
-  if (nearPS && Math.abs(sm.s - lastRenderedS) > 0.0003) {
+  if (nearPS && Math.abs(sm.s - lastRenderedS) > 0.0001) {
     lastRenderedS = sm.s;
     updateSlides();
   }
