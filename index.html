@@ -3743,6 +3743,64 @@ body.locked .sd {
 /* App Showcase Carousel & Scroll-Driven Sync */
 .app-carousel-stage {
   position: relative !important;
+}
+
+.app-arrow-nav {
+  position: absolute !important;
+  top: 48% !important;
+  transform: translateY(-50%) !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  background: rgba(26, 6, 16, 0.88) !important;
+  border: 2px solid rgba(255, 42, 109, 0.6) !important;
+  color: #fff !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 25 !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 14px rgba(255, 42, 109, 0.4) !important;
+  transition: all 0.22s ease !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+.app-arrow-nav:hover {
+  background: #ff2a6d !important;
+  border-color: #ffd23f !important;
+  color: #fff !important;
+  transform: translateY(-50%) scale(1.1) !important;
+  box-shadow: 0 6px 24px rgba(255, 42, 109, 0.8), 0 0 18px #ffd23f !important;
+}
+
+.app-arrow-nav:active {
+  transform: translateY(-50%) scale(0.95) !important;
+}
+
+.app-arrow-prev {
+  left: 6px !important;
+}
+
+.app-arrow-next {
+  right: 6px !important;
+}
+
+@media (max-width: 600px) {
+  .app-arrow-nav {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 22px !important;
+  }
+  .app-arrow-prev { left: 2px !important; }
+  .app-arrow-next { right: 2px !important; }
+}
+
+.app-carousel-stage-inner {
+  position: relative !important;
   width: 100% !important;
   display: flex !important;
   align-items: center !important;
@@ -9690,6 +9748,7 @@ body.locked .sd {
 
           <!-- Carousel Stage (Silky Smooth Touch Swipe) -->
           <div class="app-carousel-stage">
+            <button class="app-arrow-nav app-arrow-prev" id="appPrevBtn" aria-label="Previous App Screenshot" type="button">‹</button>
             <div class="app-screens-carousel" id="appScreensCarousel" data-lenis-prevent="true">
               <!-- Screen 1: Real App Home Screen -->
               <div class="app-screen-card card-home active" data-index="0">
@@ -9730,6 +9789,7 @@ body.locked .sd {
                 </div>
               </div>
             </div>
+            <button class="app-arrow-nav app-arrow-next" id="appNextBtn" aria-label="Next App Screenshot" type="button">›</button>
           </div>
 
           <!-- Live Pagination Dots -->
@@ -10997,6 +11057,7 @@ try {
       touchMultiplier: 1.15,
       infinite: false,
     });
+    window.lenis = lenis;
 
     if (document.body.classList.contains('locked')) {
       lenis.stop();
@@ -11067,10 +11128,12 @@ window.startExperience = function(e) {
   }
   
   document.body.classList.remove('locked');
-  if (lenis) {
-    lenis.start();
-    lenis.scrollTo(0, { immediate: true });
+  if (window.lenis) {
+    window.lenis.start();
+    window.lenis.resize();
+    window.lenis.scrollTo(0, { immediate: true });
   }
+  window.dispatchEvent(new Event('resize'));
   const navEl = document.querySelector('.nav') || document.getElementById('nav');
   if (navEl) {
     navEl.style.display = 'flex';
@@ -11794,7 +11857,7 @@ function updateSlides() {
 }
 
 // --------------------------------------------------------------------------
-// 9. NAVIGATION AUTO-HIDE & MOBILE HAMBURGER MENU
+// 9. NAVIGATION AUTO-HIDE, SMOOTH ANCHOR SCROLL & MOBILE HAMBURGER MENU
 // --------------------------------------------------------------------------
 const nav = $('nav');
 const nlk = [...document.querySelectorAll('.nl a')];
@@ -11810,9 +11873,13 @@ function toggleMobileMenu(open) {
   mb.setAttribute('aria-expanded', open);
   mb.classList.toggle('x', open);
   document.body.classList.toggle('locked', open);
-  if (lenis) {
-    if (open) lenis.stop();
-    else lenis.start();
+  if (window.lenis) {
+    if (open) {
+      window.lenis.stop();
+    } else {
+      window.lenis.start();
+      window.lenis.resize();
+    }
   }
 }
 
@@ -11832,45 +11899,90 @@ if (mclose) {
   });
 }
 
+// Robust, fail-safe smooth scroll that works with Lenis, native smooth, and fallbacks
 function scrollToAnchor(targetId) {
   if (!targetId || targetId === '#' || targetId === '#!') return;
-  
+
+  // Always ensure body is unlocked from gate or modal
+  document.body.classList.remove('locked');
+
   if (targetId === '#top') {
-    if (lenis) {
-      try { lenis.start(); lenis.scrollTo(0, { duration: 0.9 }); } catch(err) { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (window.lenis) {
+      try {
+        window.lenis.start();
+        window.lenis.resize();
+        window.lenis.scrollTo(0, { duration: 0.8, force: true });
+      } catch (err) {
+        console.warn('Lenis scroll error:', err);
+      }
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     return;
   }
-  
+
   const target = document.querySelector(targetId);
   if (!target) return;
-  
+
   const navEl = document.querySelector('header.nav');
-  const navHeight = (navEl ? navEl.offsetHeight : 64) + 12;
-  
-  if (lenis) {
+  const navHeight = (navEl ? navEl.offsetHeight : 64) + 16;
+  const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+  const targetPos = Math.max(0, target.getBoundingClientRect().top + currentScrollY - navHeight);
+
+  // 1. Lenis Smooth Scroll
+  if (window.lenis) {
     try {
-      lenis.start();
-      lenis.scrollTo(target, { offset: -navHeight, duration: 1.0 });
-    } catch(err) {
-      const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-      window.scrollTo({ top: Math.max(0, targetPos), behavior: 'smooth' });
+      window.lenis.start();
+      window.lenis.resize();
+      window.lenis.scrollTo(targetPos, { duration: 0.9, force: true });
+    } catch (err) {
+      console.warn('Lenis scrollTo error:', err);
     }
-  } else {
-    const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-    window.scrollTo({ top: Math.max(0, targetPos), behavior: 'smooth' });
   }
+
+  // 2. Browser native smooth scroll (executes concurrently for instant reliable response)
+  window.scrollTo({ top: targetPos, behavior: 'smooth' });
+
+  // 3. Fallback verification: ensure page reached destination
+  setTimeout(() => {
+    const afterY = window.pageYOffset || document.documentElement.scrollTop;
+    if (Math.abs(afterY - targetPos) > 40) {
+      window.scrollTo({ top: targetPos, behavior: 'smooth' });
+    }
+  }, 140);
 }
 
-// Global robust anchor click delegation for all navigation links & buttons
+// Direct click binding on all navigation links and buttons (Desktop Navbar, Mobile Menu, Side Dots)
+function bindNavLinks() {
+  const links = document.querySelectorAll('.nl a, .menu-nav a, .sd a, a.brand, a.nav-vip-cta, [data-nav-target]');
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href') || this.getAttribute('data-nav-target');
+      if (href && href.startsWith('#') && href !== '#' && href !== '#!') {
+        e.preventDefault();
+        e.stopPropagation();
+        if (menu && menu.classList.contains('open')) {
+          toggleMobileMenu(false);
+          setTimeout(() => scrollToAnchor(href), 120);
+        } else {
+          scrollToAnchor(href);
+        }
+      }
+    });
+  });
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bindNavLinks);
+} else {
+  bindNavLinks();
+}
+
+// Global delegated fallback for any other anchor link
 document.addEventListener('click', (e) => {
   const link = e.target.closest('a[href^="#"]');
   if (!link) return;
   const href = link.getAttribute('href');
   if (!href || href === '#' || href === '#!') return;
-  
+
   const target = document.querySelector(href);
   if (target || href === '#top') {
     e.preventDefault();
@@ -12436,7 +12548,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
 <!-- Build: reverted to 0608583 -->
 <script>
 /* ==========================================================================
-   APP SCREENS SHOWCASE: REAL-TIME SCROLL-DRIVEN HORIZONTAL & IN-APP PARALLAX SYNC
+   APP SCREENS SHOWCASE: INTERACTIVE BUTTONS (TABS, DOTS, ARROWS) + SCROLL-SYNC
    ========================================================================== */
 (function initAppScrollDrivenShowcase() {
   const section = document.getElementById('app');
@@ -12444,33 +12556,46 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
   const tabs = document.querySelectorAll('#appScreenTabs .app-tab-btn');
   const dots = document.querySelectorAll('#appScreenDots .app-dot');
   const cards = document.querySelectorAll('#appScreensCarousel .app-screen-card');
+  const prevBtn = document.getElementById('appPrevBtn');
+  const nextBtn = document.getElementById('appNextBtn');
   if (!section || !track || !cards.length) return;
 
-  let isManualInteracting = false;
-  let manualTimeout = null;
+  let manualInteractUntil = 0;
+  let activeCardIndex = 0;
 
+  // Exact card center offset calculation regardless of parent positioning
   function getCardCenterOffset(idx) {
     if (!cards[idx]) return 0;
     const card = cards[idx];
-    return card.offsetLeft - (track.clientWidth - card.clientWidth) / 2;
+    const cardRect = card.getBoundingClientRect();
+    const trackRect = track.getBoundingClientRect();
+    return track.scrollLeft + (cardRect.left - trackRect.left) - (track.clientWidth - card.clientWidth) / 2;
   }
 
   function scrollToCard(idx, smooth = true) {
     idx = Math.max(0, Math.min(cards.length - 1, idx));
+    activeCardIndex = idx;
     const targetLeft = getCardCenterOffset(idx);
     track.scrollTo({ left: targetLeft, behavior: smooth ? 'smooth' : 'auto' });
     updateActiveUI(idx);
   }
 
   function updateActiveUI(idx) {
+    activeCardIndex = idx;
     tabs.forEach((t, i) => t.classList.toggle('active', i === idx));
     dots.forEach((d, i) => d.classList.toggle('active', i === idx));
     cards.forEach((c, i) => c.classList.toggle('active', i === idx));
   }
 
-  // Real-time Page Scroll Sync: Vertical Page Scroll directly drives horizontal screen progression & internal parallax
+  function triggerManualNav(idx) {
+    manualInteractUntil = Date.now() + 4500;
+    scrollToCard(idx, true);
+  }
+
+  // Real-time Page Scroll Sync: Vertical Page Scroll drives horizontal screen progression & internal parallax
   function syncOnPageScroll() {
-    if (isManualInteracting) return;
+    // If user clicked a navigation button (tab, dot, arrow), don't override until manual timer expires
+    if (Date.now() < manualInteractUntil) return;
 
     const rect = section.getBoundingClientRect();
     const vh = window.innerHeight;
@@ -12478,7 +12603,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
     // Viewport visibility window
     if (rect.bottom < -50 || rect.top > vh + 50) return;
 
-    // Calculate progression through #app section
+    // Progression through #app section
     const startY = vh * 0.75;
     const endY = -rect.height * 0.25;
     const totalDist = startY - endY;
@@ -12487,11 +12612,10 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
 
     const maxScroll = track.scrollWidth - track.clientWidth;
     if (maxScroll > 0) {
-      // Direct smooth progression
       const targetScrollLeft = progress * maxScroll;
       const currentScrollLeft = track.scrollLeft;
       const diff = targetScrollLeft - currentScrollLeft;
-      
+
       if (Math.abs(diff) > 1.2) {
         track.scrollLeft += diff * 0.22;
       } else {
@@ -12499,7 +12623,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       }
     }
 
-    // Determine active step index
+    // Determine active card from progression
     let activeIdx = 0;
     if (progress >= 0.62) activeIdx = 2;
     else if (progress >= 0.28) activeIdx = 1;
@@ -12516,45 +12640,60 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
     });
   }
 
-  // Animation frame loop for 60fps buttery smoothness
+  // 60fps render loop
   function renderLoop() {
     syncOnPageScroll();
     requestAnimationFrame(renderLoop);
   }
   requestAnimationFrame(renderLoop);
 
-  // Tab buttons click navigation
+  // Resume page scroll sync immediately if user scrolls page vertically by more than 15px
+  let lastY = window.pageYOffset || document.documentElement.scrollTop;
+  window.addEventListener('scroll', () => {
+    const curY = window.pageYOffset || document.documentElement.scrollTop;
+    if (Math.abs(curY - lastY) > 18) {
+      manualInteractUntil = 0;
+      lastY = curY;
+    }
+  }, { passive: true });
+
+  // 1. Tab buttons click navigation
   tabs.forEach(tab => {
     tab.addEventListener('click', (e) => {
       e.preventDefault();
-      isManualInteracting = true;
-      clearTimeout(manualTimeout);
-      manualTimeout = setTimeout(() => { isManualInteracting = false; }, 2200);
       const idx = parseInt(tab.getAttribute('data-index'), 10) || 0;
-      scrollToCard(idx, true);
+      triggerManualNav(idx);
     });
   });
 
-  // Dot clicks navigation
+  // 2. Pagination Dots click navigation
   dots.forEach(dot => {
     dot.addEventListener('click', (e) => {
       e.preventDefault();
-      isManualInteracting = true;
-      clearTimeout(manualTimeout);
-      manualTimeout = setTimeout(() => { isManualInteracting = false; }, 2200);
       const idx = parseInt(dot.getAttribute('data-index'), 10) || 0;
-      scrollToCard(idx, true);
+      triggerManualNav(idx);
     });
   });
 
-  // User swipe / drag interaction safety
-  track.addEventListener('touchstart', () => {
-    isManualInteracting = true;
-    clearTimeout(manualTimeout);
-  }, { passive: true });
+  // 3. Previous Arrow button click
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      triggerManualNav(Math.max(0, activeCardIndex - 1));
+    });
+  }
 
-  track.addEventListener('touchend', () => {
-    manualTimeout = setTimeout(() => { isManualInteracting = false; }, 2400);
+  // 4. Next Arrow button click
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      triggerManualNav(Math.min(cards.length - 1, activeCardIndex + 1));
+    });
+  }
+
+  // 5. User touch & drag support
+  track.addEventListener('touchstart', () => {
+    manualInteractUntil = Date.now() + 4500;
   }, { passive: true });
 
   let isMouseDown = false;
@@ -12563,8 +12702,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
 
   track.addEventListener('mousedown', (e) => {
     isMouseDown = true;
-    isManualInteracting = true;
-    clearTimeout(manualTimeout);
+    manualInteractUntil = Date.now() + 4500;
     startX = e.pageX - track.offsetLeft;
     startScrollLeft = track.scrollLeft;
   });
@@ -12572,7 +12710,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
   window.addEventListener('mouseup', () => {
     if (isMouseDown) {
       isMouseDown = false;
-      manualTimeout = setTimeout(() => { isManualInteracting = false; }, 2400);
+      manualInteractUntil = Date.now() + 3000;
     }
   });
 
