@@ -9513,23 +9513,24 @@ body.locked .sd {
 }
 
 
+
 /* ==========================================================================
-   PREMIUM CINEMA SCREEN SCROLL POPUP ANIMATION (#screen & #scrn)
+   SILKY SMOOTH LUXURY CINEMA SCREEN POPUP (#screen & #scrn)
    ========================================================================== */
 .scr {
-  height: 220vh !important;
+  height: 140vh !important;
   position: relative !important;
   z-index: 2 !important;
-  border-top: 3px solid rgba(230, 25, 90, 0.4) !important;
-  border-radius: 44px 44px 0 0 !important;
+  border-top: 2px solid rgba(230, 25, 90, 0.25) !important;
+  border-radius: 40px 40px 0 0 !important;
   margin-top: -36px !important;
-  background: #190512 !important;
+  background: #14030d !important;
   overflow: visible !important;
 }
 
 @media (max-width: 860px) {
   .scr {
-    height: 190vh !important;
+    height: 120vh !important;
   }
 }
 
@@ -9539,46 +9540,60 @@ body.locked .sd {
   height: 100vh !important;
   height: 100dvh !important;
   overflow: hidden !important;
-  display: grid !important;
-  place-items: center !important;
-  background: radial-gradient(75% 65% at 50% 38%, #4a0e28 0%, #200615 65%, #12020b 100%) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: radial-gradient(ellipse 70% 60% at 50% 42%, #380a20 0%, #16030e 65%, #0c0108 100%) !important;
+  padding: 0 16px !important;
+  box-sizing: border-box !important;
 }
 
 .beam {
   position: absolute !important;
   inset: 0 !important;
-  background: conic-gradient(from 180deg at 50% -12%, transparent 0 36%, rgba(255, 190, 215, 0.35) 44% 56%, transparent 64%) !important;
+  background: conic-gradient(from 180deg at 50% -12%, transparent 0 38%, rgba(255, 190, 215, 0.28) 45% 55%, transparent 62%) !important;
   pointer-events: none !important;
-  transition: opacity 0.5s ease !important;
+  opacity: 0.6 !important;
+  transition: opacity 0.8s ease !important;
 }
 
+/* Luxury Cinema Screen Card (Silky Smooth Popup Transition) */
 .screen {
   position: relative !important;
-  width: min(90vw, 880px) !important;
+  width: min(92vw, 860px) !important;
   aspect-ratio: 16/9.2 !important;
-  border: 4.5px solid #ffffff !important;
-  border-radius: 30px !important;
-  background: linear-gradient(145deg, #ff5c8a 0%, #e6195a 55%, #9e0e3c 100%) !important;
-  box-shadow: 0 0 100px 20px rgba(230, 25, 90, 0.55), 0 30px 80px rgba(0, 0, 0, 0.8), inset 0 0 40px rgba(255, 255, 255, 0.22) !important;
+  border: 3.5px solid rgba(255, 255, 255, 0.95) !important;
+  border-radius: 28px !important;
+  background: linear-gradient(145deg, #e6195a 0%, #c41248 55%, #880930 100%) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6) !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: clamp(20px, 3.5vw, 42px) !important;
+  padding: clamp(18px, 3.2vw, 38px) !important;
   text-align: center !important;
-  margin-bottom: 10vh !important;
+  margin-bottom: 6vh !important;
   overflow: hidden !important;
-  transform: perspective(1000px) rotateX(10deg) scale(0.82) translateY(50px) !important;
-  opacity: 0.3 !important;
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease, box-shadow 0.5s ease !important;
+
+  /* Rest State: Gently recessed */
+  transform: translateY(42px) scale(0.90) !important;
+  opacity: 0.15 !important;
+
+  /* Signature Apple-grade smooth deceleration curve: NO jitter, NO clashing styles */
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: transform, opacity !important;
 }
 
-/* Popped State triggered by scroll & observer */
+/* Silky Popped State */
 .screen.popped {
-  transform: perspective(1000px) rotateX(0deg) scale(1) translateY(0px) !important;
+  transform: translateY(0px) scale(1) !important;
   opacity: 1 !important;
-  box-shadow: 0 0 120px 25px rgba(255, 42, 109, 0.65), 0 35px 90px rgba(0, 0, 0, 0.85), inset 0 0 45px rgba(255, 255, 255, 0.28) !important;
+  box-shadow: 0 0 90px rgba(230, 25, 90, 0.45),
+              0 25px 70px rgba(0, 0, 0, 0.75),
+              inset 0 0 35px rgba(255, 255, 255, 0.2) !important;
 }
 
 .screen-glass-sheen {
@@ -9586,90 +9601,119 @@ body.locked .sd {
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
-  height: 48% !important;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, transparent 100%) !important;
+  height: 45% !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, transparent 100%) !important;
   pointer-events: none !important;
 }
 
 .screen-cinema-badge {
   font-family: var(--disp) !important;
-  font-size: 11px !important;
+  font-size: 10.5px !important;
   font-weight: 800 !important;
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
   color: #ffd23f !important;
-  background: rgba(30, 6, 20, 0.75) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 210, 63, 0.45) !important;
-  padding: 4px 14px !important;
+  background: rgba(20, 4, 14, 0.75) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 210, 63, 0.4) !important;
+  padding: 3.5px 13px !important;
   border-radius: 999px !important;
-  margin-bottom: 8px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  margin-bottom: 6px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
+  transform: translateY(12px) !important;
+  opacity: 0 !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s, opacity 0.5s ease 0.1s !important;
+}
+
+.screen.popped .screen-cinema-badge {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
 }
 
 .screen-hand {
   font-family: var(--hand) !important;
-  font-size: clamp(24px, 3.2vw, 36px) !important;
+  font-size: clamp(22px, 3vw, 34px) !important;
   color: #fff2b2 !important;
-  margin: 0 0 4px !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+  margin: 0 0 3px !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35) !important;
   line-height: 1 !important;
+  transform: translateY(14px) !important;
+  opacity: 0 !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, opacity 0.5s ease 0.2s !important;
+}
+
+.screen.popped .screen-hand {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
 }
 
 .line3 {
   font-family: var(--disp) !important;
-  font-size: clamp(28px, 5.2vw, 68px) !important;
+  font-size: clamp(26px, 4.8vw, 64px) !important;
   font-weight: 800 !important;
   line-height: 1.12 !important;
   color: #ffffff !important;
-  margin: 0 0 10px !important;
+  margin: 0 0 8px !important;
 }
 
 .wd {
   display: inline-block !important;
-  opacity: 0.3 !important;
-  transform: translateY(16px) scale(0.92) !important;
-  transition: opacity 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), text-shadow 0.4s ease !important;
+  opacity: 0 !important;
+  transform: translateY(18px) !important;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .wd.wd-1 {
   color: #ffffff !important;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4) !important;
+  transition-delay: 0.28s !important;
 }
 
 .wd.wd-2 {
   color: #ffd23f !important;
-  text-shadow: 0 4px 20px rgba(255, 210, 63, 0.4) !important;
+  text-shadow: 0 3px 15px rgba(255, 210, 63, 0.35) !important;
+  transition-delay: 0.42s !important;
 }
 
 .wd.wd-3 {
   background: linear-gradient(135deg, #ffffff 0%, #ffe4ec 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
-  filter: drop-shadow(0 4px 18px rgba(255, 255, 255, 0.5)) !important;
+  filter: drop-shadow(0 3px 14px rgba(255, 255, 255, 0.45)) !important;
+  transition-delay: 0.56s !important;
 }
 
-.wd.on {
+/* Staggered illumination on pop */
+.screen.popped .wd {
   opacity: 1 !important;
-  transform: translateY(0px) scale(1) !important;
+  transform: translateY(0px) !important;
 }
 
 .screen-bottom-pill {
   font-family: var(--disp) !important;
-  font-size: 11px !important;
+  font-size: 10.5px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
   color: #ffffff !important;
-  background: rgba(0, 0, 0, 0.35) !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  padding: 3.5px 12px !important;
+  background: rgba(0, 0, 0, 0.32) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  padding: 3px 11px !important;
   border-radius: 999px !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
+  gap: 5px !important;
   margin-top: 4px !important;
+  transform: translateY(14px) !important;
+  opacity: 0 !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.65s, opacity 0.5s ease 0.65s !important;
+}
+
+.screen.popped .screen-bottom-pill {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
 }
 
 .screen-pulse-dot {
@@ -9677,7 +9721,7 @@ body.locked .sd {
   height: 6px !important;
   background: #28a745 !important;
   border-radius: 50% !important;
-  box-shadow: 0 0 8px #28a745 !important;
+  box-shadow: 0 0 6px #28a745 !important;
   animation: cjPulse 1.8s infinite !important;
 }
 
@@ -9690,37 +9734,37 @@ body.locked .sd {
 
 .scr-p {
   position: absolute !important;
-  font-size: 24px !important;
-  opacity: 0.7 !important;
+  font-size: 22px !important;
+  opacity: 0.6 !important;
   animation: cjFloatBounce 5s ease-in-out infinite alternate !important;
 }
-.scr-p.p1 { top: 18%; left: 8%; animation-duration: 6s; }
-.scr-p.p2 { top: 25%; right: 9%; font-size: 28px !important; animation-duration: 5.2s; }
+.scr-p.p1 { top: 20%; left: 8%; animation-duration: 6s; }
+.scr-p.p2 { top: 26%; right: 9%; font-size: 26px !important; animation-duration: 5.2s; }
 .scr-p.p3 { top: 62%; left: 6%; animation-duration: 6.8s; }
-.scr-p.p4 { top: 58%; right: 7%; animation-duration: 5.5s; }
+.scr-p.p4 { top: 60%; right: 7%; animation-duration: 5.5s; }
 .scr-p.p5 { top: 78%; right: 14%; animation-duration: 7s; }
 
 @media (max-width: 860px) {
   .screen {
     aspect-ratio: 1/0.95 !important;
     padding: 18px 14px !important;
-    border-radius: 24px !important;
-    margin-bottom: 12vh !important;
+    border-radius: 22px !important;
+    margin-bottom: 8vh !important;
   }
   .line3 {
-    font-size: clamp(28px, 7.8vw, 42px) !important;
+    font-size: clamp(26px, 7.5vw, 40px) !important;
     line-height: 1.15 !important;
   }
   .screen-cinema-badge {
-    font-size: 9.5px !important;
-    padding: 3px 10px !important;
+    font-size: 9px !important;
+    padding: 2.5px 9px !important;
   }
   .screen-hand {
-    font-size: 22px !important;
+    font-size: 20px !important;
   }
   .screen-bottom-pill {
-    font-size: 9.5px !important;
-    padding: 3px 9px !important;
+    font-size: 9px !important;
+    padding: 2.5px 8px !important;
   }
 }
 
@@ -12139,24 +12183,14 @@ function updateScrollFX() {
     trackEl.style.transform = `translateX(${-p * Math.max(0, trackEl.scrollWidth - innerWidth)}px)`;
   }
 
-    // Premium Cinema Screen Spring Popup & Staggered Word Reveal
+    // Silky Smooth Cinema Screen Reveal
   if (screenEl && scrnEl) {
     const q = prog(screenEl);
-    if (q > 0.08) {
+    if (q > 0.06 && q < 0.94) {
       scrnEl.classList.add('popped');
-    } else {
+    } else if (q <= 0.02 || q >= 0.98) {
       scrnEl.classList.remove('popped');
     }
-
-    const scaleVal = 0.90 + 0.14 * Math.sin(Math.min(1, Math.max(0, q)) * Math.PI);
-    scrnEl.style.transform = `perspective(1000px) rotateX(${Math.max(0, (1 - q * 3.5)) * 10}deg) scale(${scaleVal.toFixed(3)}) translateY(${Math.max(0, (1 - q * 2.5)) * 28}px)`;
-
-    const w1 = document.querySelector('.wd-1');
-    const w2 = document.querySelector('.wd-2');
-    const w3 = document.querySelector('.wd-3');
-    if (w1) w1.classList.toggle('on', q > 0.12);
-    if (w2) w2.classList.toggle('on', q > 0.28);
-    if (w3) w3.classList.toggle('on', q > 0.44);
   }
 }
 
@@ -13897,7 +13931,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
 })();
 
 
-// Premium IntersectionObserver for #screen to trigger instant spring popup on arrival
+// Silky IntersectionObserver for #screen to trigger smooth popup entry
 (function initScreenPopupObserver() {
   const scrSection = document.getElementById('screen');
   const scrnCard = document.getElementById('scrn');
@@ -13908,15 +13942,14 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           scrnCard.classList.add('popped');
-          const w1 = document.querySelector('.wd-1');
-          const w2 = document.querySelector('.wd-2');
-          const w3 = document.querySelector('.wd-3');
-          setTimeout(() => { if (w1) w1.classList.add('on'); }, 120);
-          setTimeout(() => { if (w2) w2.classList.add('on'); }, 300);
-          setTimeout(() => { if (w3) w3.classList.add('on'); }, 480);
+        } else {
+          // Keep popped while in vicinity, only remove when fully out
+          if (entry.boundingClientRect.top > window.innerHeight) {
+            scrnCard.classList.remove('popped');
+          }
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.15 });
     observer.observe(scrSection);
   }
 })();
