@@ -8772,19 +8772,19 @@ body.locked .sd {
 }
 
 /* ==========================================================================
-   4-STEP CINEMA JOURNEY SCROLL-DRIVEN FRAME ANIMATION STYLES (ANIMATION 2)
+   4-STEP CINEMA JOURNEY SCROLL-DRIVEN FRAME ANIMATION STYLES (LIGHT PINK VIP THEME)
    ========================================================================== */
 .cinema-journey-section {
-  height: 950vh !important;
+  height: 1200vh !important;
   position: relative !important;
   z-index: 2 !important;
-  background: #180812;
+  background: linear-gradient(180deg, #fde8ec 0%, #fbd5df 50%, #f8c3d0 100%) !important;
   transition: background 0.6s ease;
 }
 
 @media (max-width: 860px) {
   .cinema-journey-section {
-    height: 850vh !important;
+    height: 1050vh !important;
   }
 }
 
@@ -8799,7 +8799,7 @@ body.locked .sd {
   flex-direction: column !important;
   justify-content: space-between !important;
   align-items: center !important;
-  padding: calc(90px + env(safe-area-inset-top, 0px)) clamp(16px, 3.2vw, 40px) 16px !important;
+  padding: calc(88px + env(safe-area-inset-top, 0px)) clamp(16px, 3.2vw, 40px) 16px !important;
   box-sizing: border-box !important;
 }
 
@@ -8809,7 +8809,7 @@ body.locked .sd {
   z-index: 0 !important;
   pointer-events: none !important;
   transition: background 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  background: radial-gradient(ellipse at 50% 50%, #351527 0%, #200a16 55%, #15050e 100%) !important;
+  background: radial-gradient(ellipse at 50% 50%, #fff0f3 0%, #fad4df 50%, #f7bed0 100%) !important;
 }
 
 .cj-vignette {
@@ -8817,17 +8817,17 @@ body.locked .sd {
   inset: 0 !important;
   z-index: 1 !important;
   pointer-events: none !important;
-  background: radial-gradient(circle at 50% 50%, transparent 55%, rgba(15, 3, 10, 0.45) 100%) !important;
+  background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(230, 25, 90, 0.06) 100%) !important;
 }
 
 .cj-beam {
   position: absolute !important;
   top: -20% !important;
   left: 50% !important;
-  transform: translateX(-50%) rotate(-12deg) !important;
+  transform: translateX(-50%) rotate(14deg) !important;
   width: 120vw !important;
   height: 60vh !important;
-  background: radial-gradient(ellipse, rgba(255, 42, 109, 0.22) 0%, transparent 70%) !important;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.5) 0%, transparent 70%) !important;
   pointer-events: none !important;
   z-index: 1 !important;
 }
@@ -8838,15 +8838,15 @@ body.locked .sd {
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
   font-family: var(--disp) !important;
-  font-size: clamp(75px, 16vw, 240px) !important;
+  font-size: clamp(80px, 17vw, 240px) !important;
   font-weight: 800 !important;
-  color: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.55) !important;
   letter-spacing: 0.08em !important;
   pointer-events: none !important;
   z-index: 1 !important;
   text-transform: uppercase !important;
   white-space: nowrap !important;
-  transition: opacity 0.4s ease, transform 0.4s ease !important;
+  transition: opacity 0.35s ease, transform 0.35s ease !important;
   user-select: none !important;
 }
 
@@ -8861,10 +8861,10 @@ body.locked .sd {
   position: absolute !important;
   font-size: clamp(16px, 2vw, 28px) !important;
   opacity: 0.65 !important;
-  animation: cjFloat 5.5s ease-in-out infinite alternate !important;
+  animation: cjFloat 5.2s ease-in-out infinite alternate !important;
 }
 .cj-p.p1 { top: 16%; left: 7%; animation-duration: 6.2s; }
-.cj-p.p2 { top: 24%; right: 8%; animation-duration: 4.8s; font-size: 20px !important; }
+.cj-p.p2 { top: 22%; right: 8%; animation-duration: 4.8s; font-size: 20px !important; }
 .cj-p.p3 { top: 60%; left: 5%; animation-duration: 7.2s; }
 .cj-p.p4 { top: 76%; left: 14%; animation-duration: 5.4s; }
 .cj-p.p5 { top: 36%; right: 7%; animation-duration: 6.5s; }
@@ -8874,7 +8874,7 @@ body.locked .sd {
 
 @keyframes cjFloat {
   0% { transform: translateY(0px) rotate(0deg) scale(1); }
-  100% { transform: translateY(-18px) rotate(10deg) scale(1.12); }
+  100% { transform: translateY(-16px) rotate(8deg) scale(1.1); }
 }
 
 /* Header */
@@ -8902,14 +8902,12 @@ body.locked .sd {
   font-weight: 800 !important;
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
-  color: #ff4f86 !important;
-  background: rgba(30, 8, 20, 0.75) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  border: 1.5px solid rgba(255, 79, 134, 0.35) !important;
+  color: var(--rasp) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1.5px solid rgba(230, 25, 90, 0.28) !important;
   padding: 4px 14px !important;
   border-radius: 999px !important;
-  box-shadow: 0 4px 14px rgba(255, 79, 134, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(230, 25, 90, 0.1) !important;
 }
 
 .cj-live-pill {
@@ -8918,26 +8916,24 @@ body.locked .sd {
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
-  color: #00e676 !important;
-  background: rgba(0, 30, 15, 0.75) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  border: 1.5px solid rgba(0, 230, 118, 0.35) !important;
+  color: #1e7e34 !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1.5px solid rgba(40, 167, 69, 0.35) !important;
   padding: 4px 12px !important;
   border-radius: 999px !important;
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px !important;
-  box-shadow: 0 4px 14px rgba(0, 230, 118, 0.15) !important;
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.1) !important;
 }
 
 .cj-pulse-dot {
   width: 6px !important;
   height: 6px !important;
-  background: #00e676 !important;
+  background: #28a745 !important;
   border-radius: 50% !important;
   display: inline-block !important;
-  box-shadow: 0 0 6px #00e676 !important;
+  box-shadow: 0 0 6px #28a745 !important;
   animation: cjPulse 1.8s infinite !important;
 }
 
@@ -8950,13 +8946,13 @@ body.locked .sd {
   font-family: var(--disp) !important;
   font-size: clamp(22px, 3.2vw, 36px) !important;
   font-weight: 800 !important;
-  color: #ffffff !important;
+  color: #2a101b !important;
   line-height: 1.15 !important;
   margin: 0 0 4px !important;
   text-shadow: none !important;
 }
 .cj-title em {
-  color: #ff2a6d !important;
+  color: var(--rasp) !important;
   font-style: normal !important;
   text-shadow: none !important;
 }
@@ -8964,7 +8960,7 @@ body.locked .sd {
 .cj-subtitle {
   font-family: var(--sans) !important;
   font-size: clamp(12px, 1.05vw, 14px) !important;
-  color: rgba(255, 255, 255, 0.75) !important;
+  color: #6d4253 !important;
   margin: 0 0 8px !important;
   max-width: 680px !important;
   margin-left: auto !important;
@@ -8986,73 +8982,20 @@ body.locked .sd {
   padding: 8px 0 !important;
 }
 
-/* Canvas Luxury Presentation */
+/* Canvas Luxury Presentation (NO OVERLAYS BLOCKING THE VIDEO TEXT!) */
 .cj-canvas-card {
   position: relative !important;
   width: clamp(340px, 56vw, 760px) !important;
   aspect-ratio: 16/9 !important;
   max-height: calc(100vh - 300px) !important;
-  border-radius: 26px !important;
-  background: #0d040a !important;
-  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.45), 0 0 45px rgba(255, 42, 109, 0.28) !important;
-  border: 2.5px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 28px !important;
+  background: #ffffff !important;
+  border: 3.5px solid #ffffff !important;
+  box-shadow: 0 22px 60px rgba(230, 25, 90, 0.15), 0 2px 12px rgba(0, 0, 0, 0.04) !important;
   overflow: hidden !important;
   display: flex !important;
   flex-direction: column !important;
   flex-shrink: 0 !important;
-}
-
-.cj-canvas-glass-badge {
-  position: absolute !important;
-  top: 14px !important;
-  left: 14px !important;
-  right: 14px !important;
-  z-index: 5 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  pointer-events: none !important;
-}
-
-.cj-step-tag {
-  font-family: var(--disp) !important;
-  font-size: 11.5px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.06em !important;
-  text-transform: uppercase !important;
-  color: #ffffff !important;
-  background: rgba(20, 6, 14, 0.8) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-  padding: 6px 14px !important;
-  border-radius: 999px !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  transition: all 0.3s ease !important;
-}
-
-.cj-sparkle-dot {
-  color: #ffc233 !important;
-  font-size: 12px !important;
-}
-
-.cj-cinema-tag {
-  font-family: var(--disp) !important;
-  font-size: 11px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.05em !important;
-  text-transform: uppercase !important;
-  color: #ffffff !important;
-  background: linear-gradient(135deg, rgba(255, 42, 109, 0.88) 0%, rgba(230, 0, 92, 0.88) 100%) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  padding: 6px 13px !important;
-  border-radius: 999px !important;
-  border: 1px solid rgba(255, 255, 255, 0.35) !important;
-  box-shadow: 0 6px 18px rgba(230, 25, 90, 0.3) !important;
 }
 
 .cj-canvas-viewport {
@@ -9061,7 +9004,7 @@ body.locked .sd {
   width: 100% !important;
   height: 100% !important;
   min-height: 0 !important;
-  background: #000000 !important;
+  background: #ffffff !important;
 }
 
 .cj-canvas-viewport canvas {
@@ -9080,13 +9023,13 @@ body.locked .sd {
   border-radius: 36px !important;
   pointer-events: none !important;
   z-index: -1 !important;
-  opacity: 0.55 !important;
+  opacity: 0.45 !important;
   transition: background 0.6s ease !important;
-  background: rgba(230, 25, 90, 0.5) !important;
-  filter: blur(28px) !important;
+  background: rgba(230, 25, 90, 0.35) !important;
+  filter: blur(24px) !important;
 }
 
-/* Floating Luxury VIP Story Card */
+/* Floating Luxury VIP Story Card (DELIGHTFUL POPUP ANIMATION) */
 .cj-card-wrap {
   width: clamp(300px, 28vw, 380px) !important;
   position: relative !important;
@@ -9095,15 +9038,34 @@ body.locked .sd {
 }
 
 .cj-story-card {
-  background: rgba(25, 8, 18, 0.88) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
-  border-radius: 24px !important;
+  border-radius: 26px !important;
   padding: clamp(16px, 2.2vw, 24px) !important;
-  border: 2px solid rgba(255, 255, 255, 0.16) !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(255, 42, 109, 0.1) !important;
+  border: 2px solid rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 22px 55px rgba(230, 25, 90, 0.14), 0 2px 10px rgba(0, 0, 0, 0.04) !important;
   box-sizing: border-box !important;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease !important;
+}
+
+@keyframes cjPopup {
+  0% {
+    opacity: 0.5;
+    transform: translateY(14px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.cj-story-card.popup-bounce {
+  animation: cjPopup 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .cj-card-top-ribbon {
@@ -9118,9 +9080,9 @@ body.locked .sd {
   font-size: 10.5px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
-  color: #ff4f86 !important;
-  background: rgba(255, 42, 109, 0.15) !important;
-  border: 1px solid rgba(255, 42, 109, 0.3) !important;
+  color: var(--rasp) !important;
+  background: rgba(230, 25, 90, 0.09) !important;
+  border: 1px solid rgba(230, 25, 90, 0.22) !important;
   padding: 3px 10px !important;
   border-radius: 999px !important;
   display: inline-flex !important;
@@ -9131,7 +9093,7 @@ body.locked .sd {
 .cj-status-dot {
   width: 5px !important;
   height: 5px !important;
-  background: #ff4f86 !important;
+  background: var(--rasp) !important;
   border-radius: 50% !important;
   display: inline-block !important;
 }
@@ -9140,7 +9102,7 @@ body.locked .sd {
   font-family: var(--disp) !important;
   font-size: 12px !important;
   font-weight: 800 !important;
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: var(--mut) !important;
   letter-spacing: 0.06em !important;
 }
 
@@ -9156,35 +9118,35 @@ body.locked .sd {
   font-family: var(--disp) !important;
   font-size: 11.5px !important;
   font-weight: 800 !important;
-  color: #ffffff !important;
-  background: rgba(230, 25, 90, 0.22) !important;
+  color: var(--deep) !important;
+  background: #fdf2f5 !important;
   padding: 3px 10px !important;
   border-radius: 999px !important;
-  border: 1px solid rgba(230, 25, 90, 0.35) !important;
+  border: 1px solid rgba(230, 25, 90, 0.16) !important;
 }
 
 .cj-card-chip {
   font-family: var(--disp) !important;
   font-size: 11px !important;
   font-weight: 800 !important;
-  color: #ffc233 !important;
-  background: rgba(255, 194, 51, 0.15) !important;
+  color: #b75500 !important;
+  background: #fff8e6 !important;
   padding: 3px 9px !important;
   border-radius: 999px !important;
-  border: 1px solid rgba(255, 194, 51, 0.3) !important;
+  border: 1px solid rgba(255, 194, 51, 0.35) !important;
 }
 
 .cj-card-title {
   font-family: var(--disp) !important;
   font-size: clamp(20px, 2.2vw, 26px) !important;
   font-weight: 800 !important;
-  color: #ffffff !important;
+  color: var(--deep) !important;
   line-height: 1.2 !important;
   margin: 0 0 6px !important;
   text-shadow: none !important;
 }
 .cj-card-title em {
-  color: #ff2a6d !important;
+  color: var(--rasp) !important;
   font-style: normal !important;
   text-shadow: none !important;
 }
@@ -9192,15 +9154,15 @@ body.locked .sd {
 .cj-card-desc {
   font-family: var(--sans) !important;
   font-size: 13px !important;
-  color: rgba(255, 255, 255, 0.78) !important;
+  color: #555555 !important;
   line-height: 1.45 !important;
   margin: 0 0 12px !important;
 }
 
 /* Feature Perks Box */
 .cj-features-box {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: rgba(250, 240, 244, 0.75) !important;
+  border: 1px solid rgba(230, 25, 90, 0.12) !important;
   border-radius: 14px !important;
   padding: 9px 12px !important;
   margin-bottom: 14px !important;
@@ -9212,7 +9174,7 @@ body.locked .sd {
   font-size: 10px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--mut) !important;
   margin-bottom: 5px !important;
 }
 
@@ -9226,9 +9188,9 @@ body.locked .sd {
   font-family: var(--disp) !important;
   font-size: 11px !important;
   font-weight: 800 !important;
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.12) !important;
-  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: var(--deep) !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(230, 25, 90, 0.14) !important;
   padding: 2.5px 8px !important;
   border-radius: 999px !important;
 }
@@ -9239,7 +9201,7 @@ body.locked .sd {
   justify-content: space-between !important;
   gap: 12px !important;
   padding-top: 10px !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
 }
 
 .cj-card-delivery {
@@ -9249,7 +9211,7 @@ body.locked .sd {
   font-family: var(--disp) !important;
   font-size: 11px !important;
   font-weight: 800 !important;
-  color: #00e676 !important;
+  color: #1e7e34 !important;
 }
 .cj-del-icon {
   font-size: 14px !important;
@@ -9294,13 +9256,13 @@ body.locked .sd {
   align-items: center !important;
   justify-content: center !important;
   gap: 8px !important;
-  background: rgba(30, 8, 20, 0.82) !important;
+  background: rgba(255, 255, 255, 0.88) !important;
   backdrop-filter: blur(14px) !important;
   -webkit-backdrop-filter: blur(14px) !important;
   padding: 6px 10px !important;
   border-radius: 999px !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 10px 30px rgba(42, 12, 28, 0.08) !important;
   max-width: 100% !important;
   overflow-x: auto !important;
   scrollbar-width: none !important;
@@ -9320,14 +9282,14 @@ body.locked .sd {
   font-family: var(--disp) !important;
   font-size: 12px !important;
   font-weight: 800 !important;
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: var(--mut) !important;
   cursor: pointer !important;
   white-space: nowrap !important;
   transition: all 0.22s ease !important;
 }
 .cj-rail-btn:hover {
-  color: #ffffff !important;
-  background: rgba(255, 42, 109, 0.15) !important;
+  color: var(--deep) !important;
+  background: rgba(230, 25, 90, 0.08) !important;
 }
 .cj-rail-btn.active {
   color: #ffffff !important;
@@ -9347,7 +9309,7 @@ body.locked .sd {
 .cj-timeline-track {
   width: 100% !important;
   height: 5px !important;
-  background: rgba(255, 255, 255, 0.15) !important;
+  background: rgba(42, 12, 28, 0.12) !important;
   border-radius: 999px !important;
   overflow: hidden !important;
 }
@@ -9370,16 +9332,16 @@ body.locked .sd {
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: var(--mut) !important;
   opacity: 1 !important;
   transition: opacity 0.3s ease !important;
   pointer-events: none !important;
 }
 
-/* Responsive Mobile */
+/* Responsive Mobile (Ensuring ample clearance for the fixed store dock!) */
 @media (max-width: 980px) {
   .cj-stick {
-    padding: calc(82px + env(safe-area-inset-top, 0px)) 12px 10px !important;
+    padding: calc(78px + env(safe-area-inset-top, 0px)) 12px calc(88px + env(safe-area-inset-bottom, 0px)) !important;
   }
   .cj-header {
     margin-bottom: 2px !important;
@@ -9412,22 +9374,9 @@ body.locked .sd {
   .cj-canvas-card {
     width: 100% !important;
     max-width: 440px !important;
-    max-height: 27vh !important;
+    max-height: 30vh !important;
     aspect-ratio: 16/9 !important;
-    border-radius: 18px !important;
-  }
-  .cj-canvas-glass-badge {
-    top: 8px !important;
-    left: 8px !important;
-    right: 8px !important;
-  }
-  .cj-step-tag {
-    font-size: 10px !important;
-    padding: 4px 10px !important;
-  }
-  .cj-cinema-tag {
-    font-size: 9.5px !important;
-    padding: 4px 9px !important;
+    border-radius: 20px !important;
   }
   .cj-card-wrap {
     width: 100% !important;
@@ -9504,7 +9453,6 @@ body.locked .sd {
     padding: 2.5px 9px !important;
   }
 }
-
 </style></head><body class="locked"><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
 <div class="g-projector-beam" aria-hidden="true"></div>
 <div class="g-ambient-glow" aria-hidden="true"></div>
@@ -10218,7 +10166,7 @@ body.locked .sd {
 
 <section class="cinema-journey-section" id="story" aria-label="The 4-Step Cinema Journey">
   <div class="cj-stick" id="cjStick">
-    <!-- Dynamic Ambient Cinema Aura & Lighting Effects -->
+    <!-- Dynamic Ambient Cinema Aura & Lighting Effects (Light Pink Theme) -->
     <div class="cj-bg-aura" id="cjBgAura" aria-hidden="true"></div>
     <div class="cj-vignette" aria-hidden="true"></div>
     <div class="cj-beam" aria-hidden="true"></div>
@@ -10234,7 +10182,7 @@ body.locked .sd {
       <span class="cj-p p4">🍿</span>
       <span class="cj-p p5">📱</span>
       <span class="cj-p p6">🔥</span>
-      <span class="cj-p p7">🥤</span>
+      <span class="cj-p p7">💖</span>
       <span class="cj-p p8">✨</span>
     </div>
 
@@ -10250,19 +10198,15 @@ body.locked .sd {
 
     <!-- Central Interactive Cinema Stage -->
     <div class="cj-stage" id="cjStage">
-      <!-- High-DPI Cinema Journey Frame Animation Canvas -->
+      <!-- High-DPI Cinema Journey Frame Animation Canvas (Clean & 100% Unobstructed) -->
       <div class="cj-canvas-card">
-        <div class="cj-canvas-glass-badge">
-          <div class="cj-step-tag"><span class="cj-sparkle-dot">✦</span> <span id="cjStepBadge">STEP 01 · SCAN QR AT SEAT</span></div>
-          <div class="cj-cinema-tag">💺 Cinema Recliner Service</div>
-        </div>
         <div class="cj-canvas-viewport">
           <canvas id="journeyAnimCanvas"></canvas>
         </div>
         <div class="cj-canvas-glow" id="cjCanvasGlow" aria-hidden="true"></div>
       </div>
 
-      <!-- Luxury Floating VIP Journey Story Card -->
+      <!-- Luxury Floating VIP Journey Story Card (WITH BOUNCY POPUP ANIMATION) -->
       <div class="cj-card-wrap">
         <div class="cj-story-card" id="cjStoryCard">
           <div class="cj-card-top-ribbon">
@@ -10307,7 +10251,7 @@ body.locked .sd {
       <div class="cj-scrub-rail" id="cjScrubRail" aria-label="Jump to cinema journey step">
         <button type="button" class="cj-rail-btn active" data-frame="25" data-step="0"><span class="cj-btn-icon">🎟️</span><span class="cj-btn-label">01. Scan QR</span></button>
         <button type="button" class="cj-rail-btn" data-frame="90" data-step="1"><span class="cj-btn-icon">📱</span><span class="cj-btn-label">02. Get App</span></button>
-        <button type="button" class="cj-rail-btn" data-frame="175" data-step="2"><span class="cj-btn-icon">🍕</span><span class="cj-btn-label">03. Order Food</span></button>
+        <button type="button" class="cj-rail-btn" data-frame="175" data-step="2"><span class="cj-btn-icon">🍔</span><span class="cj-btn-label">03. Order Food</span></button>
         <button type="button" class="cj-rail-btn" data-frame="265" data-step="3"><span class="cj-btn-icon">🍿</span><span class="cj-btn-label">04. In-Seat Drop</span></button>
       </div>
 
@@ -13328,7 +13272,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
 })();
 
 /* ==========================================================================
-   CINEMA JOURNEY FRAME-BY-FRAME CANVAS SCROLL CONTROLLER (ANIMATION 2)
+   CINEMA JOURNEY FRAME-BY-FRAME CANVAS SCROLL CONTROLLER (LIGHT PINK THEME)
    ========================================================================== */
 (function initCinemaJourneyShowcase() {
   const TOTAL_FRAMES = 300;
@@ -13343,7 +13287,6 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
   const watermark = document.getElementById('cjWatermark');
   const stepNum = document.getElementById('cjStepNum');
   const stepStatus = document.getElementById('cjStepStatus');
-  const stepBadge = document.getElementById('cjStepBadge');
   const cardTag = document.getElementById('cjCardTag');
   const cardChip = document.getElementById('cjCardChip');
   const cardTitle = document.getElementById('cjCardTitle');
@@ -13353,12 +13296,12 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
   const timelineFill = document.getElementById('cjTimelineFill');
   const scrollHint = document.getElementById('cjScrollHint');
   const railBtns = document.querySelectorAll('.cj-rail-btn');
+  const storyCard = document.getElementById('cjStoryCard');
 
   const STEPS = [
     {
       num: '01 / 04',
       status: 'MOMENT 01',
-      badge: 'STEP 01 · SCAN QR AT SEAT',
       watermark: 'SCAN QR',
       startFrame: 0,
       endFrame: 65,
@@ -13368,13 +13311,12 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       desc: 'Sink into your plush cinema recliner. Point your phone camera at the QR code on your seat armrest for instant seat-side linkage.',
       features: ['🎟️ Seat-Side QR', '💺 VIP Recliner', '✨ Zero Waiting'],
       footerHint: 'Instant seat pairing with kitchen',
-      aura: 'radial-gradient(ellipse at 50% 50%, #351527 0%, #200a16 55%, #15050e 100%)',
-      glow: 'rgba(255, 42, 109, 0.5)'
+      aura: 'radial-gradient(ellipse at 50% 50%, #fff0f3 0%, #fad4df 50%, #f7bed0 100%)',
+      glow: 'rgba(230, 25, 90, 0.35)'
     },
     {
       num: '02 / 04',
       status: 'MOMENT 02',
-      badge: 'STEP 02 · DOWNLOAD & LAUNCH APP',
       watermark: 'GET APP',
       startFrame: 66,
       endFrame: 128,
@@ -13384,13 +13326,12 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       desc: 'The Love Cafe app opens in a flash with live theatre seat mapping and your multiplex’s complete gourmet kitchen menu.',
       features: ['⚡ 1-Tap Access', '🎬 Dolby Atmos Ready', '📱 Instant Seat Sync'],
       footerHint: 'No sign-up hassle during previews',
-      aura: 'radial-gradient(ellipse at 50% 50%, #fdf5ea 0%, #f7dfcb 55%, #edd0b7 100%)',
-      glow: 'rgba(255, 179, 0, 0.45)'
+      aura: 'radial-gradient(ellipse at 50% 50%, #fff5e8 0%, #fedebb 50%, #fbc2a8 100%)',
+      glow: 'rgba(255, 179, 0, 0.4)'
     },
     {
       num: '03 / 04',
       status: 'MOMENT 03',
-      badge: 'STEP 03 · 1-TAP IN-SEAT ORDER',
       watermark: 'ORDER',
       startFrame: 129,
       endFrame: 225,
@@ -13400,13 +13341,12 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       desc: 'Browse steaming smash burgers, 48-hour sourdough pizza, crispy momos, loaded popcorn & cold boba. 1-tap checkout.',
       features: ['🍔 Smash Burgers', '🍕 Woodfired Pizza', '🧋 Cold Boba'],
       footerHint: 'Order sent straight to master chef',
-      aura: 'radial-gradient(ellipse at 50% 50%, #eef6ec 0%, #d8ebd2 55%, #c8dec1 100%)',
-      glow: 'rgba(76, 175, 80, 0.45)'
+      aura: 'radial-gradient(ellipse at 50% 50%, #edf8ee 0%, #d4eed2 50%, #bee1bc 100%)',
+      glow: 'rgba(76, 175, 80, 0.4)'
     },
     {
       num: '04 / 04',
       status: 'MOMENT 04',
-      badge: 'STEP 04 · VIP SEAT DROP & ENJOY',
       watermark: 'DELIVERY',
       startFrame: 226,
       endFrame: 299,
@@ -13416,8 +13356,8 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       desc: 'Silently delivered under a gleaming silver cloche right to your seat tray in ~10 minutes. Movie on, hunger off!',
       features: ['⚡ ~10m In-Seat Drop', '🛎️ Silver Cloche VIP', '🍿 Fresh & Hot Guarantee'],
       footerHint: 'Delivered silently without disturbing movie',
-      aura: 'radial-gradient(ellipse at 50% 50%, #2f1323 0%, #1c0814 55%, #10030c 100%)',
-      glow: 'rgba(230, 25, 90, 0.55)'
+      aura: 'radial-gradient(ellipse at 50% 50%, #fde8ec 0%, #fad0dc 50%, #f6b5c7 100%)',
+      glow: 'rgba(230, 25, 90, 0.45)'
     }
   ];
 
@@ -13488,14 +13428,13 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       lastDrawnFrame = frameIdx;
     }
 
-    // Update Story Card & Step Info
+    // Update Story Card & Step Info with Popup Bouncy Animation
     const stepIdx = STEPS.findIndex(s => frameIdx >= s.startFrame && frameIdx <= s.endFrame);
     if (stepIdx !== -1 && stepIdx !== currentStepIdx) {
       currentStepIdx = stepIdx;
       const s = STEPS[stepIdx];
       if (stepNum) stepNum.textContent = s.num;
       if (stepStatus) stepStatus.textContent = s.status;
-      if (stepBadge) stepBadge.textContent = s.badge;
       if (cardTag) cardTag.textContent = s.tag;
       if (cardChip) cardChip.textContent = s.chip;
       if (cardTitle) cardTitle.innerHTML = s.title;
@@ -13508,6 +13447,13 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       // Update Features Tags
       if (featTags && s.features) {
         featTags.innerHTML = s.features.map(f => `<span class="cj-feat-tag">${f}</span>`).join('');
+      }
+
+      // Trigger bouncy pop-up animation on card!
+      if (storyCard) {
+        storyCard.classList.remove('popup-bounce');
+        void storyCard.offsetWidth; // trigger reflow
+        storyCard.classList.add('popup-bounce');
       }
 
       railBtns.forEach((btn, idx) => {
@@ -13569,9 +13515,9 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       });
     });
   }
-  setTimeout(processQueue, 120);
+  setTimeout(processQueue, 100);
 
-  // Scroll Sync with Gentle Lerp for Slow, Cinematic Scrubbing
+  // Scroll Sync with Gentle Lerp for Slower, Relaxed, Cinematic Scrubbing
   let targetFrame = 0;
   let currentFrame = 0;
 
@@ -13597,7 +13543,8 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
   function animLoop() {
     const diff = targetFrame - currentFrame;
     if (Math.abs(diff) > 0.04) {
-      currentFrame += diff * 0.11;
+      // Slower, silky 0.08 damping for peaceful frame progression on scroll
+      currentFrame += diff * 0.08;
       renderFrameAt(currentFrame, false);
     }
     requestAnimationFrame(animLoop);
@@ -13625,8 +13572,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
   });
 
   // Initial render setup
-  setTimeout(resizeCanvas, 60);
+  setTimeout(resizeCanvas, 50);
 })();
-
 </script>
 </body></html>
