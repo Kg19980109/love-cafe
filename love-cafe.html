@@ -13107,6 +13107,33 @@ html {
   box-shadow: 0 6px 0 #2a1820 !important;
 }
 
+
+/* ==========================================================================
+   GLOBAL CINEMATIC SCROLL PACING AUDIT: SLOW, COMFORTABLE & EXPERIENTIAL
+   (Guarantees each section has ample height so users never skip 3-4 sections)
+   ========================================================================== */
+.app-showcase-section,
+.cinemas-showcase-section,
+.reviews-showcase-section,
+.cinepoints-master-section,
+.why-us-section {
+  min-height: clamp(680px, 85vh, 920px) !important;
+  padding-top: clamp(75px, 8.5vw, 115px) !important;
+  padding-bottom: clamp(75px, 8.5vw, 115px) !important;
+  scroll-margin-top: 80px !important;
+}
+
+.cinema-film-roll-section {
+  padding-top: clamp(65px, 7.5vw, 95px) !important;
+  padding-bottom: clamp(65px, 7.5vw, 95px) !important;
+  scroll-margin-top: 80px !important;
+}
+
+/* Ensure smooth, steady scroll-behavior across viewports */
+html {
+  scroll-behavior: auto !important; /* Managed by Lenis at custom 0.38 velocity */
+}
+
 </style></head><body class="locked">
 <!-- Cartoony Retro Cinema Scroll Progress Bar & Mascot -->
 <div class="retro-scroll-progress-wrap" id="retroScrollProgressWrap" aria-hidden="true">
@@ -15927,13 +15954,14 @@ let lenis = null;
 try {
   if (typeof Lenis !== 'undefined' && !reduce) {
     lenis = new Lenis({
-      duration: 1.25,
+      duration: 1.85, // Slower, relaxed cinematic glide
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.85,
-      touchMultiplier: 0.85,
+      wheelMultiplier: 0.38, // Crucial: Cut wheel travel by ~60% so one scroll tick moves gently, never skipping sections
+      touchMultiplier: 0.45, // Crucial: Cut touch swipe travel so mobile flicks don't fling across 3-4 sections
+      touchInertiaMultiplier: 8, // Low inertia momentum prevents runaway flings
       infinite: false,
     });
     window.lenis = lenis;
