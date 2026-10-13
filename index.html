@@ -9601,259 +9601,439 @@ body.locked .sd {
 }
 
 /* ==========================================================================
-   SILKY SMOOTH LUXURY CINEMA SCREEN POPUP (#screen & #scrn)
+   WHY CHOOSE LOVE CAFE (#why-us) — GRAPHICAL, COLORFUL & ATTRACTIVE SHOWCASE
    ========================================================================== */
-.scr {
-  height: 140vh !important;
+.why-us-section {
   position: relative !important;
-  z-index: 2 !important;
-  border-top: 2px solid rgba(230, 25, 90, 0.25) !important;
-  border-radius: 40px 40px 0 0 !important;
-  margin-top: -36px !important;
-  background: #14030d !important;
-  overflow: visible !important;
-}
-
-@media (max-width: 860px) {
-  .scr {
-    height: 120vh !important;
-  }
-}
-
-.scr-stick {
-  position: sticky !important;
-  top: 0 !important;
-  height: 100vh !important;
-  height: 100dvh !important;
+  background: radial-gradient(ellipse 85% 50% at 50% 0%, rgba(255, 42, 109, 0.25) 0%, transparent 65%),
+              radial-gradient(circle at 85% 60%, rgba(255, 210, 63, 0.16) 0%, transparent 50%),
+              radial-gradient(circle at 15% 70%, rgba(186, 104, 200, 0.18) 0%, transparent 50%),
+              linear-gradient(180deg, #150310 0%, #24081b 50%, #13020e 100%) !important;
+  padding: clamp(65px, 8vw, 105px) clamp(16px, 4vw, 48px) !important;
+  color: #ffffff !important;
   overflow: hidden !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background: radial-gradient(ellipse 70% 60% at 50% 42%, #380a20 0%, #16030e 65%, #0c0108 100%) !important;
-  padding: 0 16px !important;
-  box-sizing: border-box !important;
+  z-index: 4 !important;
+  border-top: 3px solid rgba(255, 42, 109, 0.3) !important;
+  scroll-margin-top: 70px !important;
 }
 
-.beam {
+.wu-bg-glow {
+  position: absolute !important;
+  top: 15% !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: min(100%, 1200px) !important;
+  height: 480px !important;
+  background: radial-gradient(ellipse 60% 40% at 50% 50%, rgba(255, 42, 109, 0.18) 0%, rgba(255, 210, 63, 0.08) 50%, transparent 100%) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.wu-ambient-particles {
   position: absolute !important;
   inset: 0 !important;
-  background: conic-gradient(from 180deg at 50% -12%, transparent 0 38%, rgba(255, 190, 215, 0.28) 45% 55%, transparent 62%) !important;
   pointer-events: none !important;
-  opacity: 0.6 !important;
-  transition: opacity 0.8s ease !important;
+  z-index: 1 !important;
 }
 
-/* Luxury Cinema Screen Card (Silky Smooth Popup Transition) */
-.screen {
+.wu-part {
+  position: absolute !important;
+  font-size: 20px !important;
+  opacity: 0.25 !important;
+  animation: cjFloatBounce 7s ease-in-out infinite alternate !important;
+}
+.wu-part.p1 { top: 12%; left: 8%; }
+.wu-part.p2 { top: 22%; right: 10%; font-size: 26px !important; }
+.wu-part.p3 { bottom: 18%; left: 12%; font-size: 22px !important; }
+.wu-part.p4 { bottom: 25%; right: 8%; }
+.wu-part.p5 { top: 55%; left: 4%; font-size: 18px !important; }
+
+.wu-container {
+  max-width: 1240px !important;
+  margin: 0 auto !important;
   position: relative !important;
-  width: min(92vw, 860px) !important;
-  aspect-ratio: 16/9.2 !important;
-  border: 3.5px solid rgba(255, 255, 255, 0.95) !important;
-  border-radius: 28px !important;
-  background: linear-gradient(145deg, #e6195a 0%, #c41248 55%, #880930 100%) !important;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6) !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: clamp(32px, 4.5vw, 54px) !important;
+}
+
+/* Header */
+.wu-header {
+  text-align: center !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  justify-content: center !important;
-  padding: clamp(18px, 3.2vw, 38px) !important;
-  text-align: center !important;
-  margin-bottom: 6vh !important;
-  overflow: hidden !important;
-
-  /* Rest State: Gently recessed */
-  transform: translateY(42px) scale(0.90) !important;
-  opacity: 0.15 !important;
-
-  /* Signature Apple-grade smooth deceleration curve: NO jitter, NO clashing styles */
-  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  will-change: transform, opacity !important;
+  gap: 12px !important;
+  max-width: 860px !important;
+  margin: 0 auto !important;
 }
 
-/* Silky Popped State */
-.screen.popped {
-  transform: translateY(0px) scale(1) !important;
-  opacity: 1 !important;
-  box-shadow: 0 0 90px rgba(230, 25, 90, 0.45),
-              0 25px 70px rgba(0, 0, 0, 0.75),
-              inset 0 0 35px rgba(255, 255, 255, 0.2) !important;
-}
-
-.screen-glass-sheen {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 45% !important;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, transparent 100%) !important;
-  pointer-events: none !important;
-}
-
-.screen-cinema-badge {
-  font-family: var(--disp) !important;
-  font-size: 10.5px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.12em !important;
-  text-transform: uppercase !important;
-  color: #ffd23f !important;
-  background: rgba(20, 4, 14, 0.75) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  border: 1px solid rgba(255, 210, 63, 0.4) !important;
-  padding: 3.5px 13px !important;
+.wu-pill-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1.5px solid rgba(255, 120, 160, 0.35) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   border-radius: 999px !important;
-  margin-bottom: 6px !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
-  transform: translateY(12px) !important;
-  opacity: 0 !important;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s, opacity 0.5s ease 0.1s !important;
-}
-
-.screen.popped .screen-cinema-badge {
-  transform: translateY(0) !important;
-  opacity: 1 !important;
-}
-
-.screen-hand {
-  font-family: var(--hand) !important;
-  font-size: clamp(22px, 3vw, 34px) !important;
-  color: #fff2b2 !important;
-  margin: 0 0 3px !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35) !important;
-  line-height: 1 !important;
-  transform: translateY(14px) !important;
-  opacity: 0 !important;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s, opacity 0.5s ease 0.2s !important;
-}
-
-.screen.popped .screen-hand {
-  transform: translateY(0) !important;
-  opacity: 1 !important;
-}
-
-.line3 {
+  padding: 6px 18px !important;
   font-family: var(--disp) !important;
-  font-size: clamp(26px, 4.8vw, 64px) !important;
+  font-size: 11.5px !important;
   font-weight: 800 !important;
-  line-height: 1.12 !important;
+  color: #ff9bb9 !important;
+  letter-spacing: 0.06em !important;
+  box-shadow: 0 4px 16px rgba(255, 42, 109, 0.15) !important;
+}
+
+.wu-title {
+  font-family: var(--disp) !important;
+  font-size: clamp(32px, 4.5vw, 56px) !important;
+  line-height: 1.08 !important;
   color: #ffffff !important;
-  margin: 0 0 8px !important;
+  margin: 0 !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.02em !important;
+  text-shadow: none !important;
 }
 
-.wd {
-  display: inline-block !important;
-  opacity: 0 !important;
-  transform: translateY(18px) !important;
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.wd.wd-1 {
-  color: #ffffff !important;
-  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4) !important;
-  transition-delay: 0.28s !important;
-}
-
-.wd.wd-2 {
-  color: #ffd23f !important;
-  text-shadow: 0 3px 15px rgba(255, 210, 63, 0.35) !important;
-  transition-delay: 0.42s !important;
-}
-
-.wd.wd-3 {
-  background: linear-gradient(135deg, #ffffff 0%, #ffe4ec 100%) !important;
+.wu-title em {
+  background: linear-gradient(135deg, #ff7eb3 0%, #ff2a6d 50%, #ffd23f 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
-  filter: drop-shadow(0 3px 14px rgba(255, 255, 255, 0.45)) !important;
-  transition-delay: 0.56s !important;
+  font-style: italic !important;
+  text-shadow: none !important;
 }
 
-/* Staggered illumination on pop */
-.screen.popped .wd {
-  opacity: 1 !important;
-  transform: translateY(0px) !important;
+.wu-subtitle {
+  font-family: var(--sans) !important;
+  font-size: clamp(14px, 1.3vw, 17px) !important;
+  color: #ffd8e4 !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+  max-width: 68ch !important;
 }
 
-.screen-bottom-pill {
+/* 4 Trust Metric Cards Bar */
+.wu-metrics-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+}
+
+.wu-metric-card {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-radius: 20px !important;
+  padding: 16px 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3) !important;
+  transition: transform 0.25s ease, border-color 0.25s ease !important;
+}
+
+.wu-metric-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(255, 42, 109, 0.45) !important;
+}
+
+.wu-metric-icon {
+  font-size: 26px !important;
+  flex-shrink: 0 !important;
+}
+
+.wu-metric-info {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+.wu-metric-val {
   font-family: var(--disp) !important;
-  font-size: 10.5px !important;
+  font-size: clamp(18px, 1.8vw, 22px) !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  line-height: 1 !important;
+}
+
+.wu-metric-lbl {
+  font-size: 11px !important;
+  color: #ffb8cc !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+}
+
+/* 4 Core Pillars Grid */
+.wu-cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: clamp(20px, 3vw, 32px) !important;
+}
+
+.wu-card {
+  border-radius: 26px !important;
+  padding: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
+  box-sizing: border-box !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+.wu-card:hover {
+  transform: translateY(-6px) scale(1.01) !important;
+}
+
+/* Card 1: Coral / Sunset Amber */
+.wu-card-coral {
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 87, 34, 0.12) 50%, rgba(25, 4, 15, 0.8) 100%) !important;
+  border: 2px solid rgba(255, 107, 74, 0.4) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 87, 34, 0.15) !important;
+}
+.wu-card-coral .wu-card-tag { color: #ff8a65 !important; border-color: rgba(255, 107, 74, 0.35) !important; }
+.wu-card-coral:hover { box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5), 0 0 45px rgba(255, 87, 34, 0.3) !important; border-color: #ff6b4a !important; }
+
+/* Card 2: Marquee Butter Gold */
+.wu-card-gold {
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.1) 0%, rgba(245, 158, 11, 0.12) 50%, rgba(25, 4, 15, 0.8) 100%) !important;
+  border: 2px solid rgba(245, 158, 11, 0.4) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(245, 158, 11, 0.15) !important;
+}
+.wu-card-gold .wu-card-tag { color: #ffd23f !important; border-color: rgba(245, 158, 11, 0.35) !important; }
+.wu-card-gold:hover { box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5), 0 0 45px rgba(245, 158, 11, 0.3) !important; border-color: #f59e0b !important; }
+
+/* Card 3: Royal Violet Lounge */
+.wu-card-violet {
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.1) 0%, rgba(168, 85, 247, 0.12) 50%, rgba(25, 4, 15, 0.8) 100%) !important;
+  border: 2px solid rgba(168, 85, 247, 0.4) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(168, 85, 247, 0.15) !important;
+}
+.wu-card-violet .wu-card-tag { color: #d8b4fe !important; border-color: rgba(168, 85, 247, 0.35) !important; }
+.wu-card-violet:hover { box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5), 0 0 45px rgba(168, 85, 247, 0.3) !important; border-color: #a855f7 !important; }
+
+/* Card 4: Emerald Mint & Berry */
+.wu-card-emerald {
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.1) 0%, rgba(16, 185, 129, 0.12) 50%, rgba(25, 4, 15, 0.8) 100%) !important;
+  border: 2px solid rgba(16, 185, 129, 0.4) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(16, 185, 129, 0.15) !important;
+}
+.wu-card-emerald .wu-card-tag { color: #6ee7b7 !important; border-color: rgba(16, 185, 129, 0.35) !important; }
+.wu-card-emerald:hover { box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5), 0 0 45px rgba(16, 185, 129, 0.3) !important; border-color: #10b981 !important; }
+
+.wu-card-tag {
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
-  color: #ffffff !important;
-  background: rgba(0, 0, 0, 0.32) !important;
-  border: 1px solid rgba(255, 255, 255, 0.22) !important;
-  padding: 3px 11px !important;
+  padding: 4px 12px !important;
   border-radius: 999px !important;
+  border: 1px solid !important;
+  width: fit-content !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Card Media Graphic Wrap */
+.wu-card-graphic-wrap {
+  position: relative !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  aspect-ratio: 16 / 9 !important;
+  background: #190513 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.wu-card-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.45s ease !important;
+}
+
+.wu-card:hover .wu-card-img {
+  transform: scale(1.06) !important;
+}
+
+.wu-img-badge {
+  position: absolute !important;
+  bottom: 10px !important;
+  right: 10px !important;
+  background: rgba(15, 3, 10, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(8px) !important;
+  border-radius: 8px !important;
+  padding: 4px 10px !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #fff !important;
+}
+
+/* Card Content */
+.wu-card-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.wu-card-heading {
+  font-family: var(--disp) !important;
+  font-size: clamp(19px, 2vw, 24px) !important;
+  line-height: 1.2 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  font-weight: 800 !important;
+}
+
+.wu-card-text {
+  font-family: var(--sans) !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  color: #ffd8e4 !important;
+  margin: 0 !important;
+}
+
+.wu-card-perks {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 4px !important;
+}
+
+.wu-chip {
   display: inline-flex !important;
   align-items: center !important;
   gap: 5px !important;
-  margin-top: 4px !important;
-  transform: translateY(14px) !important;
-  opacity: 0 !important;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.65s, opacity 0.5s ease 0.65s !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 8px !important;
+  padding: 4px 10px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #ffe6ee !important;
 }
 
-.screen.popped .screen-bottom-pill {
-  transform: translateY(0) !important;
-  opacity: 1 !important;
+/* Bottom Strip */
+.wu-bottom-strip {
+  background: linear-gradient(135deg, rgba(255, 42, 109, 0.15) 0%, rgba(255, 210, 63, 0.08) 50%, rgba(255, 255, 255, 0.05) 100%) !important;
+  border: 2px solid rgba(255, 120, 160, 0.3) !important;
+  backdrop-filter: blur(20px) !important;
+  border-radius: 24px !important;
+  padding: 24px 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35) !important;
 }
 
-.screen-pulse-dot {
-  width: 6px !important;
-  height: 6px !important;
-  background: #28a745 !important;
-  border-radius: 50% !important;
-  box-shadow: 0 0 6px #28a745 !important;
-  animation: cjPulse 1.8s infinite !important;
+.wu-strip-text {
+  max-width: 650px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
 }
 
-.scr-ambient-particles {
-  position: absolute !important;
-  inset: 0 !important;
-  pointer-events: none !important;
-  z-index: 2 !important;
+.wu-strip-badge {
+  font-family: var(--disp) !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  color: #ffd23f !important;
+  letter-spacing: 0.06em !important;
 }
 
-.scr-p {
-  position: absolute !important;
-  font-size: 22px !important;
-  opacity: 0.6 !important;
-  animation: cjFloatBounce 5s ease-in-out infinite alternate !important;
+.wu-strip-text h4 {
+  font-family: var(--disp) !important;
+  font-size: clamp(18px, 1.8vw, 22px) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  font-weight: 800 !important;
 }
-.scr-p.p1 { top: 20%; left: 8%; animation-duration: 6s; }
-.scr-p.p2 { top: 26%; right: 9%; font-size: 26px !important; animation-duration: 5.2s; }
-.scr-p.p3 { top: 62%; left: 6%; animation-duration: 6.8s; }
-.scr-p.p4 { top: 60%; right: 7%; animation-duration: 5.5s; }
-.scr-p.p5 { top: 78%; right: 14%; animation-duration: 7s; }
 
-@media (max-width: 860px) {
-  .screen {
-    aspect-ratio: 1/0.95 !important;
-    padding: 18px 14px !important;
-    border-radius: 22px !important;
-    margin-bottom: 8vh !important;
+.wu-strip-text p {
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+  color: #ffd3df !important;
+  margin: 0 !important;
+  line-height: 1.45 !important;
+}
+
+.wu-strip-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+.wu-action-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 10px 20px !important;
+  border-radius: 999px !important;
+  font-family: var(--disp) !important;
+  font-size: 12.5px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  transition: all 0.25s ease !important;
+}
+
+.wu-action-btn.primary {
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(255, 42, 109, 0.35) !important;
+}
+.wu-action-btn.primary:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 12px 28px rgba(255, 42, 109, 0.5) !important;
+}
+
+.wu-action-btn.secondary {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+.wu-action-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .why-us-section {
+    padding: 50px 18px !important;
   }
-  .line3 {
-    font-size: clamp(26px, 7.5vw, 40px) !important;
-    line-height: 1.15 !important;
+  .wu-metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
   }
-  .screen-cinema-badge {
-    font-size: 9px !important;
-    padding: 2.5px 9px !important;
+  .wu-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
   }
-  .screen-hand {
-    font-size: 20px !important;
+  .wu-bottom-strip {
+    padding: 20px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
   }
-  .screen-bottom-pill {
-    font-size: 9px !important;
-    padding: 2.5px 8px !important;
+  .wu-strip-actions {
+    width: 100% !important;
+  }
+  .wu-action-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
   }
 }
-
 </style></head><body class="locked"><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
 <div class="g-projector-beam" aria-hidden="true"></div>
 <div class="g-ambient-glow" aria-hidden="true"></div>
@@ -9959,9 +10139,11 @@ body.locked .sd {
   <nav class="nl" aria-label="Main Navigation">
     <a href="#top" class="active">Home</a>
     <a href="#flavours">Our Menu</a>
-    <a href="#story">The Experience</a>
-    <a href="#cinemas">Find Your Cinema</a>
-    <a href="#reviews">Guest Reviews</a>
+    <a href="#story">Journey</a>
+    <a href="#why-us">Why Us</a>
+    <a href="#cinemas">Cinemas</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#rewards">Rewards</a>
   </nav>
 
   <div class="nav-actions">
@@ -9999,13 +10181,13 @@ body.locked .sd {
     </div>
     <nav class="menu-nav" aria-label="Mobile Navigation Links">
       <a href="#top" class="m-link"><span class="m-icon">🏠</span><span class="m-text">Home</span><span class="m-badge">Top</span></a>
-      <a href="#flavours" class="m-link"><span class="m-icon">🍿</span><span class="m-text">Flavours &amp; Combos</span><span class="m-badge">Menu</span></a>
-      <a href="#story" class="m-link"><span class="m-icon">✨</span><span class="m-text">Movie Night Story</span><span class="m-badge">4 Moments</span></a>
-      <a href="#app" class="m-link"><span class="m-icon">📱</span><span class="m-text">App Experience</span><span class="m-badge">Fast</span></a>
+      <a href="#flavours" class="m-link"><span class="m-icon">🍿</span><span class="m-text">Our Menu</span><span class="m-badge">Menu</span></a>
+      <a href="#story" class="m-link"><span class="m-icon">🎬</span><span class="m-text">4-Step Journey</span><span class="m-badge">In-Seat</span></a>
+      <a href="#why-us" class="m-link"><span class="m-icon">✨</span><span class="m-text">Why Love Cafe</span><span class="m-badge">Why Us</span></a>
       <a href="#cinemas" class="m-link"><span class="m-icon">🎟️</span><span class="m-text">Partner Cinemas</span><span class="m-badge">9 Theatres</span></a>
       <a href="#reviews" class="m-link"><span class="m-icon">⭐</span><span class="m-text">Guest Reviews</span><span class="m-badge">4.9★</span></a>
-      <a href="#rewards" class="m-link"><span class="m-icon">⭐</span><span class="m-text">CinePoints</span><span class="m-badge">Rewards</span></a>
-      <a href="#get" class="m-link"><span class="m-icon">📲</span><span class="m-text">Download App</span><span class="m-badge">Free</span></a>
+      <a href="#rewards" class="m-link"><span class="m-icon">👑</span><span class="m-text">CinePoints</span><span class="m-badge">Rewards</span></a>
+      <a href="#get" class="m-link"><span class="m-icon">📲</span><span class="m-text">Order To Seat</span><span class="m-badge">App</span></a>
     </nav>
     <div class="menu-foot">
       <p class="menu-promo">⚡ Gourmet Cinema Delivery in ~10 Minutes</p>
@@ -10648,42 +10830,145 @@ body.locked .sd {
   </div>
 </section>
 
-<section class="scr" id="screen">
-  <div class="scr-stick">
-    <div class="beam" aria-hidden="true"></div>
-    
-    <!-- Ambient Floating Cinema Particles -->
-    <div class="scr-ambient-particles" aria-hidden="true">
-      <span class="scr-p p1">✨</span>
-      <span class="scr-p p2">🍿</span>
-      <span class="scr-p p3">🎟️</span>
-      <span class="scr-p p4">🎬</span>
-      <span class="scr-p p5">✨</span>
+<section class="why-us-section" id="why-us" aria-label="Why Choose LOVE CAFE">
+  <div class="wu-bg-glow" aria-hidden="true"></div>
+  <div class="wu-ambient-particles" aria-hidden="true">
+    <span class="wu-part p1">🍿</span>
+    <span class="wu-part p2">✨</span>
+    <span class="wu-part p3">🎟️</span>
+    <span class="wu-part p4">🔥</span>
+    <span class="wu-part p5">✨</span>
+  </div>
+
+  <div class="wu-container">
+    <!-- Header Block -->
+    <div class="wu-header">
+      <div class="wu-pill-badge">
+        <span>🍿</span>
+        <span>THE IN-SEAT CINEMA REVOLUTION · WHY LOVE CAFE</span>
+        <span>✨</span>
+      </div>
+      <h2 class="wu-title">Never Miss a Movie Scene.<br><em>Never Wait in Concession Lines.</em></h2>
+      <p class="wu-subtitle">LOVE CAFE is India’s first in-seat cinema dining service, connecting theatre recliners directly to dedicated live kitchens inside premier multiplexes across West Bengal &amp; Bihar.</p>
     </div>
 
-    <!-- Luxury Cinema Screen (PREMIUM SPRING POPUP ANIMATION) -->
-    <div class="screen" id="scrn">
-      <div class="screen-glass-sheen" aria-hidden="true"></div>
-      
-      <div class="screen-cinema-badge">
-        <span>🎬 DOLBY VISION · THE LOVE EXPERIENCE</span>
+    <!-- Live Performance Stat Counters -->
+    <div class="wu-metrics-grid">
+      <div class="wu-metric-card">
+        <div class="wu-metric-icon">⚡</div>
+        <div class="wu-metric-info">
+          <span class="wu-metric-val">~9.8 Mins</span>
+          <span class="wu-metric-lbl">Avg. Seat Drop Time</span>
+        </div>
       </div>
-
-      <p class="screen-hand">✨ now showing ✨</p>
-      
-      <h2 class="line3">
-        <span class="wd wd-1">Good food.</span><br>
-        <span class="wd wd-2">Great movies.</span><br>
-        <span class="wd wd-3">Better together.</span>
-      </h2>
-
-      <div class="screen-bottom-pill">
-        <span class="screen-pulse-dot"></span>
-        <span>IN-SEAT LUXURY RECLINER DINING</span>
+      <div class="wu-metric-card">
+        <div class="wu-metric-icon">🔥</div>
+        <div class="wu-metric-info">
+          <span class="wu-metric-val">100% Fresh</span>
+          <span class="wu-metric-lbl">Live Kitchens In Theatres</span>
+        </div>
+      </div>
+      <div class="wu-metric-card">
+        <div class="wu-metric-icon">🎟️</div>
+        <div class="wu-metric-info">
+          <span class="wu-metric-val">9 Theatres</span>
+          <span class="wu-metric-lbl">Across WB &amp; Bihar</span>
+        </div>
+      </div>
+      <div class="wu-metric-card">
+        <div class="wu-metric-icon">⭐</div>
+        <div class="wu-metric-info">
+          <span class="wu-metric-val">4.9 / 5.0</span>
+          <span class="wu-metric-lbl">14,800+ Verified Orders</span>
+        </div>
       </div>
     </div>
 
-    <div class="seats" aria-hidden="true"></div>
+    <!-- 4 Colorful Graphical Pillar Cards -->
+    <div class="wu-cards-grid">
+      
+      <!-- Pillar 1: No Intermission Queues (Coral / Sunset Amber Glow) -->
+      <article class="wu-card wu-card-coral">
+        <div class="wu-card-tag">🚫 ZERO CONCESSION QUEUES</div>
+        <div class="wu-card-graphic-wrap">
+          <img src="assets/flavours/snack_burger.jpg" alt="Double Brioche Smash Burger" class="wu-card-img" loading="lazy">
+          <div class="wu-img-badge">🍔 Fresh To Seat</div>
+        </div>
+        <div class="wu-card-content">
+          <h3 class="wu-card-heading">Escape the 50-Person Interval Chaos</h3>
+          <p class="wu-card-text">A 10-minute cinema intermission is too short to fight through crowded lobby queues. Scan the QR code on your recliner, order on the LOVE CAFE app, and enjoy hot food delivered before the opening credits resume.</p>
+          <div class="wu-card-perks">
+            <span class="wu-chip">⚡ 1-Tap Armrest Link</span>
+            <span class="wu-chip">⏱️ Save 20+ Mins</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Pillar 2: Live Gourmet Kitchens (Golden Marquee & Popcorn Amber Glow) -->
+      <article class="wu-card wu-card-gold">
+        <div class="wu-card-tag">🔥 LIVE THEATRE KITCHEN</div>
+        <div class="wu-card-graphic-wrap">
+          <img src="assets/flavours/snack_popcorn.jpg" alt="Artisan Truffle Butter Popcorn" class="wu-card-img" loading="lazy">
+          <div class="wu-img-badge">🍿 Freshly Popped</div>
+        </div>
+        <div class="wu-card-content">
+          <h3 class="wu-card-heading">Master Chefs Cooked Fresh to Order</h3>
+          <p class="wu-card-text">No stale, reheated food. Every partner multiplex hosts an official LOVE CAFE kitchen where chefs hand-smash brioche burgers, bake 48-hr fermented woodfired pizza, and kettle-pop golden butter popcorn the moment you tap order.</p>
+          <div class="wu-card-perks">
+            <span class="wu-chip">👨‍🍳 Real Master Chefs</span>
+            <span class="wu-chip">🍕 48h Sourdough Crust</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Pillar 3: Stealth Seat Delivery (Royal Lounge Violet Glow) -->
+      <article class="wu-card wu-card-violet">
+        <div class="wu-card-tag">🤫 STEALTH RUNNER PROTOCOL</div>
+        <div class="wu-card-graphic-wrap">
+          <img src="assets/showcase/cinema_clean_recliners.jpg" alt="VIP Cinema Recliner Seats" class="wu-card-img" loading="lazy">
+          <div class="wu-img-badge">🛎️ Silver Cloche VIP</div>
+        </div>
+        <div class="wu-card-content">
+          <h3 class="wu-card-heading">Silent In-Seat Delivery Under Silver Cloche</h3>
+          <p class="wu-card-text">Our auditorium delivery runners are trained in silent theater navigation. Your food arrives under an insulated silver cloche right onto your seat table—with zero obstruction to the screen, projector, or fellow moviegoers.</p>
+          <div class="wu-card-perks">
+            <span class="wu-chip">🤫 Zero Film Interruption</span>
+            <span class="wu-chip">🛎️ Insulated Cloche</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Pillar 4: Multiplex Network & CinePoints (Emerald / Berry Neon Glow) -->
+      <article class="wu-card wu-card-emerald">
+        <div class="wu-card-tag">🎟️ PARTNER MULTIPLEX NETWORK</div>
+        <div class="wu-card-graphic-wrap">
+          <img src="assets/flavours/snack_combo_feast.jpg" alt="Love Cafe Cinema Combo Feast" class="wu-card-img" loading="lazy">
+          <div class="wu-img-badge">⭐ CinePoints Ready</div>
+        </div>
+        <div class="wu-card-content">
+          <h3 class="wu-card-heading">9 Partner Theatres &amp; CinePoints Rewards</h3>
+          <p class="wu-card-text">Seamlessly integrated with Atindra Multiplex, Cinema Hut, Sushama Cinema, and top regional halls. Collect CinePoints with every bite to unlock free tickets, gourmet upgrades, and exclusive director previews.</p>
+          <div class="wu-card-perks">
+            <span class="wu-chip">🎁 Earn on Every Bite</span>
+            <span class="wu-chip">🎟️ Free Movie Rewards</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Bottom Mission Callout Strip -->
+    <div class="wu-bottom-strip">
+      <div class="wu-strip-text">
+        <span class="wu-strip-badge">✨ OUR CINEMA MISSION</span>
+        <h4>Elevating the Moviegoing Experience Across India</h4>
+        <p>From Barrackpore to Chandannagar and beyond, LOVE CAFE ensures you never have to choose between a great film and a hot, delicious meal.</p>
+      </div>
+      <div class="wu-strip-actions">
+        <a href="#cinemas" class="wu-action-btn primary">Find Your Multiplex →</a>
+        <a href="#get" class="wu-action-btn secondary">Download Free App</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -11634,7 +11919,7 @@ body.locked .sd {
 </section>
 </main>
 <footer><a class="brand" href="#top" style="text-decoration:none; display:inline-block; margin-bottom:12px;"><img src="assets/love_logo_nav_twotone.png" class="footer-logo-img" alt="LOVE CAFE - please taste me one time!"></a>
-<nav class="fl" aria-label="Footer"><a href="#top">About</a><a href="#cinemas">Locations</a><a href="#rewards">CinePoints</a><a href="#">Contact</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Instagram</a></nav></footer>
+<nav class="fl" aria-label="Footer"><a href="#top">About</a><a href="#flavours">Menu</a><a href="#why-us">Why Us</a><a href="#cinemas">Locations</a><a href="#rewards">CinePoints</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#get">Download App</a></nav></footer>
 
 
 <script src="assets/lenis.min.js"></script>
@@ -12601,41 +12886,54 @@ if (mclose) {
 }
 
 function scrollToAnchor(targetId) {
+  if (!targetId || targetId === '#' || targetId === '#!') return;
+  
+  if (targetId === '#top') {
+    if (lenis) {
+      try { lenis.start(); lenis.scrollTo(0, { duration: 0.9 }); } catch(err) { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    return;
+  }
+  
   const target = document.querySelector(targetId);
   if (!target) return;
-  const navHeight = (nav ? nav.offsetHeight : 56) + 16;
+  
+  const navEl = document.querySelector('header.nav');
+  const navHeight = (navEl ? navEl.offsetHeight : 64) + 12;
+  
   if (lenis) {
-    lenis.scrollTo(target, { offset: -navHeight, duration: 1.25 });
+    try {
+      lenis.start();
+      lenis.scrollTo(target, { offset: -navHeight, duration: 1.0 });
+    } catch(err) {
+      const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+      window.scrollTo({ top: Math.max(0, targetPos), behavior: 'smooth' });
+    }
   } else {
     const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-    window.scrollTo({
-      top: Math.max(0, targetPos),
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: Math.max(0, targetPos), behavior: 'smooth' });
   }
 }
 
-if (menu) {
-  menu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const href = a.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
-        toggleMobileMenu(false);
-        setTimeout(() => scrollToAnchor(href), 150);
-      }
-    });
-  });
-}
-
-document.querySelectorAll('.nl a, .brand, .sd a').forEach(a => {
-  a.addEventListener('click', (e) => {
-    const href = a.getAttribute('href');
-    if (href && href.startsWith('#')) {
-      e.preventDefault();
+// Global robust anchor click delegation for all navigation links & buttons
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href^="#"]');
+  if (!link) return;
+  const href = link.getAttribute('href');
+  if (!href || href === '#' || href === '#!') return;
+  
+  const target = document.querySelector(href);
+  if (target || href === '#top') {
+    e.preventDefault();
+    if (menu && menu.classList.contains('open')) {
+      toggleMobileMenu(false);
+      setTimeout(() => scrollToAnchor(href), 100);
+    } else {
       scrollToAnchor(href);
     }
-  });
+  }
 });
 
 window.addEventListener('keydown', e => {
@@ -13966,28 +14264,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
 })();
 
 
-// Silky IntersectionObserver for #screen to trigger smooth popup entry
-(function initScreenPopupObserver() {
-  const scrSection = document.getElementById('screen');
-  const scrnCard = document.getElementById('scrn');
-  if (!scrSection || !scrnCard) return;
-
-  if (typeof IntersectionObserver !== 'undefined') {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          scrnCard.classList.add('popped');
-        } else {
-          // Keep popped while in vicinity, only remove when fully out
-          if (entry.boundingClientRect.top > window.innerHeight) {
-            scrnCard.classList.remove('popped');
-          }
-        }
-      });
-    }, { threshold: 0.15 });
-    observer.observe(scrSection);
-  }
-})();
+// Screen popup observer removed
 
 </script>
 </body></html>
