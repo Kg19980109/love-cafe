@@ -7122,7 +7122,7 @@ body.locked .sd {
 
 
 /* ==========================================================================
-   COMPACT & LOW-SCROLL CINEMA REVIEWS SECTION (EASY TO SEE, ZERO BLOAT)
+   COLORFUL CINEMA TICKET REVIEWS SECTION (CARD-TYPE, FOOD GRAPHICS, NO BLOAT)
    ========================================================================== */
 .reviews-showcase-section {
   background: linear-gradient(180deg, #fdf1f4 0%, #fae2e8 40%, #fdf0f4 100%) !important;
@@ -7395,14 +7395,14 @@ body.locked .sd {
   border-color: #e6195a !important;
 }
 
-/* Compact Horizontal Reviews Reel */
+/* Horizontal Reviews Reel Container */
 .reviews-cards-grid {
   display: flex !important;
   flex-direction: row !important;
-  gap: 16px !important;
+  gap: 20px !important;
   overflow-x: auto !important;
   scroll-snap-type: x mandatory !important;
-  padding: 4px 4px 14px !important;
+  padding: 6px 6px 18px !important;
   scrollbar-width: thin !important;
   scrollbar-color: rgba(230, 25, 90, 0.35) transparent !important;
   -webkit-overflow-scrolling: touch !important;
@@ -7418,74 +7418,208 @@ body.locked .sd {
   border-radius: 999px !important;
 }
 
-/* Compact Luxury Review Ticket Card */
-.rev-card {
-  flex: 0 0 clamp(290px, 30vw, 360px) !important;
-  width: clamp(290px, 30vw, 360px) !important;
+/* ==========================================================================
+   COLORFUL CINEMA TICKET CARDS ARCHITECTURE
+   ========================================================================== */
+.rev-ticket-card {
+  flex: 0 0 clamp(320px, 32vw, 390px) !important;
+  width: clamp(320px, 32vw, 390px) !important;
   scroll-snap-align: start !important;
-  background: rgba(255, 255, 255, 0.96) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-  backdrop-filter: blur(14px) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.98) !important;
-  border-radius: 20px !important;
-  box-shadow: 0 8px 24px -4px rgba(180, 40, 75, 0.08), 0 0 0 1px rgba(255, 190, 210, 0.3) !important;
+  border-radius: 24px !important;
   padding: 16px 18px 14px !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
-  gap: 10px !important;
+  gap: 12px !important;
   position: relative !important;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease !important;
   overflow: hidden !important;
+  box-sizing: border-box !important;
 }
 
-.rev-card:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 14px 32px -6px rgba(210, 30, 80, 0.16), 0 0 0 1.5px rgba(230, 25, 90, 0.35) !important;
+.rev-ticket-card:hover {
+  transform: translateY(-5px) scale(1.01) !important;
 }
 
-.rev-foil-edge {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #ff5287 0%, #ffd23f 50%, #ff5287 100%);
-  opacity: 0.9;
+/* Authentic Ticket Notches (cutouts on sides) */
+.rev-ticket-card::before,
+.rev-ticket-card::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 48px !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50% !important;
+  background: #fae2e8 !important; /* matches section backdrop */
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12) !important;
+  z-index: 2 !important;
+}
+.rev-ticket-card::before { left: -7px !important; }
+.rev-ticket-card::after { right: -7px !important; }
+
+/* THEME 1: Warm Amber Sunset (Smash Burger) */
+.rev-card-amber {
+  background: linear-gradient(155deg, #ffffff 0%, #fff6f2 40%, #ffece4 100%) !important;
+  border: 2px solid rgba(255, 107, 74, 0.45) !important;
+  box-shadow: 0 12px 28px -6px rgba(255, 107, 74, 0.2), inset 0 1px 0 #fff !important;
+}
+.rev-card-amber:hover {
+  box-shadow: 0 18px 38px -6px rgba(255, 107, 74, 0.32), 0 0 0 2px #ff6b4a !important;
+}
+.rev-card-amber .rev-stub-ribbon {
+  background: linear-gradient(90deg, #ff5722 0%, #ff8a65 100%) !important;
+  color: #fff !important;
+}
+.rev-card-amber .rev-graphic-ring {
+  border-color: #ff6b4a !important;
+  box-shadow: 0 4px 14px rgba(255, 87, 34, 0.25) !important;
 }
 
-.rev-card-header {
+/* THEME 2: Cinema Butter Gold (Popcorn Combo) */
+.rev-card-gold {
+  background: linear-gradient(155deg, #ffffff 0%, #fffcf0 40%, #fff4cc 100%) !important;
+  border: 2px solid rgba(245, 158, 11, 0.5) !important;
+  box-shadow: 0 12px 28px -6px rgba(245, 158, 11, 0.22), inset 0 1px 0 #fff !important;
+}
+.rev-card-gold:hover {
+  box-shadow: 0 18px 38px -6px rgba(245, 158, 11, 0.35), 0 0 0 2px #f59e0b !important;
+}
+.rev-card-gold .rev-stub-ribbon {
+  background: linear-gradient(90deg, #d97706 0%, #fbbf24 100%) !important;
+  color: #1a0f15 !important;
+}
+.rev-card-gold .rev-graphic-ring {
+  border-color: #f59e0b !important;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3) !important;
+}
+
+/* THEME 3: Royal Velvet Violet (Woodfired Pizza) */
+.rev-card-violet {
+  background: linear-gradient(155deg, #ffffff 0%, #faf5ff 40%, #f1e4ff 100%) !important;
+  border: 2px solid rgba(168, 85, 247, 0.45) !important;
+  box-shadow: 0 12px 28px -6px rgba(168, 85, 247, 0.2), inset 0 1px 0 #fff !important;
+}
+.rev-card-violet:hover {
+  box-shadow: 0 18px 38px -6px rgba(168, 85, 247, 0.32), 0 0 0 2px #a855f7 !important;
+}
+.rev-card-violet .rev-stub-ribbon {
+  background: linear-gradient(90deg, #7c3aed 0%, #c084fc 100%) !important;
+  color: #fff !important;
+}
+.rev-card-violet .rev-graphic-ring {
+  border-color: #a855f7 !important;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25) !important;
+}
+
+/* THEME 4: Fresh Emerald Mint (Truffle Fries & Paneer) */
+.rev-card-emerald {
+  background: linear-gradient(155deg, #ffffff 0%, #f0fdf4 40%, #dbfce7 100%) !important;
+  border: 2px solid rgba(16, 185, 129, 0.45) !important;
+  box-shadow: 0 12px 28px -6px rgba(16, 185, 129, 0.2), inset 0 1px 0 #fff !important;
+}
+.rev-card-emerald:hover {
+  box-shadow: 0 18px 38px -6px rgba(16, 185, 129, 0.32), 0 0 0 2px #10b981 !important;
+}
+.rev-card-emerald .rev-stub-ribbon {
+  background: linear-gradient(90deg, #059669 0%, #34d399 100%) !important;
+  color: #fff !important;
+}
+.rev-card-emerald .rev-graphic-ring {
+  border-color: #10b981 !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25) !important;
+}
+
+/* THEME 5: Hot Neon Raspberry (Boba & Cold Drink) */
+.rev-card-berry {
+  background: linear-gradient(155deg, #ffffff 0%, #fff1f5 40%, #ffd6e4 100%) !important;
+  border: 2px solid rgba(244, 63, 94, 0.45) !important;
+  box-shadow: 0 12px 28px -6px rgba(244, 63, 94, 0.22), inset 0 1px 0 #fff !important;
+}
+.rev-card-berry:hover {
+  box-shadow: 0 18px 38px -6px rgba(244, 63, 94, 0.35), 0 0 0 2px #f43f5e !important;
+}
+.rev-card-berry .rev-stub-ribbon {
+  background: linear-gradient(90deg, #e11d48 0%, #fb7185 100%) !important;
+  color: #fff !important;
+}
+.rev-card-berry .rev-graphic-ring {
+  border-color: #f43f5e !important;
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25) !important;
+}
+
+/* Ticket Top Header Ribbon */
+.rev-ticket-top {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  gap: 10px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 1.5px dashed rgba(0, 0, 0, 0.12) !important;
+}
+
+.rev-stub-ribbon {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-family: var(--disp) !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  padding: 3px 10px !important;
+  border-radius: 999px !important;
+  text-transform: uppercase !important;
+}
+
+.rev-ticket-stars {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.rev-ticket-stars-text {
+  color: #f59e0b !important;
+  font-size: 13px !important;
+  letter-spacing: 1px !important;
+}
+
+.rev-ticket-time {
+  font-size: 10px !important;
+  color: #7a3a50 !important;
+  font-weight: 700 !important;
+}
+
+/* User & Graphic Row */
+.rev-ticket-body {
+  display: grid !important;
+  grid-template-columns: 1fr 68px !important;
+  gap: 12px !important;
+  align-items: center !important;
 }
 
 .rev-user-profile {
   display: flex !important;
   align-items: center !important;
-  gap: 10px !important;
+  gap: 9px !important;
+  margin-bottom: 6px !important;
 }
 
 .rev-avatar {
-  width: 36px !important;
-  height: 36px !important;
+  width: 34px !important;
+  height: 34px !important;
   border-radius: 50% !important;
-  background: linear-gradient(135deg, #ff2a6d 0%, #ff758c 100%) !important;
   color: #fff !important;
   font-family: var(--disp) !important;
-  font-size: 13px !important;
+  font-size: 12px !important;
   font-weight: 800 !important;
   display: grid !important;
   place-items: center !important;
   flex-shrink: 0 !important;
-  box-shadow: 0 3px 10px rgba(255, 42, 109, 0.25) !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
 .rev-user-info {
   display: flex !important;
   flex-direction: column !important;
-  gap: 2px !important;
+  gap: 1px !important;
 }
 
 .rev-author-name {
@@ -7497,40 +7631,13 @@ body.locked .sd {
 }
 
 .rev-cinema-tag {
-  font-size: 11px !important;
+  font-size: 10px !important;
   color: #7a3a50 !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   max-width: 170px !important;
-}
-
-.rev-stars-time {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-end !important;
-  gap: 2px !important;
-}
-
-.rev-stars {
-  color: #f7a01d !important;
-  font-size: 12px !important;
-  letter-spacing: 1.5px !important;
-  line-height: 1 !important;
-}
-
-.rev-time-badge {
-  font-size: 10px !important;
-  color: #9c6074 !important;
-  font-weight: 600 !important;
-}
-
-/* Card Body & Quote */
-.rev-body {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 4px !important;
 }
 
 .rev-quote-title {
@@ -7538,15 +7645,15 @@ body.locked .sd {
   font-size: 13px !important;
   font-weight: 800 !important;
   color: #1a0f15 !important;
-  margin: 0 !important;
+  margin: 0 0 3px !important;
   line-height: 1.25 !important;
 }
 
 .rev-text {
   font-family: var(--sans) !important;
-  font-size: 12px !important;
+  font-size: 11.5px !important;
   line-height: 1.45 !important;
-  color: #552538 !important;
+  color: #4a2030 !important;
   margin: 0 !important;
   display: -webkit-box !important;
   -webkit-line-clamp: 2 !important;
@@ -7554,36 +7661,79 @@ body.locked .sd {
   overflow: hidden !important;
 }
 
-/* Card Footer */
-.rev-card-bottom {
+/* Dedicated Graphic Pill on the Right */
+.rev-graphic-pane {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.rev-graphic-ring {
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 16px !important;
+  border: 2px solid !important;
+  overflow: hidden !important;
+  background: #fff !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+}
+
+.rev-graphic-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.3s ease !important;
+}
+
+.rev-ticket-card:hover .rev-graphic-img {
+  transform: scale(1.12) !important;
+}
+
+.rev-snack-mini-lbl {
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  color: #552033 !important;
+  text-align: center !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  max-width: 68px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Card Bottom Bar with Verified Stamp & Likes */
+.rev-ticket-bottom {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   padding-top: 8px !important;
-  border-top: 1px dashed rgba(230, 25, 90, 0.15) !important;
+  border-top: 1.5px dashed rgba(0, 0, 0, 0.12) !important;
   gap: 8px !important;
 }
 
-.rev-snack-tag {
+.rev-verified-chip {
   display: inline-flex !important;
   align-items: center !important;
   gap: 4px !important;
-  background: rgba(255, 235, 243, 0.8) !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
   padding: 3px 8px !important;
-  border-radius: 8px !important;
+  border-radius: 6px !important;
   font-size: 10px !important;
   font-weight: 700 !important;
-  color: #9e1948 !important;
-  white-space: nowrap !important;
+  color: #1a0f15 !important;
 }
 
 .rev-helpful-btn {
-  background: transparent !important;
-  border: none !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
   font-size: 11px !important;
-  color: #8c5267 !important;
+  color: #6a2c42 !important;
   cursor: pointer !important;
-  padding: 2px 6px !important;
+  padding: 3px 8px !important;
   border-radius: 6px !important;
   transition: all 0.15s ease !important;
   display: inline-flex !important;
@@ -7594,10 +7744,11 @@ body.locked .sd {
 .rev-helpful-btn:hover,
 .rev-helpful-btn.liked {
   color: #e6195a !important;
-  background: rgba(230, 25, 90, 0.08) !important;
+  background: #fff !important;
+  border-color: #e6195a !important;
 }
 
-/* Mobile responsive for reviews */
+/* Mobile responsive */
 @media (max-width: 860px) {
   .reviews-showcase-section {
     padding: 36px 16px 28px !important;
@@ -7614,10 +7765,133 @@ body.locked .sd {
     box-sizing: border-box !important;
     justify-content: space-between !important;
   }
-  .rev-card {
+  .rev-ticket-card {
     flex: 0 0 85vw !important;
     width: 85vw !important;
   }
+}
+
+/* ==========================================================================
+   INTERACTIVE WRITE REVIEW MODAL (STRICTLY FIXED & HIDDEN BY DEFAULT)
+   ========================================================================== */
+.rev-modal-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(18, 4, 12, 0.78) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(12px) !important;
+  display: none !important;
+  place-items: center !important;
+  z-index: 999999 !important;
+  padding: 16px !important;
+  opacity: 0;
+  transition: opacity 0.22s ease !important;
+}
+
+.rev-modal-backdrop.open {
+  display: grid !important;
+  opacity: 1 !important;
+}
+
+.rev-modal-card {
+  background: #ffffff !important;
+  border-radius: 28px !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 0 0 2px rgba(255, 42, 109, 0.25) !important;
+  max-width: 460px !important;
+  width: 100% !important;
+  padding: 28px 24px !important;
+  position: relative !important;
+  text-align: center !important;
+  animation: modalScale 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-sizing: border-box !important;
+}
+
+@keyframes modalScale {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.rev-modal-close {
+  position: absolute !important;
+  top: 16px !important;
+  right: 16px !important;
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  background: #f7f7f7 !important;
+  border: 1px solid #ddd !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  color: #333 !important;
+  display: grid !important;
+  place-items: center !important;
+}
+
+.rev-modal-close:hover {
+  background: #ff2a6d !important;
+  color: #fff !important;
+  border-color: #ff2a6d !important;
+}
+
+.rev-modal-card h3 {
+  font-family: var(--disp) !important;
+  font-size: 22px !important;
+  color: #1a0f15 !important;
+  margin: 4px 0 6px !important;
+}
+
+.rev-modal-card p {
+  font-size: 13px !important;
+  color: #6a3648 !important;
+  margin: 0 0 16px !important;
+}
+
+.rev-star-picker {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  font-size: 28px !important;
+  color: #f59e0b !important;
+  cursor: pointer !important;
+  margin-bottom: 14px !important;
+}
+
+.rev-star-picker span {
+  transition: transform 0.15s ease !important;
+}
+.rev-star-picker span:hover {
+  transform: scale(1.25) !important;
+}
+
+.rev-form-input, .rev-form-select, .rev-form-textarea {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 10px 14px !important;
+  border: 1.5px solid #ffccd9 !important;
+  border-radius: 12px !important;
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+  margin-bottom: 10px !important;
+  background: #fff8fa !important;
+}
+
+.rev-form-submit {
+  width: 100% !important;
+  padding: 12px !important;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 14px !important;
+  font-family: var(--disp) !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  box-shadow: 0 8px 20px rgba(255, 42, 109, 0.3) !important;
+  transition: transform 0.2s ease !important;
+}
+
+.rev-form-submit:hover {
+  transform: translateY(-2px) !important;
 }
 
 /* ==========================================================================
@@ -11239,135 +11513,175 @@ body.locked .sd {
       </div>
     </div>
 
-    <!-- Compact Horizontal Reviews Reel (3 at a glance on desktop, zero vertical bloat) -->
+    <!-- Colorful Cinema Ticket Cards Reel with Real Food Graphics -->
     <div class="reviews-cards-grid" id="revCardsGrid">
       
-      <!-- Review 1 -->
-      <article class="rev-card" data-tags="all burger speed">
-        <div class="rev-foil-edge"></div>
-        <div class="rev-card-header">
-          <div class="rev-user-profile">
-            <div class="rev-avatar">AM</div>
-            <div class="rev-user-info">
-              <span class="rev-author-name">Aarav Mehta</span>
-              <span class="rev-cinema-tag">📍 PVR Forum · Row D, Seat 8</span>
+      <!-- Card 1: Warm Amber Sunset (Burger) -->
+      <article class="rev-ticket-card rev-card-amber" data-tags="all burger speed">
+        <div class="rev-ticket-top">
+          <div class="rev-stub-ribbon"><span>🎟️</span> PASS #LC-9481 · AUDI 04</div>
+          <div class="rev-ticket-stars">
+            <span class="rev-ticket-stars-text">★★★★★</span>
+            <span class="rev-ticket-time">2d ago</span>
+          </div>
+        </div>
+        <div class="rev-ticket-body">
+          <div>
+            <div class="rev-user-profile">
+              <div class="rev-avatar" style="background:linear-gradient(135deg, #ff5722, #ff9800)">AM</div>
+              <div class="rev-user-info">
+                <span class="rev-author-name">Aarav Mehta</span>
+                <span class="rev-cinema-tag">📍 PVR Forum · Row D, Seat 8</span>
+              </div>
             </div>
+            <h4 class="rev-quote-title">Arrived before opening credits!</h4>
+            <p class="rev-text">Ordered the Double Smash Burger & Fries right as trailers started. Delivery staff was stealthy and polite. Piping hot bun!</p>
           </div>
-          <div class="rev-stars-time">
-            <div class="rev-stars">★★★★★</div>
-            <span class="rev-time-badge">2 days ago</span>
+          <div class="rev-graphic-pane">
+            <div class="rev-graphic-ring">
+              <img src="assets/flavours/snack_burger.jpg" alt="Smash Burger" class="rev-graphic-img">
+            </div>
+            <span class="rev-snack-mini-lbl">🍔 Smash Burger</span>
           </div>
         </div>
-        <div class="rev-body">
-          <h4 class="rev-quote-title">Arrived before opening credits!</h4>
-          <p class="rev-text">Ordered the Double Smash Burger & Fries right as trailers started. Delivery staff was stealthy and polite. Piping hot bun!</p>
-        </div>
-        <div class="rev-card-bottom">
-          <span class="rev-snack-tag">🍔 Double Smash + Fries</span>
+        <div class="rev-ticket-bottom">
+          <span class="rev-verified-chip">✓ Verified Seat Drop</span>
           <button class="rev-helpful-btn" onclick="toggleHelpful(this)"><span>👍</span> Helpful <b>(34)</b></button>
         </div>
       </article>
 
-      <!-- Review 2 -->
-      <article class="rev-card" data-tags="all popcorn speed">
-        <div class="rev-foil-edge"></div>
-        <div class="rev-card-header">
-          <div class="rev-user-profile">
-            <div class="rev-avatar" style="background:linear-gradient(135deg, #f7971e, #ffd200)">SD</div>
-            <div class="rev-user-info">
-              <span class="rev-author-name">Sneha Das</span>
-              <span class="rev-cinema-tag">📍 Atindra Multiplex · Recliner 12</span>
+      <!-- Card 2: Cinema Butter Gold (Popcorn) -->
+      <article class="rev-ticket-card rev-card-gold" data-tags="all popcorn speed">
+        <div class="rev-ticket-top">
+          <div class="rev-stub-ribbon"><span>🎟️</span> PASS #LC-3190 · VIP LOUNGE</div>
+          <div class="rev-ticket-stars">
+            <span class="rev-ticket-stars-text">★★★★★</span>
+            <span class="rev-ticket-time">Yesterday</span>
+          </div>
+        </div>
+        <div class="rev-ticket-body">
+          <div>
+            <div class="rev-user-profile">
+              <div class="rev-avatar" style="background:linear-gradient(135deg, #f59e0b, #ffd700)">SD</div>
+              <div class="rev-user-info">
+                <span class="rev-author-name">Sneha Das</span>
+                <span class="rev-cinema-tag">📍 Atindra Multiplex · Recliner 12</span>
+              </div>
             </div>
+            <h4 class="rev-quote-title">Zero queues, crisp butter tub!</h4>
+            <p class="rev-text">Skipped 40 people in the interval queue. Huge tub of warm caramel-butter popcorn brought directly to my seat!</p>
           </div>
-          <div class="rev-stars-time">
-            <div class="rev-stars">★★★★★</div>
-            <span class="rev-time-badge">Yesterday</span>
+          <div class="rev-graphic-pane">
+            <div class="rev-graphic-ring">
+              <img src="assets/flavours/snack_popcorn.jpg" alt="Caramel Popcorn" class="rev-graphic-img">
+            </div>
+            <span class="rev-snack-mini-lbl">🍿 Truffle Popcorn</span>
           </div>
         </div>
-        <div class="rev-body">
-          <h4 class="rev-quote-title">Zero queues, crisp truffle popcorn</h4>
-          <p class="rev-text">Skipped 40 people in the interval queue. Huge tub of warm caramel-butter popcorn brought directly to my seat!</p>
-        </div>
-        <div class="rev-card-bottom">
-          <span class="rev-snack-tag">🍿 Truffle Popcorn Combo</span>
+        <div class="rev-ticket-bottom">
+          <span class="rev-verified-chip">✓ Verified Seat Drop</span>
           <button class="rev-helpful-btn" onclick="toggleHelpful(this)"><span>👍</span> Helpful <b>(28)</b></button>
         </div>
       </article>
 
-      <!-- Review 3 -->
-      <article class="rev-card" data-tags="all pizza">
-        <div class="rev-foil-edge"></div>
-        <div class="rev-card-header">
-          <div class="rev-user-profile">
-            <div class="rev-avatar" style="background:linear-gradient(135deg, #654ea3, #eaafc8)">RC</div>
-            <div class="rev-user-info">
-              <span class="rev-author-name">Rohan Chatterjee</span>
-              <span class="rev-cinema-tag">📍 Cinema Hut · Audi 2, F-14</span>
+      <!-- Card 3: Royal Velvet Violet (Pizza) -->
+      <article class="rev-ticket-card rev-card-violet" data-tags="all pizza">
+        <div class="rev-ticket-top">
+          <div class="rev-stub-ribbon"><span>🎟️</span> PASS #LC-7622 · AUDI 02</div>
+          <div class="rev-ticket-stars">
+            <span class="rev-ticket-stars-text">★★★★★</span>
+            <span class="rev-ticket-time">3d ago</span>
+          </div>
+        </div>
+        <div class="rev-ticket-body">
+          <div>
+            <div class="rev-user-profile">
+              <div class="rev-avatar" style="background:linear-gradient(135deg, #7c3aed, #a855f7)">RC</div>
+              <div class="rev-user-info">
+                <span class="rev-author-name">Rohan Chatterjee</span>
+                <span class="rev-cinema-tag">📍 Cinema Hut · Audi 2, F-14</span>
+              </div>
             </div>
+            <h4 class="rev-quote-title">Real woodfired crust in cinema</h4>
+            <p class="rev-text">Was skeptical about theatre pizza, but the crust was charred perfection and cheese was steaming hot with chili drizzle.</p>
           </div>
-          <div class="rev-stars-time">
-            <div class="rev-stars">★★★★★</div>
-            <span class="rev-time-badge">3 days ago</span>
+          <div class="rev-graphic-pane">
+            <div class="rev-graphic-ring">
+              <img src="assets/flavours/snack_pizza.jpg" alt="Woodfired Pizza" class="rev-graphic-img">
+            </div>
+            <span class="rev-snack-mini-lbl">🍕 Artisan Pizza</span>
           </div>
         </div>
-        <div class="rev-body">
-          <h4 class="rev-quote-title">Real woodfired crust in a cinema</h4>
-          <p class="rev-text">Was skeptical about theatre pizza, but the crust was charred perfection and cheese was steaming hot with chili drizzle.</p>
-        </div>
-        <div class="rev-card-bottom">
-          <span class="rev-snack-tag">🍕 Woodfired Margherita</span>
+        <div class="rev-ticket-bottom">
+          <span class="rev-verified-chip">✓ Verified Seat Drop</span>
           <button class="rev-helpful-btn" onclick="toggleHelpful(this)"><span>👍</span> Helpful <b>(19)</b></button>
         </div>
       </article>
 
-      <!-- Review 4 -->
-      <article class="rev-card" data-tags="all burger speed">
-        <div class="rev-foil-edge"></div>
-        <div class="rev-card-header">
-          <div class="rev-user-profile">
-            <div class="rev-avatar" style="background:linear-gradient(135deg, #11998e, #38ef7d)">PM</div>
-            <div class="rev-user-info">
-              <span class="rev-author-name">Priya Mukherjee</span>
-              <span class="rev-cinema-tag">📍 Sushama Cinema · Recliner 5</span>
+      <!-- Card 4: Fresh Emerald Mint (Fries & Rapid Delivery) -->
+      <article class="rev-ticket-card rev-card-emerald" data-tags="all burger speed">
+        <div class="rev-ticket-top">
+          <div class="rev-stub-ribbon"><span>🎟️</span> PASS #LC-5519 · RECLINER 05</div>
+          <div class="rev-ticket-stars">
+            <span class="rev-ticket-stars-text">★★★★★</span>
+            <span class="rev-ticket-time">4d ago</span>
+          </div>
+        </div>
+        <div class="rev-ticket-body">
+          <div>
+            <div class="rev-user-profile">
+              <div class="rev-avatar" style="background:linear-gradient(135deg, #059669, #10b981)">PM</div>
+              <div class="rev-user-info">
+                <span class="rev-author-name">Priya Mukherjee</span>
+                <span class="rev-cinema-tag">📍 Sushama Cinema · Recliner 5</span>
+              </div>
             </div>
+            <h4 class="rev-quote-title">Silent interval delivery, 10/10!</h4>
+            <p class="rev-text">They delivered silently during the interval without blocking anyone's view. Loaded truffle fries were crispy to the last bite.</p>
           </div>
-          <div class="rev-stars-time">
-            <div class="rev-stars">★★★★★</div>
-            <span class="rev-time-badge">4 days ago</span>
+          <div class="rev-graphic-pane">
+            <div class="rev-graphic-ring">
+              <img src="assets/flavours/snack_fries.jpg" alt="Truffle Fries" class="rev-graphic-img">
+            </div>
+            <span class="rev-snack-mini-lbl">🍟 Truffle Fries</span>
           </div>
         </div>
-        <div class="rev-body">
-          <h4 class="rev-quote-title">Quiet interval delivery, 10/10</h4>
-          <p class="rev-text">They delivered silently during the interval without blocking anyone's view. Brioche was super soft and loaded with truffle dip.</p>
-        </div>
-        <div class="rev-card-bottom">
-          <span class="rev-snack-tag">🍔 Crispy Truffle Paneer</span>
+        <div class="rev-ticket-bottom">
+          <span class="rev-verified-chip">✓ Verified Seat Drop</span>
           <button class="rev-helpful-btn" onclick="toggleHelpful(this)"><span>👍</span> Helpful <b>(42)</b></button>
         </div>
       </article>
 
-      <!-- Review 5 -->
-      <article class="rev-card" data-tags="all popcorn speed">
-        <div class="rev-foil-edge"></div>
-        <div class="rev-card-header">
-          <div class="rev-user-profile">
-            <div class="rev-avatar" style="background:linear-gradient(135deg, #f857a6, #ff5858)">VK</div>
-            <div class="rev-user-info">
-              <span class="rev-author-name">Vikram Kapoor</span>
-              <span class="rev-cinema-tag">📍 PVR Orion · Recliner C10</span>
+      <!-- Card 5: Hot Neon Raspberry (Craft Drinks & Bites) -->
+      <article class="rev-ticket-card rev-card-berry" data-tags="all popcorn speed">
+        <div class="rev-ticket-top">
+          <div class="rev-stub-ribbon"><span>🎟️</span> PASS #LC-2044 · ROW C-10</div>
+          <div class="rev-ticket-stars">
+            <span class="rev-ticket-stars-text">★★★★★</span>
+            <span class="rev-ticket-time">5d ago</span>
+          </div>
+        </div>
+        <div class="rev-ticket-body">
+          <div>
+            <div class="rev-user-profile">
+              <div class="rev-avatar" style="background:linear-gradient(135deg, #e11d48, #f43f5e)">VK</div>
+              <div class="rev-user-info">
+                <span class="rev-author-name">Vikram Kapoor</span>
+                <span class="rev-cinema-tag">📍 PVR Orion · Recliner C10</span>
+              </div>
             </div>
+            <h4 class="rev-quote-title">Under 8 minutes flat!</h4>
+            <p class="rev-text">App said 10 minutes, but it arrived in under 8! Piping hot cheese bites and frosty soda. Best theatre experience ever.</p>
           </div>
-          <div class="rev-stars-time">
-            <div class="rev-stars">★★★★★</div>
-            <span class="rev-time-badge">5 days ago</span>
+          <div class="rev-graphic-pane">
+            <div class="rev-graphic-ring">
+              <img src="assets/flavours/snack_iced_drinks.jpg" alt="Iced Drinks" class="rev-graphic-img">
+            </div>
+            <span class="rev-snack-mini-lbl">🥤 Iced Craft Fizz</span>
           </div>
         </div>
-        <div class="rev-body">
-          <h4 class="rev-quote-title">Under 8 minutes flat!</h4>
-          <p class="rev-text">App said 10 minutes, but it arrived in under 8! Piping hot cheese bites and frosty soda. Best theatre experience ever.</p>
-        </div>
-        <div class="rev-card-bottom">
-          <span class="rev-snack-tag">🍿 Cheese Bites + Soda</span>
+        <div class="rev-ticket-bottom">
+          <span class="rev-verified-chip">✓ Verified Seat Drop</span>
           <button class="rev-helpful-btn" onclick="toggleHelpful(this)"><span>👍</span> Helpful <b>(31)</b></button>
         </div>
       </article>
