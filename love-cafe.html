@@ -12532,6 +12532,581 @@ html {
   }
 }
 
+
+/* ==========================================================================
+   CINEPOINTS VIP REWARDS SECTION (#rewards): VIBRANT, COLORFUL & LUXURY THEMED
+   ========================================================================== */
+.cinepoints-master-section {
+  position: relative !important;
+  background: radial-gradient(circle at 85% 15%, rgba(255, 210, 63, 0.22) 0%, transparent 45%),
+              radial-gradient(circle at 15% 85%, rgba(255, 42, 109, 0.2) 0%, transparent 45%),
+              radial-gradient(circle at 50% 50%, rgba(255, 235, 243, 0.95) 0%, transparent 80%),
+              linear-gradient(180deg, #fde8ec 0%, #fed7e2 50%, #fde8ec 100%) !important;
+  padding: clamp(48px, 6vw, 75px) clamp(16px, 4vw, 44px) !important;
+  color: #2b0d18 !important;
+  overflow: hidden !important;
+  z-index: 4 !important;
+  border-top: 2.5px solid #2a1820 !important;
+  border-bottom: 2.5px solid #2a1820 !important;
+  scroll-margin-top: 70px !important;
+}
+
+.cp-ambient-aura {
+  position: absolute !important;
+  border-radius: 50% !important;
+  filter: blur(80px) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.cp-aura-rose {
+  top: 5% !important;
+  left: -5% !important;
+  width: 500px !important;
+  height: 500px !important;
+  background: rgba(255, 42, 109, 0.22) !important;
+}
+
+.cp-aura-gold {
+  bottom: 5% !important;
+  right: -5% !important;
+  width: 550px !important;
+  height: 550px !important;
+  background: rgba(255, 210, 63, 0.22) !important;
+}
+
+.cp-inner-container {
+  position: relative !important;
+  z-index: 3 !important;
+  max-width: 1160px !important;
+  margin: 0 auto !important;
+}
+
+.cp-header-center {
+  text-align: center !important;
+  max-width: 800px !important;
+  margin: 0 auto 32px !important;
+}
+
+.cp-crown-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 5px 18px !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  font-family: var(--disp) !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: #b81639 !important;
+  margin-bottom: 10px !important;
+}
+
+.cp-headline {
+  font-family: var(--disp) !important;
+  font-size: clamp(26px, 3.5vw, 42px) !important;
+  font-weight: 900 !important;
+  color: #1f0612 !important;
+  margin: 0 0 8px !important;
+  line-height: 1.18 !important;
+}
+
+.cp-gradient-text {
+  background: linear-gradient(135deg, #ff175d 0%, #ff5277 50%, #d8003a 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.cp-subhead {
+  font-family: var(--sans) !important;
+  font-size: clamp(13px, 1.2vw, 15.5px) !important;
+  line-height: 1.5 !important;
+  color: #5c182d !important;
+  max-width: 700px !important;
+  margin: 0 auto !important;
+}
+
+/* Compact 2-Col Grid */
+.cp-compact-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1.1fr !important;
+  gap: 38px !important;
+  align-items: center !important;
+}
+
+@media (max-width: 920px) {
+  .cp-compact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
+
+/* 3D VIP Credit Card */
+.cp-card-stage {
+  position: relative !important;
+  display: flex !important;
+  justify-content: center !important;
+  padding: 14px 0 !important;
+}
+
+.cp-float-chip {
+  position: absolute !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: #ffffff !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  border-radius: 999px !important;
+  padding: 6px 14px !important;
+  z-index: 10 !important;
+  animation: cpFloatChip 4s ease-in-out infinite !important;
+}
+
+.chip-top-left {
+  top: -8px !important;
+  left: -8px !important;
+  background: #fff8db !important;
+}
+
+.chip-bottom-right {
+  bottom: -8px !important;
+  right: -8px !important;
+  background: #ffe6f0 !important;
+  animation-delay: 2s !important;
+}
+
+@keyframes cpFloatChip {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+.chip-emoji {
+  font-size: 18px !important;
+}
+
+.chip-text b {
+  font-family: var(--disp) !important;
+  font-size: 11.5px !important;
+  color: #1e0510 !important;
+  line-height: 1.2 !important;
+}
+
+.chip-text small {
+  font-family: var(--sans) !important;
+  font-size: 9.5px !important;
+  color: #8c1e3b !important;
+  font-weight: 700 !important;
+}
+
+/* Gorgeous Holographic Metal Card */
+.cp-vip-card {
+  width: 100% !important;
+  max-width: 440px !important;
+  aspect-ratio: 1.58 !important;
+  border-radius: 26px !important;
+  background: linear-gradient(135deg, #1c0510 0%, #450824 30%, #ff2a6d 70%, #ffd23f 100%) !important;
+  border: 2.5px solid #ffd23f !important;
+  box-shadow: 0 0 0 2px #2a1820,
+              0 22px 50px rgba(180, 20, 65, 0.4),
+              0 8px 20px rgba(0, 0, 0, 0.3) !important;
+  padding: 22px 26px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transform: rotate(-1.5deg) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
+  cursor: pointer !important;
+  user-select: none !important;
+}
+
+.cp-vip-card:hover {
+  transform: rotate(0deg) scale(1.03) !important;
+  box-shadow: 0 0 0 2.5px #2a1820,
+              0 28px 65px rgba(255, 42, 109, 0.5),
+              0 0 35px rgba(255, 210, 63, 0.5) !important;
+}
+
+.cp-card-sheen {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.35) 40%, rgba(255, 210, 63, 0.4) 50%, rgba(0, 229, 255, 0.35) 60%, transparent 80%) !important;
+  pointer-events: none !important;
+}
+
+.cp-card-topbar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.cp-card-logo {
+  height: 28px !important;
+  width: auto !important;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6)) !important;
+}
+
+.cp-contactless-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  color: #ffd23f !important;
+}
+
+.cp-nfc-wave {
+  font-weight: 900 !important;
+  letter-spacing: -1px !important;
+  font-size: 14px !important;
+}
+
+.cp-vip-pass-lbl {
+  font-family: var(--disp) !important;
+  font-size: 9.5px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.12em !important;
+  color: #ffffff !important;
+  background: rgba(0, 0, 0, 0.45) !important;
+  padding: 3px 8px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 210, 63, 0.5) !important;
+}
+
+.cp-emv-chip {
+  width: 38px !important;
+  height: 28px !important;
+  border-radius: 6px !important;
+  background: linear-gradient(135deg, #ffe066 0%, #ffd23f 50%, #f59e0b 100%) !important;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.7), 0 2px 5px rgba(0, 0, 0, 0.5) !important;
+  border: 1.5px solid #d97706 !important;
+  position: relative !important;
+}
+
+.cp-card-tier-tag {
+  font-family: var(--disp) !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.14em !important;
+  color: #ffd23f !important;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7) !important;
+}
+
+.cp-card-number {
+  font-family: monospace, monospace !important;
+  font-size: 15px !important;
+  letter-spacing: 0.16em !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+.cp-points-row b#cnt {
+  font-family: var(--disp) !important;
+  font-size: 26px !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  line-height: 1 !important;
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.5) !important;
+}
+
+.cp-points-lbl {
+  font-family: var(--disp) !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.08em !important;
+  color: #ffd23f !important;
+}
+
+/* Informative Column with Rich Colors */
+.cp-info-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+}
+
+.cp-info-badge-header {
+  display: flex !important;
+  align-items: baseline !important;
+  justify-content: space-between !important;
+  border-bottom: 2px solid rgba(42, 24, 32, 0.15) !important;
+  padding-bottom: 8px !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+}
+
+.cp-info-title {
+  font-family: var(--disp) !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.08em !important;
+  color: #b81639 !important;
+}
+
+.cp-info-subtitle {
+  font-family: var(--sans) !important;
+  font-size: 11.5px !important;
+  color: #7a223b !important;
+  font-weight: 700 !important;
+}
+
+/* 3 Informative Cards Stack (Rich Colorful Retro-Pop) */
+.cp-info-cards-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.cp-info-card {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+  border-radius: 18px !important;
+  border: 2px solid #2a1820 !important;
+  padding: 12px 16px !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease !important;
+}
+
+.cp-info-card:hover {
+  transform: translateY(-2px) translateX(2px) !important;
+  box-shadow: 0 6px 0 #2a1820 !important;
+}
+
+/* Card 1: Warm Gold */
+.card-gold {
+  background: linear-gradient(135deg, #fffcf0 0%, #fef3c7 100%) !important;
+}
+.box-gold {
+  background: linear-gradient(135deg, #ffd23f 0%, #f59e0b 100%) !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
+}
+.pill-gold {
+  background: #fde68a !important;
+  color: #92400e !important;
+  border: 1.2px solid #2a1820 !important;
+}
+
+/* Card 2: Candy Rose */
+.card-rose {
+  background: linear-gradient(135deg, #fff0f5 0%, #ffdbe6 100%) !important;
+}
+.box-rose {
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
+}
+.pill-rose {
+  background: #fbcfe8 !important;
+  color: #9d174d !important;
+  border: 1.2px solid #2a1820 !important;
+}
+
+/* Card 3: Electric Violet */
+.card-purple {
+  background: linear-gradient(135deg, #f8f5ff 0%, #ede9fe 100%) !important;
+}
+.box-purple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%) !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
+}
+.pill-purple {
+  background: #ddd6fe !important;
+  color: #5b21b6 !important;
+  border: 1.2px solid #2a1820 !important;
+}
+
+.cp-info-icon-box {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 22px !important;
+  flex-shrink: 0 !important;
+}
+
+.cp-card-badge-row {
+  margin-bottom: 4px !important;
+}
+
+.cp-tag-pill {
+  font-family: var(--disp) !important;
+  font-size: 9.5px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.06em !important;
+  padding: 2px 8px !important;
+  border-radius: 999px !important;
+  display: inline-block !important;
+}
+
+.cp-info-content h4 {
+  font-family: var(--disp) !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+  color: #1e0510 !important;
+  margin: 0 0 3px !important;
+}
+
+.cp-info-content p {
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  color: #4a1525 !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.cp-info-content p strong {
+  color: #b81639 !important;
+}
+
+/* Golden Ticket Welcome Bonus Box */
+.cp-bonus-cta-box {
+  background: linear-gradient(135deg, #fff9db 0%, #fef08a 100%) !important;
+  border: 2.5px solid #2a1820 !important;
+  border-radius: 20px !important;
+  padding: 14px 18px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  box-shadow: 0 6px 0 #2a1820 !important;
+}
+
+.cp-bonus-banner {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+.bonus-badge {
+  font-family: var(--disp) !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  background: #e6195a !important;
+  padding: 3px 9px !important;
+  border-radius: 999px !important;
+  border: 1.5px solid #2a1820 !important;
+  letter-spacing: 0.06em !important;
+  box-shadow: 0 2px 0 #2a1820 !important;
+}
+
+.bonus-text {
+  font-family: var(--sans) !important;
+  font-size: 11.5px !important;
+  color: #422006 !important;
+  font-weight: 600 !important;
+}
+
+.bonus-text strong {
+  color: #b81639 !important;
+}
+
+.cp-claim-rewards-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
+  padding: 12px 22px !important;
+  border-radius: 999px !important;
+  border: 2px solid #2a1820 !important;
+  font-family: var(--disp) !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.04em !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.cp-claim-rewards-btn:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 6px 0 #2a1820 !important;
+}
+
+
+/* ==========================================================================
+   WHY LOVE CAFE (#why-us): AUTHENTIC LIGHT PINK PALETTE (ZERO WHITE BACKGROUNDS)
+   ========================================================================== */
+.why-us-section {
+  position: relative !important;
+  background: radial-gradient(circle at 15% 20%, rgba(255, 42, 109, 0.12) 0%, transparent 45%),
+              radial-gradient(circle at 85% 75%, rgba(255, 210, 63, 0.14) 0%, transparent 45%),
+              linear-gradient(180deg, #fde8ec 0%, #fcd5dc 50%, #fde8ec 100%) !important;
+  padding: clamp(50px, 6vw, 80px) clamp(16px, 4vw, 44px) !important;
+  color: #2b0d18 !important;
+  overflow: hidden !important;
+  z-index: 4 !important;
+  border-top: 2.5px solid #2a1820 !important;
+  border-bottom: 2.5px solid #2a1820 !important;
+  scroll-margin-top: 70px !important;
+}
+
+.wu-pill-badge {
+  background: #fde8ec !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  color: #b81639 !important;
+}
+
+.wu-metric-chip {
+  background: #fff0f5 !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+}
+
+/* 4 Cartoon Cards: Light Pink / Pastel Tones (No White Backgrounds) */
+.wu-card {
+  background: linear-gradient(180deg, #fff2f6 0%, #fde4ec 100%) !important;
+  border-radius: 24px !important;
+  border: 2.5px solid #2a1820 !important;
+  box-shadow: 0 8px 0 #2a1820 !important;
+}
+
+.wu-card-pink {
+  background: linear-gradient(180deg, #fff2f6 0%, #fddde7 100%) !important;
+}
+
+.wu-card-gold {
+  background: linear-gradient(180deg, #fff9f0 0%, #fde8e5 100%) !important;
+}
+
+.wu-card-violet {
+  background: linear-gradient(180deg, #faf5ff 0%, #f7e6f0 100%) !important;
+}
+
+.wu-card-teal {
+  background: linear-gradient(180deg, #f0fdf9 0%, #fae8f0 100%) !important;
+}
+
+.wu-card-graphic-wrap {
+  background: #fcd5df !important;
+  border-bottom: 2px solid #2a1820 !important;
+}
+
+.wu-speech-pill {
+  background: #f9cad5 !important;
+  border: 1.5px solid #2a1820 !important;
+  box-shadow: 0 2px 0 #2a1820 !important;
+  color: #2a1820 !important;
+}
+
+.wu-bottom-strip {
+  background: linear-gradient(135deg, #fff0f5 0%, #fde4ec 100%) !important;
+  border: 2.5px solid #2a1820 !important;
+  box-shadow: 0 6px 0 #2a1820 !important;
+}
+
 </style></head><body class="locked">
 <!-- Cartoony Retro Cinema Scroll Progress Bar & Mascot -->
 <div class="retro-scroll-progress-wrap" id="retroScrollProgressWrap" aria-hidden="true">
@@ -14573,51 +15148,60 @@ html {
       <!-- Right Column: Informative, Easy-to-Understand Hub (No Fluff) -->
       <div class="cp-info-col">
         <div class="cp-info-badge-header">
-          <span class="cp-info-title">HOW CINEPOINTS WORK</span>
-          <span class="cp-info-subtitle">Simple. Transparent. 100% Direct Value.</span>
+          <span class="cp-info-title">✨ HOW CINEPOINTS WORK</span>
+          <span class="cp-info-subtitle">Simple · Transparent · 100% Direct Value</span>
         </div>
 
-        <!-- 3 Essential Informative Cards -->
+        <!-- 3 Colorful, Attractive Informative Cards (High Signal, No Bloat) -->
         <div class="cp-info-cards-stack">
-          <!-- Info 1: How You Earn -->
-          <div class="cp-info-card">
+          <!-- Card 1: How You Earn (Gold Sunburst) -->
+          <div class="cp-info-card card-gold">
             <div class="cp-info-icon-box box-gold">
               <span>🪙</span>
             </div>
             <div class="cp-info-content">
+              <div class="cp-card-badge-row">
+                <span class="cp-tag-pill pill-gold">⚡ 10% CASHBACK RATE</span>
+              </div>
               <h4>1. Earn with Every Order</h4>
               <p>Get <strong>10 CinePoints for every ₹100</strong> spent on movie tickets and in-seat gourmet dining.</p>
             </div>
           </div>
 
-          <!-- Info 2: Direct Rupee Value -->
-          <div class="cp-info-card">
+          <!-- Card 2: Direct Rupee Value (Candy Rose) -->
+          <div class="cp-info-card card-rose">
             <div class="cp-info-icon-box box-rose">
               <span>💎</span>
             </div>
             <div class="cp-info-content">
-              <h4>2. Pure Cash Value (1 Pt = ₹1)</h4>
-              <p>No confusing points rates. <strong>1 CinePoint = ₹1 Cash discount</strong> applied directly at seat checkout.</p>
+              <div class="cp-card-badge-row">
+                <span class="cp-tag-pill pill-rose">💰 1 POINT = ₹1 CASH</span>
+              </div>
+              <h4>2. Pure 1:1 Rupee Value</h4>
+              <p>Zero confusing points rates. <strong>1 CinePoint = ₹1 Cash discount</strong> applied directly at seat checkout.</p>
             </div>
           </div>
 
-          <!-- Info 3: 1-Tap Redemption -->
-          <div class="cp-info-card">
+          <!-- Card 3: Instant In-Seat Upgrades (Electric Violet) -->
+          <div class="cp-info-card card-purple">
             <div class="cp-info-icon-box box-purple">
-              <span>⚡</span>
+              <span>🎟️</span>
             </div>
             <div class="cp-info-content">
-              <h4>3. Instant In-Seat Redemption</h4>
-              <p>Redeem anytime in the Love Cafe app for <strong>free popcorn, hot pizzas, cold drinks, or tickets</strong>.</p>
+              <div class="cp-card-badge-row">
+                <span class="cp-tag-pill pill-purple">🍿 ZERO EXPIRY · FREE TREATS</span>
+              </div>
+              <h4>3. Instant In-Seat Upgrades</h4>
+              <p>Redeem anytime in the Love Cafe app for <strong>free popcorn, hot pizzas, craft drinks, or movie tickets</strong>.</p>
             </div>
           </div>
         </div>
 
-        <!-- Welcome Bonus Callout & CTA -->
+        <!-- Welcome Bonus Callout & Golden Ticket CTA -->
         <div class="cp-bonus-cta-box">
           <div class="cp-bonus-banner">
-            <span class="bonus-badge">🎁 SIGNUP BONUS</span>
-            <span class="bonus-text">Get <strong>100 Free CinePoints (₹100 value)</strong> immediately upon downloading the app!</span>
+            <span class="bonus-badge">🎁 INSTANT SIGNUP BONUS</span>
+            <span class="bonus-text">Get <strong>100 Free CinePoints (₹100 value)</strong> credited to your wallet upon free app signup!</span>
           </div>
 
           <a href="#get" class="cp-claim-rewards-btn">
