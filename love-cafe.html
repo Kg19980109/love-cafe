@@ -5142,33 +5142,18 @@ body {
   transition: transform 1.05s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
-/* 4. Top Navigation Bar Download Store Buttons */
+/* 4. Top Navigation Bar Download Store Buttons (Compact & Balanced) */
 .nav-app-download-group {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important;
-}
-
-.nav-download-label {
-  font-family: var(--disp) !important;
-  font-size: 11px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
-  color: #c42352 !important;
-  display: none !important;
-}
-
-@media (min-width: 1180px) {
-  .nav-download-label {
-    display: inline-block !important;
-  }
+  gap: 6px !important;
 }
 
 .nav-store-btn {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 7px !important;
+  justify-content: center !important;
+  gap: 6px !important;
   padding: 6px 14px !important;
   border-radius: 999px !important;
   border: 2px solid #2a1820 !important;
@@ -5177,6 +5162,8 @@ body {
   box-shadow: 0 3px 0 #2a1820 !important;
   transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   white-space: nowrap !important;
+  height: 36px !important;
+  box-sizing: border-box !important;
 }
 
 .nav-store-btn:hover {
@@ -5203,12 +5190,12 @@ body {
 .nav-store-btn .btn-text-col {
   display: flex !important;
   flex-direction: column !important;
-  line-height: 1.05 !important;
+  line-height: 1 !important;
   text-align: left !important;
 }
 
 .nav-store-btn .btn-text-col small {
-  font-size: 8.5px !important;
+  font-size: 8px !important;
   font-weight: 800 !important;
   letter-spacing: 0.04em !important;
   opacity: 0.85 !important;
@@ -5220,15 +5207,27 @@ body {
   font-weight: 900 !important;
 }
 
+/* On mobile screens, display compact icon badges with logos so navbar is never cramped */
 @media (max-width: 860px) {
-  .nav-store-btn {
-    padding: 5px 10px !important;
+  .nav-app-download-group {
+    gap: 6px !important;
   }
-  .nav-store-btn .btn-text-col small {
+  .nav-download-label {
     display: none !important;
   }
-  .nav-store-btn .btn-text-col b {
-    font-size: 10px !important;
+  .nav-store-btn {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    justify-content: center !important;
+  }
+  .nav-store-btn .btn-text-col {
+    display: none !important; /* Logo only on mobile for clean balance */
+  }
+  .nav-store-btn svg {
+    width: 17px !important;
+    height: 17px !important;
   }
 }
 
@@ -6366,8 +6365,8 @@ body.locked .sd {
     grid-template-columns: 1fr !important;
     grid-template-rows: auto auto !important;
     align-content: flex-start !important;
-    padding: calc(72px + env(safe-area-inset-top, 0px)) 16px calc(46px + env(safe-area-inset-bottom, 0px)) !important;
-    gap: 8px !important;
+    padding: calc(64px + env(safe-area-inset-top, 0px)) 14px calc(44px + env(safe-area-inset-bottom, 0px)) !important;
+    gap: 6px !important;
     text-align: center !important;
   }
 
@@ -12248,10 +12247,6 @@ body.locked .sd {
       </div>
 
       <!-- 5. App Store Download Buttons -->
-      <div class="store-callout-banner">
-        <span class="callout-badge">📲 DOWNLOAD NOW</span>
-        <span class="callout-text">Tap below to install the free app directly on your phone:</span>
-      </div>
       <div class="hero-store-row">
         <a class="hero-store-btn" data-play href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get on Google Play">
           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
