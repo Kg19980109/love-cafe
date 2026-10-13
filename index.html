@@ -4959,27 +4959,208 @@ body {
   overflow: visible !important;
 }
 
-/* VIP Cinema Ticket Starting Gate */
+/* ==========================================================================
+   THEATRICAL PINK VELVET CINEMA CURTAIN OPENING ANIMATION (#gate)
+   ========================================================================== */
+
 #gate {
   position: fixed !important;
   inset: 0 !important;
-  z-index: 9999 !important;
+  z-index: 99999 !important;
   background: radial-gradient(ellipse 90% 70% at 50% 32%, #ffe6ec 0%, #ffcad6 38%, #f492a8 70%, #cf4a6c 100%) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   padding: 16px !important;
   box-sizing: border-box !important;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, visibility 0.8s !important;
-  overflow-y: auto !important;
-  -webkit-overflow-scrolling: touch !important;
+  overflow: hidden !important;
+  transition: background 0.45s ease, opacity 0.5s ease, visibility 0.8s !important;
+}
+
+/* Cinema Curtain Stage Container */
+.cinema-curtain-container {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+}
+
+/* Velvet Curtain Panels (Pink Cinema Velvet) */
+.curtain-panel {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 50.5% !important; /* tiny overlap in middle to prevent seam slit */
+  z-index: 2 !important;
+  will-change: transform !important;
+  overflow: hidden !important;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      #c41249 0px,
+      #e6195a 16px,
+      #ff2a6d 32px,
+      #ff6091 48px,
+      #ff2a6d 64px,
+      #e6195a 80px,
+      #a80838 96px
+    ) !important;
+  box-shadow: 
+    inset 0 0 70px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(0, 0, 0, 0.5) !important;
+}
+
+.curtain-left {
+  left: 0 !important;
+  transform-origin: left center !important;
+  border-right: 2.5px solid rgba(255, 210, 63, 0.75) !important;
+}
+
+.curtain-right {
+  right: 0 !important;
+  transform-origin: right center !important;
+  border-left: 2.5px solid rgba(255, 210, 63, 0.75) !important;
+}
+
+/* High-Definition 3D Velvet Folds Overlay */
+.curtain-velvet-folds {
+  position: absolute !important;
+  inset: 0 !important;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.42) 0px,
+      rgba(0, 0, 0, 0.1) 16px,
+      rgba(255, 255, 255, 0.22) 32px,
+      rgba(255, 255, 255, 0.05) 48px,
+      rgba(0, 0, 0, 0.25) 64px,
+      rgba(0, 0, 0, 0.45) 96px
+    ) !important;
+  mix-blend-mode: multiply !important;
+  pointer-events: none !important;
+}
+
+/* Velvet Sheen Glow */
+.curtain-sheen {
+  position: absolute !important;
+  inset: 0 !important;
+  background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18) 0%, transparent 70%) !important;
+  pointer-events: none !important;
+}
+
+/* Golden Vertical Trim Down Leading Curtain Edge */
+.curtain-gold-trim {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 5px !important;
+  background: linear-gradient(180deg, #ffd23f 0%, #ffae00 50%, #ffd23f 100%) !important;
+  box-shadow: 0 0 10px rgba(255, 210, 63, 0.8) !important;
+}
+.curtain-left .curtain-gold-trim { right: 0 !important; }
+.curtain-right .curtain-gold-trim { left: 0 !important; }
+
+/* Golden Bottom Fringe */
+.curtain-bottom-fringe {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 18px !important;
+  background: repeating-linear-gradient(
+    90deg,
+    #ffd23f 0px,
+    #ffae00 3px,
+    #b37400 6px
+  ) !important;
+  border-top: 2px solid #fff !important;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Top Theatrical Scalloped Valance / Pelmet */
+.curtain-valance {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 64px !important;
+  z-index: 6 !important;
+  background: linear-gradient(180deg, #a80838 0%, #e6195a 60%, #ff2a6d 100%) !important;
+  border-bottom: 3.5px solid #ffd23f !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  will-change: transform !important;
+  overflow: hidden !important;
+}
+
+.valance-swags {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  justify-content: space-around !important;
+}
+
+.valance-swags .swag {
+  flex: 1 !important;
+  height: 100% !important;
+  border-radius: 0 0 50% 50% !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(0, 0, 0, 0.25) 100%) !important;
+  border-bottom: 2px solid #ffd23f !important;
+  margin: 0 2px !important;
+}
+
+.valance-fringe {
+  position: absolute !important;
+  bottom: -4px !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 8px !important;
+  background: repeating-linear-gradient(90deg, #ffd23f 0px, #ffae00 4px, #b37400 8px) !important;
+}
+
+/* ========================================================================== */
+/* GRAND CURTAIN OPENING TRANSITION (#gate.opening)                           */
+/* ========================================================================== */
+
+#gate.opening {
+  background: transparent !important;
+  overflow: hidden !important;
+}
+
+/* Center Ticket Content Fades Out Smoothly */
+#gate.opening .g-in,
+#gate.opening .g-cinema-sparks,
+#gate.opening .g-projector-beam,
+#gate.opening .g-ambient-glow {
+  opacity: 0 !important;
+  transform: scale(0.9) translateY(24px) !important;
+  transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  pointer-events: none !important;
+}
+
+/* Left Curtain Gracefully Gathers & Parts to the Left */
+#gate.opening .curtain-left {
+  transform: translate3d(-102%, 0, 0) scaleX(0.2) !important;
+  transition: transform 1.25s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* Right Curtain Gracefully Gathers & Parts to the Right */
+#gate.opening .curtain-right {
+  transform: translate3d(102%, 0, 0) scaleX(0.2) !important;
+  transition: transform 1.25s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+/* Top Valance Swoops Upwards */
+#gate.opening .curtain-valance {
+  transform: translate3d(0, -105%, 0) !important;
+  transition: transform 1.05s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
 #gate.gone {
-  transform: translateY(-105%) scale(0.98) !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
+  display: none !important;
   visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
 }
 
 body.locked {
@@ -4998,6 +5179,7 @@ body.locked .sd {
   pointer-events: none !important;
   transform: translateX(-50%) translateY(-120%) !important;
 }
+
 
 /* 1. Header & Navigation (Ultra-Premium Glassmorphism) */
 #bar {
@@ -11639,6 +11821,32 @@ body.locked .sd {
   }
 }
 </style></head><body class="locked"><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
+  <!-- The Grand Pink Cinema Curtains -->
+  <div class="cinema-curtain-container" id="cinemaCurtain" aria-hidden="true">
+    <div class="curtain-panel curtain-left">
+      <div class="curtain-velvet-folds"></div>
+      <div class="curtain-sheen"></div>
+      <div class="curtain-gold-trim"></div>
+      <div class="curtain-bottom-fringe"></div>
+    </div>
+    <div class="curtain-panel curtain-right">
+      <div class="curtain-velvet-folds"></div>
+      <div class="curtain-sheen"></div>
+      <div class="curtain-gold-trim"></div>
+      <div class="curtain-bottom-fringe"></div>
+    </div>
+    <div class="curtain-valance">
+      <div class="valance-swags">
+        <span class="swag"></span>
+        <span class="swag"></span>
+        <span class="swag"></span>
+        <span class="swag"></span>
+        <span class="swag"></span>
+      </div>
+      <div class="valance-fringe"></div>
+    </div>
+  </div>
+
 <div class="g-projector-beam" aria-hidden="true"></div>
 <div class="g-ambient-glow" aria-hidden="true"></div>
 <div class="g-film gt" aria-hidden="true"></div>
@@ -14429,12 +14637,24 @@ window.startExperience = function(e) {
 
   const g = $('gate');
   if (g) {
-    g.classList.add('gone');
+    // 1. Trigger the majestic pink cinema curtain opening animation
+    g.classList.add('opening');
+    
+    // 2. Playful sparkling confetti bursts right down the parting center line
     setTimeout(() => {
+      if (typeof burst === 'function') {
+        burst(innerWidth / 2, innerHeight * 0.35);
+        burst(innerWidth / 2, innerHeight * 0.65);
+      }
+    }, 280);
+
+    // 3. When the grand curtain pull completes, cleanup gate completely
+    setTimeout(() => {
+      g.classList.add('gone');
       g.style.display = 'none';
       const stickH1 = document.querySelector('.stick h1');
       if (stickH1) stickH1.classList.add('hin');
-    }, 900);
+    }, 1250);
   }
   
   document.body.classList.remove('locked');
