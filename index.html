@@ -8861,33 +8861,52 @@ body.locked .sd {
    PREMIUM REDESIGN & MOBILE FIX FOR #app & #cinemas SECTIONS
    ========================================================================== */
 
-/* --- SECTION 1: #app (YOUR NEXT MOVIE NIGHT DESERVES THIS) --- */
+/* ==========================================================================
+   OFFICIAL LOVE CAFE SIGNATURE BLUSH & LIGHT PINK THEME FOR #app SECTION
+   ========================================================================== */
+
+/* Main Section: Luminous Silk Blush Pink Aura */
 .app-showcase-section {
   position: relative !important;
-  background: radial-gradient(ellipse 90% 60% at 50% -15%, rgba(255, 42, 109, 0.28) 0%, transparent 65%),
-              radial-gradient(circle at 12% 80%, rgba(147, 51, 234, 0.22) 0%, transparent 50%),
-              radial-gradient(circle at 88% 70%, rgba(255, 210, 63, 0.16) 0%, transparent 45%),
-              linear-gradient(180deg, #14030d 0%, #250719 50%, #15030e 100%) !important;
-  padding: clamp(60px, 8vw, 110px) clamp(16px, 4vw, 48px) !important;
-  color: #ffffff !important;
+  background: radial-gradient(ellipse 95% 65% at 50% -5%, #ffffff 0%, #fff2f6 30%, #ffdeea 65%, #fcb6cb 100%),
+              linear-gradient(180deg, #fff5f8 0%, #ffebf2 50%, #ffdbe6 100%) !important;
+  border-top: 1.5px solid rgba(220, 50, 95, 0.16) !important;
+  border-bottom: 1.5px solid rgba(220, 50, 95, 0.16) !important;
+  box-shadow: inset 0 24px 50px rgba(255, 255, 255, 0.7), inset 0 -24px 50px rgba(255, 255, 255, 0.5) !important;
+  padding: clamp(64px, 8vw, 115px) clamp(16px, 4vw, 48px) !important;
+  color: #4a071b !important;
   overflow: hidden !important;
   scroll-margin-top: 80px !important;
+}
+
+.app-showcase-section::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, transparent 0%, #ff2a6d 25%, #ffd23f 50%, #ff2a6d 75%, transparent 100%) !important;
+  opacity: 0.9 !important;
 }
 
 .app-section-inner {
   max-width: 1200px !important;
   margin: 0 auto !important;
   width: 100% !important;
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 .app-main-grid {
   display: grid !important;
-  grid-template-columns: 1fr 1.22fr !important;
+  grid-template-columns: 1fr 1.25fr !important;
   align-items: center !important;
-  gap: clamp(24px, 4vw, 56px) !important;
+  gap: clamp(24px, 4.5vw, 60px) !important;
   width: 100% !important;
 }
 
+/* Left Column: Rich Raspberry & Coral Typography */
 .app-text-col {
   display: flex !important;
   flex-direction: column !important;
@@ -8895,39 +8914,168 @@ body.locked .sd {
   gap: 16px !important;
 }
 
+.app-wow-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.28) !important;
+  color: #8c0d3a !important;
+  border-radius: 999px !important;
+  padding: 6px 16px !important;
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 4px 16px rgba(200, 30, 80, 0.1) !important;
+}
+
+.app-tag-star {
+  font-size: 13px !important;
+}
+
 .app-title-head {
   font-family: var(--disp) !important;
-  font-size: clamp(34px, 4.2vw, 54px) !important;
+  font-size: clamp(34px, 4.4vw, 56px) !important;
   font-weight: 900 !important;
   line-height: 1.08 !important;
-  color: #ffffff !important;
+  color: #5a0620 !important;
   margin: 0 !important;
   letter-spacing: -0.02em !important;
 }
 
-.app-subtitle-desc {
-  font-family: var(--sans) !important;
-  font-size: clamp(15px, 1.2vw, 17.5px) !important;
-  font-weight: 500 !important;
-  line-height: 1.55 !important;
-  color: #ffd8e5 !important;
-  margin: 0 !important;
-  max-width: 460px !important;
+.app-title-head .coral-gradient-text {
+  background: linear-gradient(135deg, #d81159 0%, #ff2a6d 45%, #ff5287 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block !important;
 }
 
+.app-subtitle-desc {
+  font-family: var(--sans) !important;
+  font-size: clamp(15px, 1.25vw, 17.5px) !important;
+  font-weight: 500 !important;
+  line-height: 1.6 !important;
+  color: #781938 !important;
+  margin: 0 !important;
+  max-width: 480px !important;
+}
+
+/* Store Badge Buttons: Luxury Cinema Black with Rose Accents */
 .app-stores-row {
   display: flex !important;
   flex-wrap: wrap !important;
   gap: 12px !important;
   align-items: center !important;
-  margin-top: 4px !important;
+  margin-top: 6px !important;
 }
 
+.app-stores-row .store-badge-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 11px !important;
+  background: #17030d !important;
+  color: #ffffff !important;
+  padding: 9px 19px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(160, 20, 60, 0.18) !important;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease !important;
+}
+
+.app-stores-row .store-badge-btn:hover {
+  background: #e6195a !important;
+  border-color: #ffd23f !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 30px rgba(230, 25, 90, 0.4) !important;
+}
+
+.app-stores-row .store-badge-btn .btn-text-wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: left !important;
+  line-height: 1.15 !important;
+}
+
+.app-stores-row .store-badge-btn small {
+  font-family: var(--sans) !important;
+  font-size: 9.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  text-transform: uppercase !important;
+}
+
+.app-stores-row .store-badge-btn b {
+  font-family: var(--disp) !important;
+  font-size: 14.5px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+}
+
+/* Luxury QR Card: Soft Frosted Cream Glass */
+.app-qr-download-card {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-radius: 18px !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.22) !important;
+  box-shadow: 0 12px 30px rgba(180, 25, 75, 0.1) !important;
+  padding: 12px 18px !important;
+  margin-top: 6px !important;
+}
+
+.qr-code-frame {
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+  background: #ffffff !important;
+  padding: 3px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.qr-instruction {
+  font-family: var(--disp) !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  color: #5a0620 !important;
+}
+
+.qr-hand-arrow svg path {
+  stroke: #e6195a !important;
+}
+
+/* Right Column: Screen Switcher & Real Phone Carousel */
 .app-graphic-col {
   width: 100% !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
+}
+
+.floating-script-note {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-family: var(--disp) !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  color: #8c0d3a !important;
+  margin-bottom: 8px !important;
+}
+
+.script-heart {
+  font-size: 17px !important;
 }
 
 .app-screens-showcase-container {
@@ -8938,6 +9086,7 @@ body.locked .sd {
   gap: 12px !important;
 }
 
+/* Luxury Frosted Switcher Tabs */
 .app-screens-tab-pills {
   display: flex !important;
   align-items: center !important;
@@ -8953,26 +9102,33 @@ body.locked .sd {
   font-size: 12px !important;
   font-weight: 800 !important;
   border-radius: 999px !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1.5px solid rgba(255, 180, 215, 0.3) !important;
-  color: #ffd4e2 !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1.5px solid rgba(220, 50, 95, 0.22) !important;
+  color: #8c0d3a !important;
   cursor: pointer !important;
-  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 12px rgba(180, 20, 60, 0.06) !important;
+  transition: all 0.22s ease !important;
 }
 
 .app-tab-btn:hover {
+  background: #ffffff !important;
+  color: #e6195a !important;
   border-color: #ff5287 !important;
-  color: #ffffff !important;
   transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(220, 30, 80, 0.14) !important;
 }
 
 .app-tab-btn.active {
-  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  background: linear-gradient(135deg, #e6195a 0%, #b80d44 100%) !important;
   color: #ffffff !important;
   border-color: #ffd23f !important;
-  box-shadow: 0 4px 16px rgba(255, 42, 109, 0.5) !important;
+  box-shadow: 0 6px 20px rgba(230, 25, 90, 0.38) !important;
+  transform: translateY(-1px) !important;
 }
 
+/* Phone Carousel Stage */
 .app-carousel-stage {
   position: relative !important;
   width: 100% !important;
@@ -9008,26 +9164,28 @@ body.locked .sd {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  gap: 8px !important;
+  gap: 10px !important;
   transition: transform 0.35s ease, filter 0.35s ease !important;
 }
 
-.app-screen-card.active .app-phone-mockup {
-  border-color: #ff2a6d !important;
-  box-shadow: 0 0 24px rgba(255, 42, 109, 0.6), 0 16px 36px rgba(0, 0, 0, 0.7) !important;
-  transform: scale(1.02) !important;
-}
-
+/* Smartphone Mockup: Dark Rose-Titanium Bezel */
 .app-phone-mockup {
   width: 100% !important;
   max-width: 215px !important;
   aspect-ratio: 9 / 18 !important;
-  border-radius: 26px !important;
-  border: 3.5px solid #2a1420 !important;
+  border-radius: 28px !important;
+  border: 4px solid #240816 !important;
   background: #000000 !important;
   overflow: hidden !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 0 20px 45px rgba(160, 15, 60, 0.22), 0 8px 18px rgba(0, 0, 0, 0.1) !important;
   position: relative !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.app-screen-card.active .app-phone-mockup {
+  border-color: #e6195a !important;
+  box-shadow: 0 0 32px rgba(230, 25, 90, 0.45), 0 24px 50px rgba(140, 15, 55, 0.28) !important;
+  transform: scale(1.025) !important;
 }
 
 .phone-screen-img-box {
@@ -9046,6 +9204,49 @@ body.locked .sd {
   will-change: transform !important;
 }
 
+.phone-dynamic-notch {
+  width: 44px !important;
+  height: 10px !important;
+  background: #000000 !important;
+  border-radius: 0 0 10px 10px !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 5 !important;
+}
+
+/* Card Captions: Deep Crisp Berry */
+.app-screen-caption {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 4px !important;
+  text-align: center !important;
+}
+
+.caption-tag {
+  font-family: var(--disp) !important;
+  font-size: 9.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  padding: 3px 10px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(220, 40, 80, 0.22) !important;
+  color: #8c0d3a !important;
+  box-shadow: 0 2px 8px rgba(180, 20, 60, 0.08) !important;
+}
+
+.app-screen-caption b {
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #5a0620 !important;
+}
+
+/* Arrow Navigation: Glass Buttons with Rose Accents */
 .app-arrow-nav {
   position: absolute !important;
   top: 50% !important;
@@ -9053,9 +9254,9 @@ body.locked .sd {
   width: 40px !important;
   height: 40px !important;
   border-radius: 50% !important;
-  background: rgba(26, 6, 16, 0.88) !important;
-  border: 1.5px solid rgba(255, 42, 109, 0.6) !important;
-  color: #fff !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 2px solid rgba(230, 25, 90, 0.35) !important;
+  color: #8c0d3a !important;
   font-size: 24px !important;
   font-weight: 700 !important;
   line-height: 1 !important;
@@ -9064,21 +9265,125 @@ body.locked .sd {
   justify-content: center !important;
   cursor: pointer !important;
   z-index: 25 !important;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 12px rgba(255, 42, 109, 0.4) !important;
+  box-shadow: 0 6px 20px rgba(180, 20, 60, 0.18) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
   transition: all 0.2s ease !important;
 }
 
 .app-arrow-nav:hover {
-  background: #ff2a6d !important;
+  background: #e6195a !important;
   border-color: #ffd23f !important;
+  color: #ffffff !important;
   transform: translateY(-50%) scale(1.1) !important;
+  box-shadow: 0 8px 24px rgba(230, 25, 90, 0.45) !important;
 }
 
 .app-arrow-prev { left: 4px !important; }
 .app-arrow-next { right: 4px !important; }
 
-/* Responsive adjustments for #app on mobile */
+/* Pagination Dots */
+.app-carousel-dots {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-top: 10px !important;
+}
+
+.app-dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 999px !important;
+  background: rgba(180, 30, 70, 0.25) !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+}
+
+.app-dot.active {
+  width: 22px !important;
+  background: #e6195a !important;
+  box-shadow: 0 0 10px rgba(230, 25, 90, 0.5) !important;
+}
+
+/* Bottom Perks Capsule Bar: 4 High-Impact White Frosted Cards */
+.app-perks-capsule-bar {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 14px !important;
+  margin-top: 28px !important;
+  width: 100% !important;
+}
+
+.perk-card {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1.5px solid rgba(240, 180, 205, 0.7) !important;
+  border-radius: 18px !important;
+  padding: 14px 18px !important;
+  box-shadow: 0 10px 28px rgba(180, 25, 75, 0.08) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.perk-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(230, 25, 90, 0.4) !important;
+  box-shadow: 0 12px 32px rgba(200, 30, 80, 0.14) !important;
+}
+
+.perk-icon {
+  font-size: 22px !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 235, 242, 0.95) !important;
+  border: 1px solid rgba(220, 40, 80, 0.2) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.perk-icon.heart-circle {
+  font-size: 16px !important;
+}
+
+.perk-details {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  text-align: left !important;
+}
+
+.perk-details b {
+  font-family: var(--disp) !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  color: #5a0620 !important;
+}
+
+.perk-details span {
+  font-family: var(--sans) !important;
+  font-size: 11px !important;
+  color: #821c3c !important;
+}
+
+.perk-divider {
+  display: none !important;
+}
+
+/* Mobile & Tablet Responsiveness (<= 900px) */
 @media (max-width: 900px) {
+  .app-showcase-section {
+    padding: 50px 14px !important;
+  }
+
   .app-main-grid {
     display: flex !important;
     flex-direction: column !important;
@@ -9120,14 +9425,41 @@ body.locked .sd {
     display: none !important;
   }
 
+  .app-arrow-nav {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 20px !important;
+  }
+
+  .app-arrow-prev { left: 2px !important; }
+  .app-arrow-next { right: 2px !important; }
+
   .app-perks-capsule-bar {
-    display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 8px !important;
-    padding: 0 !important;
-    margin-top: 14px !important;
+    margin-top: 16px !important;
     width: 100% !important;
-    max-width: 420px !important;
+    max-width: 440px !important;
+  }
+
+  .perk-card {
+    padding: 10px 12px !important;
+    border-radius: 14px !important;
+    gap: 8px !important;
+  }
+
+  .perk-icon {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 17px !important;
+  }
+
+  .perk-details b {
+    font-size: 12px !important;
+  }
+
+  .perk-details span {
+    font-size: 10px !important;
   }
 }
 
