@@ -232,7 +232,7 @@ body.locked{overflow:hidden;height:100svh}
 #menu nav a{font:800 clamp(38px,9vw,76px)/1.05 var(--disp);color:#fff;text-shadow:3px 3px 0 var(--line)}
 #menu nav a:hover{color:#ffd23f}
 .nav{z-index:95}
-#dock{position:fixed;left:0;right:0;bottom:0;z-index:80;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:linear-gradient(transparent,rgba(253,232,236,.95) 40%);display:none;justify-content:center;transform:translateY(120%);transition:transform .4s}
+#dock { display: none !important; }
 #dock.on{transform:none}
 #dock .stores{flex-wrap:nowrap;gap:8px}#dock .store{padding:7px 12px 7px 10px;font-size:15px;box-shadow:3px 3px 0 var(--rasp)}#dock svg{width:24px;height:24px}
 .sd{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:70;display:flex;flex-direction:column;gap:12px}
@@ -258,7 +258,7 @@ body.locked{overflow:hidden;height:100svh}
 .pin{position:absolute;font-size:clamp(28px,5vw,46px);animation:bob 2.6s ease-in-out infinite;filter:drop-shadow(3px 3px 0 rgba(42,24,32,.6))}
 .mtag{position:absolute;left:14px;bottom:10px;font-size:12px;color:var(--mut);font-style:normal;background:#fff;border:2px solid var(--line);border-radius:99px;padding:2px 12px}
 @media(max-width:860px){
- .mb{display:inline-block}.sd{display:none}#dock{display:flex}.nl a:not(.btn){display:none}.nl .btn{display:none}
+ .mb{display:inline-block}.sd{display:none}#dock { display: none !important; }.nl a:not(.btn){display:none}.nl .btn{display:none}
  .stores .store{padding:8px 12px 8px 10px;font-size:15px}.stores svg{width:26px;height:26px}
  .stick .copy .stores{margin-top:6px}.stick .copy .flink{margin-top:10px;font-size:16px}
  .sl{grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;gap:34px;text-align:center;padding:76px 22px 24px}.sl h2{max-width:none;font-size:clamp(40px,12vw,64px)}.sl p{margin:10px auto 0}.sl .tx{order:2}.pl{order:1;width:min(64vw,36vh)}
@@ -4242,10 +4242,7 @@ body.locked .sd {
   .cta-banner-right {
     justify-content: center !important;
   }
-}
 
-
-/* ==========================================================================
 /* ==========================================================================
    OFFICIAL REFERENCE DESIGN: HERO & NAVIGATION STYLING
    ========================================================================== */
@@ -4625,8 +4622,6 @@ body.locked .sd {
 .sd a:hover .sd-label {
   opacity: 1 !important;
   transform: translateX(0) !important;
-}
-  fill: #ffffff !important;
 }
 
 /* 2. Hero Section Atmosphere */
@@ -8861,6 +8856,647 @@ body.locked .sd {
   }
 }
 
+
+/* ==========================================================================
+   PREMIUM REDESIGN & MOBILE FIX FOR #app & #cinemas SECTIONS
+   ========================================================================== */
+
+/* --- SECTION 1: #app (YOUR NEXT MOVIE NIGHT DESERVES THIS) --- */
+.app-showcase-section {
+  position: relative !important;
+  background: radial-gradient(ellipse 90% 60% at 50% -15%, rgba(255, 42, 109, 0.28) 0%, transparent 65%),
+              radial-gradient(circle at 12% 80%, rgba(147, 51, 234, 0.22) 0%, transparent 50%),
+              radial-gradient(circle at 88% 70%, rgba(255, 210, 63, 0.16) 0%, transparent 45%),
+              linear-gradient(180deg, #14030d 0%, #250719 50%, #15030e 100%) !important;
+  padding: clamp(60px, 8vw, 110px) clamp(16px, 4vw, 48px) !important;
+  color: #ffffff !important;
+  overflow: hidden !important;
+  scroll-margin-top: 80px !important;
+}
+
+.app-section-inner {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+.app-main-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1.22fr !important;
+  align-items: center !important;
+  gap: clamp(24px, 4vw, 56px) !important;
+  width: 100% !important;
+}
+
+.app-text-col {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 16px !important;
+}
+
+.app-title-head {
+  font-family: var(--disp) !important;
+  font-size: clamp(34px, 4.2vw, 54px) !important;
+  font-weight: 900 !important;
+  line-height: 1.08 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.app-subtitle-desc {
+  font-family: var(--sans) !important;
+  font-size: clamp(15px, 1.2vw, 17.5px) !important;
+  font-weight: 500 !important;
+  line-height: 1.55 !important;
+  color: #ffd8e5 !important;
+  margin: 0 !important;
+  max-width: 460px !important;
+}
+
+.app-stores-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  align-items: center !important;
+  margin-top: 4px !important;
+}
+
+.app-graphic-col {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.app-screens-showcase-container {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.app-screens-tab-pills {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 6px !important;
+}
+
+.app-tab-btn {
+  padding: 7px 18px !important;
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1.5px solid rgba(255, 180, 215, 0.3) !important;
+  color: #ffd4e2 !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+}
+
+.app-tab-btn:hover {
+  border-color: #ff5287 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
+.app-tab-btn.active {
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
+  border-color: #ffd23f !important;
+  box-shadow: 0 4px 16px rgba(255, 42, 109, 0.5) !important;
+}
+
+.app-carousel-stage {
+  position: relative !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.app-screens-carousel {
+  display: flex !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory !important;
+  scroll-behavior: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-x pan-y !important;
+  gap: 16px !important;
+  padding: 12px calc((100% - 215px) / 2) 16px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  scrollbar-width: none !important;
+}
+
+.app-screens-carousel::-webkit-scrollbar {
+  display: none !important;
+}
+
+.app-screen-card {
+  flex: 0 0 215px !important;
+  width: 215px !important;
+  max-width: 215px !important;
+  scroll-snap-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: transform 0.35s ease, filter 0.35s ease !important;
+}
+
+.app-screen-card.active .app-phone-mockup {
+  border-color: #ff2a6d !important;
+  box-shadow: 0 0 24px rgba(255, 42, 109, 0.6), 0 16px 36px rgba(0, 0, 0, 0.7) !important;
+  transform: scale(1.02) !important;
+}
+
+.app-phone-mockup {
+  width: 100% !important;
+  max-width: 215px !important;
+  aspect-ratio: 9 / 18 !important;
+  border-radius: 26px !important;
+  border: 3.5px solid #2a1420 !important;
+  background: #000000 !important;
+  overflow: hidden !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6) !important;
+  position: relative !important;
+}
+
+.phone-screen-img-box {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.phone-screen-img-box img {
+  width: 100% !important;
+  height: 122% !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  display: block !important;
+  will-change: transform !important;
+}
+
+.app-arrow-nav {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background: rgba(26, 6, 16, 0.88) !important;
+  border: 1.5px solid rgba(255, 42, 109, 0.6) !important;
+  color: #fff !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 25 !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 12px rgba(255, 42, 109, 0.4) !important;
+  transition: all 0.2s ease !important;
+}
+
+.app-arrow-nav:hover {
+  background: #ff2a6d !important;
+  border-color: #ffd23f !important;
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+.app-arrow-prev { left: 4px !important; }
+.app-arrow-next { right: 4px !important; }
+
+/* Responsive adjustments for #app on mobile */
+@media (max-width: 900px) {
+  .app-main-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .app-text-col {
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+  }
+
+  .app-title-head {
+    font-size: clamp(28px, 7.5vw, 42px) !important;
+    text-align: center !important;
+  }
+
+  .app-subtitle-desc {
+    text-align: center !important;
+    font-size: 15px !important;
+    max-width: 100% !important;
+  }
+
+  .app-stores-row {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .desktop-only-qr {
+    display: none !important;
+  }
+
+  .floating-script-note {
+    display: none !important;
+  }
+
+  .app-perks-capsule-bar {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    margin-top: 14px !important;
+    width: 100% !important;
+    max-width: 420px !important;
+  }
+}
+
+/* --- SECTION 2: #cinemas (FIND YOUR CINEMA / LOCATOR) --- */
+.cinemas-showcase-section {
+  position: relative !important;
+  background: radial-gradient(ellipse 85% 55% at 50% -20%, rgba(230, 25, 90, 0.3) 0%, transparent 65%),
+              radial-gradient(circle at 15% 40%, rgba(147, 51, 234, 0.2) 0%, transparent 50%),
+              radial-gradient(circle at 85% 65%, rgba(255, 210, 63, 0.16) 0%, transparent 45%),
+              linear-gradient(180deg, #15030e 0%, #26081a 50%, #14020b 100%) !important;
+  padding: clamp(56px, 8vw, 110px) clamp(16px, 4vw, 48px) !important;
+  color: #ffffff !important;
+  overflow: hidden !important;
+  scroll-margin-top: 80px !important;
+}
+
+.cinemas-section-inner {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+.cinemas-header-block {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 12px !important;
+  margin-bottom: 24px !important;
+}
+
+.cinemas-title-head {
+  font-family: var(--disp) !important;
+  font-size: clamp(30px, 4.2vw, 50px) !important;
+  font-weight: 900 !important;
+  line-height: 1.1 !important;
+  margin: 0 !important;
+}
+
+.cinemas-subtitle-desc {
+  font-size: clamp(14px, 1.1vw, 16.5px) !important;
+  color: #ffd4e2 !important;
+  max-width: 520px !important;
+  margin: 0 auto !important;
+}
+
+/* Luxury Toolbar for Cinemas */
+.cinemas-luxury-toolbar {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 580px !important;
+  margin: 10px auto 0 !important;
+}
+
+.cinemas-search-box {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1.5px solid rgba(255, 180, 215, 0.35) !important;
+  border-radius: 999px !important;
+  padding: 10px 20px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.cinemas-search-box:focus-within {
+  border-color: #ff2a6d !important;
+  box-shadow: 0 8px 28px rgba(255, 42, 109, 0.35) !important;
+}
+
+.cinemas-search-box input {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  color: #ffffff !important;
+  font-family: var(--sans) !important;
+  font-size: 14.5px !important;
+  width: 100% !important;
+}
+
+.cinemas-search-box input::placeholder {
+  color: rgba(255, 212, 226, 0.6) !important;
+}
+
+.cinemas-filter-pills {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+}
+
+.c-pill {
+  padding: 6px 16px !important;
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1.5px solid rgba(255, 180, 215, 0.28) !important;
+  color: #ffd4e2 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.c-pill:hover {
+  border-color: #ff5287 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+.c-pill.active {
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
+  border-color: #ffd23f !important;
+  box-shadow: 0 4px 14px rgba(255, 42, 109, 0.45) !important;
+}
+
+/* Featured Header & Arrows Row */
+.featured-header-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 6px !important;
+  margin-bottom: 14px !important;
+  width: 100% !important;
+}
+
+.featured-title-wrap {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.cinema-match-count {
+  font-family: var(--disp) !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  color: #ffd23f !important;
+  letter-spacing: 0.02em !important;
+}
+
+.carousel-arrows {
+  display: flex !important;
+  gap: 8px !important;
+}
+
+.c-arrow-btn {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1.5px solid rgba(255, 42, 109, 0.4) !important;
+  color: #ffffff !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.c-arrow-btn:hover {
+  background: #ff2a6d !important;
+  border-color: #ffd23f !important;
+  transform: scale(1.08) !important;
+}
+
+/* Cinema Location Cards & Scroll Track */
+.cinema-cards-scroll-track {
+  display: flex !important;
+  flex-direction: row !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory !important;
+  scroll-behavior: smooth !important;
+  -webkit-overflow-scrolling: touch !important;
+  gap: 16px !important;
+  padding: 10px 4px 20px !important;
+  margin: 0 !important;
+  scrollbar-width: none !important;
+  width: 100% !important;
+}
+
+.cinema-cards-scroll-track::-webkit-scrollbar {
+  display: none !important;
+}
+
+.cinema-location-card {
+  flex: 0 0 min(84vw, 320px) !important;
+  width: min(84vw, 320px) !important;
+  min-width: min(84vw, 320px) !important;
+  scroll-snap-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  border-radius: 20px !important;
+  background: rgba(28, 7, 20, 0.88) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1.5px solid rgba(255, 180, 215, 0.25) !important;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5) !important;
+  overflow: hidden !important;
+  transition: transform 0.3s ease, border-color 0.3s ease !important;
+}
+
+.cinema-location-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(255, 42, 109, 0.6) !important;
+}
+
+.card-thumb-wrap {
+  width: 100% !important;
+  height: 145px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background: #11020a !important;
+}
+
+.card-thumb-wrap img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.4s ease !important;
+}
+
+.cinema-location-card:hover .card-thumb-wrap img {
+  transform: scale(1.05) !important;
+}
+
+.card-region-badge {
+  position: absolute !important;
+  top: 10px !important;
+  left: 10px !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+  font-family: var(--disp) !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  padding: 3px 9px !important;
+  border-radius: 999px !important;
+}
+
+.card-live-badge {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  background: rgba(255, 42, 109, 0.85) !important;
+  color: #fff !important;
+  font-family: var(--disp) !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  padding: 3px 9px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 0 10px rgba(255, 42, 109, 0.6) !important;
+}
+
+.card-info-wrap {
+  padding: 14px 16px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.card-title-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+}
+
+.card-title-row h4 {
+  font-family: var(--disp) !important;
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+}
+
+.screen-count-pill {
+  font-family: var(--disp) !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  background: rgba(255, 210, 63, 0.15) !important;
+  border: 1px solid rgba(255, 210, 63, 0.3) !important;
+  color: #ffd23f !important;
+  padding: 2px 8px !important;
+  border-radius: 999px !important;
+}
+
+.city-location-tag {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 6px !important;
+  font-size: 11.5px !important;
+  line-height: 1.4 !important;
+  color: #ffd0de !important;
+}
+
+.card-perks-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+}
+
+.perk-tag {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 180, 215, 0.2) !important;
+  color: #ffdce8 !important;
+  padding: 3px 8px !important;
+  border-radius: 999px !important;
+}
+
+.card-actions-row {
+  display: flex !important;
+  gap: 8px !important;
+  margin-top: 4px !important;
+}
+
+.view-loc-btn {
+  flex: 1 !important;
+  padding: 8px 10px !important;
+  border-radius: 999px !important;
+  font-family: var(--disp) !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.view-loc-btn.map-btn {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 180, 215, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.view-loc-btn.map-btn:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+}
+
+.view-loc-btn.order-btn {
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  border: 1px solid #ffd23f !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(255, 42, 109, 0.4) !important;
+}
+
+.view-loc-btn.order-btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 16px rgba(255, 42, 109, 0.6) !important;
+}
+
 </style></head><body class="locked"><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
 <div class="g-projector-beam" aria-hidden="true"></div>
 <div class="g-ambient-glow" aria-hidden="true"></div>
@@ -9855,47 +10491,39 @@ body.locked .sd {
         Discover participating cinemas and enjoy the LOVE CAFE experience where it's available.
       </p>
 
-      <!-- Search & Location Filter Controls -->
-      <div class="cinemas-controls-bar">
+      <!-- Modern Luxury Search & Region Filter Bar -->
+      <div class="cinemas-luxury-toolbar">
         <div class="cinemas-search-box">
           <span class="search-glass-icon">🔍</span>
-          <input type="text" id="cinemaSearchInput" placeholder="Search theatre name, town, road or pin code (e.g. Barrackpore, Bihar, 700120)..." aria-label="Search theatre name, town, road or pin code">
+          <input type="text" id="cinemaSearchInput" placeholder="Search cinema name, city or pin (e.g. Barrackpore, Kolkata, Bihar)..." aria-label="Search theatre name, town, road or pin code">
         </div>
-        <div class="cinemas-city-dropdown">
-          <span class="city-pin-icon">📍</span>
-          <select id="cinemaCitySelect" aria-label="Select Region">
-            <option value="all">All Locations (9 Theatres)</option>
-            <option value="west-bengal">West Bengal / Kolkata (5)</option>
-            <option value="bihar">Bihar (4)</option>
-          </select>
-          <span class="dropdown-chevron">▼</span>
+
+        <!-- Sleek Region Filter Pills -->
+        <div class="cinemas-filter-pills" id="cinemaFilterPills">
+          <button class="c-pill active" data-region="all" type="button">🍿 All (9)</button>
+          <button class="c-pill" data-region="west-bengal" type="button">📍 Kolkata / WB (5)</button>
+          <button class="c-pill" data-region="bihar" type="button">📍 Bihar (4)</button>
         </div>
-      </div>
 
-      <!-- Quick Region Filter Pills -->
-      <div class="cinemas-filter-pills" id="cinemaFilterPills">
-        <button class="c-pill active" data-region="all">🍿 All Theatres (9)</button>
-        <button class="c-pill" data-region="west-bengal">📍 West Bengal / Kolkata (5)</button>
-        <button class="c-pill" data-region="bihar">📍 Bihar (4)</button>
+        <!-- Hidden Select for JS Compatibility -->
+        <select id="cinemaCitySelect" style="display:none;" aria-label="Select Region">
+          <option value="all">All Locations (9 Theatres)</option>
+          <option value="west-bengal">West Bengal / Kolkata (5)</option>
+          <option value="bihar">Bihar (4)</option>
+        </select>
       </div>
-
-      <div id="cinemaMatchCount" class="cinema-match-count">Showing 9 of 9 partner theatres with live LOVE CAFE in-seat service</div>
     </div>
 
-    <!-- Atmosphere Stage: India Map + Theatre Glow Building + Live Network Stats -->
-        <!-- Featured Cinemas Carousel / Grid (Directly Visible - Zero Unnecessary Scroll) -->
+    <!-- Featured Cinemas Carousel -->
     <div class="featured-cinemas-wrapper">
       <div class="featured-header-row">
         <div class="featured-title-wrap">
-          <span class="star-icon">⭐</span>
-          <h3>Partner Cinema Locations</h3>
+          <span class="star-icon">🍿</span>
+          <span id="cinemaMatchCount" class="cinema-match-count">9 Partner Cinemas Active In-Seat</span>
         </div>
-        <div class="featured-actions-wrap">
-          <a href="#cinemas" class="view-all-link">Showing 9 Theatres →</a>
-          <div class="carousel-arrows">
-            <button class="c-arrow-btn" id="cinemasPrev" aria-label="Previous Cinemas">‹</button>
-            <button class="c-arrow-btn" id="cinemasNext" aria-label="Next Cinemas">›</button>
-          </div>
+        <div class="carousel-arrows">
+          <button class="c-arrow-btn" id="cinemasPrev" aria-label="Previous Cinemas" type="button">‹</button>
+          <button class="c-arrow-btn" id="cinemasNext" aria-label="Next Cinemas" type="button">›</button>
         </div>
       </div>
 
