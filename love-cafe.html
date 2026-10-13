@@ -9499,6 +9499,89 @@ body.locked .sd {
   }
 }
 
+
+/* ==========================================================================
+   COMPACT & STREAMLINED CINEMAS SECTION (ELIMINATING UNNECESSARY SCROLLING)
+   ========================================================================== */
+.cinemas-showcase-section {
+  padding: clamp(48px, 6vw, 80px) clamp(16px, 3.5vw, 42px) !important;
+}
+
+.cinemas-section-inner {
+  gap: clamp(20px, 2.5vw, 32px) !important;
+}
+
+.cinemas-header-block {
+  gap: 10px !important;
+  margin-bottom: 4px !important;
+}
+
+.cinema-tag-badge {
+  margin-bottom: 6px !important;
+  padding: 5px 14px !important;
+}
+
+.cinemas-title-head {
+  font-size: clamp(28px, 3.8vw, 46px) !important;
+  margin-bottom: 2px !important;
+}
+
+.cinemas-subtitle-desc {
+  font-size: clamp(13px, 1.1vw, 15.5px) !important;
+  margin-bottom: 6px !important;
+}
+
+.cinemas-controls-bar {
+  gap: 10px !important;
+  margin-top: 2px !important;
+}
+
+.cinemas-search-box input {
+  padding: 10px 0 !important;
+}
+
+.cinemas-city-dropdown select {
+  padding: 10px 18px 10px 0 !important;
+}
+
+.cinemas-filter-pills {
+  margin-top: 4px !important;
+  gap: 8px !important;
+}
+
+.c-pill {
+  padding: 7px 16px !important;
+  font-size: 12px !important;
+}
+
+.cinema-match-count {
+  margin-top: 2px !important;
+  padding: 4px 16px !important;
+  font-size: 12px !important;
+}
+
+.featured-cinemas-wrapper {
+  margin-top: 4px !important;
+}
+
+.cinema-cards-scroll-track {
+  gap: 18px !important;
+  margin-top: 6px !important;
+}
+
+.card-thumb-wrap {
+  height: 185px !important;
+}
+
+@media (max-width: 900px) {
+  .cinemas-showcase-section {
+    padding: 36px 14px 28px !important;
+  }
+  .card-thumb-wrap {
+    height: 160px !important;
+  }
+}
+
 </style></head><body class="locked"><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
 <div class="g-projector-beam" aria-hidden="true"></div>
 <div class="g-ambient-glow" aria-hidden="true"></div>
@@ -10556,91 +10639,7 @@ body.locked .sd {
     </div>
 
     <!-- Atmosphere Stage: India Map + Theatre Glow Building + Live Network Stats -->
-    <div class="cinemas-atmosphere-stage">
-      <!-- Graphical Header Ribbon -->
-      <div class="atm-stage-header-row">
-        <div class="atm-radar-live-pill">
-          <span class="atm-live-beacon"></span>
-          <span class="atm-live-text">LIVE CINEMA RADAR</span>
-          <span class="atm-live-badge">9 SCREENS</span>
-        </div>
-        <div class="atm-service-tag">
-          <span class="atm-tag-icon">⚡</span>
-          <span>10-MIN IN-SEAT DINING</span>
-        </div>
-      </div>
-
-      <!-- Graphical Panels Row: India Map + Theatre Facade -->
-      <div class="cinemas-radar-row">
-        <!-- Left Panel: Regional Map Network -->
-        <div class="map-badge-container atm-graphic-panel atm-panel-map">
-          <div class="atm-panel-top-tag tag-pink">
-            <span>🗺️</span> REGIONAL NETWORK
-          </div>
-          <div class="desktop-map-wrap">
-            <img class="desktop-map-img" src="assets/showcase/india_map_outlets.png" alt="Map of India showing Partner Theatres Across West Bengal and Bihar" loading="lazy">
-          </div>
-          <span class="map-caption-badge">
-            <span class="map-pin-pulse">📍</span>
-            <b>5 in West Bengal</b> · <b>4 in Bihar</b>
-          </span>
-        </div>
-
-        <!-- Right Panel: Cinema Marquee Stage -->
-        <div class="theatre-glow-container atm-graphic-panel atm-panel-cinema">
-          <div class="atm-panel-top-tag tag-gold">
-            <span>🎬</span> PREMIER EXPERIENCE
-          </div>
-          <div class="theatre-glow-container-inner">
-            <div class="theatre-hand-note">
-              <span>Your next</span><br>
-              <span>movie stop! 🍿</span>
-            </div>
-            <div class="theatre-building-wrap">
-              <img class="theatre-building-img" src="assets/showcase/theatre_building_glow.png" alt="Glowing Love Cafe Cinema building facade" loading="lazy">
-            </div>
-          </div>
-          <span class="cinema-caption-badge">
-            <span class="cinema-star-pulse">✨</span>
-            <b>Aurora, Cinepolis &amp; INOX</b> Partners
-          </span>
-        </div>
-      </div>
-
-      <!-- Colorful Graphical Stat Badges -->
-      <div class="atmosphere-stats-strip">
-        <div class="atm-stat-item atm-stat-speed">
-          <div class="atm-stat-icon">⚡</div>
-          <div class="atm-stat-info">
-            <b>~10 Mins Speed</b>
-            <span>Seat delivery</span>
-          </div>
-        </div>
-        <div class="atm-stat-item atm-stat-screens">
-          <div class="atm-stat-icon">🎟️</div>
-          <div class="atm-stat-info">
-            <b>9 Live Screens</b>
-            <span>WB &amp; Bihar</span>
-          </div>
-        </div>
-        <div class="atm-stat-item atm-stat-rating">
-          <div class="atm-stat-icon">⭐</div>
-          <div class="atm-stat-info">
-            <b>4.9★ Rating</b>
-            <span>Guest reviews</span>
-          </div>
-        </div>
-        <div class="atm-stat-item atm-stat-fresh">
-          <div class="atm-stat-icon">🍿</div>
-          <div class="atm-stat-info">
-            <b>Cinema Fresh</b>
-            <span>Gourmet snacks</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Featured Cinemas Carousel / Grid -->
+        <!-- Featured Cinemas Carousel / Grid (Directly Visible - Zero Unnecessary Scroll) -->
     <div class="featured-cinemas-wrapper">
       <div class="featured-header-row">
         <div class="featured-title-wrap">
@@ -10660,7 +10659,7 @@ body.locked .sd {
         <!-- 1. Atindra Multiplex (Barrackpore, WB) -->
         <div class="cinema-location-card" data-city="west-bengal" data-name="atindra multiplex 91 ghoshpara rd das bari barrackpore west bengal 700120">
           <div class="card-thumb-wrap">
-            <img src="assets/showcase/thumb_pvr_orion.png" alt="Atindra Multiplex, Barrackpore" loading="lazy">
+            <img src="assets/showcase/cinema_clean_hall.jpg" alt="Atindra Multiplex, Barrackpore" loading="lazy">
             <span class="card-region-badge">📍 West Bengal</span>
             <span class="card-live-badge">🍿 Counter Active</span>
           </div>
@@ -10692,7 +10691,7 @@ body.locked .sd {
         <!-- 2. Cinema Hut (Chandannagar, WB) -->
         <div class="cinema-location-card" data-city="west-bengal" data-name="cinema hut v969+6pp barabazar chandannagar hooghly west bengal 712136">
           <div class="card-thumb-wrap">
-            <img src="assets/showcase/thumb_inox_phoenix.png" alt="Cinema Hut, Chandannagar" loading="lazy">
+            <img src="assets/showcase/cinema_clean_recliners.jpg" alt="Cinema Hut, Chandannagar" loading="lazy">
             <span class="card-region-badge">📍 West Bengal</span>
             <span class="card-live-badge">🍿 Counter Active</span>
           </div>
@@ -10724,7 +10723,7 @@ body.locked .sd {
         <!-- 3. Sushama Cinema (Sheoraphuli, Kolkata, WB) -->
         <div class="cinema-location-card" data-city="west-bengal" data-name="sushama cinema q8gg+p58 grand trunk rd sheoraphuli kolkata hooghly west bengal 712223">
           <div class="card-thumb-wrap">
-            <img src="assets/showcase/thumb_pvr_forum.png" alt="Sushama Cinema, Sheoraphuli" loading="lazy">
+            <img src="assets/showcase/cinema_clean_auditorium.jpg" alt="Sushama Cinema, Sheoraphuli" loading="lazy">
             <span class="card-region-badge">📍 West Bengal</span>
             <span class="card-live-badge">🍿 Counter Active</span>
           </div>
@@ -10756,7 +10755,7 @@ body.locked .sd {
         <!-- 4. Rupmandir Cinema (Belghoria, Kolkata, WB) -->
         <div class="cinema-location-card" data-city="west-bengal" data-name="rupmandir cinema 40 indrapuri beehive garden belghoria kolkata west bengal 700056">
           <div class="card-thumb-wrap">
-            <img src="assets/showcase/thumb_cinepolis_nexus.png" alt="Rupmandir Cinema, Belghoria" loading="lazy">
+            <img src="assets/showcase/cinema_clean_facade.jpg" alt="Rupmandir Cinema, Belghoria" loading="lazy">
             <span class="card-region-badge">📍 West Bengal</span>
             <span class="card-live-badge">🍿 Counter Active</span>
           </div>
@@ -10788,7 +10787,7 @@ body.locked .sd {
         <!-- 5. Rathindra Multiplex (Sodepur, Kolkata, WB) -->
         <div class="cinema-location-card" data-city="west-bengal" data-name="rathindra multiplex rathindra cinema hall 38 41 rn ave block-d/32 no 2 deshabondhu nagar sodepur kolkata khardaha west bengal 700110">
           <div class="card-thumb-wrap">
-            <img src="assets/showcase/cinema_building.png" alt="Rathindra Multiplex, Sodepur" loading="lazy">
+            <img src="assets/showcase/cinema_clean_hall.jpg" alt="Rathindra Multiplex, Sodepur" loading="lazy">
             <span class="card-region-badge">📍 West Bengal</span>
             <span class="card-live-badge">🍿 Counter Active</span>
           </div>
@@ -10799,15 +10798,15 @@ body.locked .sd {
             </div>
             <div class="city-location-tag">
               <span class="pin-ico">📍</span>
-              <span>38, Rathindra Cinema Hall, 41, RN Ave, Block-D/32, Sodepur, Kolkata, Khardaha, West Bengal 700110</span>
+              <span>38/41, RN Ave, Deshabondhu Nagar, Sodepur, Kolkata, West Bengal 700110</span>
             </div>
             <div class="card-perks-row">
               <span class="perk-tag">⚡ In-Seat ~10m</span>
-              <span class="perk-tag">🍿 Cinema Fresh</span>
-              <span class="perk-tag">🥪 Sandwiches</span>
+              <span class="perk-tag">🍿 Fresh Popcorn</span>
+              <span class="perk-tag">🧃 Cold Beverages</span>
             </div>
             <div class="card-actions-row">
-              <a href="https://www.google.com/maps/search/?api=1&query=Rathindra+Cinema+Hall+38+RN+Ave+Sodepur+Kolkata+West+Bengal+700110" target="_blank" rel="noopener noreferrer" class="view-loc-btn map-btn">
+              <a href="https://www.google.com/maps/search/?api=1&query=Rathindra+Multiplex+RN+Ave+Sodepur+Kolkata+West+Bengal+700110" target="_blank" rel="noopener noreferrer" class="view-loc-btn map-btn">
                 <span>🗺️ Get Directions</span>
               </a>
               <a href="#app" class="view-loc-btn order-btn">
@@ -10818,25 +10817,25 @@ body.locked .sd {
         </div>
 
         <!-- 6. Ambica Palace Multiplex (Ghorasahan, Bihar) -->
-        <div class="cinema-location-card" data-city="bihar" data-name="ambica palace multiplex r4cm+qfh ghorasahan east champaran bihar 845303">
+        <div class="cinema-location-card" data-city="bihar" data-name="ambica palace multiplex ghorasahan bihar 845303">
           <div class="card-thumb-wrap">
-            <img src="assets/showcase/theatre_building_glow.png" alt="Ambica Palace Multiplex, Ghorasahan" loading="lazy">
+            <img src="assets/showcase/cinema_clean_recliners.jpg" alt="Ambica Palace Multiplex, Ghorasahan" loading="lazy">
             <span class="card-region-badge">📍 Bihar</span>
             <span class="card-live-badge">🍿 Counter Active</span>
           </div>
           <div class="card-info-wrap">
             <div class="card-title-row">
-              <h4>Ambica Palace (Multiplex)</h4>
-              <span class="screen-count-pill">★ 4.8 Multiplex</span>
+              <h4>Ambica Palace Multiplex</h4>
+              <span class="screen-count-pill">★ 4.8 Premier</span>
             </div>
             <div class="city-location-tag">
               <span class="pin-ico">📍</span>
-              <span>R4CM+QFH, Ghorasahan, Bihar 845303</span>
+              <span>Station Road, Ghorasahan, Bihar 845303</span>
             </div>
             <div class="card-perks-row">
               <span class="perk-tag">⚡ In-Seat ~10m</span>
-              <span class="perk-tag">🍿 Jumbo Tub</span>
-              <span class="perk-tag">📱 App Seat Delivery</span>
+              <span class="perk-tag">🍿 Gourmet Snacks</span>
+              <span class="perk-tag">☕ Warm Brews</span>
             </div>
             <div class="card-actions-row">
               <a href="https://www.google.com/maps/search/?api=1&query=Ambica+Palace+Multiplex+Ghorasahan+Bihar+845303" target="_blank" rel="noopener noreferrer" class="view-loc-btn map-btn">
@@ -10852,7 +10851,7 @@ body.locked .sd {
         <!-- 7. Sarswati Talkies (Gopalganj, Bihar) -->
         <div class="cinema-location-card" data-city="bihar" data-name="sarswati talkies yadavpur rd ward 7 gopalganj bihar 841428">
           <div class="card-thumb-wrap">
-            <img src="assets/showcase/cinema_inox_phoenix.png" alt="Sarswati Talkies, Gopalganj" loading="lazy">
+            <img src="assets/showcase/cinema_clean_auditorium.jpg" alt="Sarswati Talkies, Gopalganj" loading="lazy">
             <span class="card-region-badge">📍 Bihar</span>
             <span class="card-live-badge">🍿 Counter Active</span>
           </div>
@@ -10884,7 +10883,7 @@ body.locked .sd {
         <!-- 8. Lal Talkies (Chanpatia, Bihar) -->
         <div class="cinema-location-card" data-city="bihar" data-name="lal talkies chanpatia west champaran bihar 845449">
           <div class="card-thumb-wrap">
-            <img src="assets/showcase/cinema_cinepolis_nexus.png" alt="Lal Talkies, Chanpatia" loading="lazy">
+            <img src="assets/showcase/cinema_clean_facade.jpg" alt="Lal Talkies, Chanpatia" loading="lazy">
             <span class="card-region-badge">📍 Bihar</span>
             <span class="card-live-badge">🍿 Counter Active</span>
           </div>
@@ -10916,7 +10915,7 @@ body.locked .sd {
         <!-- 9. Mukta A2 Cinemas (Dalsinghsarai, Bihar) -->
         <div class="cinema-location-card" data-city="bihar" data-name="mukta a2 cinemas near daini chowk dalsinghsarai pagra samastipur bihar 848114">
           <div class="card-thumb-wrap">
-            <img src="assets/showcase/cinema_pvr_forum.png" alt="Mukta A2 Cinemas, Dalsinghsarai" loading="lazy">
+            <img src="assets/showcase/cinema_clean_hall.jpg" alt="Mukta A2 Cinemas, Dalsinghsarai" loading="lazy">
             <span class="card-region-badge">📍 Bihar</span>
             <span class="card-live-badge">🍿 Counter Active</span>
           </div>
@@ -10964,7 +10963,6 @@ body.locked .sd {
       </div>
     </div>
 
-    <!-- Bottom Expansion Callout Banner -->
     <div class="cinemas-bottom-callout-banner">
       <div class="banner-left-info">
         <span class="banner-popcorn-icon">🍿</span>
