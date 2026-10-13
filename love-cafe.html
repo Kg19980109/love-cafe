@@ -2766,18 +2766,18 @@ body.locked .sd {
 }
 
 .ps {
-  height: 620vh !important;
+  height: 760vh !important;
   position: relative !important;
   z-index: 1 !important;
   margin-top: -36px !important;
   border-top: 3px solid var(--line) !important;
   border-radius: 44px 44px 0 0 !important;
-  background: #180910 !important;
+  background: #14040c !important;
 }
 
 @media (max-width: 860px) {
   .ps {
-    height: 520vh !important;
+    height: 640vh !important;
   }
 }
 
@@ -2789,17 +2789,17 @@ body.locked .sd {
   height: 100dvh !important;
   overflow: hidden !important;
   border-radius: 44px 44px 0 0 !important;
-  background: radial-gradient(circle at 50% 50%, #2a0e1c 0%, #16060f 100%) !important;
+  background: radial-gradient(circle at 50% 50%, #200513 0%, #0d0107 100%) !important;
 }
 
 .sl {
   position: absolute !important;
   inset: 0 !important;
   display: grid !important;
-  grid-template-columns: 1.05fr 1fr !important;
+  grid-template-columns: 1.12fr 1fr !important;
   align-items: center !important;
-  gap: 3vw !important;
-  padding: 80px clamp(20px, 7vw, 110px) 30px !important;
+  gap: clamp(20px, 3.5vw, 56px) !important;
+  padding: 68px clamp(20px, 6vw, 100px) 85px !important;
   opacity: 0;
   transform: translate3d(105%, 0, 0);
   pointer-events: none;
@@ -2814,12 +2814,204 @@ body.locked .sd {
   pointer-events: auto;
 }
 
-.sl.s1 { background: radial-gradient(circle at 65% 50%, #ff5287 0%, #e6195a 45%, #8c0936 100%) !important; color: #fff !important; }
-.sl.s2 { background: radial-gradient(circle at 65% 50%, #ff7844 0%, #e64c19 45%, #8c2409 100%) !important; color: #fff !important; }
-.sl.s3 { background: radial-gradient(circle at 65% 50%, #ff4b4b 0%, #c41c1c 45%, #700a0a 100%) !important; color: #fff !important; }
-.sl.s4 { background: radial-gradient(circle at 65% 50%, #e89520 0%, #c26909 45%, #6a3602 100%) !important; color: #fff !important; }
-.sl.s5 { background: radial-gradient(circle at 65% 50%, #b86237 0%, #873d19 45%, #461c09 100%) !important; color: #fff !important; }
-.sl.s6 { background: radial-gradient(circle at 65% 50%, #18a9e6 0%, #0c72ad 45%, #053b5c 100%) !important; color: #fff !important; }
+/* 8 Rich Cinematic Scene Atmospheres */
+.sl.s1 { background: radial-gradient(ellipse at 65% 50%, #3a0d1b 0%, #220710 50%, #0d0206 100%) !important; color: #fff !important; }
+.sl.s2 { background: radial-gradient(ellipse at 65% 50%, #381508 0%, #200b04 50%, #0d0402 100%) !important; color: #fff !important; }
+.sl.s3 { background: radial-gradient(ellipse at 65% 50%, #0d2238 0%, #071524 50%, #030910 100%) !important; color: #fff !important; }
+.sl.s4 { background: radial-gradient(ellipse at 65% 50%, #381c06 0%, #221003 50%, #0e0701 100%) !important; color: #fff !important; }
+.sl.s5 { background: radial-gradient(ellipse at 65% 50%, #3d0923 0%, #240514 50%, #100208 100%) !important; color: #fff !important; }
+.sl.s6 { background: radial-gradient(ellipse at 65% 50%, #2e160a 0%, #1c0c04 50%, #0c0502 100%) !important; color: #fff !important; }
+.sl.s7 { background: radial-gradient(ellipse at 65% 50%, #340a23 0%, #200515 50%, #0f0209 100%) !important; color: #fff !important; }
+.sl.s8 { background: radial-gradient(ellipse at 65% 50%, #440d29 0%, #260617 50%, #0e0208 100%) !important; color: #fff !important; }
+
+/* Category Eyebrows & Sub-Headlines */
+.sl-category-eyebrow {
+  display: inline-block !important;
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #ffd23f !important;
+  background: rgba(255, 210, 63, 0.12) !important;
+  border: 1px solid rgba(255, 210, 63, 0.35) !important;
+  padding: 4px 14px !important;
+  border-radius: 999px !important;
+  margin-bottom: 8px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.sl-subheading {
+  font-family: var(--disp) !important;
+  font-size: clamp(20px, 2.4vw, 32px) !important;
+  font-weight: 800 !important;
+  color: #ffd4e2 !important;
+  margin-top: 4px !important;
+  line-height: 1.15 !important;
+}
+
+.sl-subheading em {
+  font-family: var(--hand, 'Caveat', cursive) !important;
+  font-size: 1.18em !important;
+  color: #ffd23f !important;
+  font-style: italic !important;
+}
+
+/* Category Taste Chips Row */
+.sl-chips-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  margin-top: 14px !important;
+}
+
+.sl-chip {
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  padding: 4px 11px !important;
+  border-radius: 999px !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  transition: all 0.2s ease !important;
+}
+
+.sl-chip:hover {
+  background: rgba(255, 42, 109, 0.3) !important;
+  border-color: #ff5287 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Interactive Category Subtabs */
+.sl-subtabs {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: rgba(14, 3, 9, 0.65) !important;
+  border: 1.5px solid rgba(255, 180, 215, 0.3) !important;
+  border-radius: 999px !important;
+  padding: 4px !important;
+  margin-top: 14px !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.sl-subtab {
+  font-family: var(--disp) !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  color: #ffd4e2 !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 6px 14px !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+}
+
+.sl-subtab:hover {
+  color: #ffffff !important;
+}
+
+.sl-subtab.active {
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(255, 42, 109, 0.45) !important;
+}
+
+.sl-seat-note {
+  font-family: var(--disp) !important;
+  font-size: 12.5px !important;
+  font-weight: 800 !important;
+  color: #ffd23f !important;
+  margin-top: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+/* Scene 8 Climax Styling */
+.sl-closing-banner {
+  font-family: var(--hand, 'Caveat', cursive) !important;
+  font-size: clamp(26px, 3.2vw, 42px) !important;
+  font-weight: 700 !important;
+  color: #ffd23f !important;
+  margin: 6px 0 !important;
+  line-height: 1.1 !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7) !important;
+}
+
+.sl-final-cta-box {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  margin-top: 16px !important;
+}
+
+.final-app-cta-btn {
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
+  padding: 10px 24px !important;
+  font-size: 14px !important;
+  box-shadow: 0 8px 24px rgba(255, 42, 109, 0.5) !important;
+}
+
+.final-app-cta-btn:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 12px 32px rgba(255, 42, 109, 0.65) !important;
+}
+
+.sl-stores-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.sl-store-pill img {
+  height: 32px !important;
+  width: auto !important;
+  border-radius: 8px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.sl.s8 .tx h2 {
+  font-size: clamp(32px, 3.8vw, 56px) !important;
+  margin-bottom: 2px !important;
+  line-height: 1.02 !important;
+}
+.sl.s8 .tx p {
+  margin: 6px 0 10px !important;
+  font-size: clamp(13px, 1.05vw, 15px) !important;
+  line-height: 1.4 !important;
+}
+.sl.s8 .sl-final-cta-box {
+  margin-top: 10px !important;
+  gap: 8px !important;
+}
+
+.sl-store-pill:hover img {
+  transform: scale(1.05) !important;
+}
+
+/* Squircle High-Resolution Food Framing */
+.sl .pl img.sl-hero-img {
+  width: 96% !important;
+  height: 96% !important;
+  border-radius: 32px !important;
+  object-fit: cover !important;
+  border: 4px solid rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 
+    0 25px 70px rgba(0, 0, 0, 0.75),
+    0 0 50px rgba(255, 42, 109, 0.35) !important;
+  position: relative !important;
+  z-index: 2 !important;
+  transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  animation: floatPlate 4.5s ease-in-out infinite alternate !important;
+}
 
 /* Floating Showcase Category Navigation Rail */
 .ps-rail {
@@ -2977,19 +3169,61 @@ body.locked .sd {
     grid-template-columns: 1fr !important;
     grid-template-rows: auto auto !important;
     align-content: center !important;
-    gap: 20px !important;
+    gap: 14px !important;
     text-align: center !important;
-    padding: 76px 20px 24px !important;
+    padding: 68px 16px 54px !important;
   }
   .sl h2 {
-    font-size: clamp(34px, 10vw, 52px) !important;
+    font-size: clamp(28px, 8.2vw, 44px) !important;
+  }
+  .sl-subheading {
+    font-size: 18px !important;
   }
   .sl p {
-    margin: 8px auto 0 !important;
-    font-size: 14.5px !important;
+    margin: 6px auto 0 !important;
+    font-size: 13px !important;
+    max-width: 320px !important;
+  }
+  .sl-chips-row {
+    justify-content: center !important;
+    gap: 4px !important;
+    margin-top: 8px !important;
+  }
+  .sl-chip {
+    font-size: 10px !important;
+    padding: 3px 8px !important;
+  }
+  .sl-subtabs {
+    margin: 10px auto 0 !important;
+  }
+  .sl-subtab {
+    font-size: 10.5px !important;
+    padding: 5px 11px !important;
   }
   .sl .pl {
-    width: min(88vw, 44vh) !important;
+    width: min(86vw, 36vh) !important;
+    margin: 0 auto !important;
+  }
+  .sl .pl img.sl-hero-img {
+    border-radius: 22px !important;
+    border-width: 3px !important;
+  }
+  .sl-food-tag {
+    font-size: 11px !important;
+    padding: 4px 10px !important;
+    bottom: 4% !important;
+    right: 3% !important;
+  }
+  .sl-final-cta-box {
+    align-items: center !important;
+    margin-top: 10px !important;
+  }
+  .final-app-cta-btn {
+    padding: 8px 18px !important;
+    font-size: 12.5px !important;
+  }
+  .sl-stores-row img {
+    height: 28px !important;
   }
 }
 
@@ -8116,21 +8350,22 @@ body.locked .sd {
     <div class="o-bg" id="obg" aria-hidden="true">FLAVOURS ★ CINEMA CRAVINGS ★ POPCORN ★ BURGER ★ PIZZA ★ SANDWICH ★ MOMOS ★ BOBA ★ CRAFT COLD DRINKS</div>
     
     <div class="o-head-wrap">
-      <div class="o-mini-badge">✦ CINEMA SEAT DELIVERY ✦</div>
-      <h2 class="o-t">Movie night <em>has flavours.</em></h2>
-      <p class="o-subtitle">Freshly prepared gourmet cinema snacks delivered straight to your cinema recliner in ~10 minutes</p>
+      <div class="o-mini-badge">✦ EXPANDED CINEMATIC FOOD SHOWCASE · IN-SEAT DELIVERY ✦</div>
+      <h2 class="o-t">Your movie deserves <em>a little more.</em></h2>
+      <p class="o-subtitle">From spicy momos and cheesy sandwiches to boba, burgers, and movie-night combos — discover your next favorite bite.</p>
       
-      <!-- Interactive 7-Snack Pill Bar -->
+      <!-- Interactive 8-Category Showcase Quick Rail -->
       <div class="flavour-pill-bar" id="flavourPillBar" aria-label="Snack Menu Categories">
-        <button class="f-pill active" data-fidx="0"><span class="f-icon">🍿</span><span class="f-name">Popcorn</span></button>
-        <button class="f-pill" data-fidx="1"><span class="f-icon">🍔</span><span class="f-name">Burger</span></button>
-        <button class="f-pill" data-fidx="2"><span class="f-icon">🍕</span><span class="f-name">Pizza</span></button>
-        <button class="f-pill" data-fidx="3"><span class="f-icon">🥪</span><span class="f-name">Sandwich</span></button>
-        <button class="f-pill" data-fidx="4"><span class="f-icon">🥟</span><span class="f-name">Momo</span></button>
-        <button class="f-pill" data-fidx="5"><span class="f-icon">🧋</span><span class="f-name">Boba</span></button>
-        <button class="f-pill" data-fidx="6"><span class="f-icon">🥤</span><span class="f-name">Cold Drink</span></button>
+        <button class="f-pill active" data-fidx="0"><span class="f-icon">🍔</span><span class="f-name">Burgers &amp; Pizza</span></button>
+        <button class="f-pill" data-fidx="1"><span class="f-icon">🥟</span><span class="f-name">Momos &amp; Panini</span></button>
+        <button class="f-pill" data-fidx="2"><span class="f-icon">🧋</span><span class="f-name">Boba &amp; Cold Drinks</span></button>
+        <button class="f-pill" data-fidx="3"><span class="f-icon">🍟</span><span class="f-name">Fries &amp; Nuggets</span></button>
+        <button class="f-pill" data-fidx="4"><span class="f-icon">🍿</span><span class="f-name">Popcorn &amp; Snacks</span></button>
+        <button class="f-pill" data-fidx="5"><span class="f-icon">🌭</span><span class="f-name">Hot Dogs &amp; Wraps</span></button>
+        <button class="f-pill" data-fidx="6"><span class="f-icon">🍫</span><span class="f-name">Desserts &amp; Sweets</span></button>
+        <button class="f-pill" data-fidx="7"><span class="f-icon">🎬</span><span class="f-name">Movie Combos</span></button>
       </div>
-      <span class="hand o-hint" id="ohint">scroll, or click any snack, to explore</span>
+      <span class="hand o-hint" id="ohint">scroll down to experience all 8 cinematic food scenes</span>
     </div>
 
     <!-- 3D 7-Snack Orbit Ring -->
@@ -8223,112 +8458,236 @@ body.locked .sd {
   </div>
 </section>
 
-<section class="ps" id="ps" aria-label="Menu highlights">
+<section class="ps" id="ps" aria-label="Cinematic Food Showcase">
   <div class="ps-stick">
-    <!-- Slide 1: Popcorn -->
-    <div class="sl s1 active">
-      <div class="sw" aria-hidden="true">POPCORN</div>
+    <!-- Scene 1: Burgers & Pizza -->
+    <div class="sl s1 active" data-slide-id="0">
+      <div class="sw" aria-hidden="true">BURGER &amp; PIZZA</div>
       <div class="tx">
-        <span class="hand">01 · Cinema Classic</span>
-        <h2>Bigger than <em>hunger.</em></h2>
-        <p>Striped tubs of warm golden butter &amp; caramel popcorn delivered fresh to your seat in ~10 minutes.</p>
-      </div>
-      <div class="pl">
-        <div class="orb"><span>✨</span></div>
-        <div class="orb o2"><span>🍿</span></div>
-        <img src="assets/flavours/snack_popcorn.jpg" alt="Golden Cinema Butter Popcorn" loading="eager">
-        <span class="sl-food-tag">🍿 Freshly Popped · Golden Butter</span>
-      </div>
-    </div>
-
-    <!-- Slide 2: Burgers -->
-    <div class="sl s2">
-      <div class="sw" aria-hidden="true">BURGER</div>
-      <div class="tx">
-        <span class="hand">02 · Chef's Grill</span>
-        <h2>Juicy as a <em>plot twist.</em></h2>
-        <p>Double-patty brioche smash burger with melted sharp cheddar, crispy bacon &amp; house truffle aioli.</p>
+        <span class="sl-category-eyebrow">✦ 01 · GOURMET GRILL &amp; WOODFIRED OVEN ✦</span>
+        <h2>Big bites. <em>Bigger cravings.</em></h2>
+        <div class="sl-subheading">One slice. <em>Zero regrets.</em></div>
+        <p>Juicy double-layer brioche smash burgers with melting sharp cheddar, crispy bacon &amp; house truffle aioli, paired with 48-hour fermented woodfired sourdough pizza bubbling with rich buffalo mozzarella.</p>
+        <div class="sl-chips-row">
+          <span class="sl-chip">🍔 Brioche Smash</span>
+          <span class="sl-chip">🧀 Triple Cheddar</span>
+          <span class="sl-chip">🍗 Crispy Chicken</span>
+          <span class="sl-chip">🍕 Woodfired Sourdough</span>
+          <span class="sl-chip">🍅 Buffalo Mozzarella</span>
+        </div>
+        <div class="sl-subtabs" data-slide="0">
+          <button class="sl-subtab active" data-img="assets/flavours/snack_burger.jpg" data-tag="🍔 Double Smash Burger · Melted Cheddar">🍔 Artisan Burgers</button>
+          <button class="sl-subtab" data-img="assets/flavours/snack_pizza.jpg" data-tag="🍕 Woodfired Pizza · Buffalo Mozzarella">🍕 Woodfired Pizza</button>
+        </div>
       </div>
       <div class="pl">
         <div class="orb"><span>🍔</span></div>
-        <div class="orb o2"><span>🔥</span></div>
-        <img src="assets/flavours/snack_burger.jpg" alt="Artisan Brioche Smash Burger" loading="eager">
-        <span class="sl-food-tag">🍔 Brioche Smash · Double Melt</span>
+        <div class="orb o2"><span>🍕</span></div>
+        <img class="sl-hero-img" src="assets/flavours/snack_burger.jpg" alt="Artisan Brioche Smash Burger" loading="eager">
+        <span class="sl-food-tag">🍔 Double Smash Burger · Melted Cheddar</span>
       </div>
     </div>
 
-    <!-- Slide 3: Pizza -->
-    <div class="sl s3">
-      <div class="sw" aria-hidden="true">PIZZA</div>
+    <!-- Scene 2: Momos & Sandwiches -->
+    <div class="sl s2" data-slide-id="1">
+      <div class="sw" aria-hidden="true">MOMOS &amp; PANINI</div>
       <div class="tx">
-        <span class="hand">03 · Woodfired Oven</span>
-        <h2>Slice of the <em>action.</em></h2>
-        <p>48-hour fermented woodfired sourdough pizza bubbling with rich mozzarella, basil &amp; spicy marinara.</p>
+        <span class="sl-category-eyebrow">✦ 02 · HIMALAYAN STEAM &amp; ARTISAN DELI ✦</span>
+        <h2>A little spice. <em>A lot of love.</em></h2>
+        <div class="sl-subheading">Stacked with <em>happiness.</em></div>
+        <p>Handcrafted Himalayan momos with delicate pleated folds, steamed piping hot or wok-crisped with fiery garlic-chili chutney, alongside triple-decker artisan toasted sourdough paninis with melted cheese &amp; sun-dried pesto.</p>
+        <div class="sl-chips-row">
+          <span class="sl-chip">🥟 Steamed Himalayan</span>
+          <span class="sl-chip">🔥 Crispy Fried Momos</span>
+          <span class="sl-chip">🌶️ Fiery Garlic Dip</span>
+          <span class="sl-chip">🥪 Toasted Club Panini</span>
+          <span class="sl-chip">🧀 Melted Provolone</span>
+        </div>
+        <div class="sl-subtabs" data-slide="1">
+          <button class="sl-subtab active" data-img="assets/flavours/snack_momo.jpg" data-tag="🥟 Steamed Hot Momos · Fiery Chutney">🥟 Steamed Momos</button>
+          <button class="sl-subtab" data-img="assets/flavours/snack_sandwich.jpg" data-tag="🥪 Toasted Panini · Herb Pesto">🥪 Toasted Panini</button>
+        </div>
       </div>
       <div class="pl">
-        <div class="orb"><span>🍕</span></div>
-        <div class="orb o2"><span>🧀</span></div>
-        <img src="assets/flavours/snack_pizza.jpg" alt="Woodfired Sourdough Pizza" loading="eager">
-        <span class="sl-food-tag">🍕 Woodfired · Buffalo Mozzarella</span>
+        <div class="orb"><span>🥟</span></div>
+        <div class="orb o2"><span>🥪</span></div>
+        <img class="sl-hero-img" src="assets/flavours/snack_momo.jpg" alt="Himalayan Steamed Momos" loading="eager">
+        <span class="sl-food-tag">🥟 Steamed Hot Momos · Fiery Chutney</span>
       </div>
     </div>
 
-    <!-- Slide 4: Sandwiches -->
-    <div class="sl s4">
-      <div class="sw" aria-hidden="true">SANDWICH</div>
+    <!-- Scene 3: Boba & Cold Drinks -->
+    <div class="sl s3" data-slide-id="2">
+      <div class="sw" aria-hidden="true">BOBA &amp; CHILLED</div>
       <div class="tx">
-        <span class="hand">04 · Artisan Deli Panini</span>
-        <h2>Crisp, layered &amp; <em>toasted.</em></h2>
-        <p>Triple-decker artisan sourdough panini pressed with herb-roasted fillings, aged provolone &amp; sun-dried tomato pesto.</p>
-      </div>
-      <div class="pl">
-        <div class="orb"><span>🥪</span></div>
-        <div class="orb o2"><span>🌿</span></div>
-        <img src="assets/flavours/snack_sandwich.jpg" alt="Toasted Gourmet Sandwiches" loading="eager">
-        <span class="sl-food-tag">🥪 Toasted Panini · Herb Pesto</span>
-      </div>
-    </div>
-
-    <!-- Slide 5: Boba -->
-    <div class="sl s5">
-      <div class="sw" aria-hidden="true">BOBA</div>
-      <div class="tx">
-        <span class="hand">05 · Sweet Tooth Refresh</span>
-        <h2>Chewy pearls, <em>velvet sips.</em></h2>
-        <p>Tiger brown sugar boba milk tea crafted with slow-simmered tapioca pearls, fresh whole milk &amp; creamy froth.</p>
+        <span class="sl-category-eyebrow">✦ 03 · VELVET SIPS &amp; SUB-ZERO REFRESH ✦</span>
+        <h2>Sip. Smile. <em>Repeat.</em></h2>
+        <div class="sl-subheading">Chill between <em>the scenes.</em></div>
+        <p>Slow-simmered brown sugar tapioca pearls swimming in fresh creamy milk with dark marble swirls, accompanied by iced cold brew coffee and sparkling craft cinema colas poured over crystal ice at 2°C.</p>
+        <div class="sl-chips-row">
+          <span class="sl-chip">🧋 Brown Sugar Boba</span>
+          <span class="sl-chip">🍓 Strawberry &amp; Chocolate</span>
+          <span class="sl-chip">☕ Iced Cold Brew</span>
+          <span class="sl-chip">🥤 2°C Craft Cinema Cola</span>
+          <span class="sl-chip">❄️ Sub-Zero Chill</span>
+        </div>
+        <div class="sl-subtabs" data-slide="2">
+          <button class="sl-subtab active" data-img="assets/flavours/snack_boba.jpg" data-tag="🧋 Brown Sugar Boba · Tapioca Pearls">🧋 Brown Sugar Boba</button>
+          <button class="sl-subtab" data-img="assets/flavours/snack_iced_drinks.jpg" data-tag="🥤 Iced Cold Brew &amp; Citrus Cooler">🥤 Iced Craft Refresh</button>
+        </div>
       </div>
       <div class="pl">
         <div class="orb"><span>🧋</span></div>
-        <div class="orb o2"><span>✨</span></div>
-        <img src="assets/flavours/snack_boba.jpg" alt="Tiger Brown Sugar Boba Tea" loading="eager">
-        <span class="sl-food-tag">🧋 Brown Sugar Boba · Fresh Milk</span>
+        <div class="orb o2"><span>🥤</span></div>
+        <img class="sl-hero-img" src="assets/flavours/snack_boba.jpg" alt="Tiger Brown Sugar Boba Milk Tea" loading="eager">
+        <span class="sl-food-tag">🧋 Brown Sugar Boba · Tapioca Pearls</span>
       </div>
     </div>
 
-    <!-- Slide 6: Cold Drinks -->
-    <div class="sl s6">
-      <div class="sw" aria-hidden="true">CHILLED</div>
+    <!-- Scene 4: Fries & Quick Bites -->
+    <div class="sl s4" data-slide-id="3">
+      <div class="sw" aria-hidden="true">CRUNCH TIME</div>
       <div class="tx">
-        <span class="hand">06 · Ice Frost Tap</span>
-        <h2>Sub-zero, <em>sparkling punch.</em></h2>
-        <p>Ice-cold craft botanical colas, fizzy fruit sodas &amp; cinema coolers poured fresh over crystalline crushed ice at 2°C.</p>
+        <span class="sl-category-eyebrow">✦ 04 · GOLDEN CRUNCH &amp; SAVORY BITES ✦</span>
+        <h2>Crunch time <em>starts now.</em></h2>
+        <p>Golden French fries tossed in sea salt flakes, fiery peri-peri crinkle fries, and tender golden chicken nuggets accompanied by house garlic aioli and tangy dipping sauces.</p>
+        <div class="sl-chips-row">
+          <span class="sl-chip">🍟 Classic Sea Salt</span>
+          <span class="sl-chip">🌶️ Fiery Peri-Peri</span>
+          <span class="sl-chip">🧀 Loaded Cheese Fries</span>
+          <span class="sl-chip">🍗 Golden Crispy Nuggets</span>
+          <span class="sl-chip">🧄 Garlic Aioli Dip</span>
+        </div>
+        <div class="sl-seat-note">⚡ Delivered steaming hot to your seat in ~10 mins</div>
       </div>
       <div class="pl">
-        <div class="orb"><span>🥤</span></div>
-        <div class="orb o2"><span>❄️</span></div>
-        <img src="assets/flavours/snack_cold_drink.jpg" alt="Ice-Cold Craft Cinema Drinks" loading="eager">
-        <span class="sl-food-tag">🥤 Chilled to 2°C · Frost Fizz</span>
+        <div class="orb"><span>🍟</span></div>
+        <div class="orb o2"><span>🍗</span></div>
+        <img class="sl-hero-img" src="assets/flavours/snack_fries.jpg" alt="Golden French Fries and Crispy Nuggets" loading="eager">
+        <span class="sl-food-tag">🍟 Golden Seasoned Crunch · Garlic Dip</span>
       </div>
     </div>
 
-    <!-- Interactive Rail Indicator for all 6 items -->
+    <!-- Scene 5: Popcorn & Movie Snacks -->
+    <div class="sl s5" data-slide-id="4">
+      <div class="sw" aria-hidden="true">CINEMA POPCORN</div>
+      <div class="tx">
+        <span class="sl-category-eyebrow">✦ 05 · CINEMA GOLDEN ESSENTIALS ✦</span>
+        <h2>The movie isn't complete <em>without it.</em></h2>
+        <p>Signature striped Love Cafe cinema tubs overflowing with warm, freshly popped butterfly corn coated in rich golden butter, sea salt flakes, and decadent salted caramel glaze.</p>
+        <div class="sl-chips-row">
+          <span class="sl-chip">🍿 Fresh Warm Popcorn</span>
+          <span class="sl-chip">🧈 Golden Butter Glaze</span>
+          <span class="sl-chip">🍯 Salted Caramel Truffle</span>
+          <span class="sl-chip">🎬 Cinema Bestseller</span>
+          <span class="sl-chip">✨ Recliner Seat Drop</span>
+        </div>
+        <div class="sl-seat-note">🍿 Unlimited refill combos available on the Love Cafe App</div>
+      </div>
+      <div class="pl">
+        <div class="orb"><span>🍿</span></div>
+        <div class="orb o2"><span>✨</span></div>
+        <img class="sl-hero-img" src="assets/flavours/snack_popcorn.jpg" alt="Golden Cinema Butter Popcorn" loading="eager">
+        <span class="sl-food-tag">🍿 Golden Butter &amp; Caramel Crunch</span>
+      </div>
+    </div>
+
+    <!-- Scene 6: Hot Dogs & Wraps -->
+    <div class="sl s6" data-slide-id="5">
+      <div class="sw" aria-hidden="true">HOTDOGS &amp; WRAPS</div>
+      <div class="tx">
+        <span class="sl-category-eyebrow">✦ 06 · HANDHELD CINEMA DELIGHTS ✦</span>
+        <h2>Good food. <em>Zero interruptions.</em></h2>
+        <p>Gourmet grilled artisan hot dogs nestled in warm toasted brioche with golden melted cheddar, caramelized onions and spicy mustard, paired with toasted chicken and garden vegetable wraps rolled with crisp greens.</p>
+        <div class="sl-chips-row">
+          <span class="sl-chip">🌭 Gourmet Brioche Hot Dog</span>
+          <span class="sl-chip">🧀 Melted Cheddar &amp; Relish</span>
+          <span class="sl-chip">🌯 Grilled Chicken Wrap</span>
+          <span class="sl-chip">🥬 Fresh Garden Veggies</span>
+          <span class="sl-chip">⚡ Mess-Free Dining</span>
+        </div>
+        <div class="sl-seat-note">🌭 Perfect one-handed cinema snack · Zero screen distraction</div>
+      </div>
+      <div class="pl">
+        <div class="orb"><span>🌭</span></div>
+        <div class="orb o2"><span>🌯</span></div>
+        <img class="sl-hero-img" src="assets/flavours/snack_hotdog_wrap.jpg" alt="Gourmet Grilled Hot Dog and Artisan Wraps" loading="eager">
+        <span class="sl-food-tag">🌭 Grilled Artisan Hot Dog &amp; Wraps</span>
+      </div>
+    </div>
+
+    <!-- Scene 7: Desserts & Sweet Treats -->
+    <div class="sl s7" data-slide-id="6">
+      <div class="sw" aria-hidden="true">SWEET FINALE</div>
+      <div class="tx">
+        <span class="sl-category-eyebrow">✦ 07 · DECADENT SWEET TREATS ✦</span>
+        <h2>Save a little room <em>for sweet.</em></h2>
+        <p>Decadent warm dark chocolate fudge brownies with molten ganache drip and flaky sea salt, served alongside golden Belgian waffles drizzled with melted milk chocolate, fresh berries and vanilla cream.</p>
+        <div class="sl-chips-row">
+          <span class="sl-chip">🍫 Molten Fudge Brownie</span>
+          <span class="sl-chip">🧇 Belgian Waffle Drizzle</span>
+          <span class="sl-chip">🍓 Fresh Berries &amp; Cream</span>
+          <span class="sl-chip">✨ Sea Salt Ganache</span>
+          <span class="sl-chip">🍰 Sweet Movie Finale</span>
+        </div>
+        <div class="sl-seat-note">🍫 Freshly baked &amp; served warm right to your cinema recliner</div>
+      </div>
+      <div class="pl">
+        <div class="orb"><span>🍫</span></div>
+        <div class="orb o2"><span>🧇</span></div>
+        <img class="sl-hero-img" src="assets/flavours/snack_dessert.jpg" alt="Decadent Chocolate Fudge Brownie and Belgian Waffle" loading="eager">
+        <span class="sl-food-tag">🍫 Warm Belgian Chocolate &amp; Waffles</span>
+      </div>
+    </div>
+
+    <!-- Scene 8: Movie Night Combos (Grand Finale & Climax) -->
+    <div class="sl s8" data-slide-id="7">
+      <div class="sw" aria-hidden="true">MOVIE COMBOS</div>
+      <div class="tx">
+        <span class="sl-category-eyebrow">✦ 08 · THE ULTIMATE CINEMA CLIMAX ✦</span>
+        <h2>Your seat. Your snacks. <em>Your moment.</em></h2>
+        <div class="sl-closing-banner">Make every movie moment delicious.</div>
+        <p>Find your cinema. Discover your favorites. Order for movie time. The complete feast — overflowing butter popcorn, juicy double smash burger, golden seasoned fries, cold brown sugar boba, and warm fudge brownie delivered to your seat in ~10 mins.</p>
+        <div class="sl-chips-row">
+          <span class="sl-chip">🍿 Popcorn &amp; Drink Combo</span>
+          <span class="sl-chip">🍔 Burger &amp; Fries Feast</span>
+          <span class="sl-chip">🥪 Panini &amp; Boba Pair</span>
+          <span class="sl-chip">⚡ ~10 Min Seat Delivery</span>
+        </div>
+        
+        <div class="sl-final-cta-box">
+          <a class="btn o-seat-btn final-app-cta-btn" data-dl href="#get">
+            <span>Explore on the Love Cafe App</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <div class="sl-stores-row">
+            <a href="#get" class="sl-store-pill" data-play aria-label="Google Play">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" width="120" height="36">
+            </a>
+            <a href="#get" class="sl-store-pill" data-ios aria-label="App Store">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" width="108" height="36">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pl">
+        <div class="orb"><span>🎬</span></div>
+        <div class="orb o2"><span>🍿</span></div>
+        <img class="sl-hero-img" src="assets/flavours/snack_combo_feast.jpg" alt="Ultimate Movie Night Combo Feast Spread" loading="eager">
+        <span class="sl-food-tag">🎬 Ultimate Cinema Table Feast</span>
+      </div>
+    </div>
+
+    <!-- Interactive Rail Indicator for all 8 categories -->
     <nav class="ps-rail" aria-label="Showcase items navigation">
-      <button type="button" class="ps-pill on" data-slide="0">🍿 Popcorn</button>
-      <button type="button" class="ps-pill" data-slide="1">🍔 Burgers</button>
-      <button type="button" class="ps-pill" data-slide="2">🍕 Pizza</button>
-      <button type="button" class="ps-pill" data-slide="3">🥪 Sandwiches</button>
-      <button type="button" class="ps-pill" data-slide="4">🧋 Boba</button>
-      <button type="button" class="ps-pill" data-slide="5">🥤 Cold Drinks</button>
+      <button type="button" class="ps-pill on" data-slide="0">🍔 &amp; 🍕 Burgers &amp; Pizza</button>
+      <button type="button" class="ps-pill" data-slide="1">🥟 &amp; 🥪 Momos &amp; Panini</button>
+      <button type="button" class="ps-pill" data-slide="2">🧋 &amp; 🥤 Boba &amp; Cold Drinks</button>
+      <button type="button" class="ps-pill" data-slide="3">🍟 Fries &amp; Nuggets</button>
+      <button type="button" class="ps-pill" data-slide="4">🍿 Popcorn &amp; Snacks</button>
+      <button type="button" class="ps-pill" data-slide="5">🌭 Hot Dogs &amp; Wraps</button>
+      <button type="button" class="ps-pill" data-slide="6">🍫 Desserts &amp; Sweets</button>
+      <button type="button" class="ps-pill" data-slide="7">🎬 Movie Combos</button>
     </nav>
   </div>
 </section>
@@ -10480,6 +10839,55 @@ let lastRenderedS = -999;
     updateSlides();
   }
   requestAnimationFrame(mainLoop);
+})();
+
+// --------------------------------------------------------------------------
+// EXPANDED CINEMATIC FOOD SHOWCASE: SUBTABS & CATEGORY QUICK-HOP
+// --------------------------------------------------------------------------
+(function initShowcaseInteractive() {
+  // Category Quick Rail in #flavours
+  const fPills = document.querySelectorAll('#flavourPillBar .f-pill');
+  fPills.forEach((btn, idx) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      fPills.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      scrollSlideToIndex(idx);
+    });
+  });
+
+  // Interactive Subtabs inside Dual-Category Slides (Burgers/Pizza, Momos/Panini, Boba/Drinks)
+  document.querySelectorAll('.sl-subtabs').forEach(tabGroup => {
+    const tabs = tabGroup.querySelectorAll('.sl-subtab');
+    const slide = tabGroup.closest('.sl');
+    if (!slide) return;
+    const heroImg = slide.querySelector('.sl-hero-img');
+    const foodTag = slide.querySelector('.sl-food-tag');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const newSrc = tab.getAttribute('data-img');
+        const newTag = tab.getAttribute('data-tag');
+
+        if (heroImg && newSrc) {
+          heroImg.style.opacity = '0.3';
+          heroImg.style.transform = 'scale(0.96)';
+          setTimeout(() => {
+            heroImg.src = newSrc;
+            heroImg.style.opacity = '1';
+            heroImg.style.transform = 'scale(1)';
+          }, 180);
+        }
+        if (foodTag && newTag) {
+          foodTag.textContent = newTag;
+        }
+      });
+    });
+  });
 })();
 
 // Download / CTA click bursts
