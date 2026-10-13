@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LOVE CAFE — Movie on. Hunger off.</title>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{--pink:#f9c9d2;--blush:#fde8ec;--cream:#fff6f3;--rasp:#e6195a;--deep:#3b0f22;--ink:#2a1820;--mut:#7a5c67;--disp:'Baloo 2',system-ui,sans-serif;--sans:'DM Sans',system-ui,sans-serif;--hand:'Caveat',cursive;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--cream:#fff6f3}}
@@ -11,6 +11,47 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.5}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:3px solid var(--rasp);outline-offset:3px}
+
+/* ==========================================================================
+   GLOBAL TYPOGRAPHY HARMONIZATION & COMPREHENSIVE FONT AUDIT
+   (Baloo 2 for Headings & Actions · DM Sans for Body & UI · Caveat for Accents)
+   ========================================================================== */
+html, body {
+  font-family: var(--sans) !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Uniform Display Typography across all sections */
+h1, h2, h3, h4, h5, h6,
+.brand, .btn, button,
+input[type="submit"], input[type="button"],
+.sl-category-eyebrow, .sl-subtab,
+.ff-title, .ff-card-title, .ff-rail-btn,
+.cfp-film-title, .cell-brand-name,
+.cp-headline, .cp-title-heading, .cp-catalog-title, .cp-claim-rewards-btn,
+.app-title-head, .wu-title, .wu-card-heading {
+  font-family: var(--disp) !important;
+}
+
+/* Uniform Body & UI Typography across all sections */
+p, label, input, select, textarea,
+li, dt, dd, td, th, small,
+.app-subtitle-desc, .ff-subtitle, .ff-card-desc,
+.cp-subhead, .cfp-film-sub, .wu-card-text, .rev-card-comment {
+  font-family: var(--sans) !important;
+}
+
+/* Form controls font inheritance */
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* Handwritten Script Accents */
+.hand, .script-note, .script-font, .sl-subheading em, .tx em, h2 em, h3 em {
+  font-family: var(--hand, 'Caveat', cursive);
+}
+
 .nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:12px clamp(16px,4vw,56px);background:linear-gradient(var(--blush) 40%,transparent)}
 .brand{font-family:var(--disp);font-weight:800;font-size:24px;line-height:.9;color:var(--rasp);display:flex;align-items:center;gap:8px}
 .brand i{width:22px;height:30px;border:5px solid var(--rasp);border-radius:8px;display:inline-block;position:relative}
@@ -238,7 +279,7 @@ body.locked{overflow:hidden;height:100svh}
 .sd{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:70;display:flex;flex-direction:column;gap:12px}
 .sd a{width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--line);transition:transform .2s,background .2s}
 .sd a.on{background:var(--rasp);transform:scale(1.35)}
-.ps{height:480vh;position:relative;z-index:1;margin-top:-36px;border-top:3px solid var(--line);border-radius:44px 44px 0 0}
+.ps{height:820vh;position:relative;z-index:1;margin-top:-36px;border-top:3px solid var(--line);border-radius:44px 44px 0 0}
 .ps-stick{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;border-radius:44px 44px 0 0}
 .sl{position:absolute;inset:0;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:2vw;padding:84px clamp(18px,7vw,110px) 30px;will-change:clip-path}
 
@@ -262,7 +303,7 @@ body.locked{overflow:hidden;height:100svh}
  .stores .store{padding:8px 12px 8px 10px;font-size:15px}.stores svg{width:26px;height:26px}
  .stick .copy .stores{margin-top:6px}.stick .copy .flink{margin-top:10px;font-size:16px}
  .sl{grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;gap:34px;text-align:center;padding:76px 22px 24px}.sl h2{max-width:none;font-size:clamp(40px,12vw,64px)}.sl p{margin:10px auto 0}.sl .tx{order:2}.pl{order:1;width:min(64vw,36vh)}
- .ps{height:420vh;border-radius:30px 30px 0 0}
+ .ps{height:720vh;border-radius:30px 30px 0 0}
 }
 @media(prefers-reduced-motion:reduce){.ps{height:auto}.ps-stick{position:static;height:auto}.sl{position:relative;clip-path:none!important;min-height:90vh}.orb,#gimg,.btn.big{animation:none}}
 @media(max-width:860px){.stick .copy .stores{flex-wrap:nowrap;gap:8px}.stick .copy .store{padding:7px 10px 7px 8px;font-size:14px;gap:7px;flex:1;justify-content:center}.stick .copy .store small{font-size:8px}.stick .copy .store svg{width:22px;height:22px}.stick .copy p.lead{display:none}.stick{padding-top:70px}}
@@ -6608,7 +6649,7 @@ body.locked .sd {
    ENHANCED ATTRACTIVE & EYE-CATCHY FOOD FRAME-BY-FRAME SHOWCASE STYLES
    ========================================================================== */
 .food-frames-showcase {
-  height: 950vh !important;
+  height: 1100vh !important;
   position: relative !important;
   z-index: 2 !important;
   background: #fcdfe4;
@@ -6616,7 +6657,7 @@ body.locked .sd {
 
 @media (max-width: 860px) {
   .food-frames-showcase {
-    height: 850vh !important;
+    height: 980vh !important;
   }
 }
 
@@ -13441,13 +13482,13 @@ let lenis = null;
 try {
   if (typeof Lenis !== 'undefined' && !reduce) {
     lenis = new Lenis({
-      duration: 1.0,
+      duration: 1.25,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.15,
+      wheelMultiplier: 0.85,
+      touchMultiplier: 0.85,
       infinite: false,
     });
     window.lenis = lenis;
@@ -14452,9 +14493,10 @@ let lastRenderedS = -999;
   const to = fastProg(geoCache.flavoursTop, geoCache.flavoursHeight);
   const ts = fastProg(geoCache.psTop, geoCache.psHeight);
   
-  // Direct frame-perfect sync with Lenis smooth scroll - ZERO trailing lag or unpinning jitter
+  // Silky smooth, relaxed glide sync - prevents fast jumps on rapid flicks
   sm.o = to;
-  sm.s = ts;
+  // Gentle lerp for .ps food slides so each scene lingers gracefully
+  sm.s += (ts - sm.s) * 0.14;
   
   const nearFlavours = sy >= (geoCache.flavoursTop - innerHeight * 1.1) && sy <= (geoCache.flavoursTop + geoCache.flavoursHeight + innerHeight * 0.2);
   const nearPS = sy >= (geoCache.psTop - innerHeight * 1.1) && sy <= (geoCache.psTop + geoCache.psHeight + innerHeight * 0.2);
