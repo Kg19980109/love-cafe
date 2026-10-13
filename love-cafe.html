@@ -2807,23 +2807,27 @@ body.locked .sd {
 }
 
 /* ==========================================================================
-   CINEMATIC FOOD SHOWCASE: DEEP VELVET NOIR & LUXURY INTERACTIVE REDESIGN (#ps)
+   CINEMATIC FOOD SHOWCASE: FUNKY PINK RETRO-POP & 3D POP-UP REDESIGN (#ps)
    ========================================================================== */
 
 .ps {
-  height: 1300vh !important;
+  height: 1200vh !important;
   position: relative !important;
-  z-index: 1 !important;
+  z-index: 5 !important;
   margin-top: -36px !important;
-  border-top: 3px solid rgba(255, 210, 63, 0.3) !important;
+  border-top: 4px solid #ff2a6d !important;
   border-radius: 44px 44px 0 0 !important;
-  background: #080105 !important;
-  box-shadow: 0 -25px 60px rgba(0, 0, 0, 0.8) !important;
+  background: 
+    radial-gradient(circle at 50% 12%, rgba(255, 255, 255, 0.95) 0%, transparent 60%),
+    radial-gradient(circle at 10% 45%, rgba(255, 182, 193, 0.45) 0%, transparent 55%),
+    radial-gradient(circle at 90% 55%, rgba(255, 214, 224, 0.5) 0%, transparent 55%),
+    linear-gradient(180deg, #fff0f5 0%, #ffedf3 35%, #ffdce7 70%, #fff2f6 100%) !important;
+  box-shadow: 0 -20px 50px rgba(255, 42, 109, 0.15) !important;
 }
 
 @media (max-width: 860px) {
   .ps {
-    height: 1100vh !important;
+    height: 1050vh !important;
     border-radius: 32px 32px 0 0 !important;
   }
 }
@@ -2836,7 +2840,11 @@ body.locked .sd {
   height: 100dvh !important;
   overflow: hidden !important;
   border-radius: 44px 44px 0 0 !important;
-  background: radial-gradient(ellipse at 50% 35%, #220415 0%, #11020b 50%, #050003 100%) !important;
+  background: 
+    radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.95) 0%, transparent 60%),
+    radial-gradient(circle at 8% 40%, rgba(255, 42, 109, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 92% 60%, rgba(255, 210, 63, 0.15) 0%, transparent 50%),
+    linear-gradient(180deg, #fff0f5 0%, #ffe8f0 40%, #ffdbe6 75%, #fff2f6 100%) !important;
 }
 
 @media (max-width: 860px) {
@@ -2845,45 +2853,94 @@ body.locked .sd {
   }
 }
 
-/* Ambient Cinema Glow & Projector Spotlight */
-.ps-ambient-bg {
+/* Funky Cinema Halftone & Comic Stickers Background */
+.ps-funky-bg {
   position: absolute !important;
   inset: 0 !important;
   pointer-events: none !important;
   z-index: 0 !important;
-  background: 
-    radial-gradient(circle at 75% 45%, rgba(255, 42, 109, 0.16) 0%, transparent 60%),
-    radial-gradient(circle at 25% 65%, rgba(255, 210, 63, 0.12) 0%, transparent 55%),
-    radial-gradient(circle at 50% 15%, rgba(255, 120, 160, 0.08) 0%, transparent 50%) !important;
-}
-
-/* Floating Cinema Embers / Gold Dust */
-.ps-ambient-dust {
-  position: absolute !important;
-  inset: 0 !important;
   background-image: 
-    radial-gradient(1.5px 1.5px at 15% 25%, rgba(255, 215, 0, 0.45) 50%, transparent 100%),
-    radial-gradient(2px 2px at 45% 70%, rgba(255, 180, 210, 0.4) 50%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 80% 35%, rgba(255, 215, 0, 0.5) 50%, transparent 100%),
-    radial-gradient(2px 2px at 85% 80%, rgba(255, 255, 255, 0.35) 50%, transparent 100%);
-  opacity: 0.7 !important;
+    radial-gradient(circle, rgba(255, 42, 109, 0.12) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgba(230, 25, 90, 0.08) 2px, transparent 2px) !important;
+  background-size: 32px 32px, 64px 64px !important;
+  background-position: 0 0, 16px 16px !important;
+  opacity: 0.65 !important;
+}
+
+/* Floating Funky Cinema Stickers */
+.ps-floating-stickers {
+  position: absolute !important;
+  inset: 0 !important;
   pointer-events: none !important;
-  z-index: 0 !important;
-  animation: cinemaDustPulse 6s ease-in-out infinite alternate !important;
+  z-index: 1 !important;
+  overflow: hidden !important;
 }
 
-@keyframes cinemaDustPulse {
-  0% { opacity: 0.5; transform: scale(1); }
-  100% { opacity: 0.85; transform: scale(1.03); }
+.funky-sticker {
+  position: absolute !important;
+  font-family: var(--disp) !important;
+  font-weight: 900 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  padding: 5px 12px !important;
+  border-radius: 999px !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  user-select: none !important;
+  animation: stickerFloat 6s ease-in-out infinite alternate !important;
 }
 
-/* Top HUD Header: Category Label & Live Recliner Seat Tray */
+.st-1 {
+  top: 14% !important;
+  left: 6% !important;
+  background: #ffd23f !important;
+  color: #2a1820 !important;
+  transform: rotate(-8deg) !important;
+}
+.st-2 {
+  top: 22% !important;
+  right: 8% !important;
+  background: #ff2a6d !important;
+  color: #ffffff !important;
+  transform: rotate(6deg) !important;
+  animation-delay: -2s !important;
+}
+.st-3 {
+  bottom: 24% !important;
+  left: 7% !important;
+  background: #fff !important;
+  color: #e6195a !important;
+  transform: rotate(5deg) !important;
+  animation-delay: -3.5s !important;
+}
+.st-4 {
+  bottom: 18% !important;
+  right: 6% !important;
+  background: #ffd23f !important;
+  color: #2a1820 !important;
+  transform: rotate(-6deg) !important;
+  animation-delay: -1.5s !important;
+}
+
+@keyframes stickerFloat {
+  0% { transform: translateY(0) rotate(var(--rot, -6deg)); }
+  100% { transform: translateY(-12px) rotate(calc(var(--rot, -6deg) + 3deg)); }
+}
+
+@media (max-width: 860px) {
+  .ps-floating-stickers {
+    display: none !important; /* Keep mobile clean */
+  }
+}
+
+/* Top Funky HUD Header */
 .ps-header-hud {
   position: absolute !important;
-  top: 22px !important;
-  left: clamp(20px, 5vw, 64px) !important;
-  right: clamp(20px, 5vw, 64px) !important;
-  z-index: 28 !important;
+  top: 20px !important;
+  left: clamp(16px, 4.5vw, 60px) !important;
+  right: clamp(16px, 4.5vw, 60px) !important;
+  z-index: 30 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
@@ -2894,89 +2951,80 @@ body.locked .sd {
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
-  background: rgba(18, 4, 12, 0.7) !important;
-  border: 1px solid rgba(255, 210, 63, 0.35) !important;
-  padding: 5px 14px !important;
+  background: #ffffff !important;
+  border: 2.5px solid #2a1820 !important;
+  padding: 6px 16px !important;
   border-radius: 999px !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
 }
 
-.ps-hud-pulse {
-  width: 8px !important;
-  height: 8px !important;
-  border-radius: 50% !important;
-  background: #ff2a6d !important;
-  box-shadow: 0 0 10px #ff2a6d !important;
-  animation: hudPulse 1.8s infinite !important;
+.ps-hud-brand span.sparkle {
+  font-size: 14px !important;
+  animation: spinSparkle 4s linear infinite !important;
 }
 
-@keyframes hudPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.3); opacity: 0.7; }
+@keyframes spinSparkle {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .ps-hud-brand span.txt {
   font-family: var(--disp) !important;
-  font-size: 11px !important;
+  font-size: 12px !important;
   font-weight: 800 !important;
-  letter-spacing: 0.12em !important;
+  letter-spacing: 0.1em !important;
   text-transform: uppercase !important;
-  color: #ffd23f !important;
+  color: #e6195a !important;
 }
 
 .ps-hud-tray {
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
-  background: rgba(255, 42, 109, 0.18) !important;
-  border: 1px solid rgba(255, 120, 160, 0.45) !important;
-  padding: 5px 14px !important;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  border: 2.5px solid #2a1820 !important;
+  padding: 6px 16px !important;
   border-radius: 999px !important;
-  color: #fff !important;
+  color: #ffffff !important;
   font-family: var(--disp) !important;
-  font-size: 11.5px !important;
+  font-size: 12px !important;
   font-weight: 800 !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
   cursor: pointer !important;
-  transition: all 0.25s ease !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35) !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .ps-hud-tray:hover {
-  background: rgba(255, 42, 109, 0.32) !important;
-  border-color: #ffd23f !important;
-  transform: translateY(-1px) !important;
+  transform: translateY(-2px) scale(1.04) !important;
+  box-shadow: 0 6px 0 #2a1820 !important;
 }
 
 .ps-hud-tray .tray-badge {
   background: #ffd23f !important;
-  color: #1a0510 !important;
+  color: #2a1820 !important;
   font-weight: 900 !important;
   font-size: 11px !important;
-  padding: 1px 7px !important;
+  padding: 1px 8px !important;
   border-radius: 999px !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+  border: 1.5px solid #2a1820 !important;
 }
 
 @media (max-width: 860px) {
   .ps-header-hud {
-    top: 14px !important;
-    left: 14px !important;
-    right: 14px !important;
+    top: 12px !important;
+    left: 12px !important;
+    right: 12px !important;
   }
   .ps-hud-brand span.txt {
     font-size: 10px !important;
   }
   .ps-hud-tray {
-    padding: 4px 10px !important;
-    font-size: 10.5px !important;
+    padding: 5px 12px !important;
+    font-size: 11px !important;
   }
 }
 
-/* Individual Food Scene Slides */
+/* 3D POP-UP FOOD SLIDE STYLING (VERTICAL POP-IN, NO HORIZONTAL SLIDE) */
 .sl {
   position: absolute !important;
   inset: 0 !important;
@@ -2984,42 +3032,32 @@ body.locked .sd {
   grid-template-columns: 1.15fr 1fr !important;
   align-items: center !important;
   gap: clamp(24px, 4vw, 64px) !important;
-  padding: clamp(75px, 9vh, 90px) clamp(24px, 6vw, 110px) clamp(90px, 12vh, 120px) !important;
+  padding: clamp(75px, 9vh, 95px) clamp(20px, 6vw, 110px) clamp(90px, 12vh, 120px) !important;
   opacity: 0;
-  transform: translate3d(105%, 0, 0);
+  transform: scale(0.4) translateY(90px) rotate(-4deg);
   pointer-events: none;
   will-change: transform, opacity !important;
   backface-visibility: hidden !important;
   transition: none !important;
-  z-index: 1 !important;
+  z-index: 2 !important;
 }
 
 .sl:first-child {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: scale(1) translateY(0) rotate(0deg);
   pointer-events: auto;
 }
 
-/* 8 Deep Cinema Velvet Scene Tone Overlays */
-.sl.s1 { background: radial-gradient(ellipse at 65% 50%, rgba(56, 11, 27, 0.5) 0%, transparent 70%) !important; }
-.sl.s2 { background: radial-gradient(ellipse at 65% 50%, rgba(58, 20, 9, 0.5) 0%, transparent 70%) !important; }
-.sl.s3 { background: radial-gradient(ellipse at 65% 50%, rgba(13, 34, 60, 0.5) 0%, transparent 70%) !important; }
-.sl.s4 { background: radial-gradient(ellipse at 65% 50%, rgba(56, 26, 8, 0.5) 0%, transparent 70%) !important; }
-.sl.s5 { background: radial-gradient(ellipse at 65% 50%, rgba(61, 10, 36, 0.5) 0%, transparent 70%) !important; }
-.sl.s6 { background: radial-gradient(ellipse at 65% 50%, rgba(46, 22, 10, 0.5) 0%, transparent 70%) !important; }
-.sl.s7 { background: radial-gradient(ellipse at 65% 50%, rgba(52, 10, 35, 0.5) 0%, transparent 70%) !important; }
-.sl.s8 { background: radial-gradient(ellipse at 65% 50%, rgba(68, 13, 41, 0.5) 0%, transparent 70%) !important; }
-
-/* Watermark typography in background */
+/* Background Funky Watermark */
 .sw {
   position: absolute !important;
-  top: 52% !important;
+  top: 50% !important;
   left: 5% !important;
-  transform: translateY(-52%) !important;
+  transform: translateY(-50%) !important;
   font-family: var(--disp) !important;
-  font-size: clamp(80px, 15vw, 210px) !important;
+  font-size: clamp(80px, 14vw, 200px) !important;
   font-weight: 900 !important;
-  color: rgba(255, 255, 255, 0.035) !important;
+  color: rgba(230, 25, 90, 0.05) !important;
   letter-spacing: -0.04em !important;
   text-transform: uppercase !important;
   user-select: none !important;
@@ -3027,13 +3065,12 @@ body.locked .sd {
   white-space: nowrap !important;
   z-index: 0 !important;
   line-height: 0.9 !important;
-  filter: blur(1px) !important;
 }
 
-/* Left Column: Text & Content Card Lockup */
+/* Left Column: Funky Typography & Action Card */
 .sl .tx {
   position: relative !important;
-  z-index: 5 !important;
+  z-index: 6 !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
@@ -3044,59 +3081,59 @@ body.locked .sd {
   align-items: center !important;
   gap: 6px !important;
   font-family: var(--disp) !important;
-  font-size: 11px !important;
+  font-size: 11.5px !important;
   font-weight: 800 !important;
-  letter-spacing: 0.14em !important;
+  letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
-  color: #ffd23f !important;
-  background: linear-gradient(90deg, rgba(255, 210, 63, 0.16) 0%, rgba(255, 42, 109, 0.12) 100%) !important;
-  border: 1px solid rgba(255, 210, 63, 0.4) !important;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  border: 2px solid #2a1820 !important;
   padding: 5px 14px !important;
   border-radius: 999px !important;
   margin-bottom: 10px !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
 }
 
 .sl h2 {
-  font-size: clamp(38px, 5.2vw, 76px) !important;
+  font-family: var(--disp) !important;
+  font-size: clamp(38px, 5.2vw, 74px) !important;
   line-height: 1.02 !important;
   margin: 0 !important;
-  color: #ffffff !important;
-  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6) !important;
+  color: #2a1820 !important;
+  text-shadow: 0 2px 10px rgba(255, 42, 109, 0.15) !important;
 }
 
 .sl h2 em {
   font-style: italic !important;
-  color: #ffd23f !important;
-  text-shadow: 0 0 35px rgba(255, 210, 63, 0.4) !important;
+  color: #e6195a !important;
+  text-shadow: 0 0 25px rgba(255, 42, 109, 0.25) !important;
 }
 
 .sl-subheading {
   font-family: var(--disp) !important;
   font-size: clamp(18px, 2.1vw, 28px) !important;
   font-weight: 800 !important;
-  color: #ffccd9 !important;
+  color: #c42352 !important;
   margin-top: 4px !important;
   line-height: 1.18 !important;
 }
 
 .sl-subheading em {
   font-family: var(--hand, 'Caveat', cursive) !important;
-  font-size: 1.22em !important;
-  color: #ffd23f !important;
+  font-size: 1.25em !important;
+  color: #e6195a !important;
   font-style: italic !important;
 }
 
 .sl p {
-  font-size: clamp(14px, 1.25vw, 17px) !important;
+  font-size: clamp(14px, 1.2vw, 17px) !important;
   line-height: 1.5 !important;
   max-width: 44ch !important;
   margin-top: 12px !important;
-  color: rgba(255, 235, 242, 0.9) !important;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+  color: #5c293c !important;
 }
 
-/* Taste & Ingredient Chips Row */
+/* Taste & Ingredient Chips Row (Funky White + Pink Capsules) */
 .sl-chips-row {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -3107,64 +3144,61 @@ body.locked .sd {
 .sl-chip {
   font-family: var(--disp) !important;
   font-size: 11px !important;
-  font-weight: 700 !important;
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  font-weight: 800 !important;
+  color: #2a1820 !important;
+  background: #ffffff !important;
+  border: 2px solid #ff2a6d !important;
   padding: 4px 12px !important;
   border-radius: 999px !important;
-  backdrop-filter: blur(6px) !important;
-  -webkit-backdrop-filter: blur(6px) !important;
+  box-shadow: 0 3px 0 #ff2a6d !important;
   cursor: pointer !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .sl-chip:hover {
-  background: rgba(255, 42, 109, 0.35) !important;
-  border-color: #ffd23f !important;
-  transform: translateY(-2px) scale(1.04) !important;
-  box-shadow: 0 4px 14px rgba(255, 42, 109, 0.4) !important;
+  background: #ff2a6d !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) scale(1.06) !important;
+  box-shadow: 0 5px 0 #2a1820 !important;
 }
 
-/* Dual-Item Subtabs */
+/* Dual-Item Subtabs (Funky Pink Capsule Switcher) */
 .sl-subtabs {
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px !important;
-  background: rgba(15, 3, 10, 0.75) !important;
-  border: 1.5px solid rgba(255, 180, 215, 0.3) !important;
+  background: #ffffff !important;
+  border: 2.5px solid #2a1820 !important;
   border-radius: 999px !important;
   padding: 4px !important;
   margin-top: 14px !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
 }
 
 .sl-subtab {
   font-family: var(--disp) !important;
   font-size: 11.5px !important;
   font-weight: 800 !important;
-  color: #ffd4e2 !important;
+  color: #7a324b !important;
   background: transparent !important;
   border: none !important;
   padding: 6px 14px !important;
   border-radius: 999px !important;
   cursor: pointer !important;
-  transition: all 0.25s ease !important;
+  transition: all 0.2s ease !important;
 }
 
 .sl-subtab:hover {
-  color: #ffffff !important;
+  color: #e6195a !important;
 }
 
 .sl-subtab.active {
   background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(255, 42, 109, 0.5) !important;
+  box-shadow: 0 3px 8px rgba(255, 42, 109, 0.4) !important;
 }
 
-/* Action Buttons: Inspect Pop-up & Quick Add */
+/* Action Buttons: Funky Pop Inspect & Add to Seat Feast */
 .sl-actions-row {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -3177,67 +3211,59 @@ body.locked .sd {
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
-  background: linear-gradient(135deg, rgba(255, 210, 63, 0.2) 0%, rgba(255, 42, 109, 0.25) 100%) !important;
-  border: 1.5px solid rgba(255, 210, 63, 0.7) !important;
-  color: #ffd23f !important;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  border: 2.5px solid #2a1820 !important;
+  color: #ffffff !important;
   font-family: var(--disp) !important;
   font-size: 12.5px !important;
   font-weight: 800 !important;
   letter-spacing: 0.04em !important;
-  padding: 9px 18px !important;
+  padding: 10px 20px !important;
   border-radius: 999px !important;
   cursor: pointer !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  box-shadow: 0 6px 20px rgba(255, 210, 63, 0.2) !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 5px 0 #2a1820, 0 10px 20px rgba(255, 42, 109, 0.3) !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .sl-inspect-btn:hover {
-  background: linear-gradient(135deg, #ffd23f 0%, #ffc000 100%) !important;
-  color: #1a0510 !important;
-  border-color: #ffd23f !important;
-  transform: translateY(-2px) scale(1.02) !important;
-  box-shadow: 0 10px 28px rgba(255, 210, 63, 0.45) !important;
+  transform: translateY(-3px) scale(1.04) !important;
+  box-shadow: 0 8px 0 #2a1820, 0 14px 28px rgba(255, 42, 109, 0.45) !important;
 }
 
 .sl-quick-add-btn {
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
-  color: #ffffff !important;
+  background: #ffd23f !important;
+  border: 2.5px solid #2a1820 !important;
+  color: #2a1820 !important;
   font-family: var(--disp) !important;
   font-size: 12px !important;
   font-weight: 800 !important;
-  padding: 9px 16px !important;
+  padding: 10px 18px !important;
   border-radius: 999px !important;
   cursor: pointer !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  transition: all 0.25s ease !important;
+  box-shadow: 0 5px 0 #2a1820 !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .sl-quick-add-btn:hover {
-  background: rgba(255, 42, 109, 0.25) !important;
-  border-color: #ff5287 !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-3px) scale(1.04) !important;
+  box-shadow: 0 8px 0 #2a1820 !important;
 }
 
 .sl-seat-note {
   font-family: var(--disp) !important;
-  font-size: 12.5px !important;
+  font-size: 13px !important;
   font-weight: 800 !important;
-  color: #ffd23f !important;
+  color: #e6195a !important;
   margin-top: 14px !important;
   display: flex !important;
   align-items: center !important;
   gap: 6px !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* Right Column: 3D Cinema Showcase Dish Pedestal (.pl) */
+/* RIGHT COLUMN: 3D POP-UP FOOD PLATTER CARD (.pl) */
 .sl .pl {
   position: relative !important;
   width: min(100%, 62vh) !important;
@@ -3246,10 +3272,10 @@ body.locked .sd {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  z-index: 6 !important;
+  z-index: 8 !important;
 }
 
-/* Glassmorphic Dish Pedestal Frame */
+/* Funky 3D Pop Card Pedestal */
 .pl-pedestal {
   position: relative !important;
   width: 90% !important;
@@ -3257,172 +3283,155 @@ body.locked .sd {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  border-radius: 38px !important;
-  padding: 12px !important;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
-  border: 2px solid rgba(255, 210, 63, 0.35) !important;
+  border-radius: 36px !important;
+  padding: 14px !important;
+  background: #ffffff !important;
+  border: 3.5px solid #2a1820 !important;
   box-shadow: 
-    0 30px 85px rgba(0, 0, 0, 0.8),
-    0 0 60px rgba(255, 42, 109, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
+    0 16px 0 #2a1820,
+    0 30px 60px rgba(255, 42, 109, 0.25) !important;
   cursor: pointer !important;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
-  animation: floatPlate 5.5s ease-in-out infinite alternate !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease !important;
+  animation: floatPopCard 5s ease-in-out infinite alternate !important;
 }
 
 .pl-pedestal:hover {
-  transform: translateY(-8px) scale(1.02) !important;
-  border-color: #ffd23f !important;
+  transform: translateY(-8px) scale(1.03) rotate(1deg) !important;
   box-shadow: 
-    0 35px 100px rgba(0, 0, 0, 0.85),
-    0 0 80px rgba(255, 210, 63, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+    0 22px 0 #2a1820,
+    0 40px 70px rgba(255, 42, 109, 0.35) !important;
 }
 
-@keyframes floatPlate {
+@keyframes floatPopCard {
   0% { transform: translateY(0px) rotate(0deg); }
   50% { transform: translateY(-8px) rotate(0.8deg); }
   100% { transform: translateY(2px) rotate(-0.5deg); }
 }
 
-/* Ambient Radial Glow Ring Behind Food */
+/* Ambient Pink Glow Ring */
 .pl-glow-ring {
   position: absolute !important;
-  inset: -15px !important;
-  border-radius: 46px !important;
-  background: radial-gradient(circle, rgba(255, 42, 109, 0.35) 0%, rgba(255, 210, 63, 0.18) 40%, transparent 70%) !important;
-  filter: blur(16px) !important;
+  inset: -12px !important;
+  border-radius: 44px !important;
+  background: radial-gradient(circle, rgba(255, 42, 109, 0.25) 0%, rgba(255, 210, 63, 0.15) 50%, transparent 75%) !important;
+  filter: blur(14px) !important;
   pointer-events: none !important;
   z-index: 0 !important;
-  animation: glowPulse 4s ease-in-out infinite alternate !important;
 }
 
-@keyframes glowPulse {
-  0% { opacity: 0.6; transform: scale(0.96); }
-  100% { opacity: 1; transform: scale(1.04); }
-}
-
-/* Chef Signature Ribbon on Plate */
+/* Funky Chef Ribbon */
 .pl-cinema-badge {
   position: absolute !important;
-  top: 22px !important;
-  left: 22px !important;
+  top: 18px !important;
+  left: 18px !important;
   z-index: 10 !important;
-  background: linear-gradient(135deg, #ffd23f 0%, #ffae00 100%) !important;
-  color: #16030c !important;
+  background: #ffd23f !important;
+  color: #2a1820 !important;
   font-family: var(--disp) !important;
-  font-size: 10px !important;
+  font-size: 10.5px !important;
   font-weight: 900 !important;
-  letter-spacing: 0.12em !important;
-  padding: 4px 10px !important;
+  letter-spacing: 0.08em !important;
+  padding: 4px 12px !important;
   border-radius: 999px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
 }
 
-/* Hero Food Image */
+/* Food Image inside Pop Card */
 .sl .pl img.sl-hero-img {
   width: 100% !important;
   height: 100% !important;
-  border-radius: 28px !important;
+  border-radius: 26px !important;
   object-fit: cover !important;
   position: relative !important;
   z-index: 2 !important;
-  border: 2px solid rgba(255, 255, 255, 0.6) !important;
-  transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border: 2.5px solid #2a1820 !important;
+  transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
-/* "Tap to Inspect" Floating Badge Overlay */
+/* "Tap to Pop Details" Comic Badge */
 .pl-tap-cue {
   position: absolute !important;
-  bottom: 22px !important;
+  bottom: 18px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
   z-index: 10 !important;
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px !important;
-  background: rgba(16, 3, 11, 0.88) !important;
-  border: 1.5px solid #ffd23f !important;
-  color: #ffd23f !important;
+  background: #ff2a6d !important;
+  border: 2px solid #2a1820 !important;
+  color: #ffffff !important;
   font-family: var(--disp) !important;
   font-size: 11px !important;
   font-weight: 800 !important;
-  padding: 5px 14px !important;
+  padding: 6px 16px !important;
   border-radius: 999px !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
   pointer-events: none !important;
+  white-space: nowrap !important;
 }
 
 .pl-pedestal:hover .pl-tap-cue {
   background: #ffd23f !important;
-  color: #1a0510 !important;
-  transform: translateX(-50%) scale(1.06) !important;
+  color: #2a1820 !important;
+  transform: translateX(-50%) scale(1.08) !important;
 }
 
-.sl-food-tag {
-  display: none !important; /* replaced by sleek pedestal badges & tap cue */
-}
-
-/* Floating Ingredient Orbs (.orb) with interactive bounce */
+/* Floating Funky Ingredient Orbs (.orb) */
 .sl .pl .orb {
   position: absolute !important;
-  width: 52px !important;
-  height: 52px !important;
+  width: 54px !important;
+  height: 54px !important;
   border-radius: 50% !important;
-  background: rgba(22, 5, 16, 0.82) !important;
-  border: 2px solid rgba(255, 210, 63, 0.6) !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 42, 109, 0.3) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
+  background: #ffffff !important;
+  border: 2.5px solid #2a1820 !important;
+  box-shadow: 0 6px 0 #2a1820, 0 10px 20px rgba(255, 42, 109, 0.25) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  font-size: 24px !important;
+  font-size: 26px !important;
   z-index: 12 !important;
   cursor: pointer !important;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease !important;
 }
 
 .sl .pl .orb:hover {
-  transform: scale(1.22) rotate(10deg) !important;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 210, 63, 0.7) !important;
-  border-color: #ffd23f !important;
+  transform: scale(1.25) rotate(12deg) !important;
+  box-shadow: 0 8px 0 #2a1820, 0 15px 30px rgba(255, 42, 109, 0.4) !important;
+  border-color: #ff2a6d !important;
 }
 
 .sl .pl .orb:first-of-type {
   top: -12px !important;
   right: -10px !important;
-  animation: orbFloatA 4.5s ease-in-out infinite alternate !important;
+  animation: orbPopA 4s ease-in-out infinite alternate !important;
 }
 
 .sl .pl .orb.o2 {
   bottom: -8px !important;
   left: -10px !important;
-  animation: orbFloatB 5s ease-in-out infinite alternate !important;
+  animation: orbPopB 4.5s ease-in-out infinite alternate !important;
 }
 
-@keyframes orbFloatA {
+@keyframes orbPopA {
   0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-8px, 10px) scale(1.08); }
+  100% { transform: translate(-6px, 10px) scale(1.08); }
 }
 
-@keyframes orbFloatB {
+@keyframes orbPopB {
   0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(10px, -8px) scale(1.06); }
+  100% { transform: translate(8px, -6px) scale(1.06); }
 }
 
-/* Category Navigation Rail & Controls at Bottom */
+/* Category Navigation Rail at Bottom (Funky White + Pink Dock) */
 .ps-rail-container {
   position: absolute !important;
-  bottom: 24px !important;
+  bottom: 22px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  z-index: 26 !important;
+  z-index: 30 !important;
   display: flex !important;
   align-items: center !important;
   gap: 10px !important;
@@ -3430,29 +3439,26 @@ body.locked .sd {
 }
 
 .ps-rail-nav {
-  width: 38px !important;
-  height: 38px !important;
+  width: 40px !important;
+  height: 40px !important;
   border-radius: 50% !important;
-  background: rgba(18, 4, 12, 0.85) !important;
-  border: 1.5px solid rgba(255, 210, 63, 0.4) !important;
-  color: #ffd23f !important;
+  background: #ffffff !important;
+  border: 2.5px solid #2a1820 !important;
+  color: #2a1820 !important;
   font-size: 20px !important;
-  line-height: 1 !important;
+  font-weight: 900 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   cursor: pointer !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
-  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .ps-rail-nav:hover {
   background: #ffd23f !important;
-  color: #1a0510 !important;
-  transform: scale(1.1) !important;
-  box-shadow: 0 8px 25px rgba(255, 210, 63, 0.5) !important;
+  transform: scale(1.12) !important;
+  box-shadow: 0 6px 0 #2a1820 !important;
 }
 
 .ps-rail {
@@ -3461,13 +3467,11 @@ body.locked .sd {
   display: flex !important;
   align-items: center !important;
   gap: 6px !important;
-  padding: 5px 10px !important;
-  background: rgba(18, 4, 12, 0.85) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+  padding: 6px 12px !important;
+  background: #ffffff !important;
+  border: 2.5px solid #2a1820 !important;
   border-radius: 999px !important;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 6px 0 #2a1820, 0 10px 25px rgba(255, 42, 109, 0.15) !important;
   overflow-x: auto !important;
   scrollbar-width: none !important;
 }
@@ -3476,41 +3480,39 @@ body.locked .sd {
 .ps-pill {
   border: none !important;
   background: transparent !important;
-  color: rgba(255, 255, 255, 0.72) !important;
-  font: 700 12.5px/1 var(--disp) !important;
+  color: #7a324b !important;
+  font: 800 12.5px/1 var(--disp) !important;
   padding: 8px 14px !important;
   border-radius: 999px !important;
   cursor: pointer !important;
   white-space: nowrap !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .ps-pill:hover {
-  color: #fff !important;
-  background: rgba(255, 255, 255, 0.12) !important;
+  color: #e6195a !important;
+  background: #fff0f5 !important;
 }
 
 .ps-pill.on {
-  background: linear-gradient(135deg, #ffd23f 0%, #ffc000 100%) !important;
-  color: #1a0510 !important;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
   font-weight: 800 !important;
-  box-shadow: 0 4px 15px rgba(255, 210, 63, 0.5) !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
   transform: scale(1.04) !important;
 }
 
 .ps-slide-counter {
   font-family: var(--disp) !important;
-  font-size: 11px !important;
-  font-weight: 800 !important;
-  color: #ffd23f !important;
-  background: rgba(18, 4, 12, 0.85) !important;
-  border: 1.5px solid rgba(255, 210, 63, 0.35) !important;
-  padding: 8px 12px !important;
+  font-size: 11.5px !important;
+  font-weight: 900 !important;
+  color: #2a1820 !important;
+  background: #ffd23f !important;
+  border: 2.5px solid #2a1820 !important;
+  padding: 8px 14px !important;
   border-radius: 999px !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
   white-space: nowrap !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
 }
 
 @media (max-width: 860px) {
@@ -3537,7 +3539,7 @@ body.locked .sd {
   }
 }
 
-/* Responsive Layout for Mobile / Tablet */
+/* Mobile & Tablet Responsive Adjustments */
 @media (max-width: 860px) {
   .sl {
     grid-template-columns: 1fr !important;
@@ -3545,7 +3547,7 @@ body.locked .sd {
     align-content: center !important;
     gap: 12px !important;
     text-align: center !important;
-    padding: 64px 16px 68px !important;
+    padding: 60px 16px 66px !important;
   }
   .sl .tx {
     align-items: center !important;
@@ -3579,11 +3581,11 @@ body.locked .sd {
     margin-top: 12px !important;
   }
   .sl-inspect-btn {
-    padding: 7px 14px !important;
+    padding: 8px 16px !important;
     font-size: 11.5px !important;
   }
   .sl-quick-add-btn {
-    padding: 7px 12px !important;
+    padding: 8px 14px !important;
     font-size: 11px !important;
   }
   .sl .pl {
@@ -3592,10 +3594,11 @@ body.locked .sd {
   }
   .pl-pedestal {
     border-radius: 26px !important;
-    padding: 8px !important;
+    padding: 10px !important;
+    box-shadow: 0 10px 0 #2a1820, 0 15px 35px rgba(255, 42, 109, 0.2) !important;
   }
   .sl .pl img.sl-hero-img {
-    border-radius: 20px !important;
+    border-radius: 18px !important;
   }
   .pl-cinema-badge {
     top: 12px !important;
@@ -3609,9 +3612,9 @@ body.locked .sd {
     padding: 3px 10px !important;
   }
   .sl .pl .orb {
-    width: 40px !important;
-    height: 40px !important;
-    font-size: 18px !important;
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 20px !important;
   }
   .sl.s8 .sl-final-cta-box {
     align-items: center !important;
@@ -3620,16 +3623,16 @@ body.locked .sd {
 }
 
 /* ==========================================================================
-   INTERACTIVE CINEMA FOOD POP-UP MODAL (#foodDetailModal)
+   FUNKY PINK RETRO-POP DETAIL MODAL (#foodDetailModal)
    ========================================================================== */
 
 .food-modal-backdrop {
   position: fixed !important;
   inset: 0 !important;
   z-index: 99999 !important;
-  background: rgba(7, 1, 5, 0.88) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
+  background: rgba(42, 24, 32, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -3637,7 +3640,7 @@ body.locked .sd {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease !important;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s ease !important;
 }
 
 .food-modal-backdrop.open {
@@ -3649,57 +3652,50 @@ body.locked .sd {
 .food-modal-card {
   position: relative !important;
   width: 100% !important;
-  max-width: 780px !important;
+  max-width: 760px !important;
   max-height: 90vh !important;
   overflow-y: auto !important;
-  background: linear-gradient(150deg, #240516 0%, #14020d 50%, #0a0107 100%) !important;
-  border: 1.5px solid rgba(255, 210, 63, 0.45) !important;
-  border-radius: 32px !important;
+  background: #ffffff !important;
+  border: 4px solid #2a1820 !important;
+  border-radius: 36px !important;
   box-shadow: 
-    0 40px 100px rgba(0, 0, 0, 0.9),
-    0 0 60px rgba(255, 42, 109, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
-  transform: scale(0.92) translateY(24px);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  color: #fff !important;
+    0 20px 0 #2a1820,
+    0 40px 80px rgba(255, 42, 109, 0.3) !important;
+  transform: scale(0.6) translateY(60px) rotate(-3deg);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  color: #2a1820 !important;
   scrollbar-width: thin !important;
 }
 
-.food-modal-card::-webkit-scrollbar {
-  width: 6px;
-}
-.food-modal-card::-webkit-scrollbar-thumb {
-  background: rgba(255, 210, 63, 0.3);
-  border-radius: 999px;
-}
-
 .food-modal-backdrop.open .food-modal-card {
-  transform: scale(1) translateY(0) !important;
+  transform: scale(1) translateY(0) rotate(0deg) !important;
 }
 
 .food-modal-close {
   position: absolute !important;
   top: 18px !important;
   right: 18px !important;
-  width: 38px !important;
-  height: 38px !important;
+  width: 40px !important;
+  height: 40px !important;
   border-radius: 50% !important;
-  background: rgba(255, 255, 255, 0.12) !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  color: #fff !important;
-  font-size: 18px !important;
+  background: #ffd23f !important;
+  border: 2.5px solid #2a1820 !important;
+  color: #2a1820 !important;
+  font-size: 20px !important;
+  font-weight: 900 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   cursor: pointer !important;
   z-index: 10 !important;
-  transition: all 0.2s ease !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .food-modal-close:hover {
   background: #ff2a6d !important;
-  border-color: #ff2a6d !important;
-  transform: rotate(90deg) scale(1.1) !important;
+  color: #ffffff !important;
+  transform: rotate(90deg) scale(1.15) !important;
 }
 
 .food-modal-grid {
@@ -3714,21 +3710,21 @@ body.locked .sd {
   .food-modal-grid {
     grid-template-columns: 1fr !important;
     padding: 24px 20px 28px !important;
-    gap: 20px !important;
+    gap: 18px !important;
   }
 }
 
 .food-modal-visual {
   position: relative !important;
-  border-radius: 24px !important;
+  border-radius: 26px !important;
   overflow: hidden !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7) !important;
-  border: 2px solid rgba(255, 210, 63, 0.35) !important;
+  border: 3px solid #2a1820 !important;
+  box-shadow: 0 8px 0 #2a1820 !important;
   aspect-ratio: 1 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  background: #14020d !important;
+  background: #fff0f5 !important;
 }
 
 .food-modal-visual img {
@@ -3746,14 +3742,15 @@ body.locked .sd {
   position: absolute !important;
   bottom: 12px !important;
   left: 12px !important;
-  background: linear-gradient(135deg, #ffd23f 0%, #ffae00 100%) !important;
-  color: #1a0510 !important;
+  background: #ffd23f !important;
+  color: #2a1820 !important;
   font-family: var(--disp) !important;
-  font-size: 10px !important;
+  font-size: 10.5px !important;
   font-weight: 900 !important;
-  padding: 4px 10px !important;
+  padding: 4px 12px !important;
   border-radius: 999px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
 }
 
 .food-modal-info {
@@ -3766,25 +3763,25 @@ body.locked .sd {
   font-family: var(--disp) !important;
   font-size: 11px !important;
   font-weight: 800 !important;
-  letter-spacing: 0.14em !important;
+  letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
-  color: #ffd23f !important;
+  color: #e6195a !important;
   margin-bottom: 4px !important;
 }
 
 .food-modal-title {
   font-family: var(--disp) !important;
   font-size: clamp(24px, 3.2vw, 34px) !important;
-  font-weight: 800 !important;
+  font-weight: 900 !important;
   line-height: 1.12 !important;
-  color: #ffffff !important;
+  color: #2a1820 !important;
   margin: 0 0 10px !important;
 }
 
 .food-modal-desc {
   font-size: 13.5px !important;
   line-height: 1.5 !important;
-  color: #ffdce6 !important;
+  color: #612f42 !important;
   margin: 0 0 16px !important;
 }
 
@@ -3792,16 +3789,16 @@ body.locked .sd {
   width: 100% !important;
   margin-bottom: 14px !important;
   padding-bottom: 12px !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-bottom: 2px dashed rgba(255, 42, 109, 0.2) !important;
 }
 
 .food-modal-section h4 {
   font-family: var(--disp) !important;
-  font-size: 11.5px !important;
+  font-size: 12px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
-  color: #ffd23f !important;
+  color: #e6195a !important;
   margin: 0 0 8px !important;
 }
 
@@ -3814,10 +3811,10 @@ body.locked .sd {
 .food-modal-ing-chip {
   font-family: var(--disp) !important;
   font-size: 11px !important;
-  font-weight: 700 !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  color: #fff !important;
+  font-weight: 800 !important;
+  background: #fff0f5 !important;
+  border: 1.5px solid #ff2a6d !important;
+  color: #2a1820 !important;
   padding: 3px 10px !important;
   border-radius: 999px !important;
 }
@@ -3825,9 +3822,9 @@ body.locked .sd {
 .food-modal-pairing {
   font-size: 13px !important;
   line-height: 1.4 !important;
-  color: #ffd23f !important;
+  color: #c42352 !important;
   margin: 0 !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
 }
 
 .food-modal-meta-row {
@@ -3835,22 +3832,22 @@ body.locked .sd {
   align-items: center !important;
   gap: 16px !important;
   width: 100% !important;
-  margin-bottom: 20px !important;
+  margin-bottom: 18px !important;
 }
 
 .food-meta-item small {
   display: block !important;
   font-size: 9.5px !important;
   letter-spacing: 0.1em !important;
-  color: rgba(255, 255, 255, 0.6) !important;
-  font-weight: 700 !important;
+  color: #8c4c62 !important;
+  font-weight: 800 !important;
 }
 
 .food-meta-item b {
   font-family: var(--disp) !important;
-  font-size: 12.5px !important;
-  color: #fff !important;
-  font-weight: 800 !important;
+  font-size: 13px !important;
+  color: #2a1820 !important;
+  font-weight: 900 !important;
 }
 
 .food-modal-cta-row {
@@ -3865,85 +3862,74 @@ body.locked .sd {
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
-  background: linear-gradient(135deg, #ffd23f 0%, #ffc000 100%) !important;
-  color: #16030c !important;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
   font-family: var(--disp) !important;
   font-size: 13px !important;
-  font-weight: 800 !important;
+  font-weight: 900 !important;
   padding: 10px 22px !important;
   border-radius: 999px !important;
-  border: none !important;
+  border: 2.5px solid #2a1820 !important;
   cursor: pointer !important;
-  box-shadow: 0 6px 20px rgba(255, 210, 63, 0.45) !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .food-modal-add-btn:hover {
-  transform: translateY(-2px) scale(1.03) !important;
-  box-shadow: 0 10px 30px rgba(255, 210, 63, 0.6) !important;
+  transform: translateY(-2px) scale(1.04) !important;
+  box-shadow: 0 6px 0 #2a1820 !important;
 }
 
 .food-modal-app-btn {
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px !important;
-  background: rgba(255, 42, 109, 0.2) !important;
-  border: 1.5px solid #ff2a6d !important;
-  color: #ff94b8 !important;
+  background: #ffffff !important;
+  border: 2.5px solid #2a1820 !important;
+  color: #e6195a !important;
   font-family: var(--disp) !important;
   font-size: 13px !important;
-  font-weight: 800 !important;
+  font-weight: 900 !important;
   padding: 10px 20px !important;
   border-radius: 999px !important;
   text-decoration: none !important;
-  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  transition: all 0.2s ease !important;
 }
 
 .food-modal-app-btn:hover {
-  background: #ff2a6d !important;
-  color: #ffffff !important;
+  background: #fff0f5 !important;
   transform: translateY(-2px) !important;
 }
 
-/* Floating Toast Notification */
+/* Floating Funky Pink Toast */
 .food-toast {
   position: fixed !important;
   bottom: 28px !important;
   right: 28px !important;
   z-index: 100000 !important;
-  background: linear-gradient(135deg, #1f0413 0%, #10020a 100%) !important;
-  border: 1.5px solid #ffd23f !important;
-  color: #ffffff !important;
+  background: #ffffff !important;
+  border: 3px solid #2a1820 !important;
+  color: #2a1820 !important;
   font-family: var(--disp) !important;
   font-size: 13px !important;
   font-weight: 800 !important;
-  padding: 12px 22px !important;
+  padding: 12px 24px !important;
   border-radius: 999px !important;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 210, 63, 0.3) !important;
+  box-shadow: 0 6px 0 #2a1820, 0 15px 35px rgba(255, 42, 109, 0.3) !important;
   display: flex !important;
   align-items: center !important;
   gap: 10px !important;
   opacity: 0;
-  transform: translateY(20px) scale(0.94);
+  transform: translateY(20px) scale(0.85);
   pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .food-toast.show {
   opacity: 1 !important;
   transform: translateY(0) scale(1) !important;
   pointer-events: auto !important;
-}
-
-@media (max-width: 600px) {
-  .food-toast {
-    bottom: 18px !important;
-    right: 18px !important;
-    left: 18px !important;
-    justify-content: center !important;
-    font-size: 12px !important;
-    padding: 10px 16px !important;
-  }
 }
 
 
@@ -12135,19 +12121,24 @@ body.locked .sd {
 
 <section class="ps" id="ps" aria-label="Cinematic Food Showcase">
   <div class="ps-stick">
-    <!-- Ambient Dynamic Velvet Cinema Aura & Dust -->
-    <div class="ps-ambient-bg" aria-hidden="true"></div>
-    <div class="ps-ambient-dust" aria-hidden="true"></div>
+    <!-- Funky Halftone & Pop Comic Stickers Backdrop -->
+    <div class="ps-funky-bg" aria-hidden="true"></div>
+    <div class="ps-floating-stickers" aria-hidden="true">
+      <span class="funky-sticker st-1">🍿 FRESH POP!</span>
+      <span class="funky-sticker st-2">🔥 SIZZLING!</span>
+      <span class="funky-sticker st-3">💖 JUICY AF!</span>
+      <span class="funky-sticker st-4">⚡ 10M SEAT DROP</span>
+    </div>
 
-    <!-- Top HUD Bar: Showcase Indicator & Live Recliner Seat Tray -->
+    <!-- Top Funky HUD Header: Category Label & Live Recliner Seat Tray -->
     <div class="ps-header-hud">
       <div class="ps-hud-brand">
-        <span class="ps-hud-pulse"></span>
-        <span class="txt">PREMIER CINEMA FOOD SHOWCASE</span>
+        <span class="sparkle">🍿</span>
+        <span class="txt">CINEMA POP-UP FOOD SHOWCASE</span>
       </div>
       <button type="button" class="ps-hud-tray" id="psHudTray" aria-label="View Cinema Seat Tray">
-        <span class="tray-icon">🍿</span>
-        <span>Recliner Tray:</span>
+        <span class="tray-icon">🎟️</span>
+        <span>Recliner Feast:</span>
         <span class="tray-badge" id="psTrayCount">0</span>
       </button>
     </div>
@@ -12172,8 +12163,8 @@ body.locked .sd {
           <button type="button" class="sl-subtab" data-img="assets/flavours/snack_pizza.jpg" data-tag="🍕 Woodfired Pizza · Buffalo Mozzarella" data-dish="pizza">🍕 Woodfired Pizza</button>
         </div>
         <div class="sl-actions-row">
-          <button type="button" class="sl-inspect-btn" data-open-modal="0" aria-label="View Secrets and Pairings for Burgers and Pizza">
-            <span>✨ View Secrets &amp; Pairings</span>
+          <button type="button" class="sl-inspect-btn" data-open-modal="0" aria-label="Peek Secrets and Pairings for Burgers and Pizza">
+            <span>✨ Peek Secrets &amp; Pairings</span>
             <span>→</span>
           </button>
           <button type="button" class="sl-quick-add-btn" data-dish-id="0" aria-label="Quick Add to Cinema Seat Tray">
@@ -12182,15 +12173,15 @@ body.locked .sd {
         </div>
       </div>
       <div class="pl">
-        <div class="pl-pedestal" data-open-modal="0" title="Tap to inspect dish secrets &amp; pairings">
+        <div class="pl-pedestal" data-open-modal="0" title="Tap to pop food secrets &amp; pairings">
           <div class="pl-glow-ring" aria-hidden="true"></div>
-          <div class="pl-cinema-badge">★ CHEF SIGNATURE</div>
+          <div class="pl-cinema-badge">⭐ CHEF SIGNATURE</div>
           <div class="orb"><span>🍔</span></div>
           <div class="orb o2"><span>🍕</span></div>
           <img class="sl-hero-img" src="assets/flavours/snack_burger.jpg" alt="Artisan Brioche Smash Burger" loading="eager">
           <div class="pl-tap-cue">
             <span>🔍</span>
-            <span>Tap to Inspect</span>
+            <span>Tap to Pop Details</span>
           </div>
         </div>
       </div>
@@ -12216,8 +12207,8 @@ body.locked .sd {
           <button type="button" class="sl-subtab" data-img="assets/flavours/snack_sandwich.jpg" data-tag="🥪 Toasted Panini · Herb Pesto" data-dish="panini">🥪 Toasted Panini</button>
         </div>
         <div class="sl-actions-row">
-          <button type="button" class="sl-inspect-btn" data-open-modal="1" aria-label="View Secrets and Pairings for Momos and Panini">
-            <span>✨ View Secrets &amp; Pairings</span>
+          <button type="button" class="sl-inspect-btn" data-open-modal="1" aria-label="Peek Secrets and Pairings for Momos and Panini">
+            <span>✨ Peek Secrets &amp; Pairings</span>
             <span>→</span>
           </button>
           <button type="button" class="sl-quick-add-btn" data-dish-id="1" aria-label="Quick Add to Cinema Seat Tray">
@@ -12226,15 +12217,15 @@ body.locked .sd {
         </div>
       </div>
       <div class="pl">
-        <div class="pl-pedestal" data-open-modal="1" title="Tap to inspect dish secrets &amp; pairings">
+        <div class="pl-pedestal" data-open-modal="1" title="Tap to pop food secrets &amp; pairings">
           <div class="pl-glow-ring" aria-hidden="true"></div>
-          <div class="pl-cinema-badge">★ ARTISAN RECIPE</div>
+          <div class="pl-cinema-badge">⭐ ARTISAN RECIPE</div>
           <div class="orb"><span>🥟</span></div>
           <div class="orb o2"><span>🥪</span></div>
           <img class="sl-hero-img" src="assets/flavours/snack_momo.jpg" alt="Himalayan Steamed Momos" loading="eager">
           <div class="pl-tap-cue">
             <span>🔍</span>
-            <span>Tap to Inspect</span>
+            <span>Tap to Pop Details</span>
           </div>
         </div>
       </div>
@@ -12260,8 +12251,8 @@ body.locked .sd {
           <button type="button" class="sl-subtab" data-img="assets/flavours/snack_iced_drinks.jpg" data-tag="🥤 Iced Cold Brew &amp; Citrus Cooler" data-dish="iced_refresh">🥤 Iced Craft Refresh</button>
         </div>
         <div class="sl-actions-row">
-          <button type="button" class="sl-inspect-btn" data-open-modal="2" aria-label="View Secrets and Pairings for Boba and Drinks">
-            <span>✨ View Secrets &amp; Pairings</span>
+          <button type="button" class="sl-inspect-btn" data-open-modal="2" aria-label="Peek Secrets and Pairings for Boba and Drinks">
+            <span>✨ Peek Secrets &amp; Pairings</span>
             <span>→</span>
           </button>
           <button type="button" class="sl-quick-add-btn" data-dish-id="2" aria-label="Quick Add to Cinema Seat Tray">
@@ -12270,15 +12261,15 @@ body.locked .sd {
         </div>
       </div>
       <div class="pl">
-        <div class="pl-pedestal" data-open-modal="2" title="Tap to inspect dish secrets &amp; pairings">
+        <div class="pl-pedestal" data-open-modal="2" title="Tap to pop food secrets &amp; pairings">
           <div class="pl-glow-ring" aria-hidden="true"></div>
-          <div class="pl-cinema-badge">★ SUB-ZERO 2°C</div>
+          <div class="pl-cinema-badge">⭐ SUB-ZERO 2°C</div>
           <div class="orb"><span>🧋</span></div>
           <div class="orb o2"><span>🥤</span></div>
           <img class="sl-hero-img" src="assets/flavours/snack_boba.jpg" alt="Tiger Brown Sugar Boba Milk Tea" loading="eager">
           <div class="pl-tap-cue">
             <span>🔍</span>
-            <span>Tap to Inspect</span>
+            <span>Tap to Pop Details</span>
           </div>
         </div>
       </div>
@@ -12300,8 +12291,8 @@ body.locked .sd {
           <span class="sl-chip" data-ingredient="Garlic Aioli Dip">🧄 Garlic Aioli Dip</span>
         </div>
         <div class="sl-actions-row">
-          <button type="button" class="sl-inspect-btn" data-open-modal="3" aria-label="View Secrets and Pairings for Fries and Nuggets">
-            <span>✨ View Secrets &amp; Pairings</span>
+          <button type="button" class="sl-inspect-btn" data-open-modal="3" aria-label="Peek Secrets and Pairings for Fries and Nuggets">
+            <span>✨ Peek Secrets &amp; Pairings</span>
             <span>→</span>
           </button>
           <button type="button" class="sl-quick-add-btn" data-dish-id="3" aria-label="Quick Add to Cinema Seat Tray">
@@ -12311,15 +12302,15 @@ body.locked .sd {
         <div class="sl-seat-note">⚡ Delivered steaming hot to your seat in ~10 mins</div>
       </div>
       <div class="pl">
-        <div class="pl-pedestal" data-open-modal="3" title="Tap to inspect dish secrets &amp; pairings">
+        <div class="pl-pedestal" data-open-modal="3" title="Tap to pop food secrets &amp; pairings">
           <div class="pl-glow-ring" aria-hidden="true"></div>
-          <div class="pl-cinema-badge">★ PIPING HOT</div>
+          <div class="pl-cinema-badge">⭐ PIPING HOT</div>
           <div class="orb"><span>🍟</span></div>
           <div class="orb o2"><span>🍗</span></div>
           <img class="sl-hero-img" src="assets/flavours/snack_fries.jpg" alt="Golden French Fries and Crispy Nuggets" loading="eager">
           <div class="pl-tap-cue">
             <span>🔍</span>
-            <span>Tap to Inspect</span>
+            <span>Tap to Pop Details</span>
           </div>
         </div>
       </div>
@@ -12341,8 +12332,8 @@ body.locked .sd {
           <span class="sl-chip" data-ingredient="Recliner Seat Drop">✨ Recliner Seat Drop</span>
         </div>
         <div class="sl-actions-row">
-          <button type="button" class="sl-inspect-btn" data-open-modal="4" aria-label="View Secrets and Pairings for Cinema Popcorn">
-            <span>✨ View Secrets &amp; Pairings</span>
+          <button type="button" class="sl-inspect-btn" data-open-modal="4" aria-label="Peek Secrets and Pairings for Cinema Popcorn">
+            <span>✨ Peek Secrets &amp; Pairings</span>
             <span>→</span>
           </button>
           <button type="button" class="sl-quick-add-btn" data-dish-id="4" aria-label="Quick Add to Cinema Seat Tray">
@@ -12352,15 +12343,15 @@ body.locked .sd {
         <div class="sl-seat-note">🍿 Unlimited refill combos available on the Love Cafe App</div>
       </div>
       <div class="pl">
-        <div class="pl-pedestal" data-open-modal="4" title="Tap to inspect dish secrets &amp; pairings">
+        <div class="pl-pedestal" data-open-modal="4" title="Tap to pop food secrets &amp; pairings">
           <div class="pl-glow-ring" aria-hidden="true"></div>
-          <div class="pl-cinema-badge">★ #1 BESTSELLER</div>
+          <div class="pl-cinema-badge">⭐ #1 BESTSELLER</div>
           <div class="orb"><span>🍿</span></div>
           <div class="orb o2"><span>✨</span></div>
           <img class="sl-hero-img" src="assets/flavours/snack_popcorn.jpg" alt="Golden Cinema Butter Popcorn" loading="eager">
           <div class="pl-tap-cue">
             <span>🔍</span>
-            <span>Tap to Inspect</span>
+            <span>Tap to Pop Details</span>
           </div>
         </div>
       </div>
@@ -12382,8 +12373,8 @@ body.locked .sd {
           <span class="sl-chip" data-ingredient="Mess-Free Dining">⚡ Mess-Free Dining</span>
         </div>
         <div class="sl-actions-row">
-          <button type="button" class="sl-inspect-btn" data-open-modal="5" aria-label="View Secrets and Pairings for Hot Dogs and Wraps">
-            <span>✨ View Secrets &amp; Pairings</span>
+          <button type="button" class="sl-inspect-btn" data-open-modal="5" aria-label="Peek Secrets and Pairings for Hot Dogs and Wraps">
+            <span>✨ Peek Secrets &amp; Pairings</span>
             <span>→</span>
           </button>
           <button type="button" class="sl-quick-add-btn" data-dish-id="5" aria-label="Quick Add to Cinema Seat Tray">
@@ -12393,15 +12384,15 @@ body.locked .sd {
         <div class="sl-seat-note">🌭 Perfect one-handed cinema snack · Zero screen distraction</div>
       </div>
       <div class="pl">
-        <div class="pl-pedestal" data-open-modal="5" title="Tap to inspect dish secrets &amp; pairings">
+        <div class="pl-pedestal" data-open-modal="5" title="Tap to pop food secrets &amp; pairings">
           <div class="pl-glow-ring" aria-hidden="true"></div>
-          <div class="pl-cinema-badge">★ MESS-FREE</div>
+          <div class="pl-cinema-badge">⭐ MESS-FREE</div>
           <div class="orb"><span>🌭</span></div>
           <div class="orb o2"><span>🌯</span></div>
           <img class="sl-hero-img" src="assets/flavours/snack_hotdog_wrap.jpg" alt="Gourmet Grilled Hot Dog and Artisan Wraps" loading="eager">
           <div class="pl-tap-cue">
             <span>🔍</span>
-            <span>Tap to Inspect</span>
+            <span>Tap to Pop Details</span>
           </div>
         </div>
       </div>
@@ -12423,8 +12414,8 @@ body.locked .sd {
           <span class="sl-chip" data-ingredient="Sweet Movie Finale">🍰 Sweet Movie Finale</span>
         </div>
         <div class="sl-actions-row">
-          <button type="button" class="sl-inspect-btn" data-open-modal="6" aria-label="View Secrets and Pairings for Desserts">
-            <span>✨ View Secrets &amp; Pairings</span>
+          <button type="button" class="sl-inspect-btn" data-open-modal="6" aria-label="Peek Secrets and Pairings for Desserts">
+            <span>✨ Peek Secrets &amp; Pairings</span>
             <span>→</span>
           </button>
           <button type="button" class="sl-quick-add-btn" data-dish-id="6" aria-label="Quick Add to Cinema Seat Tray">
@@ -12434,15 +12425,15 @@ body.locked .sd {
         <div class="sl-seat-note">🍫 Freshly baked &amp; served warm right to your cinema recliner</div>
       </div>
       <div class="pl">
-        <div class="pl-pedestal" data-open-modal="6" title="Tap to inspect dish secrets &amp; pairings">
+        <div class="pl-pedestal" data-open-modal="6" title="Tap to pop food secrets &amp; pairings">
           <div class="pl-glow-ring" aria-hidden="true"></div>
-          <div class="pl-cinema-badge">★ WARM DESSERT</div>
+          <div class="pl-cinema-badge">⭐ WARM DESSERT</div>
           <div class="orb"><span>🍫</span></div>
           <div class="orb o2"><span>🧇</span></div>
           <img class="sl-hero-img" src="assets/flavours/snack_dessert.jpg" alt="Decadent Chocolate Fudge Brownie and Belgian Waffle" loading="eager">
           <div class="pl-tap-cue">
             <span>🔍</span>
-            <span>Tap to Inspect</span>
+            <span>Tap to Pop Details</span>
           </div>
         </div>
       </div>
@@ -12454,7 +12445,7 @@ body.locked .sd {
       <div class="tx">
         <span class="sl-category-eyebrow">✦ 08 · THE ULTIMATE CINEMA CLIMAX ✦</span>
         <h2>Your seat. Your snacks. <em>Your moment.</em></h2>
-        <div class="sl-closing-banner">Make every movie moment delicious.</div>
+        <div class="sl-subheading">The complete blockbuster <em>experience.</em></div>
         <p>Find your cinema. Discover your favorites. Order for movie time. The complete feast — overflowing butter popcorn, juicy double smash burger, golden seasoned fries, cold brown sugar boba, and warm fudge brownie delivered to your seat in ~10 mins.</p>
         <div class="sl-chips-row">
           <span class="sl-chip" data-ingredient="Popcorn &amp; Drink Combo">🍿 Popcorn &amp; Drink Combo</span>
@@ -12465,8 +12456,8 @@ body.locked .sd {
         
         <div class="sl-final-cta-box">
           <div class="sl-actions-row" style="margin-top:0;">
-            <button type="button" class="sl-inspect-btn" data-open-modal="7" aria-label="View Feast Box Combos">
-              <span>✨ View Complete Feast Box</span>
+            <button type="button" class="sl-inspect-btn" data-open-modal="7" aria-label="Peek Feast Box Combos">
+              <span>✨ Peek Complete Feast Box</span>
               <span>→</span>
             </button>
             <a class="btn o-seat-btn final-app-cta-btn" data-dl href="#get">
@@ -12485,21 +12476,21 @@ body.locked .sd {
         </div>
       </div>
       <div class="pl">
-        <div class="pl-pedestal" data-open-modal="7" title="Tap to inspect grand cinema feast">
+        <div class="pl-pedestal" data-open-modal="7" title="Tap to pop grand cinema feast">
           <div class="pl-glow-ring" aria-hidden="true"></div>
-          <div class="pl-cinema-badge">★ ULTIMATE FEAST</div>
+          <div class="pl-cinema-badge">⭐ ULTIMATE FEAST</div>
           <div class="orb"><span>🎬</span></div>
           <div class="orb o2"><span>🍿</span></div>
           <img class="sl-hero-img" src="assets/flavours/snack_combo_feast.jpg" alt="Ultimate Movie Night Combo Feast Spread" loading="eager">
           <div class="pl-tap-cue">
             <span>🔍</span>
-            <span>Tap to Inspect</span>
+            <span>Tap to Pop Details</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Interactive Bottom Rail: Stepper Buttons & Slide Counter -->
+    <!-- Funky Bottom Rail: Bubbly Dock, Stepper Buttons & Slide Counter -->
     <div class="ps-rail-container">
       <button type="button" class="ps-rail-nav ps-rail-prev" id="psPrevSlide" aria-label="Previous Food Category">‹</button>
       <nav class="ps-rail" aria-label="Showcase items navigation">
@@ -12517,14 +12508,14 @@ body.locked .sd {
     </div>
   </div>
 
-  <!-- Interactive Cinema Food Detail Modal (#foodDetailModal) -->
+  <!-- Funky Retro-Pop Cinema Food Detail Modal (#foodDetailModal) -->
   <div class="food-modal-backdrop" id="foodModalBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="food-modal-card" id="foodModalCard">
       <button type="button" class="food-modal-close" id="foodModalClose" aria-label="Close food details">✕</button>
       <div class="food-modal-grid">
         <div class="food-modal-visual">
           <img id="foodModalImg" src="assets/flavours/snack_burger.jpg" alt="Dish Preview">
-          <span class="food-modal-badge" id="foodModalBadge">🔥 FRESH KITCHEN PREP</span>
+          <span class="food-modal-badge" id="foodModalBadge">⭐ KITCHEN FRESH</span>
         </div>
         <div class="food-modal-info">
           <div class="food-modal-category" id="foodModalCategory">GOURMET GRILL</div>
@@ -12532,7 +12523,7 @@ body.locked .sd {
           <p class="food-modal-desc" id="foodModalDesc">Juicy double-layer brioche smash burger with sizzling beef, caramelized onions and melted sharp cheddar.</p>
           
           <div class="food-modal-section">
-            <h4>✦ Key Artisan Ingredients</h4>
+            <h4>✦ Key Fresh Ingredients</h4>
             <div class="food-modal-ingredients" id="foodModalIngredients">
               <!-- Populated dynamically -->
             </div>
@@ -15121,16 +15112,16 @@ function plateauP(rawP, numSlides) {
   const k = Math.floor(rawP);
   const u = rawP - k; // fractional part in [0, 1)
   
-  // Dwell ratio: 0.52 dwell (locked in place with subtle breathing), 0.48 smooth transition
-  const dwell = 0.52;
+  // Dwell ratio: 0.54 dwell (steady pop-up focus), 0.46 smooth pop transition
+  const dwell = 0.54;
   if (u < dwell) {
-    // Gentle micro-drift so the scene feels alive but completely steady and legible
-    return k + (u / dwell) * 0.05;
+    // Subtle breathing micro-drift
+    return k + (u / dwell) * 0.04;
   } else {
-    // Hermite cubic ease-in-out transition between slide k and k+1
+    // Hermite cubic ease-in-out transition between pop items
     const t = (u - dwell) / (1 - dwell);
     const eased = t * t * (3 - 2 * t);
-    return k + 0.05 + eased * 0.95;
+    return k + 0.04 + eased * 0.96;
   }
 }
 
@@ -15192,31 +15183,58 @@ function updateSlides() {
     }
   }
 
-  // Silky Horizontal GPU Glide with generous dwell stability
+  // 3D SCROLL POP-UP ENGINE (VERTICAL DEPTH & SCALE POP-IN, ZERO HORIZONTAL SLIDING)
   slides.forEach((s, k) => {
     const d = P - k;
     const absD = Math.abs(d);
 
-    if (absD >= 1.05) {
-      s.style.transform = `translate3d(${d > 0 ? -105 : 105}%, 0, 0)`;
+    if (absD >= 1.0) {
+      // Offscreen resting state (scaled down with depth)
       s.style.opacity = '0';
       s.style.visibility = 'hidden';
       s.style.pointerEvents = 'none';
+      if (d < 0) {
+        // Coming up from below
+        s.style.transform = 'scale(0.35) translateY(120px) rotate(-5deg)';
+      } else {
+        // Exited upwards
+        s.style.transform = 'scale(1.15) translateY(-90px) rotate(4deg)';
+      }
     } else {
       s.style.visibility = 'visible';
       s.style.zIndex = Math.round(20 - absD * 10);
-      
-      const offsetPercent = -d * 100;
-      const alpha = clamp(1.2 - absD * 0.7, 0, 1);
-      
-      s.style.transform = `translate3d(${offsetPercent.toFixed(2)}%, 0, 0)`;
-      s.style.opacity = alpha.toFixed(3);
       s.style.pointerEvents = absD < 0.35 ? 'auto' : 'none';
+
+      if (d <= 0) {
+        // Entering from below / Popping into center
+        const u = 1 + d; // 0 to 1
+        // Elastic pop curve
+        const popScale = 0.45 + Math.sin(u * Math.PI * 0.5) * 0.55;
+        const popBounce = Math.sin(u * Math.PI) * 0.08;
+        const finalScale = popScale + popBounce;
+        const translateY = (1 - u) * 90;
+        const rotate = (1 - u) * -5;
+        const opacity = Math.min(1, u * 1.6);
+
+        s.style.transform = `scale(${finalScale.toFixed(3)}) translateY(${translateY.toFixed(1)}px) rotate(${rotate.toFixed(1)}deg)`;
+        s.style.opacity = opacity.toFixed(3);
+      } else {
+        // Exiting upwards
+        const exitScale = 1.0 + d * 0.15;
+        const exitY = -d * 85;
+        const exitRotate = d * 4;
+        const opacity = Math.max(0, 1 - d * 1.5);
+
+        s.style.transform = `scale(${exitScale.toFixed(3)}) translateY(${exitY.toFixed(1)}px) rotate(${exitRotate.toFixed(1)}deg)`;
+        s.style.opacity = opacity.toFixed(3);
+      }
     }
     
-    if (absD < 1.0) {
-      if (sws[k]) sws[k].style.transform = `translate3d(${(-d * 20).toFixed(1)}vw, -52%, 0)`;
-      if (pls[k]) pls[k].style.transform = `translate3d(${(-d * 10).toFixed(1)}%, ${(clamp(d, -1, 1) * -12).toFixed(1)}px, 0) scale(${(1 - absD * 0.04).toFixed(3)})`;
+    // Platter internal micro-bounce
+    if (absD < 1.0 && pls[k]) {
+      const platterFloat = (d * -10).toFixed(1);
+      const platterScale = (1 + Math.sin((1 - absD) * Math.PI) * 0.04).toFixed(3);
+      pls[k].style.transform = `translateY(${platterFloat}px) scale(${platterScale})`;
     }
   });
 }
