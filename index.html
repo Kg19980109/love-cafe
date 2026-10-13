@@ -10033,15 +10033,14 @@ body.locked .sd {
 
 
 /* ==========================================================================
-   OFFICIAL FOOD & BEVERAGE PARTNERS (#partners) — AUTO-ROTATING LUXURY SHOWCASE
+   OFFICIAL FOOD & BEVERAGE PARTNERS (#partners) — AUTO-SCROLLING LUXURY BANNER
+   (Placed Directly Before Why Choose Love Cafe #why-us)
    ========================================================================== */
 .food-partners-section {
   position: relative !important;
-  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.95) 0%, transparent 65%),
-              radial-gradient(circle at 10% 50%, rgba(255, 182, 193, 0.25) 0%, transparent 50%),
-              radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.25) 0%, transparent 50%),
-              linear-gradient(180deg, #fff3f7 0%, #ffedf4 50%, #ffe5ee 100%) !important;
-  padding: clamp(55px, 6vw, 85px) clamp(16px, 3.5vw, 40px) !important;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.95) 0%, transparent 70%),
+              linear-gradient(180deg, #fff3f7 0%, #ffedf4 50%, #ffe8f1 100%) !important;
+  padding: clamp(32px, 4vw, 50px) 0 clamp(24px, 3.5vw, 42px) !important;
   color: #2b0d18 !important;
   overflow: hidden !important;
   z-index: 3 !important;
@@ -10050,265 +10049,66 @@ body.locked .sd {
   scroll-margin-top: 70px !important;
 }
 
-.fp-container {
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-/* Header */
-.fp-header {
+.fp-header-compact {
   text-align: center !important;
   max-width: 820px !important;
-  margin: 0 auto 30px !important;
+  margin: 0 auto 18px !important;
+  padding: 0 16px !important;
 }
 
 .fp-badge-pill {
   display: inline-flex !important;
   align-items: center !important;
   gap: 7px !important;
-  padding: 4px 16px !important;
+  padding: 4px 15px !important;
   border-radius: 999px !important;
   background: rgba(255, 255, 255, 0.95) !important;
-  border: 1.5px solid rgba(224, 43, 84, 0.25) !important;
+  border: 1.5px solid rgba(224, 43, 84, 0.22) !important;
   box-shadow: 0 4px 12px rgba(224, 43, 84, 0.08) !important;
   font-family: var(--disp) !important;
   font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
   color: #b81639 !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 6px !important;
 }
 
-.fp-title {
+.fp-title-compact {
   font-family: var(--disp) !important;
-  font-size: clamp(24px, 3.4vw, 40px) !important;
+  font-size: clamp(20px, 2.6vw, 30px) !important;
   font-weight: 800 !important;
   color: #2b0d18 !important;
-  line-height: 1.2 !important;
-  margin: 0 0 8px !important;
+  margin: 0 0 4px !important;
+  line-height: 1.25 !important;
 }
 
-.fp-title em {
+.fp-title-compact em {
   font-style: normal !important;
   color: #e02b54 !important;
-  background: linear-gradient(135deg, #e02b54 0%, #b81639 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
 }
 
-.fp-subtitle {
+.fp-sub-compact {
   font-family: var(--sans) !important;
-  font-size: clamp(13px, 1.2vw, 15px) !important;
+  font-size: clamp(12px, 1.1vw, 13.5px) !important;
   color: #612739 !important;
-  line-height: 1.5 !important;
-  margin: 0 auto !important;
-  max-width: 680px !important;
+  margin: 0 !important;
 }
 
-/* Interactive Rotating Featured Banner */
-.fp-spotlight-wrap {
-  position: relative !important;
-  margin-bottom: 30px !important;
-}
-
-.fp-spotlight-card {
-  background: rgba(255, 255, 255, 0.94) !important;
-  backdrop-filter: blur(24px) !important;
-  -webkit-backdrop-filter: blur(24px) !important;
-  border-radius: 26px !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-  box-shadow: 0 20px 50px rgba(224, 43, 84, 0.1), 0 4px 16px rgba(0, 0, 0, 0.03) !important;
-  padding: clamp(20px, 3vw, 36px) !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: clamp(24px, 4vw, 50px) !important;
-  min-height: 240px !important;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.fp-spotlight-logo-pane {
-  flex-shrink: 0 !important;
-  width: clamp(160px, 22vw, 240px) !important;
-  height: clamp(130px, 16vw, 170px) !important;
-  background: #ffffff !important;
-  border-radius: 20px !important;
-  border: 1.5px solid rgba(224, 43, 84, 0.15) !important;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 16px !important;
-  box-sizing: border-box !important;
-  position: relative !important;
-  overflow: hidden !important;
-}
-
-.fp-spotlight-logo-img {
-  max-width: 90% !important;
-  max-height: 80% !important;
-  object-fit: contain !important;
-  transition: transform 0.35s ease !important;
-}
-
-.fp-spotlight-card:hover .fp-spotlight-logo-img {
-  transform: scale(1.06) !important;
-}
-
-.fp-spotlight-info-pane {
-  flex: 1 !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-}
-
-.fp-spotlight-tag-row {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  margin-bottom: 8px !important;
-  flex-wrap: wrap !important;
-}
-
-.fp-spotlight-brand-pill {
-  font-family: var(--disp) !important;
-  font-size: 11px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.06em !important;
-  padding: 3px 12px !important;
-  border-radius: 999px !important;
-  background: #fff0f5 !important;
-  color: #e02b54 !important;
-  border: 1px solid rgba(224, 43, 84, 0.25) !important;
-}
-
-.fp-spotlight-status-live {
-  font-family: var(--disp) !important;
-  font-size: 10.5px !important;
-  font-weight: 700 !important;
-  color: #166534 !important;
-  background: #dcfce7 !important;
-  border: 1px solid rgba(22, 101, 52, 0.25) !important;
-  padding: 3px 10px !important;
-  border-radius: 999px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 5px !important;
-}
-
-.fp-spotlight-name {
-  font-family: var(--disp) !important;
-  font-size: clamp(20px, 2.4vw, 30px) !important;
-  font-weight: 800 !important;
-  color: #1a0812 !important;
-  line-height: 1.2 !important;
-  margin: 0 0 6px !important;
-}
-
-.fp-spotlight-desc {
-  font-family: var(--sans) !important;
-  font-size: clamp(13px, 1.15vw, 15px) !important;
-  color: #4f1d2e !important;
-  line-height: 1.45 !important;
-  margin: 0 0 14px !important;
-}
-
-.fp-spotlight-menu-row {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  flex-wrap: wrap !important;
-}
-
-.fp-menu-chip {
-  font-family: var(--sans) !important;
-  font-size: 11.5px !important;
-  font-weight: 600 !important;
-  color: #2b0d18 !important;
-  background: rgba(255, 255, 255, 0.9) !important;
-  border: 1px solid rgba(224, 43, 84, 0.18) !important;
-  border-radius: 999px !important;
-  padding: 4px 12px !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
-}
-
-/* Brand Tabs Navigation Strip */
-.fp-tabs-row {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 10px !important;
-  margin-top: 16px !important;
-  flex-wrap: wrap !important;
-}
-
-.fp-brand-tab {
-  background: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(12px) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-  border-radius: 999px !important;
-  padding: 8px 18px !important;
-  font-family: var(--disp) !important;
-  font-size: 12px !important;
-  font-weight: 800 !important;
-  color: #4a1f2e !important;
-  cursor: pointer !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  box-shadow: 0 4px 12px rgba(224, 43, 84, 0.06) !important;
-  transition: all 0.25s ease !important;
-}
-
-.fp-brand-tab:hover {
-  background: #ffffff !important;
-  color: #e02b54 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 16px rgba(224, 43, 84, 0.12) !important;
-}
-
-.fp-brand-tab.active {
-  background: linear-gradient(135deg, #e02b54 0%, #b81639 100%) !important;
-  color: #ffffff !important;
-  border-color: #e02b54 !important;
-  box-shadow: 0 6px 20px rgba(224, 43, 84, 0.35) !important;
-  transform: scale(1.04) !important;
-}
-
-.fp-tab-timer {
-  width: 14px !important;
-  height: 14px !important;
-  border: 2px solid rgba(255, 255, 255, 0.35) !important;
-  border-top-color: #ffffff !important;
-  border-radius: 50% !important;
-  animation: fpTimerSpin 3.5s linear infinite !important;
-  display: none !important;
-}
-
-.fp-brand-tab.active .fp-tab-timer {
-  display: block !important;
-}
-
-@keyframes fpTimerSpin {
-  to { transform: rotate(360deg); }
-}
-
-/* Continuous Auto-Scrolling Infinity Marquee Banner */
+/* Auto-Scrolling Continuous Marquee Tape */
 .fp-marquee-wrapper {
   position: relative !important;
   width: 100% !important;
   overflow: hidden !important;
-  padding: 18px 0 !important;
-  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%) !important;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%) !important;
+  padding: 10px 0 !important;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%) !important;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%) !important;
 }
 
 .fp-marquee-track {
   display: flex !important;
-  gap: 20px !important;
+  gap: 16px !important;
   width: max-content !important;
-  animation: fpMarqueeGlide 28s linear infinite !important;
+  animation: fpMarqueeGlide 30s linear infinite !important;
 }
 
 .fp-marquee-track:hover {
@@ -10320,102 +10120,385 @@ body.locked .sd {
   100% { transform: translate3d(-50%, 0, 0); }
 }
 
-.fp-marquee-tile {
+.fp-brand-card {
   background: #ffffff !important;
   border-radius: 18px !important;
   border: 1.5px solid rgba(224, 43, 84, 0.12) !important;
   box-shadow: 0 8px 22px rgba(224, 43, 84, 0.08) !important;
-  padding: 12px 24px !important;
+  padding: 10px 18px !important;
   display: flex !important;
   align-items: center !important;
   gap: 14px !important;
   flex-shrink: 0 !important;
-  cursor: pointer !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
 }
 
-.fp-marquee-tile:hover {
-  transform: translateY(-4px) scale(1.02) !important;
-  box-shadow: 0 14px 30px rgba(224, 43, 84, 0.16) !important;
+.fp-brand-card:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 12px 28px rgba(224, 43, 84, 0.16) !important;
   border-color: rgba(224, 43, 84, 0.35) !important;
 }
 
-.fp-tile-logo-box {
-  width: 80px !important;
-  height: 48px !important;
+.fp-logo-wrap {
+  width: 72px !important;
+  height: 46px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  flex-shrink: 0 !important;
 }
 
-.fp-tile-logo-img {
+.fp-logo-img {
   max-width: 100% !important;
   max-height: 100% !important;
   object-fit: contain !important;
 }
 
-.fp-tile-info {
+.fp-brand-meta {
   display: flex !important;
   flex-direction: column !important;
 }
 
-.fp-tile-name {
+.fp-brand-name {
   font-family: var(--disp) !important;
-  font-size: 13.5px !important;
+  font-size: 13px !important;
   font-weight: 800 !important;
   color: #1f0812 !important;
   line-height: 1.2 !important;
 }
 
-.fp-tile-tag {
+.fp-brand-tag {
   font-family: var(--sans) !important;
   font-size: 11px !important;
   color: #8b324c !important;
   font-weight: 600 !important;
 }
 
-/* Quality Guarantee Callout */
-.fp-trust-guarantee {
-  text-align: center !important;
-  margin-top: 18px !important;
+/* ==========================================================================
+   WHY CHOOSE LOVE CAFE (#why-us) — SHORT, GRAPHICAL & COMPACT (NO TEXT WALLS)
+   ========================================================================== */
+.why-us-section {
+  position: relative !important;
+  background: radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.95) 0%, transparent 60%),
+              radial-gradient(circle at 10% 50%, rgba(255, 182, 193, 0.22) 0%, transparent 50%),
+              radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.22) 0%, transparent 50%),
+              linear-gradient(180deg, #fff3f7 0%, #ffedf4 45%, #ffdbe6 100%) !important;
+  padding: clamp(48px, 6vw, 75px) clamp(16px, 4vw, 44px) !important;
+  color: #2b0d18 !important;
+  overflow: hidden !important;
+  z-index: 4 !important;
+  border-top: 1.5px solid rgba(224, 43, 84, 0.12) !important;
+  scroll-margin-top: 70px !important;
 }
 
-.fp-trust-pill {
+.wu-container {
+  position: relative !important;
+  z-index: 3 !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+/* Header */
+.wu-header {
+  text-align: center !important;
+  max-width: 760px !important;
+  margin: 0 auto 24px !important;
+}
+
+.wu-pill-badge {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important;
-  padding: 6px 20px !important;
+  gap: 7px !important;
+  padding: 4px 15px !important;
   border-radius: 999px !important;
-  background: rgba(255, 255, 255, 0.9) !important;
-  border: 1px solid rgba(224, 43, 84, 0.18) !important;
-  font-family: var(--sans) !important;
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  color: #4a1f2e !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1.5px solid rgba(224, 43, 84, 0.22) !important;
+  box-shadow: 0 4px 12px rgba(224, 43, 84, 0.08) !important;
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: #b81639 !important;
+  margin-bottom: 8px !important;
 }
 
-@media (max-width: 850px) {
-  .fp-spotlight-card {
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 16px !important;
-    padding: 20px !important;
+.wu-title {
+  font-family: var(--disp) !important;
+  font-size: clamp(24px, 3.2vw, 38px) !important;
+  font-weight: 800 !important;
+  color: #2b0d18 !important;
+  line-height: 1.2 !important;
+  margin: 0 0 6px !important;
+}
+
+.wu-title em {
+  font-style: normal !important;
+  color: #e02b54 !important;
+  background: linear-gradient(135deg, #e02b54 0%, #b81639 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.wu-subtitle {
+  font-family: var(--sans) !important;
+  font-size: clamp(13px, 1.15vw, 15px) !important;
+  color: #612739 !important;
+  line-height: 1.45 !important;
+  margin: 0 auto !important;
+  max-width: 620px !important;
+}
+
+/* Compact Trust Metrics Bar */
+.wu-metrics-row {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 12px !important;
+  max-width: 980px !important;
+  margin: 0 auto 24px !important;
+}
+
+.wu-metric-chip {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+  border-radius: 16px !important;
+  padding: 10px 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  box-shadow: 0 6px 18px rgba(224, 43, 84, 0.07) !important;
+  transition: transform 0.2s ease !important;
+}
+
+.wu-metric-chip:hover {
+  transform: translateY(-2px) !important;
+}
+
+.wu-metric-icon {
+  font-size: 22px !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+}
+
+.wu-metric-val {
+  display: block !important;
+  font-family: var(--disp) !important;
+  font-size: clamp(13.5px, 1.3vw, 16px) !important;
+  font-weight: 800 !important;
+  color: #2b0d18 !important;
+  line-height: 1.15 !important;
+}
+
+.wu-metric-lbl {
+  display: block !important;
+  font-family: var(--sans) !important;
+  font-size: 10.5px !important;
+  color: #7a3148 !important;
+  font-weight: 600 !important;
+}
+
+/* 4 Short Graphical Cards */
+.wu-cards-track {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+  margin-bottom: 24px !important;
+}
+
+.wu-card {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-radius: 20px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 12px 30px rgba(224, 43, 84, 0.08) !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  position: relative !important;
+}
+
+.wu-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 18px 40px rgba(224, 43, 84, 0.15) !important;
+}
+
+.wu-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 3.5px !important;
+  z-index: 5 !important;
+}
+.wu-card-coral::before { background: linear-gradient(90deg, #ff5722, #ff8a65) !important; }
+.wu-card-gold::before { background: linear-gradient(90deg, #f59e0b, #fbbf24) !important; }
+.wu-card-violet::before { background: linear-gradient(90deg, #8b5cf6, #c084fc) !important; }
+.wu-card-emerald::before { background: linear-gradient(90deg, #10b981, #34d399) !important; }
+
+.wu-card-graphic-wrap {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 16/10 !important;
+  overflow: hidden !important;
+  background: #fce7ef !important;
+}
+
+.wu-card-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.4s ease !important;
+}
+
+.wu-card:hover .wu-card-img {
+  transform: scale(1.05) !important;
+}
+
+.wu-img-badge {
+  position: absolute !important;
+  bottom: 8px !important;
+  left: 8px !important;
+  background: rgba(0, 0, 0, 0.65) !important;
+  backdrop-filter: blur(10px) !important;
+  color: #ffffff !important;
+  font-family: var(--disp) !important;
+  font-size: 9.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  padding: 3px 8px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.wu-card-content {
+  padding: 14px 16px 18px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+}
+
+.wu-card-tag {
+  font-family: var(--disp) !important;
+  font-size: 9.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  margin-bottom: 4px !important;
+  display: inline-block !important;
+}
+.wu-card-coral .wu-card-tag { color: #d94819 !important; }
+.wu-card-gold .wu-card-tag { color: #b45309 !important; }
+.wu-card-violet .wu-card-tag { color: #6d28d9 !important; }
+.wu-card-emerald .wu-card-tag { color: #047857 !important; }
+
+.wu-card-heading {
+  font-family: var(--disp) !important;
+  font-size: clamp(14.5px, 1.25vw, 17px) !important;
+  font-weight: 800 !important;
+  color: #1f0812 !important;
+  line-height: 1.25 !important;
+  margin: 0 0 6px !important;
+}
+
+.wu-card-text {
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  color: #552535 !important;
+  line-height: 1.4 !important;
+  margin: 0 0 10px !important;
+  flex: 1 !important;
+}
+
+.wu-card-comparison {
+  background: #fff0f5 !important;
+  border: 1px solid rgba(224, 43, 84, 0.16) !important;
+  border-radius: 10px !important;
+  padding: 6px 9px !important;
+  font-family: var(--sans) !important;
+  font-size: 10.5px !important;
+  color: #3b1422 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-weight: 600 !important;
+}
+
+/* Bottom Short Mission Strip */
+.wu-bottom-strip {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+  border-radius: 18px !important;
+  padding: 14px 24px !important;
+  box-shadow: 0 10px 28px rgba(224, 43, 84, 0.07) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+}
+
+.wu-strip-text h4 {
+  font-family: var(--disp) !important;
+  font-size: clamp(15px, 1.5vw, 18px) !important;
+  font-weight: 800 !important;
+  color: #2b0d18 !important;
+  margin: 0 !important;
+}
+
+.wu-strip-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.wu-action-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 8px 18px !important;
+  border-radius: 999px !important;
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  transition: transform 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+.wu-action-btn.primary {
+  background: linear-gradient(135deg, #e02b54 0%, #b81639 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(224, 43, 84, 0.25) !important;
+}
+.wu-action-btn.secondary {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1.5px solid rgba(224, 43, 84, 0.25) !important;
+  color: #b81639 !important;
+}
+
+@media (max-width: 900px) {
+  .wu-metrics-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
   }
-  .fp-spotlight-logo-pane {
-    width: 180px !important;
-    height: 120px !important;
-    margin: 0 auto !important;
+  .wu-cards-track {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 12px !important;
+    padding-bottom: 6px !important;
+    scrollbar-width: none !important;
   }
-  .fp-spotlight-tag-row {
-    justify-content: center !important;
-  }
-  .fp-spotlight-menu-row {
-    justify-content: center !important;
-  }
-  .fp-brand-tab {
-    font-size: 11px !important;
-    padding: 6px 14px !important;
+  .wu-cards-track::-webkit-scrollbar { display: none !important; }
+  .wu-card {
+    min-width: 260px !important;
+    max-width: 280px !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: center !important;
   }
 }
 
@@ -10507,12 +10590,12 @@ body.locked .sd {
   <div class="sd-track">
     <a href="#top" class="sd-dot on" data-title="Home"><span class="sd-label">Home</span><span class="sd-pip"></span></a>
     <a href="#flavours" class="sd-dot" data-title="Flavours"><span class="sd-label">Our Menu</span><span class="sd-pip"></span></a>
-    <a href="#partners" class="sd-dot" data-title="Partners"><span class="sd-label">Partners</span><span class="sd-pip"></span></a>
     <a href="#story" class="sd-dot" data-title="Movie night"><span class="sd-label">The Experience</span><span class="sd-pip"></span></a>
     <a href="#app" class="sd-dot" data-title="App"><span class="sd-label">Love App</span><span class="sd-pip"></span></a>
     <a href="#cinemas" class="sd-dot" data-title="Cinemas"><span class="sd-label">Find Cinema</span><span class="sd-pip"></span></a>
     <a href="#reviews" class="sd-dot" data-title="Reviews"><span class="sd-label">Guest Reviews</span><span class="sd-pip"></span></a>
     <a href="#rewards" class="sd-dot" data-title="CinePoints"><span class="sd-label">CinePoints</span><span class="sd-pip"></span></a>
+    <a href="#partners" class="sd-dot" data-title="Partners"><span class="sd-label">Partners</span><span class="sd-pip"></span></a>
     <a href="#why-us" class="sd-dot" data-title="Why Us"><span class="sd-label">Why Us</span><span class="sd-pip"></span></a>
     <a href="#get" class="sd-dot" data-title="Download"><span class="sd-label">Get App</span><span class="sd-pip"></span></a>
   </div>
@@ -10526,11 +10609,11 @@ body.locked .sd {
   <nav class="nl" aria-label="Main Navigation">
     <a href="#top" class="active">Home</a>
     <a href="#flavours">Our Menu</a>
-    <a href="#partners">Partners</a>
     <a href="#story">Journey</a>
     <a href="#cinemas">Cinemas</a>
     <a href="#reviews">Reviews</a>
     <a href="#rewards">Rewards</a>
+    <a href="#partners">Partners</a>
     <a href="#why-us">Why Us</a>
   </nav>
 
@@ -10570,11 +10653,11 @@ body.locked .sd {
     <nav class="menu-nav" aria-label="Mobile Navigation Links">
       <a href="#top" class="m-link"><span class="m-icon">🏠</span><span class="m-text">Home</span><span class="m-badge">Top</span></a>
       <a href="#flavours" class="m-link"><span class="m-icon">🍿</span><span class="m-text">Our Menu</span><span class="m-badge">Menu</span></a>
-      <a href="#partners" class="m-link"><span class="m-icon">🏆</span><span class="m-text">Food Partners</span><span class="m-badge">Brands</span></a>
       <a href="#story" class="m-link"><span class="m-icon">🎬</span><span class="m-text">4-Step Journey</span><span class="m-badge">In-Seat</span></a>
       <a href="#cinemas" class="m-link"><span class="m-icon">🎟️</span><span class="m-text">Partner Cinemas</span><span class="m-badge">9 Theatres</span></a>
       <a href="#reviews" class="m-link"><span class="m-icon">⭐</span><span class="m-text">Guest Reviews</span><span class="m-badge">4.9★</span></a>
       <a href="#rewards" class="m-link"><span class="m-icon">👑</span><span class="m-text">CinePoints</span><span class="m-badge">Rewards</span></a>
+      <a href="#partners" class="m-link"><span class="m-icon">🏆</span><span class="m-text">Food Partners</span><span class="m-badge">8 Brands</span></a>
       <a href="#why-us" class="m-link"><span class="m-icon">✨</span><span class="m-text">Why Love Cafe</span><span class="m-badge">Why Us</span></a>
       <a href="#get" class="m-link"><span class="m-icon">📲</span><span class="m-text">Order To Seat</span><span class="m-badge">App</span></a>
     </nav>
@@ -11139,183 +11222,7 @@ body.locked .sd {
 <!-- ==========================================================================
      OFFICIAL FOOD & BEVERAGE PARTNERS: AUTO-ROTATING LUXURY SHOWCASE
      ========================================================================== -->
-<section class="food-partners-section" id="partners" aria-label="Official Food & Beverage Partners">
-  <div class="fp-container">
-    
-    <!-- Top Header -->
-    <div class="fp-header">
-      <div class="fp-badge-pill">
-        <span>🏆</span>
-        <span>GLOBAL CULINARY LEADERS · OFFICIAL FOOD PARTNERS</span>
-        <span>✨</span>
-      </div>
-      <h2 class="fp-title">Crafted with the <em>Brands You Love</em></h2>
-      <p class="fp-subtitle">From authentic Italian espresso to world-famous ice cream, LOVE CAFE partners with iconic gourmet leaders to deliver gold-standard refreshments silently to your recliner.</p>
-    </div>
 
-    <!-- Spotlight Rotating Feature Banner -->
-    <div class="fp-spotlight-wrap">
-      <div class="fp-spotlight-card" id="fpSpotlightCard">
-        <div class="fp-spotlight-logo-pane">
-          <img src="assets/partners/partner_baskin_robbins.png" alt="Baskin Robbins" class="fp-spotlight-logo-img" id="fpSpotlightLogo">
-        </div>
-        <div class="fp-spotlight-info-pane">
-          <div class="fp-spotlight-tag-row">
-            <span class="fp-spotlight-brand-pill" id="fpSpotlightPill">🍨 WORLD'S #1 ICE CREAM</span>
-            <span class="fp-spotlight-status-live">● Active in 9 Multiplexes</span>
-          </div>
-          <h3 class="fp-spotlight-name" id="fpSpotlightName">Baskin Robbins</h3>
-          <p class="fp-spotlight-desc" id="fpSpotlightDesc">Indulge in 31 legendary flavours, decadent waffle sundaes, and chilled thick milkshakes delivered frozen and fresh right to your cinema seat.</p>
-          <div class="fp-spotlight-menu-row" id="fpSpotlightMenu">
-            <span class="fp-menu-chip">🍨 Belgian Chocolate Scoop</span>
-            <span class="fp-menu-chip">🧇 Waffle Cone Sundaes</span>
-            <span class="fp-menu-chip">🧋 Chilled Thick Shakes</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Brand Selector Tabs (Click or Auto-Rotates) -->
-      <div class="fp-tabs-row" id="fpTabsRow">
-        <button type="button" class="fp-brand-tab active" data-index="0">
-          <span>🍨 Baskin Robbins</span>
-          <span class="fp-tab-timer"></span>
-        </button>
-        <button type="button" class="fp-brand-tab" data-index="1">
-          <span>🇮🇹 Lavazza Coffee</span>
-          <span class="fp-tab-timer"></span>
-        </button>
-        <button type="button" class="fp-brand-tab" data-index="2">
-          <span>☕ Nescafé</span>
-          <span class="fp-tab-timer"></span>
-        </button>
-        <button type="button" class="fp-brand-tab" data-index="3">
-          <span>🔥 Continental Coffee</span>
-          <span class="fp-tab-timer"></span>
-        </button>
-        <button type="button" class="fp-brand-tab" data-index="4">
-          <span>🍦 Cream Bell</span>
-          <span class="fp-tab-timer"></span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Continuous Auto-Scrolling Infinity Marquee Banner Tape -->
-    <div class="fp-marquee-wrapper" aria-label="Partner brand logos marquee">
-      <div class="fp-marquee-track">
-        <!-- Set 1 -->
-        <div class="fp-marquee-tile" onclick="window.selectFoodPartner && window.selectFoodPartner(0)">
-          <div class="fp-tile-logo-box">
-            <img src="assets/partners/partner_baskin_robbins.png" alt="Baskin Robbins" class="fp-tile-logo-img">
-          </div>
-          <div class="fp-tile-info">
-            <span class="fp-tile-name">Baskin Robbins</span>
-            <span class="fp-tile-tag">🍨 31 Flavours &amp; Shakes</span>
-          </div>
-        </div>
-
-        <div class="fp-marquee-tile" onclick="window.selectFoodPartner && window.selectFoodPartner(1)">
-          <div class="fp-tile-logo-box">
-            <img src="assets/partners/partner_lavazza.png" alt="Lavazza" class="fp-tile-logo-img">
-          </div>
-          <div class="fp-tile-info">
-            <span class="fp-tile-name">Lavazza</span>
-            <span class="fp-tile-tag">🇮🇹 Italy's #1 Coffee</span>
-          </div>
-        </div>
-
-        <div class="fp-marquee-tile" onclick="window.selectFoodPartner && window.selectFoodPartner(2)">
-          <div class="fp-tile-logo-box">
-            <img src="assets/partners/partner_nescafe.png" alt="Nescafé" class="fp-tile-logo-img">
-          </div>
-          <div class="fp-tile-info">
-            <span class="fp-tile-name">Nescafé</span>
-            <span class="fp-tile-tag">☕ Classic Hot &amp; Cold</span>
-          </div>
-        </div>
-
-        <div class="fp-marquee-tile" onclick="window.selectFoodPartner && window.selectFoodPartner(3)">
-          <div class="fp-tile-logo-box">
-            <img src="assets/partners/partner_continental_coffee.png" alt="Continental Coffee" class="fp-tile-logo-img">
-          </div>
-          <div class="fp-tile-info">
-            <span class="fp-tile-name">Continental Coffee</span>
-            <span class="fp-tile-tag">🔥 Speciality Roasts</span>
-          </div>
-        </div>
-
-        <div class="fp-marquee-tile" onclick="window.selectFoodPartner && window.selectFoodPartner(4)">
-          <div class="fp-tile-logo-box">
-            <img src="assets/partners/partner_cream_bell.png" alt="Cream Bell" class="fp-tile-logo-img">
-          </div>
-          <div class="fp-tile-info">
-            <span class="fp-tile-name">Cream Bell</span>
-            <span class="fp-tile-tag">🍦 Pure Milk Ice Cream</span>
-          </div>
-        </div>
-
-        <!-- Set 2 (Exact Duplicate for Seamless Continuous Loop) -->
-        <div class="fp-marquee-tile" onclick="window.selectFoodPartner && window.selectFoodPartner(0)">
-          <div class="fp-tile-logo-box">
-            <img src="assets/partners/partner_baskin_robbins.png" alt="Baskin Robbins" class="fp-tile-logo-img">
-          </div>
-          <div class="fp-tile-info">
-            <span class="fp-tile-name">Baskin Robbins</span>
-            <span class="fp-tile-tag">🍨 31 Flavours &amp; Shakes</span>
-          </div>
-        </div>
-
-        <div class="fp-marquee-tile" onclick="window.selectFoodPartner && window.selectFoodPartner(1)">
-          <div class="fp-tile-logo-box">
-            <img src="assets/partners/partner_lavazza.png" alt="Lavazza" class="fp-tile-logo-img">
-          </div>
-          <div class="fp-tile-info">
-            <span class="fp-tile-name">Lavazza</span>
-            <span class="fp-tile-tag">🇮🇹 Italy's #1 Coffee</span>
-          </div>
-        </div>
-
-        <div class="fp-marquee-tile" onclick="window.selectFoodPartner && window.selectFoodPartner(2)">
-          <div class="fp-tile-logo-box">
-            <img src="assets/partners/partner_nescafe.png" alt="Nescafé" class="fp-tile-logo-img">
-          </div>
-          <div class="fp-tile-info">
-            <span class="fp-tile-name">Nescafé</span>
-            <span class="fp-tile-tag">☕ Classic Hot &amp; Cold</span>
-          </div>
-        </div>
-
-        <div class="fp-marquee-tile" onclick="window.selectFoodPartner && window.selectFoodPartner(3)">
-          <div class="fp-tile-logo-box">
-            <img src="assets/partners/partner_continental_coffee.png" alt="Continental Coffee" class="fp-tile-logo-img">
-          </div>
-          <div class="fp-tile-info">
-            <span class="fp-tile-name">Continental Coffee</span>
-            <span class="fp-tile-tag">🔥 Speciality Roasts</span>
-          </div>
-        </div>
-
-        <div class="fp-marquee-tile" onclick="window.selectFoodPartner && window.selectFoodPartner(4)">
-          <div class="fp-tile-logo-box">
-            <img src="assets/partners/partner_cream_bell.png" alt="Cream Bell" class="fp-tile-logo-img">
-          </div>
-          <div class="fp-tile-info">
-            <span class="fp-tile-name">Cream Bell</span>
-            <span class="fp-tile-tag">🍦 Pure Milk Ice Cream</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Trust Quality Guarantee Strip -->
-    <div class="fp-trust-guarantee">
-      <div class="fp-trust-pill">
-        <span>🛡️</span>
-        <span>100% Genuine Branded Ingredients · Prepared by Master Cinema Chefs · In-Seat Delivery in ~10 Mins</span>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <section class="cinema-journey-section" id="story" aria-label="The 4-Step Cinema Journey">
   <div class="cj-stick" id="cjStick">
@@ -12244,15 +12151,192 @@ body.locked .sd {
 <div class="rv"><div class="pc" role="img" aria-label="Sample CinePoints card"><div class="brand" style="color:#fff"><img src="assets/love_logo_nav_twotone.png" alt="LOVE CAFE" style="height:32px; width:auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></div><div><b id="cnt">1,250</b><br><small>CINEPOINTS · sample card, real rewards shown in the app</small></div></div></div>
 </div></section>
 
-<section class="why-us-section" id="why-us" aria-label="Why Choose LOVE CAFE">
-  <div class="wu-ambient-particles" aria-hidden="true">
-    <span class="wu-part p1">🍿</span>
-    <span class="wu-part p2">✨</span>
-    <span class="wu-part p3">🎟️</span>
-    <span class="wu-part p4">🔥</span>
-    <span class="wu-part p5">✨</span>
+<!-- ==========================================================================
+     OFFICIAL FOOD & BEVERAGE PARTNERS: AUTOMATIC SCROLLING BRAND MARQUEE
+     (Placed Directly Before Why Love Cafe #why-us)
+     ========================================================================== -->
+<section class="food-partners-section" id="partners" aria-label="Official Food &amp; Beverage Partners">
+  <div class="fp-header-compact">
+    <div class="fp-badge-pill">
+      <span>🏆</span>
+      <span>OFFICIAL FOOD &amp; BEVERAGE PARTNERS</span>
+      <span>✨</span>
+    </div>
+    <h3 class="fp-title-compact">Crafted with the <em>Brands You Love</em></h3>
+    <p class="fp-sub-compact">Served fresh in partner multiplex kitchens across West Bengal &amp; Bihar.</p>
   </div>
 
+  <div class="fp-marquee-wrapper" aria-label="Official partner brands marquee banner">
+    <div class="fp-marquee-track">
+      <!-- Set 1: 8 Official Partner Brands -->
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_baskin_robbins.png" alt="Baskin Robbins" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Baskin Robbins</span>
+          <span class="fp-brand-tag">🍨 31 Flavours &amp; Shakes</span>
+        </div>
+      </div>
+
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_ccd.png" alt="Café Coffee Day" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Café Coffee Day</span>
+          <span class="fp-brand-tag">☕ Signature Brews</span>
+        </div>
+      </div>
+
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_lavazza.png" alt="Lavazza" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Lavazza</span>
+          <span class="fp-brand-tag">🇮🇹 Italy's #1 Coffee</span>
+        </div>
+      </div>
+
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_nescafe.png" alt="Nescafé" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Nescafé</span>
+          <span class="fp-brand-tag">☕ Classic Hot &amp; Cold</span>
+        </div>
+      </div>
+
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_continental_coffee.png" alt="Continental Coffee" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Continental Coffee</span>
+          <span class="fp-brand-tag">🔥 Speciality Roasts</span>
+        </div>
+      </div>
+
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_cream_bell.png" alt="Cream Bell" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Cream Bell</span>
+          <span class="fp-brand-tag">🍦 Pure Milk Ice Cream</span>
+        </div>
+      </div>
+
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_modern.png" alt="Modern" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Modern</span>
+          <span class="fp-brand-tag">🍞 Fresh Cinema Breads</span>
+        </div>
+      </div>
+
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_moreish.png" alt="Moreish" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Moreish</span>
+          <span class="fp-brand-tag">🥖 Bakery Joy Since 1989</span>
+        </div>
+      </div>
+
+      <!-- Set 2: Duplicate for Seamless Infinite 60fps Loop -->
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_baskin_robbins.png" alt="Baskin Robbins" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Baskin Robbins</span>
+          <span class="fp-brand-tag">🍨 31 Flavours &amp; Shakes</span>
+        </div>
+      </div>
+
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_ccd.png" alt="Café Coffee Day" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Café Coffee Day</span>
+          <span class="fp-brand-tag">☕ Signature Brews</span>
+        </div>
+      </div>
+
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_lavazza.png" alt="Lavazza" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Lavazza</span>
+          <span class="fp-brand-tag">🇮🇹 Italy's #1 Coffee</span>
+        </div>
+      </div>
+
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_nescafe.png" alt="Nescafé" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Nescafé</span>
+          <span class="fp-brand-tag">☕ Classic Hot &amp; Cold</span>
+        </div>
+      </div>
+
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_continental_coffee.png" alt="Continental Coffee" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Continental Coffee</span>
+          <span class="fp-brand-tag">🔥 Speciality Roasts</span>
+        </div>
+      </div>
+
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_cream_bell.png" alt="Cream Bell" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Cream Bell</span>
+          <span class="fp-brand-tag">🍦 Pure Milk Ice Cream</span>
+        </div>
+      </div>
+
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_modern.png" alt="Modern" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Modern</span>
+          <span class="fp-brand-tag">🍞 Fresh Cinema Breads</span>
+        </div>
+      </div>
+
+      <div class="fp-brand-card">
+        <div class="fp-logo-wrap">
+          <img src="assets/partners/partner_moreish.png" alt="Moreish" class="fp-logo-img" loading="lazy">
+        </div>
+        <div class="fp-brand-meta">
+          <span class="fp-brand-name">Moreish</span>
+          <span class="fp-brand-tag">🥖 Bakery Joy Since 1989</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     WHY CHOOSE LOVE CAFE (#why-us) — GRAPHICAL, VISUAL & SHORT (NO LONG TEXT)
+     ========================================================================== -->
+<section class="why-us-section" id="why-us" aria-label="Why Choose LOVE CAFE">
   <div class="wu-container">
     <!-- Header Block -->
     <div class="wu-header">
@@ -12261,31 +12345,31 @@ body.locked .sd {
         <span>THE IN-SEAT CINEMA REVOLUTION · WHY LOVE CAFE</span>
         <span>✨</span>
       </div>
-      <h2 class="wu-title">Never Miss a Movie Scene.<br><em>Never Wait in Concession Lines.</em></h2>
-      <p class="wu-subtitle">LOVE CAFE is India’s premier in-seat cinema dining service, connecting theatre recliners directly to dedicated live kitchens inside partner multiplexes across West Bengal &amp; Bihar.</p>
+      <h2 class="wu-title">Never Miss a Movie Scene.<br><em>Zero Concession Lines.</em></h2>
+      <p class="wu-subtitle">Order hot gourmet food directly from your cinema recliner in ~10 minutes.</p>
     </div>
 
-    <!-- Live Performance Stat Counters (Compact Chips) -->
+    <!-- Live Graphical Stat Counters -->
     <div class="wu-metrics-row">
       <div class="wu-metric-chip">
         <span class="wu-metric-icon">⚡</span>
         <div>
           <span class="wu-metric-val">~9.8 Mins</span>
-          <span class="wu-metric-lbl">Avg. Seat Drop Time</span>
+          <span class="wu-metric-lbl">Seat Drop Time</span>
+        </div>
+      </div>
+      <div class="wu-metric-chip">
+        <span class="wu-metric-icon">🚫</span>
+        <div>
+          <span class="wu-metric-val">0 Lines</span>
+          <span class="wu-metric-lbl">Skip Interval Chaos</span>
         </div>
       </div>
       <div class="wu-metric-chip">
         <span class="wu-metric-icon">🔥</span>
         <div>
           <span class="wu-metric-val">100% Fresh</span>
-          <span class="wu-metric-lbl">Live Kitchens In Theatres</span>
-        </div>
-      </div>
-      <div class="wu-metric-chip">
-        <span class="wu-metric-icon">🎟️</span>
-        <div>
-          <span class="wu-metric-val">9 Theatres</span>
-          <span class="wu-metric-lbl">Across WB &amp; Bihar</span>
+          <span class="wu-metric-lbl">Live In-Theatre Kitchen</span>
         </div>
       </div>
       <div class="wu-metric-chip">
@@ -12297,98 +12381,81 @@ body.locked .sd {
       </div>
     </div>
 
-    <!-- 4 Colorful Graphical Pillar Cards (Compact Panoramic Track / Horizontal Swipe) -->
-    <div class="wu-showcase-wrap">
-      <div class="wu-cards-track" id="wuCardsTrack">
-        
-        <!-- Pillar 1: No Intermission Queues (Coral Glow) -->
-        <article class="wu-card wu-card-coral">
-          <div class="wu-card-graphic-wrap">
-            <img src="assets/flavours/snack_burger.jpg" alt="Double Brioche Smash Burger" class="wu-card-img" loading="lazy">
-            <div class="wu-img-badge">🍔 Fresh To Seat</div>
-          </div>
-          <div class="wu-card-content">
-            <span class="wu-card-tag">🚫 ZERO CONCESSION QUEUES</span>
-            <h3 class="wu-card-heading">Escape the 50-Person Lobby Chaos</h3>
-            <p class="wu-card-text">A 10-minute cinema intermission is too short to fight through crowded lobby queues. Scan the QR code on your armrest, order on the LOVE CAFE app, and enjoy hot food delivered to your recliner.</p>
-            <div class="wu-card-comparison">
-              <span>⚡</span> <b>30s Armrest Order</b> vs 25m Lobby Queue
-            </div>
-          </div>
-        </article>
-
-        <!-- Pillar 2: Live Gourmet Kitchens (Golden Amber Glow) -->
-        <article class="wu-card wu-card-gold">
-          <div class="wu-card-graphic-wrap">
-            <img src="assets/flavours/snack_popcorn.jpg" alt="Artisan Truffle Butter Popcorn" class="wu-card-img" loading="lazy">
-            <div class="wu-img-badge">🍿 Freshly Popped</div>
-          </div>
-          <div class="wu-card-content">
-            <span class="wu-card-tag">🔥 LIVE THEATRE KITCHEN</span>
-            <h3 class="wu-card-heading">Master Chefs Cooked Fresh to Order</h3>
-            <p class="wu-card-text">No stale, reheated food under heat lamps. Every partner multiplex hosts an official LOVE CAFE kitchen where chefs smash brioche burgers, bake 48-hr pizza, and kettle-pop corn to order.</p>
-            <div class="wu-card-comparison">
-              <span>👨‍🍳</span> <b>Master Chefs Cooking</b> vs Stale Heat Lamps
-            </div>
-          </div>
-        </article>
-
-        <!-- Pillar 3: Stealth Seat Delivery (Royal Lounge Violet Glow) -->
-        <article class="wu-card wu-card-violet">
-          <div class="wu-card-graphic-wrap">
-            <img src="assets/showcase/cinema_clean_recliners.jpg" alt="VIP Cinema Recliner Seats" class="wu-card-img" loading="lazy">
-            <div class="wu-img-badge">🛎️ Silver Cloche VIP</div>
-          </div>
-          <div class="wu-card-content">
-            <span class="wu-card-tag">🤫 STEALTH RUNNER PROTOCOL</span>
-            <h3 class="wu-card-heading">Silent In-Seat Delivery Under Silver Cloche</h3>
-            <p class="wu-card-text">Our delivery runners are trained in silent theater navigation. Food arrives under an insulated silver cloche right onto your seat table—with zero obstruction to the screen or fellow moviegoers.</p>
-            <div class="wu-card-comparison">
-              <span>🛎️</span> <b>Silent Cloche Drop</b> vs Flimsy Lobby Trays
-            </div>
-          </div>
-        </article>
-
-        <!-- Pillar 4: Multiplex Network & CinePoints (Emerald / Berry Neon Glow) -->
-        <article class="wu-card wu-card-emerald">
-          <div class="wu-card-graphic-wrap">
-            <img src="assets/flavours/snack_combo_feast.jpg" alt="Love Cafe Cinema Combo Feast" class="wu-card-img" loading="lazy">
-            <div class="wu-img-badge">⭐ CinePoints Ready</div>
-          </div>
-          <div class="wu-card-content">
-            <span class="wu-card-tag">🎟️ PARTNER MULTIPLEX NETWORK</span>
-            <h3 class="wu-card-heading">9 Partner Theatres &amp; CinePoints Rewards</h3>
-            <p class="wu-card-text">Seamlessly integrated across Atindra Multiplex, Cinema Hut, Sushama Cinema, and top regional halls. Collect CinePoints with every bite to unlock free tickets and gourmet upgrades.</p>
-            <div class="wu-card-comparison">
-              <span>🎁</span> <b>Earn on Every Bite</b> for Free Tickets
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <!-- Mobile Carousel Swipe / Arrow Controls -->
-      <div class="wu-carousel-controls" id="wuCarouselControls">
-        <button class="wu-arrow-btn" id="wuPrevBtn" aria-label="Previous Pillar">‹</button>
-        <div class="wu-dots-row" id="wuDotsRow">
-          <span class="wu-dot active" data-index="0"></span>
-          <span class="wu-dot" data-index="1"></span>
-          <span class="wu-dot" data-index="2"></span>
-          <span class="wu-dot" data-index="3"></span>
+    <!-- 4 Short Graphical Cards -->
+    <div class="wu-cards-track">
+      <!-- Card 1: Skip Interval Lines -->
+      <article class="wu-card wu-card-coral">
+        <div class="wu-card-graphic-wrap">
+          <img src="assets/flavours/snack_burger.jpg" alt="Double Brioche Smash Burger" class="wu-card-img" loading="lazy">
+          <div class="wu-img-badge">🍔 Fresh To Seat</div>
         </div>
-        <button class="wu-arrow-btn" id="wuNextBtn" aria-label="Next Pillar">›</button>
-      </div>
+        <div class="wu-card-content">
+          <span class="wu-card-tag">🚫 ZERO CONCESSION QUEUES</span>
+          <h3 class="wu-card-heading">Order from Your Recliner</h3>
+          <p class="wu-card-text">Scan armrest QR in 30 seconds. Stay seated and skip the 50-person interval rush.</p>
+          <div class="wu-card-comparison">
+            <span>⚡</span> <b>30s Armrest Order</b> vs 25m Lobby Queue
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Live Gourmet Kitchen -->
+      <article class="wu-card wu-card-gold">
+        <div class="wu-card-graphic-wrap">
+          <img src="assets/flavours/snack_popcorn.jpg" alt="Artisan Truffle Butter Popcorn" class="wu-card-img" loading="lazy">
+          <div class="wu-img-badge">🍿 Freshly Popped</div>
+        </div>
+        <div class="wu-card-content">
+          <span class="wu-card-tag">🔥 LIVE THEATRE KITCHEN</span>
+          <h3 class="wu-card-heading">Cooked Fresh to Order</h3>
+          <p class="wu-card-text">Burgers smashed &amp; popcorn popped fresh inside the multiplex. Never reheated.</p>
+          <div class="wu-card-comparison">
+            <span>👨‍🍳</span> <b>Master Chefs Cooking</b> vs Stale Heat Lamps
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Silent Cloche Drop -->
+      <article class="wu-card wu-card-violet">
+        <div class="wu-card-graphic-wrap">
+          <img src="assets/showcase/cinema_clean_recliners.jpg" alt="VIP Cinema Recliner Seats" class="wu-card-img" loading="lazy">
+          <div class="wu-img-badge">🛎️ Silver Cloche VIP</div>
+        </div>
+        <div class="wu-card-content">
+          <span class="wu-card-tag">🤫 STEALTH RUNNER PROTOCOL</span>
+          <h3 class="wu-card-heading">Silver Cloche Delivery</h3>
+          <p class="wu-card-text">Runners deliver silently to your seat table without blocking the screen or projector.</p>
+          <div class="wu-card-comparison">
+            <span>🛎️</span> <b>Silent Cloche Drop</b> vs Flimsy Lobby Trays
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: 9 Theatres & CinePoints -->
+      <article class="wu-card wu-card-emerald">
+        <div class="wu-card-graphic-wrap">
+          <img src="assets/flavours/snack_combo_feast.jpg" alt="Love Cafe Cinema Combo Feast" class="wu-card-img" loading="lazy">
+          <div class="wu-img-badge">⭐ CinePoints Ready</div>
+        </div>
+        <div class="wu-card-content">
+          <span class="wu-card-tag">🎟️ PARTNER MULTIPLEX NETWORK</span>
+          <h3 class="wu-card-heading">9 Theatres &amp; CinePoints</h3>
+          <p class="wu-card-text">Collect CinePoints across 9 partner cinemas to unlock free tickets and gourmet upgrades.</p>
+          <div class="wu-card-comparison">
+            <span>🎁</span> <b>Earn on Every Bite</b> for Free Tickets
+          </div>
+        </div>
+      </article>
     </div>
 
-    <!-- Bottom Mission Callout Strip -->
+    <!-- Bottom Compact Mission Strip -->
     <div class="wu-bottom-strip">
       <div class="wu-strip-text">
-        <h4>Elevating the Moviegoing Experience Across India</h4>
-        <p>From Barrackpore to Chandannagar and beyond, LOVE CAFE ensures you never have to choose between a great film and a hot, delicious meal.</p>
+        <h4>Elevating Cinema Dining Across West Bengal &amp; Bihar</h4>
       </div>
       <div class="wu-strip-actions">
-        <a href="#cinemas" class="wu-action-btn primary">Find Your Multiplex →</a>
-        <a href="#get" class="wu-action-btn secondary">Download Free App</a>
+        <a href="#cinemas" class="wu-action-btn primary">Find Theatres →</a>
+        <a href="#get" class="wu-action-btn secondary">Download App</a>
       </div>
     </div>
   </div>
@@ -12498,7 +12565,7 @@ body.locked .sd {
 </section>
 </main>
 <footer><a class="brand" href="#top" style="text-decoration:none; display:inline-block; margin-bottom:12px;"><img src="assets/love_logo_nav_twotone.png" class="footer-logo-img" alt="LOVE CAFE - please taste me one time!"></a>
-<nav class="fl" aria-label="Footer"><a href="#top">About</a><a href="#flavours">Menu</a><a href="#partners">Partners</a><a href="#story">Journey</a><a href="#cinemas">Locations</a><a href="#reviews">Reviews</a><a href="#rewards">CinePoints</a><a href="#why-us">Why Us</a><a href="#faq">FAQ</a><a href="#get">Download App</a></nav></footer>
+<nav class="fl" aria-label="Footer"><a href="#top">About</a><a href="#flavours">Menu</a><a href="#story">Journey</a><a href="#cinemas">Locations</a><a href="#reviews">Reviews</a><a href="#rewards">CinePoints</a><a href="#partners">Partners</a><a href="#why-us">Why Us</a><a href="#faq">FAQ</a><a href="#get">Download App</a></nav></footer>
 
 
 <script src="assets/lenis.min.js"></script>
@@ -14912,112 +14979,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
 
 
 
-// ==========================================================================
-// FOOD & BEVERAGE PARTNERS: AUTO-ROTATION SPOTLIGHT CONTROLLER
-// ==========================================================================
-(function initFoodPartnersRotator() {
-  const PARTNER_DATA = [
-    {
-      name: "Baskin Robbins",
-      pill: "🍨 WORLD'S #1 ICE CREAM",
-      desc: "Indulge in 31 legendary flavours, decadent waffle sundaes, and chilled thick milkshakes delivered frozen and fresh right to your cinema seat.",
-      logo: "assets/partners/partner_baskin_robbins.png",
-      menu: ["🍨 Belgian Chocolate Scoop", "🧇 Waffle Cone Sundaes", "🧋 Chilled Thick Shakes"]
-    },
-    {
-      name: "Lavazza",
-      pill: "🇮🇹 ITALY'S FAVOURITE COFFEE",
-      desc: "Savor master-blended Italian roasts with rich crema, velvety cappuccinos, and sub-zero iced lattes brewed fresh on-site in multiplex kitchens.",
-      logo: "assets/partners/partner_lavazza.png",
-      menu: ["☕ Rich Espresso Shot", "🥛 Silky Hot Cappuccino", "❄️ Hazelnut Iced Latte"]
-    },
-    {
-      name: "Nescafé",
-      pill: "☕ CLASSIC CINEMA BREW",
-      desc: "Enjoy steaming signature coffees, frothy cinema mochas, and refreshing cold coffee cans chilled to 2°C for the ultimate thriller movie pairing.",
-      logo: "assets/partners/partner_nescafe.png",
-      menu: ["☕ Frothy Cinema Classic", "🍫 Hot Mocha Cream", "🥤 Chilled Sub-Zero Frappé"]
-    },
-    {
-      name: "Continental Coffee",
-      pill: "🔥 ARTISAN SOUTH INDIAN ROAST",
-      desc: "Authentic premium filter blends, aromatic hazelnut infusions, and hand-crafted roasts crafted to perfection for true coffee connoisseurs.",
-      logo: "assets/partners/partner_continental_coffee.png",
-      menu: ["🔥 Malgudi Filter Blend", "🌰 Hazelnut Supreme", "☕ Speciality Roast Black"]
-    },
-    {
-      name: "Cream Bell",
-      pill: "🍦 PURE MILK INDULGENCE",
-      desc: "Delight in rich, creamy chocobars, crunchy nutty sundaes, and fruit-burst gourmet ice cream sticks loved by movie lovers of all ages.",
-      logo: "assets/partners/partner_cream_bell.png",
-      menu: ["🍦 Rich Choco-Fudge Bar", "🥜 Crunchy Nut Cone", "🍓 Gourmet Fruit Sundae"]
-    }
-  ];
 
-  let currentIdx = 0;
-  let rotateTimer = null;
-  const ROTATE_INTERVAL = 4000;
-
-  const card = document.getElementById('fpSpotlightCard');
-  const logo = document.getElementById('fpSpotlightLogo');
-  const pill = document.getElementById('fpSpotlightPill');
-  const nameEl = document.getElementById('fpSpotlightName');
-  const descEl = document.getElementById('fpSpotlightDesc');
-  const menuEl = document.getElementById('fpSpotlightMenu');
-  const tabs = document.querySelectorAll('.fp-brand-tab');
-
-  if (!card || !logo || !nameEl) return;
-
-  function renderPartner(idx) {
-    currentIdx = idx;
-    const p = PARTNER_DATA[idx];
-    if (!p) return;
-
-    // Smooth subtle crossfade
-    card.style.opacity = '0.4';
-    card.style.transform = 'translateY(4px)';
-
-    setTimeout(() => {
-      logo.src = p.logo;
-      logo.alt = p.name;
-      pill.textContent = p.pill;
-      nameEl.textContent = p.name;
-      descEl.textContent = p.desc;
-      menuEl.innerHTML = p.menu.map(item => `<span class="fp-menu-chip">${item}</span>`).join('');
-
-      tabs.forEach((tab, i) => tab.classList.toggle('active', i === idx));
-
-      card.style.opacity = '1';
-      card.style.transform = 'translateY(0)';
-    }, 180);
-  }
-
-  window.selectFoodPartner = function(idx) {
-    clearInterval(rotateTimer);
-    renderPartner(idx);
-    startTimer();
-  };
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const idx = parseInt(tab.getAttribute('data-index'), 10) || 0;
-      window.selectFoodPartner(idx);
-    });
-  });
-
-  function startTimer() {
-    clearInterval(rotateTimer);
-    rotateTimer = setInterval(() => {
-      const nextIdx = (currentIdx + 1) % PARTNER_DATA.length;
-      renderPartner(nextIdx);
-    }, ROTATE_INTERVAL);
-  }
-
-  card.addEventListener('mouseenter', () => clearInterval(rotateTimer));
-  card.addEventListener('mouseleave', () => startTimer());
-
-  startTimer();
-})();
 
 </script>
 </body></html>
