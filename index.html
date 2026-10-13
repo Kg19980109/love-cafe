@@ -3728,21 +3728,21 @@ body.locked .sd {
   color: #ffd23f !important;
 }
 
-/* Filter Pills */
+/* Filter Pills - Enhanced Vibrant & Colorful */
 .cinemas-filter-pills {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 10px !important;
+  gap: 12px !important;
   flex-wrap: wrap !important;
-  margin-top: 4px !important;
+  margin-top: 6px !important;
 }
 
 .c-pill {
-  padding: 8px 18px !important;
+  padding: 9px 20px !important;
   border-radius: 999px !important;
-  border: 1.5px solid rgba(255, 180, 215, 0.3) !important;
-  background: rgba(255, 255, 255, 0.10) !important;
+  border: 1.5px solid rgba(255, 180, 215, 0.35) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
   backdrop-filter: blur(14px) !important;
   -webkit-backdrop-filter: blur(14px) !important;
   color: #ffd4e2 !important;
@@ -3750,100 +3750,275 @@ body.locked .sd {
   font-size: 13px !important;
   font-weight: 750 !important;
   cursor: pointer !important;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
 }
 
 .c-pill:hover {
-  transform: translateY(-2px) !important;
-  border-color: #ff5287 !important;
-  color: #ffffff !important;
-  background: rgba(255, 42, 109, 0.25) !important;
-  box-shadow: 0 6px 20px rgba(255, 42, 109, 0.3) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
 }
 
 .c-pill.active {
   background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
   color: #ffffff !important;
-  border-color: #ffd23f !important;
-  box-shadow: 0 6px 22px rgba(255, 42, 109, 0.45) !important;
+  border: 2px solid #ffd23f !important;
+  box-shadow: 0 6px 22px rgba(255, 42, 109, 0.5), 0 0 16px rgba(255, 42, 109, 0.3) !important;
+}
+
+.c-pill[data-region="all"].active {
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
+  border: 2px solid #ffd23f !important;
+  box-shadow: 0 6px 22px rgba(255, 42, 109, 0.5), 0 0 16px rgba(255, 42, 109, 0.3) !important;
+}
+
+.c-pill[data-region="west-bengal"].active {
+  background: linear-gradient(135deg, #ff9f1c 0%, #e67e22 100%) !important;
+  color: #ffffff !important;
+  border: 2px solid #ffd23f !important;
+  box-shadow: 0 6px 22px rgba(255, 159, 28, 0.5), 0 0 16px rgba(255, 159, 28, 0.3) !important;
+}
+
+.c-pill[data-region="bihar"].active {
+  background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%) !important;
+  color: #ffffff !important;
+  border: 2px solid #00f2fe !important;
+  box-shadow: 0 6px 22px rgba(0, 180, 216, 0.5), 0 0 16px rgba(0, 229, 255, 0.3) !important;
 }
 
 .cinema-match-count {
   font-family: var(--sans) !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  color: #ffb8cf !important;
+  font-size: 13.5px !important;
+  font-weight: 750 !important;
+  color: #ffffff !important;
   text-align: center !important;
   margin-top: 4px !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-  padding: 4px 16px !important;
+  background: linear-gradient(135deg, rgba(255, 42, 109, 0.22) 0%, rgba(255, 210, 63, 0.16) 100%) !important;
+  padding: 6px 22px !important;
   border-radius: 999px !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border: 1.5px solid rgba(255, 180, 215, 0.45) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35), 0 0 20px rgba(255, 42, 109, 0.18) !important;
   display: inline-block !important;
 }
 
-/* Atmosphere Stage (India Map + Theatre Glow Building in Glass Showcase) */
+/* Atmosphere Stage - Rich Neo-Pop Cinema Velvet & Glowing Holographic Frame */
 .cinemas-atmosphere-stage {
-  background: rgba(255, 255, 255, 0.05) !important;
-  backdrop-filter: blur(24px) !important;
-  -webkit-backdrop-filter: blur(24px) !important;
-  border: 1.5px solid rgba(255, 180, 215, 0.22) !important;
-  border-radius: 28px !important;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-  padding: 24px 36px !important;
+  background: 
+    radial-gradient(ellipse 65% 50% at 15% 15%, rgba(255, 42, 109, 0.28) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 45% at 85% 85%, rgba(255, 210, 63, 0.20) 0%, transparent 65%),
+    linear-gradient(145deg, rgba(46, 10, 32, 0.96) 0%, rgba(24, 5, 18, 0.98) 50%, rgba(38, 8, 28, 0.96) 100%) !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
+  border: 2px solid rgba(255, 59, 122, 0.65) !important;
+  border-radius: 30px !important;
+  box-shadow: 
+    0 0 38px rgba(255, 42, 109, 0.32),
+    0 24px 64px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 0 24px rgba(255, 42, 109, 0.14) !important;
+  padding: 24px 34px !important;
   display: flex !important;
   flex-direction: column !important;
   gap: 20px !important;
   position: relative !important;
+  overflow: hidden !important;
 }
 
-.cinemas-radar-row {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  align-items: center !important;
-  gap: 30px !important;
+.cinemas-atmosphere-stage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff2a6d 0%, #ffd23f 50%, #00e5ff 100%);
+  opacity: 0.85;
 }
 
-.map-badge-container {
+/* Stage Header Bar */
+.atm-stage-header-row {
   display: flex !important;
-  flex-direction: column !important;
   align-items: center !important;
-  gap: 10px !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding-bottom: 4px !important;
 }
 
-.desktop-map-img {
-  max-width: 270px !important;
-  width: 100% !important;
-  height: auto !important;
-  filter: drop-shadow(0 14px 28px rgba(255, 42, 109, 0.25)) !important;
-  transition: transform 0.3s ease !important;
+.atm-radar-live-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: linear-gradient(135deg, rgba(255, 42, 109, 0.35) 0%, rgba(180, 16, 70, 0.4) 100%) !important;
+  border: 1.5px solid #ff2a6d !important;
+  padding: 5px 14px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 0 16px rgba(255, 42, 109, 0.35) !important;
 }
 
-.desktop-map-img:hover {
-  transform: scale(1.03) !important;
+.atm-live-beacon {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: #ff2a6d !important;
+  box-shadow: 0 0 10px #ff2a6d !important;
+  animation: beaconPulse 1.8s infinite ease-in-out !important;
 }
 
-.map-caption-badge {
+@keyframes beaconPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.atm-live-text {
+  font-family: var(--disp) !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: #ffffff !important;
+}
+
+.atm-live-badge {
+  font-family: var(--sans) !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  background: #ffd23f !important;
+  color: #280816 !important;
+  padding: 2px 8px !important;
+  border-radius: 999px !important;
+}
+
+.atm-service-tag {
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px !important;
   font-family: var(--disp) !important;
   font-size: 11.5px !important;
   font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
   color: #ffd23f !important;
-  background: rgba(20, 6, 16, 0.75) !important;
-  padding: 4px 14px !important;
+  background: rgba(255, 210, 63, 0.15) !important;
+  border: 1.5px solid rgba(255, 210, 63, 0.45) !important;
+  padding: 5px 14px !important;
   border-radius: 999px !important;
-  border: 1px solid rgba(255, 210, 63, 0.35) !important;
+  box-shadow: 0 0 14px rgba(255, 210, 63, 0.2) !important;
 }
 
-.mobile-map-img {
-  display: none !important;
+/* Radar Row: Side-by-side graphical showcases */
+.cinemas-radar-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  align-items: stretch !important;
+  gap: 24px !important;
 }
 
-.theatre-glow-container {
+/* Graphical Panels */
+.atm-graphic-panel {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-radius: 22px !important;
+  padding: 16px !important;
   position: relative !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.1) !important;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.atm-graphic-panel:hover {
+  transform: translateY(-3px) !important;
+}
+
+.atm-panel-map {
+  background: linear-gradient(145deg, rgba(255, 42, 109, 0.12) 0%, rgba(255, 240, 246, 0.04) 100%) !important;
+  border-color: rgba(255, 75, 140, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+}
+
+.atm-panel-map:hover {
+  border-color: #ff3b7a !important;
+  box-shadow: 0 12px 32px rgba(255, 42, 109, 0.28) !important;
+}
+
+.atm-panel-cinema {
+  background: linear-gradient(145deg, rgba(255, 210, 63, 0.12) 0%, rgba(255, 140, 0, 0.04) 100%) !important;
+  border-color: rgba(255, 210, 63, 0.4) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+}
+
+.atm-panel-cinema:hover {
+  border-color: #ffd23f !important;
+  box-shadow: 0 12px 32px rgba(255, 210, 63, 0.28) !important;
+}
+
+.atm-panel-top-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  padding: 4px 12px !important;
+  border-radius: 999px !important;
+}
+
+.atm-panel-top-tag.tag-pink {
+  background: rgba(255, 42, 109, 0.22) !important;
+  color: #ff85a8 !important;
+  border: 1px solid rgba(255, 42, 109, 0.45) !important;
+}
+
+.atm-panel-top-tag.tag-gold {
+  background: rgba(255, 210, 63, 0.22) !important;
+  color: #ffd23f !important;
+  border: 1px solid rgba(255, 210, 63, 0.45) !important;
+}
+
+.desktop-map-wrap {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(135deg, #fff2f6 0%, #ffe4ec 100%) !important;
+  border-radius: 18px !important;
+  padding: 10px 14px !important;
+  border: 2px solid #280816 !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), 0 3px 0 #280816 !important;
+}
+
+.desktop-map-img {
+  max-width: 250px !important;
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  transition: transform 0.3s ease !important;
+}
+
+.desktop-map-wrap:hover .desktop-map-img {
+  transform: scale(1.03) !important;
+}
+
+.map-caption-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  padding: 6px 16px !important;
+  border-radius: 999px !important;
+  border: 2px solid #ffd23f !important;
+  box-shadow: 0 4px 14px rgba(255, 42, 109, 0.45), 0 2px 0 #280816 !important;
+}
+
+.theatre-glow-container-inner {
+  position: relative !important;
+  width: 100% !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
@@ -3851,52 +4026,172 @@ body.locked .sd {
 
 .theatre-hand-note {
   position: absolute !important;
-  top: -15px !important;
-  left: 20px !important;
+  top: -16px !important;
+  left: 12px !important;
   font-family: var(--hand, 'Caveat', cursive) !important;
-  font-size: 26px !important;
+  font-size: 28px !important;
   font-weight: 700 !important;
-  line-height: 1.1 !important;
+  line-height: 1.05 !important;
   color: #ffd23f !important;
   transform: rotate(-6deg) !important;
-  z-index: 3 !important;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7) !important;
+  z-index: 4 !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 0 12px rgba(255, 210, 63, 0.4) !important;
+}
+
+.theatre-building-wrap {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 18px !important;
+  border: 2px solid #ffd23f !important;
+  box-shadow: 0 0 26px rgba(255, 210, 63, 0.4), 0 8px 24px rgba(0, 0, 0, 0.6) !important;
+  overflow: hidden !important;
+  background: #140410 !important;
 }
 
 .theatre-building-img {
-  max-width: 310px !important;
+  max-width: 320px !important;
   width: 100% !important;
   height: auto !important;
-  border-radius: 20px !important;
-  filter: drop-shadow(0 16px 36px rgba(255, 42, 109, 0.3)) !important;
+  display: block !important;
   transition: transform 0.3s ease !important;
 }
 
-.theatre-building-img:hover {
+.theatre-building-wrap:hover .theatre-building-img {
   transform: scale(1.03) !important;
 }
 
-/* Atmosphere Stats Strip */
+.cinema-caption-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #ffd23f !important;
+  background: linear-gradient(135deg, rgba(35, 8, 26, 0.95) 0%, rgba(20, 5, 16, 0.95) 100%) !important;
+  padding: 6px 16px !important;
+  border-radius: 999px !important;
+  border: 1.5px solid rgba(255, 210, 63, 0.6) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), 0 0 14px rgba(255, 210, 63, 0.25) !important;
+}
+
+/* Atmosphere Stats Strip - 4 Individual Graphical Vibrant Badges */
 .atmosphere-stats-strip {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
-  gap: 12px !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
-  padding-top: 18px !important;
+  gap: 14px !important;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.14) !important;
+  padding-top: 20px !important;
 }
 
 .atm-stat-item {
   display: flex !important;
   align-items: center !important;
-  gap: 10px !important;
-  background: rgba(255, 255, 255, 0.05) !important;
-  padding: 10px 14px !important;
-  border-radius: 14px !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  gap: 12px !important;
+  padding: 12px 14px !important;
+  border-radius: 16px !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.atm-stat-item:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+}
+
+/* 1. Speed Stat - Electric Gold */
+.atm-stat-speed {
+  background: linear-gradient(135deg, rgba(255, 196, 0, 0.22) 0%, rgba(255, 140, 0, 0.10) 100%) !important;
+  border: 1.5px solid rgba(255, 210, 63, 0.6) !important;
+  box-shadow: 0 8px 20px rgba(255, 196, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+.atm-stat-speed:hover {
+  box-shadow: 0 10px 26px rgba(255, 196, 0, 0.32) !important;
+}
+.atm-stat-speed .atm-stat-icon {
+  background: linear-gradient(135deg, #ffd23f 0%, #ff9f1c 100%) !important;
+  color: #280816 !important;
+  box-shadow: 0 0 14px rgba(255, 210, 63, 0.6) !important;
+}
+.atm-stat-speed .atm-stat-info b {
+  color: #ffd23f !important;
+}
+.atm-stat-speed .atm-stat-info span {
+  color: #ffe8a3 !important;
+}
+
+/* 2. Screens Stat - Neon Hot Berry */
+.atm-stat-screens {
+  background: linear-gradient(135deg, rgba(255, 42, 109, 0.24) 0%, rgba(230, 25, 90, 0.10) 100%) !important;
+  border: 1.5px solid rgba(255, 42, 109, 0.6) !important;
+  box-shadow: 0 8px 20px rgba(255, 42, 109, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+.atm-stat-screens:hover {
+  box-shadow: 0 10px 26px rgba(255, 42, 109, 0.35) !important;
+}
+.atm-stat-screens .atm-stat-icon {
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 14px rgba(255, 42, 109, 0.6) !important;
+}
+.atm-stat-screens .atm-stat-info b {
+  color: #ff759d !important;
+}
+.atm-stat-screens .atm-stat-info span {
+  color: #ffc4d6 !important;
+}
+
+/* 3. Rating Stat - Sunset Coral */
+.atm-stat-rating {
+  background: linear-gradient(135deg, rgba(255, 122, 69, 0.22) 0%, rgba(255, 77, 79, 0.10) 100%) !important;
+  border: 1.5px solid rgba(255, 138, 76, 0.6) !important;
+  box-shadow: 0 8px 20px rgba(255, 122, 69, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+.atm-stat-rating:hover {
+  box-shadow: 0 10px 26px rgba(255, 122, 69, 0.32) !important;
+}
+.atm-stat-rating .atm-stat-icon {
+  background: linear-gradient(135deg, #ff7a45 0%, #fa541c 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 14px rgba(255, 122, 69, 0.6) !important;
+}
+.atm-stat-rating .atm-stat-info b {
+  color: #ffa07a !important;
+}
+.atm-stat-rating .atm-stat-info span {
+  color: #ffd0be !important;
+}
+
+/* 4. Fresh Stat - Emerald Mint */
+.atm-stat-fresh {
+  background: linear-gradient(135deg, rgba(0, 230, 118, 0.20) 0%, rgba(0, 180, 216, 0.10) 100%) !important;
+  border: 1.5px solid rgba(0, 230, 118, 0.6) !important;
+  box-shadow: 0 8px 20px rgba(0, 230, 118, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+.atm-stat-fresh:hover {
+  box-shadow: 0 10px 26px rgba(0, 230, 118, 0.32) !important;
+}
+.atm-stat-fresh .atm-stat-icon {
+  background: linear-gradient(135deg, #00e676 0%, #00b4d8 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 14px rgba(0, 230, 118, 0.6) !important;
+}
+.atm-stat-fresh .atm-stat-info b {
+  color: #69f0ae !important;
+}
+.atm-stat-fresh .atm-stat-info span {
+  color: #b9f6ca !important;
 }
 
 .atm-stat-icon {
-  font-size: 20px !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 19px !important;
+  flex-shrink: 0 !important;
 }
 
 .atm-stat-info {
@@ -3909,13 +4204,11 @@ body.locked .sd {
   font-family: var(--disp) !important;
   font-size: 13.5px !important;
   font-weight: 800 !important;
-  color: #ffffff !important;
 }
 
 .atm-stat-info span {
   font-family: var(--sans) !important;
   font-size: 11px !important;
-  color: #ffb8cf !important;
 }
 
 /* Featured Cinemas Showcase */
@@ -4703,38 +4996,70 @@ body.locked .sd {
   }
 
   .cinemas-atmosphere-stage {
-    padding: 16px !important;
-    gap: 12px !important;
-    border-radius: 20px !important;
+    padding: 16px 14px !important;
+    gap: 14px !important;
+    border-radius: 22px !important;
+  }
+
+  .atm-stage-header-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
   }
 
   .cinemas-radar-row {
     grid-template-columns: 1fr 1fr !important;
-    gap: 14px !important;
+    gap: 10px !important;
+  }
+
+  .atm-graphic-panel {
+    padding: 10px !important;
+    gap: 8px !important;
+    border-radius: 16px !important;
+  }
+
+  .desktop-map-wrap {
+    padding: 6px 8px !important;
+    border-radius: 14px !important;
   }
 
   .desktop-map-img {
-    max-width: 140px !important;
+    max-width: 130px !important;
   }
 
   .theatre-building-img {
-    max-width: 150px !important;
+    max-width: 140px !important;
   }
 
   .theatre-hand-note {
-    font-size: 18px !important;
+    font-size: 17px !important;
     top: -10px !important;
-    left: 10px !important;
+    left: 6px !important;
+  }
+
+  .map-caption-badge,
+  .cinema-caption-badge {
+    font-size: 10px !important;
+    padding: 4px 10px !important;
+    gap: 4px !important;
   }
 
   .atmosphere-stats-strip {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 8px !important;
-    padding-top: 12px !important;
+    padding-top: 14px !important;
   }
 
   .atm-stat-item {
     padding: 8px 10px !important;
+    gap: 8px !important;
+  }
+
+  .atm-stat-icon {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 16px !important;
+    border-radius: 10px !important;
   }
 
   .atm-stat-info b {
@@ -7822,43 +8147,81 @@ body.locked .sd {
 
     <!-- Atmosphere Stage: India Map + Theatre Glow Building + Live Network Stats -->
     <div class="cinemas-atmosphere-stage">
-      <div class="cinemas-radar-row">
-        <div class="map-badge-container">
-          <img class="desktop-map-img" src="assets/showcase/india_map_outlets.png" alt="Map of India showing Partner Theatres Across West Bengal and Bihar" loading="lazy">
-          <span class="map-caption-badge">📍 5 in West Bengal · 4 in Bihar</span>
+      <!-- Graphical Header Ribbon -->
+      <div class="atm-stage-header-row">
+        <div class="atm-radar-live-pill">
+          <span class="atm-live-beacon"></span>
+          <span class="atm-live-text">LIVE CINEMA RADAR</span>
+          <span class="atm-live-badge">9 SCREENS</span>
         </div>
-        <div class="theatre-glow-container">
-          <div class="theatre-hand-note">
-            <span>Your next</span><br>
-            <span>movie stop! 🍿</span>
-          </div>
-          <img class="theatre-building-img" src="assets/showcase/theatre_building_glow.png" alt="Glowing Love Cafe Cinema building facade" loading="lazy">
+        <div class="atm-service-tag">
+          <span class="atm-tag-icon">⚡</span>
+          <span>10-MIN IN-SEAT DINING</span>
         </div>
       </div>
+
+      <!-- Graphical Panels Row: India Map + Theatre Facade -->
+      <div class="cinemas-radar-row">
+        <!-- Left Panel: Regional Map Network -->
+        <div class="map-badge-container atm-graphic-panel atm-panel-map">
+          <div class="atm-panel-top-tag tag-pink">
+            <span>🗺️</span> REGIONAL NETWORK
+          </div>
+          <div class="desktop-map-wrap">
+            <img class="desktop-map-img" src="assets/showcase/india_map_outlets.png" alt="Map of India showing Partner Theatres Across West Bengal and Bihar" loading="lazy">
+          </div>
+          <span class="map-caption-badge">
+            <span class="map-pin-pulse">📍</span>
+            <b>5 in West Bengal</b> · <b>4 in Bihar</b>
+          </span>
+        </div>
+
+        <!-- Right Panel: Cinema Marquee Stage -->
+        <div class="theatre-glow-container atm-graphic-panel atm-panel-cinema">
+          <div class="atm-panel-top-tag tag-gold">
+            <span>🎬</span> PREMIER EXPERIENCE
+          </div>
+          <div class="theatre-glow-container-inner">
+            <div class="theatre-hand-note">
+              <span>Your next</span><br>
+              <span>movie stop! 🍿</span>
+            </div>
+            <div class="theatre-building-wrap">
+              <img class="theatre-building-img" src="assets/showcase/theatre_building_glow.png" alt="Glowing Love Cafe Cinema building facade" loading="lazy">
+            </div>
+          </div>
+          <span class="cinema-caption-badge">
+            <span class="cinema-star-pulse">✨</span>
+            <b>Aurora, Cinepolis &amp; INOX</b> Partners
+          </span>
+        </div>
+      </div>
+
+      <!-- Colorful Graphical Stat Badges -->
       <div class="atmosphere-stats-strip">
-        <div class="atm-stat-item">
-          <span class="atm-stat-icon">⚡</span>
+        <div class="atm-stat-item atm-stat-speed">
+          <div class="atm-stat-icon">⚡</div>
           <div class="atm-stat-info">
             <b>~10 Mins Speed</b>
             <span>Seat delivery</span>
           </div>
         </div>
-        <div class="atm-stat-item">
-          <span class="atm-stat-icon">🎟️</span>
+        <div class="atm-stat-item atm-stat-screens">
+          <div class="atm-stat-icon">🎟️</div>
           <div class="atm-stat-info">
             <b>9 Live Screens</b>
             <span>WB &amp; Bihar</span>
           </div>
         </div>
-        <div class="atm-stat-item">
-          <span class="atm-stat-icon">⭐</span>
+        <div class="atm-stat-item atm-stat-rating">
+          <div class="atm-stat-icon">⭐</div>
           <div class="atm-stat-info">
             <b>4.9★ Rating</b>
             <span>Guest reviews</span>
           </div>
         </div>
-        <div class="atm-stat-item">
-          <span class="atm-stat-icon">🍿</span>
+        <div class="atm-stat-item atm-stat-fresh">
+          <div class="atm-stat-icon">🍿</div>
           <div class="atm-stat-info">
             <b>Cinema Fresh</b>
             <span>Gourmet snacks</span>
@@ -8693,13 +9056,13 @@ let lenis = null;
 try {
   if (typeof Lenis !== 'undefined' && !reduce) {
     lenis = new Lenis({
-      duration: 1.65,
+      duration: 2.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.45, // Relaxed, slow scroll pacing so visitors comfortably view every product
-      touchMultiplier: 0.85,
+      wheelMultiplier: 0.26, // Leisurely, calm scroll pacing so visitors comfortably view every product
+      touchMultiplier: 0.65,
       infinite: false,
     });
 
