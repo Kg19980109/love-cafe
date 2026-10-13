@@ -11959,7 +11959,606 @@ body.locked .sd {
     font-size: 11px !important;
   }
 }
+
+/* ==========================================================================
+   CARTOONY RETRO CINEMA SCROLLBAR & TOP PROGRESS MASCOT RUNNER
+   ========================================================================== */
+/* Native Webkit Scrollbar */
+::-webkit-scrollbar {
+  width: 12px !important;
+  height: 12px !important;
+}
+::-webkit-scrollbar-track {
+  background: #fff0f5 !important;
+  border-left: 2px solid #2a1820 !important;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff2a6d 0%, #e6195a 100%) !important;
+  border: 2px solid #2a1820 !important;
+  border-radius: 999px !important;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.45) !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffd23f 0%, #ffbe0b 100%) !important;
+}
+html {
+  scrollbar-width: thin !important;
+  scrollbar-color: #ff2a6d #fff0f5 !important;
+}
+
+/* Fixed Top Cartoony Scroll Runner (Zero overlap with text or UI) */
+.retro-scroll-progress-wrap {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 6px !important;
+  background: rgba(255, 235, 243, 0.75) !important;
+  border-bottom: 1.5px solid rgba(42, 24, 32, 0.25) !important;
+  z-index: 99999 !important;
+  pointer-events: none !important;
+}
+
+.retro-scroll-progress-fill {
+  height: 100% !important;
+  width: 0% !important;
+  background: linear-gradient(90deg, #ff2a6d 0%, #ff5287 45%, #ffd23f 85%, #ffb703 100%) !important;
+  position: relative !important;
+  border-radius: 0 4px 4px 0 !important;
+  box-shadow: 0 0 10px rgba(255, 42, 109, 0.5) !important;
+  transition: width 0.08s linear !important;
+}
+
+.retro-scroll-mascot {
+  position: absolute !important;
+  right: -15px !important;
+  top: -12px !important;
+  width: 32px !important;
+  height: 32px !important;
+  pointer-events: none !important;
+  filter: drop-shadow(0 3px 5px rgba(42, 24, 32, 0.35)) !important;
+}
+
+.scroll-mascot-svg {
+  width: 32px !important;
+  height: 32px !important;
+  display: block !important;
+}
+
+.mascot-wobble {
+  transform-origin: center bottom !important;
+  animation: mascotWiggle 1.4s ease-in-out infinite alternate !important;
+}
+
+@keyframes mascotWiggle {
+  0% { transform: rotate(-5deg) translateY(0); }
+  50% { transform: rotate(0deg) translateY(-2px); }
+  100% { transform: rotate(5deg) translateY(0); }
+}
+
+
+/* ==========================================================================
+   WHY LOVE CAFE (#why-us): 2D CARTOON CINEMA REVOLUTION (EYE-CATCHY & GRAPHICAL)
+   ========================================================================== */
+.why-us-section {
+  position: relative !important;
+  background: radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.95) 0%, transparent 60%),
+              radial-gradient(circle at 10% 50%, rgba(255, 182, 193, 0.28) 0%, transparent 50%),
+              radial-gradient(circle at 90% 60%, rgba(255, 218, 185, 0.28) 0%, transparent 50%),
+              linear-gradient(180deg, #fff3f7 0%, #ffedf4 45%, #ffdbe6 100%) !important;
+  padding: clamp(50px, 6vw, 80px) clamp(16px, 4vw, 44px) !important;
+  color: #2b0d18 !important;
+  overflow: hidden !important;
+  z-index: 4 !important;
+  border-top: 2.5px solid #2a1820 !important;
+  scroll-margin-top: 70px !important;
+}
+
+.wu-ambient-particles {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.wu-part {
+  position: absolute !important;
+  font-size: 24px !important;
+  opacity: 0.35 !important;
+  animation: cjFloatBounce 7s ease-in-out infinite alternate !important;
+}
+.wu-part.p1 { top: 8%; left: 5%; }
+.wu-part.p2 { top: 18%; right: 7%; font-size: 28px !important; }
+.wu-part.p3 { bottom: 12%; left: 8%; font-size: 26px !important; }
+.wu-part.p4 { bottom: 20%; right: 5%; }
+.wu-part.p5 { top: 48%; left: 3%; font-size: 22px !important; }
+
+.wu-container {
+  position: relative !important;
+  z-index: 3 !important;
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+}
+
+.wu-header {
+  text-align: center !important;
+  max-width: 800px !important;
+  margin: 0 auto 28px !important;
+}
+
+.wu-pill-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 5px 16px !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: #b81639 !important;
+  margin-bottom: 12px !important;
+}
+
+.wu-title {
+  font-family: var(--disp) !important;
+  font-size: clamp(26px, 3.6vw, 42px) !important;
+  font-weight: 900 !important;
+  color: #2b0d18 !important;
+  line-height: 1.18 !important;
+  margin: 0 0 8px !important;
+}
+
+.wu-title em {
+  font-style: normal !important;
+  color: #ff2a6d !important;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e02b54 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.wu-subtitle {
+  font-family: var(--sans) !important;
+  font-size: clamp(14px, 1.25vw, 16px) !important;
+  color: #612739 !important;
+  line-height: 1.5 !important;
+  margin: 0 auto !important;
+  max-width: 660px !important;
+}
+
+/* Quick Metrics Row */
+.wu-metrics-row {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 12px !important;
+  max-width: 1020px !important;
+  margin: 0 auto 30px !important;
+}
+
+.wu-metric-chip {
+  background: #ffffff !important;
+  border: 2px solid #2a1820 !important;
+  border-radius: 18px !important;
+  padding: 10px 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.wu-metric-chip:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 6px 0 #2a1820 !important;
+}
+
+.wu-metric-icon {
+  font-size: 24px !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+}
+
+.wu-metric-val {
+  display: block !important;
+  font-family: var(--disp) !important;
+  font-size: clamp(14px, 1.35vw, 16.5px) !important;
+  font-weight: 900 !important;
+  color: #2b0d18 !important;
+  line-height: 1.15 !important;
+}
+
+.wu-metric-lbl {
+  display: block !important;
+  font-family: var(--sans) !important;
+  font-size: 11px !important;
+  color: #7a3148 !important;
+  font-weight: 700 !important;
+}
+
+/* 4 Eye-Catchy 2D Cartoon Character Cards */
+.wu-cards-track {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 18px !important;
+  margin-bottom: 28px !important;
+}
+
+.wu-card {
+  background: #ffffff !important;
+  border-radius: 24px !important;
+  border: 2.5px solid #2a1820 !important;
+  box-shadow: 0 8px 0 #2a1820 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease !important;
+  position: relative !important;
+}
+
+.wu-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 14px 0 #2a1820 !important;
+}
+
+.wu-card-graphic-wrap {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important;
+  background: #fff0f5 !important;
+  border-bottom: 2px solid #2a1820 !important;
+}
+
+.wu-card-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  transition: transform 0.4s ease !important;
+}
+
+.wu-card:hover .wu-card-img {
+  transform: scale(1.06) !important;
+}
+
+.wu-bubble-tag {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  background: #ffffff !important;
+  border: 1.8px solid #2a1820 !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
+  color: #2a1820 !important;
+  font-family: var(--disp) !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.05em !important;
+  padding: 3px 9px !important;
+  border-radius: 999px !important;
+  z-index: 5 !important;
+}
+
+.wu-card-pink .wu-bubble-tag { background: #ffe3ee !important; color: #ff2a6d !important; }
+.wu-card-gold .wu-bubble-tag { background: #fff5d6 !important; color: #b45309 !important; }
+.wu-card-violet .wu-bubble-tag { background: #ede9fe !important; color: #6d28d9 !important; }
+.wu-card-teal .wu-bubble-tag { background: #d1fae5 !important; color: #047857 !important; }
+
+.wu-card-content {
+  padding: 16px 16px 18px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+}
+
+.wu-card-tag {
+  font-family: var(--disp) !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  margin-bottom: 4px !important;
+  display: inline-block !important;
+}
+.wu-card-pink .wu-card-tag { color: #e6195a !important; }
+.wu-card-gold .wu-card-tag { color: #d97706 !important; }
+.wu-card-violet .wu-card-tag { color: #7c3aed !important; }
+.wu-card-teal .wu-card-tag { color: #059669 !important; }
+
+.wu-card-heading {
+  font-family: var(--disp) !important;
+  font-size: clamp(16px, 1.35vw, 18.5px) !important;
+  font-weight: 900 !important;
+  color: #1f0812 !important;
+  line-height: 1.22 !important;
+  margin: 0 0 6px !important;
+}
+
+.wu-card-text {
+  font-family: var(--sans) !important;
+  font-size: 12.5px !important;
+  color: #552535 !important;
+  line-height: 1.45 !important;
+  margin: 0 0 12px !important;
+  flex: 1 !important;
+}
+
+.wu-speech-pill {
+  background: #fff8fa !important;
+  border: 1.5px solid #2a1820 !important;
+  border-radius: 12px !important;
+  padding: 6px 10px !important;
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  color: #2a1820 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 2px 0 #2a1820 !important;
+}
+
+.speech-sparkle {
+  font-size: 13px !important;
+}
+
+/* Bottom Strip */
+.wu-bottom-strip {
+  background: #ffffff !important;
+  border: 2.5px solid #2a1820 !important;
+  border-radius: 20px !important;
+  padding: 16px 24px !important;
+  box-shadow: 0 6px 0 #2a1820 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+}
+
+.wu-strip-text h4 {
+  font-family: var(--disp) !important;
+  font-size: clamp(15px, 1.5vw, 18.5px) !important;
+  font-weight: 900 !important;
+  color: #2b0d18 !important;
+  margin: 0 !important;
+}
+
+.wu-strip-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.wu-action-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 9px 20px !important;
+  border-radius: 999px !important;
+  border: 2px solid #2a1820 !important;
+  font-family: var(--disp) !important;
+  font-size: 12.5px !important;
+  font-weight: 900 !important;
+  text-decoration: none !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  white-space: nowrap !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
+}
+
+.wu-action-btn:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 5px 0 #2a1820 !important;
+}
+
+.wu-action-btn.primary {
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
+}
+.wu-action-btn.secondary {
+  background: #ffffff !important;
+  color: #2a1820 !important;
+}
+
+@media (max-width: 960px) {
+  .wu-metrics-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  .wu-cards-track {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 14px !important;
+    padding-bottom: 8px !important;
+    scrollbar-width: none !important;
+  }
+  .wu-cards-track::-webkit-scrollbar { display: none !important; }
+  .wu-card {
+    min-width: 260px !important;
+    max-width: 280px !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: center !important;
+  }
+}
+
+
+/* ==========================================================================
+   APP SHOWCASE SECTION (#app): REDESIGNED, VIBRANT, ZERO-BLUR & RETRO-POP
+   ========================================================================== */
+.app-showcase-section {
+  position: relative !important;
+  background: radial-gradient(circle at 80% 20%, rgba(255, 42, 109, 0.12) 0%, transparent 40%),
+              radial-gradient(circle at 20% 80%, rgba(255, 210, 63, 0.15) 0%, transparent 40%),
+              linear-gradient(180deg, #fff2f6 0%, #ffe0ec 50%, #fff0f6 100%) !important;
+  padding: clamp(55px, 7vw, 90px) clamp(16px, 4vw, 44px) !important;
+  color: #2b0d18 !important;
+  border-top: 2.5px solid #2a1820 !important;
+  overflow: hidden !important;
+  scroll-margin-top: 70px !important;
+}
+
+.app-feature-pills-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+  margin: 14px 0 16px !important;
+}
+
+.app-feat-pill {
+  background: #ffffff !important;
+  border: 1.8px solid #2a1820 !important;
+  border-radius: 999px !important;
+  padding: 4px 12px !important;
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #2a1820 !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
+}
+
+/* Screen Switcher Tabs */
+.app-screens-tab-pills {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 14px !important;
+  z-index: 10 !important;
+}
+
+.app-tab-btn {
+  padding: 8px 18px !important;
+  font-family: var(--disp) !important;
+  font-size: 12.5px !important;
+  font-weight: 900 !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  border: 2px solid #2a1820 !important;
+  color: #2a1820 !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.app-tab-btn:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 6px 0 #2a1820 !important;
+}
+
+.app-tab-btn.active {
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
+  border-color: #2a1820 !important;
+  box-shadow: 0 5px 0 #2a1820 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ZERO-BLUR & CRISP SCREEN CARDS */
+.app-screens-carousel {
+  display: flex !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory !important;
+  gap: 16px !important;
+  padding: 12px 6px !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: none !important;
+}
+.app-screens-carousel::-webkit-scrollbar { display: none !important; }
+
+.app-screen-card {
+  flex: 0 0 240px !important;
+  width: 240px !important;
+  max-width: 240px !important;
+  scroll-snap-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
+  opacity: 1 !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
+}
+
+/* Completely remove blur or washed-out opacity */
+.app-screen-card:not(.active) {
+  opacity: 1 !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  transform: scale(0.97) !important;
+}
+
+.app-screen-card.active {
+  opacity: 1 !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  transform: scale(1.02) !important;
+}
+
+.app-screen-card.active .app-phone-mockup.realistic-mock-phone {
+  border-color: #ff2a6d !important;
+  box-shadow: 0 0 0 2px #ff2a6d, 0 20px 50px rgba(255, 42, 109, 0.35) !important;
+}
+
+/* Desktop layout: Side-by-side three devices */
+@media (min-width: 992px) {
+  .app-screens-carousel {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    overflow: visible !important;
+    padding: 14px 0 !important;
+  }
+  .app-arrow-nav {
+    display: none !important;
+  }
+  .app-screen-card {
+    flex: 0 0 225px !important;
+    width: 225px !important;
+    max-width: 225px !important;
+  }
+  .app-screen-card:hover {
+    transform: translateY(-8px) scale(1.03) !important;
+  }
+}
+
 </style></head><body class="locked">
+<!-- Cartoony Retro Cinema Scroll Progress Bar & Mascot -->
+<div class="retro-scroll-progress-wrap" id="retroScrollProgressWrap" aria-hidden="true">
+  <div class="retro-scroll-progress-fill" id="retroScrollProgressFill">
+    <div class="retro-scroll-mascot">
+      <svg viewBox="0 0 36 36" width="32" height="32" class="scroll-mascot-svg">
+        <g class="mascot-wobble">
+          <circle cx="12" cy="11" r="5" fill="#ffe066" stroke="#2a1820" stroke-width="1.8"/>
+          <circle cx="18" cy="8" r="6" fill="#fff3b0" stroke="#2a1820" stroke-width="1.8"/>
+          <circle cx="24" cy="11" r="5" fill="#ffd23f" stroke="#2a1820" stroke-width="1.8"/>
+          <circle cx="15" cy="12" r="4.5" fill="#ffffff" stroke="#2a1820" stroke-width="1.8"/>
+          <circle cx="21" cy="12" r="4.5" fill="#ffeaa7" stroke="#2a1820" stroke-width="1.8"/>
+          <polygon points="18,3 19,6 22,7 19,8 18,11 17,8 14,7 17,6" fill="#ffd23f"/>
+          <polygon points="8,14 11,32 25,32 28,14" fill="#ffffff" stroke="#2a1820" stroke-width="2" stroke-linejoin="round"/>
+          <polygon points="12,14 14,32 17,32 16,14" fill="#ff2a6d"/>
+          <polygon points="20,14 19,32 22,32 24,14" fill="#ff2a6d"/>
+          <ellipse cx="15.5" cy="22" rx="1.5" ry="2" fill="#2a1820"/>
+          <ellipse cx="20.5" cy="22" rx="1.5" ry="2" fill="#2a1820"/>
+          <path d="M 16 26 Q 18 29 20 26" fill="none" stroke="#2a1820" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="13" cy="24" r="1.5" fill="#ff758c"/>
+          <circle cx="23" cy="24" r="1.5" fill="#ff758c"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+
 <!-- Clean VIP Cinema Ticket Starting Gate (NO Curtains visible on load) -->
 <div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
   <div class="g-projector-beam" aria-hidden="true"></div>
@@ -13014,11 +13613,12 @@ body.locked .sd {
      ========================================================================== -->
 
 <!-- 1. SECTION: APP SHOWCASE -->
+<!-- 1. SECTION: APP SHOWCASE -->
 <section class="sec app-showcase-section" id="app" aria-label="Love Cafe Mobile App">
   <div class="app-section-inner">
-    <!-- Top Grid: Left Text/Buttons/QR + Right Real App Screens Carousel -->
+    <!-- Top Grid: Left Copy & Store Badges + Right 3-Device Real App Showcase -->
     <div class="app-main-grid">
-      <!-- Left Column -->
+      <!-- Left Column: Copy & Store Buttons -->
       <div class="app-text-col">
         <div class="section-tag-pill app-wow-tag">
           <img src="assets/love_logo_dark_cinema.png" alt="LOVE" style="height:14px; width:auto; vertical-align:middle; margin-right:4px;">
@@ -13030,16 +13630,23 @@ body.locked .sd {
           <span class="coral-gradient-text">one more bite.</span>
         </h2>
         <p class="app-subtitle-desc">
-          Order gourmet popcorn, loaded burgers, hot pizzas &amp; craft drinks delivered straight to your cinema seat.
+          Scan your seat QR code or open the Love Cafe app to browse live multiplex menus, customize gourmet combo boxes, and enjoy silent delivery right to your armrest.
         </p>
+
+        <!-- Quick Highlight Chips -->
+        <div class="app-feature-pills-row">
+          <span class="app-feat-pill">⚡ ~10m In-Seat Delivery</span>
+          <span class="app-feat-pill">🍿 100% Cinema Fresh</span>
+          <span class="app-feat-pill">🎟️ Earn CinePoints</span>
+        </div>
 
         <!-- Store Buttons -->
         <div class="app-download-cues">
-          <span class="app-direct-download-tag">📲 TAP BELOW TO DOWNLOAD APP DIRECTLY:</span>
+          <span class="app-direct-download-tag">📲 TAP BELOW TO INSTALL APP DIRECTLY:</span>
         </div>
         <div class="app-stores-row">
           <a class="store-badge-btn" href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
-            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
             <div class="btn-text-wrap">
               <small>GET IT ON</small>
               <b>Google Play</b>
@@ -13070,7 +13677,7 @@ body.locked .sd {
         </div>
       </div>
 
-      <!-- Right Column: Real App Screenshots Showcase Track -->
+      <!-- Right Column: Crystal-Clear Real App Device Showcase (ZERO BLUR) -->
       <div class="app-graphic-col">
         <div class="floating-script-note">
           <span>Your snacks.</span>
@@ -13078,9 +13685,15 @@ body.locked .sd {
           <span>Your movie. <span class="script-heart">💖</span></span>
         </div>
 
+        <!-- Interactive Screen Switcher Tabs -->
+        <div class="app-screens-tab-pills" id="appScreensTabPills">
+          <button type="button" class="app-tab-btn active" data-index="0"><span>🍿</span> 1. Seat Sync</button>
+          <button type="button" class="app-tab-btn" data-index="1"><span>🍕</span> 2. Gourmet Menu</button>
+          <button type="button" class="app-tab-btn" data-index="2"><span>⚡</span> 3. Instant Drop</button>
+        </div>
+
         <div class="app-screens-showcase-container" id="appScreensContainer">
-          <!-- Interactive Screen Switcher Tabs (Perfect for mobile & desktop) -->
-          <!-- Carousel Stage (Silky Smooth Touch Swipe) -->
+          <!-- Stage with Arrows for easy navigation -->
           <div class="app-carousel-stage">
             <button class="app-arrow-nav app-arrow-prev" id="appPrevBtn" aria-label="Previous App Screenshot" type="button">‹</button>
             <div class="app-screens-carousel" id="appScreensCarousel" data-lenis-prevent="true">
@@ -13102,7 +13715,7 @@ body.locked .sd {
                   </div>
                 </div>
                 <div class="app-screen-caption">
-                  <span class="caption-tag">🍿 HOME &amp; SEAT SYNC</span>
+                  <span class="caption-tag">🍿 SEAT &amp; SCREEN SYNC</span>
                   <b>Movies + Food = Perfect Night</b>
                 </div>
               </div>
@@ -13125,7 +13738,7 @@ body.locked .sd {
                   </div>
                 </div>
                 <div class="app-screen-caption caption-gold">
-                  <span class="caption-tag">🍕 PREMIUM GOURMET MENU</span>
+                  <span class="caption-tag">🍕 GOURMET CINEMA MENU</span>
                   <b>Pizzas, Burgers &amp; Craft Sips</b>
                 </div>
               </div>
@@ -14363,7 +14976,18 @@ body.locked .sd {
 <!-- ==========================================================================
      WHY CHOOSE LOVE CAFE (#why-us) — GRAPHICAL, VISUAL & SHORT (NO LONG TEXT)
      ========================================================================== -->
+<!-- ==========================================================================
+     WHY CHOOSE LOVE CAFE (#why-us) — EYE-CATCHING 2D CARTOON CINEMA REVOLUTION
+     ========================================================================== -->
 <section class="why-us-section" id="why-us" aria-label="Why Choose LOVE CAFE">
+  <div class="wu-ambient-particles">
+    <span class="wu-part p1">🍿</span>
+    <span class="wu-part p2">✨</span>
+    <span class="wu-part p3">🎟️</span>
+    <span class="wu-part p4">💖</span>
+    <span class="wu-part p5">⭐</span>
+  </div>
+
   <div class="wu-container">
     <!-- Header Block -->
     <div class="wu-header">
@@ -14373,10 +14997,10 @@ body.locked .sd {
         <span>✨</span>
       </div>
       <h2 class="wu-title">Never Miss a Movie Scene.<br><em>Zero Concession Lines.</em></h2>
-      <p class="wu-subtitle">Order hot gourmet food directly from your cinema recliner in ~10 minutes.</p>
+      <p class="wu-subtitle">Order fresh gourmet meals straight from your recliner in ~10 minutes. Here is why moviegoers love us:</p>
     </div>
 
-    <!-- Live Graphical Stat Counters -->
+    <!-- Quick Punchy Metrics Row -->
     <div class="wu-metrics-row">
       <div class="wu-metric-chip">
         <span class="wu-metric-icon">⚡</span>
@@ -14389,14 +15013,14 @@ body.locked .sd {
         <span class="wu-metric-icon">🚫</span>
         <div>
           <span class="wu-metric-val">0 Lines</span>
-          <span class="wu-metric-lbl">Skip Interval Chaos</span>
+          <span class="wu-metric-lbl">Skip Interval Rush</span>
         </div>
       </div>
       <div class="wu-metric-chip">
         <span class="wu-metric-icon">🔥</span>
         <div>
           <span class="wu-metric-val">100% Fresh</span>
-          <span class="wu-metric-lbl">Live In-Theatre Kitchen</span>
+          <span class="wu-metric-lbl">Live Multiplex Kitchen</span>
         </div>
       </div>
       <div class="wu-metric-chip">
@@ -14408,36 +15032,38 @@ body.locked .sd {
       </div>
     </div>
 
-    <!-- 4 Short Graphical Cards -->
+    <!-- 4 Eye-Catchy 2D Cartoon Character Cards -->
     <div class="wu-cards-track">
-      <!-- Card 1: Skip Interval Lines -->
-      <article class="wu-card wu-card-coral">
+      <!-- Card 1: Recline & Tap (Zero Queues) -->
+      <article class="wu-card wu-card-pink">
         <div class="wu-card-graphic-wrap">
-          <img src="assets/flavours/snack_burger.jpg" alt="Double Brioche Smash Burger" class="wu-card-img" loading="lazy">
-          <div class="wu-img-badge">🍔 Fresh To Seat</div>
+          <img src="assets/cartoons/why_cartoon_recliner.jpg" alt="Cartoon mascot relaxing in cinema recliner" class="wu-card-img" loading="lazy">
+          <div class="wu-bubble-tag">🚫 ZERO QUEUES</div>
         </div>
         <div class="wu-card-content">
-          <span class="wu-card-tag">🚫 ZERO CONCESSION QUEUES</span>
-          <h3 class="wu-card-heading">Order from Your Recliner</h3>
-          <p class="wu-card-text">Scan armrest QR in 30 seconds. Stay seated and skip the 50-person interval rush.</p>
-          <div class="wu-card-comparison">
-            <span>⚡</span> <b>30s Armrest Order</b> vs 25m Lobby Queue
+          <span class="wu-card-tag">📱 SCAN &amp; RELAX</span>
+          <h3 class="wu-card-heading">Recline &amp; Tap</h3>
+          <p class="wu-card-text">Scan armrest QR in 30 seconds. Stay reclined in your seat with zero interval chaos.</p>
+          <div class="wu-speech-pill">
+            <span class="speech-sparkle">✨</span>
+            <span>"0 minutes waiting in line!"</span>
           </div>
         </div>
       </article>
 
-      <!-- Card 2: Live Gourmet Kitchen -->
+      <!-- Card 2: Fresh Live Kitchen -->
       <article class="wu-card wu-card-gold">
         <div class="wu-card-graphic-wrap">
-          <img src="assets/flavours/snack_popcorn.jpg" alt="Artisan Truffle Butter Popcorn" class="wu-card-img" loading="lazy">
-          <div class="wu-img-badge">🍿 Freshly Popped</div>
+          <img src="assets/cartoons/why_cartoon_chef.jpg" alt="Cartoon chef mascot cooking gourmet burgers" class="wu-card-img" loading="lazy">
+          <div class="wu-bubble-tag">🔥 SIZZLING FRESH</div>
         </div>
         <div class="wu-card-content">
-          <span class="wu-card-tag">🔥 LIVE THEATRE KITCHEN</span>
-          <h3 class="wu-card-heading">Cooked Fresh to Order</h3>
-          <p class="wu-card-text">Burgers smashed &amp; popcorn popped fresh inside the multiplex. Never reheated.</p>
-          <div class="wu-card-comparison">
-            <span>👨‍🍳</span> <b>Master Chefs Cooking</b> vs Stale Heat Lamps
+          <span class="wu-card-tag">🍔 LIVE MULTIPLEX KITCHEN</span>
+          <h3 class="wu-card-heading">Cooked To Order</h3>
+          <p class="wu-card-text">Smash burgers sizzled &amp; popcorn popped fresh inside the theatre. Never reheated.</p>
+          <div class="wu-speech-pill">
+            <span class="speech-sparkle">🔥</span>
+            <span>"Always hot, crisp &amp; fresh!"</span>
           </div>
         </div>
       </article>
@@ -14445,44 +15071,46 @@ body.locked .sd {
       <!-- Card 3: Silent Cloche Drop -->
       <article class="wu-card wu-card-violet">
         <div class="wu-card-graphic-wrap">
-          <img src="assets/showcase/cinema_clean_recliners.jpg" alt="VIP Cinema Recliner Seats" class="wu-card-img" loading="lazy">
-          <div class="wu-img-badge">🛎️ Silver Cloche VIP</div>
+          <img src="assets/cartoons/why_cartoon_delivery.jpg" alt="Cartoon stealth runner with silver cloche" class="wu-card-img" loading="lazy">
+          <div class="wu-bubble-tag">🤫 STEALTH PROTOCOL</div>
         </div>
         <div class="wu-card-content">
-          <span class="wu-card-tag">🤫 STEALTH RUNNER PROTOCOL</span>
-          <h3 class="wu-card-heading">Silver Cloche Delivery</h3>
-          <p class="wu-card-text">Runners deliver silently to your seat table without blocking the screen or projector.</p>
-          <div class="wu-card-comparison">
-            <span>🛎️</span> <b>Silent Cloche Drop</b> vs Flimsy Lobby Trays
+          <span class="wu-card-tag">🛎️ SILENT SEAT RUNNER</span>
+          <h3 class="wu-card-heading">Silent Cloche Drop</h3>
+          <p class="wu-card-text">Runners glide to your seat table under dim lights without blocking the big screen.</p>
+          <div class="wu-speech-pill">
+            <span class="speech-sparkle">🎬</span>
+            <span>"Zero movie distractions!"</span>
           </div>
         </div>
       </article>
 
-      <!-- Card 4: 9 Theatres & CinePoints -->
-      <article class="wu-card wu-card-emerald">
+      <!-- Card 4: VIP CinePoints & Rewards -->
+      <article class="wu-card wu-card-teal">
         <div class="wu-card-graphic-wrap">
-          <img src="assets/flavours/snack_combo_feast.jpg" alt="Love Cafe Cinema Combo Feast" class="wu-card-img" loading="lazy">
-          <div class="wu-img-badge">⭐ CinePoints Ready</div>
+          <img src="assets/cartoons/why_cartoon_rewards.jpg" alt="Cartoon mascot celebrating CinePoints VIP perks" class="wu-card-img" loading="lazy">
+          <div class="wu-bubble-tag">🎟️ FREE PERKS</div>
         </div>
         <div class="wu-card-content">
-          <span class="wu-card-tag">🎟️ PARTNER MULTIPLEX NETWORK</span>
-          <h3 class="wu-card-heading">9 Theatres &amp; CinePoints</h3>
-          <p class="wu-card-text">Collect CinePoints across 9 partner cinemas to unlock free tickets and gourmet upgrades.</p>
-          <div class="wu-card-comparison">
-            <span>🎁</span> <b>Earn on Every Bite</b> for Free Tickets
+          <span class="wu-card-tag">⭐ VIP CINEPOINTS</span>
+          <h3 class="wu-card-heading">Earn On Every Bite</h3>
+          <p class="wu-card-text">Collect reward stars across partner cinemas to unlock free movie tickets &amp; upgrades.</p>
+          <div class="wu-speech-pill">
+            <span class="speech-sparkle">🎁</span>
+            <span>"Free tickets &amp; VIP perks!"</span>
           </div>
         </div>
       </article>
     </div>
 
-    <!-- Bottom Compact Mission Strip -->
+    <!-- Bottom Action Banner -->
     <div class="wu-bottom-strip">
       <div class="wu-strip-text">
         <h4>Elevating Cinema Dining Across West Bengal &amp; Bihar</h4>
       </div>
       <div class="wu-strip-actions">
         <a href="#cinemas" class="wu-action-btn primary">Find Theatres →</a>
-        <a href="#get" class="wu-action-btn secondary">Download App</a>
+        <a href="#get" class="wu-action-btn secondary">Download Free App</a>
       </div>
     </div>
   </div>
@@ -17472,6 +18100,82 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
 
 
 
+
+</script>
+<script>
+
+// ==========================================================================
+// CARTOONY SCROLL PROGRESS RUNNER & TAB INTERACTION SYSTEM
+// ==========================================================================
+(function initRetroScrollAndAppTabs() {
+  // 1. Cartoony Top Scroll Runner
+  const progressFill = document.getElementById('retroScrollProgressFill');
+  if (progressFill) {
+    function updateScrollRunner() {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight <= 0) {
+        progressFill.style.width = '0%';
+        return;
+      }
+      const scrolled = Math.max(0, Math.min(1, window.scrollY / docHeight));
+      progressFill.style.width = (scrolled * 100) + '%';
+    }
+    window.addEventListener('scroll', updateScrollRunner, { passive: true });
+    window.addEventListener('resize', updateScrollRunner, { passive: true });
+    updateScrollRunner();
+  }
+
+  // 2. Interactive App Screen Tabs & Carousel Controls
+  const tabs = document.querySelectorAll('#appScreensTabPills .app-tab-btn');
+  const carousel = document.getElementById('appScreensCarousel');
+  const cards = document.querySelectorAll('#appScreensCarousel .app-screen-card');
+  const dots = document.querySelectorAll('#appScreenDots .app-dot');
+  const prevBtn = document.getElementById('appPrevBtn');
+  const nextBtn = document.getElementById('appNextBtn');
+
+  if (tabs.length && carousel && cards.length) {
+    let activeIdx = 0;
+
+    function goToCard(idx) {
+      idx = Math.max(0, Math.min(cards.length - 1, idx));
+      activeIdx = idx;
+      const targetCard = cards[idx];
+      if (targetCard) {
+        const offset = targetCard.offsetLeft - carousel.offsetLeft - (carousel.clientWidth - targetCard.clientWidth) / 2;
+        carousel.scrollTo({ left: offset, behavior: 'smooth' });
+      }
+      tabs.forEach((t, i) => t.classList.toggle('active', i === idx));
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      cards.forEach((c, i) => c.classList.toggle('active', i === idx));
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const idx = parseInt(tab.getAttribute('data-index') || '0', 10);
+        goToCard(idx);
+      });
+    });
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        goToCard(activeIdx - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        goToCard(activeIdx + 1);
+      });
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const idx = parseInt(dot.getAttribute('data-index') || '0', 10);
+        goToCard(idx);
+      });
+    });
+  }
+})();
 
 </script>
 </body></html>
