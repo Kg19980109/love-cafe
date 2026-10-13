@@ -8770,6 +8770,741 @@ body.locked .sd {
     padding: 2.5px 9px !important;
   }
 }
+
+/* ==========================================================================
+   4-STEP CINEMA JOURNEY SCROLL-DRIVEN FRAME ANIMATION STYLES (ANIMATION 2)
+   ========================================================================== */
+.cinema-journey-section {
+  height: 950vh !important;
+  position: relative !important;
+  z-index: 2 !important;
+  background: #180812;
+  transition: background 0.6s ease;
+}
+
+@media (max-width: 860px) {
+  .cinema-journey-section {
+    height: 850vh !important;
+  }
+}
+
+.cj-stick {
+  position: sticky !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: calc(90px + env(safe-area-inset-top, 0px)) clamp(16px, 3.2vw, 40px) 16px !important;
+  box-sizing: border-box !important;
+}
+
+.cj-bg-aura {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  transition: background 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background: radial-gradient(ellipse at 50% 50%, #351527 0%, #200a16 55%, #15050e 100%) !important;
+}
+
+.cj-vignette {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background: radial-gradient(circle at 50% 50%, transparent 55%, rgba(15, 3, 10, 0.45) 100%) !important;
+}
+
+.cj-beam {
+  position: absolute !important;
+  top: -20% !important;
+  left: 50% !important;
+  transform: translateX(-50%) rotate(-12deg) !important;
+  width: 120vw !important;
+  height: 60vh !important;
+  background: radial-gradient(ellipse, rgba(255, 42, 109, 0.22) 0%, transparent 70%) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.cj-watermark {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  font-family: var(--disp) !important;
+  font-size: clamp(75px, 16vw, 240px) !important;
+  font-weight: 800 !important;
+  color: rgba(255, 255, 255, 0.05) !important;
+  letter-spacing: 0.08em !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  transition: opacity 0.4s ease, transform 0.4s ease !important;
+  user-select: none !important;
+}
+
+/* Ambient Floating Particles */
+.cj-ambient-particles {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+.cj-ambient-particles .cj-p {
+  position: absolute !important;
+  font-size: clamp(16px, 2vw, 28px) !important;
+  opacity: 0.65 !important;
+  animation: cjFloat 5.5s ease-in-out infinite alternate !important;
+}
+.cj-p.p1 { top: 16%; left: 7%; animation-duration: 6.2s; }
+.cj-p.p2 { top: 24%; right: 8%; animation-duration: 4.8s; font-size: 20px !important; }
+.cj-p.p3 { top: 60%; left: 5%; animation-duration: 7.2s; }
+.cj-p.p4 { top: 76%; left: 14%; animation-duration: 5.4s; }
+.cj-p.p5 { top: 36%; right: 7%; animation-duration: 6.5s; }
+.cj-p.p6 { top: 80%; right: 10%; animation-duration: 5.8s; }
+.cj-p.p7 { bottom: 16%; left: 5%; animation-duration: 7s; }
+.cj-p.p8 { top: 12%; left: 30%; animation-duration: 5s; font-size: 16px !important; }
+
+@keyframes cjFloat {
+  0% { transform: translateY(0px) rotate(0deg) scale(1); }
+  100% { transform: translateY(-18px) rotate(10deg) scale(1.12); }
+}
+
+/* Header */
+.cj-header {
+  position: relative !important;
+  z-index: 10 !important;
+  text-align: center !important;
+  max-width: 920px !important;
+  margin: 0 auto !important;
+  flex-shrink: 0 !important;
+}
+
+.cj-badge-wrap {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-bottom: 6px !important;
+}
+
+.cj-badge {
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #ff4f86 !important;
+  background: rgba(30, 8, 20, 0.75) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1.5px solid rgba(255, 79, 134, 0.35) !important;
+  padding: 4px 14px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 14px rgba(255, 79, 134, 0.2) !important;
+}
+
+.cj-live-pill {
+  font-family: var(--disp) !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #00e676 !important;
+  background: rgba(0, 30, 15, 0.75) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1.5px solid rgba(0, 230, 118, 0.35) !important;
+  padding: 4px 12px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  box-shadow: 0 4px 14px rgba(0, 230, 118, 0.15) !important;
+}
+
+.cj-pulse-dot {
+  width: 6px !important;
+  height: 6px !important;
+  background: #00e676 !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  box-shadow: 0 0 6px #00e676 !important;
+  animation: cjPulse 1.8s infinite !important;
+}
+
+@keyframes cjPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.cj-title {
+  font-family: var(--disp) !important;
+  font-size: clamp(22px, 3.2vw, 36px) !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  line-height: 1.15 !important;
+  margin: 0 0 4px !important;
+  text-shadow: none !important;
+}
+.cj-title em {
+  color: #ff2a6d !important;
+  font-style: normal !important;
+  text-shadow: none !important;
+}
+
+.cj-subtitle {
+  font-family: var(--sans) !important;
+  font-size: clamp(12px, 1.05vw, 14px) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  margin: 0 0 8px !important;
+  max-width: 680px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Central Stage */
+.cj-stage {
+  position: relative !important;
+  z-index: 10 !important;
+  width: 100% !important;
+  max-width: 1220px !important;
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(18px, 3.2vw, 44px) !important;
+  min-height: 0 !important;
+  padding: 8px 0 !important;
+}
+
+/* Canvas Luxury Presentation */
+.cj-canvas-card {
+  position: relative !important;
+  width: clamp(340px, 56vw, 760px) !important;
+  aspect-ratio: 16/9 !important;
+  max-height: calc(100vh - 300px) !important;
+  border-radius: 26px !important;
+  background: #0d040a !important;
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.45), 0 0 45px rgba(255, 42, 109, 0.28) !important;
+  border: 2.5px solid rgba(255, 255, 255, 0.18) !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-shrink: 0 !important;
+}
+
+.cj-canvas-glass-badge {
+  position: absolute !important;
+  top: 14px !important;
+  left: 14px !important;
+  right: 14px !important;
+  z-index: 5 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  pointer-events: none !important;
+}
+
+.cj-step-tag {
+  font-family: var(--disp) !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  background: rgba(20, 6, 14, 0.8) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  padding: 6px 14px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.3s ease !important;
+}
+
+.cj-sparkle-dot {
+  color: #ffc233 !important;
+  font-size: 12px !important;
+}
+
+.cj-cinema-tag {
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, rgba(255, 42, 109, 0.88) 0%, rgba(230, 0, 92, 0.88) 100%) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  padding: 6px 13px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 6px 18px rgba(230, 25, 90, 0.3) !important;
+}
+
+.cj-canvas-viewport {
+  position: relative !important;
+  flex: 1 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  background: #000000 !important;
+}
+
+.cj-canvas-viewport canvas {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.cj-canvas-glow {
+  position: absolute !important;
+  inset: -20px !important;
+  border-radius: 36px !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+  opacity: 0.55 !important;
+  transition: background 0.6s ease !important;
+  background: rgba(230, 25, 90, 0.5) !important;
+  filter: blur(28px) !important;
+}
+
+/* Floating Luxury VIP Story Card */
+.cj-card-wrap {
+  width: clamp(300px, 28vw, 380px) !important;
+  position: relative !important;
+  z-index: 10 !important;
+  flex-shrink: 0 !important;
+}
+
+.cj-story-card {
+  background: rgba(25, 8, 18, 0.88) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-radius: 24px !important;
+  padding: clamp(16px, 2.2vw, 24px) !important;
+  border: 2px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(255, 42, 109, 0.1) !important;
+  box-sizing: border-box !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.cj-card-top-ribbon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 8px !important;
+}
+
+.cj-status-pill {
+  font-family: var(--disp) !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: #ff4f86 !important;
+  background: rgba(255, 42, 109, 0.15) !important;
+  border: 1px solid rgba(255, 42, 109, 0.3) !important;
+  padding: 3px 10px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.cj-status-dot {
+  width: 5px !important;
+  height: 5px !important;
+  background: #ff4f86 !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+}
+
+.cj-chapter-num {
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  letter-spacing: 0.06em !important;
+}
+
+.cj-card-header-group {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  margin-bottom: 6px !important;
+}
+
+.cj-card-tag {
+  font-family: var(--disp) !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  background: rgba(230, 25, 90, 0.22) !important;
+  padding: 3px 10px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(230, 25, 90, 0.35) !important;
+}
+
+.cj-card-chip {
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #ffc233 !important;
+  background: rgba(255, 194, 51, 0.15) !important;
+  padding: 3px 9px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255, 194, 51, 0.3) !important;
+}
+
+.cj-card-title {
+  font-family: var(--disp) !important;
+  font-size: clamp(20px, 2.2vw, 26px) !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  line-height: 1.2 !important;
+  margin: 0 0 6px !important;
+  text-shadow: none !important;
+}
+.cj-card-title em {
+  color: #ff2a6d !important;
+  font-style: normal !important;
+  text-shadow: none !important;
+}
+
+.cj-card-desc {
+  font-family: var(--sans) !important;
+  font-size: 13px !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  line-height: 1.45 !important;
+  margin: 0 0 12px !important;
+}
+
+/* Feature Perks Box */
+.cj-features-box {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 14px !important;
+  padding: 9px 12px !important;
+  margin-bottom: 14px !important;
+}
+
+.cj-feat-label {
+  display: block !important;
+  font-family: var(--disp) !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  margin-bottom: 5px !important;
+}
+
+.cj-feat-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+}
+
+.cj-feat-tag {
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  padding: 2.5px 8px !important;
+  border-radius: 999px !important;
+}
+
+.cj-card-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding-top: 10px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.cj-card-delivery {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #00e676 !important;
+}
+.cj-del-icon {
+  font-size: 14px !important;
+}
+
+.cj-card-cta-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6005c 100%) !important;
+  padding: 8px 16px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  box-shadow: 0 6px 18px rgba(230, 25, 90, 0.35) !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+.cj-card-cta-btn:hover {
+  transform: translateY(-2px) scale(1.04) !important;
+  box-shadow: 0 8px 22px rgba(230, 25, 90, 0.5) !important;
+}
+
+/* Bottom Chapter Scrub Rail */
+.cj-bottom-bar {
+  position: relative !important;
+  z-index: 10 !important;
+  width: 100% !important;
+  max-width: 980px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+.cj-scrub-rail {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  background: rgba(30, 8, 20, 0.82) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  scrollbar-width: none !important;
+}
+.cj-scrub-rail::-webkit-scrollbar {
+  display: none !important;
+}
+
+.cj-rail-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 7px 14px !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  border: none !important;
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  transition: all 0.22s ease !important;
+}
+.cj-rail-btn:hover {
+  color: #ffffff !important;
+  background: rgba(255, 42, 109, 0.15) !important;
+}
+.cj-rail-btn.active {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6005c 100%) !important;
+  box-shadow: 0 4px 14px rgba(230, 25, 90, 0.35) !important;
+}
+
+/* Timeline Row */
+.cj-timeline-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 480px !important;
+}
+
+.cj-timeline-track {
+  width: 100% !important;
+  height: 5px !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+
+.cj-timeline-fill {
+  height: 100% !important;
+  width: 0% !important;
+  background: linear-gradient(90deg, #ff2a6d 0%, #ff8a00 100%) !important;
+  border-radius: 999px !important;
+  transition: width 0.1s linear !important;
+}
+
+.cj-scroll-hint {
+  position: absolute !important;
+  bottom: 8px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  opacity: 1 !important;
+  transition: opacity 0.3s ease !important;
+  pointer-events: none !important;
+}
+
+/* Responsive Mobile */
+@media (max-width: 980px) {
+  .cj-stick {
+    padding: calc(82px + env(safe-area-inset-top, 0px)) 12px 10px !important;
+  }
+  .cj-header {
+    margin-bottom: 2px !important;
+  }
+  .cj-title {
+    font-size: clamp(17px, 4.4vw, 22px) !important;
+    line-height: 1.15 !important;
+    margin: 0 0 2px !important;
+  }
+  .cj-badge-wrap {
+    margin-bottom: 3px !important;
+    gap: 5px !important;
+  }
+  .cj-badge,
+  .cj-live-pill {
+    font-size: 9.5px !important;
+    padding: 2.5px 9px !important;
+  }
+  .cj-subtitle {
+    display: none !important;
+  }
+  .cj-stage {
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    flex: 1 !important;
+    min-height: 0 !important;
+    justify-content: center !important;
+  }
+  .cj-canvas-card {
+    width: 100% !important;
+    max-width: 440px !important;
+    max-height: 27vh !important;
+    aspect-ratio: 16/9 !important;
+    border-radius: 18px !important;
+  }
+  .cj-canvas-glass-badge {
+    top: 8px !important;
+    left: 8px !important;
+    right: 8px !important;
+  }
+  .cj-step-tag {
+    font-size: 10px !important;
+    padding: 4px 10px !important;
+  }
+  .cj-cinema-tag {
+    font-size: 9.5px !important;
+    padding: 4px 9px !important;
+  }
+  .cj-card-wrap {
+    width: 100% !important;
+    max-width: 440px !important;
+  }
+  .cj-story-card {
+    padding: 10px 14px !important;
+    border-radius: 18px !important;
+  }
+  .cj-card-top-ribbon {
+    margin-bottom: 4px !important;
+  }
+  .cj-card-header-group {
+    margin-bottom: 3px !important;
+  }
+  .cj-card-title {
+    font-size: 16px !important;
+    margin-bottom: 4px !important;
+    line-height: 1.2 !important;
+  }
+  .cj-card-desc {
+    display: none !important;
+  }
+  .cj-features-box {
+    margin-bottom: 6px !important;
+    padding: 4px 8px !important;
+  }
+  .cj-feat-label {
+    display: none !important;
+  }
+  .cj-feat-tags {
+    gap: 4px !important;
+  }
+  .cj-feat-tag {
+    font-size: 10px !important;
+    padding: 1.5px 6px !important;
+  }
+  .cj-card-footer {
+    padding-top: 6px !important;
+  }
+  .cj-card-delivery {
+    font-size: 10px !important;
+  }
+  .cj-card-cta-btn {
+    font-size: 11px !important;
+    padding: 6px 13px !important;
+  }
+  .cj-bottom-bar {
+    gap: 4px !important;
+    margin-top: 2px !important;
+  }
+  .cj-scrub-rail {
+    padding: 4px 8px !important;
+    gap: 5px !important;
+  }
+  .cj-rail-btn {
+    font-size: 10.5px !important;
+    padding: 4px 9px !important;
+  }
+  .cj-timeline-row {
+    max-width: 220px !important;
+  }
+  .cj-scroll-hint {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .cj-live-pill {
+    display: none !important;
+  }
+  .cj-badge {
+    font-size: 9.5px !important;
+    padding: 2.5px 9px !important;
+  }
+}
+
 </style></head><body class="locked"><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
 <div class="g-projector-beam" aria-hidden="true"></div>
 <div class="g-ambient-glow" aria-hidden="true"></div>
@@ -9481,60 +10216,115 @@ body.locked .sd {
 
 
 
-<section class="sec hs" id="story"><div class="hs-stick">
-<div class="bgtxt" id="bgt" aria-hidden="true">MOVIE ON ★ HUNGER OFF ★ MOVIE ON ★ HUNGER OFF</div>
-<div class="hs-header-wrap rv">
-  <div class="hs-badge-pill">
-    <span>🎬 THE 4-STEP CINEMA JOURNEY</span>
+<section class="cinema-journey-section" id="story" aria-label="The 4-Step Cinema Journey">
+  <div class="cj-stick" id="cjStick">
+    <!-- Dynamic Ambient Cinema Aura & Lighting Effects -->
+    <div class="cj-bg-aura" id="cjBgAura" aria-hidden="true"></div>
+    <div class="cj-vignette" aria-hidden="true"></div>
+    <div class="cj-beam" aria-hidden="true"></div>
+
+    <!-- Floating Background Watermark Typography -->
+    <div class="cj-watermark" id="cjWatermark" aria-hidden="true">SCAN QR</div>
+
+    <!-- Floating Ambient Cinema Particles -->
+    <div class="cj-ambient-particles" aria-hidden="true">
+      <span class="cj-p p1">🎟️</span>
+      <span class="cj-p p2">✨</span>
+      <span class="cj-p p3">🎬</span>
+      <span class="cj-p p4">🍿</span>
+      <span class="cj-p p5">📱</span>
+      <span class="cj-p p6">🔥</span>
+      <span class="cj-p p7">🥤</span>
+      <span class="cj-p p8">✨</span>
+    </div>
+
+    <!-- Eye-Catchy Top Header -->
+    <div class="cj-header">
+      <div class="cj-badge-wrap">
+        <span class="cj-badge">🎬 THE 4-STEP CINEMA JOURNEY</span>
+        <span class="cj-live-pill"><span class="cj-pulse-dot"></span> LIVE IN-SEAT DINING</span>
+      </div>
+      <h2 class="cj-title">Movie night, <em>four magical moments.</em></h2>
+      <p class="cj-subtitle">From scanning your recliner code to silent in-seat delivery under a silver cloche in ~10 minutes.</p>
+    </div>
+
+    <!-- Central Interactive Cinema Stage -->
+    <div class="cj-stage" id="cjStage">
+      <!-- High-DPI Cinema Journey Frame Animation Canvas -->
+      <div class="cj-canvas-card">
+        <div class="cj-canvas-glass-badge">
+          <div class="cj-step-tag"><span class="cj-sparkle-dot">✦</span> <span id="cjStepBadge">STEP 01 · SCAN QR AT SEAT</span></div>
+          <div class="cj-cinema-tag">💺 Cinema Recliner Service</div>
+        </div>
+        <div class="cj-canvas-viewport">
+          <canvas id="journeyAnimCanvas"></canvas>
+        </div>
+        <div class="cj-canvas-glow" id="cjCanvasGlow" aria-hidden="true"></div>
+      </div>
+
+      <!-- Luxury Floating VIP Journey Story Card -->
+      <div class="cj-card-wrap">
+        <div class="cj-story-card" id="cjStoryCard">
+          <div class="cj-card-top-ribbon">
+            <div class="cj-status-pill"><span class="cj-status-dot"></span> <span id="cjStepStatus">MOMENT 01</span></div>
+            <span class="cj-chapter-num" id="cjStepNum">01 / 04</span>
+          </div>
+
+          <div class="cj-card-header-group">
+            <span class="cj-card-tag" id="cjCardTag">🎟️ Cinema Recliner Check-In</span>
+            <span class="cj-card-chip" id="cjCardChip">📍 Seat-Side Link</span>
+          </div>
+
+          <h3 class="cj-card-title" id="cjCardTitle">Find your seat. <em>Scan the code.</em></h3>
+          <p class="cj-card-desc" id="cjCardDesc">Sink into your plush cinema recliner. Point your phone camera at the QR code on your seat armrest for instant seat-side linkage.</p>
+
+          <!-- Step Feature Tags -->
+          <div class="cj-features-box">
+            <span class="cj-feat-label">JOURNEY PERKS:</span>
+            <div class="cj-feat-tags" id="cjFeatTags">
+              <span class="cj-feat-tag">🎟️ Seat-Side QR</span>
+              <span class="cj-feat-tag">💺 VIP Recliner</span>
+              <span class="cj-feat-tag">✨ Zero Waiting</span>
+            </div>
+          </div>
+
+          <div class="cj-card-footer">
+            <div class="cj-card-delivery">
+              <span class="cj-del-icon">⚡</span>
+              <span id="cjFooterHint">~10m In-Seat Delivery Guarantee</span>
+            </div>
+            <a href="#get" class="cj-card-cta-btn" data-dl>
+              <span>Order To Seat</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Interactive Chapter Scrub Rail -->
+    <div class="cj-bottom-bar">
+      <div class="cj-scrub-rail" id="cjScrubRail" aria-label="Jump to cinema journey step">
+        <button type="button" class="cj-rail-btn active" data-frame="25" data-step="0"><span class="cj-btn-icon">🎟️</span><span class="cj-btn-label">01. Scan QR</span></button>
+        <button type="button" class="cj-rail-btn" data-frame="90" data-step="1"><span class="cj-btn-icon">📱</span><span class="cj-btn-label">02. Get App</span></button>
+        <button type="button" class="cj-rail-btn" data-frame="175" data-step="2"><span class="cj-btn-icon">🍕</span><span class="cj-btn-label">03. Order Food</span></button>
+        <button type="button" class="cj-rail-btn" data-frame="265" data-step="3"><span class="cj-btn-icon">🍿</span><span class="cj-btn-label">04. In-Seat Drop</span></button>
+      </div>
+
+      <!-- Timeline & Progress Indicator -->
+      <div class="cj-timeline-row">
+        <div class="cj-timeline-track">
+          <div class="cj-timeline-fill" id="cjTimelineFill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Hint -->
+    <div class="cj-scroll-hint" id="cjScrollHint">
+      <span>↓ Scroll to play the 4-step story</span>
+    </div>
   </div>
-  <h2 class="hs-t">Movie night, <em class="hs-accent">four moments.</em></h2>
-  <p class="hs-sub">From finding your theatre to hot &amp; fresh in-seat delivery in ~10 minutes.</p>
-</div>
-<div class="hs-track" id="track">
-  <article class="mom m1">
-    <div class="mom-top-bar">
-      <span class="mom-step">STEP 01</span>
-      <span style="font-size:13px;font-weight:700;color:var(--line)">01 / 04</span>
-    </div>
-    <div class="mom-badge-icon">🎟️</div>
-    <h3>Pick your cinema</h3>
-    <p>Find your partner multiplex across West Bengal or Bihar with instant seat-side food tracking.</p>
-    <div class="mom-tag">📍 Partner Theatres in WB &amp; Bihar</div>
-  </article>
-
-  <article class="mom m2">
-    <div class="mom-top-bar">
-      <span class="mom-step">STEP 02</span>
-      <span style="font-size:13px;font-weight:700;color:var(--line)">02 / 04</span>
-    </div>
-    <div class="mom-badge-icon">🎬</div>
-    <h3>Lights go down</h3>
-    <p>Settle into your plush recliner. The Dolby Atmos roar kicks in and the show begins.</p>
-    <div class="mom-tag">✨ Zero Interruption</div>
-  </article>
-
-  <article class="mom m3">
-    <div class="mom-top-bar">
-      <span class="mom-step">STEP 03</span>
-      <span style="font-size:13px;font-weight:700;color:var(--line)">03 / 04</span>
-    </div>
-    <div class="mom-badge-icon">📱</div>
-    <h3>Order from your seat</h3>
-    <p>Browse steaming gourmet combos, craft sodas and cheesy pizza with 1-tap mobile checkout.</p>
-    <div class="mom-tag">⚡ No Queues · Fast Order</div>
-  </article>
-
-  <article class="mom m4">
-    <div class="mom-top-bar">
-      <span class="mom-step">STEP 04</span>
-      <span style="font-size:13px;font-weight:700;color:#ffd23f">04 / 04</span>
-    </div>
-    <div class="mom-badge-icon">🍿</div>
-    <h3>Snacks arrive in ~10m</h3>
-    <p>Delivered silently right to your row &amp; seat number. Movie on, hunger off.</p>
-    <div class="mom-tag">🔥 Hot &amp; Fresh Guarantee</div>
-  </article>
-</div></div></section>
+</section>
 
 <section class="scr" id="screen"><div class="scr-stick"><div class="beam" aria-hidden="true"></div>
 <div class="screen" id="scrn">
@@ -12536,5 +13326,307 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
   // Initial render setup
   setTimeout(resizeCanvas, 50);
 })();
+
+/* ==========================================================================
+   CINEMA JOURNEY FRAME-BY-FRAME CANVAS SCROLL CONTROLLER (ANIMATION 2)
+   ========================================================================== */
+(function initCinemaJourneyShowcase() {
+  const TOTAL_FRAMES = 300;
+  const canvas = document.getElementById('journeyAnimCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const section = document.getElementById('story');
+  if (!section) return;
+
+  const bgAura = document.getElementById('cjBgAura');
+  const canvasGlow = document.getElementById('cjCanvasGlow');
+  const watermark = document.getElementById('cjWatermark');
+  const stepNum = document.getElementById('cjStepNum');
+  const stepStatus = document.getElementById('cjStepStatus');
+  const stepBadge = document.getElementById('cjStepBadge');
+  const cardTag = document.getElementById('cjCardTag');
+  const cardChip = document.getElementById('cjCardChip');
+  const cardTitle = document.getElementById('cjCardTitle');
+  const cardDesc = document.getElementById('cjCardDesc');
+  const featTags = document.getElementById('cjFeatTags');
+  const footerHint = document.getElementById('cjFooterHint');
+  const timelineFill = document.getElementById('cjTimelineFill');
+  const scrollHint = document.getElementById('cjScrollHint');
+  const railBtns = document.querySelectorAll('.cj-rail-btn');
+
+  const STEPS = [
+    {
+      num: '01 / 04',
+      status: 'MOMENT 01',
+      badge: 'STEP 01 · SCAN QR AT SEAT',
+      watermark: 'SCAN QR',
+      startFrame: 0,
+      endFrame: 65,
+      tag: '🎟️ Cinema Recliner Check-In',
+      chip: '📍 Seat-Side Link',
+      title: 'Find your seat. <em>Scan the code.</em>',
+      desc: 'Sink into your plush cinema recliner. Point your phone camera at the QR code on your seat armrest for instant seat-side linkage.',
+      features: ['🎟️ Seat-Side QR', '💺 VIP Recliner', '✨ Zero Waiting'],
+      footerHint: 'Instant seat pairing with kitchen',
+      aura: 'radial-gradient(ellipse at 50% 50%, #351527 0%, #200a16 55%, #15050e 100%)',
+      glow: 'rgba(255, 42, 109, 0.5)'
+    },
+    {
+      num: '02 / 04',
+      status: 'MOMENT 02',
+      badge: 'STEP 02 · DOWNLOAD & LAUNCH APP',
+      watermark: 'GET APP',
+      startFrame: 66,
+      endFrame: 128,
+      tag: '⚡ Instant App Launch',
+      chip: '📲 iOS & Android',
+      title: 'Launch app. <em>Skip every queue.</em>',
+      desc: 'The Love Cafe app opens in a flash with live theatre seat mapping and your multiplex’s complete gourmet kitchen menu.',
+      features: ['⚡ 1-Tap Access', '🎬 Dolby Atmos Ready', '📱 Instant Seat Sync'],
+      footerHint: 'No sign-up hassle during previews',
+      aura: 'radial-gradient(ellipse at 50% 50%, #fdf5ea 0%, #f7dfcb 55%, #edd0b7 100%)',
+      glow: 'rgba(255, 179, 0, 0.45)'
+    },
+    {
+      num: '03 / 04',
+      status: 'MOMENT 03',
+      badge: 'STEP 03 · 1-TAP IN-SEAT ORDER',
+      watermark: 'ORDER',
+      startFrame: 129,
+      endFrame: 225,
+      tag: '🍔 Hot Gourmet Kitchen',
+      chip: '⚡ 1-Tap Checkout',
+      title: 'Choose cravings. <em>Order from seat.</em>',
+      desc: 'Browse steaming smash burgers, 48-hour sourdough pizza, crispy momos, loaded popcorn & cold boba. 1-tap checkout.',
+      features: ['🍔 Smash Burgers', '🍕 Woodfired Pizza', '🧋 Cold Boba'],
+      footerHint: 'Order sent straight to master chef',
+      aura: 'radial-gradient(ellipse at 50% 50%, #eef6ec 0%, #d8ebd2 55%, #c8dec1 100%)',
+      glow: 'rgba(76, 175, 80, 0.45)'
+    },
+    {
+      num: '04 / 04',
+      status: 'MOMENT 04',
+      badge: 'STEP 04 · VIP SEAT DROP & ENJOY',
+      watermark: 'DELIVERY',
+      startFrame: 226,
+      endFrame: 299,
+      tag: '🔥 Silver Cloche VIP Drop',
+      chip: '⚡ ~10m In-Seat Drop',
+      title: 'Hot snacks arrive. <em>Enjoy the show!</em>',
+      desc: 'Silently delivered under a gleaming silver cloche right to your seat tray in ~10 minutes. Movie on, hunger off!',
+      features: ['⚡ ~10m In-Seat Drop', '🛎️ Silver Cloche VIP', '🍿 Fresh & Hot Guarantee'],
+      footerHint: 'Delivered silently without disturbing movie',
+      aura: 'radial-gradient(ellipse at 50% 50%, #2f1323 0%, #1c0814 55%, #10030c 100%)',
+      glow: 'rgba(230, 25, 90, 0.55)'
+    }
+  ];
+
+  let currentStepIdx = -1;
+  const frameImages = new Array(TOTAL_FRAMES);
+  const frameLoaded = new Array(TOTAL_FRAMES).fill(false);
+
+  function getFrameSrc(idx) {
+    const num = String(idx + 1).padStart(3, '0');
+    return `animation2/ezgif-7dab54ff697d4589-png-split/ezgif-frame-${num}.png`;
+  }
+
+  function resizeCanvas() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const rect = canvas.getBoundingClientRect();
+    const w = Math.round(rect.width * dpr);
+    const h = Math.round(rect.height * dpr);
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+      renderFrameAt(lastDrawnFrame >= 0 ? lastDrawnFrame : 0, true);
+    }
+  }
+
+  window.addEventListener('resize', resizeCanvas, { passive: true });
+
+  // Draw image with contain
+  function drawImageContain(img) {
+    if (!img) return;
+    const cw = canvas.width;
+    const ch = canvas.height;
+    const iw = img.naturalWidth || img.width;
+    const ih = img.naturalHeight || img.height;
+    if (!iw || !ih) return;
+    const scale = Math.min(cw / iw, ch / ih);
+    const nw = iw * scale;
+    const nh = ih * scale;
+    const nx = (cw - nw) / 2;
+    const ny = (ch - nh) / 2;
+    ctx.clearRect(0, 0, cw, ch);
+    ctx.drawImage(img, nx, ny, nw, nh);
+  }
+
+  let lastDrawnFrame = -1;
+  function renderFrameAt(frameIdx, force) {
+    frameIdx = Math.max(0, Math.min(TOTAL_FRAMES - 1, Math.round(frameIdx)));
+    if (!force && frameIdx === lastDrawnFrame) return;
+
+    // Find best loaded frame: exact, then nearest anywhere
+    let bestImg = null;
+    if (frameLoaded[frameIdx] && frameImages[frameIdx]) {
+      bestImg = frameImages[frameIdx];
+    } else {
+      let minDiff = Infinity;
+      for (let i = 0; i < TOTAL_FRAMES; i++) {
+        if (frameLoaded[i] && frameImages[i]) {
+          const diff = Math.abs(i - frameIdx);
+          if (diff < minDiff) {
+            minDiff = diff;
+            bestImg = frameImages[i];
+          }
+        }
+      }
+    }
+
+    if (bestImg) {
+      drawImageContain(bestImg);
+      lastDrawnFrame = frameIdx;
+    }
+
+    // Update Story Card & Step Info
+    const stepIdx = STEPS.findIndex(s => frameIdx >= s.startFrame && frameIdx <= s.endFrame);
+    if (stepIdx !== -1 && stepIdx !== currentStepIdx) {
+      currentStepIdx = stepIdx;
+      const s = STEPS[stepIdx];
+      if (stepNum) stepNum.textContent = s.num;
+      if (stepStatus) stepStatus.textContent = s.status;
+      if (stepBadge) stepBadge.textContent = s.badge;
+      if (cardTag) cardTag.textContent = s.tag;
+      if (cardChip) cardChip.textContent = s.chip;
+      if (cardTitle) cardTitle.innerHTML = s.title;
+      if (cardDesc) cardDesc.textContent = s.desc;
+      if (footerHint) footerHint.textContent = s.footerHint;
+      if (watermark) watermark.textContent = s.watermark;
+      if (bgAura) bgAura.style.background = s.aura;
+      if (canvasGlow) canvasGlow.style.background = s.glow;
+
+      // Update Features Tags
+      if (featTags && s.features) {
+        featTags.innerHTML = s.features.map(f => `<span class="cj-feat-tag">${f}</span>`).join('');
+      }
+
+      railBtns.forEach((btn, idx) => {
+        btn.classList.toggle('active', idx === stepIdx);
+      });
+    }
+
+    // Update Timeline
+    const pct = Math.round((frameIdx / (TOTAL_FRAMES - 1)) * 100);
+    if (timelineFill) timelineFill.style.width = pct + '%';
+    if (scrollHint) scrollHint.style.opacity = frameIdx > 12 ? '0' : '1';
+  }
+
+  // Preloading System
+  function loadFrame(idx, callback) {
+    if (frameLoaded[idx]) {
+      if (callback) callback();
+      return;
+    }
+    const img = new Image();
+    img.onload = () => {
+      frameImages[idx] = img;
+      frameLoaded[idx] = true;
+      if (Math.abs(Math.round(currentFrame) - idx) <= 2) {
+        renderFrameAt(currentFrame, true);
+      }
+      if (callback) callback();
+    };
+    img.src = getFrameSrc(idx);
+  }
+
+  // Immediate Tier 0: Key Anchor frames for all 4 cinema moments
+  const ANCHOR_FRAMES = [0, 25, 60, 90, 125, 150, 180, 225, 260, 280, 299];
+  ANCHOR_FRAMES.forEach(idx => loadFrame(idx, () => {
+    if (idx === 0) {
+      resizeCanvas();
+      renderFrameAt(0, true);
+    }
+  }));
+
+  // Tier 1 & 2 Background queue
+  let queue = [];
+  for (let i = 0; i < TOTAL_FRAMES; i += 4) if (!queue.includes(i)) queue.push(i);
+  for (let i = 0; i < TOTAL_FRAMES; i += 2) if (!queue.includes(i)) queue.push(i);
+  for (let i = 0; i < TOTAL_FRAMES; i++) if (!queue.includes(i)) queue.push(i);
+
+  let qIdx = 0;
+  function processQueue() {
+    if (qIdx >= queue.length) return;
+    const batch = queue.slice(qIdx, qIdx + 10);
+    qIdx += 10;
+    let loadedInBatch = 0;
+    batch.forEach(idx => {
+      loadFrame(idx, () => {
+        loadedInBatch++;
+        if (loadedInBatch === batch.length) {
+          setTimeout(processQueue, 15);
+        }
+      });
+    });
+  }
+  setTimeout(processQueue, 120);
+
+  // Scroll Sync with Gentle Lerp for Slow, Cinematic Scrubbing
+  let targetFrame = 0;
+  let currentFrame = 0;
+
+  function onScroll() {
+    const rect = section.getBoundingClientRect();
+    const span = Math.max(1, section.offsetHeight - window.innerHeight);
+    const scrollWithin = -rect.top;
+    const prog = Math.min(1, Math.max(0, scrollWithin / span));
+    targetFrame = prog * (TOTAL_FRAMES - 1);
+
+    // Priority load nearby frames
+    const center = Math.round(targetFrame);
+    for (let off = -8; off <= 8; off++) {
+      const f = center + off;
+      if (f >= 0 && f < TOTAL_FRAMES && !frameLoaded[f]) {
+        loadFrame(f);
+      }
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  function animLoop() {
+    const diff = targetFrame - currentFrame;
+    if (Math.abs(diff) > 0.04) {
+      currentFrame += diff * 0.11;
+      renderFrameAt(currentFrame, false);
+    }
+    requestAnimationFrame(animLoop);
+  }
+  requestAnimationFrame(animLoop);
+
+  // Click navigation for the Chapter Rail buttons
+  railBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetFrameNum = parseInt(btn.getAttribute('data-frame'), 10) || 0;
+      for (let off = -5; off <= 5; off++) {
+        const f = targetFrameNum + off;
+        if (f >= 0 && f < TOTAL_FRAMES) loadFrame(f);
+      }
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+      const span = Math.max(1, section.offsetHeight - window.innerHeight);
+      const targetScroll = sectionTop + (targetFrameNum / (TOTAL_FRAMES - 1)) * span;
+      if (window.lenis) {
+        window.lenis.scrollTo(targetScroll, { duration: 1.2 });
+      } else {
+        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Initial render setup
+  setTimeout(resizeCanvas, 60);
+})();
+
 </script>
 </body></html>
