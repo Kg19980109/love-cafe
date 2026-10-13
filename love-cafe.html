@@ -7987,6 +7987,697 @@ body.locked .sd {
   }
 }
 
+
+
+/* ==========================================================================
+   ENHANCED ATTRACTIVE & EYE-CATCHY FOOD FRAME-BY-FRAME SHOWCASE STYLES
+   ========================================================================== */
+.food-frames-showcase {
+  height: 520vh !important;
+  position: relative !important;
+  z-index: 2 !important;
+  background: #fcdfe4;
+}
+
+@media (max-width: 860px) {
+  .food-frames-showcase {
+    height: 440vh !important;
+  }
+}
+
+.ff-stick {
+  position: sticky !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: calc(62px + env(safe-area-inset-top, 0px)) clamp(16px, 3.2vw, 40px) 16px !important;
+  box-sizing: border-box !important;
+}
+
+.ff-bg-aura {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  transition: background 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background: radial-gradient(ellipse at 50% 50%, #fbd5dc 0%, #f7cad2 45%, #edd1d6 100%) !important;
+}
+
+.ff-vignette {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(42, 12, 28, 0.09) 100%) !important;
+}
+
+.ff-glow-beam {
+  position: absolute !important;
+  top: -20% !important;
+  left: 50% !important;
+  transform: translateX(-50%) rotate(15deg) !important;
+  width: 120vw !important;
+  height: 60vh !important;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.35) 0%, transparent 70%) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.ff-watermark {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  font-family: var(--disp) !important;
+  font-size: clamp(80px, 17vw, 250px) !important;
+  font-weight: 800 !important;
+  color: rgba(255, 255, 255, 0.52) !important;
+  letter-spacing: 0.08em !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  transition: opacity 0.35s ease, transform 0.35s ease !important;
+  user-select: none !important;
+}
+
+/* Ambient Floating Particles */
+.ff-ambient-particles {
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+.ff-ambient-particles .ff-p {
+  position: absolute !important;
+  font-size: clamp(16px, 2vw, 28px) !important;
+  opacity: 0.5 !important;
+  animation: ffFloat 5s ease-in-out infinite alternate !important;
+}
+.ff-p.p1 { top: 18%; left: 8%; animation-duration: 6s; }
+.ff-p.p2 { top: 22%; right: 9%; animation-duration: 4.5s; font-size: 20px !important; }
+.ff-p.p3 { top: 62%; left: 6%; animation-duration: 7s; }
+.ff-p.p4 { top: 78%; left: 16%; animation-duration: 5.2s; }
+.ff-p.p5 { top: 38%; right: 6%; animation-duration: 6.8s; }
+.ff-p.p6 { top: 82%; right: 12%; animation-duration: 5.5s; }
+.ff-p.p7 { bottom: 18%; left: 4%; animation-duration: 7.2s; }
+.ff-p.p8 { top: 12%; left: 28%; animation-duration: 4.8s; font-size: 16px !important; }
+
+@keyframes ffFloat {
+  0% { transform: translateY(0px) rotate(0deg) scale(1); }
+  100% { transform: translateY(-16px) rotate(8deg) scale(1.1); }
+}
+
+/* Eye-Catchy Header */
+.ff-header {
+  position: relative !important;
+  z-index: 10 !important;
+  text-align: center !important;
+  max-width: 860px !important;
+  margin: 0 auto !important;
+}
+
+.ff-badge-wrap {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 5px !important;
+}
+
+.ff-badge {
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--rasp) !important;
+  background: rgba(230, 25, 90, 0.08) !important;
+  border: 1px solid rgba(230, 25, 90, 0.22) !important;
+  padding: 4px 14px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+.ff-live-pill {
+  font-family: var(--disp) !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #1e7e34 !important;
+  background: rgba(40, 167, 69, 0.12) !important;
+  border: 1px solid rgba(40, 167, 69, 0.3) !important;
+  padding: 4px 12px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.ff-pulse-dot {
+  width: 6px !important;
+  height: 6px !important;
+  background: #28a745 !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  box-shadow: 0 0 6px #28a745 !important;
+  animation: ffPulse 1.8s infinite !important;
+}
+
+@keyframes ffPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.ff-title {
+  font-family: var(--disp) !important;
+  font-size: clamp(22px, 3.2vw, 38px) !important;
+  font-weight: 800 !important;
+  color: var(--deep) !important;
+  line-height: 1.08 !important;
+  margin: 0 0 3px !important;
+}
+.ff-title em {
+  color: var(--rasp) !important;
+  font-style: normal !important;
+}
+
+.ff-subtitle {
+  font-family: var(--sans) !important;
+  font-size: clamp(12px, 1.05vw, 14.5px) !important;
+  color: var(--mut) !important;
+  margin: 0 0 7px !important;
+  max-width: 680px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* What We Generally Serve Chips Row */
+.ff-serves-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  margin-top: 2px !important;
+}
+
+.ff-serve-chip {
+  font-family: var(--disp) !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  color: var(--deep) !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(230, 25, 90, 0.2) !important;
+  border-radius: 999px !important;
+  padding: 3px 11px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.2s ease !important;
+}
+.ff-serve-chip:hover {
+  background: #ffffff !important;
+  transform: translateY(-1px) !important;
+  border-color: var(--rasp) !important;
+}
+
+/* Central Stage */
+.ff-stage {
+  position: relative !important;
+  z-index: 10 !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(18px, 3.2vw, 44px) !important;
+  min-height: 0 !important;
+  padding: 6px 0 !important;
+}
+
+/* Canvas Cinema Bezel */
+.ff-canvas-card {
+  position: relative !important;
+  width: clamp(340px, 56vw, 760px) !important;
+  aspect-ratio: 16/9 !important;
+  max-height: calc(100vh - 275px) !important;
+  border-radius: 24px !important;
+  background: #180911 !important;
+  box-shadow: 0 26px 75px rgba(45, 12, 28, 0.22), 0 0 35px rgba(255, 42, 109, 0.3) !important;
+  border: 3px solid rgba(255, 255, 255, 0.95) !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.ff-canvas-header-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 6px 14px !important;
+  background: rgba(20, 6, 14, 0.88) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  z-index: 2 !important;
+}
+
+.ff-cam-badge {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-family: var(--disp) !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: #fff !important;
+}
+
+.ff-rec-dot {
+  width: 7px !important;
+  height: 7px !important;
+  background: #ff2a6d !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 8px #ff2a6d !important;
+  animation: ffPulse 1.2s infinite !important;
+}
+
+.ff-cam-meta {
+  font-family: monospace !important;
+  font-size: 11px !important;
+  color: #ffd23f !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+}
+
+.ff-cam-lens {
+  font-family: var(--disp) !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  color: #8ed081 !important;
+  background: rgba(142, 208, 129, 0.18) !important;
+  padding: 2px 8px !important;
+  border-radius: 999px !important;
+}
+
+.ff-canvas-viewport {
+  flex: 1 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #fff !important;
+}
+
+#foodAnimCanvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  background: #fff !important;
+}
+
+.ff-canvas-glow {
+  position: absolute !important;
+  inset: -25px !important;
+  z-index: -1 !important;
+  border-radius: 40px !important;
+  opacity: 0.7 !important;
+  filter: blur(32px) !important;
+  pointer-events: none !important;
+  transition: background 0.45s ease !important;
+  background: rgba(230, 25, 90, 0.45) !important;
+}
+
+/* Luxury Floating VIP Story Card */
+.ff-card-wrap {
+  width: clamp(280px, 29vw, 380px) !important;
+  flex-shrink: 0 !important;
+}
+
+.ff-story-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-radius: 24px !important;
+  border: 2.5px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 20px 55px rgba(59, 15, 34, 0.14), 0 0 30px rgba(230, 25, 90, 0.08) !important;
+  padding: 22px 24px !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+}
+
+.ff-card-top-ribbon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 10px !important;
+}
+
+.ff-status-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-family: var(--disp) !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: #b71c1c !important;
+  background: rgba(229, 57, 53, 0.12) !important;
+  padding: 3px 10px !important;
+  border-radius: 999px !important;
+}
+
+.ff-status-dot {
+  width: 6px !important;
+  height: 6px !important;
+  background: #e53935 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 6px #e53935 !important;
+  animation: ffPulse 1.2s infinite !important;
+}
+
+.ff-chapter-num {
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: var(--mut) !important;
+  letter-spacing: 0.06em !important;
+}
+
+.ff-card-header-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 10px !important;
+}
+
+.ff-card-tag {
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: var(--rasp) !important;
+  background: rgba(230, 25, 90, 0.1) !important;
+  padding: 4px 12px !important;
+  border-radius: 999px !important;
+}
+
+.ff-card-chip {
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: #b78103 !important;
+  background: rgba(255, 210, 63, 0.22) !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+}
+
+.ff-card-title {
+  font-family: var(--disp) !important;
+  font-size: clamp(20px, 1.9vw, 26px) !important;
+  font-weight: 800 !important;
+  color: var(--deep) !important;
+  line-height: 1.15 !important;
+  margin: 0 0 8px !important;
+}
+.ff-card-title em {
+  color: var(--rasp) !important;
+  font-style: normal !important;
+}
+
+.ff-card-desc {
+  font-family: var(--sans) !important;
+  font-size: 13.5px !important;
+  color: var(--ink) !important;
+  line-height: 1.45 !important;
+  margin: 0 0 12px !important;
+}
+
+/* Ingredients Tags Box */
+.ff-ingredients-box {
+  background: rgba(250, 240, 244, 0.75) !important;
+  border: 1px solid rgba(230, 25, 90, 0.12) !important;
+  border-radius: 14px !important;
+  padding: 10px 12px !important;
+  margin-bottom: 14px !important;
+}
+
+.ff-ing-label {
+  display: block !important;
+  font-family: var(--disp) !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: var(--mut) !important;
+  margin-bottom: 6px !important;
+}
+
+.ff-ing-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+}
+
+.ff-ing-tag {
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  color: var(--deep) !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+.ff-card-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  padding-top: 10px !important;
+  border-top: 1px solid rgba(59, 15, 34, 0.08) !important;
+}
+
+.ff-card-delivery {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  font-family: var(--disp) !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  color: #1e7e34 !important;
+}
+
+.ff-card-cta-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: linear-gradient(135deg, var(--rasp) 0%, #ff4d84 100%) !important;
+  color: #fff !important;
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  padding: 7px 14px !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 14px rgba(230, 25, 90, 0.4) !important;
+  transition: all 0.25s ease !important;
+}
+.ff-card-cta-btn:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 6px 20px rgba(230, 25, 90, 0.55) !important;
+}
+
+/* Eye-Catchy Chapter Scrub Rail */
+.ff-bottom-bar {
+  position: relative !important;
+  z-index: 10 !important;
+  width: 100% !important;
+  max-width: 1080px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.ff-scrub-rail {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  padding: 6px 8px !important;
+  border-radius: 999px !important;
+  border: 1.8px solid rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 12px 36px rgba(59, 15, 34, 0.12) !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  scrollbar-width: none !important;
+}
+.ff-scrub-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.ff-rail-btn {
+  font-family: var(--disp) !important;
+  font-size: 12.5px !important;
+  font-weight: 800 !important;
+  color: var(--ink) !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 7px 15px !important;
+  border-radius: 999px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.25s ease !important;
+  white-space: nowrap !important;
+}
+
+.ff-btn-count {
+  font-size: 10px !important;
+  opacity: 0.65 !important;
+  font-family: monospace !important;
+}
+
+.ff-rail-btn:hover {
+  background: rgba(230, 25, 90, 0.08) !important;
+  color: var(--rasp) !important;
+}
+
+.ff-rail-btn.active {
+  background: linear-gradient(135deg, var(--rasp) 0%, #ff4d84 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(230, 25, 90, 0.45) !important;
+}
+.ff-rail-btn.active .ff-btn-count {
+  opacity: 0.9 !important;
+}
+
+.ff-timeline-row {
+  width: 100% !important;
+  max-width: 480px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.ff-timeline-track {
+  flex: 1 !important;
+  height: 6px !important;
+  background: rgba(59, 15, 34, 0.1) !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+
+.ff-timeline-fill {
+  height: 100% !important;
+  width: 0% !important;
+  background: linear-gradient(90deg, var(--rasp), #ffd23f) !important;
+  border-radius: 999px !important;
+  transition: width 0.08s linear !important;
+}
+
+.ff-frame-badge {
+  font-family: var(--disp) !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  color: var(--mut) !important;
+  white-space: nowrap !important;
+}
+
+.ff-scroll-hint {
+  position: absolute !important;
+  bottom: 6px !important;
+  font-family: var(--hand, 'Caveat', cursive) !important;
+  font-size: 17px !important;
+  color: var(--rasp) !important;
+  font-weight: 700 !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease !important;
+}
+
+/* Mobile responsive rules */
+@media (max-width: 860px) {
+  .ff-stick {
+    padding: calc(54px + env(safe-area-inset-top, 0px)) 12px 10px !important;
+  }
+  .ff-header {
+    margin-bottom: 2px !important;
+  }
+  .ff-title {
+    font-size: 20px !important;
+  }
+  .ff-subtitle {
+    display: none !important;
+  }
+  .ff-serves-row {
+    gap: 4px !important;
+  }
+  .ff-serve-chip {
+    font-size: 10.5px !important;
+    padding: 2px 8px !important;
+  }
+  .ff-stage {
+    flex-direction: column !important;
+    gap: 6px !important;
+    padding: 0 !important;
+  }
+  .ff-canvas-card {
+    width: 95vw !important;
+    max-height: 40vh !important;
+    border-radius: 18px !important;
+  }
+  .ff-canvas-header-bar {
+    padding: 4px 10px !important;
+  }
+  .ff-cam-meta {
+    font-size: 9.5px !important;
+  }
+  .ff-card-wrap {
+    width: 100% !important;
+    max-width: 400px !important;
+  }
+  .ff-story-card {
+    padding: 10px 14px !important;
+    border-radius: 16px !important;
+  }
+  .ff-card-title {
+    font-size: 16px !important;
+    margin: 0 0 2px !important;
+  }
+  .ff-card-desc {
+    display: none !important;
+  }
+  .ff-ingredients-box {
+    padding: 6px 10px !important;
+    margin-bottom: 8px !important;
+  }
+  .ff-ing-label {
+    display: none !important;
+  }
+  .ff-card-footer {
+    padding-top: 6px !important;
+  }
+  .ff-rail-btn {
+    font-size: 11px !important;
+    padding: 5px 11px !important;
+  }
+  .ff-timeline-row {
+    max-width: 250px !important;
+  }
+  .ff-scroll-hint {
+    display: none !important;
+  }
+}
+
 </style></head><body class="locked"><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
 <div class="g-projector-beam" aria-hidden="true"></div>
 <div class="g-ambient-glow" aria-hidden="true"></div>
@@ -8337,123 +9028,129 @@ body.locked .sd {
 </div>
 <div class="hero-scroll-buffer" aria-hidden="true"></div>
 <div class="tick" aria-hidden="true"><div><span>🍿 Gourmet Popcorn</span><span>★</span><span>🍔 Artisan Burgers</span><span>★</span><span>🍕 Sourdough Pizza</span><span>★</span><span>🥤 Craft Cola</span><span>★</span><span>🍦 Belgian Gelato</span><span>★</span><span>🍿 Gourmet Popcorn</span><span>★</span><span>🍔 Artisan Burgers</span><span>★</span><span>🍕 Sourdough Pizza</span><span>★</span><span>🥤 Craft Cola</span><span>★</span><span>🍦 Belgian Gelato</span><span>★</span></div></div>
-<section class="orb3" id="flavours" aria-label="Menu flavours">
-  <div class="o-stick">
-    <div class="sp" aria-hidden="true">
-      <i style="left:12%;top:20%;animation-delay:-1.2s;font-size:14px">✦</i>
-      <i style="left:86%;top:22%;animation-delay:-0.4s;font-size:18px">✦</i>
-      <i style="left:8%;top:75%;animation-delay:-1.9s;font-size:12px">✦</i>
-      <i style="left:88%;top:72%;animation-delay:-2.3s;font-size:16px">✦</i>
-      <i style="left:24%;top:84%;animation-delay:-0.8s;font-size:11px">✦</i>
-      <i style="left:76%;top:82%;animation-delay:-3.1s;font-size:15px">✦</i>
-    </div>
-    <div class="o-bg" id="obg" aria-hidden="true">FLAVOURS ★ CINEMA CRAVINGS ★ POPCORN ★ BURGER ★ PIZZA ★ SANDWICH ★ MOMOS ★ BOBA ★ CRAFT COLD DRINKS</div>
-    
-    <div class="o-head-wrap">
-      <div class="o-mini-badge">✦ EXPANDED CINEMATIC FOOD SHOWCASE · IN-SEAT DELIVERY ✦</div>
-      <h2 class="o-t">Your movie deserves <em>a little more.</em></h2>
-      <p class="o-subtitle">From spicy momos and cheesy sandwiches to boba, burgers, and movie-night combos — discover your next favorite bite.</p>
-      
-      <!-- Interactive 8-Category Showcase Quick Rail -->
-      <div class="flavour-pill-bar" id="flavourPillBar" aria-label="Snack Menu Categories">
-        <button class="f-pill active" data-fidx="0"><span class="f-icon">🍔</span><span class="f-name">Burgers &amp; Pizza</span></button>
-        <button class="f-pill" data-fidx="1"><span class="f-icon">🥟</span><span class="f-name">Momos &amp; Panini</span></button>
-        <button class="f-pill" data-fidx="2"><span class="f-icon">🧋</span><span class="f-name">Boba &amp; Cold Drinks</span></button>
-        <button class="f-pill" data-fidx="3"><span class="f-icon">🍟</span><span class="f-name">Fries &amp; Nuggets</span></button>
-        <button class="f-pill" data-fidx="4"><span class="f-icon">🍿</span><span class="f-name">Popcorn &amp; Snacks</span></button>
-        <button class="f-pill" data-fidx="5"><span class="f-icon">🌭</span><span class="f-name">Hot Dogs &amp; Wraps</span></button>
-        <button class="f-pill" data-fidx="6"><span class="f-icon">🍫</span><span class="f-name">Desserts &amp; Sweets</span></button>
-        <button class="f-pill" data-fidx="7"><span class="f-icon">🎬</span><span class="f-name">Movie Combos</span></button>
-      </div>
-      <span class="hand o-hint" id="ohint">scroll down to experience all 8 cinematic food scenes</span>
+<section class="food-frames-showcase" id="flavours" aria-label="Frame-by-Frame Cinematic Food Showcase">
+  <div class="ff-stick" id="ffStick">
+    <!-- Ambient Dynamic Background Color Layer & Cinema Light Cones -->
+    <div class="ff-bg-aura" id="ffBgAura" aria-hidden="true"></div>
+    <div class="ff-vignette" aria-hidden="true"></div>
+    <div class="ff-glow-beam" aria-hidden="true"></div>
+
+    <!-- Floating Background Watermark Typography -->
+    <div class="ff-watermark" id="ffWatermark" aria-hidden="true">BURGER</div>
+
+    <!-- Floating Ambient Food Sparkles -->
+    <div class="ff-ambient-particles" aria-hidden="true">
+      <span class="ff-p p1">🍿</span>
+      <span class="ff-p p2">✨</span>
+      <span class="ff-p p3">🧀</span>
+      <span class="ff-p p4">🔥</span>
+      <span class="ff-p p5">💖</span>
+      <span class="ff-p p6">🌿</span>
+      <span class="ff-p p7">🧋</span>
+      <span class="ff-p p8">✨</span>
     </div>
 
-    <!-- 3D 7-Snack Orbit Ring -->
-    <div class="ring" id="ring">
-      <div class="o-ring"></div>
-      <div class="o-floor"></div>
-      
-      <!-- 0: Popcorn -->
-      <div class="it" data-idx="0">
-        <div class="ic">
-          <img src="assets/flavours/snack_popcorn.jpg" alt="Gourmet Cinema Popcorn" width="420" height="420" loading="eager">
-          <span class="it-badge">🍿 Bestseller</span>
-        </div>
+    <!-- Eye-Catchy Top Header & What We Serve Marquee -->
+    <div class="ff-header">
+      <div class="ff-badge-wrap">
+        <span class="ff-badge">🍿 THE LOVE CAFE KITCHEN · PREMIER CINEMA DINING 🍿</span>
+        <span class="ff-live-pill"><span class="ff-pulse-dot"></span> LIVE FRAME-BY-FRAME CRAVINGS</span>
       </div>
+      <h2 class="ff-title">Everything You Crave. <em>Made Fresh For Movie Time.</em></h2>
+      <p class="ff-subtitle">Gourmet smash burgers, woodfired pizzas, toasted paninis, artisan pasta, Himalayan momos &amp; ice-cold boba — delivered hot to your recliner.</p>
       
-      <!-- 1: Burger -->
-      <div class="it" data-idx="1">
-        <div class="ic">
-          <img src="assets/flavours/snack_burger.jpg" alt="Artisan Brioche Smash Burger" width="420" height="420" loading="eager">
-          <span class="it-badge">🍔 Chef's Choice</span>
-        </div>
-      </div>
-      
-      <!-- 2: Pizza -->
-      <div class="it" data-idx="2">
-        <div class="ic">
-          <img src="assets/flavours/snack_pizza.jpg" alt="Woodfired Sourdough Pizza" width="420" height="420" loading="eager">
-          <span class="it-badge">🍕 Woodfired</span>
-        </div>
-      </div>
-      
-      <!-- 3: Sandwich -->
-      <div class="it" data-idx="3">
-        <div class="ic">
-          <img src="assets/flavours/snack_sandwich.jpg" alt="Toasted Gourmet Club Sandwich" width="420" height="420" loading="eager">
-          <span class="it-badge">🥪 Deli Panini</span>
-        </div>
-      </div>
-      
-      <!-- 4: Momo -->
-      <div class="it" data-idx="4">
-        <div class="ic">
-          <img src="assets/flavours/snack_momo.jpg" alt="Himalayan Steamed Momos" width="420" height="420" loading="eager">
-          <span class="it-badge">🥟 Steamed Hot</span>
-        </div>
-      </div>
-      
-      <!-- 5: Boba -->
-      <div class="it" data-idx="5">
-        <div class="ic">
-          <img src="assets/flavours/snack_boba.jpg" alt="Tiger Brown Sugar Boba Tea" width="420" height="420" loading="eager">
-          <span class="it-badge">🧋 Fresh Milk</span>
-        </div>
-      </div>
-      
-      <!-- 6: Cold Drink -->
-      <div class="it" data-idx="6">
-        <div class="ic">
-          <img src="assets/flavours/snack_cold_drink.jpg" alt="Ice-Cold Craft Cinema Cola" width="420" height="420" loading="eager">
-          <span class="it-badge">🥤 2°C Chilled</span>
-        </div>
+      <!-- Visual Quick Tags: What We Generally Serve -->
+      <div class="ff-serves-row" aria-label="What Love Cafe serves">
+        <span class="ff-serve-chip">🍔 Smash Burgers</span>
+        <span class="ff-serve-chip">🍕 Woodfired Pizza</span>
+        <span class="ff-serve-chip">🥪 Sourdough Paninis</span>
+        <span class="ff-serve-chip">🥟 Steamed &amp; Crispy Momos</span>
+        <span class="ff-serve-chip">🍝 Italian Pastas</span>
+        <span class="ff-serve-chip">🧋 Tapioca Boba</span>
+        <span class="ff-serve-chip">🍿 Cinema Popcorn</span>
+        <span class="ff-serve-chip">⚡ ~10m In-Seat Drop</span>
       </div>
     </div>
 
-    <!-- Active Caption Showcase -->
-    <div class="o-cap" aria-live="polite">
-      <div class="o-meta-tags">
-        <span class="o-pill o-badge-pill" id="obadge">🍿 Cinema Bestseller</span>
-        <span class="o-pill o-fresh-pill" id="ochef">🔥 Hot Seat Drop</span>
-        <span class="o-pill o-time-pill">⚡ Delivered in ~10 mins</span>
+    <!-- Central Interactive Stage -->
+    <div class="ff-stage" id="ffStage">
+      <!-- High-DPI Frame Animation Canvas with Luxury Cinema Bezel -->
+      <div class="ff-canvas-card">
+        <div class="ff-canvas-header-bar">
+          <div class="ff-cam-badge"><span class="ff-rec-dot"></span> 4K CINEMA KITCHEN</div>
+          <div class="ff-cam-meta" id="ffCamMeta">BURGER ASSEMBLY · FRAME 025/300</div>
+          <div class="ff-cam-lens">60 FPS · LIVE</div>
+        </div>
+        <div class="ff-canvas-viewport">
+          <canvas id="foodAnimCanvas"></canvas>
+        </div>
+        <div class="ff-canvas-glow" id="ffCanvasGlow" aria-hidden="true"></div>
       </div>
-      <b id="oname">Gourmet Popcorn</b>
-      <span class="hand" id="osub">Golden Butter, Caramel &amp; Truffle Crunch</span>
-      <div class="od" id="od" aria-label="Snack dots pagination">
-        <b class="on" title="Popcorn"></b>
-        <b title="Burger"></b>
-        <b title="Pizza"></b>
-        <b title="Sandwich"></b>
-        <b title="Momo"></b>
-        <b title="Boba"></b>
-        <b title="Cold Drink"></b>
+
+      <!-- Luxury Floating VIP Menu Story Card -->
+      <div class="ff-card-wrap">
+        <div class="ff-story-card" id="ffStoryCard">
+          <div class="ff-card-top-ribbon">
+            <div class="ff-status-pill"><span class="ff-status-dot"></span> NOW SERVING</div>
+            <span class="ff-chapter-num" id="ffChapNum">01 / 06</span>
+          </div>
+          
+          <div class="ff-card-header-group">
+            <span class="ff-card-tag" id="ffCardTag">🍔 Gourmet Grill &amp; Brioche</span>
+            <span class="ff-card-chip" id="ffCardChip">🔥 Sizzling Hot</span>
+          </div>
+
+          <h3 class="ff-card-title" id="ffCardTitle">Big bites. <em>Bigger cravings.</em></h3>
+          <p class="ff-card-desc" id="ffCardDesc">Juicy double-layer brioche smash burger with sizzling beef, melting sharp cheddar, crisp lettuce &amp; tomato dripping with house aioli.</p>
+          
+          <!-- Dish Highlights / Ingredients List -->
+          <div class="ff-ingredients-box">
+            <span class="ff-ing-label">WHAT'S INSIDE:</span>
+            <div class="ff-ing-tags" id="ffIngTags">
+              <span class="ff-ing-tag">🥩 Double Patty</span>
+              <span class="ff-ing-tag">🧀 Triple Cheddar</span>
+              <span class="ff-ing-tag">🍞 Brioche Bun</span>
+              <span class="ff-ing-tag">🧅 Truffle Relish</span>
+            </div>
+          </div>
+
+          <div class="ff-card-footer">
+            <div class="ff-card-delivery">
+              <span class="ff-del-icon">⚡</span>
+              <span>Delivered hot to your seat in ~10 mins</span>
+            </div>
+            <a href="#get" class="ff-card-cta-btn" data-dl>
+              <span>Order To Seat</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="o-actions-row">
-        <a class="btn o-seat-btn" data-dl href="#get">
-          <span>Order to Seat in App</span>
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+    </div>
+
+    <!-- Eye-Catchy Chapter Scrub Rail & Interactive Scrub Control -->
+    <div class="ff-bottom-bar">
+      <div class="ff-scrub-rail" id="ffScrubRail" aria-label="Jump to food chapter">
+        <button type="button" class="ff-rail-btn active" data-frame="25" data-chap="0"><span class="ff-btn-icon">🍔</span><span class="ff-btn-label">Smash Burger</span><span class="ff-btn-count">01</span></button>
+        <button type="button" class="ff-rail-btn" data-frame="75" data-chap="1"><span class="ff-btn-icon">🥪</span><span class="ff-btn-label">Cheese Panini</span><span class="ff-btn-count">02</span></button>
+        <button type="button" class="ff-rail-btn" data-frame="130" data-chap="2"><span class="ff-btn-icon">🍕</span><span class="ff-btn-label">Woodfired Pizza</span><span class="ff-btn-count">03</span></button>
+        <button type="button" class="ff-rail-btn" data-frame="185" data-chap="3"><span class="ff-btn-icon">🍝</span><span class="ff-btn-label">Italian Pasta</span><span class="ff-btn-count">04</span></button>
+        <button type="button" class="ff-rail-btn" data-frame="235" data-chap="4"><span class="ff-btn-icon">🥟</span><span class="ff-btn-label">Steamed Momos</span><span class="ff-btn-count">05</span></button>
+        <button type="button" class="ff-rail-btn" data-frame="290" data-chap="5"><span class="ff-btn-icon">🧋</span><span class="ff-btn-label">Tapioca Boba</span><span class="ff-btn-count">06</span></button>
       </div>
+
+      <!-- Timeline & Progress Indicator -->
+      <div class="ff-timeline-row">
+        <div class="ff-timeline-track">
+          <div class="ff-timeline-fill" id="ffTimelineFill"></div>
+        </div>
+        <div class="ff-frame-badge" id="ffFrameBadge">Frame 25 / 300 · 8%</div>
+      </div>
+    </div>
+
+    <!-- Scroll Hint -->
+    <div class="ff-scroll-hint" id="ffScrollHint">
+      <span>↓ Scroll to animate the feast</span>
     </div>
   </div>
 </section>
@@ -11417,6 +12114,602 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
   } else {
     initAppScreensCarousel();
   }
+})();
+</script>
+<script>
+
+/* ==========================================================================
+   FRAME-BY-FRAME CANVAS SCROLL CONTROLLER (300 FRAMES)
+   ========================================================================== */
+(function initFoodFrameShowcase() {
+  const TOTAL_FRAMES = 300;
+  const canvas = document.getElementById('foodAnimCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const section = document.getElementById('flavours');
+  if (!section) return;
+
+  const bgAura = document.getElementById('ffBgAura');
+  const canvasGlow = document.getElementById('ffCanvasGlow');
+  const watermark = document.getElementById('ffWatermark');
+  const cardTag = document.getElementById('ffCardTag');
+  const cardChip = document.getElementById('ffCardChip');
+  const cardTitle = document.getElementById('ffCardTitle');
+  const cardDesc = document.getElementById('ffCardDesc');
+  const timelineFill = document.getElementById('ffTimelineFill');
+  const frameBadge = document.getElementById('ffFrameBadge');
+  const scrollHint = document.getElementById('ffScrollHint');
+  const railBtns = document.querySelectorAll('.ff-rail-btn');
+  const chapNum = document.getElementById('ffChapNum');
+  const camMeta = document.getElementById('ffCamMeta');
+  const ingTags = document.getElementById('ffIngTags');
+
+  // 6 Food Chapters with rich ingredient tags & metadata
+  const CHAPTERS = [
+    {
+      num: '01 / 06',
+      name: 'BURGER',
+      camTitle: 'BURGER ASSEMBLY',
+      startFrame: 0,
+      endFrame: 55,
+      watermark: 'BURGER',
+      tag: '🍔 Gourmet Grill & Brioche',
+      chip: '🔥 Sizzling Hot',
+      title: 'Big bites. <em>Bigger cravings.</em>',
+      desc: 'Juicy double-layer brioche smash burger with sizzling beef, melting sharp cheddar, crisp lettuce & tomato dripping with house aioli.',
+      ingredients: ['🥩 Double Patty', '🧀 Triple Cheddar', '🍞 Brioche Bun', '🧅 Truffle Relish'],
+      aura: 'radial-gradient(ellipse at 50% 50%, #fbd5dc 0%, #f7cad2 45%, #edd1d6 100%)',
+      glow: 'rgba(230, 25, 90, 0.45)'
+    },
+    {
+      num: '02 / 06',
+      name: 'SANDWICH',
+      camTitle: 'PANINI CHEESE PULL',
+      startFrame: 56,
+      endFrame: 105,
+      watermark: 'PANINI',
+      tag: '🥪 Artisan Deli Classic',
+      chip: '🧀 Gooey Cheese Pull',
+      title: 'Stacked with <em>happiness.</em>',
+      desc: 'Golden toasted sourdough grilled cheese with triple-decker herb poultry, sun-dried relish & irresistible cheese stretch.',
+      ingredients: ['🍞 Sourdough Slice', '🧀 Melted Cheddar', '🍗 Herb Poultry', '🌿 Crisp Lettuce'],
+      aura: 'radial-gradient(ellipse at 50% 50%, #fcefdc 0%, #f5e2c6 45%, #eaddc7 100%)',
+      glow: 'rgba(255, 179, 0, 0.45)'
+    },
+    {
+      num: '03 / 06',
+      name: 'PIZZA',
+      camTitle: 'WOODFIRED SLICE',
+      startFrame: 106,
+      endFrame: 160,
+      watermark: 'PIZZA',
+      tag: '🍕 Woodfired Oven',
+      chip: '🍕 48h Fermented Crust',
+      title: 'One slice. <em>Zero regrets.</em>',
+      desc: 'Hand-tossed sourdough pizza baked at 450°C with bubbling buffalo mozzarella, savory pepperoni & fragrant herb oil.',
+      ingredients: ['🍕 Fermented Dough', '🍅 Buffalo Mozzarella', '🥩 Pepperoni Slices', '🌿 Oregano Oil'],
+      aura: 'radial-gradient(ellipse at 50% 50%, #f8e8d8 0%, #edd4bc 45%, #e5cfbb 100%)',
+      glow: 'rgba(244, 81, 30, 0.45)'
+    },
+    {
+      num: '04 / 06',
+      name: 'PASTA',
+      camTitle: 'TWIRLED SPAGHETTI',
+      startFrame: 161,
+      endFrame: 210,
+      watermark: 'PASTA',
+      tag: '🍝 Italian Specialty',
+      chip: '🌿 Fresh Basil Drop',
+      title: 'Twirled with love <em>& fresh basil.</em>',
+      desc: 'Silky al dente spaghetti twirled with flying sweet basil leaves, aged parmesan shavings & rich San Marzano marinara splash.',
+      ingredients: ['🍝 Al Dente Pasta', '🍅 San Marzano Sauce', '🌿 Sweet Basil', '🧀 Aged Parmesan'],
+      aura: 'radial-gradient(ellipse at 50% 50%, #e5f0df 0%, #cce2c2 45%, #c4dbc0 100%)',
+      glow: 'rgba(76, 175, 80, 0.45)'
+    },
+    {
+      num: '05 / 06',
+      name: 'MOMOS',
+      camTitle: 'BAMBOO STEAMED MOMOS',
+      startFrame: 211,
+      endFrame: 260,
+      watermark: 'MOMOS',
+      tag: '🥟 Himalayan Steam',
+      chip: '🥟 Steamed In Bamboo',
+      title: 'A little spice. <em>A lot of love.</em>',
+      desc: 'Hand-folded Tibetan pleated dumplings piping hot straight from woven bamboo steamers, served with fiery garlic-chili dips.',
+      ingredients: ['🥟 Pleated Wrappers', '🌶️ Fiery Garlic Dip', '🥢 Bamboo Steamed', '🧅 Scallion Herbs'],
+      aura: 'radial-gradient(ellipse at 50% 50%, #fbedd7 0%, #eed5b5 45%, #e3ccae 100%)',
+      glow: 'rgba(255, 152, 0, 0.45)'
+    },
+    {
+      num: '06 / 06',
+      name: 'BOBA',
+      camTitle: 'TAPIOCA BOBA SPLASH',
+      startFrame: 261,
+      endFrame: 299,
+      watermark: 'BOBA',
+      tag: '🧋 Sub-Zero Refresh',
+      chip: '❄️ Chilled to 2°C',
+      title: 'Sip. Smile. <em>Repeat.</em>',
+      desc: 'Tiger brown sugar marbled fresh milk tea loaded with chewy tapioca pearls, splashing crystal ice cubes & striped boba straw.',
+      ingredients: ['🧋 Tapioca Pearls', '🥛 Fresh Whole Milk', '🍯 Brown Sugar Tiger', '🧊 Crystal Ice Cubes'],
+      aura: 'radial-gradient(ellipse at 50% 50%, #d8edf8 0%, #b8def2 45%, #b0d3e8 100%)',
+      glow: 'rgba(3, 169, 244, 0.45)'
+    }
+  ];
+
+  let currentChapIdx = -1;
+  const frameImages = new Array(TOTAL_FRAMES);
+  const frameLoaded = new Array(TOTAL_FRAMES).fill(false);
+
+  function getFrameSrc(idx) {
+    const num = String(idx + 1).padStart(3, '0');
+    return `animations/ezgif-1cb0da9ff9b84334-png-split/ezgif-frame-${num}.png`;
+  }
+
+  function resizeCanvas() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const rect = canvas.getBoundingClientRect();
+    const w = Math.round(rect.width * dpr);
+    const h = Math.round(rect.height * dpr);
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+      renderFrameAt(lastDrawnFrame >= 0 ? lastDrawnFrame : 0, true);
+    }
+  }
+
+  window.addEventListener('resize', resizeCanvas, { passive: true });
+
+  // Draw image with contain
+  function drawImageContain(img) {
+    if (!img) return;
+    const cw = canvas.width;
+    const ch = canvas.height;
+    const iw = img.naturalWidth || img.width;
+    const ih = img.naturalHeight || img.height;
+    const scale = Math.min(cw / iw, ch / ih);
+    const nw = iw * scale;
+    const nh = ih * scale;
+    const nx = (cw - nw) / 2;
+    const ny = (ch - nh) / 2;
+    ctx.clearRect(0, 0, cw, ch);
+    ctx.drawImage(img, nx, ny, nw, nh);
+  }
+
+  let lastDrawnFrame = -1;
+  function renderFrameAt(frameIdx, force) {
+    frameIdx = Math.max(0, Math.min(TOTAL_FRAMES - 1, Math.round(frameIdx)));
+    if (!force && frameIdx === lastDrawnFrame) return;
+
+    // Find best loaded frame (exact or nearest)
+    let bestImg = null;
+    if (frameLoaded[frameIdx] && frameImages[frameIdx]) {
+      bestImg = frameImages[frameIdx];
+    } else {
+      for (let offset = 1; offset < 40; offset++) {
+        if (frameIdx - offset >= 0 && frameLoaded[frameIdx - offset]) {
+          bestImg = frameImages[frameIdx - offset];
+          break;
+        }
+        if (frameIdx + offset < TOTAL_FRAMES && frameLoaded[frameIdx + offset]) {
+          bestImg = frameImages[frameIdx + offset];
+          break;
+        }
+      }
+    }
+
+    if (bestImg) {
+      drawImageContain(bestImg);
+      lastDrawnFrame = frameIdx;
+    }
+
+    // Update Story Card & Chapter
+    const chapIdx = CHAPTERS.findIndex(c => frameIdx >= c.startFrame && frameIdx <= c.endFrame);
+    if (chapIdx !== -1 && chapIdx !== currentChapIdx) {
+      currentChapIdx = chapIdx;
+      const c = CHAPTERS[chapIdx];
+      if (chapNum) chapNum.textContent = c.num;
+      if (cardTag) cardTag.textContent = c.tag;
+      if (cardChip) cardChip.textContent = c.chip;
+      if (cardTitle) cardTitle.innerHTML = c.title;
+      if (cardDesc) cardDesc.textContent = c.desc;
+      if (watermark) watermark.textContent = c.watermark;
+      if (bgAura) bgAura.style.background = c.aura;
+      if (canvasGlow) canvasGlow.style.background = c.glow;
+
+      // Update Ingredients Tags
+      if (ingTags && c.ingredients) {
+        ingTags.innerHTML = c.ingredients.map(ing => `<span class="ff-ing-tag">${ing}</span>`).join('');
+      }
+
+      railBtns.forEach((btn, idx) => {
+        btn.classList.toggle('active', idx === chapIdx);
+      });
+    }
+
+    // Update Camera Meta
+    if (camMeta && currentChapIdx >= 0) {
+      const activeChap = CHAPTERS[currentChapIdx];
+      const frameFormatted = String(frameIdx + 1).padStart(3, '0');
+      camMeta.textContent = `${activeChap.camTitle} · FRAME ${frameFormatted}/300`;
+    }
+
+    // Update Timeline
+    const pct = Math.round((frameIdx / (TOTAL_FRAMES - 1)) * 100);
+    if (timelineFill) timelineFill.style.width = pct + '%';
+    if (frameBadge) frameBadge.textContent = `Frame ${frameIdx + 1} / ${TOTAL_FRAMES} · ${pct}%`;
+    if (scrollHint) scrollHint.style.opacity = frameIdx > 12 ? '0' : '1';
+  }
+
+  // Preloading Strategy:
+  // 1. Frame 0 immediately
+  const firstImg = new Image();
+  firstImg.onload = () => {
+    frameImages[0] = firstImg;
+    frameLoaded[0] = true;
+    resizeCanvas();
+    renderFrameAt(0, true);
+  };
+  firstImg.src = getFrameSrc(0);
+
+  // 2. Progressive preloading queue
+  function loadFrame(idx, callback) {
+    if (frameLoaded[idx]) return;
+    const img = new Image();
+    img.onload = () => {
+      frameImages[idx] = img;
+      frameLoaded[idx] = true;
+      if (callback) callback();
+    };
+    img.src = getFrameSrc(idx);
+  }
+
+  // Preload in batches: Tier 1 (every 6th frame), Tier 2 (every 2nd frame), Tier 3 (all)
+  let queue = [];
+  for (let i = 0; i < TOTAL_FRAMES; i += 6) queue.push(i);
+  for (let i = 0; i < TOTAL_FRAMES; i += 2) if (!queue.includes(i)) queue.push(i);
+  for (let i = 0; i < TOTAL_FRAMES; i++) if (!queue.includes(i)) queue.push(i);
+
+  let qIdx = 0;
+  function processQueue() {
+    if (qIdx >= queue.length) return;
+    const batch = queue.slice(qIdx, qIdx + 8);
+    qIdx += 8;
+    let loadedInBatch = 0;
+    batch.forEach(idx => {
+      loadFrame(idx, () => {
+        loadedInBatch++;
+        if (loadedInBatch === batch.length) {
+          setTimeout(processQueue, 10);
+        }
+      });
+    });
+  }
+  setTimeout(processQueue, 150);
+
+  // Scroll Sync with Lerp
+  let targetFrame = 0;
+  let currentFrame = 0;
+
+  function onScroll() {
+    const rect = section.getBoundingClientRect();
+    const span = Math.max(1, section.offsetHeight - window.innerHeight);
+    const scrollWithin = -rect.top;
+    const prog = Math.min(1, Math.max(0, scrollWithin / span));
+    targetFrame = prog * (TOTAL_FRAMES - 1);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  function animLoop() {
+    const diff = targetFrame - currentFrame;
+    if (Math.abs(diff) > 0.05) {
+      currentFrame += diff * 0.22;
+      renderFrameAt(currentFrame, false);
+    }
+    requestAnimationFrame(animLoop);
+  }
+  requestAnimationFrame(animLoop);
+
+  // Click navigation for the Chapter Rail buttons
+  railBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetFrameNum = parseInt(btn.getAttribute('data-frame'), 10) || 0;
+      const span = section.offsetHeight - window.innerHeight;
+      const targetScroll = section.offsetTop + (targetFrameNum / (TOTAL_FRAMES - 1)) * span;
+      if (window.lenis) {
+        window.lenis.scrollTo(targetScroll, { duration: 1.2 });
+      } else {
+        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Initial render setup
+  setTimeout(resizeCanvas, 50);
+})();
+
+</script>
+<script>
+/* ==========================================================================
+   FRAME-BY-FRAME CANVAS SCROLL CONTROLLER (300 FRAMES)
+   ========================================================================== */
+(function initFoodFrameShowcase() {
+  const TOTAL_FRAMES = 300;
+  const canvas = document.getElementById('foodAnimCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const section = document.getElementById('flavours');
+  if (!section) return;
+
+  const bgAura = document.getElementById('ffBgAura');
+  const canvasGlow = document.getElementById('ffCanvasGlow');
+  const watermark = document.getElementById('ffWatermark');
+  const cardTag = document.getElementById('ffCardTag');
+  const cardChip = document.getElementById('ffCardChip');
+  const cardTitle = document.getElementById('ffCardTitle');
+  const cardDesc = document.getElementById('ffCardDesc');
+  const timelineFill = document.getElementById('ffTimelineFill');
+  const frameBadge = document.getElementById('ffFrameBadge');
+  const scrollHint = document.getElementById('ffScrollHint');
+  const railBtns = document.querySelectorAll('.ff-rail-btn');
+
+  // Chapters definition (0 to 299)
+  const CHAPTERS = [
+    {
+      name: 'Burger',
+      startFrame: 0,
+      endFrame: 55,
+      watermark: 'BURGER',
+      tag: '🍔 Gourmet Grill',
+      chip: '🔥 Sizzling Hot',
+      title: 'Big bites. <em>Bigger cravings.</em>',
+      desc: 'Double brioche smash burger with sizzling beef, melting sharp cheddar, crisp lettuce & tomato dripping with house sauce.',
+      aura: 'radial-gradient(ellipse at 50% 50%, #fbd5dc 0%, #f7cad2 45%, #edd1d6 100%)',
+      glow: 'rgba(230, 25, 90, 0.45)'
+    },
+    {
+      name: 'Sandwich',
+      startFrame: 56,
+      endFrame: 105,
+      watermark: 'PANINI',
+      tag: '🥪 Artisan Deli',
+      chip: '🧀 Gooey Cheese Pull',
+      title: 'Stacked with <em>happiness.</em>',
+      desc: 'Golden toasted sourdough grilled cheese with triple-decker herb poultry, sun-dried relish & irresistible cheese stretch.',
+      aura: 'radial-gradient(ellipse at 50% 50%, #fcefdc 0%, #f5e2c6 45%, #eaddc7 100%)',
+      glow: 'rgba(255, 179, 0, 0.45)'
+    },
+    {
+      name: 'Pizza',
+      startFrame: 106,
+      endFrame: 160,
+      watermark: 'PIZZA',
+      tag: '🍕 Woodfired Oven',
+      chip: '🍕 48h Fermented Crust',
+      title: 'One slice. <em>Zero regrets.</em>',
+      desc: 'Hand-tossed sourdough pizza baked at 450°C with bubbling buffalo mozzarella, savory pepperoni & fragrant herb oil.',
+      aura: 'radial-gradient(ellipse at 50% 50%, #f8e8d8 0%, #edd4bc 45%, #e5cfbb 100%)',
+      glow: 'rgba(244, 81, 30, 0.45)'
+    },
+    {
+      name: 'Pasta',
+      startFrame: 161,
+      endFrame: 210,
+      watermark: 'PASTA',
+      tag: '🍝 Italian Specialty',
+      chip: '🌿 Fresh Basil Drop',
+      title: 'Twirled with love <em>& fresh basil.</em>',
+      desc: 'Silky al dente spaghetti twirled with flying sweet basil leaves, aged parmesan shavings & rich San Marzano marinara splash.',
+      aura: 'radial-gradient(ellipse at 50% 50%, #e5f0df 0%, #cce2c2 45%, #c4dbc0 100%)',
+      glow: 'rgba(76, 175, 80, 0.45)'
+    },
+    {
+      name: 'Momos',
+      startFrame: 211,
+      endFrame: 260,
+      watermark: 'MOMOS',
+      tag: '🥟 Himalayan Steam',
+      chip: '🥟 Steamed In Bamboo',
+      title: 'A little spice. <em>A lot of love.</em>',
+      desc: 'Hand-folded Tibetan pleated dumplings piping hot straight from woven bamboo steamers, served with fiery garlic-chili dips.',
+      aura: 'radial-gradient(ellipse at 50% 50%, #fbedd7 0%, #eed5b5 45%, #e3ccae 100%)',
+      glow: 'rgba(255, 152, 0, 0.45)'
+    },
+    {
+      name: 'Boba',
+      startFrame: 261,
+      endFrame: 299,
+      watermark: 'BOBA',
+      tag: '🧋 Sub-Zero Refresh',
+      chip: '❄️ Chilled to 2°C',
+      title: 'Sip. Smile. <em>Repeat.</em>',
+      desc: 'Tiger brown sugar marbled fresh milk tea loaded with chewy tapioca pearls, splashing crystal ice cubes & striped boba straw.',
+      aura: 'radial-gradient(ellipse at 50% 50%, #d8edf8 0%, #b8def2 45%, #b0d3e8 100%)',
+      glow: 'rgba(3, 169, 244, 0.45)'
+    }
+  ];
+
+  let currentChapIdx = -1;
+  const frameImages = new Array(TOTAL_FRAMES);
+  const frameLoaded = new Array(TOTAL_FRAMES).fill(false);
+
+  function getFrameSrc(idx) {
+    const num = String(idx + 1).padStart(3, '0');
+    return `animations/ezgif-1cb0da9ff9b84334-png-split/ezgif-frame-${num}.png`;
+  }
+
+  function resizeCanvas() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const rect = canvas.getBoundingClientRect();
+    const w = Math.round(rect.width * dpr);
+    const h = Math.round(rect.height * dpr);
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+      renderCurrentFrame(true);
+    }
+  }
+
+  window.addEventListener('resize', resizeCanvas, { passive: true });
+
+  // Draw image with contain
+  function drawImageContain(img) {
+    if (!img) return;
+    const cw = canvas.width;
+    const ch = canvas.height;
+    const iw = img.naturalWidth || img.width;
+    const ih = img.naturalHeight || img.height;
+    const scale = Math.min(cw / iw, ch / ih);
+    const nw = iw * scale;
+    const nh = ih * scale;
+    const nx = (cw - nw) / 2;
+    const ny = (ch - nh) / 2;
+    ctx.clearRect(0, 0, cw, ch);
+    ctx.drawImage(img, nx, ny, nw, nh);
+  }
+
+  let lastDrawnFrame = -1;
+  function renderFrameAt(frameIdx, force) {
+    frameIdx = Math.max(0, Math.min(TOTAL_FRAMES - 1, Math.round(frameIdx)));
+    if (!force && frameIdx === lastDrawnFrame) return;
+
+    // Find best loaded frame (exact or nearest)
+    let bestImg = null;
+    if (frameLoaded[frameIdx] && frameImages[frameIdx]) {
+      bestImg = frameImages[frameIdx];
+    } else {
+      for (let offset = 1; offset < 40; offset++) {
+        if (frameIdx - offset >= 0 && frameLoaded[frameIdx - offset]) {
+          bestImg = frameImages[frameIdx - offset];
+          break;
+        }
+        if (frameIdx + offset < TOTAL_FRAMES && frameLoaded[frameIdx + offset]) {
+          bestImg = frameImages[frameIdx + offset];
+          break;
+        }
+      }
+    }
+
+    if (bestImg) {
+      drawImageContain(bestImg);
+      lastDrawnFrame = frameIdx;
+    }
+
+    // Update Story Card & Chapter
+    const chapIdx = CHAPTERS.findIndex(c => frameIdx >= c.startFrame && frameIdx <= c.endFrame);
+    if (chapIdx !== -1 && chapIdx !== currentChapIdx) {
+      currentChapIdx = chapIdx;
+      const c = CHAPTERS[chapIdx];
+      if (cardTag) cardTag.textContent = c.tag;
+      if (cardChip) cardChip.textContent = c.chip;
+      if (cardTitle) cardTitle.innerHTML = c.title;
+      if (cardDesc) cardDesc.textContent = c.desc;
+      if (watermark) watermark.textContent = c.watermark;
+      if (bgAura) bgAura.style.background = c.aura;
+      if (canvasGlow) canvasGlow.style.background = c.glow;
+
+      railBtns.forEach((btn, idx) => {
+        btn.classList.toggle('active', idx === chapIdx);
+      });
+    }
+
+    // Update Timeline
+    const pct = Math.round((frameIdx / (TOTAL_FRAMES - 1)) * 100);
+    if (timelineFill) timelineFill.style.width = pct + '%';
+    if (frameBadge) frameBadge.textContent = `Frame ${frameIdx + 1} / ${TOTAL_FRAMES} · ${pct}%`;
+    if (scrollHint) scrollHint.style.opacity = frameIdx > 12 ? '0' : '1';
+  }
+
+  // Preloading Strategy:
+  // 1. Frame 0 immediately
+  const firstImg = new Image();
+  firstImg.onload = () => {
+    frameImages[0] = firstImg;
+    frameLoaded[0] = true;
+    resizeCanvas();
+    renderFrameAt(0, true);
+  };
+  firstImg.src = getFrameSrc(0);
+
+  // 2. Progressive preloading queue
+  function loadFrame(idx, callback) {
+    if (frameLoaded[idx]) return;
+    const img = new Image();
+    img.onload = () => {
+      frameImages[idx] = img;
+      frameLoaded[idx] = true;
+      if (callback) callback();
+    };
+    img.src = getFrameSrc(idx);
+  }
+
+  // Preload in batches: Tier 1 (every 6th frame), Tier 2 (every 2nd frame), Tier 3 (all)
+  let queue = [];
+  for (let i = 0; i < TOTAL_FRAMES; i += 6) queue.push(i);
+  for (let i = 0; i < TOTAL_FRAMES; i += 2) if (!queue.includes(i)) queue.push(i);
+  for (let i = 0; i < TOTAL_FRAMES; i++) if (!queue.includes(i)) queue.push(i);
+
+  let qIdx = 0;
+  function processQueue() {
+    if (qIdx >= queue.length) return;
+    const batch = queue.slice(qIdx, qIdx + 8);
+    qIdx += 8;
+    let loadedInBatch = 0;
+    batch.forEach(idx => {
+      loadFrame(idx, () => {
+        loadedInBatch++;
+        if (loadedInBatch === batch.length) {
+          setTimeout(processQueue, 10);
+        }
+      });
+    });
+  }
+  setTimeout(processQueue, 150);
+
+  // Scroll Sync with Lerp
+  let targetFrame = 0;
+  let currentFrame = 0;
+
+  function onScroll() {
+    const rect = section.getBoundingClientRect();
+    const span = Math.max(1, section.offsetHeight - window.innerHeight);
+    const scrollWithin = -rect.top;
+    const prog = Math.min(1, Math.max(0, scrollWithin / span));
+    targetFrame = prog * (TOTAL_FRAMES - 1);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  function animLoop() {
+    const diff = targetFrame - currentFrame;
+    if (Math.abs(diff) > 0.05) {
+      currentFrame += diff * 0.22;
+      renderFrameAt(currentFrame, false);
+    }
+    requestAnimationFrame(animLoop);
+  }
+  requestAnimationFrame(animLoop);
+
+  // Click navigation for the Chapter Rail buttons
+  railBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetFrameNum = parseInt(btn.getAttribute('data-frame'), 10) || 0;
+      const span = section.offsetHeight - window.innerHeight;
+      const targetScroll = section.offsetTop + (targetFrameNum / (TOTAL_FRAMES - 1)) * span;
+      if (window.lenis) {
+        window.lenis.scrollTo(targetScroll, { duration: 1.2 });
+      } else {
+        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Initial render setup
+  setTimeout(resizeCanvas, 50);
 })();
 </script>
 </body></html>
