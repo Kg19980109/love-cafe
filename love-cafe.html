@@ -3467,10 +3467,58 @@ body.locked .sd {
   width: 100% !important;
   display: flex !important;
   flex-direction: column !important;
+  align-items: center !important;
   gap: 12px !important;
 }
 
-.app-screens-swipe-hint {
+.app-screens-tab-pills {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 4px !important;
+}
+
+.app-tab-btn {
+  padding: 6px 16px !important;
+  font-family: var(--disp) !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1.5px solid rgba(255, 180, 215, 0.28) !important;
+  color: #ffd4e2 !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+}
+
+.app-tab-btn:hover {
+  transform: translateY(-2px) !important;
+  border-color: #ff5287 !important;
+  color: #ffffff !important;
+}
+
+.app-tab-btn.active {
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
+  border-color: #ffd23f !important;
+  box-shadow: 0 4px 14px rgba(255, 42, 109, 0.45) !important;
+}
+
+.app-carousel-stage {
+  position: relative !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.app-carousel-arrow {
+  display: none !important;
+}
+
+.app-carousel-dots {
   display: none !important;
 }
 
@@ -5039,25 +5087,46 @@ body.locked .sd {
     align-self: center !important;
   }
 
-  /* #app mobile - COMPACT & ZERO ENDLESS SCROLLING */
+  /* #app mobile - COMPACT & PERFECTLY SYMMETRIC CAROUSEL (ZERO RIGHT LEANING) */
   .app-showcase-section {
     padding: 42px 14px 28px !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
 
   .app-section-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
     gap: 18px !important;
   }
 
   .app-main-grid {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
     text-align: center !important;
     gap: 16px !important;
   }
 
   .app-text-col {
+    display: flex !important;
+    flex-direction: column !important;
     align-items: center !important;
+    text-align: center !important;
     gap: 10px !important;
     width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
 
   .app-wow-tag {
@@ -5069,6 +5138,7 @@ body.locked .sd {
   .app-title-head {
     font-size: 26px !important;
     line-height: 1.12 !important;
+    text-align: center !important;
   }
 
   .app-subtitle-desc {
@@ -5077,11 +5147,14 @@ body.locked .sd {
     max-width: 330px !important;
     padding: 0 10px !important;
     box-sizing: border-box !important;
+    text-align: center !important;
   }
 
   .app-stores-row {
     justify-content: center !important;
     gap: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .store-badge-btn {
@@ -5107,48 +5180,102 @@ body.locked .sd {
   }
 
   .app-graphic-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
     width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
 
   .app-screens-showcase-container {
     width: 100% !important;
-    gap: 6px !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
   }
 
-  .app-screens-swipe-hint {
-    display: inline-flex !important;
+  .app-screens-tab-pills {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 6px !important;
+  }
+
+  .app-tab-btn {
+    padding: 5px 12px !important;
+    font-size: 10.5px !important;
+    border-radius: 999px !important;
+  }
+
+  .app-carousel-stage {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 6px !important;
-    font-family: var(--disp) !important;
-    font-size: 11px !important;
-    font-weight: 800 !important;
-    color: #ffd23f !important;
-    background: rgba(255, 210, 63, 0.12) !important;
-    border: 1px solid rgba(255, 210, 63, 0.35) !important;
-    padding: 3px 12px !important;
-    border-radius: 999px !important;
-    margin: 0 auto 4px !important;
   }
 
-  .hint-pulse-dot {
-    width: 6px !important;
-    height: 6px !important;
+  .app-carousel-arrow {
+    display: flex !important;
+    position: absolute !important;
+    top: 45% !important;
+    transform: translateY(-50%) !important;
+    width: 32px !important;
+    height: 32px !important;
     border-radius: 50% !important;
-    background: #ffd23f !important;
-    box-shadow: 0 0 8px #ffd23f !important;
+    background: rgba(28, 6, 20, 0.9) !important;
+    border: 1.5px solid rgba(255, 180, 215, 0.5) !important;
+    color: #ffffff !important;
+    font-size: 20px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 10 !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
   }
 
-  /* HORIZONTAL PHONE CAROUSEL: ZERO VERTICAL SCROLL FATIGUE */
+  .app-arrow-prev {
+    left: 2px !important;
+  }
+
+  .app-arrow-next {
+    right: 2px !important;
+  }
+
+  /* CENTERED HORIZONTAL PHONE CAROUSEL: ZERO RIGHT-LEANING, SMOOTH SNAP SCROLL */
   .app-screens-carousel {
     display: flex !important;
     overflow-x: auto !important;
+    overflow-y: hidden !important;
     scroll-snap-type: x mandatory !important;
-    gap: 12px !important;
-    padding: 6px 12px 14px !important;
+    scroll-behavior: smooth !important;
     -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x !important;
+    overscroll-behavior-x: contain !important;
+    gap: 16px !important;
+    padding: 8px calc((100% - 220px) / 2) 14px !important; /* EXACT DEAD-CENTER ALIGNMENT! */
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
     scrollbar-width: none !important;
-    justify-content: flex-start !important;
   }
 
   .app-screens-carousel::-webkit-scrollbar {
@@ -5156,30 +5283,63 @@ body.locked .sd {
   }
 
   .app-screen-card {
-    flex: 0 0 150px !important;
+    flex: 0 0 220px !important;
+    width: 220px !important;
+    max-width: 220px !important;
     scroll-snap-align: center !important;
-    gap: 6px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    box-sizing: border-box !important;
   }
 
   .app-phone-mockup {
-    max-width: 150px !important;
-    border-radius: 22px !important;
-    border-width: 3px !important;
+    width: 100% !important;
+    max-width: 220px !important;
+    aspect-ratio: 9 / 18 !important;
+    border-radius: 26px !important;
+    border-width: 3.5px !important;
   }
 
   .phone-dynamic-notch {
-    width: 34px !important;
-    height: 8px !important;
-    top: 5px !important;
+    width: 40px !important;
+    height: 9px !important;
+    top: 6px !important;
   }
 
   .caption-tag {
-    font-size: 8.5px !important;
-    padding: 2px 7px !important;
+    font-size: 9.5px !important;
+    padding: 3px 9px !important;
   }
 
   .app-screen-caption b {
-    font-size: 10.5px !important;
+    font-size: 11.5px !important;
+  }
+
+  .app-carousel-dots {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-top: 6px !important;
+  }
+
+  .app-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 999px !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+  }
+
+  .app-dot.active {
+    width: 22px !important;
+    background: #ff2a6d !important;
+    box-shadow: 0 0 10px #ff2a6d !important;
   }
 
   /* COMPACT PERKS MICRO-GRID ON MOBILE */
@@ -8319,55 +8479,70 @@ body.locked .sd {
           <span>Your movie. <span class="script-heart">💖</span></span>
         </div>
 
-        <div class="app-screens-showcase-container">
-          <div class="app-screens-swipe-hint">
-            <span class="hint-pulse-dot"></span>
-            <span>📱 Real App Screens · Swipe to explore</span>
-            <span class="hint-arrow">👉</span>
+        <div class="app-screens-showcase-container" id="appScreensContainer">
+          <!-- Interactive Screen Switcher Tabs (Perfect for mobile & desktop) -->
+          <div class="app-screens-tab-pills" id="appScreenTabs">
+            <button class="app-tab-btn active" data-index="0" type="button">🍿 Home &amp; Order</button>
+            <button class="app-tab-btn" data-index="1" type="button">✨ Gourmet Sips</button>
+            <button class="app-tab-btn" data-index="2" type="button">🎬 VIP Multiplex</button>
           </div>
 
-          <div class="app-screens-carousel" id="appScreensCarousel">
-            <!-- Screen 1: App Home -->
-            <div class="app-screen-card card-home">
-              <div class="app-phone-mockup">
-                <div class="phone-dynamic-notch"></div>
-                <div class="phone-screen-img-box">
-                  <img src="assets/app-home.png" alt="Love Cafe App - Live In-Seat Menu Home" loading="lazy">
+          <!-- Carousel Stage with Arrow Navs -->
+          <div class="app-carousel-stage">
+            <button class="app-carousel-arrow app-arrow-prev" id="appPrevBtn" aria-label="Previous App Screen" type="button">‹</button>
+
+            <div class="app-screens-carousel" id="appScreensCarousel" data-lenis-prevent="true">
+              <!-- Screen 1: App Home -->
+              <div class="app-screen-card card-home active" data-index="0">
+                <div class="app-phone-mockup">
+                  <div class="phone-dynamic-notch"></div>
+                  <div class="phone-screen-img-box">
+                    <img src="assets/app-home.png" alt="Love Cafe App - Live In-Seat Menu Home">
+                  </div>
+                </div>
+                <div class="app-screen-caption">
+                  <span class="caption-tag">🍿 HOME &amp; ORDER</span>
+                  <b>Quick In-Seat Ordering</b>
                 </div>
               </div>
-              <div class="app-screen-caption">
-                <span class="caption-tag">🍿 HOME &amp; ORDER</span>
-                <b>Quick In-Seat Ordering</b>
+
+              <!-- Screen 2: Gourmet Highlights -->
+              <div class="app-screen-card card-gourmet" data-index="1">
+                <div class="app-phone-mockup">
+                  <div class="phone-dynamic-notch"></div>
+                  <div class="phone-screen-img-box">
+                    <img src="assets/app-gourmet-highlight.png" alt="Love Cafe App - Cinema Gourmet Highlights">
+                  </div>
+                </div>
+                <div class="app-screen-caption caption-gold">
+                  <span class="caption-tag">✨ GOURMET SPECIALS</span>
+                  <b>Chilled Sips &amp; Hot Bites</b>
+                </div>
+              </div>
+
+              <!-- Screen 3: Cinema Recliner Experience -->
+              <div class="app-screen-card card-experience" data-index="2">
+                <div class="app-phone-mockup">
+                  <div class="phone-dynamic-notch"></div>
+                  <div class="phone-screen-img-box">
+                    <img src="assets/showcase/step2_menu.png" alt="Love Cafe App - Cinema Multiplex Ordering">
+                  </div>
+                </div>
+                <div class="app-screen-caption caption-pink">
+                  <span class="caption-tag">🎬 CINEMA MULTIPLEX</span>
+                  <b>Delivered in ~10 Mins</b>
+                </div>
               </div>
             </div>
 
-            <!-- Screen 2: Gourmet Highlights -->
-            <div class="app-screen-card card-gourmet">
-              <div class="app-phone-mockup">
-                <div class="phone-dynamic-notch"></div>
-                <div class="phone-screen-img-box">
-                  <img src="assets/app-gourmet-highlight.png" alt="Love Cafe App - Cinema Gourmet Highlights" loading="lazy">
-                </div>
-              </div>
-              <div class="app-screen-caption caption-gold">
-                <span class="caption-tag">✨ GOURMET SPECIALS</span>
-                <b>Chilled Sips &amp; Hot Bites</b>
-              </div>
-            </div>
+            <button class="app-carousel-arrow app-arrow-next" id="appNextBtn" aria-label="Next App Screen" type="button">›</button>
+          </div>
 
-            <!-- Screen 3: Cinema Recliner Experience -->
-            <div class="app-screen-card card-experience">
-              <div class="app-phone-mockup">
-                <div class="phone-dynamic-notch"></div>
-                <div class="phone-screen-img-box">
-                  <img src="assets/showcase/step2_menu.png" alt="Love Cafe App - Cinema Multiplex Ordering" loading="lazy">
-                </div>
-              </div>
-              <div class="app-screen-caption caption-pink">
-                <span class="caption-tag">🎬 CINEMA MULTIPLEX</span>
-                <b>Delivered in ~10 Mins</b>
-              </div>
-            </div>
+          <!-- Live Pagination Dots -->
+          <div class="app-carousel-dots" id="appScreenDots">
+            <button class="app-dot active" data-index="0" aria-label="Screen 1"></button>
+            <button class="app-dot" data-index="1" aria-label="Screen 2"></button>
+            <button class="app-dot" data-index="2" aria-label="Screen 3"></button>
           </div>
         </div>
       </div>
@@ -10288,7 +10463,9 @@ function updateNavActive() {
     const inBetween = (sy > scHeight * 0.7) && (sy < getTop - innerHeight * 0.5);
     const inPs = (sy >= geoCache.psTop - 50) && (sy <= geoCache.psTop + geoCache.psHeight - 50);
     const inFlavours = (sy >= geoCache.flavoursTop - 50) && (sy <= geoCache.flavoursTop + geoCache.flavoursHeight - 50);
-    dock.classList.toggle('on', inBetween && !inPs && !inFlavours);
+    const appSec = $('app');
+    const inApp = appSec ? (sy >= appSec.offsetTop - 120 && sy <= appSec.offsetTop + appSec.offsetHeight - 80) : false;
+    dock.classList.toggle('on', inBetween && !inPs && !inFlavours && !inApp);
   }
 }
 
@@ -10742,4 +10919,113 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
 
 
 <!-- Build: reverted to 0608583 -->
+<script>
+/* ==========================================================================
+   APP SCREENS SHOWCASE: INTERACTIVE SWIPE, TABS & ARROWS CONTROLLER
+   ========================================================================== */
+(function() {
+  function initAppScreensCarousel() {
+    const track = document.getElementById('appScreensCarousel');
+    const tabs = document.querySelectorAll('#appScreenTabs .app-tab-btn');
+    const dots = document.querySelectorAll('#appScreenDots .app-dot');
+    const prevBtn = document.getElementById('appPrevBtn');
+    const nextBtn = document.getElementById('appNextBtn');
+    const cards = document.querySelectorAll('#appScreensCarousel .app-screen-card');
+    if (!track || !cards.length) return;
+
+    function scrollToIndex(idx) {
+      idx = Math.max(0, Math.min(cards.length - 1, idx));
+      const card = cards[idx];
+      if (card) {
+        const scrollPos = card.offsetLeft - (track.offsetWidth - card.offsetWidth) / 2;
+        track.scrollTo({ left: scrollPos, behavior: 'smooth' });
+      }
+    }
+
+    // Update active tab & dot on scroll
+    let scrollTimeout;
+    track.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const scrollCenter = track.scrollLeft + track.offsetWidth / 2;
+        let closestIdx = 0;
+        let minDiff = Infinity;
+        cards.forEach((card, i) => {
+          const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+          const diff = Math.abs(scrollCenter - cardCenter);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIdx = i;
+          }
+        });
+
+        tabs.forEach((t, i) => t.classList.toggle('active', i === closestIdx));
+        dots.forEach((d, i) => d.classList.toggle('active', i === closestIdx));
+        cards.forEach((c, i) => c.classList.toggle('active', i === closestIdx));
+      }, 30);
+    }, { passive: true });
+
+    // Tab buttons click
+    tabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        const idx = parseInt(tab.getAttribute('data-index'), 10);
+        scrollToIndex(idx);
+      });
+    });
+
+    // Dot clicks
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        const idx = parseInt(dot.getAttribute('data-index'), 10);
+        scrollToIndex(idx);
+      });
+    });
+
+    // Prev / Next button clicks
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let activeIdx = [...cards].findIndex(c => c.classList.contains('active'));
+        if (activeIdx < 0) activeIdx = 0;
+        scrollToIndex(Math.max(0, activeIdx - 1));
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let activeIdx = [...cards].findIndex(c => c.classList.contains('active'));
+        if (activeIdx < 0) activeIdx = 0;
+        scrollToIndex(Math.min(cards.length - 1, activeIdx + 1));
+      });
+    }
+
+    // Touch & mouse drag support
+    let isDown = false;
+    let startX;
+    let initialScrollLeft;
+
+    track.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - track.offsetLeft;
+      initialScrollLeft = track.scrollLeft;
+    });
+    window.addEventListener('mouseup', () => { isDown = false; });
+    track.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      track.scrollLeft = initialScrollLeft - walk;
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAppScreensCarousel);
+  } else {
+    initAppScreensCarousel();
+  }
+})();
+</script>
 </body></html>
