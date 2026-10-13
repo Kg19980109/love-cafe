@@ -4960,38 +4960,49 @@ body {
 }
 
 /* ==========================================================================
-   THEATRICAL PINK VELVET CINEMA CURTAIN OPENING ANIMATION (#gate)
+   GATE SCREEN & SEPARATE PINK THEATRICAL CURTAIN OPENING TRANSITION
    ========================================================================== */
 
+/* 1. Pristine Welcome Gate Screen (Clean, Original Ticket Presentation) */
 #gate {
   position: fixed !important;
   inset: 0 !important;
-  z-index: 99999 !important;
+  z-index: 99990 !important;
   background: radial-gradient(ellipse 90% 70% at 50% 32%, #ffe6ec 0%, #ffcad6 38%, #f492a8 70%, #cf4a6c 100%) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   padding: 16px !important;
   box-sizing: border-box !important;
-  overflow: hidden !important;
-  transition: background 0.45s ease, opacity 0.5s ease, visibility 0.8s !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  transition: opacity 0.4s ease, visibility 0.4s ease !important;
 }
 
-/* Cinema Curtain Stage Container */
-.cinema-curtain-container {
-  position: absolute !important;
+#gate.gone {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  display: none !important;
+}
+
+/* 2. Standalone Theatrical Pink Velvet Curtain Transition Overlay (#curtainOverlay)
+      Only activates and appears when 'ENTER CINEMA EXPERIENCE' is clicked! */
+.curtain-transition-overlay {
+  position: fixed !important;
   inset: 0 !important;
-  z-index: 1 !important;
+  z-index: 99999 !important;
   pointer-events: none !important;
   overflow: hidden !important;
+  display: none;
 }
 
-/* Velvet Curtain Panels (Pink Cinema Velvet) */
-.curtain-panel {
+/* Velvet Curtain Left & Right Panels */
+.curtain-transition-overlay .curtain-panel {
   position: absolute !important;
   top: 0 !important;
   bottom: 0 !important;
-  width: 50.5% !important; /* tiny overlap in middle to prevent seam slit */
+  width: 50.5% !important;
   z-index: 2 !important;
   will-change: transform !important;
   overflow: hidden !important;
@@ -5009,22 +5020,23 @@ body {
   box-shadow: 
     inset 0 0 70px rgba(0, 0, 0, 0.45),
     0 0 35px rgba(0, 0, 0, 0.5) !important;
+  transform: translate3d(0, 0, 0) scaleX(1);
 }
 
-.curtain-left {
+.curtain-transition-overlay .curtain-left {
   left: 0 !important;
   transform-origin: left center !important;
-  border-right: 2.5px solid rgba(255, 210, 63, 0.75) !important;
+  border-right: 2.5px solid rgba(255, 210, 63, 0.8) !important;
 }
 
-.curtain-right {
+.curtain-transition-overlay .curtain-right {
   right: 0 !important;
   transform-origin: right center !important;
-  border-left: 2.5px solid rgba(255, 210, 63, 0.75) !important;
+  border-left: 2.5px solid rgba(255, 210, 63, 0.8) !important;
 }
 
-/* High-Definition 3D Velvet Folds Overlay */
-.curtain-velvet-folds {
+/* 3D Velvet Folds Overlay */
+.curtain-transition-overlay .curtain-velvet-folds {
   position: absolute !important;
   inset: 0 !important;
   background: 
@@ -5042,15 +5054,15 @@ body {
 }
 
 /* Velvet Sheen Glow */
-.curtain-sheen {
+.curtain-transition-overlay .curtain-sheen {
   position: absolute !important;
   inset: 0 !important;
   background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.18) 0%, transparent 70%) !important;
   pointer-events: none !important;
 }
 
-/* Golden Vertical Trim Down Leading Curtain Edge */
-.curtain-gold-trim {
+/* Golden Vertical Trim */
+.curtain-transition-overlay .curtain-gold-trim {
   position: absolute !important;
   top: 0 !important;
   bottom: 0 !important;
@@ -5058,28 +5070,23 @@ body {
   background: linear-gradient(180deg, #ffd23f 0%, #ffae00 50%, #ffd23f 100%) !important;
   box-shadow: 0 0 10px rgba(255, 210, 63, 0.8) !important;
 }
-.curtain-left .curtain-gold-trim { right: 0 !important; }
-.curtain-right .curtain-gold-trim { left: 0 !important; }
+.curtain-transition-overlay .curtain-left .curtain-gold-trim { right: 0 !important; }
+.curtain-transition-overlay .curtain-right .curtain-gold-trim { left: 0 !important; }
 
 /* Golden Bottom Fringe */
-.curtain-bottom-fringe {
+.curtain-transition-overlay .curtain-bottom-fringe {
   position: absolute !important;
   bottom: 0 !important;
   left: 0 !important;
   right: 0 !important;
   height: 18px !important;
-  background: repeating-linear-gradient(
-    90deg,
-    #ffd23f 0px,
-    #ffae00 3px,
-    #b37400 6px
-  ) !important;
+  background: repeating-linear-gradient(90deg, #ffd23f 0px, #ffae00 3px, #b37400 6px) !important;
   border-top: 2px solid #fff !important;
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* Top Theatrical Scalloped Valance / Pelmet */
-.curtain-valance {
+.curtain-transition-overlay .curtain-valance {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
@@ -5091,16 +5098,17 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
   will-change: transform !important;
   overflow: hidden !important;
+  transform: translate3d(0, 0, 0);
 }
 
-.valance-swags {
+.curtain-transition-overlay .valance-swags {
   position: absolute !important;
   inset: 0 !important;
   display: flex !important;
   justify-content: space-around !important;
 }
 
-.valance-swags .swag {
+.curtain-transition-overlay .valance-swags .swag {
   flex: 1 !important;
   height: 100% !important;
   border-radius: 0 0 50% 50% !important;
@@ -5109,7 +5117,7 @@ body {
   margin: 0 2px !important;
 }
 
-.valance-fringe {
+.curtain-transition-overlay .valance-fringe {
   position: absolute !important;
   bottom: -4px !important;
   left: 0 !important;
@@ -5118,49 +5126,181 @@ body {
   background: repeating-linear-gradient(90deg, #ffd23f 0px, #ffae00 4px, #b37400 8px) !important;
 }
 
-/* ========================================================================== */
-/* GRAND CURTAIN OPENING TRANSITION (#gate.opening)                           */
-/* ========================================================================== */
-
-#gate.opening {
-  background: transparent !important;
-  overflow: hidden !important;
-}
-
-/* Center Ticket Content Fades Out Smoothly */
-#gate.opening .g-in,
-#gate.opening .g-cinema-sparks,
-#gate.opening .g-projector-beam,
-#gate.opening .g-ambient-glow {
-  opacity: 0 !important;
-  transform: scale(0.9) translateY(24px) !important;
-  transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  pointer-events: none !important;
-}
-
-/* Left Curtain Gracefully Gathers & Parts to the Left */
-#gate.opening .curtain-left {
-  transform: translate3d(-102%, 0, 0) scaleX(0.2) !important;
+/* 3. Curtain Opening Animation Triggered via .opening Class */
+.curtain-transition-overlay.opening .curtain-left {
+  transform: translate3d(-102%, 0, 0) scaleX(0.18) !important;
   transition: transform 1.25s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
-/* Right Curtain Gracefully Gathers & Parts to the Right */
-#gate.opening .curtain-right {
-  transform: translate3d(102%, 0, 0) scaleX(0.2) !important;
+.curtain-transition-overlay.opening .curtain-right {
+  transform: translate3d(102%, 0, 0) scaleX(0.18) !important;
   transition: transform 1.25s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
-/* Top Valance Swoops Upwards */
-#gate.opening .curtain-valance {
+.curtain-transition-overlay.opening .curtain-valance {
   transform: translate3d(0, -105%, 0) !important;
   transition: transform 1.05s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
-#gate.gone {
+/* 4. Top Navigation Bar Download Store Buttons */
+.nav-app-download-group {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.nav-download-label {
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #c42352 !important;
   display: none !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  opacity: 0 !important;
+}
+
+@media (min-width: 1180px) {
+  .nav-download-label {
+    display: inline-block !important;
+  }
+}
+
+.nav-store-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  padding: 6px 14px !important;
+  border-radius: 999px !important;
+  border: 2px solid #2a1820 !important;
+  font-family: var(--disp) !important;
+  text-decoration: none !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+  white-space: nowrap !important;
+}
+
+.nav-store-btn:hover {
+  transform: translateY(-2px) scale(1.04) !important;
+  box-shadow: 0 5px 0 #2a1820 !important;
+}
+
+.nav-play-btn {
+  background: #ffffff !important;
+  color: #2a1820 !important;
+}
+.nav-play-btn:hover {
+  background: #ffd23f !important;
+}
+
+.nav-ios-btn {
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
+  color: #ffffff !important;
+}
+.nav-ios-btn:hover {
+  background: linear-gradient(135deg, #ff4785 0%, #ff175d 100%) !important;
+}
+
+.nav-store-btn .btn-text-col {
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1.05 !important;
+  text-align: left !important;
+}
+
+.nav-store-btn .btn-text-col small {
+  font-size: 8.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  opacity: 0.85 !important;
+  text-transform: uppercase !important;
+}
+
+.nav-store-btn .btn-text-col b {
+  font-size: 11.5px !important;
+  font-weight: 900 !important;
+}
+
+@media (max-width: 860px) {
+  .nav-store-btn {
+    padding: 5px 10px !important;
+  }
+  .nav-store-btn .btn-text-col small {
+    display: none !important;
+  }
+  .nav-store-btn .btn-text-col b {
+    font-size: 10px !important;
+  }
+}
+
+/* 5. Explicit Store Download Prompts & Banners Across Website */
+.store-callout-banner {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: #ffffff !important;
+  border: 2px solid #2a1820 !important;
+  border-radius: 999px !important;
+  padding: 4px 14px !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
+  margin-bottom: 10px !important;
+  max-width: 100% !important;
+}
+
+.store-callout-banner .callout-badge {
+  font-family: var(--disp) !important;
+  font-size: 10.5px !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  background: #e6195a !important;
+  padding: 2px 8px !important;
+  border-radius: 999px !important;
+  letter-spacing: 0.06em !important;
+  white-space: nowrap !important;
+}
+
+.store-callout-banner .callout-text {
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #2a1820 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.app-direct-download-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-family: var(--disp) !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: #ffd23f !important;
+  background: rgba(255, 42, 109, 0.25) !important;
+  border: 1.5px solid #ffd23f !important;
+  padding: 4px 12px !important;
+  border-radius: 999px !important;
+  margin-bottom: 12px !important;
+}
+
+.fin-download-banner {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: #ffd23f !important;
+  border: 2.5px solid #2a1820 !important;
+  color: #2a1820 !important;
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.06em !important;
+  padding: 6px 16px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  margin-bottom: 14px !important;
+  text-transform: uppercase !important;
 }
 
 body.locked {
@@ -11820,49 +11960,25 @@ body.locked .sd {
     font-size: 11px !important;
   }
 }
-</style></head><body class="locked"><div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
-  <!-- The Grand Pink Cinema Curtains -->
-  <div class="cinema-curtain-container" id="cinemaCurtain" aria-hidden="true">
-    <div class="curtain-panel curtain-left">
-      <div class="curtain-velvet-folds"></div>
-      <div class="curtain-sheen"></div>
-      <div class="curtain-gold-trim"></div>
-      <div class="curtain-bottom-fringe"></div>
-    </div>
-    <div class="curtain-panel curtain-right">
-      <div class="curtain-velvet-folds"></div>
-      <div class="curtain-sheen"></div>
-      <div class="curtain-gold-trim"></div>
-      <div class="curtain-bottom-fringe"></div>
-    </div>
-    <div class="curtain-valance">
-      <div class="valance-swags">
-        <span class="swag"></span>
-        <span class="swag"></span>
-        <span class="swag"></span>
-        <span class="swag"></span>
-        <span class="swag"></span>
-      </div>
-      <div class="valance-fringe"></div>
-    </div>
+</style></head><body class="locked">
+<!-- Clean VIP Cinema Ticket Starting Gate (NO Curtains visible on load) -->
+<div id="gate" role="dialog" aria-label="Welcome to LOVE CAFE Cinema">
+  <div class="g-projector-beam" aria-hidden="true"></div>
+  <div class="g-ambient-glow" aria-hidden="true"></div>
+  <div class="g-film gt" aria-hidden="true"></div>
+  <div class="g-film gb" aria-hidden="true"></div>
+
+  <div class="g-cinema-sparks" aria-hidden="true">
+    <span class="g-sparkle" style="left:8%;top:18%;font-size:26px;animation-delay:-1.2s">✦</span>
+    <span class="g-sparkle" style="left:88%;top:20%;font-size:22px;animation-delay:-2.5s">✨</span>
+    <span class="g-sparkle" style="left:12%;top:75%;font-size:24px;animation-delay:-0.8s">⭐</span>
+    <span class="g-sparkle" style="left:86%;top:72%;font-size:28px;animation-delay:-3.1s">🍿</span>
+    <span class="g-sparkle" style="left:50%;top:8%;font-size:20px;animation-delay:-1.9s">🎬</span>
+    <span class="g-sparkle" style="left:20%;top:45%;font-size:18px;animation-delay:-3.5s">✨</span>
+    <span class="g-sparkle" style="left:80%;top:48%;font-size:22px;animation-delay:-2.0s">💖</span>
   </div>
 
-<div class="g-projector-beam" aria-hidden="true"></div>
-<div class="g-ambient-glow" aria-hidden="true"></div>
-<div class="g-film gt" aria-hidden="true"></div>
-<div class="g-film gb" aria-hidden="true"></div>
-
-<div class="g-cinema-sparks" aria-hidden="true">
-  <span class="g-sparkle" style="left:8%;top:18%;font-size:26px;animation-delay:-1.2s">✦</span>
-  <span class="g-sparkle" style="left:88%;top:20%;font-size:22px;animation-delay:-2.5s">✨</span>
-  <span class="g-sparkle" style="left:12%;top:75%;font-size:24px;animation-delay:-0.8s">⭐</span>
-  <span class="g-sparkle" style="left:86%;top:72%;font-size:28px;animation-delay:-3.1s">🍿</span>
-  <span class="g-sparkle" style="left:50%;top:8%;font-size:20px;animation-delay:-1.9s">🎬</span>
-  <span class="g-sparkle" style="left:20%;top:45%;font-size:18px;animation-delay:-3.5s">✨</span>
-  <span class="g-sparkle" style="left:80%;top:48%;font-size:22px;animation-delay:-2.0s">💖</span>
-</div>
-
-<div class="g-in">
+  <div class="g-in">
   <div class="g-marquee-pill">
     <span class="g-live-dot"></span>
     <span>★ PREMIER IN-CINEMA GOURMET DINING ★</span>
@@ -11929,6 +12045,33 @@ body.locked .sd {
   </div>
 </div>
 </div>
+<!-- Theatrical Pink Cinema Curtain Opening Transition Overlay
+     (Only appears and parts open when 'ENTER CINEMA EXPERIENCE' is clicked) -->
+<div id="curtainOverlay" class="curtain-transition-overlay" aria-hidden="true">
+  <div class="curtain-panel curtain-left">
+    <div class="curtain-velvet-folds"></div>
+    <div class="curtain-sheen"></div>
+    <div class="curtain-gold-trim"></div>
+    <div class="curtain-bottom-fringe"></div>
+  </div>
+  <div class="curtain-panel curtain-right">
+    <div class="curtain-velvet-folds"></div>
+    <div class="curtain-sheen"></div>
+    <div class="curtain-gold-trim"></div>
+    <div class="curtain-bottom-fringe"></div>
+  </div>
+  <div class="curtain-valance">
+    <div class="valance-swags">
+      <span class="swag"></span>
+      <span class="swag"></span>
+      <span class="swag"></span>
+      <span class="swag"></span>
+      <span class="swag"></span>
+    </div>
+    <div class="valance-fringe"></div>
+  </div>
+</div>
+
 <div id="dock"><div class="stores"><a class="store" data-play href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get LOVE CAFE on Google Play"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg><span><small>GET IT ON</small>Google Play</span></a><a class="store" data-ios href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download LOVE CAFE on the App Store"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.2-2.800.8-3.500.8-.7 0-1.800-.8-3-.8-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7c1.300 0 2.100-1.100 2.800-2.200.9-1.300 1.300-2.500 1.300-2.600 0 0-2.500-1-2.500-3.800zM14.100 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.600 1.400-.6.700-1.100 1.700-.9 2.700 1 .1 2-.5 2.600-1.300z"/></svg><span><small>Download on the</small>App Store</span></a></div></div>
 <nav class="sd" aria-label="Page sections">
   <div class="sd-track">
@@ -11962,23 +12105,25 @@ body.locked .sd {
   </nav>
 
   <div class="nav-actions">
-    <!-- VIP In-Seat Order CTA -->
-    <a class="nav-vip-cta" href="#get" aria-label="Order to Seat">
-      <span class="vip-pulse-dot"></span>
-      <span class="vip-cta-text">Order to Seat</span>
-      <span class="vip-cta-arrow">→</span>
-    </a>
-    <!-- Compact Glass Store Icons -->
-    <div class="nav-store-icons">
-      <a class="nav-icon-link" data-play href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" title="Get on Google Play" aria-label="Google Play">
+    <!-- Official Google Play and App Store Download Buttons in Navigation -->
+    <div class="nav-app-download-group">
+      <span class="nav-download-label">Download:</span>
+      <a class="nav-store-btn nav-play-btn" href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Download Love Cafe on Google Play">
         <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
+        <span class="btn-text-col">
+          <small>Download Free</small>
+          <b>Google Play</b>
+        </span>
       </a>
-      <a class="nav-icon-link" data-ios href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" title="Download on App Store" aria-label="App Store">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.2-2.800.8-3.500.8-.7 0-1.800-.8-3-.8-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7c1.300 0 2.100-1.100 2.800-2.200.9-1.300 1.300-2.500 1.300-2.600 0 0-2.500-1-2.500-3.800zM14.100 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.600 1.400-.6.700-1.100 1.700-.9 2.700 1 .1 2-.5 2.600-1.300z"/></svg>
+      <a class="nav-store-btn nav-ios-btn" href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download Love Cafe on App Store">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-2 0.6-2.65 1.35-.58.67-1.09 1.74-0.95 2.77 1 .08 2.06-.52 2.68-1.27z"/></svg>
+        <span class="btn-text-col">
+          <small>Download Free</small>
+          <b>App Store</b>
+        </span>
       </a>
     </div>
 
-    <!-- Mobile Hamburger Menu Button -->
     <button class="nav-circle-btn menu-circle" id="mb" aria-expanded="false" aria-controls="menu" aria-label="Toggle Navigation Menu">
       <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
     </button>
@@ -12103,6 +12248,10 @@ body.locked .sd {
       </div>
 
       <!-- 5. App Store Download Buttons -->
+      <div class="store-callout-banner">
+        <span class="callout-badge">📲 DOWNLOAD NOW</span>
+        <span class="callout-text">Tap below to install the free app directly on your phone:</span>
+      </div>
       <div class="hero-store-row">
         <a class="hero-store-btn" data-play href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get on Google Play">
           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
@@ -12673,7 +12822,8 @@ body.locked .sd {
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
-          <div class="sl-stores-row" style="margin-top:10px;">
+          <div style="font-family:var(--disp);font-size:11.5px;font-weight:900;color:#e6195a;margin-top:8px;">📲 DOWNLOAD APP NOW TO ORDER TO YOUR SEAT:</div>
+          <div class="sl-stores-row" style="margin-top:6px;">
             <a href="#get" class="sl-store-pill" data-play aria-label="Google Play">
               <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" width="120" height="36">
             </a>
@@ -12889,6 +13039,9 @@ body.locked .sd {
         </p>
 
         <!-- Store Buttons -->
+        <div class="app-download-cues">
+          <span class="app-direct-download-tag">📲 TAP BELOW TO DOWNLOAD APP DIRECTLY:</span>
+        </div>
         <div class="app-stores-row">
           <a class="store-badge-btn" href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
@@ -14388,6 +14541,7 @@ body.locked .sd {
       </div>
 
       <!-- Tactile Store Buttons -->
+      <div class="fin-download-banner">📲 TAP BELOW TO DOWNLOAD THE FREE APP NOW ON YOUR PHONE:</div>
       <div class="fin-stores-row">
         <a class="fin-store-btn" href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get LOVE CAFE on Google Play">
           <svg class="fin-store-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
@@ -14635,26 +14789,45 @@ window.startExperience = function(e) {
     burst(innerWidth / 2, innerHeight / 2);
   }
 
-  const g = $('gate');
-  if (g) {
-    // 1. Trigger the majestic pink cinema curtain opening animation
-    g.classList.add('opening');
-    
-    // 2. Playful sparkling confetti bursts right down the parting center line
-    setTimeout(() => {
-      if (typeof burst === 'function') {
-        burst(innerWidth / 2, innerHeight * 0.35);
-        burst(innerWidth / 2, innerHeight * 0.65);
-      }
-    }, 280);
+  const gateEl = $('gate');
+  const curtainEl = $('curtainOverlay');
 
-    // 3. When the grand curtain pull completes, cleanup gate completely
+  if (curtainEl) {
+    // 1. Immediately display the pink cinema curtain overlay
+    curtainEl.style.display = 'block';
+    
+    // 2. Hide the ticket gate underneath so hero is revealed when curtain opens
+    if (gateEl) {
+      gateEl.classList.add('gone');
+    }
+
+    // 3. Trigger the grand parting of the velvet curtains with requestAnimationFrame
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        curtainEl.classList.add('opening');
+        
+        // Confetti sparkles burst down the parting center line
+        setTimeout(() => {
+          if (typeof burst === 'function') {
+            burst(innerWidth / 2, innerHeight * 0.35);
+            burst(innerWidth / 2, innerHeight * 0.65);
+          }
+        }, 300);
+      });
+    });
+
+    // 4. When curtain pull completes (~1.25s), cleanly remove overlay from DOM flow
     setTimeout(() => {
-      g.classList.add('gone');
-      g.style.display = 'none';
+      curtainEl.style.display = 'none';
+      if (gateEl) gateEl.style.display = 'none';
       const stickH1 = document.querySelector('.stick h1');
       if (stickH1) stickH1.classList.add('hin');
-    }, 1250);
+    }, 1280);
+  } else if (gateEl) {
+    gateEl.classList.add('gone');
+    setTimeout(() => {
+      gateEl.style.display = 'none';
+    }, 800);
   }
   
   document.body.classList.remove('locked');
