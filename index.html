@@ -1790,7 +1790,7 @@ body.locked{overflow:hidden;height:100svh}
     grid-template-columns: 1fr !important;
     grid-template-rows: auto auto !important;
     align-content: center !important;
-    padding: calc(64px + env(safe-area-inset-top, 0px)) 16px 14px !important;
+    padding: calc(92px + env(safe-area-inset-top, 0px)) 16px calc(22px + env(safe-area-inset-bottom, 0px)) !important;
     gap: 6px !important;
     background: linear-gradient(180deg, #ecb7b3 0%, #f1bebb 18%, #f7ceca 42%, #fddbd9 68%, #f8d4cf 85%, #f0c5bf 100%) !important;
   }
@@ -6365,7 +6365,7 @@ body.locked .sd {
     grid-template-columns: 1fr !important;
     grid-template-rows: auto auto !important;
     align-content: flex-start !important;
-    padding: calc(64px + env(safe-area-inset-top, 0px)) 14px calc(44px + env(safe-area-inset-bottom, 0px)) !important;
+    padding: calc(92px + env(safe-area-inset-top, 0px)) 14px calc(22px + env(safe-area-inset-bottom, 0px)) !important;
     gap: 6px !important;
     text-align: center !important;
   }
@@ -13434,6 +13434,15 @@ html {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+  }
+}
+
+
+/* Hero Mobile Tag Navigation Clearance */
+@media (max-width: 860px) {
+  .hero-badge-pill {
+    margin-top: 8px !important;
+    margin-bottom: 2px !important;
   }
 }
 
