@@ -980,7 +980,7 @@ body.locked{overflow:hidden;height:100svh}
 
 /* Hero Section Container */
 #scene {
-  height: 260vh !important;
+  height: 310vh !important;
   position: relative;
   z-index: 0;
   background: linear-gradient(180deg, #ecb7b3 0%, #f1bebb 18%, #f7ceca 42%, #fddbd9 68%, #f8d4cf 85%, #f0c5bf 100%) !important;
@@ -1778,7 +1778,7 @@ body.locked{overflow:hidden;height:100svh}
    ========================================================================== */
 @media (max-width: 860px) {
   #scene {
-    height: 220vh !important;
+    height: 260vh !important;
     background: linear-gradient(180deg, #ecb7b3 0%, #f1bebb 18%, #f7ceca 42%, #fddbd9 68%, #f8d4cf 85%, #f0c5bf 100%) !important;
   }
   
@@ -2813,7 +2813,7 @@ body.locked .sd {
 
 /* 2. Relaxed, Unhurried Scroll Pacing for Hero 3D Box Experience */
 #scene {
-  height: 260vh !important;
+  height: 310vh !important;
   position: relative !important;
   z-index: 1 !important;
   background: linear-gradient(180deg, #ecb7b3 0%, #f1bebb 18%, #f7ceca 42%, #fddbd9 68%, #f8d4cf 85%, #f0c5bf 100%) !important;
@@ -2822,20 +2822,20 @@ body.locked .sd {
 
 @media (max-width: 860px) {
   #scene {
-    height: 220vh !important;
+    height: 260vh !important;
   }
 }
 
 /* 3. Generous Pacing for Flavours Orbit & Highlights Slides (Every Dish Admired) */
 .orb3 {
-  height: 420vh !important;
+  height: 490vh !important;
   position: relative !important;
   z-index: 1 !important;
 }
 
 @media (max-width: 860px) {
   .orb3 {
-    height: 360vh !important;
+    height: 395vh !important;
   }
 }
 
@@ -2844,7 +2844,7 @@ body.locked .sd {
    ========================================================================== */
 
 .ps {
-  height: 380vh !important;
+  height: 445vh !important;
   position: relative !important;
   z-index: 5 !important;
   margin-top: -36px !important;
@@ -2860,7 +2860,7 @@ body.locked .sd {
 
 @media (max-width: 860px) {
   .ps {
-    height: 320vh !important;
+    height: 370vh !important;
     border-radius: 32px 32px 0 0 !important;
   }
 }
@@ -5686,7 +5686,7 @@ body.locked .sd {
 
 /* 2. Hero Section Atmosphere */
 #scene {
-  height: 260vh !important;
+  height: 310vh !important;
   position: relative !important;
   z-index: 1 !important;
   background: radial-gradient(circle at 68% 45%, #fedbe0 0%, #fbd1d8 35%, #f7bcc5 70%, #efabb6 100%) !important;
@@ -7668,7 +7668,7 @@ body.locked .sd {
    ENHANCED ATTRACTIVE & EYE-CATCHY FOOD FRAME-BY-FRAME SHOWCASE STYLES
    ========================================================================== */
 .food-frames-showcase {
-  height: 420vh !important;
+  height: 490vh !important;
   position: relative !important;
   z-index: 2 !important;
   background: #fcdfe4;
@@ -7676,7 +7676,7 @@ body.locked .sd {
 
 @media (max-width: 860px) {
   .food-frames-showcase {
-    height: 340vh !important;
+    height: 395vh !important;
   }
 }
 
@@ -8460,7 +8460,7 @@ body.locked .sd {
   --step-chip-bg: rgba(255, 255, 255, 0.95);
 
   /* Generous 850vh scroll runway so 300 video frames play slowly, smoothly and luxuriously */
-  height: 350vh !important;
+  height: 410vh !important;
   position: relative !important;
   z-index: 3 !important;
   background: var(--step-bg) !important;
@@ -8473,7 +8473,7 @@ body.locked .sd {
 @media (max-width: 900px) {
   .cinema-journey-section {
     /* Generous 750vh mobile runway so finger scrolls play video gently without rushing */
-    height: 290vh !important;
+    height: 340vh !important;
   }
 }
 
@@ -16338,34 +16338,36 @@ const prog = el => {
   return clamp(-r.top / Math.max(1, r.height - innerHeight));
 };
 
-// Premium Silky Smooth Scrolling (Lenis v1.1.18 - Calibrated Pacing for Animation Sections + Rapid Content Browsing)
+// Premium Silky Smooth Scrolling (Lenis v1.1.18 - Calibrated Hybrid Pacing: Slightly Slower For Animated Sections, 100% Normal For Content Sections)
 let lenis = null;
 try {
   if (typeof Lenis !== 'undefined' && !reduce) {
     lenis = new Lenis({
-      duration: 0.95, // Snappy, responsive, modern silky glide
+      duration: 1.0, // Standard silky modern website duration
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1.05, // Fast, natural 1:1 desktop wheel travel
+      wheelMultiplier: 1.0, // Standard 1:1 natural wheel travel for normal website scrolling
       syncTouch: true, // Smooth touch for mobile
-      touchMultiplier: 1.25, // Fast, effortless finger dragging on mobile
-      touchInertiaMultiplier: 16, // Natural, lively momentum glide on mobile
+      touchMultiplier: 1.0, // Standard 1:1 natural finger tracking on mobile
+      touchInertiaMultiplier: 12, // Natural, pleasant momentum glide on mobile
       syncTouchLerp: 0.08,
       infinite: false,
       virtualScroll: function(data) {
-        // Dynamic speed calibration:
-        // In animated sections (#scene, #flavours, #ps, #story), keep exact 195ee1a speed.
-        // In other non-animated content sections (#app, #cinemas, #reviews, #rewards, etc.),
-        // boost scroll velocity so content sections scroll briskly, crisply, and fast!
-        const story = document.getElementById('story');
-        if (story) {
-          const rect = story.getBoundingClientRect();
-          if (rect.bottom <= (window.innerHeight || 800) * 0.3) {
-            data.deltaY *= 1.75;
-          }
+        // Check if user is past all animated sections
+        const app = document.getElementById('app');
+        const isPastAnimations = app && app.getBoundingClientRect().top <= 80;
+
+        // 1. Content Sections without animation (#app, #cinemas, #reviews, #rewards, #partners, #why-us, #faq, #get):
+        // 100% Normal website scrolling (1:1 standard natural scroll, zero modification)
+        if (isPastAnimations) {
+          return true;
         }
+
+        // 2. Sections with scrolling animation (#scene, #flavours, #ps, #story):
+        // Make the scrolling just a little slower (~15% gentler scroll delta)
+        data.deltaY *= 0.85;
         return true;
       }
     });
@@ -18682,7 +18684,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
   function animLoop() {
     const diff = targetFrame - currentFrame;
     if (Math.abs(diff) > 0.04) {
-      currentFrame += diff * 0.18;
+      currentFrame += diff * 0.15;
       renderFrameAt(currentFrame, false);
     }
     requestAnimationFrame(animLoop);
@@ -19018,7 +19020,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
   function animLoop() {
     const diff = targetFrame - currentFrame;
     if (Math.abs(diff) > 0.01) {
-      currentFrame += diff * 0.16;
+      currentFrame += diff * 0.14;
       renderFrameAt(currentFrame);
     }
     requestAnimationFrame(animLoop);
