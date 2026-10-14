@@ -13469,759 +13469,499 @@ html {
 
 /* ==========================================================================
    APP SHOWCASE SECTION (#app): "YOUR NEXT MOVIE NIGHT DESERVES THIS"
-   Ultra-Premium Dark Cinema Luxury · Effortless Touch Scroll · Zero Drag Hijacking
+   Retro-Chic Luxury Canvas · Scroll-Driven Pinned 3-Screen iPhone Cycle
    ========================================================================== */
 .app-showcase-section {
   position: relative !important;
-  background: 
-    radial-gradient(ellipse 75% 50% at 50% -10%, rgba(255, 42, 109, 0.28) 0%, transparent 60%),
-    radial-gradient(circle at 10% 75%, rgba(255, 210, 63, 0.14) 0%, transparent 45%),
-    radial-gradient(circle at 90% 45%, rgba(180, 20, 80, 0.22) 0%, transparent 55%),
-    linear-gradient(180deg, #16030e 0%, #260719 50%, #15020d 100%) !important;
-  padding: clamp(64px, 7.5vw, 105px) clamp(18px, 4vw, 54px) !important;
-  color: #ffffff !important;
-  border-top: 2px solid rgba(255, 42, 109, 0.35) !important;
-  border-bottom: 2px solid rgba(255, 42, 109, 0.35) !important;
+  background: radial-gradient(circle at 50% 15%, #ffffff 0%, #fff2f6 45%, #fde2ea 100%) !important;
+  box-shadow: inset 0 0 80px rgba(244, 160, 178, 0.3) !important;
+  border-top: 2.5px solid #2a1820 !important;
+  border-bottom: 2.5px solid #2a1820 !important;
+  padding: 0 !important;
+  height: 250vh !important; /* Pinned scroll track for 3 screens */
+  color: #2a1820 !important;
+  overflow: visible !important;
+  scroll-margin-top: 76px !important;
+  z-index: 10 !important;
+}
+
+.app-ambient-spotlight { display: none !important; }
+
+.app-sticky-wrapper {
+  position: sticky !important;
+  top: 76px !important;
+  height: calc(100vh - 76px) !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   overflow: hidden !important;
-  scroll-margin-top: 85px !important;
-  z-index: 5 !important;
-}
-
-.app-ambient-spotlight {
-  position: absolute !important;
-  border-radius: 50% !important;
-  filter: blur(80px) !important;
-  pointer-events: none !important;
-  z-index: 1 !important;
-}
-
-.aura-pink {
-  top: 15% !important;
-  left: 2% !important;
-  width: 450px !important;
-  height: 450px !important;
-  background: rgba(255, 42, 109, 0.18) !important;
-}
-
-.aura-gold {
-  top: 25% !important;
-  right: 2% !important;
-  width: 500px !important;
-  height: 500px !important;
-  background: rgba(255, 210, 63, 0.18) !important;
+  padding: 20px clamp(16px, 4vw, 56px) !important;
+  box-sizing: border-box !important;
 }
 
 .app-section-inner {
-  max-width: 1240px !important;
+  max-width: 1200px !important;
+  width: 100% !important;
   margin: 0 auto !important;
-  position: relative !important;
-  z-index: 2 !important;
 }
 
 .app-main-grid {
   display: grid !important;
-  grid-template-columns: 1.05fr 1fr !important;
-  gap: clamp(36px, 5.5vw, 68px) !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  gap: clamp(32px, 5vw, 64px) !important;
   align-items: center !important;
 }
 
-/* Left Column: Typography, Voucher & Store Action */
+/* Left Text Column */
 .app-text-col {
   display: flex !important;
   flex-direction: column !important;
-  gap: 18px !important;
+  gap: 14px !important;
 }
 
 .app-wow-tag {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 120, 160, 0.4) !important;
+  gap: 6px !important;
+  padding: 5px 14px !important;
   border-radius: 999px !important;
-  padding: 6px 16px !important;
+  background: #ffffff !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
   font-family: var(--disp) !important;
   font-size: 11px !important;
   font-weight: 800 !important;
-  color: #ff9bb9 !important;
-  letter-spacing: 0.06em !important;
+  color: #d42255 !important;
+  letter-spacing: 0.05em !important;
   width: fit-content !important;
-  box-shadow: 0 4px 16px rgba(255, 42, 109, 0.15) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
 }
 
 .app-title-head {
   font-family: var(--disp) !important;
-  font-size: clamp(36px, 4.5vw, 58px) !important;
+  font-size: clamp(32px, 3.8vw, 50px) !important;
   line-height: 1.05 !important;
-  color: #ffffff !important;
+  color: #2a1820 !important;
   margin: 0 !important;
   font-weight: 900 !important;
   letter-spacing: -0.02em !important;
 }
 
-.coral-gradient-text {
-  background: linear-gradient(135deg, #ff7eb3 0%, #ff2a6d 50%, #ffd23f 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  display: inline-block !important;
+.app-title-head .coral-gradient-text {
+  color: #d42255 !important;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
 }
 
 .app-subtitle-desc {
   font-family: var(--sans) !important;
-  font-size: clamp(15px, 1.4vw, 17px) !important;
+  font-size: 15.5px !important;
   line-height: 1.55 !important;
-  color: #ffd8e4 !important;
+  color: #4a2c3a !important;
   margin: 0 !important;
-  max-width: 52ch !important;
+  max-width: 48ch !important;
 }
 
-/* Lucrative In-App Offer Card */
-.app-lucrative-offer-card {
-  background: linear-gradient(135deg, rgba(45, 15, 32, 0.85) 0%, rgba(25, 7, 18, 0.95) 100%) !important;
-  border: 1.5px solid rgba(255, 210, 63, 0.45) !important;
-  border-radius: 20px !important;
-  padding: 18px 22px !important;
-  box-shadow: 0 14px 35px -8px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 42, 109, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
+/* Step Progress Tabs / Cards */
+.app-step-nav-cards {
   display: flex !important;
   flex-direction: column !important;
-  gap: 10px !important;
+  gap: 9px !important;
+  margin: 4px 0 !important;
 }
 
-.offer-card-top {
+.app-step-card {
   display: flex !important;
   align-items: center !important;
-  justify-content: space-between !important;
-  gap: 10px !important;
-  flex-wrap: wrap !important;
-}
-
-.offer-pill {
-  font-family: var(--disp) !important;
-  font-size: 10.5px !important;
-  font-weight: 900 !important;
-  letter-spacing: 0.06em !important;
-  color: #ffffff !important;
-  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  border-radius: 999px !important;
-  padding: 3px 12px !important;
-  box-shadow: 0 4px 12px rgba(255, 42, 109, 0.35) !important;
-}
-
-.offer-val {
-  font-family: var(--disp) !important;
-  font-size: 13px !important;
-  font-weight: 900 !important;
-  color: #ffd23f !important;
-  background: rgba(255, 210, 63, 0.15) !important;
-  border: 1px solid rgba(255, 210, 63, 0.4) !important;
-  border-radius: 999px !important;
-  padding: 3px 12px !important;
-  letter-spacing: 0.04em !important;
-}
-
-.offer-card-desc {
-  font-family: var(--sans) !important;
-  font-size: 13.5px !important;
-  line-height: 1.5 !important;
-  color: #ffe0eb !important;
-  margin: 0 !important;
-}
-
-.offer-card-desc strong {
-  color: #ffd23f !important;
-}
-
-.offer-tags-row {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  flex-wrap: wrap !important;
-}
-
-.offer-chip {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.14) !important;
-  border-radius: 999px !important;
-  padding: 4px 11px !important;
-  font-family: var(--disp) !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  color: #fff !important;
-}
-
-.app-download-cues {
-  font-family: var(--disp) !important;
-  font-size: 11.5px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.06em !important;
-  color: #ffd8e4 !important;
-  margin-top: 4px !important;
-  text-transform: uppercase !important;
-}
-
-.app-stores-row {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 14px !important;
-  margin-top: 2px !important;
-}
-
-/* QR Code Companion Card */
-.app-qr-download-card {
-  display: flex !important;
-  align-items: center !important;
-  gap: 14px !important;
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  gap: 12px !important;
+  padding: 10px 14px !important;
   border-radius: 16px !important;
-  padding: 10px 16px !important;
-  width: fit-content !important;
-  backdrop-filter: blur(10px) !important;
+  background: #ffffff !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
+  cursor: pointer !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
+  text-align: left !important;
 }
 
-.qr-code-frame {
-  width: 52px !important;
-  height: 52px !important;
-  border-radius: 10px !important;
-  overflow: hidden !important;
-  background: #fff !important;
-  padding: 3px !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+.app-step-card:hover {
+  transform: translateX(4px) !important;
+  background: #fff8fa !important;
+}
+
+.app-step-card.active {
+  background: #fff0f3 !important;
+  border-color: #2a1820 !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  transform: translateX(6px) !important;
+}
+
+.step-num-badge {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 9px !important;
+  background: #ffe27a !important;
+  border: 1.5px solid #2a1820 !important;
+  display: grid !important;
+  place-items: center !important;
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  color: #2a1820 !important;
   flex-shrink: 0 !important;
 }
 
-.qr-instruction {
-  font-size: 12px !important;
-  color: #ffe0eb !important;
-  line-height: 1.35 !important;
-}
-
-.qr-instruction b {
+.app-step-card.active .step-num-badge {
+  background: #e6195a !important;
   color: #ffffff !important;
-  font-size: 12.5px !important;
 }
 
-.app-theatre-quicklink {
-  color: #ffd23f !important;
-  font-family: var(--disp) !important;
-  font-size: 12px !important;
-  font-weight: 800 !important;
-  text-decoration: none !important;
-  border-bottom: 1.5px solid rgba(255, 210, 63, 0.4) !important;
-  padding-bottom: 2px !important;
-  margin-left: 8px !important;
-  transition: all 0.2s ease !important;
-}
-
-.app-theatre-quicklink:hover {
-  color: #ffffff !important;
-  border-color: #ff2a6d !important;
-  transform: translateX(3px) !important;
-}
-
-/* Right Column: Interactive Device Showcase Stage */
-.app-graphic-col {
-  position: relative !important;
+.step-info-box {
   display: flex !important;
   flex-direction: column !important;
-  align-items: center !important;
+  line-height: 1.2 !important;
 }
 
-/* Marquee Screen Switcher Tabs */
-.app-screens-tab-pills {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  flex-wrap: wrap !important;
-  margin-bottom: 18px !important;
-  z-index: 10 !important;
-}
-
-.app-tab-btn {
-  padding: 8px 18px !important;
+.step-info-box b {
   font-family: var(--disp) !important;
-  font-size: 12.5px !important;
+  font-size: 13.5px !important;
   font-weight: 800 !important;
-  border-radius: 999px !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.16) !important;
-  color: #ffd8e4 !important;
-  cursor: pointer !important;
-  backdrop-filter: blur(10px) !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  color: #2a1820 !important;
+}
+
+.step-info-box span {
+  font-family: var(--sans) !important;
+  font-size: 11.5px !important;
+  color: #633e4f !important;
+}
+
+/* ₹100 Welcome Gift Strip */
+.app-welcome-strip {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
+  gap: 10px !important;
+  padding: 8px 14px !important;
+  border-radius: 999px !important;
+  background: #ffffff !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
+  width: fit-content !important;
 }
 
-.app-tab-btn:hover {
-  background: rgba(255, 255, 255, 0.15) !important;
-  color: #ffffff !important;
-  transform: translateY(-2px) !important;
+.aws-badge {
+  font-family: var(--disp) !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  padding: 3px 8px !important;
+  border-radius: 999px !important;
+  background: #ffe4e6 !important;
+  color: #d42255 !important;
+  border: 1.5px solid #2a1820 !important;
 }
 
-.app-tab-btn.active {
-  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
-  color: #ffffff !important;
-  border-color: #ffd23f !important;
-  box-shadow: 0 6px 20px rgba(255, 42, 109, 0.4), 0 0 15px rgba(255, 210, 63, 0.3) !important;
+.aws-text {
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #2a1820 !important;
 }
 
-/* Device Carousel Stage */
-.app-cinema-triptych-stage {
-  position: relative !important;
-  width: 100% !important;
+.aws-text b { color: #d42255 !important; }
+
+/* Store Buttons */
+.app-stores-row {
   display: flex !important;
-  align-items: flex-end !important;
-  justify-content: center !important;
-  gap: 20px !important;
-  padding: 10px 0 !important;
-  touch-action: pan-y !important; /* CRITICAL: Enables smooth vertical page scrolling */
+  gap: 12px !important;
+  align-items: center !important;
 }
 
-.app-screen-card {
-  position: relative !important;
-  flex: 0 0 215px !important;
-  width: 215px !important;
-  max-width: 215px !important;
+.fin-store-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 8px 16px !important;
+  border-radius: 14px !important;
+  background: #2a1820 !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.fin-store-btn:hover {
+  background: #3e2430 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 0 #2a1820 !important;
+}
+
+.fin-store-text {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  line-height: 1.1 !important;
+}
+
+.fin-store-text small {
+  font-size: 8px !important;
+  text-transform: uppercase !important;
+  opacity: 0.8 !important;
+}
+
+.fin-store-text strong {
+  font-size: 13px !important;
+  font-family: var(--disp) !important;
+  font-weight: 800 !important;
+}
+
+.fin-store-badge {
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  color: #ffd23f !important;
+  margin-left: 2px !important;
+}
+
+/* Right Column: Realistic iPhone Frame */
+.app-graphic-col {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  gap: 10px !important;
-  cursor: pointer !important;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, filter 0.3s ease !important;
+  justify-content: center !important;
+  position: relative !important;
 }
 
-.app-floating-pill-badge {
-  background: rgba(18, 4, 12, 0.85) !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  border-radius: 999px !important;
-  padding: 5px 14px !important;
-  font-family: var(--disp) !important;
-  font-size: 10.5px !important;
-  font-weight: 800 !important;
-  color: #ffffff !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5) !important;
-  white-space: nowrap !important;
+/* Realistic iPhone Mockup */
+.app-iphone-frame {
+  width: 280px !important;
+  height: 560px !important;
+  background: #1e0f17 !important;
+  border-radius: 46px !important;
+  border: 4px solid #2a1820 !important;
+  box-shadow: 0 25px 60px -10px rgba(42, 24, 32, 0.28), 0 8px 24px rgba(212, 34, 85, 0.14) !important;
+  position: relative !important;
+  padding: 8px !important;
+  box-sizing: border-box !important;
   display: flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  z-index: 6 !important;
+  flex-direction: column !important;
 }
 
-.badge-center {
-  background: linear-gradient(135deg, rgba(230, 25, 90, 0.88) 0%, rgba(18, 4, 12, 0.9) 100%) !important;
-  border-color: rgba(255, 210, 63, 0.5) !important;
-  color: #ffd23f !important;
+/* Dynamic Island */
+.app-dynamic-island {
+  position: absolute !important;
+  top: 14px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 84px !important;
+  height: 22px !important;
+  background: #000000 !important;
+  border-radius: 20px !important;
+  z-index: 20 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
 }
 
-/* Phone Mockup Styling */
-.realistic-mock-phone {
-  position: relative !important;
-  border-radius: 36px !important;
-  padding: 9px !important;
-  background: linear-gradient(145deg, #3a1525 0%, #15050f 100%) !important;
-  border: 2px solid rgba(255, 255, 255, 0.2) !important;
-  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.85), 0 0 30px rgba(255, 42, 109, 0.15) !important;
+/* Phone Screen Container */
+.app-iphone-screen {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 38px !important;
   overflow: hidden !important;
-  transition: transform 0.35s ease, box-shadow 0.35s ease !important;
-}
-
-.mock-phone-screen-frame {
   position: relative !important;
-  border-radius: 28px !important;
-  overflow: hidden !important;
-  background: #000 !important;
-  aspect-ratio: 9 / 19.5 !important;
+  background: #000000 !important;
 }
 
-.phone-screen-img-box img {
+.app-screen-layer {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0 !important;
+  transform: scale(0.97) !important;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.app-screen-layer img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
   display: block !important;
 }
 
-.app-screen-caption {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center !important;
-  gap: 3px !important;
+.app-screen-layer.active {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  pointer-events: auto !important;
+  z-index: 5 !important;
 }
 
-.caption-tag {
+/* Floating Context Badge */
+.app-phone-floating-pill {
+  position: absolute !important;
+  bottom: -16px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: #ffffff !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 4px 0 #2a1820 !important;
+  border-radius: 999px !important;
+  padding: 6px 16px !important;
   font-family: var(--disp) !important;
-  font-size: 10px !important;
+  font-size: 11.5px !important;
   font-weight: 800 !important;
-  letter-spacing: 0.05em !important;
-  color: #ffd8e4 !important;
-  text-transform: uppercase !important;
+  color: #2a1820 !important;
+  white-space: nowrap !important;
+  z-index: 25 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
 }
 
-.app-screen-caption b {
-  font-family: var(--sans) !important;
-  font-size: 12.5px !important;
-  color: #ffffff !important;
-  font-weight: 700 !important;
+.app-phone-floating-pill b {
+  color: #d42255 !important;
 }
 
-/* Desktop Triptych Arrangement */
-@media (min-width: 992px) {
-  .app-screen-card.card-left {
-    transform: scale(0.92) translateY(10px) !important;
-    opacity: 0.82 !important;
-    z-index: 2 !important;
-  }
-  .app-screen-card.card-center,
-  .app-screen-card.active {
-    transform: scale(1.05) translateY(-8px) !important;
-    opacity: 1 !important;
-    z-index: 5 !important;
-  }
-  .app-screen-card.card-right {
-    transform: scale(0.92) translateY(10px) !important;
-    opacity: 0.82 !important;
-    z-index: 2 !important;
-  }
-  
-  .app-screen-card.card-left:hover,
-  .app-screen-card.card-right:hover {
-    transform: scale(0.96) translateY(2px) !important;
-    opacity: 0.95 !important;
-  }
-  
-  .phone-flagship,
-  .app-screen-card.active .realistic-mock-phone {
-    border-color: #ffd23f !important;
-    box-shadow: 0 30px 75px -10px rgba(0, 0, 0, 0.95), 0 0 45px rgba(255, 42, 109, 0.4), 0 0 25px rgba(255, 210, 63, 0.3) !important;
-  }
-  
-  .app-mobile-nav-bar {
-    display: none !important;
-  }
-}
-
-/* Mobile Showcase Layout - Silky Smooth Centered Carousel with Snapping & Zero Overflow */
-@media (max-width: 991px) {
+/* Responsive Styles */
+@media (max-width: 900px) {
   .app-showcase-section {
-    padding: 60px 16px 50px 16px !important;
-    width: 100% !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-    box-sizing: border-box !important;
+    height: 250vh !important;
   }
 
-  .app-section-inner {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    margin: 0 auto !important;
+  .app-sticky-wrapper {
+    padding: 10px 12px 14px 12px !important;
+    top: 60px !important;
+    height: calc(100vh - 60px) !important;
+    justify-content: center !important;
   }
 
   .app-main-grid {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    gap: 6px !important;
     width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    gap: 32px !important;
-    box-sizing: border-box !important;
   }
 
   .app-text-col {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-    gap: 16px !important;
+    display: contents !important;
   }
 
   .app-wow-tag {
-    margin: 0 auto !important;
+    order: 1 !important;
+    font-size: 9.5px !important;
+    padding: 3px 10px !important;
   }
 
   .app-title-head {
-    font-size: clamp(28px, 7.2vw, 40px) !important;
+    order: 2 !important;
+    font-size: 22px !important;
     text-align: center !important;
+    margin: 0 !important;
     line-height: 1.1 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    letter-spacing: -0.02em !important;
-    word-break: break-word !important;
   }
 
   .app-subtitle-desc {
-    font-size: 14.5px !important;
-    line-height: 1.55 !important;
-    text-align: center !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    color: #ffd8e4 !important;
+    display: none !important;
   }
 
-  .app-lucrative-offer-card {
+  .app-step-nav-cards {
+    order: 3 !important;
+    flex-direction: row !important;
+    gap: 6px !important;
     width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 16px 18px !important;
-    text-align: left !important;
+    justify-content: center !important;
+    margin: 2px 0 !important;
   }
 
-  .offer-card-top {
-    width: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 8px !important;
+  .app-step-card {
+    padding: 4px 8px !important;
+    border-radius: 999px !important;
+    gap: 5px !important;
+    transform: none !important;
   }
 
-  .app-download-cues {
-    text-align: center !important;
+  .app-step-card .step-num-badge {
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 10px !important;
+    border-radius: 6px !important;
+  }
+
+  .app-step-card .step-info-box b {
     font-size: 11px !important;
-    margin-top: 4px !important;
   }
 
-  .app-stores-row {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
+  .app-step-card .step-info-box span {
+    display: none !important;
   }
 
-  .app-stores-row .fin-store-btn {
-    width: 100% !important;
-    max-width: 100% !important;
-    justify-content: center !important;
-    box-sizing: border-box !important;
-    padding: 11px 16px !important;
+  .app-step-card.active {
+    transform: scale(1.05) !important;
   }
 
-  .app-qr-download-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    justify-content: center !important;
-    padding: 10px 14px !important;
-    gap: 12px !important;
+  .app-welcome-strip {
+    display: none !important;
   }
 
   .app-graphic-col {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    overflow-x: hidden !important;
-    box-sizing: border-box !important;
+    order: 4 !important;
+    margin: 4px 0 !important;
   }
 
-  .app-screens-tab-pills {
+  .app-iphone-frame {
+    width: 200px !important;
+    height: 400px !important;
+    border-radius: 36px !important;
+    padding: 6px !important;
+    border-width: 3.5px !important;
+  }
+
+  .app-dynamic-island {
+    top: 10px !important;
+    width: 60px !important;
+    height: 16px !important;
+  }
+
+  .app-iphone-screen {
+    border-radius: 30px !important;
+  }
+
+  .app-phone-floating-pill {
+    bottom: -12px !important;
+    padding: 4px 12px !important;
+    font-size: 10.5px !important;
+  }
+
+  .app-stores-row {
+    order: 5 !important;
+    margin-top: 10px !important;
     display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
+    flex-direction: row !important;
     gap: 8px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 16px !important;
-  }
-
-  .app-tab-btn {
-    padding: 7px 14px !important;
-    font-size: 11.5px !important;
-    border-radius: 999px !important;
-  }
-
-  .app-cinema-triptych-stage {
-    width: 100% !important;
-    max-width: 100% !important;
-    display: flex !important;
-    align-items: flex-end !important;
-    justify-content: flex-start !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    scroll-behavior: smooth !important;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: none !important;
-    padding: 12px calc((100% - 240px) / 2) 16px !important;
-    gap: 18px !important;
-    box-sizing: border-box !important;
-    touch-action: pan-x pan-y !important;
-  }
-  .app-cinema-triptych-stage::-webkit-scrollbar { display: none !important; }
-
-  .app-screen-card {
-    flex: 0 0 240px !important;
-    width: 240px !important;
-    max-width: 240px !important;
-    scroll-snap-align: center !important;
-    box-sizing: border-box !important;
-    transform: scale(0.92) !important;
-    opacity: 0.75 !important;
-    transition: transform 0.3s ease, opacity 0.3s ease !important;
-  }
-
-  .app-screen-card.card-left,
-  .app-screen-card.card-center,
-  .app-screen-card.card-right {
-    transform: scale(0.92) !important;
-  }
-
-  .app-screen-card.active {
-    transform: scale(1) !important;
-    opacity: 1 !important;
-  }
-
-  .app-mobile-nav-bar {
-    display: flex !important;
-    align-items: center !important;
     justify-content: center !important;
-    gap: 14px !important;
-    margin-top: 14px !important;
-    width: 100% !important;
   }
 
-  .app-mobile-arrow {
-    width: 40px !important;
-    height: 40px !important;
-    border-radius: 50% !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: #ffffff !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
-    font-size: 20px !important;
-    font-weight: 800 !important;
-    cursor: pointer !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    backdrop-filter: blur(10px) !important;
+  .fin-store-btn {
+    padding: 5px 10px !important;
+    border-radius: 10px !important;
+    gap: 6px !important;
   }
 
-  .app-carousel-dots {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
+  .fin-store-btn svg {
+    width: 14px !important;
+    height: 14px !important;
   }
 
-  .app-dot {
-    width: 10px !important;
-    height: 10px !important;
-    border-radius: 50% !important;
-    background: rgba(255, 255, 255, 0.25) !important;
-    border: none !important;
-    padding: 0 !important;
-    cursor: pointer !important;
-    transition: all 0.2s ease !important;
+  .fin-store-text small {
+    font-size: 7px !important;
   }
 
-  .app-dot.active {
-    width: 24px !important;
-    border-radius: 999px !important;
-    background: #ff2a6d !important;
-    box-shadow: 0 0 10px #ff2a6d !important;
+  .fin-store-text strong {
+    font-size: 10.5px !important;
   }
-}
 
-/* Bottom Capsule Bar: 4 Core High-Impact App Perks with Rich Dark-Luxe Contrast */
-.app-perks-capsule-bar {
-  margin-top: clamp(36px, 5vw, 56px) !important;
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 14px !important;
-  background: linear-gradient(135deg, rgba(28, 8, 18, 0.95) 0%, rgba(16, 4, 11, 0.98) 100%) !important;
-  border: 1.5px solid rgba(255, 42, 109, 0.35) !important;
-  border-radius: 24px !important;
-  padding: 16px 20px !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
-}
-
-.app-perks-capsule-bar .perk-card {
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: 16px !important;
-  padding: 12px 14px !important;
-  transition: all 0.25s ease !important;
-}
-
-.app-perks-capsule-bar .perk-card:hover {
-  background: rgba(255, 42, 109, 0.15) !important;
-  border-color: #ffd23f !important;
-  transform: translateY(-2px) !important;
-}
-
-.app-perks-capsule-bar .perk-icon {
-  font-size: 24px !important;
-  flex-shrink: 0 !important;
-  width: auto !important;
-  height: auto !important;
-  background: none !important;
-  border: none !important;
-}
-
-.app-perks-capsule-bar .perk-details {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 3px !important;
-  text-align: left !important;
-}
-
-.app-perks-capsule-bar .perk-details b {
-  font-family: var(--disp) !important;
-  font-size: 13.5px !important;
-  font-weight: 800 !important;
-  color: #ffffff !important;
-  line-height: 1.2 !important;
-}
-
-.app-perks-capsule-bar .perk-details span {
-  font-family: var(--sans) !important;
-  font-size: 11.5px !important;
-  font-weight: 500 !important;
-  color: #ffd8e4 !important;
-  line-height: 1.25 !important;
-  opacity: 0.9 !important;
-}
-
-.app-perks-capsule-bar .perk-divider {
-  display: none !important;
-}
-
-@media (max-width: 900px) {
-  .app-perks-capsule-bar {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 12px !important;
-    padding: 14px !important;
-    margin-top: 28px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .app-perks-capsule-bar {
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
-    padding: 12px !important;
+  .fin-store-badge {
+    font-size: 8.5px !important;
   }
 }
 
@@ -15331,194 +15071,96 @@ html {
 
 <!-- 1. SECTION: APP SHOWCASE (#app) — YOUR NEXT MOVIE NIGHT DESERVES THIS -->
 <section class="sec app-showcase-section" id="app" aria-label="Your Next Movie Night Deserves This">
-  <!-- Theatrical Overhead Cinema Spotlight Aura -->
-  <div class="app-ambient-spotlight aura-pink" aria-hidden="true"></div>
-  <div class="app-ambient-spotlight aura-gold" aria-hidden="true"></div>
-  
-  <div class="app-section-inner">
-    <!-- Top Grid: Left High-Converting Copy & Store Badges + Right Interactive Device Showcase -->
-    <div class="app-main-grid">
-      <!-- Left Column: High-Value Pitch, Exclusive Vouchers & Store Badges -->
-      <div class="app-text-col">
-        <div class="section-tag-pill app-wow-tag">
-          <img src="assets/love_logo_dark_cinema.png" alt="LOVE" style="height:14px; width:auto; vertical-align:middle; margin-right:4px;">
-          <span>YOUR NEXT MOVIE NIGHT DESERVES THIS</span>
-          <span class="app-tag-star">✨</span>
-        </div>
-
-        <h2 class="app-title-head">
-          Your Next Movie Night<br>
-          <span class="coral-gradient-text">Deserves This.</span>
-        </h2>
-
-        <p class="app-subtitle-desc">
-          Skip 50-person interval concession queues forever. Scan your cinema recliner QR code, browse chef-crafted burgers, artisanal pizzas, and warm butter popcorn, and enjoy silent in-seat delivery in ~10 minutes.
-        </p>
-
-        <!-- Lucrative In-App Offer Card (High Value & Enticing) -->
-        <div class="app-lucrative-offer-card">
-          <div class="offer-card-top">
-            <span class="offer-pill">🎁 EXCLUSIVE APP PERK</span>
-            <span class="offer-val">₹100 FREE CREDIT</span>
+  <div class="app-sticky-wrapper">
+    <div class="app-section-inner">
+      <div class="app-main-grid">
+        
+        <!-- Left Column: Copy, Interactive Step Navigation & Store Badges -->
+        <div class="app-text-col">
+          <div class="app-wow-tag">
+            <img src="assets/love_logo_vibrant.png" alt="LOVE CAFE" style="height:14px; width:auto; vertical-align:middle;">
+            <span>YOUR NEXT MOVIE NIGHT DESERVES THIS</span>
+            <span>✨</span>
           </div>
-          <p class="offer-card-desc">
-            Get an instant <strong>₹100 welcome credit</strong> applied automatically on your first in-seat combo + earn <strong>CinePoints on every single bite</strong>.
+
+          <h2 class="app-title-head">
+            Your Next Movie Night<br>
+            <span class="coral-gradient-text">Deserves This.</span>
+          </h2>
+
+          <p class="app-subtitle-desc">
+            Skip 50-person interval queues. Scan your cinema recliner QR code, browse gourmet burgers &amp; piping hot popcorn, and enjoy silent in-seat delivery in ~10 minutes.
           </p>
-          <div class="offer-tags-row">
-            <span class="offer-chip">⚡ ~10m Silent Drop</span>
-            <span class="offer-chip">🍔 Up to 30% Off Combos</span>
-            <span class="offer-chip">🎟️ 0 Delivery Fees</span>
-          </div>
-        </div>
 
-        <!-- Store Buttons Row - Tactile Modern Glassmorphic Design -->
-        <div class="app-download-cues">
-          <span class="app-direct-download-tag">📲 TAP BELOW TO INSTALL THE FREE APP:</span>
-        </div>
-        <div class="app-stores-row">
-          <a class="fin-store-btn fin-store-play" href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get LOVE CAFE on Google Play">
-            <div class="fin-store-icon-box">
-              <svg class="fin-store-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
-            </div>
-            <div class="fin-store-text">
-              <small>GET IT ON</small>
-              <strong>Google Play</strong>
-            </div>
-            <span class="fin-store-badge">4.9 ★</span>
-          </a>
-
-          <a class="fin-store-btn fin-store-apple" href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download LOVE CAFE on the App Store">
-            <div class="fin-store-icon-box">
-              <svg class="fin-store-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.2.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.8.9-2.8-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.7 1 .1 2-.5 2.6-1.3z"/></svg>
-            </div>
-            <div class="fin-store-text">
-              <small>Download on the</small>
-              <strong>App Store</strong>
-            </div>
-            <span class="fin-store-badge">Free</span>
-          </a>
-        </div>
-
-        <!-- QR Code Ticket Card -->
-        <div class="app-qr-download-card">
-          <div class="qr-code-frame">
-            <img src="assets/showcase/app_qr_code.png" alt="Scan QR code to open Love Cafe App" width="52" height="52" style="width:100%;height:100%;display:block;border-radius:8px;">
-          </div>
-          <div class="qr-label-group">
-            <span class="qr-instruction"><b>📱 Scan With Phone Camera</b><br>Instant armrest sync &amp; ₹100 credit</span>
-          </div>
-          <a href="#cinemas" class="app-theatre-quicklink">Find Cinemas &rarr;</a>
-        </div>
-      </div>
-
-      <!-- Right Column: Stunning Interactive Device Showcase Stage -->
-      <div class="app-graphic-col">
-        <!-- Interactive Screen Switcher Tabs -->
-        <div class="app-screens-tab-pills" id="appScreensTabPills" role="tablist">
-          <button type="button" class="app-tab-btn" data-index="0" role="tab" aria-selected="false"><span>🍿</span> 01. Seat Sync</button>
-          <button type="button" class="app-tab-btn active" data-index="1" role="tab" aria-selected="true"><span>🍕</span> 02. Gourmet Menu</button>
-          <button type="button" class="app-tab-btn" data-index="2" role="tab" aria-selected="false"><span>⚡</span> 03. Instant Checkout</button>
-        </div>
-
-        <!-- 3D Cinema Device Stage -->
-        <div class="app-cinema-triptych-stage" id="appScreensCarousel">
-          <!-- Screen 1: Home Screen (Seat Sync) -->
-          <div class="app-screen-card card-left" data-index="0">
-            <div class="app-floating-pill-badge badge-left">
-              <span>🍿</span> <b>Seat QR Synced · Audi 03</b>
-            </div>
-            <div class="app-phone-mockup realistic-mock-phone">
-              <div class="mock-phone-screen-frame">
-                <div class="phone-screen-img-box">
-                  <img src="assets/app_screen_home.png" alt="Love Cafe App - Movies + Food = Perfect Night Home Screen" loading="lazy">
-                </div>
+          <!-- Step Progress Cards that update on scroll -->
+          <div class="app-step-nav-cards">
+            <div class="app-step-card active" data-step="0" role="button" tabindex="0" aria-label="Step 1: Seat QR &amp; Explore">
+              <div class="step-num-badge">01</div>
+              <div class="step-info-box">
+                <b>Seat QR &amp; Explore</b>
+                <span>Scan recliner tag &amp; unlock cinema menu</span>
               </div>
             </div>
-            <div class="app-screen-caption">
-              <span class="caption-tag">🍿 SEAT &amp; SCREEN SYNC</span>
-              <b>Movies + Food = Perfect Night</b>
-            </div>
-          </div>
 
-          <!-- Screen 2: Gourmet Menu (Elevated Centerpiece) -->
-          <div class="app-screen-card card-center active" data-index="1">
-            <div class="app-floating-pill-badge badge-center">
-              <span>🔥</span> <b>Sizzling Cinema Kitchen</b>
-            </div>
-            <div class="app-phone-mockup realistic-mock-phone phone-flagship">
-              <div class="mock-phone-screen-frame">
-                <div class="phone-screen-img-box">
-                  <img src="assets/app_screen_menu.png" alt="Love Cafe App - Real Premium Menu with Woodfired Pizzas and Snacks" loading="lazy">
-                </div>
+            <div class="app-step-card" data-step="1" role="button" tabindex="0" aria-label="Step 2: Chef-Crafted Menu">
+              <div class="step-num-badge">02</div>
+              <div class="step-info-box">
+                <b>Chef-Crafted Menu</b>
+                <span>Artisan pizzas, burgers &amp; craft drinks</span>
               </div>
             </div>
-            <div class="app-screen-caption caption-gold">
-              <span class="caption-tag">🍕 GOURMET CINEMA MENU</span>
-              <b>Pizzas, Burgers &amp; Craft Sips</b>
-            </div>
-          </div>
 
-          <!-- Screen 3: Cart & Checkout -->
-          <div class="app-screen-card card-right" data-index="2">
-            <div class="app-floating-pill-badge badge-right">
-              <span>⚡</span> <b>~10m In-Seat Drop</b>
-            </div>
-            <div class="app-phone-mockup realistic-mock-phone">
-              <div class="mock-phone-screen-frame">
-                <div class="phone-screen-img-box">
-                  <img src="assets/app_screen_cart.png" alt="Love Cafe App - My Cart and Instant In-Seat Recliner Checkout" loading="lazy">
-                </div>
+            <div class="app-step-card" data-step="2" role="button" tabindex="0" aria-label="Step 3: 1-Tap In-Seat Drop">
+              <div class="step-num-badge">03</div>
+              <div class="step-info-box">
+                <b>1-Tap In-Seat Drop</b>
+                <span>Delivered to your recliner in ~10 mins</span>
               </div>
             </div>
-            <div class="app-screen-caption caption-pink">
-              <span class="caption-tag">⚡ 1-TAP IN-SEAT CHECKOUT</span>
-              <b>Delivered to Recliner in ~10m</b>
+          </div>
+
+          <!-- Lucrative Welcome Perk -->
+          <div class="app-welcome-strip">
+            <span class="aws-badge">🎁 ₹100 CREDIT</span>
+            <span class="aws-text">First order discount + <b>CinePoints on every bite</b></span>
+          </div>
+
+          <!-- Official Store Download Buttons -->
+          <div class="app-stores-row">
+            <a class="fin-store-btn" href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
+              <div class="fin-store-text"><small>GET IT ON</small><strong>Google Play</strong></div>
+              <span class="fin-store-badge">4.9 ★</span>
+            </a>
+            <a class="fin-store-btn" href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#fff"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.2.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.8.9-2.8-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.7 1 .1 2-.5 2.6-1.3z"/></svg>
+              <div class="fin-store-text"><small>Download on</small><strong>App Store</strong></div>
+              <span class="fin-store-badge">Free</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Realistic iPhone Frame with 3 Switching Screenshots -->
+        <div class="app-graphic-col">
+          <div class="app-iphone-frame">
+            <div class="app-dynamic-island"></div>
+            <div class="app-iphone-screen">
+              <div class="app-screen-layer active" data-screen="0">
+                <img src="assets/app_screen_home.png" alt="Love Cafe Home Screen - Seat Sync" loading="lazy">
+              </div>
+              <div class="app-screen-layer" data-screen="1">
+                <img src="assets/app_screen_menu.png" alt="Love Cafe Gourmet Cinema Menu" loading="lazy">
+              </div>
+              <div class="app-screen-layer" data-screen="2">
+                <img src="assets/app_screen_cart.png" alt="Love Cafe 1-Tap Checkout" loading="lazy">
+              </div>
+            </div>
+            <div class="app-phone-floating-pill" id="appPhoneFloatingPill">
+              <span>🍿</span> <span id="appPillText">Step 1: <b>Scan Seat QR &amp; Browse</b></span>
             </div>
           </div>
         </div>
 
-        <!-- Mobile Carousel Navigation Controls -->
-        <div class="app-mobile-nav-bar">
-          <button class="app-mobile-arrow" id="appPrevBtn" aria-label="Previous Screen" type="button">‹</button>
-          <div class="app-carousel-dots" id="appScreenDots">
-            <button class="app-dot" data-index="0" aria-label="Screen 1: Seat Sync"></button>
-            <button class="app-dot active" data-index="1" aria-label="Screen 2: Gourmet Menu"></button>
-            <button class="app-dot" data-index="2" aria-label="Screen 3: Instant Checkout"></button>
-          </div>
-          <button class="app-mobile-arrow" id="appNextBtn" aria-label="Next Screen" type="button">›</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom Capsule Bar: 4 Core High-Impact App Perks -->
-    <div class="app-perks-capsule-bar">
-      <div class="perk-card perk-order">
-        <span class="perk-icon">🎁</span>
-        <div class="perk-details">
-          <b>₹100 Welcome Gift</b>
-          <span>Instant First-Order Treat</span>
-        </div>
-      </div>
-      <div class="perk-card perk-speed">
-        <span class="perk-icon">⚡</span>
-        <div class="perk-details">
-          <b>~10m In-Seat Drop</b>
-          <span>Zero Movie Interruption</span>
-        </div>
-      </div>
-      <div class="perk-card perk-cinemas">
-        <span class="perk-icon">💺</span>
-        <div class="perk-details">
-          <b>9 Partner Multiplexes</b>
-          <span>Kolkata, WB &amp; Bihar</span>
-        </div>
-      </div>
-      <div class="perk-card perk-fresh">
-        <div class="perk-icon heart-circle">🍿</div>
-        <div class="perk-details">
-          <b>100% Cooked To Order</b>
-          <span>Fresh, Piping Hot Delivery</span>
-        </div>
       </div>
     </div>
   </div>
@@ -18772,118 +18414,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
 
 
 
-<script>
-/* ==========================================================================
-   OFFICIAL LOVE CAFE APP: 4-SCREEN SHOWCASE CAROUSEL CONTROLLER
-   ========================================================================== */
-(function() {
-  function initAppShowcase() {
-    const track = document.getElementById('appTrack');
-    const tabs = document.querySelectorAll('.app-tab-pill');
-    const dots = document.querySelectorAll('.dot-btn');
-    const prevBtn = document.getElementById('appPrevBtn');
-    const nextBtn = document.getElementById('appNextBtn');
-    const cards = document.querySelectorAll('.app-screen-card');
 
-    if (!track || !cards.length) return;
-
-    let currentIndex = 0;
-
-    function scrollToCard(index) {
-      if (index < 0) index = 0;
-      if (index >= cards.length) index = cards.length - 1;
-      currentIndex = index;
-
-      const targetCard = cards[index];
-      if (targetCard) {
-        const offsetLeft = targetCard.offsetLeft - track.offsetLeft - (track.clientWidth - targetCard.clientWidth) / 2;
-        track.scrollTo({ left: offsetLeft, behavior: 'smooth' });
-      }
-
-      updateUI(index);
-    }
-
-    function updateUI(index) {
-      tabs.forEach((tab, i) => {
-        const isMatch = i === index;
-        tab.classList.toggle('active', isMatch);
-        tab.setAttribute('aria-selected', isMatch ? 'true' : 'false');
-      });
-
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
-
-      cards.forEach((card, i) => {
-        card.classList.toggle('highlighted', i === index);
-      });
-    }
-
-    // Tab buttons click
-    tabs.forEach(tab => {
-      tab.addEventListener('click', function(e) {
-        e.preventDefault();
-        const idx = parseInt(this.dataset.index, 10);
-        scrollToCard(idx);
-      });
-    });
-
-    // Dot buttons click
-    dots.forEach(dot => {
-      dot.addEventListener('click', function(e) {
-        e.preventDefault();
-        const idx = parseInt(this.dataset.index, 10);
-        scrollToCard(idx);
-      });
-    });
-
-    // Arrow buttons
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        scrollToCard(currentIndex - 1);
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        scrollToCard(currentIndex + 1);
-      });
-    }
-
-    // Scroll listener to update active tab & dot on manual swipe
-    let scrollTimeout;
-    track.addEventListener('scroll', function() {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(function() {
-        const centerPos = track.scrollLeft + track.clientWidth / 2;
-        let closestIndex = 0;
-        let minDiff = Infinity;
-
-        cards.forEach((card, i) => {
-          const cardCenter = card.offsetLeft - track.offsetLeft + card.clientWidth / 2;
-          const diff = Math.abs(centerPos - cardCenter);
-          if (diff < minDiff) {
-            minDiff = diff;
-            closestIndex = i;
-          }
-        });
-
-        if (closestIndex !== currentIndex) {
-          currentIndex = closestIndex;
-          updateUI(closestIndex);
-        }
-      }, 60);
-    }, { passive: true });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAppShowcase);
-  } else {
-    initAppShowcase();
-  }
-})();
 
 /* ==========================================================================
    PARTNER CINEMA LOCATIONS: LIVE SEARCH, REGION PILLS & CAROUSEL CONTROLLER
@@ -19028,128 +18559,66 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
    APP SCREENS SHOWCASE: SMOOTH TAB SWITCHING & MOBILE HORIZONTAL CAROUSEL
    (Zero vertical scroll hijacking · Native touch-action: pan-y)
    ========================================================================== */
-(function initAppScreensShowcase() {
-  const tabs = document.querySelectorAll('#appScreensTabPills .app-tab-btn');
-  const carousel = document.getElementById('appScreensCarousel');
-  const cards = document.querySelectorAll('#appScreensCarousel .app-screen-card');
-  const dots = document.querySelectorAll('#appScreenDots .app-dot');
-  const prevBtn = document.getElementById('appPrevBtn');
-  const nextBtn = document.getElementById('appNextBtn');
-  if (!carousel || !cards.length) return;
+(function initAppShowcaseScrollSync() {
+  function updateAppOnScroll() {
+    const appSec = document.getElementById('app');
+    if (!appSec) return;
+    const rect = appSec.getBoundingClientRect();
+    const topOffset = 76; // header height
+    const totalScrollable = appSec.offsetHeight - (window.innerHeight - topOffset);
+    if (totalScrollable <= 0) return;
 
-  let activeIdx = 1; // Default to center Gourmet Menu
+    const scrolledPx = topOffset - rect.top;
+    const progress = Math.max(0, Math.min(1, scrolledPx / totalScrollable));
 
-  function updateActive(idx) {
-    idx = Math.max(0, Math.min(cards.length - 1, idx));
-    activeIdx = idx;
-    
-    // Update tabs
-    tabs.forEach((tab, i) => {
-      const isAct = i === idx;
-      tab.classList.toggle('active', isAct);
-      tab.setAttribute('aria-selected', isAct ? 'true' : 'false');
-    });
+    let step = 0;
+    if (progress >= 0.66) {
+      step = 2;
+    } else if (progress >= 0.33) {
+      step = 1;
+    } else {
+      step = 0;
+    }
 
-    // Update dots
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === idx);
-    });
+    const cards = document.querySelectorAll('.app-step-card');
+    const screens = document.querySelectorAll('.app-screen-layer');
+    const pillText = document.getElementById('appPillText');
 
-    // Update cards
-    cards.forEach((card, i) => {
-      const isAct = i === idx;
-      card.classList.toggle('active', isAct);
-      if (window.innerWidth >= 992) {
-        if (i === 0) {
-          card.className = 'app-screen-card card-left' + (isAct ? ' active' : '');
-        } else if (i === 1) {
-          card.className = 'app-screen-card card-center' + (isAct ? ' active' : '');
-        } else if (i === 2) {
-          card.className = 'app-screen-card card-right' + (isAct ? ' active' : '');
-        }
-      }
-    });
+    cards.forEach((c, idx) => c.classList.toggle('active', idx === step));
+    screens.forEach((s, idx) => s.classList.toggle('active', idx === step));
 
-    // On mobile, smooth scroll carousel to card center
-    if (window.innerWidth < 992) {
-      const targetCard = cards[idx];
-      if (targetCard) {
-        const targetLeft = targetCard.offsetLeft - carousel.offsetLeft - (carousel.clientWidth - targetCard.clientWidth) / 2;
-        carousel.scrollTo({ left: targetLeft, behavior: 'smooth' });
-      }
+    if (pillText) {
+      if (step === 0) pillText.innerHTML = 'Step 1: <b>Scan Seat QR &amp; Browse</b>';
+      else if (step === 1) pillText.innerHTML = 'Step 2: <b>Choose Chef-Crafted Treats</b>';
+      else if (step === 2) pillText.innerHTML = 'Step 3: <b>1-Tap In-Seat Drop (~10m)</b>';
     }
   }
 
-  // Click on tabs
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const idx = parseInt(tab.getAttribute('data-index') || '0', 10);
-      updateActive(idx);
-    });
-  });
-
-  // Click on cards
-  cards.forEach((card, idx) => {
-    card.addEventListener('click', () => {
-      updateActive(idx);
-    });
-  });
-
-  // Arrow buttons
-  if (prevBtn) {
-    prevBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      updateActive(activeIdx - 1);
-    });
+  window.addEventListener('scroll', updateAppOnScroll, { passive: true });
+  window.addEventListener('resize', updateAppOnScroll, { passive: true });
+  if (window.lenis) {
+    window.lenis.on('scroll', updateAppOnScroll);
   }
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      updateActive(activeIdx + 1);
-    });
-  }
-
-  // Dots
-  dots.forEach(dot => {
-    dot.addEventListener('click', (e) => {
-      e.preventDefault();
-      const idx = parseInt(dot.getAttribute('data-index') || '0', 10);
-      updateActive(idx);
+  // Step cards click to smooth scroll into position
+  document.querySelectorAll('.app-step-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const step = parseInt(this.getAttribute('data-step') || '0', 10);
+      const appSec = document.getElementById('app');
+      if (!appSec) return;
+      const topOffset = 76;
+      const totalScrollable = appSec.offsetHeight - (window.innerHeight - topOffset);
+      const targetScroll = appSec.offsetTop + (step * (totalScrollable / 2));
+      if (window.lenis) {
+        window.lenis.scrollTo(targetScroll, { duration: 0.8 });
+      } else {
+        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+      }
     });
   });
 
-  // Passive scroll listener on mobile to update dots without blocking vertical scroll
-  let ticking = false;
-  carousel.addEventListener('scroll', () => {
-    if (window.innerWidth >= 992) return;
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        const carouselCenter = carousel.scrollLeft + carousel.clientWidth / 2;
-        let closestIdx = 0;
-        let minDiff = Infinity;
-        cards.forEach((card, idx) => {
-          const cardCenter = card.offsetLeft - carousel.offsetLeft + card.clientWidth / 2;
-          const diff = Math.abs(cardCenter - carouselCenter);
-          if (diff < minDiff) {
-            minDiff = diff;
-            closestIdx = idx;
-          }
-        });
-        if (closestIdx !== activeIdx) {
-          activeIdx = closestIdx;
-          tabs.forEach((t, i) => t.classList.toggle('active', i === closestIdx));
-          dots.forEach((d, i) => d.classList.toggle('active', i === closestIdx));
-          cards.forEach((c, i) => c.classList.toggle('active', i === closestIdx));
-        }
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-
-  // Initial setup
-  updateActive(1);
+  // Initial call
+  updateAppOnScroll();
 })();
 </script>
 <script>/* ==========================================================================
