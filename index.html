@@ -980,7 +980,7 @@ body.locked{overflow:hidden;height:100svh}
 
 /* Hero Section Container */
 #scene {
-  height: 620vh !important;
+  height: 260vh !important;
   position: relative;
   z-index: 0;
   background: linear-gradient(180deg, #ecb7b3 0%, #f1bebb 18%, #f7ceca 42%, #fddbd9 68%, #f8d4cf 85%, #f0c5bf 100%) !important;
@@ -1778,7 +1778,7 @@ body.locked{overflow:hidden;height:100svh}
    ========================================================================== */
 @media (max-width: 860px) {
   #scene {
-    height: 540vh !important;
+    height: 220vh !important;
     background: linear-gradient(180deg, #ecb7b3 0%, #f1bebb 18%, #f7ceca 42%, #fddbd9 68%, #f8d4cf 85%, #f0c5bf 100%) !important;
   }
   
@@ -2740,7 +2740,7 @@ body.locked .sd {
 
 /* 2. Relaxed, Unhurried Scroll Pacing for Hero 3D Box Experience */
 #scene {
-  height: 720vh !important;
+  height: 260vh !important;
   position: relative !important;
   z-index: 1 !important;
   background: linear-gradient(180deg, #ecb7b3 0%, #f1bebb 18%, #f7ceca 42%, #fddbd9 68%, #f8d4cf 85%, #f0c5bf 100%) !important;
@@ -2749,7 +2749,7 @@ body.locked .sd {
 
 @media (max-width: 860px) {
   #scene {
-    height: 600vh !important;
+    height: 220vh !important;
   }
 }
 
@@ -2771,7 +2771,7 @@ body.locked .sd {
    ========================================================================== */
 
 .ps {
-  height: 1200vh !important;
+  height: 380vh !important;
   position: relative !important;
   z-index: 5 !important;
   margin-top: -36px !important;
@@ -2787,7 +2787,7 @@ body.locked .sd {
 
 @media (max-width: 860px) {
   .ps {
-    height: 1050vh !important;
+    height: 320vh !important;
     border-radius: 32px 32px 0 0 !important;
   }
 }
@@ -5613,7 +5613,7 @@ body.locked .sd {
 
 /* 2. Hero Section Atmosphere */
 #scene {
-  height: 620vh !important;
+  height: 260vh !important;
   position: relative !important;
   z-index: 1 !important;
   background: radial-gradient(circle at 68% 45%, #fedbe0 0%, #fbd1d8 35%, #f7bcc5 70%, #efabb6 100%) !important;
@@ -7595,7 +7595,7 @@ body.locked .sd {
    ENHANCED ATTRACTIVE & EYE-CATCHY FOOD FRAME-BY-FRAME SHOWCASE STYLES
    ========================================================================== */
 .food-frames-showcase {
-  height: 1100vh !important;
+  height: 420vh !important;
   position: relative !important;
   z-index: 2 !important;
   background: #fcdfe4;
@@ -7603,7 +7603,7 @@ body.locked .sd {
 
 @media (max-width: 860px) {
   .food-frames-showcase {
-    height: 980vh !important;
+    height: 340vh !important;
   }
 }
 
@@ -8387,7 +8387,7 @@ body.locked .sd {
   --step-chip-bg: rgba(255, 255, 255, 0.95);
 
   /* Generous 850vh scroll runway so 300 video frames play slowly, smoothly and luxuriously */
-  height: 850vh !important;
+  height: 350vh !important;
   position: relative !important;
   z-index: 3 !important;
   background: var(--step-bg) !important;
@@ -8400,7 +8400,7 @@ body.locked .sd {
 @media (max-width: 900px) {
   .cinema-journey-section {
     /* Generous 750vh mobile runway so finger scrolls play video gently without rushing */
-    height: 750vh !important;
+    height: 290vh !important;
   }
 }
 
@@ -16249,51 +16249,22 @@ const prog = el => {
   return clamp(-r.top / Math.max(1, r.height - innerHeight));
 };
 
-// ==========================================================================
-// TAILORED DUAL-PLATFORM SCROLL CONTROLLER:
-// 1. PC / DESKTOP: 100% Reverted to previous smooth, natural Lenis scrolling (wheelMultiplier: 0.38, duration: 1.85)
-// 2. MOBILE TOUCH: Medium-paced, responsive finger tracking with capped flick glide (prevents 5,000px runaway skips)
-// ==========================================================================
-function mobileTouchPacing(data) {
-  const event = data.event;
-  if (!event) return true;
-
-  const isTouch = event.type && event.type.includes('touch');
-
-  // FOR PC / DESKTOP (mouse wheel / trackpad):
-  // Zero throttling, zero governor interference — 100% natural Lenis gliding as previously configured
-  if (!isTouch) {
-    return true;
-  }
-
-  // FOR MOBILE TOUCH:
-  // Capping extreme flick velocity on release to a medium, silky glide (~1 screen height max)
-  if (event.type === 'touchend' && window.lenis) {
-    const maxFlingVelocity = 120;
-    if (Math.abs(window.lenis.velocity) > maxFlingVelocity) {
-      window.lenis.velocity = Math.sign(window.lenis.velocity) * maxFlingVelocity;
-    }
-  }
-  return true;
-}
-
-// Premium Silky Smooth Scrolling (Lenis v1.1.18)
+// Premium Silky Smooth Fast Scrolling (Lenis v1.1.18 - Tuned for Snappy, Fast PC & Mobile Pacing)
 let lenis = null;
 try {
   if (typeof Lenis !== 'undefined' && !reduce) {
     lenis = new Lenis({
-      duration: 1.85, // Reverted for PC: Slower, relaxed cinematic glide
+      duration: 0.95, // Snappy, responsive, modern silky glide
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.38, // Reverted for PC: Natural, comfortable wheel travel
-      syncTouch: true, // Crucial for Mobile: Handles touch velocity instead of unconstrained native fling
-      touchMultiplier: 0.88, // Medium natural speed for mobile finger drag (not slow!)
-      touchInertiaMultiplier: 5, // Medium pleasant glide for mobile (prevents 5,000px skips)
-      syncTouchLerp: 0.075,
+      wheelMultiplier: 1.05, // Fast, natural 1:1 desktop wheel travel
+      syncTouch: true, // Smooth touch for mobile
+      touchMultiplier: 1.25, // Fast, effortless finger dragging on mobile
+      touchInertiaMultiplier: 16, // Natural, lively momentum glide on mobile
+      syncTouchLerp: 0.08,
       infinite: false,
-      virtualScroll: mobileTouchPacing
     });
     window.lenis = lenis;
 
@@ -18608,7 +18579,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
   function animLoop() {
     const diff = targetFrame - currentFrame;
     if (Math.abs(diff) > 0.04) {
-      currentFrame += diff * 0.11;
+      currentFrame += diff * 0.18;
       renderFrameAt(currentFrame, false);
     }
     requestAnimationFrame(animLoop);
@@ -18944,7 +18915,7 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
   function animLoop() {
     const diff = targetFrame - currentFrame;
     if (Math.abs(diff) > 0.01) {
-      currentFrame += diff * 0.09;
+      currentFrame += diff * 0.16;
       renderFrameAt(currentFrame);
     }
     requestAnimationFrame(animLoop);
