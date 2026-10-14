@@ -5472,24 +5472,7 @@ body {
   border-radius: 999px !important;
   margin-bottom: 12px !important;
 }
-
-.fin-download-banner {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  background: #ffd23f !important;
-  border: 2.5px solid #2a1820 !important;
-  color: #2a1820 !important;
-  font-family: var(--disp) !important;
-  font-size: 12px !important;
-  font-weight: 900 !important;
-  letter-spacing: 0.06em !important;
-  padding: 6px 16px !important;
-  border-radius: 999px !important;
-  box-shadow: 0 4px 0 #2a1820 !important;
-  margin-bottom: 14px !important;
-  text-transform: uppercase !important;
-}
+/* Note: .fin-download-banner is styled with luxury dark-gold aesthetics in the #get section styles below */
 
 body.locked {
   overflow: hidden !important;
@@ -7600,13 +7583,23 @@ body.locked .sd {
 }
 
 .fin-download-banner {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: linear-gradient(135deg, #ffd23f 0%, #ffc107 100%) !important;
+  border: 1.5px solid #ffe680 !important;
+  color: #1a0510 !important;
   font-family: var(--disp) !important;
-  font-size: 11.5px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.06em !important;
-  color: #ffd8e4 !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.05em !important;
+  padding: 6px 16px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 16px rgba(255, 210, 63, 0.35) !important;
   margin-top: 6px !important;
+  margin-bottom: 8px !important;
   text-transform: uppercase !important;
+  width: fit-content !important;
 }
 
 /* Redesigned Modern, Tactile & Ultra-Sleek Store Buttons */
@@ -7874,22 +7867,77 @@ body.locked .sd {
 
 @media (max-width: 900px) {
   .fin {
-    padding: 50px 18px !important;
+    padding: 50px 16px !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
   }
   .fin-layout-grid {
-    grid-template-columns: 1fr !important;
-    gap: 36px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .fin-showcase-pane {
+    order: -1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .fin-feast-card {
-    order: -1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 20px !important;
+    box-sizing: border-box !important;
+  }
+  .fin-content-pane {
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 16px !important;
+  }
+  .fin-vip-badge {
+    margin: 0 auto !important;
+  }
+  .fin-title {
+    text-align: center !important;
+    font-size: clamp(28px, 7.5vw, 42px) !important;
+  }
+  .fin-lead {
+    text-align: center !important;
+    font-size: 14.5px !important;
+    max-width: 100% !important;
+  }
+  .fin-perks-row {
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+  .fin-download-banner {
+    margin: 4px auto 8px auto !important;
   }
   .fin-stores-row {
     flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 10px !important;
+    box-sizing: border-box !important;
   }
   .fin-store-btn {
     width: 100% !important;
+    max-width: 100% !important;
     justify-content: center !important;
     box-sizing: border-box !important;
+    padding: 11px 16px !important;
+  }
+  .fin-secondary-actions {
+    justify-content: center !important;
+    width: 100% !important;
   }
 }
 
@@ -10874,152 +10922,7 @@ body.locked .sd {
   margin-top: 28px !important;
   width: 100% !important;
 }
-
-.perk-card {
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  background: rgba(255, 255, 255, 0.88) !important;
-  backdrop-filter: blur(14px) !important;
-  -webkit-backdrop-filter: blur(14px) !important;
-  border: 1.5px solid rgba(240, 180, 205, 0.7) !important;
-  border-radius: 18px !important;
-  padding: 14px 18px !important;
-  box-shadow: 0 10px 28px rgba(180, 25, 75, 0.08) !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
-}
-
-.perk-card:hover {
-  transform: translateY(-2px) !important;
-  border-color: rgba(230, 25, 90, 0.4) !important;
-  box-shadow: 0 12px 32px rgba(200, 30, 80, 0.14) !important;
-}
-
-.perk-icon {
-  font-size: 22px !important;
-  width: 38px !important;
-  height: 38px !important;
-  border-radius: 50% !important;
-  background: rgba(255, 235, 242, 0.95) !important;
-  border: 1px solid rgba(220, 40, 80, 0.2) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-shrink: 0 !important;
-}
-
-.perk-icon.heart-circle {
-  font-size: 16px !important;
-}
-
-.perk-details {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 2px !important;
-  text-align: left !important;
-}
-
-.perk-details b {
-  font-family: var(--disp) !important;
-  font-size: 13.5px !important;
-  font-weight: 800 !important;
-  color: #5a0620 !important;
-}
-
-.perk-details span {
-  font-family: var(--sans) !important;
-  font-size: 11px !important;
-  color: #821c3c !important;
-}
-
-.perk-divider {
-  display: none !important;
-}
-
-/* Mobile & Tablet Responsiveness (<= 900px) */
-@media (max-width: 900px) {
-  .app-showcase-section {
-    padding: 50px 14px !important;
-  }
-
-  .app-main-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 20px !important;
-    width: 100% !important;
-  }
-
-  .app-text-col {
-    align-items: center !important;
-    text-align: center !important;
-    width: 100% !important;
-    max-width: 520px !important;
-    margin: 0 auto !important;
-  }
-
-  .app-title-head {
-    font-size: clamp(28px, 7.5vw, 42px) !important;
-    text-align: center !important;
-  }
-
-  .app-subtitle-desc {
-    text-align: center !important;
-    font-size: 15px !important;
-    max-width: 100% !important;
-  }
-
-  .app-stores-row {
-    justify-content: center !important;
-    width: 100% !important;
-  }
-
-  .desktop-only-qr {
-    display: none !important;
-  }
-
-  .floating-script-note {
-    display: none !important;
-  }
-
-  .app-arrow-nav {
-    width: 36px !important;
-    height: 36px !important;
-    font-size: 20px !important;
-  }
-
-  .app-arrow-prev { left: 2px !important; }
-  .app-arrow-next { right: 2px !important; }
-
-  .app-perks-capsule-bar {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 8px !important;
-    margin-top: 16px !important;
-    width: 100% !important;
-    max-width: 440px !important;
-  }
-
-  .perk-card {
-    padding: 10px 12px !important;
-    border-radius: 14px !important;
-    gap: 8px !important;
-  }
-
-  .perk-icon {
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 17px !important;
-  }
-
-  .perk-details b {
-    font-size: 12px !important;
-  }
-
-  .perk-details span {
-    font-size: 10px !important;
-  }
-}
+/* Note: .app-perks-capsule-bar and .perk-card are styled with dark cinema aesthetics in the active #app section below */
 
 /* --- SECTION 2: #cinemas (FIND YOUR CINEMA / LOCATOR) --- */
 .cinemas-showcase-section {
@@ -13840,47 +13743,193 @@ html {
   }
 }
 
-/* Mobile Showcase Layout - Silky Smooth Horizontal Swipe & Pan-Y */
+/* Mobile Showcase Layout - Silky Smooth Centered Carousel with Snapping & Zero Overflow */
 @media (max-width: 991px) {
-  .app-main-grid {
-    grid-template-columns: 1fr !important;
-    gap: 36px !important;
+  .app-showcase-section {
+    padding: 60px 16px 50px 16px !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
   }
-  .app-cinema-triptych-stage {
+
+  .app-section-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+  }
+
+  .app-main-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    gap: 32px !important;
+    box-sizing: border-box !important;
+  }
+
+  .app-text-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
     gap: 16px !important;
+  }
+
+  .app-wow-tag {
+    margin: 0 auto !important;
+  }
+
+  .app-title-head {
+    font-size: clamp(28px, 7.2vw, 40px) !important;
+    text-align: center !important;
+    line-height: 1.1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    letter-spacing: -0.02em !important;
+    word-break: break-word !important;
+  }
+
+  .app-subtitle-desc {
+    font-size: 14.5px !important;
+    line-height: 1.55 !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    color: #ffd8e4 !important;
+  }
+
+  .app-lucrative-offer-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 16px 18px !important;
+    text-align: left !important;
+  }
+
+  .offer-card-top {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+
+  .app-download-cues {
+    text-align: center !important;
+    font-size: 11px !important;
+    margin-top: 4px !important;
+  }
+
+  .app-stores-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .app-stores-row .fin-store-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    padding: 11px 16px !important;
+  }
+
+  .app-qr-download-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+    padding: 10px 14px !important;
+    gap: 12px !important;
+  }
+
+  .app-graphic-col {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .app-screens-tab-pills {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+
+  .app-tab-btn {
+    padding: 7px 14px !important;
+    font-size: 11.5px !important;
+    border-radius: 999px !important;
+  }
+
+  .app-cinema-triptych-stage {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
     overflow-x: auto !important;
     scroll-snap-type: x mandatory !important;
-    justify-content: flex-start !important;
-    padding: 10px 14px !important;
-    scrollbar-width: none !important;
-    touch-action: pan-y !important;
+    scroll-behavior: smooth !important;
     -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding: 12px calc((100% - 240px) / 2) 16px !important;
+    gap: 18px !important;
+    box-sizing: border-box !important;
+    touch-action: pan-x pan-y !important;
   }
   .app-cinema-triptych-stage::-webkit-scrollbar { display: none !important; }
-  
+
   .app-screen-card {
-    flex: 0 0 220px !important;
-    width: 220px !important;
-    max-width: 220px !important;
+    flex: 0 0 240px !important;
+    width: 240px !important;
+    max-width: 240px !important;
     scroll-snap-align: center !important;
-    transform: none !important;
-    opacity: 1 !important;
+    box-sizing: border-box !important;
+    transform: scale(0.92) !important;
+    opacity: 0.75 !important;
+    transition: transform 0.3s ease, opacity 0.3s ease !important;
   }
-  
+
   .app-screen-card.card-left,
   .app-screen-card.card-center,
   .app-screen-card.card-right {
-    transform: none !important;
+    transform: scale(0.92) !important;
   }
-  
+
+  .app-screen-card.active {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+  }
+
   .app-mobile-nav-bar {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 14px !important;
     margin-top: 14px !important;
+    width: 100% !important;
   }
-  
+
   .app-mobile-arrow {
     width: 40px !important;
     height: 40px !important;
@@ -13897,13 +13946,13 @@ html {
     justify-content: center !important;
     backdrop-filter: blur(10px) !important;
   }
-  
+
   .app-carousel-dots {
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
   }
-  
+
   .app-dot {
     width: 10px !important;
     height: 10px !important;
@@ -13914,7 +13963,7 @@ html {
     cursor: pointer !important;
     transition: all 0.2s ease !important;
   }
-  
+
   .app-dot.active {
     width: 24px !important;
     border-radius: 999px !important;
@@ -13923,65 +13972,89 @@ html {
   }
 }
 
-/* Bottom Capsule Bar: 4 Core High-Impact App Perks */
+/* Bottom Capsule Bar: 4 Core High-Impact App Perks with Rich Dark-Luxe Contrast */
 .app-perks-capsule-bar {
   margin-top: clamp(36px, 5vw, 56px) !important;
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
   gap: 14px !important;
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  background: linear-gradient(135deg, rgba(28, 8, 18, 0.95) 0%, rgba(16, 4, 11, 0.98) 100%) !important;
+  border: 1.5px solid rgba(255, 42, 109, 0.35) !important;
   border-radius: 24px !important;
   padding: 16px 20px !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
-  box-shadow: 0 14px 35px -8px rgba(0, 0, 0, 0.5) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
-.perk-card {
+.app-perks-capsule-bar .perk-card {
   display: flex !important;
   align-items: center !important;
   gap: 12px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  padding: 12px 14px !important;
+  transition: all 0.25s ease !important;
 }
 
-.perk-icon {
+.app-perks-capsule-bar .perk-card:hover {
+  background: rgba(255, 42, 109, 0.15) !important;
+  border-color: #ffd23f !important;
+  transform: translateY(-2px) !important;
+}
+
+.app-perks-capsule-bar .perk-icon {
   font-size: 24px !important;
   flex-shrink: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  border: none !important;
 }
 
-.perk-details {
+.app-perks-capsule-bar .perk-details {
   display: flex !important;
   flex-direction: column !important;
-  gap: 2px !important;
+  gap: 3px !important;
+  text-align: left !important;
 }
 
-.perk-details b {
+.app-perks-capsule-bar .perk-details b {
   font-family: var(--disp) !important;
   font-size: 13.5px !important;
   font-weight: 800 !important;
   color: #ffffff !important;
+  line-height: 1.2 !important;
 }
 
-.perk-details span {
+.app-perks-capsule-bar .perk-details span {
   font-family: var(--sans) !important;
   font-size: 11.5px !important;
+  font-weight: 500 !important;
   color: #ffd8e4 !important;
+  line-height: 1.25 !important;
+  opacity: 0.9 !important;
 }
 
-.perk-divider {
+.app-perks-capsule-bar .perk-divider {
   display: none !important;
 }
 
 @media (max-width: 900px) {
   .app-perks-capsule-bar {
     grid-template-columns: 1fr 1fr !important;
-    gap: 16px !important;
-    padding: 18px !important;
+    gap: 12px !important;
+    padding: 14px !important;
+    margin-top: 28px !important;
   }
 }
+
 @media (max-width: 480px) {
   .app-perks-capsule-bar {
     grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    padding: 12px !important;
   }
 }
 
@@ -19661,55 +19734,6 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
     updateScrollRunner();
   }
 
-  // 2. Interactive App Screen Tabs & Carousel Controls
-  const tabs = document.querySelectorAll('#appScreensTabPills .app-tab-btn');
-  const carousel = document.getElementById('appScreensCarousel');
-  const cards = document.querySelectorAll('#appScreensCarousel .app-screen-card');
-  const dots = document.querySelectorAll('#appScreenDots .app-dot');
-  const prevBtn = document.getElementById('appPrevBtn');
-  const nextBtn = document.getElementById('appNextBtn');
-
-  if (tabs.length && carousel && cards.length) {
-    let activeIdx = 0;
-
-    function goToCard(idx) {
-      idx = Math.max(0, Math.min(cards.length - 1, idx));
-      activeIdx = idx;
-      const targetCard = cards[idx];
-      if (targetCard) {
-        const offset = targetCard.offsetLeft - carousel.offsetLeft - (carousel.clientWidth - targetCard.clientWidth) / 2;
-        carousel.scrollTo({ left: offset, behavior: 'smooth' });
-      }
-      tabs.forEach((t, i) => t.classList.toggle('active', i === idx));
-      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-      cards.forEach((c, i) => c.classList.toggle('active', i === idx));
-    }
-
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        const idx = parseInt(tab.getAttribute('data-index') || '0', 10);
-        goToCard(idx);
-      });
-    });
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        goToCard(activeIdx - 1);
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        goToCard(activeIdx + 1);
-      });
-    }
-
-    dots.forEach((dot) => {
-      dot.addEventListener('click', () => {
-        const idx = parseInt(dot.getAttribute('data-index') || '0', 10);
-        goToCard(idx);
-      });
-    });
   }
 })();
 
