@@ -2608,6 +2608,121 @@ body.locked .page-scrollbar,
 }
 
 /* ==========================================================================
+   SMART DIRECTIONAL SCROLL BUTTON (#scrollDirectionBtn)
+   Dynamically flips arrow & target: 'Go to Bottom' on scroll down, 'Back to Top' on scroll up
+   ========================================================================== */
+.floating-scroll-arrow-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 991;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 10px;
+  background: linear-gradient(135deg, rgba(28, 12, 22, 0.94) 0%, rgba(46, 16, 32, 0.96) 100%);
+  border: 1.5px solid rgba(255, 42, 109, 0.45);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border-radius: 999px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4), 0 0 18px rgba(255, 42, 109, 0.25);
+  color: #ffffff !important;
+  cursor: pointer;
+  font-family: var(--disp, 'Outfit', sans-serif);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease, opacity 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.floating-scroll-arrow-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: #ffd23f;
+  box-shadow: 0 14px 34px rgba(255, 42, 109, 0.35), 0 0 25px rgba(255, 210, 63, 0.4);
+}
+
+.floating-scroll-arrow-btn:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 4px 14px rgba(255, 42, 109, 0.3);
+}
+
+.fsab-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%);
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(255, 42, 109, 0.4);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease, color 0.3s ease;
+}
+
+.floating-scroll-arrow-btn.dir-up .fsab-icon-box {
+  transform: rotate(180deg);
+  background: linear-gradient(135deg, #ffd23f 0%, #ffae00 100%);
+  color: #1a0510;
+  box-shadow: 0 2px 10px rgba(255, 210, 63, 0.4);
+}
+
+.fsab-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.fsab-label small {
+  font-family: var(--disp, 'Outfit', sans-serif);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ff9bb9;
+  font-weight: 800;
+  transition: color 0.25s ease;
+}
+
+.floating-scroll-arrow-btn.dir-up .fsab-label small {
+  color: #ffd23f;
+}
+
+.fsab-label strong {
+  font-family: var(--disp, 'Outfit', sans-serif);
+  font-size: 13px;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.floating-scroll-arrow-btn.hidden,
+body.locked .floating-scroll-arrow-btn {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px) scale(0.9);
+}
+
+@media (max-width: 600px) {
+  .floating-scroll-arrow-btn {
+    bottom: 18px;
+    left: 14px;
+    padding: 7px 12px 7px 8px;
+    gap: 8px;
+  }
+  .fsab-icon-box {
+    width: 28px;
+    height: 28px;
+  }
+  .fsab-label small {
+    font-size: 8.5px;
+  }
+  .fsab-label strong {
+    font-size: 12px;
+  }
+}
+
+/* ==========================================================================
    ULTRA-PREMIUM MODERN FLOATING DOWNLOAD APP BUTTON (#floatingDownloadBtn)
    Modern glassmorphic floating pill with luminous border & emerald live badge
    ========================================================================== */
@@ -16601,6 +16716,18 @@ html {
   </div>
 </a>
 
+<!-- Smart Directional Scroll Action Button (Bottom or Top of Page) -->
+<button id="scrollDirectionBtn" class="floating-scroll-arrow-btn dir-down hidden" aria-label="Scroll to bottom of website" title="Scroll to bottom">
+  <div class="fsab-icon-box" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M19 12l-7 7-7-7"/>
+    </svg>
+  </div>
+  <div class="fsab-label">
+    <small id="fsabSub">NAVIGATE</small>
+    <strong id="fsabTitle">Go to Bottom</strong>
+  </div>
+</button>
 
 <script src="assets/lenis.min.js"></script>
 <script>
@@ -19791,6 +19918,102 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
     window.lenis.on('scroll', checkVisibility);
   }
   checkVisibility();
+})();
+
+// ==========================================================================
+// SMART DIRECTIONAL SCROLL CONTROLLER (#scrollDirectionBtn)
+// Scrolls to bottom of website on scroll down, scrolls to hero on scroll up
+// ==========================================================================
+(function initScrollDirectionButton() {
+  const btn = document.getElementById('scrollDirectionBtn');
+  const subEl = document.getElementById('fsabSub');
+  const titleEl = document.getElementById('fsabTitle');
+  if (!btn) return;
+
+  let currentDirection = 'down'; // 'down' or 'up'
+  let lastY = window.pageYOffset || document.documentElement.scrollTop;
+  const threshold = 8; // Small delta to avoid jitter
+
+  function setDirection(dir) {
+    if (currentDirection === dir) return;
+    currentDirection = dir;
+    if (dir === 'up') {
+      btn.classList.remove('dir-down');
+      btn.classList.add('dir-up');
+      btn.setAttribute('aria-label', 'Scroll to top of page (Hero)');
+      btn.setAttribute('title', 'Back to Top (Hero Section)');
+      if (subEl) subEl.textContent = 'HERO SECTION';
+      if (titleEl) titleEl.textContent = 'Back to Top';
+    } else {
+      btn.classList.remove('dir-up');
+      btn.classList.add('dir-down');
+      btn.setAttribute('aria-label', 'Scroll to bottom of website');
+      btn.setAttribute('title', 'Go to Bottom of Website');
+      if (subEl) subEl.textContent = 'NAVIGATE';
+      if (titleEl) titleEl.textContent = 'Go to Bottom';
+    }
+  }
+
+  function handleScroll() {
+    const y = window.pageYOffset || document.documentElement.scrollTop;
+    const docHeight = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
+    const winHeight = window.innerHeight || 800;
+    const maxScroll = docHeight - winHeight;
+
+    // 1. If at very top (< 80px), gently fade out so hero title is clean
+    if (y < 80) {
+      btn.classList.add('hidden');
+      setDirection('down');
+      lastY = y;
+      return;
+    }
+
+    btn.classList.remove('hidden');
+
+    // 2. If near bottom of page (within 240px of bottom or within #get)
+    const getSec = document.getElementById('get');
+    const isNearBottom = (getSec && getSec.getBoundingClientRect().top <= winHeight * 0.75) || (y >= maxScroll - 200);
+
+    if (isNearBottom) {
+      setDirection('up');
+    } else if (Math.abs(y - lastY) >= threshold) {
+      if (y > lastY) {
+        // User scrolling DOWN (below)
+        setDirection('down');
+      } else {
+        // User scrolling UP (above)
+        setDirection('up');
+      }
+    }
+    lastY = y;
+  }
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (currentDirection === 'down') {
+      if (typeof scrollToAnchor === 'function') {
+        scrollToAnchor('#get');
+      } else {
+        const getSec = document.getElementById('get');
+        if (getSec) getSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      if (typeof scrollToAnchor === 'function') {
+        scrollToAnchor('#top');
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  });
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  if (window.lenis) {
+    window.lenis.on('scroll', handleScroll);
+  }
+  handleScroll();
 })();
 
 </script>
