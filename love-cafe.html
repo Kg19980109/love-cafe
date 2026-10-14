@@ -267,11 +267,7 @@ body.locked{overflow:hidden;height:100svh}
 .g-in small{color:var(--mut)}
 .mb{display:none;font:800 16px var(--disp);background:#fff;border:3px solid var(--line);border-radius:999px;padding:7px 16px;box-shadow:0 4px 0 var(--line);margin-left:10px;cursor:pointer}
 .nav{gap:8px}
-#menu{position:fixed;inset:0;z-index:90;background:var(--rasp);color:#fff;display:flex;flex-direction:column;justify-content:center;gap:30px;padding:90px clamp(24px,8vw,120px) 40px;clip-path:circle(0% at 92% 4%);transition:clip-path .7s cubic-bezier(.7,0,.2,1);visibility:hidden}
-#menu.open{clip-path:circle(150% at 92% 4%);visibility:visible}
-#menu nav{display:flex;flex-direction:column;gap:4px}
-#menu nav a{font:800 clamp(38px,9vw,76px)/1.05 var(--disp);color:#fff;text-shadow:3px 3px 0 var(--line)}
-#menu nav a:hover{color:#ffd23f}
+/* Legacy #menu removed */
 .nav{z-index:95}
 #dock { display: none !important; }
 #dock.on{transform:none}
@@ -2270,220 +2266,10 @@ html {
 .nav {
   z-index: 100;
 }
-.mb {
-  display: none;
-  position: relative;
-  width: 44px;
-  height: 44px;
-  margin: 0;
-  padding: 0;
-  border-radius: 50%;
-  background: #fff;
-  border: 3px solid var(--line);
-  box-shadow: 0 4px 0 var(--line);
-  cursor: pointer;
-  z-index: 101;
-  -webkit-tap-highlight-color: transparent;
-  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.mb:active {
-  transform: translateY(2px) scale(0.96);
-  box-shadow: 0 2px 0 var(--line);
-}
-.mb span {
-  position: absolute;
-  left: 11px;
-  right: 11px;
-  height: 3px;
-  border-radius: 3px;
-  background: var(--line);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, top 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.mb span:nth-child(1) { top: 12px; }
-.mb span:nth-child(2) { top: 19px; }
-.mb span:nth-child(3) { top: 26px; }
+/* ==========================================================================
+   CARTOON LIGHT-PINK MOBILE NAVIGATION DRAWER (LOVE CAFE SIGNATURE THEME)
+   ========================================================================== */
 
-.mb.x {
-  background: #ffe27a;
-  border-color: #2a1820;
-}
-.mb.x span:nth-child(1) {
-  top: 19px;
-  transform: rotate(45deg);
-}
-.mb.x span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-.mb.x span:nth-child(3) {
-  top: 19px;
-  transform: rotate(-45deg);
-}
-
-#menu {
-  position: fixed;
-  inset: 0;
-  z-index: 99;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: calc(76px + env(safe-area-inset-top, 0px)) clamp(16px, 4vw, 32px) calc(24px + env(safe-area-inset-bottom, 0px));
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  transform: translateY(-12px) scale(0.98);
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  background: linear-gradient(165deg, rgba(230, 25, 90, 0.98) 0%, rgba(154, 18, 64, 0.98) 50%, rgba(42, 24, 32, 0.99) 100%);
-  -webkit-backdrop-filter: blur(28px) saturate(1.8);
-  backdrop-filter: blur(28px) saturate(1.8);
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.4);
-}
-#menu.open {
-  opacity: 1;
-  pointer-events: auto;
-  visibility: visible;
-  transform: translateY(0) scale(1);
-}
-.menu-inner {
-  max-width: 480px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  min-height: 100%;
-  justify-content: space-between;
-}
-.menu-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 12px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.18);
-}
-.menu-brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.mb-spark {
-  font-size: 24px;
-}
-.mb-title {
-  font-family: var(--disp);
-  font-weight: 800;
-  font-size: 22px;
-  letter-spacing: 0.04em;
-  color: #ffd23f;
-  text-shadow: 2px 2px 0 var(--line);
-}
-.menu-close-btn {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  color: #fff;
-  font-size: 18px;
-  font-weight: 800;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  transition: transform 0.2s, background 0.2s;
-  -webkit-tap-highlight-color: transparent;
-}
-.menu-close-btn:active {
-  transform: scale(0.92);
-  background: rgba(255, 255, 255, 0.35);
-}
-.menu-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.menu-nav .m-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
-  color: #fff;
-  text-decoration: none;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, border-color 0.2s ease;
-  -webkit-tap-highlight-color: transparent;
-}
-.menu-nav .m-link:hover, .menu-nav .m-link:active {
-  background: rgba(255, 255, 255, 0.24);
-  border-color: #ffd23f;
-  transform: translateX(6px);
-}
-.menu-nav .m-icon {
-  font-size: 22px;
-  width: 28px;
-  display: grid;
-  place-items: center;
-}
-.menu-nav .m-text {
-  font-family: var(--disp);
-  font-weight: 800;
-  font-size: 19px;
-  line-height: 1.1;
-  color: #fff;
-  text-shadow: 1.5px 1.5px 0 rgba(0,0,0,0.35);
-}
-.menu-nav .m-badge {
-  margin-left: auto;
-  font-family: var(--disp);
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  padding: 3px 9px;
-  border-radius: 999px;
-  background: rgba(255, 210, 63, 0.25);
-  border: 1px solid #ffd23f;
-  color: #ffd23f;
-  text-transform: uppercase;
-}
-.menu-foot {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding-top: 14px;
-  border-top: 2px solid rgba(255, 255, 255, 0.18);
-}
-.menu-promo {
-  font-family: var(--disp);
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #ffd23f;
-  text-align: center;
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
-}
-.menu-stores {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-body.locked {
-  overflow: hidden !important;
-  touch-action: none;
-}
-
-
-/* -------------------------------------------------------------------------- */
-/* MOBILE NAVIGATION MENU & HAMBURGER STYLES                                 */
-/* -------------------------------------------------------------------------- */
-html {
-  scroll-behavior: auto !important;
-}
-.nav {
-  z-index: 100;
-}
 .mb {
   display: none;
   position: relative;
@@ -2541,156 +2327,330 @@ html {
 #menu {
   position: fixed;
   inset: 0;
-  z-index: 99;
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: calc(76px + env(safe-area-inset-top, 0px)) clamp(16px, 4vw, 32px) calc(24px + env(safe-area-inset-bottom, 0px));
+  padding: calc(14px + env(safe-area-inset-top, 0px)) 16px calc(24px + env(safe-area-inset-bottom, 0px));
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
   transform: translateY(-12px) scale(0.98);
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  background: linear-gradient(165deg, rgba(230, 25, 90, 0.98) 0%, rgba(154, 18, 64, 0.98) 50%, rgba(42, 24, 32, 0.99) 100%);
-  -webkit-backdrop-filter: blur(28px) saturate(1.8);
-  backdrop-filter: blur(28px) saturate(1.8);
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.4);
+  background-color: #fde8ed;
+  background-image: 
+    radial-gradient(#f7a8b8 1.4px, transparent 1.4px),
+    linear-gradient(180deg, #fff0f3 0%, #fde4ec 45%, #fcd6df 100%);
+  background-size: 22px 22px, 100% 100%;
+  box-shadow: inset 0 0 50px rgba(244, 160, 178, 0.35);
 }
+
 #menu.open {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
   transform: translateY(0) scale(1);
 }
+
 .menu-inner {
-  max-width: 480px;
+  max-width: 440px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
   min-height: 100%;
   justify-content: space-between;
 }
+
+/* Cute Retro Candy Accent Bar */
+.menu-candy-bar {
+  height: 6px;
+  width: 100%;
+  border-radius: 999px;
+  background: repeating-linear-gradient(45deg, #ff4d79, #ff4d79 12px, #ffffff 12px, #ffffff 24px);
+  border: 1.5px solid #2a1820;
+  box-shadow: 0 2px 0 #2a1820;
+  margin-bottom: 2px;
+  flex-shrink: 0;
+}
+
+/* Header Bar */
 .menu-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 12px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+  padding: 10px 14px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 2.5px solid #2a1820;
+  box-shadow: 0 4px 0 #2a1820;
+  flex-shrink: 0;
 }
+
 .menu-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
-.mb-spark {
-  font-size: 24px;
+
+.menu-brand .brand-logo-img {
+  height: 34px;
+  width: auto;
+  display: block;
 }
-.mb-title {
-  font-family: var(--disp);
-  font-weight: 800;
-  font-size: 22px;
-  letter-spacing: 0.04em;
-  color: #ffd23f;
-  text-shadow: 2px 2px 0 var(--line);
-}
+
 .menu-close-btn {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  color: #fff;
-  font-size: 18px;
-  font-weight: 800;
+  background: #ffe27a;
+  border: 2.5px solid #2a1820;
+  box-shadow: 0 3px 0 #2a1820;
+  color: #2a1820;
+  font-size: 17px;
+  font-weight: 900;
   cursor: pointer;
   display: grid;
   place-items: center;
-  transition: transform 0.2s, background 0.2s;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, background 0.15s ease;
   -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
 }
+
+.menu-close-btn:hover {
+  background: #ffd23f;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 0 #2a1820;
+}
+
 .menu-close-btn:active {
-  transform: scale(0.92);
-  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(2px) scale(0.94);
+  box-shadow: 0 1px 0 #2a1820;
+  background: #ffc220;
 }
+
+/* Cartoon Tagline Pill */
+.menu-tagline-wrap {
+  text-align: center;
+  margin: -2px 0 2px 0;
+  flex-shrink: 0;
+}
+
+.menu-tagline-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1.5px solid #2a1820;
+  box-shadow: 0 2px 0 #2a1820;
+  font-family: var(--disp);
+  font-size: 12px;
+  font-weight: 800;
+  color: #d42255;
+  letter-spacing: 0.02em;
+}
+
+/* Menu Navigation Links */
 .menu-nav {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 7px;
+  flex: 1;
 }
+
+.menu-nav a,
 .menu-nav .m-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
-  color: #fff;
-  text-decoration: none;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, border-color 0.2s ease;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 8.5px 12px !important;
+  border-radius: 16px !important;
+  background: #ffffff !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 3.5px 0 #2a1820 !important;
+  color: #2a1820 !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, background 0.15s ease !important;
   -webkit-tap-highlight-color: transparent;
+  position: relative;
 }
-.menu-nav .m-link:hover, .menu-nav .m-link:active {
-  background: rgba(255, 255, 255, 0.24);
-  border-color: #ffd23f;
-  transform: translateX(6px);
+
+.menu-nav .m-link:hover {
+  background: #fff8fa !important;
+  transform: translateY(-1.5px);
+  box-shadow: 0 5px 0 #2a1820 !important;
 }
+
+.menu-nav .m-link:active {
+  transform: translateY(2px) !important;
+  box-shadow: 0 1.5px 0 #2a1820 !important;
+  background: #ffeef2 !important;
+}
+
 .menu-nav .m-icon {
-  font-size: 22px;
-  width: 28px;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
   display: grid;
   place-items: center;
-}
-.menu-nav .m-text {
-  font-family: var(--disp);
-  font-weight: 800;
   font-size: 19px;
-  line-height: 1.1;
-  color: #fff;
-  text-shadow: 1.5px 1.5px 0 rgba(0,0,0,0.35);
+  border: 1.5px solid #2a1820;
+  flex-shrink: 0;
+  box-shadow: 0 2px 0 rgba(42, 24, 32, 0.12);
+  background: #fff5f8;
 }
+
+/* Individual Cartoon Pastel Palette per Item */
+.m-link-home .m-icon { background: #fef3c7 !important; }
+.m-link-menu .m-icon { background: #ffe4e6 !important; }
+.m-link-story .m-icon { background: #f3e8ff !important; }
+.m-link-cinemas .m-icon { background: #e0f2fe !important; }
+.m-link-reviews .m-icon { background: #fef9c3 !important; }
+.m-link-rewards .m-icon { background: #ffedd5 !important; }
+.m-link-partners .m-icon { background: #fce7f3 !important; }
+.m-link-why .m-icon { background: #dbeafe !important; }
+.m-link-app .m-icon { background: #dcfce7 !important; }
+
+.menu-nav .m-text {
+  font-family: var(--disp) !important;
+  font-weight: 800 !important;
+  font-size: 16px !important;
+  line-height: 1.15 !important;
+  color: #2a1820 !important;
+  text-shadow: none !important;
+  letter-spacing: -0.01em;
+}
+
 .menu-nav .m-badge {
-  margin-left: auto;
-  font-family: var(--disp);
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  padding: 3px 9px;
-  border-radius: 999px;
-  background: rgba(255, 210, 63, 0.25);
-  border: 1px solid #ffd23f;
-  color: #ffd23f;
-  text-transform: uppercase;
+  margin-left: auto !important;
+  font-family: var(--disp) !important;
+  font-weight: 800 !important;
+  font-size: 10.5px !important;
+  letter-spacing: 0.04em !important;
+  padding: 3.5px 9px !important;
+  border-radius: 999px !important;
+  border: 1.5px solid #2a1820 !important;
+  box-shadow: 0 1.5px 0 #2a1820 !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
 }
+
+/* Distinct Cheerful Cartoon Pill Colors */
+.m-badge-top { background: #fff0f3 !important; color: #e6195a !important; }
+.m-badge-menu { background: #ffe4e6 !important; color: #d42255 !important; }
+.m-badge-journey { background: #dcfce7 !important; color: #15803d !important; }
+.m-badge-cinemas { background: #e0f2fe !important; color: #0284c7 !important; }
+.m-badge-reviews { background: #fef08a !important; color: #854d0e !important; }
+.m-badge-rewards { background: #ffedd5 !important; color: #c2410c !important; }
+.m-badge-partners { background: #f3e8ff !important; color: #7e22ce !important; }
+.m-badge-why { background: #fce7f3 !important; color: #be185d !important; }
+.m-badge-app { background: #ffe27a !important; color: #2a1820 !important; }
+
+/* Menu Footer */
 .menu-foot {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding-top: 14px;
-  border-top: 2px solid rgba(255, 255, 255, 0.18);
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 2px dashed rgba(42, 24, 32, 0.2);
+  align-items: center;
+  flex-shrink: 0;
 }
+
 .menu-promo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 2px solid #2a1820;
+  box-shadow: 0 3px 0 #2a1820;
   font-family: var(--disp);
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #ffd23f;
+  font-size: 12px;
+  font-weight: 800;
+  color: #2a1820;
+  text-shadow: none !important;
   text-align: center;
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+  width: auto;
 }
+
+.menu-promo b {
+  color: #d42255;
+}
+
 .menu-stores {
   display: flex;
   gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
 }
+
+.menu-stores .hero-store-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 9px !important;
+  padding: 8px 14px !important;
+  border-radius: 13px !important;
+  background: #2a1820 !important;
+  border: 2px solid #2a1820 !important;
+  box-shadow: 0 3.5px 0 #2a1820 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-family: var(--disp) !important;
+  font-weight: 800 !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease !important;
+  -webkit-tap-highlight-color: transparent;
+  flex: 1 1 150px;
+  max-width: 190px;
+  justify-content: center;
+}
+
+.menu-stores .hero-store-btn:hover {
+  background: #3e2430 !important;
+  transform: translateY(-1.5px);
+  box-shadow: 0 5px 0 #2a1820 !important;
+}
+
+.menu-stores .hero-store-btn:active {
+  transform: translateY(2px) !important;
+  box-shadow: 0 1.5px 0 #2a1820 !important;
+}
+
+.menu-stores .hero-store-btn span {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  line-height: 1.1 !important;
+  font-size: 13px !important;
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+.menu-stores .hero-store-btn span small {
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  opacity: 0.8 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  color: #ffffff !important;
+}
+
 body.locked {
   overflow: hidden !important;
   touch-action: none;
 }
+
 @media(max-width:860px){
   .nl{display:none !important;}
   .mb{display:block !important;}
@@ -13642,28 +13602,32 @@ html {
   </div>
 </header>
 
-<!-- Mobile Fullscreen Navigation Overlay -->
+<!-- Mobile Fullscreen Navigation Overlay (Love Cafe Signature Cartoon Drawer) -->
 <div id="menu" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu" aria-hidden="true">
   <div class="menu-inner">
+    <div class="menu-candy-bar" aria-hidden="true"></div>
     <div class="menu-top">
       <div class="menu-brand">
-        <img src="assets/love_logo_nav_twotone.png" class="brand-logo-img" alt="LOVE CAFE - please taste me one time!" style="height:34px; width:auto;">
+        <img src="assets/love_logo_vibrant.png" class="brand-logo-img" alt="LOVE CAFE - please taste me one time!">
       </div>
       <button class="menu-close-btn" id="mclose" aria-label="Close Menu">✕</button>
     </div>
+    <div class="menu-tagline-wrap">
+      <span class="menu-tagline-pill">🍿 Fresh In-Seat Cinema Delivery in ~10 Mins ✨</span>
+    </div>
     <nav class="menu-nav" aria-label="Mobile Navigation Links">
-      <a href="#top" class="m-link"><span class="m-icon">🏠</span><span class="m-text">Home</span><span class="m-badge">Top</span></a>
-      <a href="#flavours" class="m-link"><span class="m-icon">🍿</span><span class="m-text">Our Menu</span><span class="m-badge">Menu</span></a>
-      <a href="#story" class="m-link"><span class="m-icon">🎬</span><span class="m-text">4-Step Journey</span><span class="m-badge">In-Seat</span></a>
-      <a href="#cinemas" class="m-link"><span class="m-icon">🎟️</span><span class="m-text">Partner Cinemas</span><span class="m-badge">9 Theatres</span></a>
-      <a href="#reviews" class="m-link"><span class="m-icon">⭐</span><span class="m-text">Guest Reviews</span><span class="m-badge">4.9★</span></a>
-      <a href="#rewards" class="m-link"><span class="m-icon">👑</span><span class="m-text">CinePoints</span><span class="m-badge">Rewards</span></a>
-      <a href="#partners" class="m-link"><span class="m-icon">🏆</span><span class="m-text">Food Partners</span><span class="m-badge">8 Brands</span></a>
-      <a href="#why-us" class="m-link"><span class="m-icon">✨</span><span class="m-text">Why Love Cafe</span><span class="m-badge">Why Us</span></a>
-      <a href="#get" class="m-link"><span class="m-icon">📲</span><span class="m-text">Order To Seat</span><span class="m-badge">App</span></a>
+      <a href="#top" class="m-link m-link-home"><span class="m-icon">🏠</span><span class="m-text">Home</span><span class="m-badge m-badge-top">Top</span></a>
+      <a href="#flavours" class="m-link m-link-menu"><span class="m-icon">🍿</span><span class="m-text">Our Menu</span><span class="m-badge m-badge-menu">Menu</span></a>
+      <a href="#story" class="m-link m-link-story"><span class="m-icon">🎬</span><span class="m-text">4-Step Journey</span><span class="m-badge m-badge-journey">In-Seat</span></a>
+      <a href="#cinemas" class="m-link m-link-cinemas"><span class="m-icon">🎟️</span><span class="m-text">Partner Cinemas</span><span class="m-badge m-badge-cinemas">9 Theatres</span></a>
+      <a href="#reviews" class="m-link m-link-reviews"><span class="m-icon">⭐</span><span class="m-text">Guest Reviews</span><span class="m-badge m-badge-reviews">4.9★</span></a>
+      <a href="#rewards" class="m-link m-link-rewards"><span class="m-icon">👑</span><span class="m-text">CinePoints</span><span class="m-badge m-badge-rewards">Rewards</span></a>
+      <a href="#partners" class="m-link m-link-partners"><span class="m-icon">🏆</span><span class="m-text">Food Partners</span><span class="m-badge m-badge-partners">8 Brands</span></a>
+      <a href="#why-us" class="m-link m-link-why"><span class="m-icon">✨</span><span class="m-text">Why Love Cafe</span><span class="m-badge m-badge-why">Why Us</span></a>
+      <a href="#get" class="m-link m-link-app"><span class="m-icon">📲</span><span class="m-text">Order To Seat</span><span class="m-badge m-badge-app">App</span></a>
     </nav>
     <div class="menu-foot">
-      <p class="menu-promo">⚡ Gourmet Cinema Delivery in ~10 Minutes</p>
+      <div class="menu-promo"><span>⚡ Delivery to your seat in <b>~10 Mins</b></span></div>
       <div class="menu-stores">
         <a class="hero-store-btn hero-store-gplay" data-play href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get on Google Play">
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
@@ -13675,7 +13639,6 @@ html {
         </a>
       </div>
     </div>
-  </div>
   </div>
 </div>
 
@@ -16286,20 +16249,51 @@ const prog = el => {
   return clamp(-r.top / Math.max(1, r.height - innerHeight));
 };
 
+// ==========================================================================
+// TAILORED DUAL-PLATFORM SCROLL CONTROLLER:
+// 1. PC / DESKTOP: 100% Reverted to previous smooth, natural Lenis scrolling (wheelMultiplier: 0.38, duration: 1.85)
+// 2. MOBILE TOUCH: Medium-paced, responsive finger tracking with capped flick glide (prevents 5,000px runaway skips)
+// ==========================================================================
+function mobileTouchPacing(data) {
+  const event = data.event;
+  if (!event) return true;
+
+  const isTouch = event.type && event.type.includes('touch');
+
+  // FOR PC / DESKTOP (mouse wheel / trackpad):
+  // Zero throttling, zero governor interference — 100% natural Lenis gliding as previously configured
+  if (!isTouch) {
+    return true;
+  }
+
+  // FOR MOBILE TOUCH:
+  // Capping extreme flick velocity on release to a medium, silky glide (~1 screen height max)
+  if (event.type === 'touchend' && window.lenis) {
+    const maxFlingVelocity = 120;
+    if (Math.abs(window.lenis.velocity) > maxFlingVelocity) {
+      window.lenis.velocity = Math.sign(window.lenis.velocity) * maxFlingVelocity;
+    }
+  }
+  return true;
+}
+
 // Premium Silky Smooth Scrolling (Lenis v1.1.18)
 let lenis = null;
 try {
   if (typeof Lenis !== 'undefined' && !reduce) {
     lenis = new Lenis({
-      duration: 1.85, // Slower, relaxed cinematic glide
+      duration: 1.85, // Reverted for PC: Slower, relaxed cinematic glide
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.38, // Crucial: Cut wheel travel by ~60% so one scroll tick moves gently, never skipping sections
-      touchMultiplier: 0.45, // Crucial: Cut touch swipe travel so mobile flicks don't fling across 3-4 sections
-      touchInertiaMultiplier: 8, // Low inertia momentum prevents runaway flings
+      wheelMultiplier: 0.38, // Reverted for PC: Natural, comfortable wheel travel
+      syncTouch: true, // Crucial for Mobile: Handles touch velocity instead of unconstrained native fling
+      touchMultiplier: 0.88, // Medium natural speed for mobile finger drag (not slow!)
+      touchInertiaMultiplier: 5, // Medium pleasant glide for mobile (prevents 5,000px skips)
+      syncTouchLerp: 0.075,
       infinite: false,
+      virtualScroll: mobileTouchPacing
     });
     window.lenis = lenis;
 
@@ -18605,13 +18599,15 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
     }
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
+  if (window.lenis) {
+    window.lenis.on('scroll', onScroll);
+  } else {
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
 
   function animLoop() {
     const diff = targetFrame - currentFrame;
     if (Math.abs(diff) > 0.04) {
-      // Gentle, silky interpolation factor (0.11 instead of snappy 0.22)
-      // This ensures smooth, slow, luxurious scrub playback
       currentFrame += diff * 0.11;
       renderFrameAt(currentFrame, false);
     }
