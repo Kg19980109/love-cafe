@@ -2327,22 +2327,20 @@ html {
 #menu {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 99999;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: calc(76px + env(safe-area-inset-top, 0px)) clamp(16px, 4vw, 32px) calc(24px + env(safe-area-inset-bottom, 0px));
+  padding: calc(14px + env(safe-area-inset-top, 0px)) 16px calc(20px + env(safe-area-inset-bottom, 0px));
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  transform: translateY(-12px) scale(0.98);
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+  transform: translateY(-8px) scale(0.99);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  background: linear-gradient(165deg, rgba(230, 25, 90, 0.98) 0%, rgba(154, 18, 64, 0.98) 50%, rgba(42, 24, 32, 0.99) 100%);
-  -webkit-backdrop-filter: blur(28px) saturate(1.8);
-  backdrop-filter: blur(28px) saturate(1.8);
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.4);
+  background: radial-gradient(circle at 50% 0%, #ffffff 0%, #fff2f6 40%, #fde2ea 100%);
+  box-shadow: inset 0 0 80px rgba(244, 160, 178, 0.35);
 }
 #menu.open {
   opacity: 1;
@@ -2351,12 +2349,12 @@ html {
   transform: translateY(0) scale(1);
 }
 .menu-inner {
-  max-width: 480px;
+  max-width: 440px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
   min-height: 100%;
   justify-content: space-between;
 }
@@ -2364,114 +2362,269 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 12px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+  padding: 10px 14px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 2px solid #2a1820;
+  box-shadow: 0 4px 0 #2a1820;
+  flex-shrink: 0;
 }
 .menu-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
-.mb-spark {
-  font-size: 24px;
+.menu-brand .brand-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
-.mb-title {
+.menu-vip-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #fff0f3;
+  border: 1.5px solid #2a1820;
+  box-shadow: 0 1.5px 0 #2a1820;
   font-family: var(--disp);
+  font-size: 10px;
   font-weight: 800;
-  font-size: 22px;
+  color: #d42255;
   letter-spacing: 0.04em;
-  color: #ffd23f;
-  text-shadow: 2px 2px 0 var(--line);
 }
 .menu-close-btn {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  color: #fff;
-  font-size: 18px;
-  font-weight: 800;
+  background: #ffe27a;
+  border: 2px solid #2a1820;
+  box-shadow: 0 3px 0 #2a1820;
+  color: #2a1820;
+  font-size: 16px;
+  font-weight: 900;
   cursor: pointer;
   display: grid;
   place-items: center;
-  transition: transform 0.2s, background 0.2s;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, background 0.15s ease;
   -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+}
+.menu-close-btn:hover {
+  background: #ffd23f;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 0 #2a1820;
 }
 .menu-close-btn:active {
-  transform: scale(0.92);
-  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(2px) scale(0.95);
+  box-shadow: 0 1px 0 #2a1820;
+}
+.menu-tagline-wrap {
+  text-align: center;
+  margin: -2px 0 2px 0;
+  flex-shrink: 0;
+}
+.menu-tagline-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1.5px solid #2a1820;
+  box-shadow: 0 2px 0 #2a1820;
+  font-family: var(--disp);
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #2a1820;
+}
+.menu-tagline-pill b {
+  color: #e6195a;
 }
 .menu-nav {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6.5px;
+  flex: 1;
 }
+.menu-nav a,
 .menu-nav .m-link {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 14px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
-  color: #fff;
+  padding: 8px 12px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 2px solid #2a1820;
+  box-shadow: 0 3px 0 #2a1820;
+  color: #2a1820;
   text-decoration: none;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, border-color 0.2s ease;
+  text-shadow: none;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, background 0.15s ease;
   -webkit-tap-highlight-color: transparent;
+  position: relative;
 }
-.menu-nav .m-link:hover, .menu-nav .m-link:active {
-  background: rgba(255, 255, 255, 0.24);
-  border-color: #ffd23f;
-  transform: translateX(6px);
+.menu-nav .m-link:hover {
+  background: #fff8fa;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4.5px 0 #2a1820;
+}
+.menu-nav .m-link:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #2a1820;
+  background: #ffeef2;
 }
 .menu-nav .m-icon {
-  font-size: 22px;
-  width: 28px;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
   display: grid;
   place-items: center;
+  font-size: 18px;
+  border: 1.5px solid #2a1820;
+  flex-shrink: 0;
+  box-shadow: 0 1.5px 0 rgba(42, 24, 32, 0.12);
+  background: #fff5f8;
 }
+.m-link-home .m-icon { background: #fef3c7; }
+.m-link-menu .m-icon { background: #ffe4e6; }
+.m-link-story .m-icon { background: #ede9fe; }
+.m-link-app .m-icon { background: #dcfce7; }
+.m-link-cinemas .m-icon { background: #e0f2fe; }
+.m-link-reviews .m-icon { background: #fef9c3; }
+.m-link-rewards .m-icon { background: #ffedd5; }
+.m-link-partners .m-icon { background: #fce7f3; }
+.m-link-why .m-icon { background: #dbeafe; }
+.m-link-get .m-icon { background: #ffe27a; }
 .menu-nav .m-text {
   font-family: var(--disp);
   font-weight: 800;
-  font-size: 19px;
-  line-height: 1.1;
-  color: #fff;
-  text-shadow: 1.5px 1.5px 0 rgba(0,0,0,0.35);
+  font-size: 15.5px;
+  line-height: 1.15;
+  color: #2a1820;
+  text-shadow: none;
+  letter-spacing: -0.01em;
 }
 .menu-nav .m-badge {
   margin-left: auto;
   font-family: var(--disp);
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  padding: 3px 9px;
+  font-weight: 800;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
   border-radius: 999px;
-  background: rgba(255, 210, 63, 0.25);
-  border: 1px solid #ffd23f;
-  color: #ffd23f;
+  border: 1.5px solid #2a1820;
+  box-shadow: 0 1.5px 0 #2a1820;
   text-transform: uppercase;
+  text-shadow: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+.m-badge-top { background: #fff0f3; color: #e6195a; }
+.m-badge-menu { background: #ffe4e6; color: #d42255; }
+.m-badge-journey { background: #ede9fe; color: #6d28d9; }
+.m-badge-app { background: #dcfce7; color: #15803d; }
+.m-badge-cinemas { background: #e0f2fe; color: #0284c7; }
+.m-badge-reviews { background: #fef08a; color: #854d0e; }
+.m-badge-rewards { background: #ffedd5; color: #c2410c; }
+.m-badge-partners { background: #fce7f3; color: #be185d; }
+.m-badge-why { background: #dbeafe; color: #1d4ed8; }
+.m-badge-get { background: #ffe27a; color: #2a1820; }
+.menu-nav .m-arrow {
+  color: rgba(42, 24, 32, 0.45);
+  font-family: var(--disp);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+  margin-left: 4px;
 }
 .menu-foot {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding-top: 14px;
-  border-top: 2px solid rgba(255, 255, 255, 0.18);
+  gap: 9px;
+  padding-top: 10px;
+  border-top: 2px dashed rgba(42, 24, 32, 0.22);
+  align-items: center;
+  flex-shrink: 0;
 }
 .menu-promo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 2px solid #2a1820;
+  box-shadow: 0 3px 0 #2a1820;
   font-family: var(--disp);
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #ffd23f;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #2a1820;
+  text-shadow: none;
   text-align: center;
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
+}
+.menu-promo b {
+  color: #e6195a;
 }
 .menu-stores {
   display: flex;
   gap: 10px;
   justify-content: center;
-  flex-wrap: wrap;
+  width: 100%;
+}
+.menu-store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 12px;
+  border-radius: 13px;
+  background: #2a1820;
+  border: 2px solid #2a1820;
+  box-shadow: 0 3.5px 0 #2a1820;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--disp);
+  font-weight: 800;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  flex: 1;
+  max-width: 195px;
+  justify-content: center;
+}
+.menu-store-btn:hover {
+  background: #3e2430;
+  transform: translateY(-1.5px);
+  box-shadow: 0 4.5px 0 #2a1820;
+}
+.menu-store-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1.5px 0 #2a1820;
+}
+.menu-store-btn .store-btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.1;
+}
+.menu-store-btn small {
+  font-size: 8px;
+  font-weight: 700;
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.menu-store-btn b {
+  font-size: 12px;
+  color: #ffffff;
+}
+.menu-store-btn .store-btn-star {
+  font-size: 10px;
+  font-weight: 800;
+  color: #ffd23f;
+  margin-left: 2px;
 }
 
 /* ==========================================================================
@@ -14263,37 +14416,52 @@ html {
   </div>
 </header>
 
-<!-- Mobile Fullscreen Navigation Overlay (Restored Pinkish/Violet Glass Design) -->
+<!-- Mobile Fullscreen Navigation Overlay (Retro-Chic High-Contrast Design) -->
 <div id="menu" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu" aria-hidden="true">
   <div class="menu-inner">
     <div class="menu-top">
       <div class="menu-brand">
-        <img src="assets/love_logo_vibrant.png" class="brand-logo-img" alt="LOVE CAFE - please taste me one time!" style="height:34px; width:auto;">
+        <img src="assets/love_logo_vibrant.png" class="brand-logo-img" alt="LOVE CAFE - please taste me one time!">
+        <span class="menu-vip-pill">★ IN-SEAT DINING ★</span>
       </div>
       <button class="menu-close-btn" id="mclose" aria-label="Close Menu">✕</button>
     </div>
+
+    <div class="menu-tagline-wrap">
+      <span class="menu-tagline-pill">🍿 Fresh Cinema Delivery in <b>~10 Mins</b> ✨</span>
+    </div>
+
     <nav class="menu-nav" aria-label="Mobile Navigation Links">
-      <a href="#top" class="m-link"><span class="m-icon">🏠</span><span class="m-text">Home</span><span class="m-badge">Top</span></a>
-      <a href="#flavours" class="m-link"><span class="m-icon">🍿</span><span class="m-text">Our Menu</span><span class="m-badge">Menu</span></a>
-      <a href="#story" class="m-link"><span class="m-icon">🎬</span><span class="m-text">4-Step Journey</span><span class="m-badge">In-Seat</span></a>
-      <a href="#app" class="m-link"><span class="m-icon">📱</span><span class="m-text">Cinema App</span><span class="m-badge">In-Seat</span></a>
-      <a href="#cinemas" class="m-link"><span class="m-icon">🎟️</span><span class="m-text">Partner Cinemas</span><span class="m-badge">9 Theatres</span></a>
-      <a href="#reviews" class="m-link"><span class="m-icon">⭐</span><span class="m-text">Guest Reviews</span><span class="m-badge">4.9★</span></a>
-      <a href="#rewards" class="m-link"><span class="m-icon">👑</span><span class="m-text">CinePoints</span><span class="m-badge">Rewards</span></a>
-      <a href="#partners" class="m-link"><span class="m-icon">🏆</span><span class="m-text">Food Partners</span><span class="m-badge">8 Brands</span></a>
-      <a href="#why-us" class="m-link"><span class="m-icon">✨</span><span class="m-text">Why Love Cafe</span><span class="m-badge">Why Us</span></a>
-      <a href="#get" class="m-link"><span class="m-icon">📲</span><span class="m-text">Order To Seat</span><span class="m-badge">App</span></a>
+      <a href="#top" class="m-link m-link-home"><span class="m-icon">🏠</span><span class="m-text">Home</span><span class="m-badge m-badge-top">Top</span><span class="m-arrow">›</span></a>
+      <a href="#flavours" class="m-link m-link-menu"><span class="m-icon">🍿</span><span class="m-text">Our Menu</span><span class="m-badge m-badge-menu">Menu</span><span class="m-arrow">›</span></a>
+      <a href="#story" class="m-link m-link-story"><span class="m-icon">🎬</span><span class="m-text">4-Step Journey</span><span class="m-badge m-badge-journey">In-Seat</span><span class="m-arrow">›</span></a>
+      <a href="#app" class="m-link m-link-app"><span class="m-icon">📱</span><span class="m-text">Cinema App</span><span class="m-badge m-badge-app">In-Seat</span><span class="m-arrow">›</span></a>
+      <a href="#cinemas" class="m-link m-link-cinemas"><span class="m-icon">🎟️</span><span class="m-text">Partner Cinemas</span><span class="m-badge m-badge-cinemas">9 Theatres</span><span class="m-arrow">›</span></a>
+      <a href="#reviews" class="m-link m-link-reviews"><span class="m-icon">⭐</span><span class="m-text">Guest Reviews</span><span class="m-badge m-badge-reviews">4.9★</span><span class="m-arrow">›</span></a>
+      <a href="#rewards" class="m-link m-link-rewards"><span class="m-icon">👑</span><span class="m-text">CinePoints</span><span class="m-badge m-badge-rewards">Rewards</span><span class="m-arrow">›</span></a>
+      <a href="#partners" class="m-link m-link-partners"><span class="m-icon">🏆</span><span class="m-text">Food Partners</span><span class="m-badge m-badge-partners">8 Brands</span><span class="m-arrow">›</span></a>
+      <a href="#why-us" class="m-link m-link-why"><span class="m-icon">✨</span><span class="m-text">Why Love Cafe</span><span class="m-badge m-badge-why">Why Us</span><span class="m-arrow">›</span></a>
+      <a href="#get" class="m-link m-link-get"><span class="m-icon">📲</span><span class="m-text">Order To Seat</span><span class="m-badge m-badge-get">App</span><span class="m-arrow">›</span></a>
     </nav>
+
     <div class="menu-foot">
-      <div class="menu-promo"><span>⚡ Delivery to your seat in <b>~10 Mins</b></span></div>
+      <div class="menu-promo"><span>⚡ Delivery to your recliner in <b>~10 Mins</b></span></div>
       <div class="menu-stores">
-        <a class="hero-store-btn hero-store-gplay" data-play href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get on Google Play">
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
-          <span><small>GET IT ON</small>Google Play</span>
+        <a class="menu-store-btn" href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get LOVE CAFE on Google Play">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
+          <div class="store-btn-text">
+            <small>GET IT ON</small>
+            <b>Google Play</b>
+          </div>
+          <span class="store-btn-star">4.9★</span>
         </a>
-        <a class="hero-store-btn hero-store-appstore" data-ios href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download on App Store">
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.300 1.900-3.400 2-3.500-1.100-1.600-2.800-1.800-3.400-1.800-1.400-.2-2.800.8-3.500.8-.7 0-1.800-.8-3-.8-1.500 0-3 .9-3.800 2.300-1.600 2.800-.4 7 1.200 9.300.8 1.100 1.700 2.400 2.900 2.300 1.200 0 1.600-.7 3-.7s1.800.7 3 .7c1.300 0 2.100-1.100 2.800-2.200.9-1.300 1.300-2.500 1.300-2.600 0 0-2.500-1-2.500-3.800zM14.100 5.800c.6-.8 1.100-1.800.9-2.800-.9 0-2 .6-2.600 1.400-.6.700-1.100 1.700-.9 2.700 1 .1 2-.5 2.600-1.300z"/></svg>
-          <span><small>Download on</small>App Store</span>
+        <a class="menu-store-btn" href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download LOVE CAFE on App Store">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="#fff" aria-hidden="true"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.2.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.8.9-2.8-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.7 1 .1 2-.5 2.6-1.3z"/></svg>
+          <div class="store-btn-text">
+            <small>Download on the</small>
+            <b>App Store</b>
+          </div>
+          <span class="store-btn-star">Free</span>
         </a>
       </div>
     </div>
