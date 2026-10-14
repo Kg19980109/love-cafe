@@ -2331,319 +2331,392 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: calc(14px + env(safe-area-inset-top, 0px)) 16px calc(24px + env(safe-area-inset-bottom, 0px));
+  padding: calc(76px + env(safe-area-inset-top, 0px)) clamp(16px, 4vw, 32px) calc(24px + env(safe-area-inset-bottom, 0px));
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
   transform: translateY(-12px) scale(0.98);
-  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  background-color: #fde8ed;
-  background-image: 
-    radial-gradient(#f7a8b8 1.4px, transparent 1.4px),
-    linear-gradient(180deg, #fff0f3 0%, #fde4ec 45%, #fcd6df 100%);
-  background-size: 22px 22px, 100% 100%;
-  box-shadow: inset 0 0 50px rgba(244, 160, 178, 0.35);
+  background: linear-gradient(165deg, rgba(230, 25, 90, 0.98) 0%, rgba(154, 18, 64, 0.98) 50%, rgba(42, 24, 32, 0.99) 100%);
+  -webkit-backdrop-filter: blur(28px) saturate(1.8);
+  backdrop-filter: blur(28px) saturate(1.8);
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.4);
 }
-
 #menu.open {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
   transform: translateY(0) scale(1);
 }
-
 .menu-inner {
-  max-width: 440px;
+  max-width: 480px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
   min-height: 100%;
   justify-content: space-between;
 }
-
-/* Cute Retro Candy Accent Bar */
-.menu-candy-bar {
-  height: 6px;
-  width: 100%;
-  border-radius: 999px;
-  background: repeating-linear-gradient(45deg, #ff4d79, #ff4d79 12px, #ffffff 12px, #ffffff 24px);
-  border: 1.5px solid #2a1820;
-  box-shadow: 0 2px 0 #2a1820;
-  margin-bottom: 2px;
-  flex-shrink: 0;
-}
-
-/* Header Bar */
 .menu-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 14px;
-  border-radius: 18px;
-  background: #ffffff;
-  border: 2.5px solid #2a1820;
-  box-shadow: 0 4px 0 #2a1820;
-  flex-shrink: 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.18);
 }
-
 .menu-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
-
-.menu-brand .brand-logo-img {
-  height: 34px;
-  width: auto;
-  display: block;
+.mb-spark {
+  font-size: 24px;
 }
-
+.mb-title {
+  font-family: var(--disp);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  color: #ffd23f;
+  text-shadow: 2px 2px 0 var(--line);
+}
 .menu-close-btn {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: #ffe27a;
-  border: 2.5px solid #2a1820;
-  box-shadow: 0 3px 0 #2a1820;
-  color: #2a1820;
-  font-size: 17px;
-  font-weight: 900;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
   cursor: pointer;
   display: grid;
   place-items: center;
-  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, background 0.15s ease;
+  transition: transform 0.2s, background 0.2s;
   -webkit-tap-highlight-color: transparent;
-  flex-shrink: 0;
 }
-
-.menu-close-btn:hover {
-  background: #ffd23f;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 0 #2a1820;
-}
-
 .menu-close-btn:active {
-  transform: translateY(2px) scale(0.94);
-  box-shadow: 0 1px 0 #2a1820;
-  background: #ffc220;
+  transform: scale(0.92);
+  background: rgba(255, 255, 255, 0.35);
 }
-
-/* Cartoon Tagline Pill */
-.menu-tagline-wrap {
-  text-align: center;
-  margin: -2px 0 2px 0;
-  flex-shrink: 0;
-}
-
-.menu-tagline-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 14px;
-  border-radius: 999px;
-  background: #ffffff;
-  border: 1.5px solid #2a1820;
-  box-shadow: 0 2px 0 #2a1820;
-  font-family: var(--disp);
-  font-size: 12px;
-  font-weight: 800;
-  color: #d42255;
-  letter-spacing: 0.02em;
-}
-
-/* Menu Navigation Links */
 .menu-nav {
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  flex: 1;
+  gap: 8px;
 }
-
-.menu-nav a,
 .menu-nav .m-link {
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  padding: 8.5px 12px !important;
-  border-radius: 16px !important;
-  background: #ffffff !important;
-  border: 2px solid #2a1820 !important;
-  box-shadow: 0 3.5px 0 #2a1820 !important;
-  color: #2a1820 !important;
-  text-decoration: none !important;
-  text-shadow: none !important;
-  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, background 0.15s ease !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, border-color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
-  position: relative;
 }
-
-.menu-nav .m-link:hover {
-  background: #fff8fa !important;
-  transform: translateY(-1.5px);
-  box-shadow: 0 5px 0 #2a1820 !important;
+.menu-nav .m-link:hover, .menu-nav .m-link:active {
+  background: rgba(255, 255, 255, 0.24);
+  border-color: #ffd23f;
+  transform: translateX(6px);
 }
-
-.menu-nav .m-link:active {
-  transform: translateY(2px) !important;
-  box-shadow: 0 1.5px 0 #2a1820 !important;
-  background: #ffeef2 !important;
-}
-
 .menu-nav .m-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 11px;
+  font-size: 22px;
+  width: 28px;
   display: grid;
   place-items: center;
-  font-size: 19px;
-  border: 1.5px solid #2a1820;
-  flex-shrink: 0;
-  box-shadow: 0 2px 0 rgba(42, 24, 32, 0.12);
-  background: #fff5f8;
 }
-
-/* Individual Cartoon Pastel Palette per Item */
-.m-link-home .m-icon { background: #fef3c7 !important; }
-.m-link-menu .m-icon { background: #ffe4e6 !important; }
-.m-link-story .m-icon { background: #f3e8ff !important; }
-.m-link-cinemas .m-icon { background: #e0f2fe !important; }
-.m-link-reviews .m-icon { background: #fef9c3 !important; }
-.m-link-rewards .m-icon { background: #ffedd5 !important; }
-.m-link-partners .m-icon { background: #fce7f3 !important; }
-.m-link-why .m-icon { background: #dbeafe !important; }
-.m-link-app .m-icon { background: #dcfce7 !important; }
-
 .menu-nav .m-text {
-  font-family: var(--disp) !important;
-  font-weight: 800 !important;
-  font-size: 16px !important;
-  line-height: 1.15 !important;
-  color: #2a1820 !important;
-  text-shadow: none !important;
-  letter-spacing: -0.01em;
+  font-family: var(--disp);
+  font-weight: 800;
+  font-size: 19px;
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 1.5px 1.5px 0 rgba(0,0,0,0.35);
 }
-
 .menu-nav .m-badge {
-  margin-left: auto !important;
-  font-family: var(--disp) !important;
-  font-weight: 800 !important;
-  font-size: 10.5px !important;
-  letter-spacing: 0.04em !important;
-  padding: 3.5px 9px !important;
-  border-radius: 999px !important;
-  border: 1.5px solid #2a1820 !important;
-  box-shadow: 0 1.5px 0 #2a1820 !important;
-  text-transform: uppercase !important;
-  text-shadow: none !important;
-  white-space: nowrap !important;
-  line-height: 1 !important;
+  margin-left: auto;
+  font-family: var(--disp);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(255, 210, 63, 0.25);
+  border: 1px solid #ffd23f;
+  color: #ffd23f;
+  text-transform: uppercase;
 }
-
-/* Distinct Cheerful Cartoon Pill Colors */
-.m-badge-top { background: #fff0f3 !important; color: #e6195a !important; }
-.m-badge-menu { background: #ffe4e6 !important; color: #d42255 !important; }
-.m-badge-journey { background: #dcfce7 !important; color: #15803d !important; }
-.m-badge-cinemas { background: #e0f2fe !important; color: #0284c7 !important; }
-.m-badge-reviews { background: #fef08a !important; color: #854d0e !important; }
-.m-badge-rewards { background: #ffedd5 !important; color: #c2410c !important; }
-.m-badge-partners { background: #f3e8ff !important; color: #7e22ce !important; }
-.m-badge-why { background: #fce7f3 !important; color: #be185d !important; }
-.m-badge-app { background: #ffe27a !important; color: #2a1820 !important; }
-
-/* Menu Footer */
 .menu-foot {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-top: 12px;
-  border-top: 2px dashed rgba(42, 24, 32, 0.2);
-  align-items: center;
-  flex-shrink: 0;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 2px solid rgba(255, 255, 255, 0.18);
 }
-
 .menu-promo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: #ffffff;
-  border: 2px solid #2a1820;
-  box-shadow: 0 3px 0 #2a1820;
   font-family: var(--disp);
-  font-size: 12px;
-  font-weight: 800;
-  color: #2a1820;
-  text-shadow: none !important;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffd23f;
   text-align: center;
-  width: auto;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.4);
 }
-
-.menu-promo b {
-  color: #d42255;
-}
-
 .menu-stores {
   display: flex;
   gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
 }
 
-.menu-stores .hero-store-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 9px !important;
-  padding: 8px 14px !important;
-  border-radius: 13px !important;
-  background: #2a1820 !important;
-  border: 2px solid #2a1820 !important;
-  box-shadow: 0 3.5px 0 #2a1820 !important;
+/* ==========================================================================
+   INTERACTIVE DRAGGABLE RIGHT-SIDE SCROLLBAR (PC & MOBILE)
+   ========================================================================== */
+.page-scrollbar {
+  position: fixed;
+  right: 6px;
+  top: 76px;
+  bottom: 76px;
+  width: 14px;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+body.locked .page-scrollbar,
+#menu.open ~ .page-scrollbar {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.scrollbar-track {
+  position: relative;
+  width: 6px;
+  height: 100%;
+  background: rgba(42, 24, 32, 0.16);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+}
+
+.page-scrollbar:hover .scrollbar-track,
+.page-scrollbar.dragging .scrollbar-track {
+  width: 10px;
+  background: rgba(42, 24, 32, 0.26);
+}
+
+.scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-height: 40px;
+  background: linear-gradient(180deg, #ff4d79 0%, #e6195a 60%, #a8103d 100%);
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(230, 25, 90, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  cursor: grab;
+  touch-action: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scrollbar-thumb:active,
+.page-scrollbar.dragging .scrollbar-thumb {
+  cursor: grabbing;
+  background: linear-gradient(180deg, #ffd23f 0%, #ff2a6d 100%);
+  box-shadow: 0 0 14px rgba(255, 210, 63, 0.8), inset 0 1px 1px #fff;
+}
+
+.scrollbar-thumb-indicator {
+  width: 3px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.scrollbar-tooltip {
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%) scale(0.9);
+  background: #2a1820;
+  color: #ffd23f;
+  font-family: var(--disp, 'Outfit', sans-serif);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  padding: 4px 10px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(255, 210, 63, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+.scrollbar-tooltip::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #2a1820;
+}
+
+.page-scrollbar:hover .scrollbar-tooltip,
+.page-scrollbar.dragging .scrollbar-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) scale(1);
+}
+
+@media (max-width: 768px) {
+  .page-scrollbar {
+    right: 4px;
+    top: 68px;
+    bottom: 68px;
+    width: 12px;
+  }
+  .scrollbar-track {
+    width: 5px;
+  }
+  .page-scrollbar:hover .scrollbar-track,
+  .page-scrollbar.dragging .scrollbar-track {
+    width: 8px;
+  }
+}
+
+/* ==========================================================================
+   FLOATING ORDER TO SEAT / DOWNLOAD BUTTON
+   ========================================================================== */
+.floating-order-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 990;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px 10px 14px;
+  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 45%, #99112e 100%);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(230, 25, 90, 0.45), 0 4px 0 #2a1820;
   color: #ffffff !important;
   text-decoration: none !important;
-  font-family: var(--disp) !important;
-  font-weight: 800 !important;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease !important;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, opacity 0.3s ease;
+  animation: floatCTA 3.5s ease-in-out infinite;
   -webkit-tap-highlight-color: transparent;
-  flex: 1 1 150px;
-  max-width: 190px;
-  justify-content: center;
 }
 
-.menu-stores .hero-store-btn:hover {
-  background: #3e2430 !important;
-  transform: translateY(-1.5px);
-  box-shadow: 0 5px 0 #2a1820 !important;
+@keyframes floatCTA {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
-.menu-stores .hero-store-btn:active {
-  transform: translateY(2px) !important;
-  box-shadow: 0 1.5px 0 #2a1820 !important;
+.floating-order-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(230, 25, 90, 0.6), 0 5px 0 #2a1820;
+  animation-play-state: paused;
 }
 
-.menu-stores .hero-store-btn span {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  line-height: 1.1 !important;
-  font-size: 13px !important;
-  color: #ffffff !important;
-  text-shadow: none !important;
+.floating-order-btn:active {
+  transform: translateY(2px) scale(0.97);
+  box-shadow: 0 4px 12px rgba(230, 25, 90, 0.4), 0 2px 0 #2a1820;
 }
 
-.menu-stores .hero-store-btn span small {
-  font-size: 9px !important;
-  font-weight: 700 !important;
-  opacity: 0.8 !important;
-  letter-spacing: 0.05em !important;
-  text-transform: uppercase !important;
-  color: #ffffff !important;
+.fob-icon {
+  font-size: 20px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.fob-content {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.fob-title {
+  font-family: var(--disp, 'Outfit', sans-serif);
+  font-weight: 800;
+  font-size: 14.5px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.fob-sub {
+  font-family: var(--disp, 'Outfit', sans-serif);
+  font-weight: 700;
+  font-size: 10.5px;
+  color: #ffd23f;
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.fob-sparkle {
+  font-size: 13px;
+  animation: sparkleTwinkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% { opacity: 0.7; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15) rotate(15deg); }
+}
+
+.floating-order-btn.hidden,
+body.locked .floating-order-btn {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px) scale(0.9);
+}
+
+@media (max-width: 600px) {
+  .floating-order-btn {
+    bottom: 18px;
+    right: 14px;
+    padding: 8px 14px 8px 12px;
+    gap: 8px;
+  }
+  .fob-icon {
+    font-size: 18px;
+  }
+  .fob-title {
+    font-size: 13px;
+  }
+  .fob-sub {
+    font-size: 9.5px;
+  }
 }
 
 body.locked {
@@ -13069,23 +13142,23 @@ html {
 
 
 /* ==========================================================================
-   GLOBAL CINEMATIC SCROLL PACING AUDIT: SLOW, COMFORTABLE & EXPERIENTIAL
-   (Guarantees each section has ample height so users never skip 3-4 sections)
+   CONTENT SECTIONS SCROLL SPEED OPTIMIZATION
+   Natural, crisp, brisk pacing for non-animated sections
    ========================================================================== */
 .app-showcase-section,
 .cinemas-showcase-section,
 .reviews-showcase-section,
 .cinepoints-master-section,
 .why-us-section {
-  min-height: clamp(680px, 85vh, 920px) !important;
-  padding-top: clamp(75px, 8.5vw, 115px) !important;
-  padding-bottom: clamp(75px, 8.5vw, 115px) !important;
+  min-height: auto !important;
+  padding-top: clamp(40px, 4.5vw, 65px) !important;
+  padding-bottom: clamp(40px, 4.5vw, 65px) !important;
   scroll-margin-top: 80px !important;
 }
 
 .cinema-film-roll-section {
-  padding-top: clamp(65px, 7.5vw, 95px) !important;
-  padding-bottom: clamp(65px, 7.5vw, 95px) !important;
+  padding-top: clamp(36px, 3.8vw, 56px) !important;
+  padding-bottom: clamp(36px, 3.8vw, 56px) !important;
   scroll-margin-top: 80px !important;
 }
 
@@ -13104,7 +13177,7 @@ html {
               radial-gradient(circle at 82% 75%, rgba(255, 210, 63, 0.18) 0%, transparent 45%),
               radial-gradient(circle at 50% 50%, rgba(255, 245, 250, 0.95) 0%, transparent 75%),
               linear-gradient(180deg, #fde8ec 0%, #ffd6e4 50%, #fde8ec 100%) !important;
-  padding: clamp(75px, 8.5vw, 115px) clamp(16px, 4vw, 44px) !important;
+  padding: clamp(42px, 4.8vw, 68px) clamp(16px, 4vw, 44px) !important;
   color: #2b0d18 !important;
   border-top: 2.5px solid #2a1820 !important;
   border-bottom: 2.5px solid #2a1820 !important;
@@ -13602,29 +13675,25 @@ html {
   </div>
 </header>
 
-<!-- Mobile Fullscreen Navigation Overlay (Love Cafe Signature Cartoon Drawer) -->
+<!-- Mobile Fullscreen Navigation Overlay (Restored Pinkish/Violet Glass Design) -->
 <div id="menu" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu" aria-hidden="true">
   <div class="menu-inner">
-    <div class="menu-candy-bar" aria-hidden="true"></div>
     <div class="menu-top">
       <div class="menu-brand">
-        <img src="assets/love_logo_vibrant.png" class="brand-logo-img" alt="LOVE CAFE - please taste me one time!">
+        <img src="assets/love_logo_vibrant.png" class="brand-logo-img" alt="LOVE CAFE - please taste me one time!" style="height:34px; width:auto;">
       </div>
       <button class="menu-close-btn" id="mclose" aria-label="Close Menu">✕</button>
     </div>
-    <div class="menu-tagline-wrap">
-      <span class="menu-tagline-pill">🍿 Fresh In-Seat Cinema Delivery in ~10 Mins ✨</span>
-    </div>
     <nav class="menu-nav" aria-label="Mobile Navigation Links">
-      <a href="#top" class="m-link m-link-home"><span class="m-icon">🏠</span><span class="m-text">Home</span><span class="m-badge m-badge-top">Top</span></a>
-      <a href="#flavours" class="m-link m-link-menu"><span class="m-icon">🍿</span><span class="m-text">Our Menu</span><span class="m-badge m-badge-menu">Menu</span></a>
-      <a href="#story" class="m-link m-link-story"><span class="m-icon">🎬</span><span class="m-text">4-Step Journey</span><span class="m-badge m-badge-journey">In-Seat</span></a>
-      <a href="#cinemas" class="m-link m-link-cinemas"><span class="m-icon">🎟️</span><span class="m-text">Partner Cinemas</span><span class="m-badge m-badge-cinemas">9 Theatres</span></a>
-      <a href="#reviews" class="m-link m-link-reviews"><span class="m-icon">⭐</span><span class="m-text">Guest Reviews</span><span class="m-badge m-badge-reviews">4.9★</span></a>
-      <a href="#rewards" class="m-link m-link-rewards"><span class="m-icon">👑</span><span class="m-text">CinePoints</span><span class="m-badge m-badge-rewards">Rewards</span></a>
-      <a href="#partners" class="m-link m-link-partners"><span class="m-icon">🏆</span><span class="m-text">Food Partners</span><span class="m-badge m-badge-partners">8 Brands</span></a>
-      <a href="#why-us" class="m-link m-link-why"><span class="m-icon">✨</span><span class="m-text">Why Love Cafe</span><span class="m-badge m-badge-why">Why Us</span></a>
-      <a href="#get" class="m-link m-link-app"><span class="m-icon">📲</span><span class="m-text">Order To Seat</span><span class="m-badge m-badge-app">App</span></a>
+      <a href="#top" class="m-link"><span class="m-icon">🏠</span><span class="m-text">Home</span><span class="m-badge">Top</span></a>
+      <a href="#flavours" class="m-link"><span class="m-icon">🍿</span><span class="m-text">Our Menu</span><span class="m-badge">Menu</span></a>
+      <a href="#story" class="m-link"><span class="m-icon">🎬</span><span class="m-text">4-Step Journey</span><span class="m-badge">In-Seat</span></a>
+      <a href="#cinemas" class="m-link"><span class="m-icon">🎟️</span><span class="m-text">Partner Cinemas</span><span class="m-badge">9 Theatres</span></a>
+      <a href="#reviews" class="m-link"><span class="m-icon">⭐</span><span class="m-text">Guest Reviews</span><span class="m-badge">4.9★</span></a>
+      <a href="#rewards" class="m-link"><span class="m-icon">👑</span><span class="m-text">CinePoints</span><span class="m-badge">Rewards</span></a>
+      <a href="#partners" class="m-link"><span class="m-icon">🏆</span><span class="m-text">Food Partners</span><span class="m-badge">8 Brands</span></a>
+      <a href="#why-us" class="m-link"><span class="m-icon">✨</span><span class="m-text">Why Love Cafe</span><span class="m-badge">Why Us</span></a>
+      <a href="#get" class="m-link"><span class="m-icon">📲</span><span class="m-text">Order To Seat</span><span class="m-badge">App</span></a>
     </nav>
     <div class="menu-foot">
       <div class="menu-promo"><span>⚡ Delivery to your seat in <b>~10 Mins</b></span></div>
@@ -16134,6 +16203,26 @@ html {
 <footer><a class="brand" href="#top" style="text-decoration:none; display:inline-block; margin-bottom:12px;"><img src="assets/love_logo_nav_twotone.png" class="footer-logo-img" alt="LOVE CAFE - please taste me one time!"></a>
 <nav class="fl" aria-label="Footer"><a href="#top">About</a><a href="#flavours">Menu</a><a href="#story">Journey</a><a href="#cinemas">Locations</a><a href="#reviews">Reviews</a><a href="#rewards">CinePoints</a><a href="#partners">Partners</a><a href="#why-us">Why Us</a><a href="#faq">FAQ</a><a href="#get">Download App</a></nav></footer>
 
+<!-- Interactive Draggable Custom Page Scrollbar (PC & Mobile) -->
+<div id="pageScrollbar" class="page-scrollbar" aria-hidden="true" title="Drag to scroll quickly">
+  <div class="scrollbar-track" id="scrollbarTrack">
+    <div class="scrollbar-thumb" id="scrollbarThumb">
+      <div class="scrollbar-thumb-indicator"></div>
+      <div class="scrollbar-tooltip" id="scrollbarTooltip">Home</div>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Order To Seat / Download Button -->
+<a href="#get" class="floating-order-btn" id="floatingOrderBtn" aria-label="Order to your seat now">
+  <span class="fob-icon">📲</span>
+  <span class="fob-content">
+    <span class="fob-title">Order To Seat</span>
+    <span class="fob-sub">~10m In-Seat Delivery</span>
+  </span>
+  <span class="fob-sparkle">✨</span>
+</a>
+
 
 <script src="assets/lenis.min.js"></script>
 <script>
@@ -16249,7 +16338,7 @@ const prog = el => {
   return clamp(-r.top / Math.max(1, r.height - innerHeight));
 };
 
-// Premium Silky Smooth Fast Scrolling (Lenis v1.1.18 - Tuned for Snappy, Fast PC & Mobile Pacing)
+// Premium Silky Smooth Scrolling (Lenis v1.1.18 - Calibrated Pacing for Animation Sections + Rapid Content Browsing)
 let lenis = null;
 try {
   if (typeof Lenis !== 'undefined' && !reduce) {
@@ -16265,6 +16354,20 @@ try {
       touchInertiaMultiplier: 16, // Natural, lively momentum glide on mobile
       syncTouchLerp: 0.08,
       infinite: false,
+      virtualScroll: function(data) {
+        // Dynamic speed calibration:
+        // In animated sections (#scene, #flavours, #ps, #story), keep exact 195ee1a speed.
+        // In other non-animated content sections (#app, #cinemas, #reviews, #rewards, etc.),
+        // boost scroll velocity so content sections scroll briskly, crisply, and fast!
+        const story = document.getElementById('story');
+        if (story) {
+          const rect = story.getBoundingClientRect();
+          if (rect.bottom <= (window.innerHeight || 800) * 0.3) {
+            data.deltaY *= 1.75;
+          }
+        }
+        return true;
+      }
     });
     window.lenis = lenis;
 
@@ -19091,6 +19194,213 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       });
     });
   }
+})();
+
+
+// ==========================================================================
+// RIGHT-SIDE DRAGGABLE SCROLLBAR CONTROLLER (PC & MOBILE)
+// ==========================================================================
+(function initDraggableScrollbar() {
+  const sb = document.getElementById('pageScrollbar');
+  const track = document.getElementById('scrollbarTrack');
+  const thumb = document.getElementById('scrollbarThumb');
+  const tooltip = document.getElementById('scrollbarTooltip');
+  if (!sb || !track || !thumb) return;
+
+  let isDragging = false;
+  let startPointerY = 0;
+  let startThumbTop = 0;
+  let trackHeight = 0;
+  let thumbHeight = 40;
+  let maxScroll = 1;
+  let maxThumbTop = 1;
+
+  const sections = [
+    { id: 'scene', name: '3D Box' },
+    { id: 'flavours', name: 'Our Menu' },
+    { id: 'ps', name: 'Pop-Up Dishes' },
+    { id: 'story', name: '4-Step Journey' },
+    { id: 'app', name: 'Movie Night App' },
+    { id: 'cinemas', name: 'Cinemas' },
+    { id: 'reviews', name: 'Guest Reviews' },
+    { id: 'rewards', name: 'CinePoints' },
+    { id: 'partners', name: 'Food Partners' },
+    { id: 'why-us', name: 'Why Us' },
+    { id: 'faq', name: 'FAQ' },
+    { id: 'get', name: 'Order App' }
+  ];
+
+  function getActiveSectionName(sy) {
+    const vh = window.innerHeight || 800;
+    const midY = sy + vh * 0.45;
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const el = document.getElementById(sections[i].id);
+      if (el) {
+        const top = el.offsetTop;
+        if (midY >= top) return sections[i].name;
+      }
+    }
+    return 'Home';
+  }
+
+  function updateDimensions() {
+    const docHeight = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight
+    );
+    const winHeight = window.innerHeight || 800;
+    maxScroll = Math.max(1, docHeight - winHeight);
+    trackHeight = track.clientHeight;
+    
+    // Proportional thumb height (clamped between 38px and 140px)
+    thumbHeight = Math.max(38, Math.min(140, (winHeight / docHeight) * trackHeight));
+    thumb.style.height = thumbHeight + 'px';
+    maxThumbTop = Math.max(1, trackHeight - thumbHeight);
+  }
+
+  function syncThumbPosition() {
+    if (isDragging) return;
+    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    const scrollFraction = Math.min(1, Math.max(0, currentScrollY / maxScroll));
+    const thumbTop = scrollFraction * maxThumbTop;
+    thumb.style.transform = `translate(-50%, ${thumbTop}px)`;
+    if (tooltip) {
+      tooltip.textContent = getActiveSectionName(currentScrollY);
+    }
+  }
+
+  window.addEventListener('resize', () => {
+    updateDimensions();
+    syncThumbPosition();
+  }, { passive: true });
+
+  window.addEventListener('scroll', syncThumbPosition, { passive: true });
+  if (window.lenis) {
+    window.lenis.on('scroll', syncThumbPosition);
+  }
+
+  setTimeout(() => {
+    updateDimensions();
+    syncThumbPosition();
+  }, 100);
+
+  function onPointerDown(e) {
+    isDragging = true;
+    sb.classList.add('dragging');
+    document.body.style.userSelect = 'none';
+    document.body.style.webkitUserSelect = 'none';
+
+    updateDimensions();
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    startPointerY = clientY;
+    
+    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    startThumbTop = Math.min(1, Math.max(0, currentScrollY / maxScroll)) * maxThumbTop;
+
+    window.addEventListener('mousemove', onPointerMove, { passive: false });
+    window.addEventListener('touchmove', onPointerMove, { passive: false });
+    window.addEventListener('mouseup', onPointerUp);
+    window.addEventListener('touchend', onPointerUp);
+    window.addEventListener('touchcancel', onPointerUp);
+
+    e.preventDefault();
+  }
+
+  function onPointerMove(e) {
+    if (!isDragging) return;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    const deltaY = clientY - startPointerY;
+    const newThumbTop = Math.min(maxThumbTop, Math.max(0, startThumbTop + deltaY));
+    
+    thumb.style.transform = `translate(-50%, ${newThumbTop}px)`;
+    
+    const progress = newThumbTop / maxThumbTop;
+    const targetScroll = progress * maxScroll;
+    
+    if (window.lenis) {
+      window.lenis.scrollTo(targetScroll, { immediate: true });
+    } else {
+      window.scrollTo(0, targetScroll);
+    }
+
+    if (tooltip) {
+      tooltip.textContent = getActiveSectionName(targetScroll);
+    }
+
+    e.preventDefault();
+  }
+
+  function onPointerUp() {
+    if (!isDragging) return;
+    isDragging = false;
+    sb.classList.remove('dragging');
+    document.body.style.userSelect = '';
+    document.body.style.webkitUserSelect = '';
+
+    window.removeEventListener('mousemove', onPointerMove);
+    window.removeEventListener('touchmove', onPointerMove);
+    window.removeEventListener('mouseup', onPointerUp);
+    window.removeEventListener('touchend', onPointerUp);
+    window.removeEventListener('touchcancel', onPointerUp);
+  }
+
+  thumb.addEventListener('mousedown', onPointerDown);
+  thumb.addEventListener('touchstart', onPointerDown, { passive: false });
+
+  // Track click to jump
+  track.addEventListener('click', (e) => {
+    if (e.target === thumb || thumb.contains(e.target)) return;
+    updateDimensions();
+    const trackRect = track.getBoundingClientRect();
+    const clickY = e.clientY - trackRect.top;
+    const targetThumbTop = Math.min(maxThumbTop, Math.max(0, clickY - thumbHeight / 2));
+    const progress = targetThumbTop / maxThumbTop;
+    const targetScroll = progress * maxScroll;
+
+    if (window.lenis) {
+      window.lenis.scrollTo(targetScroll, { duration: 0.6 });
+    } else {
+      window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+    }
+  });
+})();
+
+// ==========================================================================
+// FLOATING DOWNLOAD / ORDER TO SEAT BUTTON CONTROLLER
+// ==========================================================================
+(function initFloatingOrderButton() {
+  const btn = document.getElementById('floatingOrderBtn');
+  if (!btn) return;
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (typeof scrollToAnchor === 'function') {
+      scrollToAnchor('#get');
+    } else {
+      const getSec = document.getElementById('get');
+      if (getSec) getSec.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  function checkVisibility() {
+    const getSec = document.getElementById('get');
+    if (getSec) {
+      const rect = getSec.getBoundingClientRect();
+      if (rect.top <= (window.innerHeight || 800) * 0.7) {
+        btn.classList.add('hidden');
+        return;
+      }
+    }
+    btn.classList.remove('hidden');
+  }
+
+  window.addEventListener('scroll', checkVisibility, { passive: true });
+  if (window.lenis) {
+    window.lenis.on('scroll', checkVisibility);
+  }
+  checkVisibility();
 })();
 
 </script>
