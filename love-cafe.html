@@ -7350,21 +7350,26 @@ body.locked .sd {
 }
 
 /* ==========================================================================
-   REDESIGNED LUXURY VIP IN-SEAT CINEMA DINING & APP DOWNLOAD SECTION (#get)
-   Warm rose blush & golden retro-pop atmosphere, high-contrast ticket cards
+   LUXURY CINEMA HERO CTA & APP LAUNCH SECTION (#get)
+   Rich wine/berry backdrop, gourmet feast tray, glassmorphism VIP badges
    ========================================================================== */
 .fin {
-  background: 
-    radial-gradient(circle at 18% 22%, rgba(255, 42, 109, 0.16) 0%, transparent 45%),
-    radial-gradient(circle at 82% 78%, rgba(255, 210, 63, 0.22) 0%, transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9) 0%, transparent 75%),
-    linear-gradient(180deg, #fff0f5 0%, #fde4ec 45%, #ffd6e4 100%) !important;
+  background: radial-gradient(ellipse 75% 55% at 75% 25%, rgba(255, 42, 109, 0.32) 0%, transparent 60%),
+              radial-gradient(ellipse 65% 45% at 15% 80%, rgba(255, 180, 50, 0.18) 0%, transparent 55%),
+              radial-gradient(circle at 50% 50%, rgba(110, 16, 52, 0.5) 0%, transparent 70%),
+              linear-gradient(165deg, #17020e 0%, #29081a 45%, #0f0109 100%) !important;
   position: relative !important;
   overflow: hidden !important;
-  padding: clamp(55px, 6.5vw, 85px) clamp(18px, 4vw, 54px) clamp(30px, 4vw, 50px) !important;
-  border-top: 3.5px solid #2a1820 !important;
-  border-bottom: 3.5px solid #2a1820 !important;
-  color: #2a1820 !important;
+  padding: clamp(60px, 8vw, 100px) clamp(18px, 5vw, 64px) !important;
+  border-top: 3px solid rgba(255, 42, 109, 0.35) !important;
+  color: #fff !important;
+}
+
+.fin-bg-ambient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .fin-layout-grid {
@@ -7372,41 +7377,44 @@ body.locked .sd {
   margin: 0 auto !important;
   display: grid !important;
   grid-template-columns: 1.08fr 1fr !important;
-  gap: clamp(32px, 4.5vw, 64px) !important;
+  gap: clamp(36px, 5.5vw, 68px) !important;
   align-items: center !important;
   position: relative !important;
   z-index: 2 !important;
 }
 
+/* Left Column: Typography, Perks & App Download */
 .fin-content-pane {
   display: flex !important;
   flex-direction: column !important;
-  gap: 16px !important;
+  gap: 18px !important;
 }
 
 .fin-vip-badge {
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
-  background: #ffffff !important;
-  border: 2px solid #2a1820 !important;
-  box-shadow: 0 3px 0 #2a1820 !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 120, 160, 0.35) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(12px) !important;
   border-radius: 999px !important;
   padding: 6px 16px !important;
   font-family: var(--disp) !important;
-  font-size: 11.5px !important;
+  font-size: 11px !important;
   font-weight: 800 !important;
-  color: #e6195a !important;
-  letter-spacing: 0.05em !important;
+  color: #ff9bb9 !important;
+  letter-spacing: 0.06em !important;
   width: fit-content !important;
+  box-shadow: 0 4px 16px rgba(255, 42, 109, 0.15) !important;
 }
 
 .fin-pulse-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   background: #ff2a6d;
   border-radius: 50%;
-  box-shadow: 0 0 8px #ff2a6d;
+  box-shadow: 0 0 10px #ff2a6d;
   animation: finPulse 1.8s infinite ease-in-out;
 }
 
@@ -7417,116 +7425,145 @@ body.locked .sd {
 
 .fin-script {
   font-family: var(--hand, cursive) !important;
-  font-size: clamp(20px, 2.2vw, 26px) !important;
-  color: #d42255 !important;
+  font-size: clamp(22px, 2.6vw, 30px) !important;
+  color: #ff9bb9 !important;
   margin: 0 !important;
   line-height: 1 !important;
-  font-weight: 700 !important;
 }
 
 .fin-title {
   font-family: var(--disp) !important;
-  font-size: clamp(34px, 4.2vw, 54px) !important;
-  line-height: 1.06 !important;
-  color: #2a1820 !important;
+  font-size: clamp(38px, 4.8vw, 62px) !important;
+  line-height: 1.04 !important;
+  color: #ffffff !important;
   margin: 0 !important;
   font-weight: 900 !important;
   letter-spacing: -0.02em !important;
 }
 
+.fin-title em,
 .fin-neon-text {
-  color: #e6195a !important;
-  background: linear-gradient(135deg, #e6195a 0%, #ff2a6d 50%, #d4145a 100%) !important;
+  background: linear-gradient(135deg, #ff7eb3 0%, #ff2a6d 50%, #ffd23f 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
+  font-style: italic !important;
 }
 
 .fin-lead {
   font-family: var(--sans) !important;
-  font-size: clamp(14.5px, 1.25vw, 16.5px) !important;
+  font-size: clamp(15px, 1.4vw, 17px) !important;
   line-height: 1.55 !important;
-  color: #4a2836 !important;
+  color: #ffd8e4 !important;
   margin: 0 !important;
   max-width: 52ch !important;
 }
 
-/* 4 Benefit Chips */
+/* Cinema Perks Chips Bar */
 .fin-perks-row {
   display: flex !important;
   flex-wrap: wrap !important;
-  gap: 9px !important;
-  margin: 2px 0 !important;
+  gap: 10px !important;
+  margin: 4px 0 !important;
 }
 
 .fin-perk-chip {
   display: inline-flex !important;
   align-items: center !important;
   gap: 7px !important;
-  background: #ffffff !important;
-  border: 1.5px solid #2a1820 !important;
-  box-shadow: 0 2px 0 #2a1820 !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
   border-radius: 12px !important;
-  padding: 6px 13px !important;
-  font-family: var(--disp) !important;
+  padding: 6px 12px !important;
   font-size: 12px !important;
   font-weight: 700 !important;
-  color: #2a1820 !important;
+  color: #ffe6ee !important;
+  backdrop-filter: blur(8px) !important;
 }
 
 .fin-perk-chip b {
-  color: #e6195a !important;
-  font-weight: 800 !important;
+  color: #ffd23f !important;
 }
 
-/* Download banner label */
 .fin-download-banner {
   font-family: var(--disp) !important;
-  font-size: 11px !important;
+  font-size: 11.5px !important;
   font-weight: 800 !important;
   letter-spacing: 0.06em !important;
-  color: #2a1820 !important;
-  margin-top: 4px !important;
+  color: #ffd8e4 !important;
+  margin-top: 6px !important;
   text-transform: uppercase !important;
 }
 
-/* Two Chunky Tactile Store Buttons */
+/* Redesigned Modern, Tactile & Ultra-Sleek Store Buttons */
 .fin-stores-row {
   display: flex !important;
   flex-wrap: wrap !important;
-  gap: 12px !important;
+  gap: 14px !important;
+  margin-top: 6px !important;
 }
 
 .fin-store-btn {
   display: inline-flex !important;
   align-items: center !important;
   gap: 12px !important;
-  background: #2a1820 !important;
-  border: 2.5px solid #2a1820 !important;
-  box-shadow: 0 4.5px 0 #2a1820 !important;
-  border-radius: 16px !important;
-  padding: 9px 18px !important;
-  color: #ffffff !important;
+  position: relative !important;
+  background: linear-gradient(135deg, rgba(38, 14, 28, 0.95) 0%, rgba(20, 6, 14, 0.98) 100%) !important;
+  border: 1.5px solid rgba(255, 42, 109, 0.45) !important;
+  border-radius: 18px !important;
+  padding: 10px 18px 10px 12px !important;
+  color: #fff !important;
   text-decoration: none !important;
-  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease, background 0.18s ease !important;
-  -webkit-tap-highlight-color: transparent;
-  flex: 1 1 180px;
-  max-width: 240px;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.65), 0 0 20px rgba(255, 42, 109, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  overflow: hidden !important;
+}
+
+.fin-store-btn::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 60% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent) !important;
+  transform: skewX(-20deg) !important;
+  transition: left 0.75s ease !important;
+  pointer-events: none !important;
+}
+
+.fin-store-btn:hover::before {
+  left: 150% !important;
 }
 
 .fin-store-btn:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6.5px 0 #2a1820 !important;
-  background: #3e2430 !important;
+  transform: translateY(-4px) scale(1.02) !important;
+  border-color: #ffd23f !important;
+  background: linear-gradient(135deg, rgba(55, 18, 40, 0.98) 0%, rgba(28, 8, 20, 1) 100%) !important;
+  box-shadow: 0 18px 40px -4px rgba(255, 42, 109, 0.45), 0 0 30px rgba(255, 210, 63, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
 }
 
 .fin-store-btn:active {
-  transform: translateY(2px) !important;
-  box-shadow: 0 2px 0 #2a1820 !important;
+  transform: translateY(-1px) scale(0.99) !important;
+}
+
+.fin-store-icon-box {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
 }
 
 .fin-store-icon {
-  width: 26px !important;
-  height: 26px !important;
+  width: 24px !important;
+  height: 24px !important;
   flex-shrink: 0 !important;
 }
 
@@ -7538,170 +7575,112 @@ body.locked .sd {
 }
 
 .fin-store-text small {
-  font-size: 9px !important;
-  letter-spacing: 0.05em !important;
+  font-family: var(--sans) !important;
+  font-size: 9.5px !important;
+  letter-spacing: 0.08em !important;
   color: #ffd23f !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   text-transform: uppercase !important;
 }
 
 .fin-store-text strong {
   font-family: var(--disp) !important;
-  font-size: 14.5px !important;
+  font-size: 15.5px !important;
   font-weight: 800 !important;
   color: #ffffff !important;
+  letter-spacing: -0.01em !important;
 }
 
-.fin-store-rating {
-  margin-left: auto;
-  font-family: var(--disp);
-  font-size: 10px;
-  font-weight: 800;
-  padding: 2.5px 7px;
-  border-radius: 999px;
-  background: rgba(255, 210, 63, 0.2);
-  border: 1px solid #ffd23f;
-  color: #ffd23f;
-  white-space: nowrap;
+.fin-store-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  font-family: var(--disp) !important;
+  padding: 3px 8px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #fff !important;
+  margin-left: 4px !important;
 }
 
-/* Quick Scan QR Card */
-.fin-quick-card {
+.fin-store-play .fin-store-badge {
+  color: #ffd23f !important;
+  border-color: rgba(255, 210, 63, 0.4) !important;
+}
+
+.fin-store-apple .fin-store-badge {
+  color: #ff9bb9 !important;
+  border-color: rgba(255, 120, 160, 0.4) !important;
+}
+
+/* Secondary Action Links */
+.fin-secondary-actions {
   display: flex !important;
   align-items: center !important;
-  gap: 14px !important;
-  background: #ffffff !important;
-  border: 2px solid #2a1820 !important;
-  box-shadow: 0 3.5px 0 #2a1820 !important;
-  border-radius: 16px !important;
-  padding: 10px 14px !important;
-  margin-top: 4px !important;
   flex-wrap: wrap !important;
-}
-
-.fin-qr-thumb {
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
-  border: 1.5px solid #2a1820;
-  background: #fff;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.fin-qr-img {
-  width: 42px;
-  height: 42px;
-  display: block;
-}
-
-.fin-qr-copy {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.25;
-  flex: 1 1 180px;
-}
-
-.fin-qr-copy strong {
-  font-family: var(--disp);
-  font-size: 12.5px;
-  font-weight: 800;
-  color: #2a1820;
-}
-
-.fin-qr-copy span {
-  font-size: 11px;
-  color: #6a4050;
-  font-weight: 600;
+  gap: 18px !important;
+  margin-top: 4px !important;
 }
 
 .fin-cinema-link {
   display: inline-flex !important;
   align-items: center !important;
-  font-family: var(--disp) !important;
-  font-weight: 800 !important;
-  font-size: 12px !important;
-  color: #e6195a !important;
+  gap: 8px !important;
+  color: #ffd8e4 !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
   text-decoration: none !important;
-  padding: 5px 12px !important;
-  border-radius: 999px !important;
-  background: #fff0f3 !important;
-  border: 1.5px solid #e6195a !important;
+  border-bottom: 2px solid rgba(255, 180, 205, 0.5) !important;
+  padding-bottom: 3px !important;
   transition: all 0.2s ease !important;
-  white-space: nowrap !important;
 }
 
 .fin-cinema-link:hover {
-  background: #e6195a !important;
-  color: #ffffff !important;
-  transform: translateX(3px) !important;
+  color: #fff !important;
+  border-color: #ff2a6d !important;
+  transform: translateX(4px) !important;
 }
 
-/* Right Column: Master VIP Feast Card */
+.fin-qr-hint {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 12px !important;
+  color: #ffb8cc !important;
+  opacity: 0.9 !important;
+}
+
+/* Right Column: Master Luxury Cinema Feast Tray Showcase */
 .fin-showcase-pane {
   position: relative !important;
+  perspective: 1000px !important;
 }
 
 .fin-feast-card {
   position: relative !important;
-  border-radius: 26px !important;
-  background: #ffffff !important;
-  border: 2.5px solid #2a1820 !important;
-  box-shadow: 0 8px 0 #2a1820 !important;
+  border-radius: 28px !important;
+  padding: 8px !important;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 42, 109, 0.12) 50%, rgba(255, 255, 255, 0.05) 100%) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.85), 0 0 50px rgba(255, 42, 109, 0.25) !important;
+  backdrop-filter: blur(16px) !important;
   overflow: hidden !important;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease !important;
 }
 
 .fin-feast-card:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 12px 0 #2a1820 !important;
-}
-
-.fin-card-ticket-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 18px;
-  background: #fff0f5;
-  border-bottom: 2px dashed #2a1820;
-}
-
-.ticket-header-brand {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.ticket-sparkle {
-  font-size: 18px;
-}
-
-.ticket-brand-text {
-  font-family: var(--disp);
-  font-weight: 800;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: #2a1820;
-}
-
-.ticket-seat-pill {
-  font-family: var(--disp);
-  font-weight: 800;
-  font-size: 11px;
-  background: #ffe27a;
-  border: 1.5px solid #2a1820;
-  padding: 3px 9px;
-  border-radius: 999px;
-  color: #2a1820;
+  transform: translateY(-6px) scale(1.01) !important;
+  box-shadow: 0 45px 95px -15px rgba(0, 0, 0, 0.9), 0 0 70px rgba(255, 42, 109, 0.4) !important;
 }
 
 .fin-feast-img-wrap {
   position: relative !important;
+  border-radius: 22px !important;
   overflow: hidden !important;
   aspect-ratio: 16 / 10 !important;
-  background: #2a1820 !important;
+  background: #1e0513 !important;
 }
 
 .fin-feast-img {
@@ -7709,147 +7688,84 @@ body.locked .sd {
   height: 100% !important;
   object-fit: cover !important;
   display: block !important;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transform: scale(1.02) !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .fin-feast-card:hover .fin-feast-img {
-  transform: scale(1.04) !important;
+  transform: scale(1.06) !important;
 }
 
 .fin-feast-overlay {
   position: absolute !important;
   inset: 0 !important;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, transparent 40%, rgba(42, 24, 32, 0.6) 100%) !important;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, transparent 40%, rgba(15, 2, 9, 0.75) 100%) !important;
   pointer-events: none !important;
 }
 
-/* Floating Badges */
+/* Floating Glass VIP Badges */
 .fin-glass-tag {
   position: absolute !important;
   z-index: 3 !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
-  background: #ffffff !important;
-  border: 1.5px solid #2a1820 !important;
-  box-shadow: 0 3px 0 #2a1820 !important;
+  gap: 8px !important;
+  background: rgba(18, 4, 12, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  backdrop-filter: blur(14px) !important;
   border-radius: 999px !important;
-  padding: 5px 12px !important;
-  color: #2a1820 !important;
+  padding: 7px 16px !important;
+  color: #fff !important;
   font-family: var(--disp) !important;
-  font-size: 10.5px !important;
+  font-size: 11px !important;
   font-weight: 800 !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45) !important;
 }
 
 .fin-tag-top-left {
-  top: 14px !important;
-  left: 14px !important;
+  top: 18px !important;
+  left: 18px !important;
 }
 
 .fin-tag-bottom-right {
-  bottom: 14px !important;
-  right: 14px !important;
-  background: #ffe27a !important;
+  bottom: 18px !important;
+  right: 18px !important;
+  background: linear-gradient(135deg, rgba(230, 25, 90, 0.85) 0%, rgba(18, 4, 12, 0.85) 100%) !important;
+  border-color: rgba(255, 120, 160, 0.4) !important;
 }
 
 /* Floating Snack Pills Strip */
 .fin-tray-delicacies {
   position: absolute !important;
-  bottom: 14px !important;
-  left: 14px !important;
+  bottom: 18px !important;
+  left: 18px !important;
   z-index: 3 !important;
   display: flex !important;
   align-items: center !important;
-  gap: 5px !important;
+  gap: 6px !important;
 }
 
 .fin-mini-pill {
-  background: rgba(42, 24, 32, 0.88) !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  backdrop-filter: blur(8px) !important;
+  background: rgba(0, 0, 0, 0.65) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
   border-radius: 8px !important;
-  padding: 3.5px 8px !important;
-  font-size: 9.5px !important;
+  padding: 4px 9px !important;
+  font-size: 10px !important;
   font-weight: 700 !important;
-  color: #fff !important;
-}
-
-/* Card Live Kitchen Status Footer */
-.fin-card-live-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 18px;
-  background: #fff;
-  border-top: 1.5px solid rgba(42, 24, 32, 0.12);
-  font-size: 11px;
-  font-family: var(--disp);
-}
-
-.live-kitchen-status {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #2a1820;
-}
-
-.kitchen-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 6px #10b981;
-}
-
-.live-delivery-time {
-  color: #e6195a;
-  font-weight: 700;
-}
-
-/* Bottom Partner Theatres Ticker */
-.fin-theatres-ticker-wrap {
-  margin-top: clamp(28px, 4vw, 44px);
-  padding-top: 18px;
-  border-top: 2px dashed rgba(42, 24, 32, 0.2);
-  overflow: hidden;
-}
-
-.fin-theatres-ticker {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px 14px;
-  font-family: var(--disp);
-  font-size: 12px;
-  font-weight: 700;
-  color: #4a2836;
-}
-
-.ticker-label {
-  color: #e6195a;
-  font-weight: 900;
-  letter-spacing: 0.05em;
-}
-
-.ticker-theatre {
-  color: #2a1820;
-}
-
-.ticker-dot {
-  color: #e6195a;
-  font-weight: 900;
+  color: #ffe0eb !important;
 }
 
 @media (max-width: 900px) {
   .fin {
-    padding: 44px 16px 28px !important;
+    padding: 50px 18px !important;
   }
   .fin-layout-grid {
     grid-template-columns: 1fr !important;
-    gap: 32px !important;
+    gap: 36px !important;
   }
-  .fin-showcase-pane {
+  .fin-feast-card {
     order: -1 !important;
   }
   .fin-stores-row {
@@ -7857,7 +7773,8 @@ body.locked .sd {
   }
   .fin-store-btn {
     width: 100% !important;
-    max-width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
   }
 }
 
@@ -16302,153 +16219,103 @@ html {
 <details class="qa rv"><summary>How do CinePoints work?</summary><p>Rewards details are shown in the app.</p></details>
 </div></section>
 
-<section class="sec fin" id="get" aria-label="VIP In-Seat Cinema Dining & App Download">
-  <!-- Atmospheric Retro Film Elements & Ambient Glow -->
+<section class="sec fin" id="get">
   <div class="rain" aria-hidden="true">
     <span class="rn" style="left:32%;animation-delay:-2.7s;animation-duration:10.6s;font-size:33px">🍿</span>
     <span class="rn" style="left:13%;animation-delay:-0.6s;animation-duration:9.0s;font-size:27px">🍿</span>
     <span class="rn" style="left:30%;animation-delay:-4.7s;animation-duration:8.8s;font-size:23px">🍿</span>
     <span class="rn" style="left:35%;animation-delay:-1.9s;animation-duration:11.6s;font-size:26px">✨</span>
+    <span class="rn" style="left:26%;animation-delay:-1.5s;animation-duration:8.4s;font-size:29px">🍿</span>
     <span class="rn" style="left:79%;animation-delay:-3.0s;animation-duration:8.9s;font-size:25px">🍿</span>
+    <span class="rn" style="left:33%;animation-delay:-4.3s;animation-duration:7.4s;font-size:27px">🍿</span>
+    <span class="rn" style="left:39%;animation-delay:-5.2s;animation-duration:11.4s;font-size:34px">🍿</span>
     <span class="rn" style="left:54%;animation-delay:-3.8s;animation-duration:8.4s;font-size:32px">🍿</span>
     <span class="rn" style="left:7%;animation-delay:-4.2s;animation-duration:12.0s;font-size:34px">💖</span>
     <span class="rn" style="left:91%;animation-delay:-3.1s;animation-duration:12.0s;font-size:24px">🍿</span>
+    <span class="rn" style="left:54%;animation-delay:-8.2s;animation-duration:10.2s;font-size:32px">✨</span>
   </div>
 
   <div class="fin-layout-grid">
-    <!-- Left Column: VIP Headline, Perks, Store Buttons & Quick Scan -->
+    <!-- Left Column: VIP Copy, Trust Perks & Store Launch -->
     <div class="fin-content-pane rv">
       <div class="fin-vip-badge">
-        <span class="fin-pulse-dot" aria-hidden="true"></span>
-        <span>🎟️ VIP IN-SEAT DELIVERY · 9 THEATRES</span>
+        <span class="fin-pulse-dot"></span>
+        <span>VIP IN-SEAT DELIVERY · 9 THEATRES</span>
       </div>
+      
+      <p class="fin-script">Good food creates great moments.</p>
+      
+      <h2 class="fin-title">Ready for your<br><span class="fin-neon-text">next movie feast?</span></h2>
+      
+      <p class="fin-lead">Skip the crowded concession queues. Browse chef-crafted smash burgers, artisan pizza, and golden butter popcorn on the LOVE CAFE app—delivered silently to your cinema recliner before the opening scene.</p>
 
-      <p class="fin-script">Elevating Every Movie Screening</p>
-
-      <h2 class="fin-title">
-        Never Miss A Scene.<br>
-        <span class="fin-neon-text">Food At Your Cinema Recliner.</span>
-      </h2>
-
-      <p class="fin-lead">
-        Skip crowded concession queues forever. Order gourmet smash burgers, artisan woodfired pizza, and warm butter popcorn from the LOVE CAFE app. Freshly prepared in the multiplex kitchen and delivered silently to your seat table in ~10 minutes.
-      </p>
-
-      <!-- 4 Key In-Seat Dining Benefit Chips -->
+      <!-- Cinema Perks Chips -->
       <div class="fin-perks-row">
-        <div class="fin-perk-chip"><span>⚡</span> <b>~9.8m</b> Silent In-Seat Drop</div>
-        <div class="fin-perk-chip"><span>🍔</span> <b>100%</b> Cooked To Order</div>
+        <div class="fin-perk-chip"><span>⚡</span> <b>~9.8m</b> In-Seat Drop</div>
+        <div class="fin-perk-chip"><span>🍿</span> <b>100%</b> Fresh Guarantee</div>
         <div class="fin-perk-chip"><span>🎟️</span> <b>9</b> Partner Cinemas</div>
-        <div class="fin-perk-chip"><span>⭐</span> <b>4.9★</b> Rated Cinema App</div>
+        <div class="fin-perk-chip"><span>⭐</span> <b>4.9★</b> Rated App</div>
       </div>
 
-      <!-- Tactile App Store Download Buttons -->
-      <div class="fin-download-banner">
-        <span>📲 DOWNLOAD FREE APP &amp; ORDER TO YOUR SEAT</span>
-      </div>
-
+      <!-- Tactile Store Buttons - Redesigned Modern & Sleek -->
+      <div class="fin-download-banner">📲 TAP BELOW TO DOWNLOAD THE FREE APP NOW ON YOUR PHONE:</div>
       <div class="fin-stores-row">
         <a class="fin-store-btn fin-store-play" href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get LOVE CAFE on Google Play">
-          <svg class="fin-store-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
+          <div class="fin-store-icon-box">
+            <svg class="fin-store-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
+          </div>
           <div class="fin-store-text">
             <small>GET IT ON</small>
             <strong>Google Play</strong>
           </div>
-          <span class="fin-store-rating">4.9 ★</span>
+          <span class="fin-store-badge">4.9 ★</span>
         </a>
 
         <a class="fin-store-btn fin-store-apple" href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download LOVE CAFE on the App Store">
-          <svg class="fin-store-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.2.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.8.9-2.8-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.7 1 .1 2-.5 2.6-1.3z"/></svg>
+          <div class="fin-store-icon-box">
+            <svg class="fin-store-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.2.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.8.9-2.8-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.7 1 .1 2-.5 2.6-1.3z"/></svg>
+          </div>
           <div class="fin-store-text">
             <small>Download on the</small>
             <strong>App Store</strong>
           </div>
-          <span class="fin-store-rating">Top Food</span>
+          <span class="fin-store-badge">Free</span>
         </a>
       </div>
 
-      <!-- Quick Scan Card & Theatre Deep-Link -->
-      <div class="fin-quick-card">
-        <div class="fin-qr-thumb">
-          <img src="assets/showcase/app_qr_code.png" alt="Scan QR Code to Open Love Cafe Menu" class="fin-qr-img">
-        </div>
-        <div class="fin-qr-copy">
-          <strong>📱 Scan With Phone Camera</strong>
-          <span>Instant seat-table menu sync &amp; ₹100 welcome credit</span>
-        </div>
-        <a class="fin-cinema-link" href="#cinemas">Find Theatre &rarr;</a>
+      <!-- Quick Links -->
+      <div class="fin-secondary-actions">
+        <a class="fin-cinema-link" href="#cinemas">Find nearest cinema &rarr;</a>
+        <span class="fin-qr-hint">📱 Instant in-seat ordering</span>
       </div>
     </div>
 
-    <!-- Right Column: 3D Master Feast & Live Seat Pass Showcase -->
+    <!-- Right Column: Gourmet Cinema Feast Hero Tray -->
     <div class="fin-showcase-pane rv">
       <div class="fin-feast-card">
-        <!-- Top Boarding Pass Header -->
-        <div class="fin-card-ticket-header">
-          <div class="ticket-header-brand">
-            <span class="ticket-sparkle">🍿</span>
-            <span class="ticket-brand-text">VIP IN-SEAT DELIVERY PASS</span>
-          </div>
-          <div class="ticket-seat-pill">
-            <span>AUDI 03 · SEAT F-12</span>
-          </div>
-        </div>
-
-        <!-- Master Feast Photo Stage -->
         <div class="fin-feast-img-wrap">
           <img class="fin-feast-img" src="assets/showcase/cinema_feast_tray.jpg" alt="Luxury Love Cafe Cinema Feast Tray with Smash Burger, Woodfired Pizza, Butter Popcorn and Craft Soda" loading="lazy">
           <div class="fin-feast-overlay"></div>
-
-          <!-- Floating VIP Glass Badges -->
+          
+          <!-- Floating VIP Badges -->
           <div class="fin-glass-tag fin-tag-top-left">
-            <span>🔥</span>
-            <span>PIPING HOT &amp; COOKED FRESH</span>
+            <span>🍿</span>
+            <span>VIP SEAT DELIVERY · AUDI 03 · RECLINER F-12</span>
           </div>
 
           <div class="fin-glass-tag fin-tag-bottom-right">
             <span>⚡</span>
-            <span>~9.8 MINS · SILENT CLOCHE DROP</span>
+            <span>~9.8 MINS · PIPING HOT</span>
           </div>
 
-          <!-- Delicacy Pills Bar -->
+          <!-- Micro Delicacies Tags -->
           <div class="fin-tray-delicacies">
             <span class="fin-mini-pill">🍔 Smash Burger</span>
             <span class="fin-mini-pill">🍕 Woodfired Pizza</span>
             <span class="fin-mini-pill">🧈 Butter Popcorn</span>
           </div>
         </div>
-
-        <!-- Card Footer Live Kitchen Indicator -->
-        <div class="fin-card-live-footer">
-          <div class="live-kitchen-status">
-            <span class="kitchen-dot" aria-hidden="true"></span>
-            <span>Live Multiplex Kitchen: <b>Active &amp; Taking Orders</b></span>
-          </div>
-          <div class="live-delivery-time">
-            <span>⏱️ Avg. Delivery: <b>~10 mins</b></span>
-          </div>
-        </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Bottom Partner Multiplexes Ticker Banner -->
-  <div class="fin-theatres-ticker-wrap">
-    <div class="fin-theatres-ticker">
-      <span class="ticker-label">🎬 NOW SERVING IN-SEAT AT:</span>
-      <span class="ticker-theatre">INOX City Centre</span>
-      <span class="ticker-dot">•</span>
-      <span class="ticker-theatre">PVR Mani Square</span>
-      <span class="ticker-dot">•</span>
-      <span class="ticker-theatre">Cinepolis Acropolis</span>
-      <span class="ticker-dot">•</span>
-      <span class="ticker-theatre">Miraj Cinemas</span>
-      <span class="ticker-dot">•</span>
-      <span class="ticker-theatre">Bioscope Rajarhat</span>
-      <span class="ticker-dot">•</span>
-      <span class="ticker-theatre">PVR Diamond Plaza</span>
-      <span class="ticker-dot">•</span>
-      <span class="ticker-theatre">SVF Cinemas</span>
     </div>
   </div>
 </section>
