@@ -12590,761 +12590,14 @@ html {
 
 
 /* ==========================================================================
-   APP SHOWCASE SECTION (#app): REDESIGNED, VIBRANT, ZERO-BLUR & RETRO-POP
-   ========================================================================== */
-.app-showcase-section {
-  position: relative !important;
-  background: radial-gradient(circle at 80% 20%, rgba(255, 42, 109, 0.12) 0%, transparent 40%),
-              radial-gradient(circle at 20% 80%, rgba(255, 210, 63, 0.15) 0%, transparent 40%),
-              linear-gradient(180deg, #fff2f6 0%, #ffe0ec 50%, #fff0f6 100%) !important;
-  padding: clamp(55px, 7vw, 90px) clamp(16px, 4vw, 44px) !important;
-  color: #2b0d18 !important;
-  border-top: 2.5px solid #2a1820 !important;
-  overflow: hidden !important;
-  scroll-margin-top: 70px !important;
-}
-
-.app-feature-pills-row {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  flex-wrap: wrap !important;
-  margin: 14px 0 16px !important;
-}
-
-.app-feat-pill {
-  background: #ffffff !important;
-  border: 1.8px solid #2a1820 !important;
-  border-radius: 999px !important;
-  padding: 4px 12px !important;
-  font-family: var(--disp) !important;
-  font-size: 11px !important;
-  font-weight: 800 !important;
-  color: #2a1820 !important;
-  box-shadow: 0 3px 0 #2a1820 !important;
-}
-
-/* Screen Switcher Tabs */
-.app-screens-tab-pills {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  flex-wrap: wrap !important;
-  margin-bottom: 14px !important;
-  z-index: 10 !important;
-}
-
-.app-tab-btn {
-  padding: 8px 18px !important;
-  font-family: var(--disp) !important;
-  font-size: 12.5px !important;
-  font-weight: 900 !important;
-  border-radius: 999px !important;
-  background: #ffffff !important;
-  border: 2px solid #2a1820 !important;
-  color: #2a1820 !important;
-  cursor: pointer !important;
-  box-shadow: 0 4px 0 #2a1820 !important;
-  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-}
-
-.app-tab-btn:hover {
-  transform: translateY(-2px) scale(1.03) !important;
-  box-shadow: 0 6px 0 #2a1820 !important;
-}
-
-.app-tab-btn.active {
-  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
-  color: #ffffff !important;
-  border-color: #2a1820 !important;
-  box-shadow: 0 5px 0 #2a1820 !important;
-  transform: translateY(-1px) !important;
-}
-
-/* ZERO-BLUR & CRISP SCREEN CARDS */
-.app-screens-carousel {
-  display: flex !important;
-  overflow-x: auto !important;
-  overflow-y: hidden !important;
-  scroll-snap-type: x mandatory !important;
-  gap: 16px !important;
-  padding: 12px 6px !important;
-  -webkit-overflow-scrolling: touch !important;
-  scrollbar-width: none !important;
-}
-.app-screens-carousel::-webkit-scrollbar { display: none !important; }
-
-.app-screen-card {
-  flex: 0 0 240px !important;
-  width: 240px !important;
-  max-width: 240px !important;
-  scroll-snap-align: center !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  gap: 12px !important;
-  opacity: 1 !important;
-  filter: none !important;
-  -webkit-filter: none !important;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
-}
-
-/* Completely remove blur or washed-out opacity */
-.app-screen-card:not(.active) {
-  opacity: 1 !important;
-  filter: none !important;
-  -webkit-filter: none !important;
-  transform: scale(0.97) !important;
-}
-
-.app-screen-card.active {
-  opacity: 1 !important;
-  filter: none !important;
-  -webkit-filter: none !important;
-  transform: scale(1.02) !important;
-}
-
-.app-screen-card.active .app-phone-mockup.realistic-mock-phone {
-  border-color: #ff2a6d !important;
-  box-shadow: 0 0 0 2px #ff2a6d, 0 20px 50px rgba(255, 42, 109, 0.35) !important;
-}
-
-/* Desktop layout: Side-by-side three devices */
-@media (min-width: 992px) {
-  .app-screens-carousel {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 20px !important;
-    overflow: visible !important;
-    padding: 14px 0 !important;
-  }
-  .app-arrow-nav {
-    display: none !important;
-  }
-  .app-screen-card {
-    flex: 0 0 225px !important;
-    width: 225px !important;
-    max-width: 225px !important;
-  }
-  .app-screen-card:hover {
-    transform: translateY(-8px) scale(1.03) !important;
-  }
-}
-
-
-/* ==========================================================================
-   CINEPOINTS VIP REWARDS SECTION (#rewards): VIBRANT, COLORFUL & LUXURY THEMED
-   ========================================================================== */
-.cinepoints-master-section {
-  position: relative !important;
-  background: radial-gradient(circle at 85% 15%, rgba(255, 210, 63, 0.22) 0%, transparent 45%),
-              radial-gradient(circle at 15% 85%, rgba(255, 42, 109, 0.2) 0%, transparent 45%),
-              radial-gradient(circle at 50% 50%, rgba(255, 235, 243, 0.95) 0%, transparent 80%),
-              linear-gradient(180deg, #fde8ec 0%, #fed7e2 50%, #fde8ec 100%) !important;
-  padding: clamp(48px, 6vw, 75px) clamp(16px, 4vw, 44px) !important;
-  color: #2b0d18 !important;
-  overflow: hidden !important;
-  z-index: 4 !important;
-  border-top: 2.5px solid #2a1820 !important;
-  border-bottom: 2.5px solid #2a1820 !important;
-  scroll-margin-top: 70px !important;
-}
-
-.cp-ambient-aura {
-  position: absolute !important;
-  border-radius: 50% !important;
-  filter: blur(80px) !important;
-  pointer-events: none !important;
-  z-index: 1 !important;
-}
-
-.cp-aura-rose {
-  top: 5% !important;
-  left: -5% !important;
-  width: 500px !important;
-  height: 500px !important;
-  background: rgba(255, 42, 109, 0.22) !important;
-}
-
-.cp-aura-gold {
-  bottom: 5% !important;
-  right: -5% !important;
-  width: 550px !important;
-  height: 550px !important;
-  background: rgba(255, 210, 63, 0.22) !important;
-}
-
-.cp-inner-container {
-  position: relative !important;
-  z-index: 3 !important;
-  max-width: 1160px !important;
-  margin: 0 auto !important;
-}
-
-.cp-header-center {
-  text-align: center !important;
-  max-width: 800px !important;
-  margin: 0 auto 32px !important;
-}
-
-.cp-crown-badge {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  padding: 5px 18px !important;
-  border-radius: 999px !important;
-  background: #ffffff !important;
-  border: 2px solid #2a1820 !important;
-  box-shadow: 0 4px 0 #2a1820 !important;
-  font-family: var(--disp) !important;
-  font-size: 11.5px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.08em !important;
-  color: #b81639 !important;
-  margin-bottom: 10px !important;
-}
-
-.cp-headline {
-  font-family: var(--disp) !important;
-  font-size: clamp(26px, 3.5vw, 42px) !important;
-  font-weight: 900 !important;
-  color: #1f0612 !important;
-  margin: 0 0 8px !important;
-  line-height: 1.18 !important;
-}
-
-.cp-gradient-text {
-  background: linear-gradient(135deg, #ff175d 0%, #ff5277 50%, #d8003a 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-}
-
-.cp-subhead {
-  font-family: var(--sans) !important;
-  font-size: clamp(13px, 1.2vw, 15.5px) !important;
-  line-height: 1.5 !important;
-  color: #5c182d !important;
-  max-width: 700px !important;
-  margin: 0 auto !important;
-}
-
-/* Compact 2-Col Grid */
-.cp-compact-grid {
-  display: grid !important;
-  grid-template-columns: 1fr 1.1fr !important;
-  gap: 38px !important;
-  align-items: center !important;
-}
-
-@media (max-width: 920px) {
-  .cp-compact-grid {
-    grid-template-columns: 1fr !important;
-    gap: 28px !important;
-  }
-}
-
-/* 3D VIP Credit Card */
-.cp-card-stage {
-  position: relative !important;
-  display: flex !important;
-  justify-content: center !important;
-  padding: 14px 0 !important;
-}
-
-.cp-float-chip {
-  position: absolute !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  background: #ffffff !important;
-  border: 2px solid #2a1820 !important;
-  box-shadow: 0 4px 0 #2a1820 !important;
-  border-radius: 999px !important;
-  padding: 6px 14px !important;
-  z-index: 10 !important;
-  animation: cpFloatChip 4s ease-in-out infinite !important;
-}
-
-.chip-top-left {
-  top: -8px !important;
-  left: -8px !important;
-  background: #fff8db !important;
-}
-
-.chip-bottom-right {
-  bottom: -8px !important;
-  right: -8px !important;
-  background: #ffe6f0 !important;
-  animation-delay: 2s !important;
-}
-
-@keyframes cpFloatChip {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-7px); }
-}
-
-.chip-emoji {
-  font-size: 18px !important;
-}
-
-.chip-text b {
-  font-family: var(--disp) !important;
-  font-size: 11.5px !important;
-  color: #1e0510 !important;
-  line-height: 1.2 !important;
-}
-
-.chip-text small {
-  font-family: var(--sans) !important;
-  font-size: 9.5px !important;
-  color: #8c1e3b !important;
-  font-weight: 700 !important;
-}
-
-/* Gorgeous Holographic Metal Card */
-.cp-vip-card {
-  width: 100% !important;
-  max-width: 440px !important;
-  aspect-ratio: 1.58 !important;
-  border-radius: 26px !important;
-  background: linear-gradient(135deg, #1c0510 0%, #450824 30%, #ff2a6d 70%, #ffd23f 100%) !important;
-  border: 2.5px solid #ffd23f !important;
-  box-shadow: 0 0 0 2px #2a1820,
-              0 22px 50px rgba(180, 20, 65, 0.4),
-              0 8px 20px rgba(0, 0, 0, 0.3) !important;
-  padding: 22px 26px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: space-between !important;
-  position: relative !important;
-  overflow: hidden !important;
-  transform: rotate(-1.5deg) !important;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
-  cursor: pointer !important;
-  user-select: none !important;
-}
-
-.cp-vip-card:hover {
-  transform: rotate(0deg) scale(1.03) !important;
-  box-shadow: 0 0 0 2.5px #2a1820,
-              0 28px 65px rgba(255, 42, 109, 0.5),
-              0 0 35px rgba(255, 210, 63, 0.5) !important;
-}
-
-.cp-card-sheen {
-  position: absolute !important;
-  inset: 0 !important;
-  background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.35) 40%, rgba(255, 210, 63, 0.4) 50%, rgba(0, 229, 255, 0.35) 60%, transparent 80%) !important;
-  pointer-events: none !important;
-}
-
-.cp-card-topbar {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-.cp-card-logo {
-  height: 28px !important;
-  width: auto !important;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6)) !important;
-}
-
-.cp-contactless-wrap {
-  display: flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  color: #ffd23f !important;
-}
-
-.cp-nfc-wave {
-  font-weight: 900 !important;
-  letter-spacing: -1px !important;
-  font-size: 14px !important;
-}
-
-.cp-vip-pass-lbl {
-  font-family: var(--disp) !important;
-  font-size: 9.5px !important;
-  font-weight: 900 !important;
-  letter-spacing: 0.12em !important;
-  color: #ffffff !important;
-  background: rgba(0, 0, 0, 0.45) !important;
-  padding: 3px 8px !important;
-  border-radius: 999px !important;
-  border: 1px solid rgba(255, 210, 63, 0.5) !important;
-}
-
-.cp-emv-chip {
-  width: 38px !important;
-  height: 28px !important;
-  border-radius: 6px !important;
-  background: linear-gradient(135deg, #ffe066 0%, #ffd23f 50%, #f59e0b 100%) !important;
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.7), 0 2px 5px rgba(0, 0, 0, 0.5) !important;
-  border: 1.5px solid #d97706 !important;
-  position: relative !important;
-}
-
-.cp-card-tier-tag {
-  font-family: var(--disp) !important;
-  font-size: 10px !important;
-  font-weight: 900 !important;
-  letter-spacing: 0.14em !important;
-  color: #ffd23f !important;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7) !important;
-}
-
-.cp-card-number {
-  font-family: monospace, monospace !important;
-  font-size: 15px !important;
-  letter-spacing: 0.16em !important;
-  color: rgba(255, 255, 255, 0.9) !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6) !important;
-}
-
-.cp-points-row b#cnt {
-  font-family: var(--disp) !important;
-  font-size: 26px !important;
-  font-weight: 900 !important;
-  color: #ffffff !important;
-  line-height: 1 !important;
-  text-shadow: 0 0 16px rgba(255, 255, 255, 0.5) !important;
-}
-
-.cp-points-lbl {
-  font-family: var(--disp) !important;
-  font-size: 10px !important;
-  font-weight: 900 !important;
-  letter-spacing: 0.08em !important;
-  color: #ffd23f !important;
-}
-
-/* Informative Column with Rich Colors */
-.cp-info-col {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 16px !important;
-}
-
-.cp-info-badge-header {
-  display: flex !important;
-  align-items: baseline !important;
-  justify-content: space-between !important;
-  border-bottom: 2px solid rgba(42, 24, 32, 0.15) !important;
-  padding-bottom: 8px !important;
-  flex-wrap: wrap !important;
-  gap: 6px !important;
-}
-
-.cp-info-title {
-  font-family: var(--disp) !important;
-  font-size: 13px !important;
-  font-weight: 900 !important;
-  letter-spacing: 0.08em !important;
-  color: #b81639 !important;
-}
-
-.cp-info-subtitle {
-  font-family: var(--sans) !important;
-  font-size: 11.5px !important;
-  color: #7a223b !important;
-  font-weight: 700 !important;
-}
-
-/* 3 Informative Cards Stack (Rich Colorful Retro-Pop) */
-.cp-info-cards-stack {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 12px !important;
-}
-
-.cp-info-card {
-  display: flex !important;
-  align-items: flex-start !important;
-  gap: 14px !important;
-  border-radius: 18px !important;
-  border: 2px solid #2a1820 !important;
-  padding: 12px 16px !important;
-  box-shadow: 0 4px 0 #2a1820 !important;
-  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease !important;
-}
-
-.cp-info-card:hover {
-  transform: translateY(-2px) translateX(2px) !important;
-  box-shadow: 0 6px 0 #2a1820 !important;
-}
-
-/* Card 1: Warm Gold */
-.card-gold {
-  background: linear-gradient(135deg, #fffcf0 0%, #fef3c7 100%) !important;
-}
-.box-gold {
-  background: linear-gradient(135deg, #ffd23f 0%, #f59e0b 100%) !important;
-  border: 2px solid #2a1820 !important;
-  box-shadow: 0 3px 0 #2a1820 !important;
-}
-.pill-gold {
-  background: #fde68a !important;
-  color: #92400e !important;
-  border: 1.2px solid #2a1820 !important;
-}
-
-/* Card 2: Candy Rose */
-.card-rose {
-  background: linear-gradient(135deg, #fff0f5 0%, #ffdbe6 100%) !important;
-}
-.box-rose {
-  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
-  border: 2px solid #2a1820 !important;
-  box-shadow: 0 3px 0 #2a1820 !important;
-}
-.pill-rose {
-  background: #fbcfe8 !important;
-  color: #9d174d !important;
-  border: 1.2px solid #2a1820 !important;
-}
-
-/* Card 3: Electric Violet */
-.card-purple {
-  background: linear-gradient(135deg, #f8f5ff 0%, #ede9fe 100%) !important;
-}
-.box-purple {
-  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%) !important;
-  border: 2px solid #2a1820 !important;
-  box-shadow: 0 3px 0 #2a1820 !important;
-}
-.pill-purple {
-  background: #ddd6fe !important;
-  color: #5b21b6 !important;
-  border: 1.2px solid #2a1820 !important;
-}
-
-.cp-info-icon-box {
-  width: 44px !important;
-  height: 44px !important;
-  border-radius: 12px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 22px !important;
-  flex-shrink: 0 !important;
-}
-
-.cp-card-badge-row {
-  margin-bottom: 4px !important;
-}
-
-.cp-tag-pill {
-  font-family: var(--disp) !important;
-  font-size: 9.5px !important;
-  font-weight: 900 !important;
-  letter-spacing: 0.06em !important;
-  padding: 2px 8px !important;
-  border-radius: 999px !important;
-  display: inline-block !important;
-}
-
-.cp-info-content h4 {
-  font-family: var(--disp) !important;
-  font-size: 14px !important;
-  font-weight: 900 !important;
-  color: #1e0510 !important;
-  margin: 0 0 3px !important;
-}
-
-.cp-info-content p {
-  font-family: var(--sans) !important;
-  font-size: 12px !important;
-  color: #4a1525 !important;
-  margin: 0 !important;
-  line-height: 1.4 !important;
-}
-
-.cp-info-content p strong {
-  color: #b81639 !important;
-}
-
-/* Golden Ticket Welcome Bonus Box */
-.cp-bonus-cta-box {
-  background: linear-gradient(135deg, #fff9db 0%, #fef08a 100%) !important;
-  border: 2.5px solid #2a1820 !important;
-  border-radius: 20px !important;
-  padding: 14px 18px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 12px !important;
-  box-shadow: 0 6px 0 #2a1820 !important;
-}
-
-.cp-bonus-banner {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  flex-wrap: wrap !important;
-}
-
-.bonus-badge {
-  font-family: var(--disp) !important;
-  font-size: 10px !important;
-  font-weight: 900 !important;
-  color: #ffffff !important;
-  background: #e6195a !important;
-  padding: 3px 9px !important;
-  border-radius: 999px !important;
-  border: 1.5px solid #2a1820 !important;
-  letter-spacing: 0.06em !important;
-  box-shadow: 0 2px 0 #2a1820 !important;
-}
-
-.bonus-text {
-  font-family: var(--sans) !important;
-  font-size: 11.5px !important;
-  color: #422006 !important;
-  font-weight: 600 !important;
-}
-
-.bonus-text strong {
-  color: #b81639 !important;
-}
-
-.cp-claim-rewards-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-  background: linear-gradient(135deg, #ff2a6d 0%, #e6195a 100%) !important;
-  color: #ffffff !important;
-  padding: 12px 22px !important;
-  border-radius: 999px !important;
-  border: 2px solid #2a1820 !important;
-  font-family: var(--disp) !important;
-  font-size: 13px !important;
-  font-weight: 900 !important;
-  letter-spacing: 0.04em !important;
-  text-decoration: none !important;
-  box-shadow: 0 4px 0 #2a1820 !important;
-  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-}
-
-.cp-claim-rewards-btn:hover {
-  transform: translateY(-2px) scale(1.02) !important;
-  box-shadow: 0 6px 0 #2a1820 !important;
-}
-
-
-/* ==========================================================================
-   WHY LOVE CAFE (#why-us): AUTHENTIC LIGHT PINK PALETTE (ZERO WHITE BACKGROUNDS)
-   ========================================================================== */
-.why-us-section {
-  position: relative !important;
-  background: radial-gradient(circle at 15% 20%, rgba(255, 42, 109, 0.12) 0%, transparent 45%),
-              radial-gradient(circle at 85% 75%, rgba(255, 210, 63, 0.14) 0%, transparent 45%),
-              linear-gradient(180deg, #fde8ec 0%, #fcd5dc 50%, #fde8ec 100%) !important;
-  padding: clamp(50px, 6vw, 80px) clamp(16px, 4vw, 44px) !important;
-  color: #2b0d18 !important;
-  overflow: hidden !important;
-  z-index: 4 !important;
-  border-top: 2.5px solid #2a1820 !important;
-  border-bottom: 2.5px solid #2a1820 !important;
-  scroll-margin-top: 70px !important;
-}
-
-.wu-pill-badge {
-  background: #fde8ec !important;
-  border: 2px solid #2a1820 !important;
-  box-shadow: 0 4px 0 #2a1820 !important;
-  color: #b81639 !important;
-}
-
-.wu-metric-chip {
-  background: #fff0f5 !important;
-  border: 2px solid #2a1820 !important;
-  box-shadow: 0 4px 0 #2a1820 !important;
-}
-
-/* 4 Cartoon Cards: Light Pink / Pastel Tones (No White Backgrounds) */
-.wu-card {
-  background: linear-gradient(180deg, #fff2f6 0%, #fde4ec 100%) !important;
-  border-radius: 24px !important;
-  border: 2.5px solid #2a1820 !important;
-  box-shadow: 0 8px 0 #2a1820 !important;
-}
-
-.wu-card-pink {
-  background: linear-gradient(180deg, #fff2f6 0%, #fddde7 100%) !important;
-}
-
-.wu-card-gold {
-  background: linear-gradient(180deg, #fff9f0 0%, #fde8e5 100%) !important;
-}
-
-.wu-card-violet {
-  background: linear-gradient(180deg, #faf5ff 0%, #f7e6f0 100%) !important;
-}
-
-.wu-card-teal {
-  background: linear-gradient(180deg, #f0fdf9 0%, #fae8f0 100%) !important;
-}
-
-.wu-card-graphic-wrap {
-  background: #fcd5df !important;
-  border-bottom: 2px solid #2a1820 !important;
-}
-
-.wu-speech-pill {
-  background: #f9cad5 !important;
-  border: 1.5px solid #2a1820 !important;
-  box-shadow: 0 2px 0 #2a1820 !important;
-  color: #2a1820 !important;
-}
-
-.wu-bottom-strip {
-  background: linear-gradient(135deg, #fff0f5 0%, #fde4ec 100%) !important;
-  border: 2.5px solid #2a1820 !important;
-  box-shadow: 0 6px 0 #2a1820 !important;
-}
-
-
-/* ==========================================================================
-   CONTENT SECTIONS SCROLL SPEED OPTIMIZATION
-   Natural, crisp, brisk pacing for non-animated sections
-   ========================================================================== */
-.app-showcase-section,
-.cinemas-showcase-section,
-.reviews-showcase-section,
-.cinepoints-master-section,
-.why-us-section {
-  min-height: auto !important;
-  padding-top: clamp(40px, 4.5vw, 65px) !important;
-  padding-bottom: clamp(40px, 4.5vw, 65px) !important;
-  scroll-margin-top: 80px !important;
-}
-
-.cinema-film-roll-section {
-  padding-top: clamp(36px, 3.8vw, 56px) !important;
-  padding-bottom: clamp(36px, 3.8vw, 56px) !important;
-  scroll-margin-top: 80px !important;
-}
-
-/* Ensure smooth, steady scroll-behavior across viewports */
-html {
-  scroll-behavior: auto !important; /* Managed by Lenis at custom 0.38 velocity */
-}
-
-
-/* ==========================================================================
    APP SHOWCASE SECTION (#app): "YOUR NEXT MOVIE NIGHT DESERVES THIS"
-   Lush Candy Pink Luxury Canvas · Floating Cinema Graphics · Scroll-Driven 3-Screen iPhone
+   Ultra-Attractive Cinema Stage · 3D Interactive Phone · Projector Beam & Orbiting Neon
    ========================================================================== */
 .app-showcase-section {
   position: relative !important;
-  background: radial-gradient(circle at 50% 25%, #ffdbe6 0%, #ffccd9 40%, #f9b8c8 75%, #f4a1b5 100%) !important;
+  background: radial-gradient(circle at 68% 42%, rgba(255, 42, 109, 0.24) 0%, rgba(255, 210, 63, 0.2) 32%, transparent 60%),
+              radial-gradient(circle at 18% 65%, rgba(255, 42, 109, 0.16) 0%, transparent 45%),
+              linear-gradient(175deg, #ffd6e4 0%, #ffc5d6 35%, #fcaec4 75%, #f99ab5 100%) !important;
   box-shadow: inset 0 0 100px rgba(212, 34, 85, 0.18), inset 0 6px 0 rgba(255, 255, 255, 0.5) !important;
   border-top: 2.5px solid #2a1820 !important;
   border-bottom: 2.5px solid #2a1820 !important;
@@ -13352,33 +12605,103 @@ html {
   height: 250vh !important;
   color: #2a1820 !important;
   overflow: visible !important;
+  overflow-x: clip !important;
   scroll-margin-top: 76px !important;
   z-index: 10 !important;
 }
 
-/* Subtle Retro Polka-Dot Texture for Texture & Depth */
+/* Guarantee IMMEDIATE visibility without awkward transition delays */
+.app-showcase-section .app-text-col,
+.app-showcase-section .app-graphic-col {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Subtle Retro Cinema Dot Texture */
 .app-showcase-section::before {
   content: '' !important;
   position: absolute !important;
   inset: 0 !important;
-  background-image: radial-gradient(#d42255 1.2px, transparent 1.2px) !important;
-  background-size: 26px 26px !important;
-  opacity: 0.08 !important;
+  background-image: radial-gradient(#d42255 1.3px, transparent 1.3px) !important;
+  background-size: 24px 24px !important;
+  opacity: 0.07 !important;
   pointer-events: none !important;
   z-index: 1 !important;
 }
 
-/* Atmospheric Glowing Cinema Spotlight */
+/* Theatrical Cinema Projector Light Beam */
+.app-projector-beam {
+  position: absolute !important;
+  top: -80px !important;
+  right: 6% !important;
+  width: 600px !important;
+  height: 740px !important;
+  background: conic-gradient(from 198deg at 88% 8%, rgba(255, 255, 255, 0.46) 0deg, rgba(255, 226, 122, 0.26) 22deg, transparent 50deg) !important;
+  filter: blur(26px) !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+  transform-origin: 88% 8% !important;
+  animation: appProjectorSway 7s ease-in-out infinite alternate !important;
+}
+
+@keyframes appProjectorSway {
+  0% { transform: rotate(0deg) scale(0.96); opacity: 0.75; }
+  50% { opacity: 1; }
+  100% { transform: rotate(4deg) scale(1.04); opacity: 0.88; }
+}
+
+.beam-mote {
+  position: absolute !important;
+  color: #ffd23f !important;
+  font-family: var(--disp) !important;
+  font-weight: 900 !important;
+  pointer-events: none !important;
+  text-shadow: 0 0 8px rgba(255, 210, 63, 0.8) !important;
+}
+
+.mote-1 {
+  top: 35% !important;
+  right: 28% !important;
+  font-size: 16px !important;
+  animation: appMoteFloat1 4.5s ease-in-out infinite alternate !important;
+}
+
+.mote-2 {
+  top: 55% !important;
+  right: 38% !important;
+  font-size: 20px !important;
+  animation: appMoteFloat2 6s ease-in-out infinite alternate !important;
+}
+
+.mote-3 {
+  top: 68% !important;
+  right: 20% !important;
+  font-size: 14px !important;
+  animation: appMoteFloat1 5s ease-in-out infinite alternate -2s !important;
+}
+
+@keyframes appMoteFloat1 {
+  0% { transform: translateY(0) scale(0.85); opacity: 0.4; }
+  100% { transform: translateY(-22px) scale(1.2); opacity: 1; }
+}
+
+@keyframes appMoteFloat2 {
+  0% { transform: translateY(0) scale(1.1); opacity: 0.8; }
+  100% { transform: translateY(20px) scale(0.8); opacity: 0.35; }
+}
+
+/* Atmospheric Glowing Stage Spotlight */
 .app-ambient-spotlight {
   display: block !important;
   position: absolute !important;
-  width: 550px !important;
-  height: 550px !important;
+  width: 580px !important;
+  height: 580px !important;
   top: 50% !important;
-  right: 12% !important;
+  right: 10% !important;
   transform: translateY(-50%) !important;
-  background: radial-gradient(circle, rgba(255, 42, 109, 0.35) 0%, rgba(255, 210, 63, 0.22) 50%, transparent 75%) !important;
-  filter: blur(70px) !important;
+  background: radial-gradient(circle, rgba(255, 42, 109, 0.32) 0%, rgba(255, 210, 63, 0.22) 48%, transparent 72%) !important;
+  filter: blur(65px) !important;
   border-radius: 50% !important;
   pointer-events: none !important;
   z-index: 2 !important;
@@ -13386,11 +12709,11 @@ html {
 }
 
 @keyframes appAuraPulse {
-  0% { transform: translateY(-50%) scale(0.92); opacity: 0.7; }
+  0% { transform: translateY(-50%) scale(0.92); opacity: 0.65; }
   100% { transform: translateY(-50%) scale(1.1); opacity: 1; }
 }
 
-/* Floating Graphical Cinema Elements in Background */
+/* Floating Graphical Cinema Decor */
 .app-floating-decor {
   position: absolute !important;
   pointer-events: none !important;
@@ -13400,33 +12723,33 @@ html {
 
 .app-decor-popcorn {
   top: 10% !important;
-  left: 3% !important;
-  font-size: 34px !important;
-  filter: drop-shadow(0 10px 18px rgba(42, 24, 32, 0.2)) !important;
+  left: 2.5% !important;
+  font-size: 38px !important;
+  filter: drop-shadow(0 12px 20px rgba(42, 24, 32, 0.22)) !important;
   animation: appFloatA 4.5s ease-in-out infinite alternate !important;
 }
 
 .app-decor-burger {
   bottom: 8% !important;
-  left: 4% !important;
-  font-size: 34px !important;
-  filter: drop-shadow(0 10px 18px rgba(42, 24, 32, 0.2)) !important;
+  left: 3.5% !important;
+  font-size: 36px !important;
+  filter: drop-shadow(0 12px 20px rgba(42, 24, 32, 0.22)) !important;
   animation: appFloatB 5s ease-in-out infinite alternate !important;
 }
 
 .app-decor-drink {
-  top: 16% !important;
-  right: 4% !important;
-  font-size: 34px !important;
-  filter: drop-shadow(0 10px 18px rgba(42, 24, 32, 0.2)) !important;
+  top: 15% !important;
+  right: 3.5% !important;
+  font-size: 36px !important;
+  filter: drop-shadow(0 12px 20px rgba(42, 24, 32, 0.22)) !important;
   animation: appFloatA 5.5s ease-in-out infinite alternate !important;
 }
 
 .app-decor-ticket {
-  bottom: 12% !important;
-  right: 5% !important;
-  font-size: 34px !important;
-  filter: drop-shadow(0 10px 18px rgba(42, 24, 32, 0.2)) !important;
+  bottom: 11% !important;
+  right: 4.5% !important;
+  font-size: 36px !important;
+  filter: drop-shadow(0 12px 20px rgba(42, 24, 32, 0.22)) !important;
   animation: appFloatB 4.8s ease-in-out infinite alternate !important;
 }
 
@@ -13435,37 +12758,86 @@ html {
   color: #ffd23f !important;
   font-family: var(--disp) !important;
   font-weight: 900 !important;
-  text-shadow: 0 0 10px rgba(255, 210, 63, 0.8), 1px 1px 0 #2a1820 !important;
+  text-shadow: 0 0 10px rgba(255, 210, 63, 0.85), 1px 1px 0 #2a1820 !important;
   animation: appSparkleTwinkle 2.5s ease-in-out infinite alternate !important;
 }
 
 @keyframes appFloatA {
   0% { transform: translateY(0) rotate(0deg); }
-  100% { transform: translateY(-16px) rotate(8deg); }
+  100% { transform: translateY(-18px) rotate(8deg); }
 }
 
 @keyframes appFloatB {
   0% { transform: translateY(0) rotate(0deg); }
-  100% { transform: translateY(14px) rotate(-6deg); }
+  100% { transform: translateY(16px) rotate(-7deg); }
 }
 
 @keyframes appSparkleTwinkle {
   0% { opacity: 0.35; transform: scale(0.85); }
-  100% { opacity: 1; transform: scale(1.15); }
+  100% { opacity: 1; transform: scale(1.2); }
 }
 
+/* Sticky Wrapper for 250vh Scroll Track */
 .app-sticky-wrapper {
   position: sticky !important;
   top: 76px !important;
   height: calc(100vh - 76px) !important;
   width: 100% !important;
   display: flex !important;
+  flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
   overflow: hidden !important;
-  padding: 16px clamp(16px, 4vw, 56px) !important;
+  padding: 8px clamp(16px, 3.5vw, 48px) 10px !important;
   box-sizing: border-box !important;
   z-index: 5 !important;
+}
+
+/* Retro Cinema Marquee Ticker Tape at Section Top */
+.app-marquee-wrapper {
+  width: 100% !important;
+  max-width: 1220px !important;
+  overflow: hidden !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1.8px solid #2a1820 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 3px 0 #2a1820 !important;
+  margin-bottom: 10px !important;
+  padding: 4px 0 !important;
+  display: flex !important;
+  user-select: none !important;
+  pointer-events: none !important;
+}
+
+.app-marquee-track {
+  display: flex !important;
+  width: max-content !important;
+  animation: appMarqueeRoll 25s linear infinite !important;
+}
+
+.app-marquee-content {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding-right: 14px !important;
+  font-family: var(--disp) !important;
+  font-size: 10.5px !important;
+  font-weight: 800 !important;
+  color: #2a1820 !important;
+  letter-spacing: 0.05em !important;
+  white-space: nowrap !important;
+}
+
+.am-star {
+  color: #e6195a !important;
+  font-size: 11px !important;
+}
+
+@keyframes appMarqueeRoll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .app-section-inner {
@@ -13479,7 +12851,7 @@ html {
 .app-main-grid {
   display: grid !important;
   grid-template-columns: 1.15fr 0.85fr !important;
-  gap: clamp(28px, 4.5vw, 60px) !important;
+  gap: clamp(24px, 3.8vw, 52px) !important;
   align-items: center !important;
 }
 
@@ -13487,7 +12859,7 @@ html {
 .app-text-col {
   display: flex !important;
   flex-direction: column !important;
-  gap: 12px !important;
+  gap: 10px !important;
   z-index: 10 !important;
 }
 
@@ -13496,7 +12868,7 @@ html {
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
-  padding: 6px 14px !important;
+  padding: 4px 14px !important;
   border-radius: 999px !important;
   background: #ffffff !important;
   border: 2px solid #2a1820 !important;
@@ -13512,8 +12884,8 @@ html {
 .app-live-beacon {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 4px !important;
-  padding: 2px 7px !important;
+  gap: 5px !important;
+  padding: 2px 8px !important;
   border-radius: 999px !important;
   background: #ecfdf5 !important;
   border: 1px solid #10b981 !important;
@@ -13540,8 +12912,8 @@ html {
 /* Headline */
 .app-title-head {
   font-family: var(--disp) !important;
-  font-size: clamp(34px, 4vw, 52px) !important;
-  line-height: 1.04 !important;
+  font-size: clamp(32px, 3.6vw, 48px) !important;
+  line-height: 1.05 !important;
   color: #2a1820 !important;
   margin: 0 !important;
   font-weight: 900 !important;
@@ -13559,41 +12931,66 @@ html {
 
 .app-subtitle-desc {
   font-family: var(--sans) !important;
-  font-size: 15px !important;
-  line-height: 1.5 !important;
+  font-size: 14.5px !important;
+  line-height: 1.45 !important;
   color: #441f2f !important;
   margin: 0 !important;
-  max-width: 48ch !important;
+  max-width: 46ch !important;
 }
 
-/* Lucrative VIP Coupon Voucher Banner */
+/* Holographic Golden VIP Coupon Pass Ticket */
 .app-lucrative-coupon-card {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   gap: 12px !important;
-  padding: 10px 16px !important;
+  padding: 9px 18px !important;
   border-radius: 18px !important;
-  background: linear-gradient(135deg, #ffffff 0%, #fff7f9 100%) !important;
+  background: linear-gradient(115deg, #ffffff 0%, #fffbf0 25%, #ffffff 45%, #fff2cb 70%, #ffffff 100%) !important;
+  background-size: 200% 100% !important;
+  animation: appFoilShimmer 5s ease-in-out infinite !important;
   border: 2px dashed #e6195a !important;
-  box-shadow: 0 4px 0 #2a1820, 0 8px 20px rgba(230, 25, 90, 0.12) !important;
+  box-shadow: 0 4px 0 #2a1820, 0 10px 24px rgba(230, 25, 90, 0.16) !important;
   position: relative !important;
   overflow: hidden !important;
+  cursor: pointer !important;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease !important;
 }
 
-.app-lucrative-coupon-card::before {
-  content: '★ VIP PERK' !important;
+.app-lucrative-coupon-card:hover {
+  transform: translateY(-2px) scale(1.01) !important;
+  box-shadow: 0 6px 0 #2a1820, 0 14px 30px rgba(230, 25, 90, 0.24) !important;
+}
+
+.app-lucrative-coupon-card:active {
+  transform: translateY(2px) scale(0.99) !important;
+  box-shadow: 0 1px 0 #2a1820 !important;
+}
+
+@keyframes appFoilShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Authentic Ticket Notches */
+.alcc-notch {
   position: absolute !important;
-  top: 0 !important;
-  right: 0 !important;
-  background: #e6195a !important;
-  color: #ffffff !important;
-  font-family: var(--disp) !important;
-  font-size: 8.5px !important;
-  font-weight: 900 !important;
-  padding: 2px 10px !important;
-  border-bottom-left-radius: 10px !important;
-  letter-spacing: 0.05em !important;
+  width: 14px !important;
+  height: 14px !important;
+  background: #ffccd8 !important;
+  border: 2px solid #2a1820 !important;
+  border-radius: 50% !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 5 !important;
+}
+
+.notch-left {
+  left: -9px !important;
+}
+
+.notch-right {
+  right: -9px !important;
 }
 
 .alcc-left {
@@ -13603,16 +13000,28 @@ html {
 }
 
 .alcc-gift-icon {
-  width: 42px !important;
-  height: 42px !important;
+  width: 40px !important;
+  height: 40px !important;
   border-radius: 12px !important;
   background: linear-gradient(135deg, #ffe27a 0%, #ffd23f 100%) !important;
   border: 1.5px solid #2a1820 !important;
   box-shadow: 0 2px 0 #2a1820 !important;
   display: grid !important;
   place-items: center !important;
-  font-size: 22px !important;
+  font-size: 20px !important;
   flex-shrink: 0 !important;
+}
+
+.gift-emoji {
+  display: inline-block !important;
+  animation: appGiftWiggle 3.2s ease-in-out infinite !important;
+}
+
+@keyframes appGiftWiggle {
+  0%, 100% { transform: scale(1) rotate(0); }
+  15% { transform: scale(1.15) rotate(-10deg); }
+  25% { transform: scale(1.15) rotate(10deg); }
+  35% { transform: scale(1.1) rotate(0); }
 }
 
 .alcc-details {
@@ -13621,7 +13030,19 @@ html {
   line-height: 1.25 !important;
 }
 
-.alcc-details b {
+.alcc-tag-head {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  font-family: var(--disp) !important;
+  font-size: 8.5px !important;
+  font-weight: 900 !important;
+  color: #e6195a !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.alcc-val {
   font-family: var(--disp) !important;
   font-size: 14px !important;
   font-weight: 900 !important;
@@ -13630,7 +13051,7 @@ html {
 
 .alcc-details span {
   font-family: var(--sans) !important;
-  font-size: 11.5px !important;
+  font-size: 11px !important;
   color: #633045 !important;
 }
 
@@ -13640,10 +13061,18 @@ html {
   font-weight: 700 !important;
 }
 
+.alcc-right {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 3px !important;
+  flex-shrink: 0 !important;
+}
+
 .alcc-code-pill {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 5px !important;
+  gap: 6px !important;
   padding: 5px 12px !important;
   border-radius: 999px !important;
   background: #fff0f3 !important;
@@ -13653,32 +13082,75 @@ html {
   font-weight: 800 !important;
   color: #e6195a !important;
   letter-spacing: 0.04em !important;
-  flex-shrink: 0 !important;
+  box-shadow: 0 2px 0 rgba(230, 25, 90, 0.15) !important;
+  transition: all 0.2s ease !important;
 }
 
-/* Step Progress Tabs / Cards */
+.alcc-code-pill:hover {
+  background: #e6195a !important;
+  color: #ffffff !important;
+}
+
+.alcc-code-pill.copied {
+  background: #10b981 !important;
+  border-color: #059669 !important;
+  color: #ffffff !important;
+  transform: scale(1.05) !important;
+}
+
+.alcc-tap-tip {
+  font-family: var(--disp) !important;
+  font-size: 8.5px !important;
+  font-weight: 800 !important;
+  color: #b81643 !important;
+  letter-spacing: 0.03em !important;
+}
+
+/* Step Progress Navigation with Animated Connector Line */
 .app-step-nav-cards {
   display: flex !important;
   flex-direction: column !important;
   gap: 8px !important;
   margin: 2px 0 !important;
+  position: relative !important;
+}
+
+.app-step-timeline-bar {
+  position: absolute !important;
+  left: 27px !important;
+  top: 20px !important;
+  bottom: 20px !important;
+  width: 3px !important;
+  background: rgba(42, 24, 32, 0.15) !important;
+  border-radius: 999px !important;
+  z-index: 1 !important;
+}
+
+.app-step-timeline-fill {
+  width: 100% !important;
+  height: 0% !important;
+  background: linear-gradient(180deg, #ff2a6d 0%, #e6195a 100%) !important;
+  border-radius: 999px !important;
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 0 8px #ff2a6d !important;
 }
 
 .app-step-card {
   display: flex !important;
   align-items: center !important;
   gap: 14px !important;
-  padding: 10px 14px !important;
+  padding: 9px 14px !important;
   border-radius: 18px !important;
-  background: rgba(255, 255, 255, 0.85) !important;
+  background: rgba(255, 255, 255, 0.88) !important;
   backdrop-filter: blur(8px) !important;
   -webkit-backdrop-filter: blur(8px) !important;
   border: 2px solid #2a1820 !important;
   box-shadow: 0 3px 0 #2a1820 !important;
   cursor: pointer !important;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease !important;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease !important;
   text-align: left !important;
   position: relative !important;
+  z-index: 2 !important;
 }
 
 .app-step-card:hover {
@@ -13688,30 +13160,49 @@ html {
 }
 
 .app-step-card.active {
-  background: linear-gradient(135deg, #ffffff 0%, #fff0f3 100%) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #fff0f4 100%) !important;
   border-color: #2a1820 !important;
-  box-shadow: 0 5px 0 #2a1820, 0 10px 24px rgba(230, 25, 90, 0.16) !important;
+  box-shadow: 0 5px 0 #2a1820, 0 10px 24px rgba(230, 25, 90, 0.2) !important;
   transform: translateX(8px) !important;
 }
 
 .step-num-badge {
-  width: 36px !important;
-  height: 36px !important;
-  border-radius: 12px !important;
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 11px !important;
   background: #fff0f3 !important;
   border: 1.5px solid #2a1820 !important;
   box-shadow: 0 2px 0 rgba(42, 24, 32, 0.15) !important;
   display: grid !important;
   place-items: center !important;
-  font-size: 18px !important;
+  font-size: 17px !important;
   flex-shrink: 0 !important;
-  transition: transform 0.2s ease, background 0.2s ease !important;
+  position: relative !important;
+  transition: transform 0.25s ease, background 0.25s ease !important;
 }
 
 .app-step-card.active .step-num-badge {
   background: linear-gradient(135deg, #ffe27a 0%, #ffd23f 100%) !important;
   transform: scale(1.08) rotate(-4deg) !important;
   box-shadow: 0 2.5px 0 #2a1820 !important;
+}
+
+.step-active-pulse {
+  position: absolute !important;
+  inset: -4px !important;
+  border-radius: 14px !important;
+  border: 2px solid #e6195a !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.app-step-card.active .step-active-pulse {
+  animation: appStepPing 2s cubic-bezier(0, 0, 0.2, 1) infinite !important;
+}
+
+@keyframes appStepPing {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  70%, 100% { transform: scale(1.25); opacity: 0; }
 }
 
 .step-info-box {
@@ -13723,7 +13214,7 @@ html {
 
 .step-info-box b {
   font-family: var(--disp) !important;
-  font-size: 14px !important;
+  font-size: 13.5px !important;
   font-weight: 800 !important;
   color: #2a1820 !important;
   display: flex !important;
@@ -13733,8 +13224,34 @@ html {
 
 .step-info-box span {
   font-family: var(--sans) !important;
-  font-size: 12px !important;
+  font-size: 11.5px !important;
   color: #5a2e3f !important;
+}
+
+.step-mini-bar {
+  width: 100% !important;
+  height: 3px !important;
+  background: #f0d5de !important;
+  border-radius: 999px !important;
+  margin-top: 4px !important;
+  overflow: hidden !important;
+  display: none !important;
+}
+
+.app-step-card.active .step-mini-bar {
+  display: block !important;
+}
+
+.smb-fill {
+  height: 100% !important;
+  width: 100% !important;
+  background: linear-gradient(90deg, #ff2a6d 0%, #ffd23f 100%) !important;
+  animation: appSmbFill 0.5s ease-out forwards !important;
+}
+
+@keyframes appSmbFill {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
 }
 
 .step-pill-tag {
@@ -13770,8 +13287,8 @@ html {
   display: inline-flex !important;
   align-items: center !important;
   gap: 10px !important;
-  padding: 9px 16px !important;
-  border-radius: 16px !important;
+  padding: 8px 16px !important;
+  border-radius: 15px !important;
   background: #2a1820 !important;
   border: 2px solid #2a1820 !important;
   box-shadow: 0 4px 0 #2a1820 !important;
@@ -13806,7 +13323,7 @@ html {
 }
 
 .fin-store-text strong {
-  font-size: 13.5px !important;
+  font-size: 13px !important;
   font-family: var(--disp) !important;
   font-weight: 800 !important;
 }
@@ -13818,59 +13335,145 @@ html {
   margin-left: 2px !important;
 }
 
-/* Right Graphic Column: iPhone Mockup & Floating Badges */
+/* Right Graphic Column: 3D Stage & iPhone Mockup */
 .app-graphic-col {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
   position: relative !important;
+  perspective: 1200px !important;
 }
 
-/* Realistic iPhone Mockup with Neon Pink Back-Glow */
+/* Orbiting Neon Stage Portal behind the Phone */
+.app-stage-portal {
+  position: absolute !important;
+  width: 460px !important;
+  height: 460px !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.app-neon-ring {
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 50% !important;
+  pointer-events: none !important;
+}
+
+.ring-outer {
+  border: 2px dashed rgba(255, 42, 109, 0.45) !important;
+  box-shadow: 0 0 30px rgba(255, 42, 109, 0.25) !important;
+  animation: appOrbitClockwise 26s linear infinite !important;
+}
+
+.ring-inner {
+  inset: 45px !important;
+  border: 1.5px dotted rgba(255, 210, 63, 0.55) !important;
+  box-shadow: 0 0 24px rgba(255, 210, 63, 0.25) !important;
+  animation: appOrbitCounter 18s linear infinite !important;
+}
+
+@keyframes appOrbitClockwise {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes appOrbitCounter {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.app-stage-glow {
+  position: absolute !important;
+  inset: 70px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(255, 42, 109, 0.25) 0%, rgba(255, 210, 63, 0.18) 50%, transparent 70%) !important;
+  filter: blur(40px) !important;
+}
+
+/* Realistic 3D iPhone Mockup - Perfectly Proportioned */
 .app-iphone-frame {
-  width: 290px !important;
-  height: 580px !important;
+  width: 275px !important;
+  height: 550px !important;
   background: #1e0f17 !important;
-  border-radius: 48px !important;
+  border-radius: 46px !important;
   border: 4px solid #2a1820 !important;
-  box-shadow: 0 30px 70px -10px rgba(212, 34, 85, 0.38), 
-              0 0 45px rgba(255, 42, 109, 0.22),
+  box-shadow: 0 28px 65px -10px rgba(212, 34, 85, 0.42), 
+              0 0 45px rgba(255, 42, 109, 0.28),
               0 6px 0 #2a1820 !important;
   position: relative !important;
   padding: 8px !important;
   box-sizing: border-box !important;
   display: flex !important;
   flex-direction: column !important;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transform: rotateY(-6deg) rotateX(3deg) translateZ(0) !important;
+  transform-style: preserve-3d !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease !important;
+  z-index: 10 !important;
 }
 
 .app-iphone-frame:hover {
-  transform: translateY(-4px) rotate(-0.5deg) !important;
+  box-shadow: 0 35px 80px -10px rgba(212, 34, 85, 0.52), 
+              0 0 65px rgba(255, 42, 109, 0.38),
+              0 7px 0 #2a1820 !important;
 }
 
 /* Dynamic Island */
 .app-dynamic-island {
   position: absolute !important;
-  top: 14px !important;
+  top: 13px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  width: 86px !important;
-  height: 22px !important;
+  width: 82px !important;
+  height: 20px !important;
   background: #000000 !important;
   border-radius: 20px !important;
   z-index: 20 !important;
   box-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  padding-right: 12px !important;
+}
+
+.island-camera {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: #111a24 !important;
+  border: 1px solid #1e293b !important;
 }
 
 /* Phone Screen Container */
 .app-iphone-screen {
   width: 100% !important;
   height: 100% !important;
-  border-radius: 40px !important;
+  border-radius: 38px !important;
   overflow: hidden !important;
   position: relative !important;
   background: #000000 !important;
+}
+
+/* High-Gloss Glass Specular Glare Sweep INSIDE Screen (Zero Overflow) */
+.app-phone-specular-glare {
+  position: absolute !important;
+  top: -20% !important;
+  left: -20% !important;
+  width: 140% !important;
+  height: 140% !important;
+  background: linear-gradient(125deg, transparent 38%, rgba(255, 255, 255, 0.32) 47%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.32) 53%, transparent 62%) !important;
+  pointer-events: none !important;
+  z-index: 15 !important;
+  animation: appGlassGlare 5.5s ease-in-out infinite !important;
+}
+
+@keyframes appGlassGlare {
+  0% { transform: translateX(-120%) rotate(20deg); }
+  30%, 100% { transform: translateX(120%) rotate(20deg); }
 }
 
 .app-screen-layer {
@@ -13899,24 +13502,35 @@ html {
   z-index: 5 !important;
 }
 
-/* Floating Graphical Badge 1: Live In-Seat Order Tracking (Top-Right) */
+/* Animated Floating Graphic 1: Live In-Seat Order Tracking (Top-Right) */
 .app-floating-badge-order {
   position: absolute !important;
-  top: 18px !important;
-  right: -24px !important;
+  top: 14px !important;
+  right: -10px !important;
   display: flex !important;
-  align-items: center !important;
-  gap: 10px !important;
+  flex-direction: column !important;
+  gap: 7px !important;
   padding: 8px 14px !important;
-  border-radius: 16px !important;
+  border-radius: 17px !important;
   background: rgba(255, 255, 255, 0.96) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   border: 2px solid #2a1820 !important;
-  box-shadow: 0 4px 0 #2a1820, 0 12px 28px rgba(42, 24, 32, 0.16) !important;
+  box-shadow: 0 4px 0 #2a1820, 0 14px 30px rgba(42, 24, 32, 0.18) !important;
   z-index: 25 !important;
   white-space: nowrap !important;
   animation: appFloatA 4.2s ease-in-out infinite alternate !important;
+  transition: transform 0.2s ease !important;
+}
+
+.app-floating-badge-order:hover {
+  transform: scale(1.04) translateY(-4px) !important;
+}
+
+.fbo-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 9px !important;
 }
 
 .fbo-icon {
@@ -13932,7 +13546,7 @@ html {
 
 .fbo-title {
   font-family: var(--disp) !important;
-  font-size: 11.5px !important;
+  font-size: 11px !important;
   font-weight: 800 !important;
   color: #2a1820 !important;
   white-space: nowrap !important;
@@ -13940,7 +13554,7 @@ html {
 
 .fbo-seat {
   font-family: var(--sans) !important;
-  font-size: 10.5px !important;
+  font-size: 10px !important;
   color: #633045 !important;
   white-space: nowrap !important;
 }
@@ -13949,31 +13563,105 @@ html {
   color: #e6195a !important;
 }
 
+.fbo-radar-box {
+  position: relative !important;
+  width: 14px !important;
+  height: 14px !important;
+  display: grid !important;
+  place-items: center !important;
+}
+
 .fbo-live-dot {
   width: 8px !important;
   height: 8px !important;
   border-radius: 50% !important;
   background: #10b981 !important;
   box-shadow: 0 0 8px #10b981 !important;
-  animation: appPulseDot 1.4s ease-in-out infinite !important;
+  z-index: 2 !important;
+}
+
+.fbo-radar-ping {
+  position: absolute !important;
+  inset: -3px !important;
+  border-radius: 50% !important;
+  border: 1.5px solid #10b981 !important;
+  animation: appRadarPing 1.6s cubic-bezier(0, 0, 0.2, 1) infinite !important;
+}
+
+@keyframes appRadarPing {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* Delivery Progress Track */
+.fbo-delivery-track {
+  width: 100% !important;
+  height: 4px !important;
+  background: #e2e8f0 !important;
+  border-radius: 999px !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.fbo-track-fill {
+  height: 100% !important;
+  width: 68% !important;
+  background: linear-gradient(90deg, #10b981 0%, #34d399 100%) !important;
+  border-radius: 999px !important;
+  animation: appTrackPulse 2.5s ease-in-out infinite alternate !important;
+}
+
+@keyframes appTrackPulse {
+  0% { width: 55%; }
+  100% { width: 78%; }
+}
+
+.fbo-runner {
+  position: absolute !important;
+  right: 28% !important;
+  top: -8px !important;
+  font-size: 11px !important;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3)) !important;
+  animation: appRunnerMove 2.5s ease-in-out infinite alternate !important;
+}
+
+@keyframes appRunnerMove {
+  0% { right: 42%; transform: scaleX(-1); }
+  100% { right: 18%; transform: scaleX(-1); }
 }
 
 /* Floating Graphical Badge 2: VIP Discount Voucher (Left) */
 .app-floating-badge-offer {
   position: absolute !important;
-  bottom: 80px !important;
+  bottom: 75px !important;
   left: -28px !important;
   display: flex !important;
   align-items: center !important;
   gap: 8px !important;
-  padding: 8px 14px !important;
+  padding: 8px 13px !important;
   border-radius: 16px !important;
   background: linear-gradient(135deg, #ffe27a 0%, #ffd23f 100%) !important;
   border: 2px solid #2a1820 !important;
-  box-shadow: 0 4px 0 #2a1820, 0 12px 28px rgba(42, 24, 32, 0.18) !important;
+  box-shadow: 0 4px 0 #2a1820, 0 14px 30px rgba(42, 24, 32, 0.2) !important;
   z-index: 25 !important;
   white-space: nowrap !important;
   animation: appFloatB 4.8s ease-in-out infinite alternate !important;
+  transition: transform 0.2s ease !important;
+}
+
+.app-floating-badge-offer:hover {
+  transform: scale(1.04) translateY(-3px) !important;
+}
+
+.fbo-sparkle-star {
+  position: absolute !important;
+  top: -8px !important;
+  left: -6px !important;
+  color: #e6195a !important;
+  font-size: 14px !important;
+  font-family: var(--disp) !important;
+  font-weight: 900 !important;
+  animation: appSparkleTwinkle 2s ease-in-out infinite alternate !important;
 }
 
 .fbo-offer-text {
@@ -13984,7 +13672,7 @@ html {
 
 .fbo-offer-text b {
   font-family: var(--disp) !important;
-  font-size: 13px !important;
+  font-size: 12.5px !important;
   font-weight: 900 !important;
   color: #2a1820 !important;
 }
@@ -14009,27 +13697,37 @@ html {
 /* Floating Context Badge Under Phone */
 .app-phone-floating-pill {
   position: absolute !important;
-  bottom: -18px !important;
+  bottom: -16px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
   background: #ffffff !important;
   border: 2px solid #2a1820 !important;
-  box-shadow: 0 4px 0 #2a1820, 0 10px 24px rgba(230, 25, 90, 0.15) !important;
+  box-shadow: 0 4px 0 #2a1820, 0 10px 24px rgba(230, 25, 90, 0.18) !important;
   border-radius: 999px !important;
-  padding: 6px 18px !important;
+  padding: 5px 16px !important;
   font-family: var(--disp) !important;
-  font-size: 12px !important;
+  font-size: 11.5px !important;
   font-weight: 800 !important;
   color: #2a1820 !important;
   white-space: nowrap !important;
   z-index: 25 !important;
   display: flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  gap: 7px !important;
 }
 
 .app-phone-floating-pill b {
   color: #e6195a !important;
+}
+
+.app-pill-emoji {
+  display: inline-block !important;
+  animation: appPillIconBob 2.2s ease-in-out infinite alternate !important;
+}
+
+@keyframes appPillIconBob {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px) scale(1.15); }
 }
 
 /* Responsive Mobile Layout (≤900px) */
@@ -14037,6 +13735,11 @@ html {
   .app-showcase-section {
     height: 250vh !important;
     background: radial-gradient(circle at 50% 20%, #ffdbe6 0%, #ffccd9 45%, #f7b4c4 85%, #f4a1b5 100%) !important;
+    overflow-x: clip !important;
+  }
+
+  .app-projector-beam {
+    display: none !important;
   }
 
   .app-ambient-spotlight {
@@ -14051,17 +13754,21 @@ html {
   }
 
   .app-sticky-wrapper {
-    padding: 8px 12px 14px 12px !important;
+    padding: 6px 12px 10px 12px !important;
     top: 60px !important;
     height: calc(100vh - 60px) !important;
     justify-content: center !important;
+  }
+
+  .app-marquee-wrapper {
+    display: none !important;
   }
 
   .app-main-grid {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 6px !important;
+    gap: 4px !important;
     width: 100% !important;
   }
 
@@ -14073,15 +13780,15 @@ html {
     order: 1 !important;
     font-size: 9.5px !important;
     padding: 3px 10px !important;
-    margin-bottom: 2px !important;
+    margin-bottom: 1px !important;
   }
 
   .app-title-head {
     order: 2 !important;
-    font-size: 23px !important;
+    font-size: 22px !important;
     text-align: center !important;
     margin: 0 !important;
-    line-height: 1.1 !important;
+    line-height: 1.08 !important;
   }
 
   .app-subtitle-desc {
@@ -14090,7 +13797,7 @@ html {
 
   .app-lucrative-coupon-card {
     order: 3 !important;
-    padding: 6px 10px !important;
+    padding: 6px 12px !important;
     border-radius: 14px !important;
     gap: 8px !important;
     width: 100% !important;
@@ -14098,7 +13805,7 @@ html {
     box-sizing: border-box !important;
   }
 
-  .app-lucrative-coupon-card::before {
+  .alcc-notch {
     display: none !important;
   }
 
@@ -14114,12 +13821,16 @@ html {
   }
 
   .alcc-details span {
-    font-size: 10px !important;
+    font-size: 9.5px !important;
   }
 
   .alcc-code-pill {
     padding: 3px 8px !important;
     font-size: 9.5px !important;
+  }
+
+  .alcc-tap-tip {
+    display: none !important;
   }
 
   .app-step-nav-cards {
@@ -14129,6 +13840,10 @@ html {
     width: 100% !important;
     justify-content: center !important;
     margin: 2px 0 !important;
+  }
+
+  .app-step-timeline-bar {
+    display: none !important;
   }
 
   .app-step-card {
@@ -14151,7 +13866,8 @@ html {
   }
 
   .app-step-card .step-info-box span,
-  .app-step-card .step-pill-tag {
+  .app-step-card .step-pill-tag,
+  .app-step-card .step-mini-bar {
     display: none !important;
   }
 
@@ -14162,22 +13878,28 @@ html {
 
   .app-graphic-col {
     order: 5 !important;
-    margin: 6px 0 !important;
+    margin: 4px 0 !important;
+    perspective: none !important;
+  }
+
+  .app-stage-portal {
+    display: none !important;
   }
 
   .app-iphone-frame {
-    width: 195px !important;
-    height: 385px !important;
+    width: 185px !important;
+    height: 360px !important;
     border-radius: 36px !important;
     padding: 5px !important;
     border-width: 3.5px !important;
+    transform: none !important;
     box-shadow: 0 20px 50px rgba(212, 34, 85, 0.35), 0 4px 0 #2a1820 !important;
   }
 
   .app-dynamic-island {
     top: 9px !important;
-    width: 58px !important;
-    height: 15px !important;
+    width: 56px !important;
+    height: 14px !important;
   }
 
   .app-iphone-screen {
@@ -14186,7 +13908,7 @@ html {
 
   .app-floating-badge-order,
   .app-floating-badge-offer {
-    display: none !important; /* Keep mobile clean & focused */
+    display: none !important;
   }
 
   .app-phone-floating-pill {
@@ -14197,7 +13919,8 @@ html {
 
   .app-stores-row {
     order: 6 !important;
-    margin-top: 6px !important;
+    margin-top: 4px !important;
+    margin-bottom: 24px !important;
     display: flex !important;
     flex-direction: row !important;
     gap: 8px !important;
@@ -15320,6 +15043,13 @@ html {
 
 <!-- 1. SECTION: APP SHOWCASE (#app) — YOUR NEXT MOVIE NIGHT DESERVES THIS -->
 <section class="sec app-showcase-section" id="app" aria-label="Your Next Movie Night Deserves This">
+  <!-- Theatrical Cinema Projector Light Beam with Floating Particles -->
+  <div class="app-projector-beam" aria-hidden="true">
+    <span class="beam-mote mote-1">✦</span>
+    <span class="beam-mote mote-2">✨</span>
+    <span class="beam-mote mote-3">★</span>
+  </div>
+
   <!-- Glowing Ambient Spotlight -->
   <div class="app-ambient-spotlight" aria-hidden="true"></div>
 
@@ -15333,6 +15063,40 @@ html {
   <span class="app-spark-item" style="top:22%; right:30%; font-size:24px; animation-delay:-0.8s;" aria-hidden="true">★</span>
 
   <div class="app-sticky-wrapper">
+    <!-- Retro Cinema Marquee Ticker Tape -->
+    <div class="app-marquee-wrapper" aria-hidden="true">
+      <div class="app-marquee-track">
+        <div class="app-marquee-content">
+          <span>🍿 100% RECLINER HAPPINESS</span>
+          <span class="am-star">★</span>
+          <span>ZERO QUEUE INTERVALS</span>
+          <span class="am-star">★</span>
+          <span>SILENT SEAT DELIVERY IN ~10 MINS</span>
+          <span class="am-star">★</span>
+          <span>CHEF-CRAFTED ARTISAN SNACKS</span>
+          <span class="am-star">★</span>
+          <span>4.9★ RATED CINEMA APP</span>
+          <span class="am-star">★</span>
+          <span>50+ PVR, INOX &amp; CINEPOLIS SCREENS</span>
+          <span class="am-star">★</span>
+        </div>
+        <div class="app-marquee-content" aria-hidden="true">
+          <span>🍿 100% RECLINER HAPPINESS</span>
+          <span class="am-star">★</span>
+          <span>ZERO QUEUE INTERVALS</span>
+          <span class="am-star">★</span>
+          <span>SILENT SEAT DELIVERY IN ~10 MINS</span>
+          <span class="am-star">★</span>
+          <span>CHEF-CRAFTED ARTISAN SNACKS</span>
+          <span class="am-star">★</span>
+          <span>4.9★ RATED CINEMA APP</span>
+          <span class="am-star">★</span>
+          <span>50+ PVR, INOX &amp; CINEPOLIS SCREENS</span>
+          <span class="am-star">★</span>
+        </div>
+      </div>
+    </div>
+
     <div class="app-section-inner">
       <div class="app-main-grid">
         
@@ -15353,45 +15117,72 @@ html {
             Skip 50-person interval queues. Scan your cinema recliner QR code, browse gourmet burgers &amp; piping hot popcorn, and enjoy silent in-seat delivery in ~10 minutes.
           </p>
 
-          <!-- Lucrative Welcome Perk Voucher -->
-          <div class="app-lucrative-coupon-card">
+          <!-- Holographic Golden VIP Coupon Pass Ticket -->
+          <div class="app-lucrative-coupon-card" id="appCouponVoucher" role="button" tabindex="0" title="Tap to copy coupon code">
+            <div class="alcc-notch notch-left" aria-hidden="true"></div>
+            <div class="alcc-notch notch-right" aria-hidden="true"></div>
             <div class="alcc-left">
-              <div class="alcc-gift-icon">🎁</div>
+              <div class="alcc-gift-icon">
+                <span class="gift-emoji">🎁</span>
+              </div>
               <div class="alcc-details">
-                <b>₹100 Instant Discount</b>
-                <span>Use code on 1st in-seat order · <em>+ 2X CinePoints</em></span>
+                <div class="alcc-tag-head">
+                  <span>★</span> VIP CINEMA WELCOME PASS
+                </div>
+                <b class="alcc-val">₹100 Instant Discount</b>
+                <span>Use on 1st in-seat order · <em>+ 2X CinePoints</em></span>
               </div>
             </div>
-            <div class="alcc-code-pill">
-              <span>CODE:</span> <b>POPCORN100</b>
+            <div class="alcc-right">
+              <div class="alcc-code-pill" id="appCouponCodeBtn">
+                <span>CODE:</span> <b>POPCORN100</b>
+              </div>
+              <span class="alcc-tap-tip" id="appCouponTip">Tap to Copy ✨</span>
             </div>
           </div>
 
           <!-- Step Progress Cards that update on scroll -->
           <div class="app-step-nav-cards">
+            <!-- Timeline vertical connector -->
+            <div class="app-step-timeline-bar" aria-hidden="true">
+              <div class="app-step-timeline-fill" id="appStepTimelineFill"></div>
+            </div>
+
             <div class="app-step-card active" data-step="0" role="button" tabindex="0" aria-label="Step 1: Seat QR &amp; Explore">
-              <div class="step-num-badge">📱</div>
+              <div class="step-num-badge">
+                <span>📱</span>
+                <span class="step-active-pulse" aria-hidden="true"></span>
+              </div>
               <div class="step-info-box">
                 <b>01. Seat QR &amp; Instant Sync</b>
                 <span>Scan recliner tag at PVR, INOX &amp; Cinepolis</span>
+                <div class="step-mini-bar"><div class="smb-fill"></div></div>
               </div>
               <span class="step-pill-tag">Instant Sync</span>
             </div>
 
             <div class="app-step-card" data-step="1" role="button" tabindex="0" aria-label="Step 2: Chef-Crafted Menu">
-              <div class="step-num-badge">🍿</div>
+              <div class="step-num-badge">
+                <span>🍿</span>
+                <span class="step-active-pulse" aria-hidden="true"></span>
+              </div>
               <div class="step-info-box">
                 <b>02. Chef-Crafted Gourmet Feast</b>
                 <span>Artisan smash burgers, pizza, boba &amp; combos</span>
+                <div class="step-mini-bar"><div class="smb-fill"></div></div>
               </div>
               <span class="step-pill-tag">4.9★ Menu</span>
             </div>
 
             <div class="app-step-card" data-step="2" role="button" tabindex="0" aria-label="Step 3: 1-Tap In-Seat Drop">
-              <div class="step-num-badge">🚀</div>
+              <div class="step-num-badge">
+                <span>🚀</span>
+                <span class="step-active-pulse" aria-hidden="true"></span>
+              </div>
               <div class="step-info-box">
                 <b>03. 1-Tap Silent In-Seat Drop</b>
                 <span>Delivered to your recliner in ~10 mins flat</span>
+                <div class="step-mini-bar"><div class="smb-fill"></div></div>
               </div>
               <span class="step-pill-tag">~9.8m Speed</span>
             </div>
@@ -15400,7 +15191,7 @@ html {
           <!-- Official Store Download Buttons -->
           <div class="app-stores-row">
             <a class="fin-store-btn" href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
               <div class="fin-store-text"><small>GET IT ON</small><strong>Google Play</strong></div>
               <span class="fin-store-badge">4.9 ★</span>
             </a>
@@ -15412,32 +15203,52 @@ html {
           </div>
         </div>
 
-        <!-- Right Column: Realistic iPhone Frame with Floating Graphical Badges -->
+        <!-- Right Column: 3D Cinema Stage & Realistic iPhone Frame with Floating Badges -->
         <div class="app-graphic-col">
-          <!-- Floating Graphic 1: Live Order In-Transit Card -->
-          <div class="app-floating-badge-order">
-            <span class="fbo-icon">🍿</span>
-            <div class="fbo-info">
-              <span class="fbo-title">Order #4892 · In-Transit</span>
-              <span class="fbo-seat">Seat F-12 · Drop in <b>~4m</b> ⚡</span>
-            </div>
-            <span class="fbo-live-dot"></span>
+          <!-- Orbiting Neon Stage Portal -->
+          <div class="app-stage-portal" aria-hidden="true">
+            <div class="app-neon-ring ring-outer"></div>
+            <div class="app-neon-ring ring-inner"></div>
+            <div class="app-stage-glow"></div>
           </div>
 
-          <!-- Floating Graphic 2: VIP Discount Claimed Pill -->
+          <!-- Floating Graphic 1: Live In-Seat Order Tracking (Top-Right) -->
+          <div class="app-floating-badge-order">
+            <div class="fbo-header">
+              <span class="fbo-icon">🍿</span>
+              <div class="fbo-info">
+                <span class="fbo-title">Order #4892 · In-Transit</span>
+                <span class="fbo-seat">Seat F-12 · Screen 2 · ETA <b>~3m 45s</b> ⚡</span>
+              </div>
+              <div class="fbo-radar-box">
+                <span class="fbo-radar-ping"></span>
+                <span class="fbo-live-dot"></span>
+              </div>
+            </div>
+            <div class="fbo-delivery-track">
+              <div class="fbo-track-fill"></div>
+              <span class="fbo-runner">🛵</span>
+            </div>
+          </div>
+
+          <!-- Floating Graphic 2: VIP Discount Claimed Pill (Left) -->
           <div class="app-floating-badge-offer">
-            <span style="font-size:18px;">🎁</span>
+            <span class="fbo-sparkle-star">★</span>
+            <span style="font-size:20px;">🎁</span>
             <div class="fbo-offer-text">
               <b>₹100 APPLIED</b>
-              <small>CODE: POPCORN100</small>
+              <small>POPCORN100 · 2X POINTS</small>
             </div>
             <span class="fbo-claimed">✓</span>
           </div>
 
-          <!-- iPhone Frame -->
-          <div class="app-iphone-frame">
-            <div class="app-dynamic-island"></div>
+          <!-- Realistic iPhone Frame with Specular Glare & 3D Tilt -->
+          <div class="app-iphone-frame" id="appIphoneFrame">
+            <div class="app-dynamic-island">
+              <span class="island-camera"></span>
+            </div>
             <div class="app-iphone-screen">
+              <div class="app-phone-specular-glare" aria-hidden="true"></div>
               <div class="app-screen-layer active" data-screen="0">
                 <img src="assets/app_screen_home.png" alt="Love Cafe Home Screen - Seat Sync" loading="lazy">
               </div>
@@ -15449,7 +15260,7 @@ html {
               </div>
             </div>
             <div class="app-phone-floating-pill" id="appPhoneFloatingPill">
-              <span>🍿</span> <span id="appPillText">Step 1: <b>Scan Seat QR &amp; Browse</b></span>
+              <span class="app-pill-emoji">🍿</span> <span id="appPillText">Step 1: <b>Scan Seat QR &amp; Browse</b></span>
             </div>
           </div>
         </div>
@@ -15458,6 +15269,7 @@ html {
     </div>
   </div>
 </section>
+
 
 <!-- 2. SECTION: CINEMA LOCATOR -->
 <section class="sec cinemas-showcase-section" id="cinemas" aria-label="Find Your Cinema">
@@ -18848,7 +18660,28 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
    APP SCREENS SHOWCASE: SMOOTH TAB SWITCHING & MOBILE HORIZONTAL CAROUSEL
    (Zero vertical scroll hijacking · Native touch-action: pan-y)
    ========================================================================== */
-(function initAppShowcaseScrollSync() {
+/* ==========================================================================
+   APP SHOWCASE INTERACTIVE CONTROLLER:
+   - 3-Screen Sticky Scroll Sync (Lenis + Native)
+   - Interactive 3D Perspective Tilt on Mouse Move
+   - VIP Coupon 1-Tap Copy with Animated Feedback
+   - Step Card Timeline Progress Indicator
+   ========================================================================== */
+/* ==========================================================================
+   APP SHOWCASE INTERACTIVE CONTROLLER:
+   - 3-Screen Sticky Scroll Sync (Lenis + Native)
+   - Interactive 3D Perspective Tilt on Mouse Move
+   - VIP Coupon 1-Tap Copy with Animated Feedback
+   - Step Card Timeline Progress Indicator
+   ========================================================================== */
+/* ==========================================================================
+   APP SHOWCASE INTERACTIVE CONTROLLER:
+   - 3-Screen Sticky Scroll Sync (Lenis + Native)
+   - Interactive 3D Perspective Tilt on Mouse Move
+   - VIP Coupon 1-Tap Copy with Animated Feedback
+   - Step Card Timeline Progress Indicator
+   ========================================================================== */
+(function initAppShowcaseInteractiveController() {
   function updateAppOnScroll() {
     const appSec = document.getElementById('app');
     if (!appSec) return;
@@ -18872,9 +18705,14 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
     const cards = document.querySelectorAll('.app-step-card');
     const screens = document.querySelectorAll('.app-screen-layer');
     const pillText = document.getElementById('appPillText');
+    const timelineFill = document.getElementById('appStepTimelineFill');
 
     cards.forEach((c, idx) => c.classList.toggle('active', idx === step));
     screens.forEach((s, idx) => s.classList.toggle('active', idx === step));
+
+    if (timelineFill) {
+      timelineFill.style.height = (progress * 100) + '%';
+    }
 
     if (pillText) {
       if (step === 0) pillText.innerHTML = 'Step 1: <b>Scan Seat QR &amp; Browse</b>';
@@ -18905,6 +18743,55 @@ document.querySelectorAll('.rev-filter-pill').forEach(pill => {
       }
     });
   });
+
+  // Desktop 3D Perspective Tilt on Mouse Movement
+  const graphicCol = document.querySelector('.app-graphic-col');
+  const iphoneFrame = document.getElementById('appIphoneFrame');
+  if (graphicCol && iphoneFrame && window.innerWidth > 900) {
+    let ticking = false;
+    graphicCol.addEventListener('mousemove', function(e) {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const rect = graphicCol.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        const tiltX = -(y * 14).toFixed(2);
+        const tiltY = (x * 16 - 6).toFixed(2);
+        iphoneFrame.style.transform = `rotateY(${tiltY}deg) rotateX(${tiltX}deg) translateZ(10px)`;
+        ticking = false;
+      });
+    });
+
+    graphicCol.addEventListener('mouseleave', function() {
+      iphoneFrame.style.transform = 'rotateY(-6deg) rotateX(3deg) translateZ(0)';
+    });
+  }
+
+  // 1-Tap Copy for VIP Voucher
+  const couponVoucher = document.getElementById('appCouponVoucher');
+  if (couponVoucher) {
+    couponVoucher.addEventListener('click', function() {
+      const code = 'POPCORN100';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).catch(() => {});
+      }
+      const tip = document.getElementById('appCouponTip');
+      const btn = document.getElementById('appCouponCodeBtn');
+      if (btn) btn.classList.add('copied');
+      if (tip) {
+        tip.innerHTML = 'COPIED! 🎉 ✨';
+        tip.style.color = '#059669';
+      }
+      setTimeout(() => {
+        if (btn) btn.classList.remove('copied');
+        if (tip) {
+          tip.innerHTML = 'Tap to Copy ✨';
+          tip.style.color = '#b81643';
+        }
+      }, 3000);
+    });
+  }
 
   // Initial call
   updateAppOnScroll();
