@@ -13960,6 +13960,255 @@ html {
   }
 }
 
+
+
+/* ==========================================================================
+   ULTRA-PREMIUM CINEMA FOOTER
+   - Rich dark velvet canvas (#190812) with coral & amber accents
+   - Multi-column responsive layout with crystal-clear links & names
+   - Generous bottom clearance from floating scroll & download buttons
+   ========================================================================== */
+.site-master-footer {
+  position: relative !important;
+  background: radial-gradient(circle at 15% 20%, rgba(255, 42, 109, 0.12) 0%, transparent 45%),
+              radial-gradient(circle at 85% 80%, rgba(255, 210, 63, 0.08) 0%, transparent 45%),
+              linear-gradient(180deg, #1f0a14 0%, #15060e 100%) !important;
+  color: #f6d6df !important;
+  border-top: 3px solid #2a1820 !important;
+  padding: clamp(48px, 6vw, 72px) clamp(20px, 5vw, 64px) clamp(115px, 15vw, 140px) !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  z-index: 10 !important;
+}
+
+.footer-inner-wrap {
+  max-width: 1220px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+.footer-top-grid {
+  display: grid !important;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr !important;
+  gap: clamp(24px, 4vw, 48px) !important;
+  padding-bottom: clamp(32px, 4vw, 44px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.footer-brand-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+}
+
+.footer-brand-logo {
+  display: inline-block !important;
+  text-decoration: none !important;
+  width: fit-content !important;
+}
+
+.footer-logo-img {
+  height: 44px !important;
+  width: auto !important;
+  max-width: 180px !important;
+  object-fit: contain !important;
+  display: block !important;
+  filter: drop-shadow(0 4px 12px rgba(255, 42, 109, 0.35)) !important;
+  transition: transform 0.2s ease !important;
+}
+
+.footer-brand-logo:hover .footer-logo-img {
+  transform: scale(1.04) !important;
+}
+
+.footer-slogan-desc {
+  font-family: var(--sans) !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  color: #e5b9c7 !important;
+  margin: 0 !important;
+  max-width: 34ch !important;
+}
+
+.footer-live-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 4px 12px !important;
+  border-radius: 999px !important;
+  background: rgba(16, 185, 129, 0.12) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+  font-family: var(--disp) !important;
+  font-size: 9.5px !important;
+  font-weight: 800 !important;
+  color: #34d399 !important;
+  letter-spacing: 0.05em !important;
+  width: fit-content !important;
+}
+
+.flb-dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: #10b981 !important;
+  box-shadow: 0 0 6px #10b981 !important;
+  animation: appPulseDot 1.4s ease-in-out infinite !important;
+}
+
+.footer-links-col {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.footer-col-title {
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  color: #ffd23f !important;
+  letter-spacing: 0.08em !important;
+  margin: 0 !important;
+  text-transform: uppercase !important;
+}
+
+.footer-links-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 9px !important;
+}
+
+.footer-links-list li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.footer-links-list li a {
+  font-family: var(--sans) !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  color: #fce7ed !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.footer-links-list li a span {
+  font-size: 9px !important;
+  color: #ff2a6d !important;
+  transition: transform 0.2s ease !important;
+}
+
+.footer-links-list li a:hover {
+  color: #ff7597 !important;
+  transform: translateX(4px) !important;
+}
+
+.footer-links-list li a:hover span {
+  transform: scale(1.4) !important;
+}
+
+.footer-store-pills {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  margin-top: 6px !important;
+}
+
+.fsp-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 6px 12px !important;
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #ffffff !important;
+  font-family: var(--disp) !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  width: fit-content !important;
+  transition: all 0.2s ease !important;
+}
+
+.fsp-btn:hover {
+  background: rgba(255, 42, 109, 0.22) !important;
+  border-color: #ff2a6d !important;
+  transform: translateY(-2px) !important;
+}
+
+.footer-bottom-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+  padding-top: 24px !important;
+  font-size: 12px !important;
+  color: #c499a8 !important;
+}
+
+.fbb-left .fbb-copy {
+  margin: 0 !important;
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+}
+
+.fbb-center .fbb-slogan {
+  font-family: var(--disp) !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  color: #ff9bb9 !important;
+}
+
+.fbb-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #ffd23f !important;
+}
+
+.fbb-dot {
+  color: rgba(255, 255, 255, 0.2) !important;
+}
+
+@media (max-width: 900px) {
+  .site-master-footer {
+    padding-bottom: 135px !important; /* Guaranteed total clearance from bottom floating buttons */
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 28px 16px !important;
+  }
+
+  .footer-brand-col {
+    grid-column: 1 / -1 !important;
+    align-items: flex-start !important;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+}
+
 </style></head><body class="locked">
 <!-- Cartoony Retro Cinema Scroll Progress Bar & Mascot -->
 <div class="retro-scroll-progress-wrap" id="retroScrollProgressWrap" aria-hidden="true">
@@ -16690,8 +16939,85 @@ html {
   </div>
 </section>
 </main>
-<footer><a class="brand" href="#top" style="text-decoration:none; display:inline-block; margin-bottom:12px;"><img src="assets/love_logo_nav_twotone.png" class="footer-logo-img" alt="LOVE CAFE - please taste me one time!"></a>
-<nav class="fl" aria-label="Footer"><a href="#top">About</a><a href="#flavours">Menu</a><a href="#story">Journey</a><a href="#app">Cinema App</a><a href="#cinemas">Locations</a><a href="#reviews">Reviews</a><a href="#rewards">CinePoints</a><a href="#partners">Partners</a><a href="#why-us">Why Us</a><a href="#faq">FAQ</a><a href="#get">Download App</a></nav></footer>
+<footer class="site-master-footer" role="contentinfo" aria-label="LOVE CAFE Footer">
+  <div class="footer-inner-wrap">
+    
+    <!-- Top Row: Brand Profile, Explore, Experience & Apps -->
+    <div class="footer-top-grid">
+      <!-- Col 1: Brand Info -->
+      <div class="footer-brand-col">
+        <a class="footer-brand-logo" href="#top" aria-label="LOVE CAFE Home">
+          <img src="assets/love_logo_vibrant.png" class="footer-logo-img" alt="LOVE CAFE - please taste me one time!">
+        </a>
+        <p class="footer-slogan-desc">
+          Good food · Great movies · Delivered directly to your cinema recliner across 50+ luxury screens at PVR, INOX &amp; Cinepolis.
+        </p>
+        <div class="footer-live-badge">
+          <span class="flb-dot"></span>
+          <span>LIVE IN-SEAT CINEMA DINING</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation (Explore) -->
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">EXPLORE</h4>
+        <ul class="footer-links-list">
+          <li><a href="#top"><span>✦</span> Home</a></li>
+          <li><a href="#flavours"><span>✦</span> Our Gourmet Menu</a></li>
+          <li><a href="#story"><span>✦</span> Cinema Journey</a></li>
+          <li><a href="#cinemas"><span>✦</span> Cinemas &amp; Locations</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Experience & VIP -->
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">EXPERIENCE</h4>
+        <ul class="footer-links-list">
+          <li><a href="#app"><span>✦</span> Cinema App Showcase</a></li>
+          <li><a href="#rewards"><span>✦</span> CinePoints VIP Rewards</a></li>
+          <li><a href="#reviews"><span>✦</span> Guest Reviews &amp; Ratings</a></li>
+          <li><a href="#why-us"><span>✦</span> Why LOVE CAFE</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Support & Apps -->
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">DOWNLOAD &amp; HELP</h4>
+        <ul class="footer-links-list">
+          <li><a href="#partners"><span>✦</span> Official Partners</a></li>
+          <li><a href="#faq"><span>✦</span> Frequently Asked Questions</a></li>
+          <li><a href="#get"><span>✦</span> Download Cinema App</a></li>
+        </ul>
+        <div class="footer-store-pills">
+          <a class="fsp-btn" href="https://play.google.com/store/apps/details?id=in.org.lovecafe.customer" target="_blank" rel="noopener noreferrer" aria-label="Get on Google Play">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3.6 2.2 13.5 12 3.6 21.8c-.4-.2-.6-.6-.6-1.1z" fill="#00d1ff"/><path d="M17 8.5 13.5 12 17 15.5l3.9-2.2c1-.6 1-2 0-2.6z" fill="#ffc400"/><path d="M3.6 2.2 13.5 12 17 8.5z" fill="#00e676"/><path d="M3.6 21.8 13.5 12 17 15.5z" fill="#ff3d57"/></svg>
+            <span>Google Play</span>
+          </a>
+          <a class="fsp-btn" href="https://apps.apple.com/us/app/love-cafe/id6795100801" target="_blank" rel="noopener noreferrer" aria-label="Download on App Store">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="#fff"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.8-3.5.8-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.2.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.8.9-2.8-.9 0-2 .6-2.6 1.4-.6.7-1.1 1.7-.9 2.7 1 .1 2-.5 2.6-1.3z"/></svg>
+            <span>App Store</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar: Legal, Slogan & Quality Seals -->
+    <div class="footer-bottom-bar">
+      <div class="fbb-left">
+        <p class="fbb-copy">© 2026 LOVE CAFE Inc. All rights reserved. Registered trademark.</p>
+      </div>
+      <div class="fbb-center">
+        <span class="fbb-slogan">🍿 "Good food · Great movies · Delivered to your seat"</span>
+      </div>
+      <div class="fbb-right">
+        <span class="fbb-perk">⚡ ~9.8m Recliner Drop</span>
+        <span class="fbb-dot">·</span>
+        <span class="fbb-perk">★ 4.9 App Rating</span>
+      </div>
+    </div>
+
+  </div>
+</footer>
 
 <!-- Interactive Draggable Custom Page Scrollbar (PC & Mobile) -->
 <div id="pageScrollbar" class="page-scrollbar" aria-hidden="true" title="Drag to scroll quickly">
@@ -17890,7 +18216,7 @@ function scrollToAnchor(targetId) {
 
 // Direct click binding on all navigation links and buttons (Desktop Navbar, Mobile Menu, Side Dots)
 function bindNavLinks() {
-  const links = document.querySelectorAll('.nl a, .menu-nav a, .sd a, a.brand, a.nav-vip-cta, [data-nav-target]');
+  const links = document.querySelectorAll('.nl a, .menu-nav a, .sd a, a.brand, a.nav-vip-cta, footer a, [data-nav-target]');
   links.forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href') || this.getAttribute('data-nav-target');
